@@ -1,0 +1,156 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-375.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>An easy tool for creating digital scholarly editions</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:dumont@bbaw.de"><span class="author-surname">Dumont</span>,
+									<span class="author-forename">Stefan</span></a>
+        <a href="http://www.google.com/#q=Dumont, Stefan">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Berlin-Brandenburg Academy of Sciences and Humanities</span>
+      </li>
+      <li>
+        <a href="mailto:fechner@bbaw.de"><span class="author-surname">Fechner</span>,
+									<span class="author-forename">Martin</span></a>
+        <a href="http://www.google.com/#q=Fechner, Martin">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Berlin-Brandenburg Academy of Sciences and Humanities</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The
+Berlin Brandenburg Academy of Sciences and Humanities (BBAW) is home
+to multiple long term research projects which encompass various
+fields of study. The research group TELOTA (The Electronic Life of
+the Academy) supports the digital humanities aspects of these
+projects, including developing software solutions for the daily work
+of their researchers. 
+</p>
+  <p xmlns="">Experience
+shows that although using
+TEI-XML encoding<cite href="#n1">1</cite>
+for the digital transcription and annotation of manuscripts can
+improve research in edition projects,  the
+readiness to implement it greatly relies on
+the user-friendliness of the entry interface. From the perspective of
+a researcher, working directly in XML  simply
+doesn't compare to the ease of programs
+like MS Word. A new software solution must therefore at least offer
+the same amount of editorial comfort as such programs. Ideally, it
+would also encompass the complete life-cycle of an edition: from the
+first phases of transcription to the final publication.</p>
+  <p xmlns="">TELOTA
+developed such a software solution “ediarum”<cite href="#n2">2</cite>,
+which can be
+adapted to the needs of  different research
+projects. The solution consists of various
+software components that allow the researchers to construct and edit
+transcriptions of manuscripts and
+manuscript descriptions into XML following
+the TEI guidelines. Through editing and
+tagging manuscripts, a large quantity of digital data can be
+generated and is prepared
+for further research and presentation. The
+solution includes the possibility to create
+apparatuses of different kinds, as well as to create without much
+additional effort both a print and web publication.</p>
+  <p xmlns="">The
+central software component of the new digital work environment
+“ediarum” is
+Oxygen XML Author<cite href="#n3">3</cite>. The researcher does not edit the XML code
+directly, but instead works in a user-friendly Author mode, which is
+designed through Cascading Stylesheets (CSS). The researcher is able
+to choose more than one perspective within the Author view, and thus
+can select per mouse click the appropriate perspective for the
+current task. Additionally, a toolbar is provided with which the
+researcher can enter markup with the push of a button. In this way
+text phenomena such as deletions or additions, or editorial
+commentary, are easily inserted. Person and place names can also be
+recorded with their appropriate TEI markup, and in addition they can
+be simultaneously linked to the corresponding index. This is done
+through selecting the name from a convenient drop down list. The
+entire manuscript text can thus be quickly and simply marked up with
+TEI conform XML. All documents are stored
+in the open source database "existdb".<cite href="#n4">4</cite></p>
+  <p xmlns="">Besides
+creating a digital work environment for
+“ediarum” in Oxygen XML Author, a
+website can also
+be built based on
+eXistdb, XQuery,
+and XSLT. Through the website the researchers can easily page through
+or search the current data inventory.</p>
+  <p xmlns="">Through
+the intergration
+of ConTeXt<cite href="#n5">5</cite> into “ediarum”
+a further publication type, a print
+edition,  can
+automatically be generated
+as a PDF from the TEI XML document. The layout and format imitates
+previously printed volumes of critical editions.
+Each TEI element must be
+given a specific formatting command through a configuration file. In
+this way the different apparatuses appear as footnotes that refer to
+the main text with the help of line numbers and lemmata. The print
+edition can also provide the suitable index for each transcription
+and solves any occurring cross references between manuscripts.</p>
+  <p xmlns="">This
+work environment has been in use since 2012
+by the staff of different research projects
+for their daily work. When asked their
+opinion, the researchers were in agreement
+that the new work environment greatly eased their editorial work and
+saved them significant time. The possibility to directly check the
+results of their work in a web presentation or as a printed edition
+was seen as an additional positive aspect.</p>
+  <p xmlns="">Presently
+“ediarum” is
+used by the edition of letters, lectures
+and diaries of the German
+theologian Friedrich Schleiermacher<cite href="#n6">6</cite>; the description of medieval
+manuscripts of Aristoteles or the regesta of emperor Friedrich III.
+ For each project the TEI XML schemata and
+main functions were customized to the different manuscript types and
+needs. In the future, “ediarum”
+will be implemented for further projects of the academy or other
+institutions, e.g. the edition of Jeremias
+Gotthelfs prints and manuscripts at the University of Bern (Suisse).</p>
+  <h2 xmlns="">Screenshots</h2>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_310_schleiermacher_workflow_EN.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Workflow of ediarum</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_310_toolbar_schleiermacher.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Customized TEI toolbar in Oxygen XML Author for the digital edition of Friedrich Schleiermachers letters, lectures and diaries</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_310_screenshot_oxygen_komplett2.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Transcription of a letter in Oxygen XML Author</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Burnard, Lou; Bauman, Syd</strong> (Hg.): <em>TEI P5: Guidelines for Electronic Text Encoding and Interchange</em>. Charlottesville, Virginia, USA 2007. URL: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/Guidelines.pdf">www.tei-c.org/release/doc/tei-p5-doc/en/Guidelines.pdf</a></p>
+  <p xmlns="">2. <a href="http://www.bbaw.de/en/telota/software/ediarum">www.bbaw.de/en/telota/software/ediarum</a></p>
+  <p xmlns="">3. User Manual Oxygen XML Author 14. URL: <a href="http://www.oxygenxml.com/doc/ug-editor/">www.oxygenxml.com/doc/ug-editor/</a></p>
+  <p xmlns="">4. eXist Main Documentation. URL: <a href="http://www.exist-db.org/exist/documentation.xml">www.exist-db.org/exist/documentation.xml</a></p>
+  <p xmlns="">5. ConTeXt Dokumentation. URL: <a href="http://wiki.contextgarden.net/Main_Page">wiki.contextgarden.net/Main_Page</a></p>
+  <p xmlns="">6. <strong>Dumont, Stefan; Fechner, Martin</strong>: <em>Digitale Arbeitsumgebung für das Editionsvorhaben »Schleiermacher in Berlin 1808—1834</em> In: di	giversity — Webmagazin für Informationstechnologie in den Geisteswissenschaften. URL: <a href="http://digiversity.net/2012/digitale-arbeitsumgebung-fur-das-editionsvorhaben-schleiermacher-in-berlin-1808-1834">digiversity.net/2012/digitale-arbeitsumgebung-fur-das-editionsvorhaben-schleiermacher-in-berlin-1808-1834</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

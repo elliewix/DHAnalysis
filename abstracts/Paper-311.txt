@@ -1,0 +1,137 @@
+ In a letter that Willa Cather wrote in response to a reader's critique in 1924, she claims:“I
+ had a perfectly good reason for writing ‘Antonia’ in the first person, 
+masculine—and I did not for one minute try to ‘talk like a man’. Such a 
+thing as humbugging any one never occurred to me. It does not matter who
+ tells a story. It is merely a point of view, a position which the 
+writer takes in regard to his material...”.1Looking
+ into an author’s unpublished writings for additional insight is an 
+analytic strategy with a long history in literature studies. With 
+selections from Willa Cather’s extensive collection of correspondences 
+now available for study, scholars are presented with the opportunity to 
+compare Cather’s private letters with her published novels. A 
+statistical examination of Cather’s letters has, until recently, been 
+impossible; until the 2013 publication of The Selected Letters of Willa Cather, Cather’s letters were not available to the public.2
+ The publication of the letters offers a glimpse into the private life 
+of Cather, a life that she kept carefully guarded. The collection 
+contains approximately 550 letters, spanning her life from age 14 until 
+just days before her death. While Cather often spent years working on 
+her published writings, the fact that many of her correspondences were 
+hurriedly dashed off indicates that an examination of the letters could 
+reveal a style of writing that is less polished, worked, and 
+intentional.The potential applications of 
+this type of statistical analytic in literature studies as a whole are 
+wide reaching. Many authors have left behind extensive collections of 
+personal writing that could hold untapped insight about how they 
+communicated in different settings, and how their writing evolved. By 
+using similar tools to those we utilized in this exploratory research of
+ Cather, scholars can continue to quantify the suppositions that 
+traditional methods of literary analysis have yielded.Our research was divided into two main tasks. First, we 
+established a “personal voice signal” from Cather’s correspondence. To 
+derive a quantitative signal, we narrowed the available letters down to 
+164 letters using the hclust() function in R (For additional 
+information, see http://www.r-project.org/.). Setting the number of 
+clusters to 18, we chose the cluster that contained the highest 
+percentage of letters addressed to distinctly personal correspondents. 
+The personal signal was created by using a mean frequency threshold to 
+determine a set of frequently used words in the corpus of letters. In 
+the tradition of Burrows and others working in authorship attribution, 
+we elected to measure style based on the occurrence of high frequency 
+word features.34 This allowed us to both avoid arbitrarily selecting words, and to avoid using any context-sensitive words in our signal.5
+ It is likely that the 15 frequency features, or function words, that we
+ selected are also less dependent on an author’s conscious decision to 
+vary his or her vocabulary.6
+ Thus, function words might offer a better indication of the 
+subconscious, intrinsic choices that inform a writer’s voice. It was our
+ initial expectation that Cather’s personal voice signal would differ 
+from the narrative voices present within her novels. Our initial 
+research question revolved around the relationship between private and 
+public authorship: how (if at all) did Cather’s fiction act as a 
+mouthpiece for her personal voice?Once we 
+generated a signal from Cather’s letters, we used a clustering function 
+in R to compare the signal with 15 of her novels. In order to compare 
+Cather’s novels with the personal voice signal derived from her 
+correspondences, we used R to calculate two statistical measures of 
+similarity: correlation coefficient and Euclidean distance. These two 
+units of measure compare the similarity between Cather’s personal voice 
+signal and her use of function words in the corpus of novels. Examining 
+the Euclidean distance (with the dist() function) provides a way to 
+calculate the numerical distance between the frequency of the function 
+words within the personal correspondences and the frequency of the same 
+set of function words within each of the five novels. The correlation 
+coefficient measures the linear dependence between the function words in
+ the correspondences and the function words in each novel. We divided 
+each of the novels into 1,000 word chunks in order to track the extent 
+to which portions of the novels were more similar to Cather’s personal 
+voice than others. In order to calculate a unique Euclidean distance for
+ each novel, as opposed to its parts, we averaged the distances for all 
+the 1,000 word sections of each novel to determine a mean similarity 
+between each novel and Cather’s personal voice signal.While some of our findings on the similarity 
+between Cather’s personal voice signal and her use of function words 
+within her novels reaffirmed our initial hypotheses, some have defied 
+initial expectations. We found that Cather’s use of function words 
+within her novels was significantly different from the personal voice 
+signal calculated from the correspondences. However, the frequency of 
+function words did not vary significantly among 14 of the 15 novels we 
+examined, regardless of the gender of the narrator. This would indicate 
+that, while there is a difference between Cather’s “personal voice” and 
+14 of her published novels, certain aspects of the voice she adopts in 
+these novels remains constant regardless of the identity of the 
+narrator. We did identify a single outlier among Cather’s novels. The 
+frequency of function words within Cather’s novel My Mortal Enemy more closely resembles the use of frequency words in Cather’s correspondences than any of the other novels we examined.7My Mortal Enemy
+ was published in 1926, approximately halfway through Cather’s 
+publishing career. Previous scholarly commentary on Cather has also 
+indicated thatMy Mortal Enemy is a singular book in her 
+fiction corpus. The novel focuses on two periods in the life of Myra 
+Henshawe and her husband, Oswald. The narrator, Nellie Birdseye, who 
+many scholars argue is modeled after Cather, acts primarily as a frame 
+for sharing the Henshawe’s story. It is widely considered to be the 
+embodiment of Cather’s own novelistic ideal, the novel demeuble.8 For 
+Cather, the novel demeuble was an evocative form of realism, stripped of
+ unnecessary detail and embellishment. The unique style of narration 
+present in My Mortal Enemy raises interesting questions about similarities between this novel and Cather’s correspondences. If My Mortal Enemy
+ embodies Cather’s own idealized notion of stripped bare, to the point 
+realism, than is it possible that Cather also adopted a similar style in
+ her personal letters? Interesting questions are also raised by the way in which My Mortal Enemydraws
+ from Cather’s life. The novel’s autobiographical nature has largely 
+been shrouded in mystery since Cather carefully attempted to conceal the
+ events and people that influenced her novels. Charles Johanningsmeier 
+has made one of the most thorough attempts at unraveling the 
+connections, tracing the novel’s influences to Cather’s history with the
+ McClure family.9 In this sense, our work appears to support Cather 
+studies by backing up scholarly claims about autobiographical influence 
+with quantitative data. We believe that examining the relative 
+similarity or difference between the ‘voice’ of Cather’s letters and 
+fiction is relevant because of the claims she made. Based on comments 
+made in some letters, it appears that she perceived differences in her 
+writing that surpass the conventions of genre. If we assume that in 
+writing about deeply personal issues, an author is likely to lapse into a
+ more personal style, our findings seem to support the claim that My Mortal Enemy
+ was highly influenced by Cather’s personal life. This raises an 
+interesting question: does the use of autobiographical details in 
+Cather’s fiction indicate an unconscious use of a more personal style of
+ writing?  In the future, we intend to deepen and expand 
+the traits that define the personal voice signal we are deriving from 
+Cather’s correspondences. Sentence length, structure, and the choice of 
+infrequently appearing vocabulary are all elements of a writer’s unique 
+voice. Our research team will be investigating the ways in which these 
+characteristics impact the relationship between Cather’s private letters
+ and her published works. It is 
+also our hope that the research we have begun will lead towards further 
+studies on the relationship between My Mortal Enemy and Cather’s 
+letters. In addition, since scholars recognize the main character from 
+My Mortal Enemy, Nellie, as modeled after Cather, future research might 
+begin to look specifically at the ways in which Cather’s personal voice 
+is associated with specific characters in her novels. This question 
+might again return to issues of gender; if it becomes clear that certain
+ characters within Cather’s work speak in a way similar to Cather’s 
+personal voice, the next question should revolve around what these 
+characters have in common.  1. Cather, Willa. (20139 To Mr. Miller. The Selected Letters of Willa Cather. Ed. Andrew Jewell and Janis Stout. New York: Alfred A. Knopf. 362.
+          2. A. Knopf (2013).  The Selected Letters of Willa Cather. Jewell Andrew, and Janis Stout, eds. The Selected Letters of Willa Cather. New York: Alfred.
+          3. Grieve, J. (2007). Quantitative authorship attribution: an evaluation of techniques. Literary and Linguistic Computing: Journal of the Association for Literary and Linguistic Computing, 22(3): 251–70.
+          4. Burrows, J. (2002). ‘Delta’: a measure of stylistic difference and a guide to likely authorship. Literary and Linguistic Computing: Journal of the Association for Literary and Linguistic Computing, 17(3): 267–87.
+          5. Jockers, Matthew L., Daniela M. Witten, and Craig S. Criddle. Reassessing Authorship of the Book of Mormon Using Delta and Nearest Shrunken Centroid Classification. Literary and Linguistic Computing, 23.4 (2008): 465-492.
+          6. Ray Siemens, John Unsworth (2004). A Companion to Digital Humanities, ed. Susan Schreibman. Oxford: Blackwell.
+          7. Cather, Willa (1926). My Mortal Enemy. New York: Alfred A. Knopf.
+          8. Cather, Willa. (1922) The Novel Demeuble. The New Republic, 30.1: 5-6.
+          9. Johanningsmeier, Charles. (2003) Unmasking Willa Cather’s ‘My Mortal Enemy.’ Cather Studies, Volume 5: Willa Cather’s Ecological Imagination. n. pag. Web.
+          

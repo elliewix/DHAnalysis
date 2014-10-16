@@ -1,0 +1,154 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-181.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Modelling digital edition of medieval and early modern accounting documents</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>3</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>13:45:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:georg.vogeler@uni-graz.at"><span class="author-surname">Vogeler</span>,
+									<span class="author-forename">Georg</span></a>
+        <a href="http://www.google.com/#q=Vogeler, Georg">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Zentrum für Informationsmodellierung - Austrian Centre for Digital Humanities, Universität Graz</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">Accounting
+documents seem to be are well suited digital reproduction: they
+contain a significant number of highly structured information which was meant to be calculated already
+in its original context . Creating a database for executing
+statistical and numerical analysis of the data seems to be a promising method
+to analyse these documents. This assumption is not reflected in the practice
+of critical scholarly editions of accounting books. The digital humanists
+creating resources of accounting documents have not succeeded to build a common
+form of representation apart from the preference of spread-sheet style data
+storage. This approach neglects important information in the original documents
+which become in particular clear when studying medieval account books:</p>
+  <ol xmlns="">
+    <li>The recent scholalry edition of the Luxemburg city accounts <cite href="#n1">1</cite> shows that accounting is close
+to everyday language and thus an important source for research on the history
+of a language. A digital resource concentrating on numbers, short descriptions
+of bookkeeping entries and classifications excludes that information.</li>
+    <li>Producing an account in the middle
+ages was a process which included several steps: collecting the information
+from informal documents into a fair copy, reading the listed transactions to a
+supervising committee or to a person using the abacus, deleting debit entries
+with their fulfilment, entering debits for tax or rent collection and updating the
+entries during money collection while tax collection or in manorial
+administration. Medieval accounts thus can be a protocol of acts of accounting
+and controlling.</li>
+    <li>The layout of medieval accounts
+changed in time, i.e. for example in administrative accounting the layout developed from protocols in simple
+text blocks to sophisticated tabular representations<cite href="#n2">2</cite>. The
+early forms of double entry bookkeeping are based on the position of the entry
+on the page <cite href="#n3">3</cite>. The development of the visual form of accounting documents is
+part of the research on the history of accounting.</li>
+    <li>Account books give an insight in
+everyday life and its economy which can be researched only when the
+variety of existing entries is transfered into a taxonomy. Medieval and early modern accounts
+used variety of taxonomies to structure the data. All this can only be accessed
+by researcher with a thorough encoding of the “content”.</li>
+  </ol>
+  <p xmlns="">Traditionally
+this multiple interest in the account books led to a decision on one preferred
+approach. On paper the text could be printed economically only either as tables
+or as full transcriptions.</p>
+  <p xmlns="">The current
+state of digital edition theory promises to solve this problem: an edition as a
+digital resource can include several layers of interpretation and leave the
+decision on the presentation to the user. But a brief survey done on relevant
+digital resources <cite href="#n4">4</cite>
+shows these possibilities are rarely exploited in full.</p>
+  <p xmlns="">The paper
+discusses some reasons for this situation, in particular the influence of the
+dominant schools in digital scholarly editing and the resulting models which
+focus on textual variance, representation of text and documentary edition. Syd
+Baumann and Kathryn Tomasek have already suggested changes in the de-facto
+standard for encoding of historical documents the TEI <cite href="#n5">5</cite>. They propose an element to describe
+transactions by referring to the textual parts describing the business facts. An
+alternative standard for the encoding of business facts can be found in XBRL<cite href="#n6">6</cite>
+which offers a flexible methodology and in the “Global Ledger”-module a
+taxonomy of basic business facts which can be transferred to many historical
+documents. While the TEI guidelines are good to encode the accounts on the
+documentary and linguistic level, XBRL seems to offer a good base to model the
+economic content. A simple bookkeeping ontology would have to include the
+following facts: gl-cor:entryDetail(gl-cor:account,
+gl-cor:signOfAmount(bk:i, bk:d), gl-cor:amount(tei:measure(tei:quantity, tei:unit),
+gl-cor:debitCreditCode), bk:price(tei:measure[x], tei:measure[y]),
+bk:transaction(bk:when, bk:where, bk:who, what, gl-cor:entryDetail[bk:debit],
+gl-cor:entryDetail[bk:credit]) which represents the single entry (gl-cor:entryDetail), their organization in bookkeeping
+(bk:account,
+gl-cor:debitCreditCode),
+the central economical informations (amounts, increase/decrease, prices) and
+the social act of transaction (bk:transaction).</p>
+  <p xmlns="">Departing
+from the theoretical considerations presented by Manfred Thaller at the DH2012
+<cite href="#n7">7</cite> the paper tries to develop a RDF-model which integrates the
+multiple layers how an account book can be conceptualised in a digital
+scholarly edition (text as image, as trace, as language and as meaning). The
+model is based on references between an URI for the physical object, the images
+of the object, the transcription and the bookkeeping facts (see fig. 1).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_156_model.jpg"/>
+    <figcaption>
+      <p>
+        <em>Fig. 1: conceptual model for stand-off markup of digital scholarly editions</em>
+      </p>
+    </figcaption>
+  </div>
+  <p xmlns="">The model
+can be aligned with upper level ontologies like the CIDOC-CRM <cite href="#n8">8</cite>  as the basic
+entities relate to linguistic objects (crm:E33, text as language), to images
+(crm:E38, text as image), to inscriptions/marks (crm:34/crm:37, text as trace)
+and to facts which can be described as events (crm:E5, business transactions as
+the meaning of the accounts), although substantial intermediate steps have to
+be included (e.g. price relations, measurements and monetary values as
+subclasses of propositional objects, crm:89). It allows like XBRL the inclusion
+of taxonomies for commodities or for types of transaction.</p>
+  <p xmlns="">The model can be
+serialized with the help of the feature structures in TEI and converted into
+explicit RDF with simple XSL which includes the transformation of DOM relations
+(e.g. ‘contains’) into ontology statements (e.g. &lt;list
+ana=”bk:d”&gt;&lt;item ana=”bk:entry”&gt;For &lt;seg ana=”bk:account”&gt;wood&lt;/seg&gt;
+&lt;measure ana=”bk:amount” quantity=”10” unit=”lb”&gt;x lb&lt;/measure&gt;&lt;/item&gt;&lt;/list&gt;). First
+experiences in a project to create a digital edition of a whole series of early
+modern city accounts show that the model can be used efficiently when the
+encoding of this kind of structures is supported with a TEI customisation which
+helps the transcribers to replace repetitive and verbose code with simple XML
+tags (like &lt;r:lb&gt; for &lt;measure
+type=”currency” unit=”lb”&gt; or
+&lt;r:e&gt; for &lt;item
+ana=”bk:entry”&gt;
+and when repetitive tasks like the transformation of roman numbers can be
+included in the XSL transformation from customised code to TEI. </p>
+  <p xmlns="">The paper will demonstrate the
+application of the model to several late medieval account books in a TEI
+serialization<cite href="#n9">9</cite>. The
+integration in the GAMS repository infrastructures<cite href="#n10">10</cite> allows showing possible
+functionalities of digital editions based on the model. This includes joint operations
+on the XML text stored in a Fedora Commons repository and the RDF
+representation stored in a triple store.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Die Rechnungsbücher der Stadt Luxemburg, bearb. v. Claudine Moulin u. Michel Pauly, z.Zt. 6 Hefte, Luxemburg 2007 - 2012 (Schriftenreihe des Stadtarchivs Luxemburg ...)</strong></p>
+  <p xmlns="">2. <strong>Mark Mersiowsky</strong>: <em>Die Anfänge territorialer Rechnungslegung im deutschen Nordwesten</em>. Spätmittelalterliche 2. Rechnungen, Verwaltungspraxis, Hof und Territorium (zugl. Diss. phil. Münster 1992) , Sigmaringen 2000 (Residenzenforschung 9); Georg Vogeler: Spätmittelalterliche Steuerbücher deutscher Territorien, Teil 1: Überlieferung und hilfswissenschaftliche Analyse, in: AfD 49 (2003), S. 165-295, Teil 2: Funktionale Analyse und Typologie, in: AfD 50 (2004), S. 57-204.
+          </p>
+  <p xmlns="">3. <strong>Federigo Melis</strong> (1950): <em>Storia della Ragioneria. Contributo alla conoscenza e interpretazione delle fonti più significative della storia economica</em>, Bologna; Franz-Josef Arlinghaus: Bookkeeping, Double-Entry Bookkeeping, in: Medieval Italy. An Encyclopedia, hg. v. Christopher Kleinhenz, New York 2004, S. 147-150; Basil S. Yamey: Scientific Bookkeeping and the Rise of Capitalism, in: EHR N.S. 1 (1949), S. 99-113.
+          </p>
+  <p xmlns="">4. Die Cameralia des Stadtarchivs Regensburg, Bd. 3: Ausgaben der Stadt Regensburg 1393 - 1394, ed. by Heidrun Boshof (Fontes Civitates Ratisponensis) <a href="http://www.fcr-online.com/editions/c03/index.htm">www.fcr-online.com/editions/c03/index.htm</a>; Die mittelalterlichen Schuld- und Rechnungsbücher des Deutschen Ordens um 1400. Eine synoptische Edition im Internet, ed. by Christina Link u. Jürgen Sarnowsky, Hamburg 2008, www.schuredo.uni-hamburg.de; Les comptes des consuls de Montferrand (1273–1319)2006 (Éditions en ligne de l'École des Chartes, volume16), éd. R. Anthony Lodge 2006 <a href="http://elec.enc.sorbonne.fr/montferrand/">elec.enc.sorbonne.fr/montferrand/</a>; Comptes de châtellenies, http: www.castellanie.net; Comédie-Française Register Project, http: web.mit.edu/hyperstudio/cfr; Open domesday. The first free online copy of Domesday Book, ed. by Anna Powell-Smith, J.J.N. Palmer, Univ. of Hull http: www.domesdaymap.co.uk; The Alcalá account book project, National University of Ireland, Maynooth 2008, http: archives.forasfeasa.ie; Henry III fine rolls Project, King’s College London et al., 2007-2011, http: www.finerollshenry3.org.uk
+          </p>
+  <p xmlns="">5. <em>Encoding Financial Records for Historical Research</em>, paper presented ad the TEI-MM 2012 in College Station, http: idhmc.tamu.edu/teiconference/program/papers#encfin; Syd Bauman, Transactionography Customized Documentation, Encoding Historical Financial Records Open Access Library, accessed October 28, 2013, http: omeka.encodinghfrs.org/items/show/5; hitepaper 2012, NEH Ref: HD-51224-11, <a href="http://omeka.encodinghfrs.org/items/show/4">omeka.encodinghfrs.org/items/show/4</a></p>
+  <p xmlns="">6. <em>eXtensible Business Reporting Language</em>, <a href="http://www.xbrl.org">www.xbrl.org</a>, Global Ledger Taxonomy: <a href="http://www.xbrl.org/gltaxonomy">www.xbrl.org/gltaxonomy</a></p>
+  <p xmlns="">7. <strong>Manfred Thaller</strong>: <em>What is a text within the Digital Humanities, or some of them, at least?</em> digital humanities 2012 (Hamburg) <a href="http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/beyond-embedded-markup">www.dh2012.uni-hamburg.de/conference/programme/abstracts/beyond-embedded-markup</a></p>
+  <p xmlns="">8. <em>Definition of the CIDOC Conceptual Reference Model</em>, ed. by Nick Crofts, Martin Doerr, Tony Gill, Stephen Stead, Matthew Stiff, December 2011. <a href="http://www.cidoc-crm.org">www.cidoc-crm.org</a></p>
+  <p xmlns="">9. <em>Rechnungen des Mittelalters und der frühen Neuzeit</em>, Prototypen, ed. by Georg Vogeler, 2012ff. <a href="http://gams.uni-graz.at/rem">gams.uni-graz.at/rem</a></p>
+  <p xmlns="">10. <em>Geisteswissenschaftliches Asset Management System [(Humanities Asset Management System]</em>, curated by the Zentrum für Informationsmodellierung – Austrian Centre for Digital Humanities <a href="http://gams.uni-graz.at/context">gams.uni-graz.at/context</a>:gams/sdef:Context/get?mode=about
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

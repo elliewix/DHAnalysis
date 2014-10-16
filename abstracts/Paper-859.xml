@@ -1,0 +1,76 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-859.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>From the Archimedes’ Palimpsest to the Vercelli Book: Dual Correlation Pattern Recognition and Probabilistic Network Approaches to Paleography in Damaged Manuscripts</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>8</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>415 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Anthony</span>,
+									<span class="author-forename">Eleanor Chamberlain </span></a>
+        <a href="http://www.google.com/#q=Anthony, Eleanor Chamberlain ">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Mississippi, United States of America </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">The human capacity to visually discern and detect information is remarkably powerful. This
+ability forms the basis for the field of paleography, specifically in terms of text identification.
+However, while traditional paleographical methods yield impressive results for data
+characterization, a mathematical approach to identification is desirable as a means of additional
+verification and as a basis for comparison between varying proposals of text identities,
+especially in the case of damaged manuscripts in which text is wholly or partially illegible.
+Executed judiciously, mathematical approaches can aid the transcription efforts for manuscripts
+and encourage discussion of text identity with appeal to statistical distribution, based on both
+v!isual and contextual information. !
+</p>
+  <p xmlns="">Derek Walvoord initially employed such an approach for the Archimedes’ Palimpsest in 2004.1
+He developed a correlation recognition program and probabilistic network system for data
+analysis that utilized both visual and contextual information in order to create character identity
+distributions for the data of interest. I am currently working to adapt and improve his approach
+in order to analyze image data for the Vercelli Book. The oldest existing record of Anglo-Saxon
+poetry and homilies, this 10th-century manuscript was imaged in March 2013 by a team from
+the Lazarus Project at the Archivio Capitolare in Vercelli. Led by Dr. Gregory Heyworth, the team
+was composed of Dr. Roger Easton, Kenneth Boydston and Dr. Keith Knox, accompanied by
+several students from the University of Mississippi, including myself. Utilizing reflective and
+transmissive LED arrays in 12 wavebands ranging over the near-ultraviolet, visible, and near-
+infrared regions, we imaged the manuscript with the aim of penetrating the chemical reagent
+a!pplied in the 19th century that obscures sections of the text. !
+</p>
+  <p xmlns="">In order to determine the identities of characters and character fragments which image
+rendering do not conclusively reveal, I am designing a neural network system which will make
+use of correlation filtering to classify the data, similar to Walvoord’s system; however, by utilizing
+subsampling of the initial and subsequent output layers, I will be able to meaningfully analyze
+fine details of the data in a way that Walvoord’s system did not allow. Moreover, my updated
+system will be able to weight the importance of particular features in determining class
+membership via a learning architecture, such that each training image improves the classifier
+function. This method should overcome problems traditionally associated with correlation
+filtering methods such as blur, lighting differences, and lack of contrast because of its
+subsampling and weighting mechanisms. Depending upon the results of this neural network
+approach of classification for the Vercelli Book data, I will evaluate whether employing a probabilistic network system similar to that used for the Archimedes’ Palimpsest will significantly
+i!mprove overall data classification and proceed with research accordingly.!
+</p>
+  <p xmlns="">This system would serve to bridge the gap between our knowledge of the Vercelli Book’s
+contents and the information available to us, providing a probabilistically accurate transcription
+of data associated with a piece of the humanities corpus that has been obscured from view for
+over a century. This invaluable data will contribute place and context to our current
+conversations considering Anglo Saxon literature, language, and culture, as well as manuscripts
+in general. Moreover, this system will ultimately serve to empower paleographers and computer
+scientists alike by exploring the relationship between the visual acuity and classification
+knowledge associated with traditional transcription efforts and neural network-based
+approaches for mathematical ones. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Walvoord, Derek J. </strong>(2008). <em>“Advanced Correlation-Based Character Recognition Applied to !
+            the Archimedes Palimpsest.” </em>PhD diss., Rochester Institute of Technology.
+          </p>
+  <p xmlns=""><strong>Sermanet, Pierre et al. </strong>(2012) <em>“Convolutional Neural Networks Applied to House Number Digit
+            Classification.”</em> Paper presented at the 21st International Conference on Pattern Recognition,
+            Tsukuba, Japan, November 11-15. </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

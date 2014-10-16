@@ -1,0 +1,199 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-615.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Monolith: Materialised Bits, the Digital Rosetta Film</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>5</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>414 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:peter.fornaro@unibas.ch"><span class="author-surname">Fornaro</span>,
+									<span class="author-forename">Peter</span></a>
+        <a href="http://www.google.com/#q=Fornaro, Peter">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Digital Humanities Lab</span>
+      </li>
+      <li>
+        <a href="mailto:a.wassmer@unibas.ch"><span class="author-surname">Wassmer</span>,
+									<span class="author-forename">Andreas</span></a>
+        <a href="http://www.google.com/#q=Wassmer, Andreas">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Digital Humanities Lab</span>
+      </li>
+      <li>
+        <a href="mailto:lukas.rosenthaler@unibas.ch"><span class="author-surname">Rosenthaler</span>,
+									<span class="author-forename">Lukas </span></a>
+        <a href="http://www.google.com/#q=Rosenthaler, Lukas ">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Digital Humanities Lab</span>
+      </li>
+      <li>
+        <a href="mailto:rudolf.gschwind@unibas.ch"><span class="author-surname">Gschwind</span>,
+									<span class="author-forename">Rudolf</span></a>
+        <a href="http://www.google.com/#q=Gschwind, Rudolf">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Digital Humanities Lab</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">Digital storage systems are like
+tins. They might have some content but the only evidence are labels, captions
+or any kind of lettering. In addition maybe the weight of the tin could be
+taken to judge about its inside but still to get full assurance the tin has to
+be opened to be able to identify the content correctly. In order to open it an
+appropriate tool is necessary and another one to take something out of it,
+something like a fork or a spoon. </p>
+  <p xmlns="">A digital storage like a hard drive
+behaves very similar to that but in case of magnetic recording the data is not
+only invisible from in and outside the storage, not even can it be detected
+physically by a human being. Digital data has no appearance that can be touched,
+we have no sense for it. </p>
+  <p xmlns="">In
+addition to that any bit stream stored on a data carrier needs to be migrated
+after a certain time to ensure accessibility and consistency because following three factors
+endanger the digital archiving process:</p>
+  <ul xmlns="">
+    <li>The storage media decays over time
+and it can fail by aging.</li>
+    <li>Hardware gets incompatible so that accessing
+the data becomes impossible.</li>
+    <li>File formats – technical metadata –
+change and develop over time. Therefore programs to interpret the file content
+might not be available in future.</li>
+    <li>Missing contextual metadata make any
+digital bit stream more or less useless. </li>
+  </ul>
+  <h2 xmlns="">Migration</h2>
+  <p xmlns="">Each of these possibilities is a major
+drawback for cultural heritage preservation and each one renders data into
+digital waste, data that is either lost completely or without meaningful sense. Continuous migration and copy storage content in periodic intervals are today’s
+best practice to transform binary information into the future. Theoretically migration works very well because digital data can be copied without loss, which is one of the major advantages of any digital code like binary information or our even alphabet. The ability to copy data lossless allows not only the arbitrary replacement of the data carrier, it also allows to increase redundancy by storing multiple copies, as e.g. proposed by LOCKSS<cite href="#n1">1</cite>. The down
+side of migration is the financial effort associated with it.
+Independent of the specific costs per migration, archiving is getting expensive
+sooner or later because of the short lifetime of the technology. In addition its dependence on numerous cascaded technologies makes it a
+fragile process that can cause dramatic data loss if only one of the incorporated components fails.  </p>
+  <p xmlns="">Migration can be omitted if the
+storage media fulfills the following requirements:</p>
+  <ul xmlns="">
+    <li>It must contain human readable
+metadata in order to describe the archived object and it's context.</li>
+    <li>Information on how to recover the
+original file (the decoding manual) must be part of the metadata. This
+knowledge is the key to interpret the archived byte stream.</li>
+    <li>The file format must be well documented (open format) and it must be widely used to ensure its accessibility over time.   </li>
+    <li>Digital data is stored hardware
+independent as far as possible. Thus it is not affected by the change of
+technology.</li>
+  </ul>
+  <p xmlns="">If a medium claims to be suitable
+for long-term preservation of digital data it has to fulfill more requirements.
+Lunt et al.<cite href="#n2">2</cite> identified 7 characteristics, which are particularly
+interesting to archivists regarding preservation of digital data. The first
+says, there shouldn’t be active maintenance or migration required to preserve
+actual data. They continue with: 2) no special storage conditions are necessary
+to preserve the storage media; 3) a minimum lifetime of at least 100 years,
+preferably more should be supported; 4) no energy is required to maintain the
+data; 5) the media is easily transported; 6) the data format is widely adopted;
+7) the medium has a large storage capacity.</p>
+  <h2 xmlns="">Bits-on-Film Approach </h2>
+  <p xmlns="">Facing those facts the Digital
+Humanities Lab of the University of Basel has developed a workflow for
+migration-less preservation of digital data on optical media called “Monolith”.
+It combines the advantages of photographic material and standard digital
+imaging technology to create a long-term migration-less archiving system. This
+is achieved by the hybrid characteristics of the optical carrier. Any arbitrary
+binary bit stream is put right besides human readable technical, structural,
+and contextual metadata. Original files of any appropriate format are stored on
+film as visual 2D-barcodes. Technically spoken every bit of the original bit
+stream (the file to be stored) is converted into a spot representation on film.
+A full bit stream then results in a two-dimensional image, an “image of bits“.
+In other words the logical data-bits are transformed and represented by dye or
+silver of photographic film. This process can be regarded as a materialization
+of binary data, which becomes visual and physical. Monolith has no limitation
+regarding the format of the file to be archived. However, the documentation of
+the file format must be part of the metadata and therefor it should be an open standard like the widely used PDF-A or image formats like
+JPEG2000 (<cite href="#n3">3</cite>). Metadata can be stored binary or as human readable text
+information, e.g. encoded and written in letters on film as any of the well-known
+standards like Dublin Core, METS or others. </p>
+  <p xmlns="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This
+approach has various advantages: First, and most important, the bit stream on
+film can be read/captured by any digital camera, there is no special hardware
+necessary to transform the physical representation of the bits back into
+logical states within the computer system. This can be compared to the process
+of seeing. As human beings see letters – in fact digital data – the camera sees
+signs, spots on film – binary data; Monolith has a visual interface. The decoding of the binary bit stream
+is well defined because the explanation of the
+code is an inseparable part of the technical metadata set written on film. Like
+no other storage media Monolith can not only contain barcodes and text but
+images – e.g. thumbnails – as well. Besides its technological features the
+storage film has another advantage. It can be stored the same way as regular
+archival film. There are no special storage conditions necessary nor does the
+film need any specific care. Therefore, Monolith can be regarded more as an
+“engraved stone“ than as a data storage for computer systems. It is a “Digital Rosetta Film“. </p>
+  <p xmlns="">But is the application of optical
+film for archival purposes reasonable these days? Many companies stopped
+production high fidelity film material and very likely the quality – not
+stability – of film will drop in the future. For the representation of
+photographic images this is of course a major draw back since image quality is
+directly related to film quality. In case of Monolith this is irrelevant. The
+only function the film has to fulfill is to separate dots spatially,
+requirements that are achieved by most photographic materials. The quality of
+digital originals will not be disturbed by film quality because they are stored
+as binary data and therefore decay of the material has little impact. In
+addition any well-known error correction method can be applied. The concept of
+a binary representation of data is a simple but a very efficient solution and
+it is the reason why every computer storage system is adapting this concept<cite href="#n4">4</cite>. Even if film won't be available in future, for any existing Monolith this means no impact. Not for the sustainability nor for the future ability for data recovery.</p>
+  <p xmlns="">All those features show that
+materialized bits are not only a nice concept to mimic historic documents but also
+an efficient way to transport digital cultural heritage into the future<cite href="#n5">5</cite>. In
+the presentation we will show how Monolith works and what its advantages are. </p>
+  <p xmlns=""> </p>
+  <p xmlns=""> MonolithTM on 35mm color material</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_456_monolith_poster-35.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Monolith™ includes all necessary information for future information recovery. Especially contextual metadata and the decoding manual to understand the structure of the bit-pattern.</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">Conclusion </h2>
+  <p xmlns="">Monolith is a solution that has made its way from university to a commercial company. It shows that there is a possibility for an alternative solution for classical digital archiving, that doesn't need to be migrated. The advantages are not only of technical but also of economical nature. Even if costs for plain storage media decrease with time, total costs of ownership for archived digital data increased in the last years continuously and migration is the primary costs driver of archiving. Therefore Monolith can not only be an answer for technological but also for economical challenges on the way of digital information to the future.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Vicky Reich &amp; David S.H. Rosenthal.</strong><em>LOCKSS (Lots Of Copies Keep Stuff Safe)</em>, Presented at Preservation 2000: An International Conference on the Preservation and Long Term Accessibility of Digital Materials, December 7-8, 2000, York, England. Also published in The New Review of Academic Librarianship, vol. 6, no. 1, 2000, pp. 155-161. doi:10.1080/13614530009516806
+          </p>
+  <p xmlns="">2. <strong>Barry M. Lunt, Matthew R. Linford, Robert Davies</strong> (2012), <em>Research on Another Permanent Data Storage Solution</em>, Proc. Archiving 2012, IS&amp;T, pg. 19-21
+          </p>
+  <p xmlns="">
+            A list of file formats suited for archiving can be found at <a href="http://www.kost-ceco.ch/wiki/whelp/KaD/index.php.">www.kost-ceco.ch/wiki/whelp/KaD/index.php.</a></p>
+  <p xmlns="">4. <strong>Shaw Rodney</strong>, Selected Reading in Image Evaluation, SPSE, ISBN 0-89208-085-X
+          </p>
+  <p xmlns="">5. <strong>Florian Müller, Peter Fornaro, Lukas Rosenthaler, Rudolf Gschwind </strong>(2010) <em>PEVIAR: Digital Originals</em>, ACM Journal on Computing and Cultural Heritage, Volume 3, Issue 1. ACM 2010
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

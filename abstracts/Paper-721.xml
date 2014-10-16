@@ -1,0 +1,111 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-721.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Stylometry of Collaborations: Dickens, Collins and their collaborative writings</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>319 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:tabata@lang.osaka-u.ac.jp"><span class="author-surname">Tabata</span>,
+									<span class="author-forename">Tomoji</span></a>
+        <a href="http://www.google.com/#q=Tabata, Tomoji">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">GSLC, University of Osaka</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1.	Introduction</h2>
+  <p xmlns="">The Victorian author Charles Dickens was among the first publishing entrepreneurs to run mass- produced weekly/monthly magazines on a successful commercial basis.  He employed many ‘salaried staff　writers’ (Nayder, 2002), who had to write under anonymity, including Elizabeth Gaskell, Adelaide Anne Proctor et al., in Household Words and All the Year Round, the journals ‘conducted by’ Dickens (Stone, 1968; Thomas, 1982; Allingham, 2011).</p>
+  <p xmlns="">On the other hand, Dickens collaborated with his younger contemporary Wilkie Collins on a number of stories, typically for the Christmas Numbers of his journals. While some of their collaborative pieces were written with the assistance of other staff writers, four works are known to have been co-authored by Dickens and Collins alone (Nayder, 2002): <em>The Frozen Deep</em> (1857), <em>The Lazy Tour of Two Idle Apprentices</em> (1857), <em>The Perils of Certain English Prisoners’</em> (1857), and <em>No Thoroughfare </em>(1867). The four collaborations can be seen as betokening what appears to be a ﬁrm presence of Collins, a foothold he had gained, in the Dickens circle by the time he and Dickens launched into the joint works beginning in 1857.</p>
+  <p xmlns="">These collaborative writings vary in design and style from one another as well as in theme and setting. In some cases, one chapter can be read as radically different from another due in large to the varying proportion of contribution by each of the duo: some chapters were written either Dickens or Collins alone, while there are other chapters that were jointly written although the extent of collaboration has yet to be identiﬁed quantitatively.</p>
+  <p xmlns="">In order to provide new insight to the nature of collaborative authorship, the present study applies s series of stylometric techniques: (1) Craig’s extension of Burrows’s <em>Zeta</em> test for reliably extracting author markers from a large number of candidate words; (2) Cluster analysis based on Burrows’s <em>Delta</em> distance measure (Burrows, 2002) to compare the collaborations with the canonical works of Dickens and Collins; and (3) Rolling <em>Delta</em> (Eder, Kestement and Rybicki, 2013) in an effort to detect authorial takeovers or to estimate the extent of contribution by each of the two authors in their collaborative writings.</p>
+  <h2 xmlns="">2.   Single authorship and mixed authorship</h2>
+  <p xmlns="">Although the lack of byline makes it difficult to determine the authorship of Christmas numbers for Dickens’s periodicals, the account book in the office of Household Words helps identify many of his collaborators (Thomas, 1982). Table 1 shows bibliographic details for the four collaborative works between Dickens and Collins.</p>
+  <p xmlns="">The <em>Frozen Deep</em> was originally written as a drama in three acts. Collins drafted the manuscript and Dickens heavily revised it. The script of the drama remained unpublished until 1866, when Collins altered it single-handedly, getting rid of Dickens’s hand. After Dickens’s death, Collins adapted the play as a novella for use in his public reading tour in 1874 (Brannan, 1966). No Thoroughfare was also written first as a drama and then rewritten into a novella form.</p>
+  <p xmlns="">When the collaborative pieces are divided into smaller units like a chapter or act, eight units (including <em>The Frozen Deep</em>) are of single authorship, with the remaining six units being a case of mixed authorship.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_2_table1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: </p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">3.	Testing the authorship of collaborative chapters</h2>
+  <p xmlns="">The following experiments draw on a Dickens corpus comprising 22 texts and a Collins corpus with the same number of texts as a basis of reference, with which we compare the style of the collaborative chapters (see Tables 3 and 4 in Appendix for details). The ﬁrst round of analysis is to run Craig’s version of Burrows’s Zeta test in order to extract Dickens markers as well as Collins markers. The vast majority of authorship attribution studies have relied on n most common words in the corpus/text in question (Burrows, 2002/2005; Eder, 2010; Eder &amp; Rybicki, 2009; Hoover, 2003/2004; Rybicki, 2009; to name but a few). The recent works by Craig &amp; Kinney (2009) and Hoover (2010; 2011; 2013), on the other hand, have demonstrated Zeta’s strong power of differentiation between two sets of text samples. Other keywords extraction techniques include the use of Log-likelihood ratio (Dunning, 1993) criticised by Tabata (2012) for being prone to burstiness (and for its tendency to produce too many false-positives); Mann-Whiney U test (Kilgariff, 2001); t-test (Hoover, 2010); bootstrap test (Lijffijt et al., 2012); Random forests (Tabata, 2012), and so forth. The particular strength of Craig’s version of Zeta analysis is its simplicity and effectiveness well documented in Hoover’s studies mentioned above.  A Zeta distinctiveness ratio for the word i is calculated in the following formula:</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_2_formula.jpg"/>
+    <figcaption>
+      <p>Fig. 2: </p>
+    </figcaption>
+  </div>
+  <p xmlns="">where <em>N(x) =</em> Total number of text-segments in the corpus x; <em>DF(x)i </em>= Document (or Segment) frequency for the word i in the corpus x; <em>N(y) = </em>Total number of text-segments in the corpus y; <em>N(y) – DF(y)i</em>  = Document (or Segment) frequency negative for the word <em>i</em> in the corpus <em>y</em>.</p>
+  <p xmlns="">The R package stylo (a suite of tools for stylometric analyses) (Eder, Rybicki, and Kestmont, 2013) includes the function oppose() with an option to calculate Zeta scores. In the present case, each text was sliced into 10,000-word segments with rare occurrence threshold set to 2 so as to exclude hapax legomena and ﬁltering threshold set to 0.5 to extract strongly discriminating words (thus only <em>words(i)</em> with <em>Zeta(i) &lt; 0.5</em> or <em>Zeta(i) &gt; 1.5</em> are picked up). The procedure detected 122 authorial markers: 61 Dickens markers and 61 Collins markers as listed in Table 2.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_2_table2.jpg"/>
+    <figcaption>
+      <p>Fig. 3: </p>
+    </figcaption>
+  </div>
+  <p xmlns="">When the marker words were fed into a cluster analysis, the resulting dendrogram (Fig. 1) clearly differentiated the two authors in the distinct clusters.  The marker words are also sensitive enough to show sub-patterns: both in Dickens and Collins clusters, the texts written in their early career ﬂock together (Dickens’s texts in the 1830’s and Collins’s texts published in the 1850’s). Dickens’s early works branch close to the sketches/travelogues as opposed to fictions.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_2_figure3.jpg"/>
+    <figcaption>
+      <p>Fig. 4: Cluster analysis: Dickens versus Collins (Distance: Burrows’s Delta)</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Fig. 4 is a cluster dendrogram with the collaborative pieces included in the analysis. The prominent feature of this result is that:</p>
+  <ol xmlns="">
+    <li>1. The single-handed chapters/acts ﬁt in well with the author’s cluster (Chapters 1 and 3 of<em> The Perils of Certain English Prisoners</em> perch in the topmost sub-cluster together with the Overture and Act 3 of <em>No Thoroughfare</em>, whereas <em>The Frozen Deep</em> and Act 2 of<em> No Thoroughfare </em>are found as the nearest neighbours to each other, with Chapter 2 of <em>The Perils </em>placed in the Collins cluster.</li>
+    <li>2. The co-authored chapters/acts form slightly distant sub-clusters in each of the two author’s main clusters</li>
+  </ol>
+  <h2 xmlns="">4.Letting the Delta roll through to find dynamic shifts in style</h2>
+  <p xmlns="">Although the result of cluster analysis, being in consonant with the bibliographical details given in Table 1, helps conﬁrm the effectiveness of style markers found through a <em>Zeta</em> test, it inevitably tells us about the limitation of the procedure that captures only a static snapshot of stylistic similarity or difference between texts. Language is never monolithic throughout a text. Language in ﬁction varies wildly from narratives to dialogue, or vice versa. Language in ﬁction is indeed quite mobile. </p>
+  <p xmlns="">We need, therefore, a technique to capture dynamic style change. If the collaborated chapters can be sliced into consecutive segments of n words with a partial over- lapping so that we can roll through to focus upon a certain stretch of text like a moving camera rather than take the entire text/chapter in one snapshot, it will be possible to detect subtle fluctuations of style between one stretch and another as well as to pinpoint where one author takes over from another, etc. Eder, Rybicki, and Kestemont’s Rolling <em>Delta</em> was developed exactly for this purpose.</p>
+  <p xmlns="">Figure 5 shows a result of Rolling Delta run with a window size set to 3,000 words, a step size of 300 words, using 100 most common words as variables. The whole text of <em>The Perils of Certain English Prisoners</em> is cut into consecutive 3,000 word-segments, with each segment compared with the centroids of Dickens and Collins, respectively.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_2_figure4.jpg"/>
+    <figcaption>
+      <p>Fig. 5: Rolling Delta: The Perils of Certain English Prisoners and the centroids of Dickens and Collins</p>
+    </figcaption>
+  </div>
+  <p xmlns="">What strikes us is that the two major intersections (marked with green vertical lines) roughly correspond to the chapter boundaries in the text, a result that illustrates how the technique is capable of pinpointing possible authorial takeovers.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_2_figure5.jpg"/>
+    <figcaption>
+      <p>Fig. 6: Rolling Delta: The collaborated chapters of the Lazy Tour (The thicker line indicates Dickens’s centroid)</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Fig 6 displays Delta polygons of the four collaborated chapters of the <em>Lazy Tour of Two Idle Apprentices</em>. Of particular interest is that a remarkably similar pattern holds throughout the four diagrams: it is always Dickens who takes the lead at the outset of a chapter. He runs quarter or halfway (at most) into each chapter before passing over to Collins. The series of Rolling Delta plots seem to reﬂect an interesting nature of collaboration as well as the unequal partnership (Nayder, 2002) between Dickens and Collins: Dickens always takes initiative, sets a keynote for the whole chapter, which Collins takes over and continues the rest of chapters, a typical relationship between a master and his disciples. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Allingham, P. V.</strong> (2011). <em>A Comprehensive List of Dickens’s Short Fiction, 1833-1868</em>. The Victorian Web. [Online] (Last accessed 31 October 2013.) http://www.victorianweb.org/authors/dickens/pva/5.html</p>
+  <p xmlns=""><strong>Brannan, R. L. </strong>(1966). <em>Under the Management of Mr. Charles Dickens: His Production of "The Frozen Deep"</em>. Ithaca, New York: Cornell University Press.</p>
+  <p xmlns=""><strong>Burrows, J.</strong> (2002). <em>Delta: a Measure of Stylistic Difference and a Guide to Likely Authorship</em>. LLC, 17. 267-287.</p>
+  <p xmlns=""><strong>Burrows, J. </strong>(2005).  <em>Who wrote Shamela?  Verifying the Authorship of a Parodic Tex</em>t, LLC, 19/4: 453–475</p>
+  <p xmlns=""><strong>Burrows, J.</strong> (2007). <em>All the Way Through: Testing for Authorship in Different Frequency Strata</em>, LLC, 22/1: 27–47.</p>
+  <p xmlns=""><strong>Craig, H. and A. Kinney</strong> (eds.)  (2009).  <em>Shakespeare, Computers, and the Mystery of Authorship</em>. Cambridge: Cambridge University Press.</p>
+  <p xmlns=""><strong>Dunning, T.</strong> (1993).  A<em>ccurate methods for the statistics of surprise and coincidence</em>, Computational Linguistics, 19/1: 61–74.</p>
+  <p xmlns=""><strong>Eder, M. </strong>(2010).  <em>Does Size Matter?  Authorship Attribution, Small Samples, Big Problem</em>, Digital Humanities 2010 Conference Abstracts, King’s College London, 132–5.</p>
+  <p xmlns=""><strong>Eder, M. and J. Rybicki </strong>(2009). <em>PCA, Delta, JGAAP and Polish Poetry of the 16th and the 17th Centuries: Who Wrote the Dirty Stuff?</em>, Digital Humanities 2009 Conference Abstracts, University of Maryland, College Park, 242–4.Eder, M., J. Rybicki, and M. Kestemont (2013) Computational Stylistics [Online] (Last accessed 31 October 2013.) https://sites.google.com/site/computationalstylistics/home</p>
+  <p xmlns=""><strong>Eder, M., M. Kestemont and J. Rybicki</strong> (2013). <em>Stylometry with R: a suite of tools</em>. Digital Humanities 2013 Conference Abstracts. University of Nebraska–Lincoln, NE, 487–9.</p>
+  <p xmlns=""><strong>Hoover, D. L. </strong>(2003). <em>Multivariate Analysis and the Study of Style Variation</em>, Literary and Linguistic Computing, 18/4: 341–360.</p>
+  <p xmlns=""><strong>Hoover, D. L. </strong>(2004). <em>Testing Burrows’s Delta, Literary and Linguistic Computing</em>, 19/4: 453–475. Hoover, D. (2010). Teasing out authorship and style with t-tests and Zeta.  Digital Humanities 2010 Conference Abstracts, King’s College London, 168–70.</p>
+  <p xmlns=""><strong>Hoover, D. </strong>(2011).  <em>The Tutor’s Story: a case study of mixed authorship</em>.  Digital Humanities 2012 Conference Abstracts, Stanford University, Stanford, CA, 149–51.</p>
+  <p xmlns=""><strong>Hoover, D. </strong>(2012).<em> The rarer they are, the more they are, the less they matter</em>. Digital Humanities 2012 Conference Abstracts, Hamburg University, Hamburg, 218–21.</p>
+  <p xmlns=""><strong>Hoover, D. </strong>(2013). <em>Almost All the Way Through — All at Once</em>. Digital Humanities 2013 Conference Abstracts, University of Nebraska–Lincoln, NE, 223–6</p>
+  <p xmlns=""><strong>Kilgariff, A. </strong>(2001). <em>Comparing Corpora</em>. International Journal of Corpus Linguistics 6 (1): 1–37.</p>
+  <p xmlns=""><strong>Lane, M. </strong>(1956). <em>Introduction. In The Oxford Illustrated Dickens, Christmas Stories</em>. Oxford: OUP</p>
+  <p xmlns=""><strong>Lijffjt, J., T. Sälly, and T. Nevalainen</strong> (2012) <em>Chi-square test considered harmful: Better methods fo testing the signiﬁcance of word frequencies,</em> A paper presented at ICAME 33, 30 May–3 June 2012, Leuven, Belgium.</p>
+  <p xmlns=""><strong>Nayder, L.</strong> (2002).  <em>Unequal Partners:  Charles Dickens, Wilkie Collins, and Victorian Authorship</em>. Ithaca/London: Cornell UP.</p>
+  <p xmlns=""><strong>Rayson, P. and R. Garside</strong> (2000).  <em>Comparing Corpora Using Frequency Proﬁling, Proceedings of the Workshop on Comparing Corpora</em>, Held in Conjunction with the 38th Annual Meeting of the Association for Computational Linguistics (ACL 2000), 1–8 October 2000, Hong Kong.  1–6. Available online at http://www.comp.lancs.ac.uk/computing/users/paul/phd/phd2003.pdf.</p>
+  <p xmlns=""><strong>Rybicki, J. </strong>(2009).<em> Translation and Delta Revisited: When We Read Translations, Is It the Author or the Translator that We Really Read?</em>, Digital Humanities 2009 Conference Abstracts, University of Maryland, College Park, 245–7.</p>
+  <p xmlns=""><strong>Rybicki, J.and M. Eder</strong> (2011). <em>Deeper Delta across genres and languages: do we really need the most frequent words?</em>, Literary and Linguistic Computing, 26/3: 315–321.</p>
+  <p xmlns=""><strong>Stone, H.</strong> (ed.) (1968). <em>Charles Dickens’ Uncollected Writings from “Household Words” 1850–1859. </em>2 vols. Bloomington: Indiana UP.</p>
+  <p xmlns=""><strong>Tabata, T.</strong><em>Approaching Dickens’s Style through Random Forests</em>, Digital Humanities 2012 Conferenc Abstracts, University of Hamburg, Germany, 388–91.</p>
+  <p xmlns=""><strong>Thomas, D. A.</strong> (1982).<em> Dickesn and the Short Story</em>. Philadelphia: University of Pennsylvania Press. </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

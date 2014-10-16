@@ -1,0 +1,69 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-877.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>μServices and The Riddle of Literary Quality</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>319 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto: gertjan.filarski@huygens.knaw.nl "><span class="author-surname">Filarski</span>,
+									<span class="author-forename">Gertjan</span></a>
+        <a href="http://www.google.com/#q=Filarski, Gertjan">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Huygens ING, Netherlands, The </span>
+      </li>
+      <li>
+        <a href="mailto:hayco.de.jong@huygens.knaw.nl"><span class="author-surname">de Jong</span>,
+									<span class="author-forename">Hayco</span></a>
+        <a href="http://www.google.com/#q=de Jong, Hayco">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Huygens ING, Netherlands, The </span>
+      </li>
+      <li>
+        <a href="mailto:karina.van.dalen@huygens.knaw.nl"><span class="author-surname">van Dalen-Oskam</span>,
+									<span class="author-forename">Karina</span></a>
+        <a href="http://www.google.com/#q=van Dalen-Oskam, Karina">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Huygens ING, Netherlands, The </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">The Riddle of Literary Quality is a project funded by the Computational Humanities Program of the Royal Netherlands Academy of Arts and Sciences (KNAW). It runs at Huygens ING in partnership with the Institute for Logic, Language and Computation of the University of Amsterdam, and the Fryske Akademy in Leeuwarden. The aim of the project is to develop a method and the necessary software to analyze low-level and high-level formal features in a corpus of modern Dutch long fiction, to find out whether formal features in the texts play a role in the reception and evaluation of the text by the readers. Can we get more insight into the responses of readers to, for instance, texts with on average longer versus shorter sentences, or using a larger vocabulary, or on average showing a more complex syntactical structure (cf. Jautze et al.)? Is there a difference between those texts that readers consider to be highly literary and those that are experienced as more lowbrow? Can we distinguish texts found good or bad by readers based on formal features in these texts? And how do the opinions of readers correlate with the kind of reader they are?</p>
+  <p xmlns="">The project thus aims to correlate formal features with readers’ opinions and readers’ roles. The analysis of the formal features is done through a chain of μServices that we will deal with in the second part of this paper. The first part is addressed to the analysis of readers’ opinions and readers’ roles. </p>
+  <h2 xmlns="">Survey</h2>
+  <p xmlns="">To gather information about readers and their responses we set up a large online survey in which we asked respondents some personal information (age, gender, postal code, level of education) and sixteen questions to find out what kind of reader they predominantly are: autonomous or ‘distanced’: reading for aesthical pleasure; or heteronomous ‘identifying’: reading for fun, to discover other cultures or places, or to identify with the main characters. We based our distinction and our questions on work done by Von Heydebrand &amp; Winko on sociological aspects of (literary) reading. Next to that, we presented a list of 400 recent novels, Dutch originals or translations into Dutch, and asked them to mark the ones they read. A selection of these novels was presented to them, with the question to evaluate these works on two scales: from ‘not so very literary’ to ‘highly literary’ and from ‘bad’ to ‘good’. The survey ran for six months, and received almost 14000 respondents. Analysis of the results has just started.</p>
+  <p xmlns="">The results of the survey will be correlated with the results of the measurements of formal features. We would like to describe the technical set-up we have devised to enable the scholars to analyze the texts in the corpus in a way that is trustworthy and sustainable, using μServices written in Java that can also be used by others to repeat and to verify our analyses.</p>
+  <h2 xmlns="">μServices</h2>
+  <p xmlns="">Research infrastructure for the Riddle of Literary Quality is designed with three goals in mind: research results must be reproducible; analytical tools must be reusable; the entire workflow must be maintainable and reliable. We aim to provide a toolset that allows for a verifiable system that will focus the discussion on the selected methodology - the procedures and algorithms. This also means that we will make the code behind each μService open source.</p>
+  <p xmlns="">To accomplish this goal the digital humanities engineering group at Huygens ING based the research infrastructure both on the results of COST Action IS0704: <em>An Interoperable Supranational Infrastructure for Digital Editions</em> (Interedition) – of which the institute was grant-holder – and the work of Joris van Zundert – chair of the Action. Van Zundert (Huygens ING) specified as an objective of the COST Action the development of lightweight and distributed interoperability solutions. These solutions were implemented through webservices. The CollateX algorithm of Ronald Haentjens Dekker (Huygens ING) and Gregor Middell (University of Würzburg) was among the first and most successful of a series of compact analytical demonstrators called μServices.</p>
+  <p xmlns="">The Riddle of Literary Quality does not aim to build a workflow management system. Such a top-down standardization methodology is left to large infrastructural programs like CLARIN, DARIAH or the Dutch Nederlab project. Instead we continue Interedition’s grassroots approach and leave (computational) researchers and PhD students free to experiment with high-level and low-level analytical algorithms in languages that range from Python to Java. These algorithms may or may not grow out to be part of the Riddle’s μService infrastructure and those that are deemed useful are eventually hosted at the institute’s servers. </p>
+  <p xmlns="">The current services fall in three distinct categories: data import and preparation; analysis and visualization and export. In the first group we offer e.g. a series of tools that convert documents to specified standards (such as ePub/PDF to TEI) and set the data in the correct character encoding (such as a conversion from Windows-1252, ISO8859 to UTF-8). To prepare the data for further analysis we have converted parsers like the Dutch Ucto: Unicode Tokenizer (Radboud University of Nijmegen/University of Tilburg) to a μService. The output data of services in this group is a standardized json format that can be read by the analytical services in the second category. Experiments in The Riddle currently focus on this analysis group. μServices in the third category perform output operations. Some create visualizations while others export the data to external environments for further analysis. For stylometric research e.g. we created a μService to export data from The Riddle to R and integrate it with the Stylo() package created at the Universities of Krakow (Macej Eder/Jan Rybicki) and Antwerp (Mike Kestemont).</p>
+  <p xmlns="">The entire suite of μServices will remain available for persistent access and may be used in alternate workflows or by external third-party software. Thus the suite does not only allow reproduction of the results of The Riddle but will also support entirely new and original research.</p>
+  <h2 xmlns="">Sample Workflow</h2>
+  <p xmlns="">As an example of a µServices-driven workflow we present one possible use of gathering statistical data from a corpus of ePubs. First, each ePub is sent to a service that prepares it for analysis by converting the book into a structured TEI document. Character-encoding issues are resolved by a second µService, resulting in a normalized, platform-independent UTF-8 version of the TEI-document. Subsequently, a third service offers extraction operations on the structural level of the file. This service is used to extract all relevant paragraphs. These paragraphs are split into sentences and words by one of a family of (TEI agnostic) tokenizers, such as the Ucto-µService. Statistical analysis of these tokens is possible by sending the resulting list of tokens to the exporter µService, which transforms the extracted tokens into a format suitable for use in R.</p>
+  <h2 xmlns="">Conclusion</h2>
+  <p xmlns="">To make sure that we are able to answer the main questions of The Riddle of Literary Quality – whether there are any correlations between readers' opinions about certain novels, readers' predominant reading role, and the values for a list of formal low-level and high-level features of the novels – we have chosen to develop a set of µServices that deal with single aspects of the needed analysis. By making these µServices available to other scholars we enable them to repeat and verify our research results. We provide users with tools that can be used to answer different questions than we have in The Riddle, thereby making the tools also useful in a wider sense for new original research. We hope our approach invites others to contribute µServices for further textual humanities research.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><em>CollateX</em>. <a href="http://collatex.net/">collatex.net</a></p>
+  <p xmlns=""><em>Interedition</em>. <a href="http://www.interedition.eu/">www.interedition.eu</a></p>
+  <p xmlns="">
+            &gt;<em>Riddle of Literary Quality.</em><a href="http://literaryquality.huygens.knaw.nl">literaryquality.huygens.knaw.nl</a></p>
+  <p xmlns=""><em>Ucto</em>. <a href="http://ilk.uvt.nl/ucto/">ilk.uvt.nl/ucto</a></p>
+  <p xmlns=""><strong><strong>Eder, M., Kestemont, M. &amp; Rybicki, J.</strong>,</strong> (2013).<em> Stylometry with R: a suite of tools.</em>Digital Humanities 2013: Conference
+            Abstracts. Lincoln: University of Nebraska-Lincoln, pp. 487-89. <a href="http://dh2013.unl.edu/abstracts/ab-136.html">dh2013.unl.edu/abstracts/ab-136.html</a></p>
+  <p xmlns=""><strong><strong>Heydebrand, R. von and Winko, S.</strong>,</strong> (1996), <em>Einfuehrung in die Wertung von Literatur. Systematik – Geschichte – Legitimation.</em> Paderborn etc.: Ferdinand Schoeningh, 1996</p>
+  <p xmlns=""><strong><strong>Jautze, K., Koolen, C., Cranenburgh, A. van and Jong, H. de</strong>,</strong> (2013).<em> From high heels to weed attics: a syntactic investigation of chick lit and literature.</em>Proceedings of the Workshop on Computational Linguistics for Literature 2013. <a href="http://aclweb.org/anthology/W/W13/W13-1410.pdf">aclweb.org/anthology/W/W13/W13-1410.pdf</a></p>
+  <p xmlns=""><strong><strong>Zundert, J. van, Middell, G., Hulle, D. Van, Haentjens Dekker, R., et al.</strong>,</strong> (2011). <em>Interedition: Principles, Practice and Products of an Open Collaborative Development Model for Digital Scholarly Editions. </em>Digital Humanities 2011: Conference Abstracts. Stanford: Stanford University. <a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-227.xml">dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-227.xml</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

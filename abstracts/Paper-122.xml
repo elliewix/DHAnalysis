@@ -1,0 +1,141 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-122.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>The Changing Canon of Beauty: Facial Attractiveness in the Representation of Human Faces in World Painting</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>414 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:versae@gmail.com"><span class="author-surname">de la Rosa</span>,
+									<span class="author-forename">Javier</span></a>
+        <a href="http://www.google.com/#q=de la Rosa, Javier">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">CulturePlex Lab, Western University</span>
+      </li>
+      <li>
+        <a href="mailto:ncaldas@uwo.ca"><span class="author-surname">Caldas</span>,
+									<span class="author-forename">Natalia</span></a>
+        <a href="http://www.google.com/#q=Caldas, Natalia">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">CulturePlex Lab, Western University</span>
+      </li>
+      <li>
+        <a href="mailto:ndutta2@uwo.ca"><span class="author-surname">Dutta</span>,
+									<span class="author-forename">Nandita</span></a>
+        <a href="http://www.google.com/#q=Dutta, Nandita">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">CulturePlex Lab, Western University</span>
+      </li>
+      <li>
+        <a href="mailto:jsuarez@uwo.ca"><span class="author-surname">Suárez</span>,
+									<span class="author-forename">Juan Luis</span></a>
+        <a href="http://www.google.com/#q=Suárez, Juan Luis">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">CulturePlex Lab, Western University</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">The face and its proportions have always captured our attention and produced fascination. Even newborns have been reported to dedicate more time to attractive faces than others<cite href="#n1">1</cite>. How these proportions are meant to be the guidelines that define facial beauty, has been an object of study since the times of Plato. However, absolute approaches, such as Hogarth's serpentine line<cite href="#n2">2</cite>, the Vitruvius' "well-shaped man"<cite href="#n3">3</cite>, <em>divina proportiones</em>, or mathematically based ratios such as golden, Fibbonacci, or 1:1.6, have proven insufficient to explain how beauty actually works<cite href="#n4">4</cite>. As Francis Galton said<cite href="#n5">5</cite>, "The general expression of a face is the sum of a multitude of small details, [...]."<strong> </strong>We can now afford to extend this concept and say that the attractiveness of a face is also the sum of a varied set of distinct features. Recent research on evolutionary psychology and neuroaesthetics suggest the same. Beauty of unknown faces seems to include aspects from averageness, symmetry, sexual diphormism, pleasant expressions, and youthfulness<cite href="#n6">6</cite><cite href="#n7">7</cite><cite href="#n8">8</cite><cite href="#n9">9</cite>. </p>
+  <p xmlns="">In this study we take state-of-the-art research results on attractiveness and beauty and extrapolate them to the analysis of faces in world painting. We first collected a data set of over 120,000 paintings, and applied industry standard face recognition algorithms to extract facial traits. Furthermore, based on meta-analysis of symmetry and averageness<cite href="#n10">10</cite>, we established clues on whether faces across time could be considered more beautiful, and when these trends occur.</p>
+  <h2 xmlns="">2. Method</h2>
+  <h2 xmlns="">2.1 Data-set</h2>
+  <p xmlns="">The data-set was obtained from pintura.aut.org, a nonprofit organization working on autism<cite href="#n11">11</cite>. The whole set of 120,000 images of paintings was narrowed down to 25,000 images by removing the paintings with no faces. The number of faces found is about 47,000. The distribution of the number of faces per paintings follows a power-law that fits into the Pareto principle.</p>
+  <p xmlns="">For the current study only 5,800 faces were taken into account: frontal faces no smaller than 150 pixels in height, with pitch and yaw angles between 10º and -10º with respect to the vertical line, and with valid information for at least the following traits: eyes, nose, mouth, height, width, and center of the face. Face rotation or roll was fixed geometrically. Our analysis covers the period between 13th and 19th centuries. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_106_faces_per_gender.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Distribution of the number of male and female faces per century</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">2.1. Averageness</h2>
+  <p xmlns="">For each century an average male and female face has been computer-generated (see Figure 2), in addition to a non-gender-specific one that combines both genders. In order to produce this averaged composite face, we first centered the faces according to the <em>center</em> point given by the face recognition algorithm. Faces were then resized to make them fit into a PNG canvas of 500 by 500 pixels at 300dpi resolution, and given a height of 200 pixels (faces with height lower than 150 pixels were excluded to avoid blurred pixelation of the average face). This process was achieved by using affine and projective 2D transformations<cite href="#n12">12</cite> from the original painting to the desired canvas. Every face standardized by size was converted into a 3D numerical matrix representing each of the layers of the RGB color model. A regular statistical mean was then calculated over the set of faces of each century in order to obtain the average value for each pixel. Once the average matrix was calculated, it was converted back into a PNG image.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_106_average_female_male_face_20.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Average 20th Century female face from 1058 faces (left), and male from 1017 faces (right).</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Resulting quality and averageness of the composite rely on the number of faces used in each century for generating the averaged face. The same face recognition algorithm used in the data-set is then applied to averaged composites. This allows us to measure the averageness of a face as the difference between its symmetry and the symmetry of the average face for that particular period. Averageness refers to the degree to which a given face resembles the majority of faces. In our study averageness values go from the most average, 0, to the least, 1.</p>
+  <h2 xmlns="">2.2 Symmetry</h2>
+  <p xmlns="">Calculation of symmetry is commonly based on Grammer and Thornhill's early work <cite href="#n13">13</cite> . Their method makes use of 12 different points (one more for averageness): 2 for each eye, 2 for the nose, 2 for the mouth, 2 for the cheekbones, and the last 2 for the jaw. With those, they create lines for each pair and calculate their midpoints. In a perfect symmetrical face, all midpoints must lie on the same vertical line. Although we did not work with those 12 points, our algorithm still used 3 points for the mouth (left, center, and right), 1 for each pupil, and 1 for the nose. This number of traits proved enough for symmetry calculation; therefore, even though our methodology is slightly different from the one proposed by Grammer and Thornhill, the main idea remains unchanged.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_106_method1.jpg"/>
+    <figcaption>
+      <p>Fig. 3: (a) Example of face and detected points for eyes, nose, mouth and center. (b) Vertical line, H, to divide the face into two hemifaces, and numerated points for all the features. (c) Lines for calculating distances between midpoints and hemiface line.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Additionally our algorithm also gave us the centroid or geometric center of all detected features (Figure 3a), which can be taken as the center of the face. From it, we can set a straight line that splits the face into two sides or hemifaces. Figure 3b shows points 1 to 6 (P1 for left eye, P2 for right eye, P3 for nose, P4 for mouth center, P5 for left mouth corner, and P6 for right mouth corner), as well as the line H, that we assume to be the axis of face symmetry. We now trace segments: D1 between P1 and P2, and D2 between P5 and P6 (Figure 3c). For these segments we calculate the midpoints M1 and M2. Symmetry is now obtained as the sum of the distances in pixels of M1, M2, P3 and P6 with respect to the line H. Only lateral symmetry is therefore estimated. For perfect symmetrical faces this value adds to zero; all symmetry values are normalized between 0 and 1.</p>
+  <h2 xmlns="">3. Results</h2>
+  <p xmlns="">Figures 4 and 5 summarize the averages calculated per century for averageness and symmetry values, respectively.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_106_averageness_per_gender.jpg"/>
+    <figcaption>
+      <p>Fig. 4: Distribution of average values of averageness per century for female and male faces conforms to their own gender-specific averageness (solid lines), and to the combined averageness with both genders (dashed lines).</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Figure 4 shows the distribution of averageness for male and female faces compared to their gender specific averaged composite. In dashed lines we can also see the same distribution but in regards to non-gender-specific average face. A quick two-sample Kolmogorov–Smirnov test allows us to see that there is no significant difference between the two male distributions (<em>p</em>=0.92) and the two female ones (<em>p</em>=0.51).</p>
+  <p xmlns="">For male faces, we observe that the levels of averageness are low in the 13th Century, but then begin to decrease until the 17th Century, which leads to a gradual increase until the 20th Century. Averageness, difference between faces and the averaged composite face of each century, can give clues on how similar faces are to each other. Therefore, the peak seen in the 17th Century may be explained by the recovery of the Greek style in Neoclassicism where the faces depicted were following the same pattern, resulting in a closer distance for each one to the average face.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_106_simmetry_per_gender.jpg"/>
+    <figcaption>
+      <p>Fig. 5: Distribution of average values of symmetry per century for male faces (blue), female (magenta), and both (dashed gray).</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Average values of symmetry per century are shown in Figure 5 for male, female, and both. We see that most symmetrical female faces were found in the 15th Century and male faces in the 18th Century. After that, all faces rapidly become asymmetrical during the 19th and 20th Century. This might be explained by the then new art styles, such as Rococo, that rejected the concept of symmetry from previous styles, such as Baroque and Neoclassicism.</p>
+  <h2 xmlns="">4. Discussion and Further Research</h2>
+  <p xmlns="">As reported by previous studies (e.g. ), there might be a link between averageness and attractiveness evaluations, which suggests that the more average the face, the more attractive it is perceived to be. Therefore, representations closer to the mean tendency of a population are preferred rather symmetry. Extrapolating these ideas to our results (see Figure 4): male faces were more attractive in the 17th Century; unlike female faces, that experimented a decrease in averageness for the same period, hence, so did their perceived beauty.</p>
+  <p xmlns="">Results from the symmetry analysis seem to support the same trend: faces were more symmetrical, and allegedly more attractive, between the 14th and 17th Century. These results would be further supported by means of rating experiments. We have found differences between genders that merit more research.</p>
+  <p xmlns="">Finally, while the purpose of this study was to establish when faces were seen as more attractive, some researchers have noticed a weak link between beauty and health that should be explored in the future. Skin tone in relation to attractiveness is also a topic that seems to be gaining more interest in the last years.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Grammer, Karl, and Randy Thornhill</strong> (1994). <em>Human («Homo sapiens») facial attractiveness and sexual selection: The role of symmetry and averageness.</em> Journal of comparative psychology 108.3: 233.
+          </p>
+  <p xmlns="">2. <strong>Hogarth, William</strong> (1772). <em>The analysis of beauty</em>. Printed by W. Strahan for Mrs. Hogarth.
+          </p>
+  <p xmlns="">3. <strong>Pollio, Vitruvius</strong> (1867). <em>De architectura</em>. Teubner.
+          </p>
+  <p xmlns="">4. <strong>Etcoff, Nancy</strong> (2011). <em>Survival of the prettiest: The science of beauty</em>. Random House Digital, Inc..
+          </p>
+  <p xmlns="">5. <strong>Etcoff, Nancy</strong> (2011). <em>Survival of the prettiest: The science of beauty</em>. Random House Digital, Inc.
+          </p>
+  <p xmlns="">6. <strong>Thornhill, Randy, and Steven W. Gangestad</strong> (1999). <em>Facial attractiveness.</em> Trends in cognitive sciences 3.12: 452-460.
+          </p>
+  <p xmlns="">7. <strong>Rhodes, Gillian, and Leslie A. Zebrowitz</strong> (2002). <em>Facial attractiveness: Evolutionary, cognitive, and social perspectives</em>. Vol. 1. Ablex Publishing Corporation.
+          </p>
+  <p xmlns="">8. <strong>Berry, Diane S.</strong> (2000) <em>Attractiveness, attraction, and sexual selection: Evolutionary perspectives on the form and function of physical attractiveness.</em> Advances in experimental social psychology 32: 273-342.
+          </p>
+  <p xmlns="">9. <strong>Etcoff, Nancy</strong> (2011). <em>Survival of the prettiest: The science of beauty</em>. Random House Digital, Inc..
+          </p>
+  <p xmlns="">10. <strong>Rhodes, Gillian</strong> (2006). <em>The evolutionary psychology of facial beauty.</em> Annu. Rev. Psychol. 57: 199-226.
+          </p>
+  <p xmlns="">11. <a href="http://pintura.aut.org/">pintura.aut.org/</a> Accessed on Oct 31st, 2013.
+          </p>
+  <p xmlns="">12. <strong>Schneider, Philip, and David H. Eberly</strong> (2002). <em>Geometric tools for computer graphics</em>. Morgan Kaufmann.
+          </p>
+  <p xmlns="">13. <strong>Grammer, Karl, and Randy Thornhill</strong> (1994). <em>Human («Homo sapiens») facial attractiveness and sexual selection: The role of symmetry and averageness.</em> Journal of comparative psychology 108.3: 233.
+          </p>
+  <p xmlns="">14. <strong>Gombrich, Ernst Hans, and Ernst Hans Gombrich</strong> (1995). <em>The story of art</em>. Vol. 15. London: Phaidon.
+          </p>
+  <p xmlns="">15. <strong>Rhodes, Gillian</strong> (2006). <em>The evolutionary psychology of facial beauty.</em> Annu. Rev. Psychol. 57: 199-226.
+          </p>
+  <p xmlns="">16. <strong>Komori, Masashi, Satoru Kawamura, and Shigekazu Ishihara</strong> (2009). <em>Averageness or symmetry: which is more important for facial attractiveness?.</em> Acta psychologica 131.2: 136-142.</p>
+  <p xmlns="">17. <strong>Wade, T. Joel</strong> (1996). <em>The relationships between skin color and self-perceived global, physical, and sexual attractiveness, and self-esteem for African Americans.</em> Journal of Black Psychology 22.3: 358-373.
+          </p>
+  <p xmlns="">18. <strong>Hill, Mark E.</strong> (2002). <em>Skin color and the perception of attractiveness among African Americans: Does gender make a difference?.</em> Social Psychology Quarterly: 77-91.
+          </p>
+  <p xmlns="">19. <strong>Swami, Viren, Adrian Furnham, and Kiran Joshi</strong> (2008). <em>The influence of skin tone, hair length, and hair colour on ratings of women's physical attractiveness, health and fertility.</em> Scandinavian Journal of Psychology 49.5: 429-437.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

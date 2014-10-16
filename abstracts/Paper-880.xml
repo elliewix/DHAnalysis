@@ -1,0 +1,192 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-880.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Beautiful lips and porcelain cheeks: extracting physical descriptions from recent Dutch fiction</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>8</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>319 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:c.w.koolen@uva.nl"><span class="author-surname">Koolen</span>,
+									<span class="author-forename">Corina</span></a>
+        <a href="http://www.google.com/#q=Koolen, Corina">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Amsterdam, Netherlands, The </span>
+      </li>
+      <li>
+        <a href="mailto:s.wubben@uvt.nl"><span class="author-surname">Wubben</span>,
+									<span class="author-forename">Sander</span></a>
+        <a href="http://www.google.com/#q=Wubben, Sander">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Amsterdam, Netherlands, The </span>
+      </li>
+      <li>
+        <a href="mailto:andreas.van.cranenburgh@huygens.knaw.nl"><span class="author-surname"> van Cranenburgh</span>,
+									<span class="author-forename">Andreas</span></a>
+        <a href="http://www.google.com/#q= van Cranenburgh, Andreas">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Amsterdam, Netherland</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">In literary analysis, description – as opposed to narration – has previously often been an underestimated part of fiction. Literary theorists such as Bal, Lopes and Nünning however have made a case for its relevance [1, 6, 8]. Lopes reviews how well-known theorists like Barthes have dismissed description as ‘extra’, irrelevant or stalling the plot; he counters these notions with the statement that “[d]escription and narration constitute the two most basic modes of structuring any prose fiction text” [6, p. 19]. How the plot is conveyed, is relevant for how a text is judged. Literary theorist Wells for instance argues that description is the distinguishing factor between quality literature and ‘simple’ chick-lit novels [15]. Indeed, research has shown that literary novels contain significantly more noun phrases and prepositional phrases than chick lit, indicating a larger amount of description [5]. In this paper, the first steps are taken of a larger project in which description in fiction is computationally analyzed, as opposed to the now popular computational analysis of narrative (see for instance 7). The preliminary question that we want to answer is: how (well) can we extract descriptions from fiction? This will be tested in the current paper by zooming in on a specific domain: the physical description of fictional characters.</p>
+  <h2 xmlns="">2. Motivation</h2>
+  <p xmlns="">Descriptions of physical appearance are chosen as a test case as they are more likely to occur in a current-day novel than for instance landscape description. Moreover, main characters are often introduced in the first chapters. This makes it possible in case of manual tagging (which we have done) to tag only the first chapters of a novel. Finally, it would be an interesting feature for further literary interpretation. Connotations of beauty in folk tales have been researched [i.e. 14], but this has not yet been done for novels.</p>
+  <h2 xmlns="">3. Method</h2>
+  <p xmlns="">The corpus of [5] is used, consisting of 32 novels of recent Dutch fiction, half chick-lit, half literary novels. Two of them were tagged from beginning to end for descriptions of physicality, including clothing. One is a literary novel, De schilder en het meisje (‘The painter and the girl’) by Margriet de Moor, the other chick lit, Zwaar verliefd (‘Heavily in Love’) by Chantal van Gastel. Bal defines description as “a textual fragment in which features are attributed to objects” [1, p. 36], a definition we will follow. We tagged full sentences that were either mainly concerned with physical appearance (example 1a, Van Gastel), mentioned a single feature (1b, De Moor) or somewhere in between. </p>
+  <p xmlns=""><strong>1a.</strong> Hij heeft mooie lippen. <em>He has beautiful lips. </em></p>
+  <p xmlns=""><strong>1b.</strong> Door de rook heen keek hij naar de porseleinen wangen van mevrouw Cloeck[.]  <em>Through the smoke he watched madam Cloeck’s porcelain cheeks[.] </em></p>
+  <p xmlns="">For the extraction, two approaches are compared: (1) manual development of lexical-linguistic patterns and (2) a Naive Bayes and an SVM classifier. For the former, because patterns were manually developed on the basis of two novels, the patterns were subsequently tested on the other 30 novels, each of which the first 500 sentences were manually tagged.</p>
+  <h2 xmlns="">3.1 Lexical-linguistic patterns </h2>
+  <p xmlns="">After an initial exploration of the two main novels’ tagged sentences, an approach was adopted of manually developing patterns to detect sentences containing description. Hearst uses similar patterns to harvest hyponyms [3]. Patterns consist of a combination of linguistic and lexical information, see example 2 below. A set of 13 patterns was written. The manual exploration showed that sentences containing physical descriptions, as opposed to sentences with no such descriptions, (a) contain more nouns and adjectives, (b) are regularly coupled with a few specific, static verbs, and (c) contain a couple of recurring base lexical-linguistic patterns, e.g., 'He was [a manNP] [[withPP] [brown eyesNP]]’. To perform extraction, the corpus was parsed with Dutch parser Alpino [2, 12]. Alpino parse trees provide rich linguistic annotations of sentences such as grammatical function of constituents. The trees can be queried with XPath, which was integrated in Van Cranenburgh's TreeSearch interface [5]. Linguistic information alone does not suffice however to target physical descriptions, so we used Cornetto, the Dutch WordNet [13], to expand a manually constructed lexicon of nouns and adjectives related to physical descriptions. The lists were cleaned to exclude words that were not relevant to the topic, resulting in a lexicon of almost 600 words. </p>
+  <p xmlns="">An example of a pattern translated to an xPath query is:</p>
+  <table xmlns="">
+    <tr>
+      <td>
+							//node[@cat="pp" and @rel="mod"]//node[%uiterlijkA%]/../node[%uiterlijkN% or %kleding%]
+						</td>
+    </tr>
+  </table>
+  <p xmlns="">Example 2: This pattern searches for a modifying prepositional phrase which contains an adjective and a noun from the lexicon. </p>
+  <h2 xmlns="">3.2 Machine learning </h2>
+  <p xmlns="">We cast the task of extracting physical descriptions as a text classification task in order to use machine learning methods. The task then becomes for a given text to automatically assign a class to it (in our case: physical description or no physical description). Usually, text classification is done on the document level. This means that for each document a corresponding class is predicted [10]. Algorithmic methods used for the classification task vary widely. Naive Bayes classification and Support Vector Machines (SVM) were used, two established straight-forward approaches to text classification [4, 9, 11]. We adapted these approaches to our task of classifying sentences. Each sentence was classified as either a description or not, in order to extract the descriptions. </p>
+  <h2 xmlns="">4. Results</h2>
+  <h2 xmlns="">4.1. Lexical-linguistic patterns</h2>
+  <p xmlns="">Precision, recall and F-measure were calculated for each pattern separately for the two main novels, for the test set of 30 novels, for a cumulative set of all pattern results, and for chick-lit versus literary novels; the most important results can be found in table 1. Sentences that were extracted more than once were calculated as one hit.</p>
+  <h2 xmlns="">4.1. Lexical-linguistic patterns</h2>
+  <table xmlns="">
+    <tr>
+      <td> </td>
+      <td> F-measure (%)</td>
+      <td>Precision (%) </td>
+      <td>Recall (%) </td>
+    </tr>
+    <tr>
+      <td>Test set-all novels </td>
+      <td> 31</td>
+      <td>29 </td>
+      <td>35 </td>
+    </tr>
+    <tr>
+      <td>Test set-litterature </td>
+      <td>25</td>
+      <td>29 </td>
+      <td>22 </td>
+    </tr>
+    <tr>
+      <td> Test set-chick lit </td>
+      <td>18 </td>
+      <td>28 </td>
+      <td>13 </td>
+    </tr>
+    <tr>
+      <td> Main novels</td>
+      <td> 16 </td>
+      <td> 24 </td>
+      <td> 12 </td>
+    </tr>
+  </table>
+  <p xmlns="">
+    <em>Table 1: Results for lexical-linguistic pattern-based extraction </em>
+  </p>
+  <p xmlns="">An unexpected outcome was that the results were much better for the 30 novels in the test set than for the two novels on the basis of which the patterns were developed; the percentage of descriptions might be higher in the first chapters. Another interesting result was the performance on literary novels, which was better than on chick lit. An explanation might be that in chick lit, sentences are shorter [see 5], more often elliptic (‘And his mouth… He has beautiful lips. Precisely full enough.’) and regularly discuss physicality through dialogue, for which it is hard to develop patterns. Generic patterns, containing little more than lexical information, achieved higher scores than more specific ones. The specific patterns did improve the cumulative outcome. Further research is needed, but an expansion of the lexicon might raise performance. </p>
+  <h2 xmlns="">4.2 Machine learning </h2>
+  <p xmlns="">We trained our classifiers on the two annotated novels. The features selected as input for the classifiers are words weighted with tf.idf, for which we considered the sentences as documents and the novels as the collection of documents. Experiments were also performed for bigrams and part-of-speech tags, but the results were comparable to the results we report here. We performed ten-fold cross validation on the set of sentences from each novel and both novels combined. We found that Naive Bayes outperforms SVM for this task, as can be observed in Table 2.</p>
+  <table xmlns="">
+    <tr>
+      <td> </td>
+      <td> F-measure (%) </td>
+      <td> Precision (%) </td>
+      <td> Recall (%) </td>
+    </tr>
+    <tr>
+      <td>
+        <strong> Both novels </strong>
+      </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> Naive Bayes </td>
+      <td> 60 </td>
+      <td> 57 </td>
+      <td> 62 </td>
+    </tr>
+    <tr>
+      <td> SVM </td>
+      <td> 58 </td>
+      <td> 59 </td>
+      <td> 58 </td>
+    </tr>
+    <tr>
+      <td>
+        <strong> Zwaar verlifd</strong>
+      </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> Naive Bayes</td>
+      <td> 62 </td>
+      <td> 61 </td>
+      <td> 64 </td>
+    </tr>
+    <tr>
+      <td> SVM</td>
+      <td> 57 </td>
+      <td> 59 </td>
+      <td> 56 </td>
+    </tr>
+    <tr>
+      <td> <strong>De schilder en het meisje</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> Naive Bayes </td>
+      <td> 58 </td>
+      <td> 55 </td>
+      <td> 62 </td>
+    </tr>
+    <tr>
+      <td> SVM</td>
+      <td> 52 </td>
+      <td> 53 </td>
+      <td> 51 </td>
+    </tr>
+  </table>
+  <p xmlns="">
+    <em>Table 2: Results for the Naive Bayes and SVM classifier </em>
+  </p>
+  <p xmlns="">Performance is considerably higher than that of the pattern-based approach. The skewedness of the class distribution (descriptions form only a small portion of a novel) makes this classification task a hard one, but overall this is a promising method. This machine learning approach can be regarded as a baseline: more sophisticated methods might yield better results.</p>
+  <h2 xmlns="">5. Conclusion</h2>
+  <p xmlns="">A comparison of two methods for extracting sentences containing physical descriptions paints a clear picture: extracting such information is a complex matter but not impossible, and machine learning performs better than a manual-based approach. However, the main benefit of using the manual tagging and patterns is the insight they give in the form of the sentences that contain the sought-after descriptions, whereas the bag-of-words approach of the machine learning method is limited to finding features based on individual words. A possibility for future research is extension of the patterns and the lexicon to see if the results can be improved, but we prefer to pursue a bottom-up approach. A combination of the methods could be fruitful: using the patterns as features for machine learning. We could also explore descriptions on a different textual level; especially for the chick-lit novels, where use of ellipsis and dialogue confuses sentence extraction, larger fragments of texts should be analyzed. Targeted topic modeling might be useful for this purpose.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Bal, M</strong>. (2009). <em>Narratology: Introduction to the Theory of Narrative</em>. Toronto: University of Toronto Press. </p>
+  <p xmlns="">2. <strong>Bouma, G., Van Noord, G. and Malouf, R.</strong> (2001). <em>Alpino: Wide-coverage computational analysis of Dutch</em>. Language and Computers, 37(1). 45–59. </p>
+  <p xmlns="">3. <strong>Hearst, M.A. </strong>(1992). <em>Automatic Acquisition of Hyponyms from Large Text Corpora</em>. In Proceedings of the 14th Conference on Computational Linguistics, vol. 2 .539–545. </p>
+  <p xmlns="">4. <strong>Hearst, M.A., Dumais, S. T., Osman, E., Platt, J., and Scholkopf, B. </strong>(1998). <em>Support vector machines</em>. Intelligent Systems and their Applications, IEEE, 13(4). 18-28. </p>
+  <p xmlns="">5. <strong>Jautze, K., Koolen, C., Van Cranenburgh, A. and De Jong, H.</strong> (2013). <em>From High Heels to Weed Attics: a Syntactic Investigation of Chick Lit and Literature. In Proceedings of the Second Workshop on Computational Linguistics for Literature.</em> http://aclweb.org/anthology//W/W13/W13-1410.pdf. </p>
+  <p xmlns="">6. <strong>Lopes, J. M.</strong> (1995). <em>Foregrounded Description in Prose Fiction: Five Cross-literary Studies.</em> Toronto: University of Toronto Press. </p>
+  <p xmlns="">7. <strong>Mani, I.</strong> (2013). <em>Computational Narratology.</em> In The Living Handbook of Narratology. Eds. Hühn, P., Schmid W. and Schönert, J. http://www.lhn.uni-hamburg.de. </p>
+  <p xmlns="">8. <strong>Nünning, A. </strong>(2007). <em>Towards a Typology, Poetics and History of Description in Fiction</em>. In Description in Literature and Other Media. Eds. Wolf W. and Bernhart W. Amsterdam, New York: Rodopi. 91–128. </p>
+  <p xmlns="">9.<strong> Rish, I.</strong> (2001). <em>An empirical study of the naive Bayes classifier.</em> In IJCAI 2001 workshop on empirical methods in artificial intelligence, 3(22). 41-46. </p>
+  <p xmlns="">10. <strong>Sebastiani, F. (</strong>2002). <em>Machine learning in automated text categorization</em>. In ACM computing surveys (CSUR), 34(1). 1-47. </p>
+  <p xmlns="">11. <strong>Steinwart, I. and Christmann, A.</strong> (2008). <em>Support vector machines</em>. New York: Springer. </p>
+  <p xmlns="">12. <strong>Van Noord, G.</strong> (2006). <em>At last parsing is now operational</em>. In TALN06. Verbum Ex Machina. Actes de la 13e conference sur le traitement automatique des langues naturelles. 20–42. </p>
+  <p xmlns="">13.<strong> Vossen, P., Hofmann, K., De Rijke, M., Tjong Kim Sang, E., and Deschacht, K.</strong> (2007). <em>The Cornetto Database: Architecture and User-scenarios.</em> In Proceedings of the Dutch-Belgian Information Retrieval Workshop. 89–96. </p>
+  <p xmlns="">14.<strong> Weingart, S. and Jorgensen, J.</strong> (2012).<em> Computational Analysis of the Body in European Fairy Tales</em>. Literary and Linguistic Computing, 28(4). </p>
+  <p xmlns="">15. <strong>Wells, Juliette. </strong>(2005). <em>Mothers of Chick Lit? Women Writers, Readers, and Literary History</em>. In Chick Lit: The New Woman’s Fiction. Eds. Ferriss S. and Young, M. New York: Routledge. 45–70. </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

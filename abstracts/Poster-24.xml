@@ -1,0 +1,59 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-24.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Shedding Light on Dickens' Style Through Representativeness &amp; Distinctiveness</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:klaussnc@tcd.ie"><span class="author-surname">Klaussner</span>,
+									<span class="author-forename">Carmen</span></a>
+        <a href="http://www.google.com/#q=Klaussner, Carmen">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Trinity College Dublin</span>
+      </li>
+      <li>
+        <a href="mailto:j.nerbonne@rug.nl"><span class="author-surname">Nerbonne</span>,
+									<span class="author-forename">John</span></a>
+        <a href="http://www.google.com/#q=Nerbonne, John">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Groningen</span>
+      </li>
+      <li>
+        <a href="mailto:c.coltekin@rug.nl"><span class="author-surname">Çöltekin</span>,
+									<span class="author-forename">Çağrı</span></a>
+        <a href="http://www.google.com/#q=Çöltekin, Çağrı">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Groningen</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The present work is an exploration into Dickens' style using the statistical method of <em>Representativeness &amp; Distinctiveness</em> <cite href="#n1">1</cite> to detect words that Dickens either particularly preferred or avoided compared with other writers of his time. It takes as a starting point research reported on in DigitalHumanities 2012 <cite href="#n2">2</cite>, where Tabata used the classification algorithm <em>Random Forests <cite href="#n3">3</cite></em> to determine words able to distinguish Dickens' works from both contemporary author Wilkie Collins and a larger set of authors from the 18th and 19th century.</p>
+  <p xmlns=""><em>Representativeness &amp; Distinctiveness</em> was originally conceived in the realm of dialectometry, where it has been shown to detect lexical items distinguishing different dialectal areas. In the context of stylometry, the method detects elements for which an author is consistent throughout his own works while also separating him from others. Considering, for instance, a comparison between Dickens and fellow writer Collins on word features using a couple of novels of each writer, one first determines Dickens' <strong>representative</strong> terms, i.e. those words which he uses consistently either frequently or infrequently over his works. In order to arrive at a combined measure, one then favours those representative terms of Dickens that Collins uses either inconsistently or consistently but with a different frequency over his novels. The remaining group of words are considered to be Dickens' <em>representative</em> and <strong>distinctive</strong> terms when compared with Collins. Since the analysis is directional, the degree of Representativeness of individual features being different with respect to each author, comparisons are made twice - once from Dickens' to Collins' set and once from Collins' to Dickens' set. This returns two individual author profiles, where features occurring in both profiles are also consistent for both writers.</p>
+  <p xmlns="">Thus, Representativeness  &amp; Distinctiveness bears similarities with both Burrow's <em>Delta</em> <cite href="#n4">4</cite> and <em>Zeta</em><cite href="#n5">5</cite> in so far as favouring consistent terms that are irregular in the opposing author's set. Additionally, it is also similar to <em>Zeta</em> in being dependent on the other set for the selection of distinctive terms out of the representative ones. However, rather than preselecting words according to different frequency strata, it is used here on the first 5000 most frequent ones.</p>
+  <p xmlns="">We compare our results on "Dickens vs. Collins"  and "Dickens vs. World" to the earlier study using Random Forests (RF) classification that was also done on the basis of frequency comparisons. RF is a machine-learning technique based on ensemble learning from a large number of decision trees, hence "forests". Each tree is trained on a different subset of the training data and subsequently evaluated on the remainder. At each node a different subset of the total features are considered and selected according to the best split. Individual features' importance is averaged over all trees and similar to our method there is a measure of how useful a particular feature is for classification. Representativeness &amp; Distinctiveness and Random Forests are conceptually similar in that the document space is considered as a set of smaller comparisons between documents and distinguishing features are chosen accordingly. While RF presents the complete process of classification and evaluation, Representativeness  &amp; Distinctiveness, although less straightforward to evaluate, might have advantages in terms of interpretability.Since a gold-standard indicating the most prominent stylistic features of an author is generally not available, we evaluate author profiles over different iterations in cross-validation by testing how well the selected words are able to separate authors in clustering. For this purpose, we retain the shared words of both profiles, since the values for terms in only one author profile might not be consistent in the other author's documents. The next step is then to cluster all documents based on the relative frequency for those shared terms. Based on the ideal clustering result into the two author groups and the present iteration's clustering result, we compute the<em> Adjusted Rand Index </em><cite href="#n6">6</cite>. The evaluation technique proposed here is intended to measure classification ability of the author profiles and thus also appropriateness of the method responsible for choosing them. Applying it to our representative and distinctive profiles of Dickens and his contemporaries indicates a high degree of separation ability in clustering. Despite using a different method to determine the author profiles, there is a fair overlap of items with the earlier study using Random Forests, which would strengthen the assumption of them being genuine stylistic elements of Dickens and his peers. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Jelena Prokić, Çağrı Çöltekin, and John Nerbonne</strong> (2012). <em>Detecting shibboleths</em>. In: Proceedings of the EACL 2012 Joint Workshop of LINGVIS &amp; UNCLH. EACL 2012. Avignon, France: Association for Computational Linguistics, pp. 72-80.
+          </p>
+  <p xmlns="">2. <strong>Tomoji Tabata.</strong> (2012). <em>Approaching Dickens' Style through Random Forests</em>. In: Proceedings of the Digital Humanities. Hamburg, Germany.
+          </p>
+  <p xmlns=""><strong>Leo Breiman</strong> (2001). <em>Random Forests</em>. In: Machine Learning, pp. 5–32.
+          </p>
+  <p xmlns="">4. <strong>Burrows, J.</strong>  (2002). <em>‘Delta’: a measure of stylistic difference and a guide to likely authorship</em>, Literary and Linguistic Computing, 17 (3). 267–87.
+          </p>
+  <p xmlns="">5. <strong>Burrows, J.</strong> (2007). <em>All the Way Through: Testing for Authorship in Different Frequency Strata</em>. LLC 22: 27-47.
+          </p>
+  <p xmlns="">6. <strong>Lawrence Hubert and Phipps Arabie</strong> (1985). <em>Comparing partitions</em>. In: Journal of Classification 2.1 (Dec. 1985), pp. 193–218.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

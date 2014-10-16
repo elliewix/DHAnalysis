@@ -1,0 +1,158 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-200.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Framework for Quantitative Analysis of Scripts</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>315 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:vrs3@st-andrews.ac.uk"><span class="author-surname">Rajan</span>,
+									<span class="author-forename">Vinodh</span></a>
+        <a href="http://www.google.com/#q=Rajan, Vinodh">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of St Andrews</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <h2 xmlns="">1.1 Overview</h2>
+  <p xmlns="">Scripts are usually seen as simple carriers of languages. Research on scripts until recently has been minimal and niche, except for the field of paleography. Scripts
+are an important part of the cultural heritage of humanity and its analysis and study requires more research. Fortunately, there is a growing interest in analysis of
+scripts. Altmann <cite href="#n1">1</cite> published a volume
+titled “Analyses of Scripts: Properties of Characters and Writing Systems”
+to explore various properties of writing systems and scripts such as complexity, ornamentality and distinctivity.</p>
+  <p xmlns="">Changizi et al <cite href="#n2">2</cite> discuss the various contour configurations of written
+symbols and their similarity to the environment in which they were produced.  They also study the distribution of the configurations
+of various scripts. They <cite href="#n3">3</cite> further discuss the character complexity and the
+redundancy of stroke combinations of various writing systems in human
+history. It is to be noted that analysis in [2] [3] and most methods in [1] were performed manually. Traditionally, analysis and study in paleography have also been done manually. Digital paleographic methods are at present making more inroads into the field.
+However, applying quantitative analysis on paleographic data is not yet
+popular and standardized <cite href="#n4">4</cite>. This is partially due to the difficulty of quantifying paleographical features, and partially due to the lack of defined metrics with theoretical and qualitative underpinnings.</p>
+  <h2 xmlns="">1.2 Proposed Framework<p/></h2>
+  <p xmlns="">We propose here a quantitative analysis framework for scripts that is largely computational and requires minimal user interaction. We do not particularly aim at providing a completely autonomous framework, but rather to aid the user as much as possible, with the ability to manually intervene/override as required. The framework is based on various methods and techniques employed in the field of graphonomics. Our framework is grounded on the principles of handwriting production and handwriting analysis.</p>
+  <p xmlns="">We also explore various features used in the related area of gesture design and recognition and its application to the analysis of scripts. Through this, we attempt to find relevant metrics (with qualitative significance) with sufficient evaluation that might be used for glyphs and scripts for various purposes such as classification, visualization etc. The computed quantitative features could serve as descriptors for scripts, and  be used for comparing and analyzing scripts. This is especially applicable to the field of paleography, where such quantitative features are much needed. </p>
+  <h2 xmlns="">2. Quantitative Analysis Framework</h2>
+  <p xmlns="">Our proposed framework consists of the following modules. </p>
+  <h2 xmlns="">
+    <strong>2.1 Spline Conversion</strong>
+  </h2>
+  <p xmlns="">The characters of scripts are externally represented as B-splines. B-splines are very efficient in preserving the shape and curvature of glyphic segments. Additionally, they can be manipulated without significant effort. Rather than representing glyphs as pixelated data, converting them into splines eases analysis. This conversion of the glyphic shape of a character can be done automatically or manually. In a manual process, the user defines each shape of a character directly using a set of B-splines, or explicitly draws the shape, which is then internally converted into B-splines. An automatic conversion of glyphs involves thinning and then its conversion into splines. </p>
+  <h2 xmlns="">
+    <strong>2.2 Trajectory Reconstruction</strong>
+  </h2>
+  <p xmlns="">The shape of a character is static and
+does not contain all information required for analysis. Dynamic information relating to pen movements are not present in the shape. Trajectory reconstruction attempts to
+recover this temporal information <cite href="#n5">5</cite>. This kinematic information is essential in defining the character. With paleographic scripts reconstructing dynamic information is necessary as the trajectory is usually unknown. Also by altering the trajectory, the changes in dynamic features can be observed. </p>
+  <p xmlns="">The recovery is performed by conducting a global search using a set of
+heuristics, such as length minimization and curvature minimization <cite href="#n6">6</cite>. Especially in case of paleographic scripts, the algorithm is able to provide several
+alternative viable writing trajectories.</p>
+  <h2 xmlns="">
+    <strong>2.3 Stroke Segmentation</strong>
+  </h2>
+  <p xmlns="">Characters are best analyzed as sequences of natural strokes. Breaking them down into basic strokes is the optimal way for analyzing written characters. It also enables us to understand the process of handwriting. Stroke segmentation retrieves the structure of a character based
+on its trajectory. This
+is performed by segmentation of the
+character at various important landmark points of the recovered trajectory such as the <em>extrema of curvature</em> <cite href="#n7">7</cite>.</p>
+  <h2 xmlns="">
+    <strong>2.4 Character Representation</strong>
+  </h2>
+  <p xmlns="">Writing is usually considered to consist of two fundamental types of strokes – up-strokes and down-strokes <cite href="#n8">8</cite>. This distinction is necessary since both these two types behave differently. It has been proved that down-strokes usually do not show a lot of variation in handwriting compared to up-strokes <cite href="#n9">9</cite>.</p>
+  <p xmlns="">A character is internally represented as a set of strokes. This is consistent with the way that the character is internalized and produced by humans. This allows us to derive better features that are more natural and descriptive. Later, it will be possible to apply handwriting modelling to generate alternative scribal variants. </p>
+  <h2 xmlns="">
+    <strong>2.5 Feature Extraction</strong>
+  </h2>
+  <p xmlns="">For quantitative analysis, features need to be computed
+from the characters. These serve to quantify several aspects of the characters. We considered various features used in the field of gesture recognition <cite href="#n10">10</cite><cite href="#n11">11</cite> <cite href="#n12">12</cite><cite href="#n13">13</cite> and found the features listed below to be relevant to the analysis of characters. We also propose some features in addition to those found in the literature. These features/metrics could additionally serve as descriptors for the scripts. As quantitative features these can be widely used in analysis and/or visualization. </p>
+  <h2 xmlns="">
+    <strong>2.5.1 Production Features</strong>
+  </h2>
+  <p xmlns="">The effort that is required to realize and produce a character is an important element of its analysis.  It is related to the <em>number
+of velocity inversions</em>, <em>number of velocity breaks</em>, <em>number of pen lifts, etc., </em>which<em> </em>are computed from the stroke representation of the character. These features are calculated from the temporal information that was re-constructed at the earlier stage. These are relevant as they quantify the dynamic handwriting behavior present in the character. </p>
+  <h2 xmlns="">
+    <strong>2.5.2 Geometric Features</strong>
+  </h2>
+  <p xmlns="">Geometric features throw more light on the visual aspect of characters.
+These are essential for the study of the judged (visual) complexity <cite href="#n14">14</cite>. The features that relate to visual appearance are <em>compactness</em>, <em>openness,</em> <em>number of crossings</em>, <em>average curvature</em>, <em>sum of internal
+angles, bounding area, etc.</em>  Some of these, like <em>compactness and openness,</em> are ratios of several parameters such as <em>length of strokes, distance between first and last points,  </em>while others, like <em>average curvature</em>, are derived directly from the glyph structure.</p>
+  <h2 xmlns="">
+    <strong>2.5.3 Cognitive Features</strong>
+  </h2>
+  <p xmlns="">Though cognitive features cannot be directly measured, some cognitive
+features could be interpreted from the geometry of a character. The number of <em>unique landmark
+points</em> required to plan the trajectory is a possible feature that has
+correlation with the cognitive load of the glyph. An additional measure
+is the <em>number of minimal points</em> required to recreate the
+character.</p>
+  <h2 xmlns="">
+    <strong>2.5.4 Stroke Features</strong>
+  </h2>
+  <p xmlns="">Stroke based features such as the <em>primary direction</em> of the glyph, <em>ratio of upstrokes to downstrokes</em>, <em>direction change</em>, <em>histogram of inter-stroke angles</em> etc. are also computed for a character. </p>
+  <h2 xmlns="">
+    <strong>3. Prototype Implementation </strong>
+  </h2>
+  <p xmlns="">A prototype of the framework has been implemented in Python with the modules discussed above. We are planning to analyze the development of Indic scripts using the
+framework. The source code will be released under an open source
+license when the project reaches maturity. Its repository will also include a complete a set of Indian paleographic scripts. Below, we briefly describe functionality yet to be implemented in the prototype.</p>
+  <p xmlns="">From the perspective of paleographic scripts, the available glyphs in
+the literature are usually very noisy. Scanning and importing them would
+require several layers of pre-processing and noise-removal. For modern scripts,
+importing the Bezier curves from the respective fonts could be
+done directly. </p>
+  <p xmlns="">Trajectory reconstruction has been implemented only for single stroke
+characters. A primitive implementation exists for multi-stroke characters. This needs to be made more rigorous and
+accurate.</p>
+  <p xmlns="">Based on the stroke structure of a glyph several additional features such as <em>entropy of writing</em> could be calculated as required. Also, the features are to be used for normalized glyph shapes. The behavior of the features with respect to various scribal variants needs to be analyzed further. </p>
+  <p xmlns="">Proper visualization of the various quantitative features would help to better study and understand the characters within a script and also compare several scripts. Such visualization is particularly helpful in studying paleographic scripts and analyzing the changes that took place over time. Various statistical analyses of the features and visualization techniques would be built into the implementation. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_167_trajectory.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Spline Conversion and Trajectory Generation</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_167_strokes3.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Stroke Segmentation &amp; Feature Extraction</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">4. Similar Projects</h2>
+  <p xmlns="">There are other digital paleographical projects, such as Hand Analyser by Peter Strokes, which work on pixelated images. The current project is more focussed on using <em>strokes</em> to derive various features. Integration/Adaptation of those techniques needs to be further looked into. </p>
+  <h2 xmlns="">5. Summary</h2>
+  <p xmlns="">We have presented a computational  framework for quantitative analysis of scripts. The framework requires minimal user interaction, and is based on the principles of handwriting analysis and handwriting production. We also present a prototype implementation of the proposed framework.  We believe this framework and its implementation would facilitate more quantitative study on scripts.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Altmann, Gabriel, and Fan Fengxiang</strong> (2008), eds. <em>Analyses of script: properties of characters and writing systems</em>. Vol. 63. Walter de Gruyter. APA
+          </p>
+  <p xmlns="">2. <strong>Changizi, Mark A., et al. </strong> (2006) <em>The structures of letters and symbols throughout human history are selected to match those found in objects in natural scenes.</em> The American Naturalist 167.5: E117-E139.
+          </p>
+  <p xmlns="">3. <strong>Changizi, Mark A., and Shinsuke Shimojo.</strong> (2005) <em>Character complexity and redundancy in writing systems over human history.</em> Proceedings of the Royal Society B: Biological Sciences 272.1560: 267-275.
+          </p>
+  <p xmlns="">4. <strong>Stokes, Peter.</strong> (2009) <em>Computer-aided palaeography, present and future.</em> Kodikologie und Paläographie im digitalen Zeitalter - Codicology and Palaeography in the Digital Age. Schriften des Instituts für Dokumentologie und Editorik, 2: 309-338.
+          </p>
+  <p xmlns="">5. <strong>Doermann, David S., and Azriel Rosenfeld.</strong> (1995) <em>Recovery of temporal information from static images of handwriting.</em> International Journal of Computer Vision 15.1-2: 143-164.
+          </p>
+  <p xmlns="">6. <strong>Jager, Stefan</strong> (1996). <em>Recovering writing traces in off-line handwriting recognition: Using a global optimization technique.</em> Pattern Recognition,., Proceedings of the 13th International Conference on. Vol. 3. IEEE, 1996.
+          </p>
+  <p xmlns="">7. <strong>Li, Xiaolin, Marc Parizeau, and Réjean Plamondon</strong> (1998). <em>Segmentation and reconstruction of on-line handwritten scripts.</em> Pattern recognition 31.6: 675-684.
+          </p>
+  <p xmlns="">8. <strong>Noordzij, Gerrit, and Peter Enneson</strong> (2006). <em>The stroke: Theory of writing</em>. Hyphen.
+          </p>
+  <p xmlns="">9. <strong>Teulings, Hans-Leo, and Lambert RB Schomaker</strong> (1993). <em>Invariant properties between stroke features in handwriting.</em> Acta psychologica 82.1: 69-88.
+          </p>
+  <p xmlns="">10. <strong>Rubine, Dean</strong> (1991). <em>Specifying gestures by example</em>. Vol. 25. No. 4. ACM.
+          </p>
+  <p xmlns="">11. <strong>Long Jr, A. Chris, et al</strong> (2000). <em>Visual similarity of pen gestures.</em> Proceedings of the SIGCHI conference on Human factors in computing systems. ACM.
+          </p>
+  <p xmlns="">12. <strong>Willems, Don, et al</strong> (2009). <em>Iconic and multi-stroke gesture recognition.</em> Pattern Recognition 42.12: 3303-3312.
+          </p>
+  <p xmlns="">13. <strong>Tucha, Oliver, Lara Tucha, and Klaus W. Lange. </strong>(2008) <em>Graphonomics, automaticity and handwriting assessment.</em> Literacy 42.3: 145-155.
+          </p>
+  <p xmlns="">14. <strong>Stenson, Herbert H.</strong> (1966) <em>The physical factor structure of random forms and their judged complexity.</em> Perception &amp; Psychophysics 1.9: 303-310.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

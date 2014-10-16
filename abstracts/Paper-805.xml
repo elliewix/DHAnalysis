@@ -1,0 +1,55 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-805.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Beyond the Tool : A Reflexive Analysis on Building Things in Digital Humanities</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>415 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Couture</span>,
+									<span class="author-forename">Stéphane</span></a>
+        <a href="http://www.google.com/#q=Couture, Stéphane">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">McGill University, Canada</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Sinclair</span>,
+									<span class="author-forename">Stéfan</span></a>
+        <a href="http://www.google.com/#q=Sinclair, Stéfan">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">McGill University, Canada</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The goal of this paper is to present some reflections about the process of building things in Digital Humanities. It is based on our own experience in developing an analytic tool to study Internet Relay Chat (<em>IRC</em>) conversations within hacker and free and open source software communities. </p>
+  <p xmlns="">Questions have been raised recently about the epistemology of building and of built artifacts within Digital Humanities. Following Lev Manovich's provocative statement that a “prototype is a theory”, Ramsay and Rockwell have argued that the activity of building a digital prototype should be “capable of providing affordances as rich and provocative as that of writing” (Ramsay and Rockwell 2012, 83). Galey and Ruecker (2010), for their part, propose that the prototype should be received as conveying an argument, as would a book or article, and be evaluated as such. These reflections are interesting in that they propose to go beyond the mere building of a tool to a thinking about things and the building process as valid scholarly contribution. We would like to pursue this line of reasoning but instead of arguing the epistemological validity of tool, we propose to consider the very building process as a methodological and ethnographically-oriented opportunity to reflect on the studied material and the design process. In a sense, we follow Phil Agre's approach, recently re-mobilized by Software Studies theorist Warren Sack (Forthcoming), in pursuing “a technical practice for which critical reflection upon the practice is part of the practice itself” (Agre 1997, xii).</p>
+  <p xmlns="">The tool we will present, <em>IRCMine1</em>, was developed in the first part of 2013, within a wider context concerned with data mining conversations and interactions in hackers communities (such as free and open source software and Anonymous). Indeed, although many tools were developed (or are still being developed) to study different aspects of free and open source software online communities – tools for the analysis of mailing list, bug trackers or repository commits  – the analysis of conversations from IRC logs remains neglected. It is still more important to look at this, since IRC is being used increasingly within free software communities, as an open, synchronous, group conversation protocol. Moreover, IRC is a tool of choice for many hacktivist groups such as Anonymous that coordinate their action in this space (Coleman, 2013).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_673-1.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">We propose three axes of reflexive exploration about our experience in building the prototype: </p>
+  <p xmlns=""><strong><strong>1) Reflection about the studied material</strong></strong>. The first axis of reflexive analysis concerns the material, and especially the format of the log files. Our design practices brought us to consider more closely the log files format and the form interactions held in IRC channels. For instance, what could be considered as a conversation in IRC files? Considering the close imbrications between metadata and messages (content), do we consider IRC files as a text? Also, the very choice of looking at IRC conversations – instead of mailing lists or commit logs – can also be reflected upon, since it was justified by the need to look at a less visible space of interactions. In a sense, choosing to give visibility to this space was also a choice about giving visibility to some kind of work over others (Star and Strauss 1999).</p>
+  <p xmlns=""><strong><strong>2) Ethical aspects of designing the interface</strong></strong>. A second set of concerns is  related to ethical concerns, such as having a balance between ease of use and keeping the confidentiality of the studied data. Indeed, most of the time, IRC logs are not available publicly and can only be collected by the researcher, thus posing questions about confidentiality of the data. This presented some important conceptual and technical challenges since we decided to develop a web-based tool (JavaScript, HTML, etc.), thus relying on the web browser to execute the code. Although it could be easy for a technical person to install this code on a local machine and ensure the security, how do we design an interface so that users can trust that the data being analyzed will stay confidential? How do we balance usability and performance on one hand, and security on the other? This axis of reflexive thinking is similar to the proposal of a value sensitive design where attention to values and ethical concerns are integrated in the very process of design (Friedman, Kahn, and Borning 2002; Le Dantec, Poole, and Wyche 2009).</p>
+  <p xmlns=""><strong>3) Reflection on our design (and coding) practice</strong>. This was interesting since one member of our team (Couture) did his thesis on source code, and coding. The project allowed him to experience the actual coding practices (after a long hiatus of coding), especially related to modularity and the circulation of code objects. Although at the start the programming was done in a very ad-hoc manner, it soon became important to modularize the source code and have some consensus on programming standards and the organization of the files. In a way, the organization of source code was articulated to reflect the organization of our collective work. Our coding practice also allowed us to investigate and better understand the different technological resources available to – and often used by – free software coders and other programmers. It would, for instance, allow us to better understand the dynamics around the GitHub Platform, something that has already received some attention by scholars in social science (Takhteyev and Hilts 2010). </p>
+  <p xmlns="">This paper will summarize the problematic as well as our objectives in the development of this tool. However, we propose to concentrate most of our presentation on a reflexive analysis of our own design activity in the development of this tool.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Agre, P. E.</strong> (1997). <em>Computation and Human Experience</em> (Learning in Doing: Social, Cognitive and Computational Perspectives). Cambridge: Cambridge University Press.</p>
+  <p xmlns=""><strong>Coleman, G.</strong> (2013). <em>“Anonymous in Context: The Politics and Power Behind the Mask”</em>. Paper No. 3. Internet Governance Papers. http://www.cigionline.org/sites/default/files/no3_7.pdf.</p>
+  <p xmlns=""><strong>Friedman, B., P. H. Jr. Kahn, and A. Borning. </strong>(2002). <em>“Value Sensitive Design: Theory and Methods”</em>, UW CSE Tech. Rep. 02-12-01. http://www.urbansim.org/pub/Research/ResearchPapers/vsd-theory-methods-tr.pdf. </p>
+  <p xmlns=""><strong>Galey, A., and S. Ruecker. </strong>(2010).<em> “How a Prototype Argues.”</em>Literary and Linguistic Computing 25 (4) (October 27): 405–424. doi:10.1093/llc/fqq021. http://llc.oxfordjournals.org/content/early/2010/10/26/llc.fqq021.full.pdf+html.</p>
+  <p xmlns=""><strong>Le Dantec, C. A, E. S Poole, and S. P Wyche.</strong> (2009). <em>“Values as Lived Experience: Evolving Value Sensitive Design in Support of Value Discovery.”</em> In Proceedings of the 27th International Conference on Human Factors in Computing Systems, 1141–1150.</p>
+  <p xmlns=""><strong>Ramsay, S., and G. Rockwell. </strong>(2012). <em>“Developing Things: Notes Toward an Epistemology of Building in the Digital Humanities.” </em>In Debates in the Digital Humanities, edited by Matthew K. Gold. Minneapolis: University Of Minnesota Press.</p>
+  <p xmlns=""><strong>Sack, W.</strong>. <em>Forthcoming</em>. The Software Arts.</p>
+  <p xmlns=""><strong>Star, S. L., and A. Strauss.</strong> (1999). <em>“Layers of Silence, Arenas of Voice: The Ecology of Visible and Invisible Work.”</em>Computer Supported Cooperative Work 8 (1-2): 9–30. http://portal.acm.org/citation.cfm?id=309448.</p>
+  <p xmlns=""><strong>Takhteyev, Y., and A. Hilts. </strong>(2010). <em>Investigating the Geography of Open Source Software through GitHub</em>. University of Toronto. http://takhteyev.org/papers/Takhteyev-Hilts-2010.pdf.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

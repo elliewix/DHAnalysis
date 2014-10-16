@@ -1,0 +1,127 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-825.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Dimensions of literary appreciation. Word use and ratings on a book discussion site</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>319 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:peter.boot@huygens.knaw.nl "><span class="author-surname">Boot</span>,
+									<span class="author-forename">Peter</span></a>
+        <a href="http://www.google.com/#q=Boot, Peter">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Huygens ING, Netherlands, The </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">The appreciation of literature is a subjective process. In reading and judging books, characteristics of individual readers interact with characteristics of books and their reputation. This paper looks at book ratings on a book discussion site and tries to assess the role of individual readers’ characteristics in these ratings. For that purpose, the paper inspects on the one hand the textual properties of the review texts that readers contribute to this site, and on the other hand the ratings that they assign.</p>
+  <p xmlns="">Given the well-established connection between word use frequencies and authorial style (e.g. Burrows, 2002; Burrows, 2003), the paper hypothesizes that these same style markers in texts by readers will correlate with these readers’ quality judgments about books. Patterns in word usage are known to reflect aspects of readers’ psychological make-up (Argamon et al., 2005; Noecker et al., 2013; Pennebaker et al., 2003), and these psychological properties, e.g. the Big Five personality dimensions, are related to aesthetic preferences in many fields (Golbeck and Norris, 2013; Gridley, 2013; Zweigenhaft, 2008), including books and literature (Cantador et al., 2013; Wiersema et al., 2012).</p>
+  <p xmlns="">Aesthetic appreciation has been shown to be a multi-faceted process (Myszkowski et al., 2014; Rentfrow et al., 2011). Here, I assume that literary appreciation is influenced by multiple aspects of the reader’s psychology, such as, among others, his/her cognitive, affective and social dispositions. Therefore, besides investigating the over-all most frequently used words, as stylometry often does, I will also look at the high frequency words within the categories of cognitive, affective, and social words, as defined by LIWC (Pennebaker et al., 2007). I expect that the relative frequencies of e.g. individual social words (rather than the category frequencies that LIWC-based research typically uses) will capture to some extent the nature of a person’s sociability and will to that extent also reflect how that sociability affects literary preferences.</p>
+  <h2 xmlns="">Data</h2>
+  <p xmlns="">The data for this paper come from Dutch book discussion site watleesjij.nu (whatareyoureading.now). The site is similar to e.g. Goodreads, LibraryThing or lovelybooks.de: users rate, label and review books, they can evaluate reviews by others, can strike up friendships with and send messages to other users. I downloaded the site’s content in June 2013. I investigate review texts and ratings contributed by the top 20 (in terms of total review length) contributors to the site (I removed two accounts that seemed to be used by multiple persons.) For each of these users, I create a file containing all of the review texts this user has contributed to the site. The average word count is 44036. I also collect the ratings (in terms of one to five stars) for all of the 624 books that were rated by at least two of the twenty users.</p>
+  <h2 xmlns="">Method and results</h2>
+  <p xmlns="">As a first step, I compute correlations between the word use frequencies in each of the word categories and the book ratings. The word frequencies are represented as a matrix of zscores, where users are rows and words are columns. For the computation of the zscores I use Eder and Rybicki’s stylo script (2011), then select only those words that form part of the relevant LIWC category. The ratings are given in a matrix with users as rows and books as columns. Non-rated books are represented by 0. To assess the correlation between these matrices I rely on the (bias corrected) distance correlation and the associated significance test as described by Székely and Rizzo (2013). Table 1 reports the results, including the number of words that gave the best results for each category (However, for all categories except Affect the correlations were significant at the .01-level even for the top 25 words.) The table also gives the percentage of words belonging to the category in the review files.</p>
+  <p xmlns=""> </p>
+  <p xmlns="">Table 1. Bias-corrected distance correlation between word usage and book appreciation for different word categories</p>
+  <table xmlns="">
+    <tr>
+      <td> Category </td>
+      <td> bias corrected distance correlation </td>
+      <td> p-value </td>
+      <td> Optimum number of most frequent words </td>
+      <td> percentage of words in category </td>
+    </tr>
+    <tr>
+      <td> All words </td>
+      <td> .49 </td>
+      <td> &lt;.0001 </td>
+      <td> 2900 </td>
+      <td> 100 </td>
+    </tr>
+    <tr>
+      <td> Function words </td>
+      <td> .36 </td>
+      <td> &lt;.0001 </td>
+      <td> 250 </td>
+      <td> 50 </td>
+    </tr>
+    <tr>
+      <td> Affect words </td>
+      <td> .21 </td>
+      <td> .0025 </td>
+      <td> 225 </td>
+      <td> 3 </td>
+    </tr>
+    <tr>
+      <td> Cognitive words </td>
+      <td> .35 </td>
+      <td> &lt;.0001 </td>
+      <td> 375 </td>
+      <td> 18 </td>
+    </tr>
+    <tr>
+      <td> Social words </td>
+      <td> .47 </td>
+      <td> &lt;.0001 </td>
+      <td> 125 </td>
+      <td> 12 </td>
+    </tr>
+  </table>
+  <p xmlns="">The table shows that frequencies in each of the word categories are quite significantly correlated with the word ratings. The relatively low effect from affective words may be due to the low percentage of affect words in the texts. </p>
+  <p xmlns=""> The most striking result is no doubt the performance of the category of social words. In order to further investigate this effect, users were clustered in two groups, based on their usage of social words (I employed the pam partitioning function in R.) I then looked at contrastive word use of these clusters and at the books liked by the cluster members. The oppose function from Eder and Rybicki (2011) was used to find words preferred by either cluster. The results are given in table 2. The first cluster shows an interest in people and especially family that the second cluster, with its mostly cognitive or procedural interest, seems to lack entirely. </p>
+  <p xmlns=""> </p>
+  <p xmlns="">Table 2. Words preferred (from all words) by the two clusters (translated from Dutch). For cluster one, only the top 20 preferred words are given</p>
+  <table xmlns="">
+    <tr>
+      <td> Cluster </td>
+      <td> Preferred words </td>
+    </tr>
+    <tr>
+      <td> 1 </td>
+      <td> daughter, parents, family [nuclear], mother, woman, together, father, children, past, young, child, debut, house, brother, women, tells, love, marriage, family [extended], care </td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+      <td> so, perhaps, page, of course, pity, well, read, precisely, actually, just, immediately, think, for instance, part, viz., believe, even, sort of, interesting, by the way </td>
+    </tr>
+  </table>
+  <p xmlns="">In order to find out the sort of books preferred by the clusters, I summed the book ratings by cluster. I then selected and diagrammed a subset of books, consisting of the ten books best liked by either cluster, the ten books best liked ‘contrastively’ by either cluster (computed by subtracting the ratings for cluster 1 from those for cluster 2), and the ten books best liked by both. After removal of duplicates, thirty books remained. Figure 1 displays the books with their ratings by the two clusters. Point and title size reflect popularity on the site. Grayscale represents genre. Point positions were slightly changed to avoid overlap. Lines between title labels and points were suppressed in the interest of clarity. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_socialclustprefs.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Books as rated by the two clusters.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">The figure seems to show some systematic differences in the preferences of the two clusters. Cluster 1, that uses mostly family-oriented words, seems to prefer slightly more popular books (larger point size). Cluster 2, that uses procedural or cognitive words, has strong preferences for a number of staunchly ‘literary’ works, such as those by Grass, Binet and classical Dutch authors. As to a potential preference for suspense novels, this figure does not allow us to draw any firm conclusions.</p>
+  <h2 xmlns="">Discussion</h2>
+  <p xmlns="">The reason why different people prefer different books has often been sought in differing literary norms (e.g. Von Heydebrand and Winko, 2008). This explanation is not quite satisfactory, for two reasons: first because it does not explain why people develop different norms, and second because there are no a priori reasons why norms rather than, say pleasure or ‘thrills’ (Konecni, 2005) should determine one’s preference for one book over another. This paper takes another approach and the results presented here tentatively establish the existence of a correlation between book preferences and patterns of word usage in several psychologically meaningful categories. Especially the relation between the pattern of usage of social words and literary appreciation seems very strong, confirming the importance of extraversion for aesthetic judgment noted by Furnham and Chamorro-Premuzic (2004), but appreciation is also clearly related to usage of cognitive words and of function words.</p>
+  <p xmlns="">There are some obvious limitations to this experiment. The number of subjects is very small (dictated by the need to have a sufficient number of words). It would also have been better to use texts from another domain. However, an exploratory analysis of the effect of clustering based on social word usage seems to show that the verbally more ‘social’ group prefers the less literary or more popular novel. Given the small numbers, more than provisional results should perhaps not be expected.</p>
+  <p xmlns="">Next steps should include clustering on the basis of other word categories, an investigation into the independent effect of these categories, and case studies at the level of individual readers. It would also be very interesting to see to what extent the literary norms that readers formulate in the reviews can be shown to be related to the word usage patterns as discussed here.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Argamon, S., S. Dhawle, M. Koppel and J.W. Pennebaker.</strong> (2005) <em>'Lexical predictors of personality type'</em>, Proceedings of the Joint Annual Meeting of the Interface and the Classification Society of North America.</p>
+  <p xmlns=""><strong>Burrows, J.</strong> (2002) <em>'‘Delta’: A measure of stylistic difference and a guide to likely authorship'.</em>Literary and Linguistic Computing <strong>17</strong>(3): 267-287.</p>
+  <p xmlns=""><strong>Burrows, J.</strong> (2003) <em>'Questions of Authorship: Attribution and Beyond. A Lecture Delivered on the Occasion of the Roberto Busa Award ACH-ALLC 2001, New York'</em>. Computers and the Humanities <strong>37</strong>(1): 5-32.</p>
+  <p xmlns=""><strong>Cantador, I., I. Fernández-Tobías, A. Bellogín, M. Kosinski and D. Stillwell.</strong> (2013) <em>'Relating Personality Types with User Preferences in Multiple Entertainment Domains'</em>, Proceedings of the 1st Workshop on Emotions and Personality in Personalized Services (EMPIRE 2013), at the 21st Conference on User Modeling, Adaptation and Personalization (UMAP 2013).</p>
+  <p xmlns=""><strong>Eder, M. and J. Rybicki.</strong> (2011) <em>'Stylometry with R'. </em>Paper presented at Digital Humanities 2011: Conference Abstracts, Stanford University, Stanford, CA.</p>
+  <p xmlns=""><strong>Furnham, A. and T. Chamorro-Premuzic.</strong> (2004) '<em>Personality, intelligence, and art'.</em>Personality and Individual Differences <strong>36</strong>(3): 705-715.</p>
+  <p xmlns=""><strong>Golbeck, J. and E. Norris.</strong> (2013) 'Personality, movie preferences, and recommendations', Proceedings of the 2013 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining: ACM, pp. 1414-1415.</p>
+  <p xmlns=""><strong>Gridley, M.C.</strong> (2013) '<em>Preference for Abstract Art According to Thinking Styles and Personality'</em>. North American Journal of Psychology <strong>15</strong>(3).</p>
+  <p xmlns=""><strong>Konecni, V.J.</strong> (2005) <em>'The aesthetic trinity: Awe, being moved, thrills'.</em>Bulletin of Psychology and the Arts <strong>5</strong>(2): 27-44.</p>
+  <p xmlns=""><strong>Myszkowski, N., M. Storme, F. Zenasni and T. Lubart.</strong> (2014) <em>'Is visual aesthetic sensitivity independent from intelligence, personality and creativity?'</em>. Personality and Individual Differences <strong>59</strong>(16-20.</p>
+  <p xmlns=""><strong>Noecker, J., M. Ryan and P. Juola.</strong> (2013) <em>'Psychological profiling through textual analysis'</em>. Literary and Linguistic Computing <strong>28</strong>(3): 382-387.</p>
+  <p xmlns=""><strong>Pennebaker, J.W., R.J. Booth and M.E. Francis.</strong> (2007) <em>'Linguistic Inquiry and Word Count (LIWC2007)'</em>, Linguistic Inquiry and Word Count (LIWC2007). Austin, TX.</p>
+  <p xmlns=""><strong>Pennebaker, J.W., M.R. Mehl and K.G. Niederhoffer.</strong> (2003) <em>'Psychological aspects of natural language use: Our words, our selves'</em>. Annual review of psychology <strong>54</strong>(1): 547-577.</p>
+  <p xmlns=""><strong>Rentfrow, P.J., L.R. Goldberg and R. Zilca</strong>. (2011) <em>'Listening, watching, and reading: The structure and correlates of entertainment preferences'.</em>Journal of personality <strong>79</strong>(2): 223-258.</p>
+  <p xmlns=""><strong>Székely, G.J. and M.L. Rizzo.</strong> (2013) <em>'The distance correlation t-test of independence in high dimension'</em>. Journal of Multivariate Analysis <strong>117</strong>(193-213.</p>
+  <p xmlns=""><strong>Von Heydebrand, R. and S. Winko.</strong> (2008) <em>'The qualities of literatures'</em>, The Quality of Literature: Linguistic Studies in Literary Evaluation. Amsterdam: Benjamins, pp. 223-239.</p>
+  <p xmlns=""><strong>Wiersema, D.V., J. Van Der Schalk and G.A. van Kleef.</strong> (2012) <em>'Who's afraid of red, yellow, and blue? Need for cognitive closure predicts aesthetic preferences'</em>. Psychology of Aesthetics, Creativity, and the Arts <strong>6</strong>(2): 168.</p>
+  <p xmlns=""><strong>Zweigenhaft, R.L.</strong> (2008) <em>'A do re mi encore: A closer look at the personality correlates of music preferences'</em>. Journal of individual differences <strong>29</strong>(1): 45.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

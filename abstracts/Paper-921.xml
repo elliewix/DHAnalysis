@@ -1,0 +1,100 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-921.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Exploratory Thematic Analysis for Historical Newspaper Archives</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>414 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Eisenstein</span>,
+									<span class="author-forename">Jacob</span></a>
+        <a href="http://www.google.com/#q=Eisenstein, Jacob">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Georgia Institute of Technology, United States of America </span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Sun</span>,
+									<span class="author-forename">Iris</span></a>
+        <a href="http://www.google.com/#q=Sun, Iris">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Georgia Institute of Technology, United States of America </span>
+      </li>
+      <li>
+        <a href="mailto:lauren.klein@lmc.gatech.edu "><span class="author-surname">Klein</span>,
+									<span class="author-forename">Lauren F.</span></a>
+        <a href="http://www.google.com/#q=Klein, Lauren F.">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Georgia Institute of Technology, United States of America </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">On July 19th, 1848, 300 concerned United States citizens gathered in Seneca Falls, New York, for the women’s rights convention that would culminate in the signing of the Declaration of Rights and Sentiments, the first major document (in the US) to call for women’s right to vote. In <em>The North Star</em>, Frederick Douglass, the former slave turned abolitionist, extolled the event as a “grand movement for attaining the civil, social, political, and religious rights of women” (1848). In the <em>Oneida Whig</em>, the same event was ridiculed as the “most shocking and unnatural event ever recorded in the history of womanity” (1848). As demonstrated by these contradictory accounts, published opinions varied greatly -- about the women’s rights movement in the nineteenth-century United States, and about current events generally conceived. Large-scale digitization projects have increasingly enabled humanities scholars to search newspapers, such as those just cited, for significant words and phrases. But exploring more open-ended questions such as, “How did the discourse surrounding women’s rights in the United States change in the wake of the 1848 Seneca Falls Convention?” or “Did the women’s rights movement borrow language from the nation’s contemporaneous anti-slavery campaign?” remains a challenge. Synthesizing current research on exploratory data analysis with techniques from the fields of computational linguistics and data visualization, we propose a new set of methods to assist humanities scholars in computationally-assisted exploratory research. </p>
+  <h2 xmlns="">Background and Overview</h2>
+  <p xmlns="">Exploratory data analysis (EDA) has played a fundamental role in quantitative research since at least the 1970s (Tukey 1977). In comparison to formal hypothesis testing, exploratory data analysis is more open-ended, and is meant to help the researcher develop a general sense of the properties of the dataset before embarking on more specific inquiries (Russell, Stefik, Pirolli, and Card, 1993). EDA typically combines visualizations such as scatterplots and histograms with lightweight quantitative analysis, serving to check basic assumptions, reveal errors in the data-processing pipeline, identify relationships between variables, and suggest preliminary models. More recently, Andrew Gelman (2004) has argued that EDA should be interwoven with formal statistical modeling, facilitating an iterative design process driven by experimenter insight.</p>
+  <p xmlns="">The questions about women’s rights, posed above, suggest the potential of EDA for humanities research-- a possibility also noted by Muralidharan and Hearst (2012). That team employs automatic syntactic analysis to identify and visualize recurring grammatical patterns, which, when combined with document metadata, reveals insights at the sentence level. By contrast, we combine metadata with techniques such as topic modeling in order to reveal insights at the document level. Inspired by the increasing use of topic models to make literary and cultural arguments (Underwood 2012, Rhody 2012, and Jockers 2013), we ask how the <em>exploratory</em><em>thematic</em><em>analysis</em> of documents might be incorporated into the initial phase of humanities research.</p>
+  <p xmlns="">Our approach encompasses both traditional topic models and innovative visualizations, as well as alternative computational techniques targeted at the questions that topic modeling raises but leaves unanswered. By designing new visualizations and text-mining algorithms within the context of a specific, humanities-driven research effort, we hope to prototype a new mode of multi-disciplinary scholarship that will facilitate the iterative research methodology advocated by Gelman (2004). Specifically, we aim to facilitate the thematic exploration of document archives as a precursor to more informed keyword searching, more sustained close reading, and more systematic evidence gathering.</p>
+  <h2 xmlns="">User Scenario and Interface Prototypes</h2>
+  <p xmlns="">Our focus is on a set of abolitionist newspapers from the nineteenth-century United States, in which antislavery advocates mounted moral, social, and political arguments in favor of emancipation. These newspapers present a particularly compelling dataset for thematic analysis, as similar ideas were purportedly framed differently by (and for) women and men (Dudden 2011). Here, we focus on one newspaper, <em>The Anti-Slavery Bugle,</em> published in New Lisbon, Ohio, between 1845 and 1861. Significantly, it was the source of much reprinting (Golden 2013), and underwent several shifts in editorial control. </p>
+  <p xmlns="">Standard LDA topic analysis (MALLET; McCallum 2002) with 100 topics and standard parametrization reveals a number of topics that might intrigue a scholar in the initial phases of research, including:</p>
+  <ul xmlns="">
+    <li>T40: states state law constitution tho government power united laws congress <strong>rights</strong>people con ohio tion act union question property</li>
+    <li>T56: indians indian tribes tribe chiefs frontier dian treaties tiger hawk antelope annuity fiscal lllack hyenas tigers dians avalanche savages</li>
+    <li>T59: woman women <strong>rights</strong>husband wife sex sho marriage property married mrs female legal sphere equality estate social duties sexes</li>
+  </ul>
+  <p xmlns="">Topic 59 (T59) suggests that the <em>Bugle</em> may offer insight into the relationship between the antislavery movement and the nascent drive for women’s rights. The accompanying metadata reveals that the newspaper was co-edited by a woman between 1845 and 1849; however, this topic peaked in the late 1850s (a time when the women’s rights movement was ascendant). At this point, we reach the limit of what can be learned from a topic model alone. We cannot easily answer, for instance, how the treatment of this topic in the <em>Bugle</em> might have differed from that of other newspapers; whether the editors of the <em>Bugle</em> were early advocates for the women’s rights movement; or whether the peak in the late 1850s followed a national trend.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_633-1.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">The above screenshot documents a prototype interface for the visualization and analysis of topic models that can begin to answer these questions. We apply a <em>dust-and-magnet</em>visualization (Yi et al., 2005), in which user-selected topics exert a magnetic “force” on individual issues of the newspaper (represented as “dust”). The temporal trajectories of several newspapers are shown as “dust trails” in the visual space, with colors indicating the terms of different editorial teams, and with the <em>Bugle</em> highlighted so as to facilitate comparison with contemporaneous newspapers.</p>
+  <p xmlns="">Next, we address the topics themselves. In such models, topics are defined by sets of words, with the assumption that each word has a single meaning across all usage contexts. However, much humanities scholarship entails a sensitivity to shifting meanings and uses. A scholar may wonder, for instance, how women’s “rights” (as indicated by the keyword in T59) were described in relation to the legal “rights” featured in T40. She may ask if the rhetoric of one borrowed from the other, or if the use of the word “rights” changed when it was employed to describe women’s vs. legal rights. Again, the scholar seeks to know more than what can be inferred by LDA alone. We propose to link LDA’s high-level thematic analysis with visualizations that drill down to the level of individual examples. Building on the traditional keyword-in-context (KWIC) models, we are developing a computational algorithm for selecting contexts that are both strongly associated with each topic of interest (for example, the contexts for “rights” in T40 and T59), while simultaneously revealing the full range of thematic possibilities within each topic. </p>
+  <p xmlns="">While the range of connotations of individual words in a topic presents one kind of interpretive challenge, the topics themselves can at times present another: when a topic includes words associated with seemingly divergent themes. In T56, the scholar might observe a (seemingly) obvious connection, for the nineteenth-century, between words that describe Native Americans and those that describe nature. However, unlike the words “antelope” or “hawk,” the words “tiger” and “hyena,” also included in the topic, do not describe animals indigenous to North America. Does an explanation lie in a figurative vocabulary for describing native peoples? Or is this collection of words merely an accident of statistical analysis, a result of being built on a randomized algorithm?</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_633-2.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">To address this question, we propose a spatial visualization using multidimensional scaling (Cox and Cox, 2010) to position the keywords for each topic according to their contextual similarity. As shown in the figure above-left, the terms “indian”, “indians”, and “tribes” are located apart from “hyena”, “tiger”, and “tigers”, which are themselves closely associated. The spatial layout suggests a relatively weak connection between these terms. For comparison, we also include the spatial visualization for a topic relating to the Mexican-American War, above-right, in which terms related to the conduct of the war (“Taylor”, “troops”) are spatially distinguished from those related to its outcome (“treaty”, “annexation”). </p>
+  <h2 xmlns="">Conclusion and Next Steps</h2>
+  <p xmlns="">The goal of our ongoing work on exploratory thematic analysis is to provide a comprehensive set of algorithms and visualizations for understanding newspaper archives. Topic modeling is an important first step, but if we are to move beyond suggestive word lists in order to contribute to humanities scholarship, topic models must be linked to relevant metadata and concrete examples. Moreover, scholars must be provided with new visual modes that illuminate the substructures within the generalized themes that the topic model produces. Such techniques can reveal new insights about the transmission and circulation of ideas among social and political coalitions, and how the framing of these ideas relates to authors’ genders. By linking technical innovation with real humanistic inquiry, we hope to produce algorithms and visualizations that will meet the needs of substantive humanities research. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><em>“Bolting Among the Ladies.” </em>The Oneida Whig, August 1, 1848.</p>
+  <p xmlns=""><strong>Cox, Trevor F., and Michael AA Cox </strong>(2010). <em>Multidimensional scaling</em>. CRC Press.</p>
+  <p xmlns=""><strong>Douglass, Frederick</strong> (1848). <em>“The Rights of Women.”</em>The North Star, July 28.</p>
+  <p xmlns=""><strong>Dudden, F.</strong> (2011) <em>Fighting
+            Chance: The Struggle Over Woman Suffrage and Black Suffrage in America</em>.
+            Oxford UP. </p>
+  <p xmlns=""><strong>Jockers, M.</strong> (2013) <em>Macroanalysis:
+            Digital Methods and Literary History.</em> U Illinois P.</p>
+  <p xmlns=""><strong>Kwok, James T. and Ryan P. Adams. </strong>(2012). <em>“Priors for Diversity in
+            Generative Latent Variable Models.” </em>Advances
+            in Neural Information Processing Systems.</p>
+  <p xmlns=""><strong>Rhody, L.</strong> (2012)<em> “Some Assembly Required: Understanding and
+            Interpreting Topics in LDA Models of Figurative Langauge.”</em> Lisa @ Work.</p>
+  <p xmlns=""><strong>McCallum, Andrew Kachites</strong> (2002). <em> "MALLET: A Machine Learning for Language
+            Toolkit."</em></p>
+  <p xmlns=""><strong>Muralidharan, Aditi. and Hearst, Marti
+            A</strong>. (2012), <em>Supporting Exploratory Text Analysis in Literature Study</em>, Literary and Linguistic Computing, 27
+            (4), Dec 24.</p>
+  <p xmlns=""><strong>Russell, Daniel M., Mark J. Stefik, Peter
+            Pirolli, and Stuart K. Card.</strong> (1993) <em>"The cost structure of sensemaking."</em> In Proceedings of the INTERACT'93 and CHI'93
+            conference on Human factors in computing systems, pp. 269-276. ACM.</p>
+  <p xmlns=""><strong>Tukey, John Wilder </strong>(1977). <em>Exploratory
+            Data Analysis.</em> Addison-Wesley.</p>
+  <p xmlns=""><strong>Underwood, Ted </strong>(2011). <em>“The Differentiation of
+            Literary and Nonliterary Diction, 1700-1900.” </em>The Stone and the Shell. </p>
+  <p xmlns=""><strong>Yi, Ji Soo, Rachel Melton, John Stasko,
+            and Julie A. Jacko </strong>(2005). <em>"Dust &amp; magnet: multivariate information
+              visualization using a magnet metaphor."</em>Information Visualization 4, no. 4: 239-256.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

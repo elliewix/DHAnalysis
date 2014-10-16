@@ -1,0 +1,61 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-290.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Edition Visualization Technology: a simple tool to publish digital editions and digital facsimiles</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:raffaele.masotti@gmail.com"><span class="author-surname">Masotti</span>,
+									<span class="author-forename">Raffaele</span></a>
+        <a href="http://www.google.com/#q=Masotti, Raffaele">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Università di Pisa</span>
+      </li>
+      <li>
+        <a href="mailto:julia.kenny90@gmail.com"><span class="author-surname">Kenny</span>,
+									<span class="author-forename">Julia</span></a>
+        <a href="http://www.google.com/#q=Kenny, Julia">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Università di Pisa</span>
+      </li>
+      <li>
+        <a href="mailto:dipi.chiara@gmail.com"><span class="author-surname">Di Pietro</span>,
+									<span class="author-forename">Chiara</span></a>
+        <a href="http://www.google.com/#q=Di Pietro, Chiara">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Università di Pisa</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The Digital Vercelli Book project<cite href="#n1">1</cite> aims at creating a digital edition of the Vercelli Book manuscript (MS CXVII, Biblioteca Capitolare di Vercelli, Italy), a fundamental document for the Old English language and literature area of studies. After the transcription of all the texts was completed using the TEI schemas<cite href="#n2">2</cite>, the researchers lacked a tool that would allow to publish a diplomatic edition of the former together with the digitized manuscript images.</p>
+  <p xmlns="">Many tools have been created in order to publish digital editions based on XML-encoded texts and meet the various needs of users. Some software tools (such as TEI Boilerplate) allow to publish TEI XML files directly in modern browsers. Even though this method is very light and user friendly, it is both unsuitable for publishing very large files and limited to XSLT 1.0; the typical output is a single web page for each XML document, which is not appropriate for the publication of image-based editions.</p>
+  <p xmlns="">This led us to the design and implementation of EVT (Edition Visualization Technology), a lightweight software for that specific purpose. What started as a project, whose goal was the digital edition of a specific manuscript, has grown well beyond that, to the point of being available and usable as a general purpose publishing tool.</p>
+  <p xmlns="">EVT can be used to create image-based web editions with different edition levels starting from a multi level encoded text. It is built on open and standard web technologies, such as HTML, CSS and Javascript, to ensure that it will be working on all the most recent web browsers. During the development of the software we have constantly tested it on different cases of study (for instance the NZTEC corpus), in order to verify that the code was actually compatible with the different kinds of TEI P5 encoding.</p>
+  <p xmlns="">The general architecture of the software is modular, so that any component can be easily upgraded or replaced. To overcome the limitations hinted above the data processing is carried out by means of a static transformations with XSLT 2.0. EVT's processing system uses a collection of stylesheets to divide the XML file into smaller portions (each corresponding to individual pages of the manuscript), and for each of these parts it creates as many output files as requested by the file settings (for instance, diplomatic and diplomatic-interpretative). On the image side, the system offers a ready-to-use set of instruments (such as a magnifying lens, a general zoom, hot spots) to fully take advantage of manuscripts’ scans. One of the most important tools available in EVT is the image-text link: if the XML files make use of the &lt;facsimile&gt; element and provide the coordinates that identify the lines in manuscript scans, the EVT building system will automatically create clickable areas on the image, which will be handled thanks to CSS and Javascript interaction.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_237_EVT-0.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Main view</p>
+    </figcaption>
+  </div>
+  <p xmlns="">The most important feature is that the code is working as a client-only infrastructure, so that the user may immediately make use of it, without requiring any server software installation. This is apparently a limitation, since a client-server architecture would offer many more features, but thanks to the processing done with the XSLT 2.0 processor in the initial phase of the building process the system is also ready to perform complex operations (such as textual searches) which generally rely on interpreted languages and a server back-end.</p>
+  <p xmlns="">What has been described up to this point constitutes the core of our project, that is a complex and modular collection of XSLT scripts coupled with text and image browsing tools. The modules are designed in such a way that the scholar will be able to add his own stylesheets to manage the different levels of the edition, and this will not influence the other parts of the system, f.i. HTML generation. Applying the XSLT scripts usually requires the use of specific editors (such as Oxygen), which may be not the user’s favorite tool and add one more step to the process. This is why we decided to create EVT Interface: a Java user interface that allows to avoid loading the XML files in an editor and makes directly use of the open source versions of the Saxon processor to apply XSLT modules to the TEI XML files.</p>
+  <p xmlns="">Our main objective is to create a flexible, modular, stand-alone package which is also freely redistributable.</p>
+  <p xmlns="">We are now facing several research questions (UI evolution, search engine, embedded transcription, critical edition) that we hope to address during the next few months. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Vercelli Book Digitale</strong>. <a href="http://vbd.humnet.unipi.it/">vbd.humnet.unipi.it/</a> (accessed on March 2014).
+          </p>
+  <p xmlns="">2. <strong>Burnard, L., and S. Bauman</strong> (eds.) <em>TEI P5: Guidelines for Electronic Text Encoding and Interchange. 2.6.0.</em><a href="http://www.tei-c.org/P5/.">www.tei-c.org/P5/.</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

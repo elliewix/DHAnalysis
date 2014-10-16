@@ -1,0 +1,107 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-668.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Diagnosing Page Image Problems with Post-OCR Triage for eMOP</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>315 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:mchristy@tamu.edu"><span class="author-surname">Christy</span>,
+									<span class="author-forename">Matthew</span></a>
+        <a href="http://www.google.com/#q=Christy, Matthew">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Texas A&amp;M University</span>
+      </li>
+      <li>
+        <a href="mailto:lauvil@illinois.edu"><span class="author-surname">Auvil</span>,
+									<span class="author-forename">Loretta</span></a>
+        <a href="http://www.google.com/#q=Auvil, Loretta">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Illinois</span>
+      </li>
+      <li>
+        <a href="mailto:rgutier@cse.tamu.edu"><span class="author-surname">Gutierrez-Osuna</span>,
+									<span class="author-forename">Ricardo</span></a>
+        <a href="http://www.google.com/#q=Gutierrez-Osuna, Ricardo">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Texas A&amp;M University</span>
+      </li>
+      <li>
+        <a href="mailto:capitanu@illinois.edu"><span class="author-surname">Capitanu</span>,
+									<span class="author-forename">Boris</span></a>
+        <a href="http://www.google.com/#q=Capitanu, Boris">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Illinois</span>
+      </li>
+      <li>
+        <a href="mailto:ag@guptaanshul.com"><span class="author-surname">Gupta</span>,
+									<span class="author-forename">Anshul</span></a>
+        <a href="http://www.google.com/#q=Gupta, Anshul">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Texas A&amp;M University</span>
+      </li>
+      <li>
+        <a href="mailto:egrumbac@tamu.edu"><span class="author-surname">Grumbach</span>,
+									<span class="author-forename">Elizabeth</span></a>
+        <a href="http://www.google.com/#q=Grumbach, Elizabeth">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Texas A&amp;M University</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The Early Modern OCR Project (eMOP), currently underway at the Initiative for Digital Humanities, Media, and Culture (IDHMC) at Texas A&amp;M University, is a Mellon Foundation-funded endeavor tasked with improving, or creating, OCR (optical character recognition) for the Eighteenth Century Collections Online (ECCO) and Early English Books Online (EEBO) collections. The basic premise of eMOP is to 1) use book history to identify the fonts represented in the collections and the printers that used them; 2) train open source OCR engines on those fonts; and 3) OCR documents using an engine trained on the font specific to each documents. In addition, as a Mellon Fountation-funded project eMOP is tasked with using open-source solutions and producing open-source tools, workflows, and processes that are reproducible and which can be implemented by other scholars in their own digitization projects. One of eMOP’s end products will be an open-source workflow of our entire process using Taverna.</p>
+  <p xmlns="">As eMOP enters its second year, intensive work on developing and testing training for the Tesseract OCR engine has demonstrated a failing in the three-fold basic premise. Many of the page images which we are trying to OCR are of such poor quality that no amount of training will produce OCR results that meet the standards we have set for the grant outcome.<cite href="#n1">1</cite> These images are already binarized, low-quality, low-resolution, digitized images of microfilm, converted from photographs—4 decades and 3 media generations removed from the originals.Typical problems include noisiness, bleedthrough, skewing, and warping, but there are many more. There already exist many algorithms that can fix most of the problems extant in our collection of page images.<cite href="#n2">2</cite><cite href="#n3">3</cite> Applied during a pre-processing stage, these algorithms have the potential to improve page image quality to the point that they can yield excellent OCR results. But with approximately 45 million pages in eMOP’s data set, determining which pages need which kind of pre-processing proved problematic at best. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_495_EEBO-samplecopy.jpg"/>
+    <figcaption>
+      <p>Fig. 1: A sample of part of a page image from the eMOP collection showing skew, noise, bleedthrough, over-inking, and an image.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">To this end, the eMOP management team, along with our collaborators, Loretta Auvil and Boris Capitanu at SEASR (Software Environment for the Advancement of Scholarly Research, at the University of Illinois, Urbana-Champaign), and Dr. Ricardo Gutierrez-Osuna and graduate student Anshul Gupta of Texas A&amp;M University, decided to focus our proposed post-processing triage workflow on the problems that exist in our page image inputs. Originally stated, our triage process would examine OCR results and decide whether the documents would be routed to different tools being built for eMOP to perform automatic word correction, crowd-sourced line segmentation correction, by-hand font identification, or automated re-OCRing with different font training. However, the presence of so many low quality page images in our input required a more robust system for handling the output. What we needed was a triage process that would allow us to programmatically diagnose our input documents based on the output of our OCR system.</p>
+  <p xmlns="">The open-source Tesseract OCR engine is capable of producing both plain text files and files in an XML-like format called hOCR. hOCR files contain wrappers around each found word, line, paragraph, and region, and these wrappers contain bounding box coordinates for each entity (Fig. 2). A close examination of the text and hOCR results for nearly 600 poor quality page images revealed certain patterns, or ‘cues’, which could be used, singly or in combination, to uniquely predict individual problems that exist in the original page images.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_495_37406-16.hocr"/>
+    <figcaption>
+      <p>Fig. 2: Bounding boxes for lines (red) and words (blue) drawn on a page images based on hOCR output.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">For example, documents printed in a blackletter or gothic font, but OCR’d with Tesseract trained for a roman font produce a text file with a character frequency distribution different from that expected of English language documents. Basically, if Tesseract is trained with a roman font, characters printed in a blackletter font look predominantly like m, n, u, and l. Similarly, documents containing a lot of noise (e.g. numerous spots and blotches on the page) typically produce “words” found in areas of the page outside of the main text area, have word bounding boxes of widely varying heights, and have line bounding boxes that overlap. Page images that exhibit heavy skewing (the text lines are tilted at an angle from the horizontal) also pose problems for Tesseract, as it will often begin reading one line and then at some point jump to the line above or below (depending on the direction of the skew) to finish reading the "line." In these cases the hOCR again contains overlapping line bounding boxes, but also has word bounding boxes that don’t have contiguous coordinates, i.e. it is finding words out of the reading order as they appear on the page to a human reader. These are just a few examples that demonstrate the problems we’ve encountered and the cues we’ve discovered to identify them, which we will identify in this paper.</p>
+  <p xmlns="">Cues like these and others have provided us with the mechanism we were looking for to identify page image problems based on OCR output. In order to take full advantage of this information however, we are also developing a full post-processing workflow. Beginning with OCR results, the output of this workflow will be either 95%, or better, corrected text or a per-page indicator describing what kind of pre-processing should be performed before each page is re-OCR’d.</p>
+  <p xmlns="">We are also working with our collaborators on developing a mechanism to assess the quality of our OCR output. We have combined different analysis techniques developed by collaborators at SEASR and Texas A&amp;M University, to examine text data (examining character unigram frequency distributions and word lengths), page data, (determining the main text area of the page and looking for outliers), and hOCR bounding boxes (calculating box heights and widths). Applying these mechanisms to the results of each page will yield a score that constitutes a prediction of how the document would compare to a ground-truth transcription. Test results show a strong correlation between these predicted scores and actual scores produced on documents that do have ground-truth available.</p>
+  <p xmlns="">Page results receiving a high enough score can then be sent for further text analysis, including dictionary look-ups, to correct as much of the OCR output as possible. Those pages that receive scores below the threshold undergo an iterative process of looking for different cues in order to identify the likely reason the OCR process failed for each page. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_495_fig3.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Proposed eMOP post-processing workflow.</p>
+    </figcaption>
+  </div>
+  <p xmlns=""> Much work has already been done with regard to OCR post-processing, but it has concentrated on questions of identifying and correcting bad OCR.<cite href="#n4">4</cite><cite href="#n5">5</cite> In this paper we will report on the development of an OCR post-processing workflow that can evaluate and identify a broad range of defects common to page images of early modern printed documents. The result of this workflow can then be funneled into a pre-processing and re-OCR’ing process later. We plan, by grant-end, to release an open-source workflow and code that can be used by other groups or individuals engaging in large-scale OCR projects. Given the inherent problems that these documents pose for OCR engines, we view this kind of analysis as a vital step forward in the comprehensive understanding and digitization of large collections of early modern printed documents.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Singh, Chandan, Nitin Bhatia, and Amandeep Kaur</strong>. <em>Hough Transform Based Fast Skew Detection and Accurate Skew Correction Methods.</em> Pattern Recognition 41.12 (2008): 3528–3546. CrossRef. Web. 30 Oct. 2013.
+          </p>
+  <p xmlns="">2. <strong>Subramaniam, L. Venkata et al</strong>. <em>A Survey of Types of Text Noise and Techniques to Handle Noisy Text.</em> ACM Press, 2009. 115. doi:10.1016/j.patcog.2008.06.002. Web. 30 Oct. 2013.
+          </p>
+  <p xmlns="">3. <strong>Taghva, Kazem, Thomas Nartker, and Julie Borsack</strong>. <em>Information Access in the Presence of OCR Errors.</em> ACM Press, 2004. 1–8. doi:10.1145/1031442.1031443. Web. 30 Oct. 2013.
+          </p>
+  <p xmlns="">4. <strong>Wudtke, Richard, Christoph Ringlstetter, and Klaus U. Schulz</strong>. <em>Recognizing Garbage in OCR Output on Historical Documents.</em> ACM Press, 2011. 1. doi:10.1145/2034617.2034626. Web. 30 Oct. 2013.
+          </p>
+  <p xmlns="">5. <strong>Borovikov, Eugene, Ilya Zavorin, and Mark Turner</strong>. <em>A Filter Based post-OCR Accuracy Boost System.</em> ACM Press, 2004. 23–28. doi:10.1145/1031442.1031446. Web. 30 Oct. 2013.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

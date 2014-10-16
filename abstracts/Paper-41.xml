@@ -1,0 +1,90 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-41.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>A Morphological Analysis of Classical Chinese Texts</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>6</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>414 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:yasuoka@kanji.zinbun.kyoto-u.ac.jp"><span class="author-surname">Yasuoka</span>,
+									<span class="author-forename">Koichi</span></a>
+        <a href="http://www.google.com/#q=Yasuoka, Koichi">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Institute for Research in Humanities, Kyoto University, Japan</span>
+      </li>
+      <li>
+        <a href="mailto:ymzknk@kansai-u.ac.jp"><span class="author-surname">Yamazaki</span>,
+									<span class="author-forename">Naoki</span></a>
+        <a href="http://www.google.com/#q=Yamazaki, Naoki">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Faculty of Foreign Language Studies, Kansai University, Japan</span>
+      </li>
+      <li>
+        <a href="mailto:wittern@kanji.zinbun.kyoto-u.ac.jp"><span class="author-surname">Wittern</span>,
+									<span class="author-forename">Christian</span></a>
+        <a href="http://www.google.com/#q=Wittern, Christian">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Institute for Research in Humanities, Kyoto University, Japan</span>
+      </li>
+      <li>
+        <a href="mailto:nikaido@kansai-u.ac.jp"><span class="author-surname">Nikaido</span>,
+									<span class="author-forename">Yoshihiro</span></a>
+        <a href="http://www.google.com/#q=Nikaido, Yoshihiro">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Faculty of Letters, Kansai University, Japan</span>
+      </li>
+      <li>
+        <a href="mailto:tomo@kanji.zinbun.kyoto-u.ac.jp"><span class="author-surname">Morioka</span>,
+									<span class="author-forename">Tomohiko</span></a>
+        <a href="http://www.google.com/#q=Morioka, Tomohiko">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Institute for Research in Humanities, Kyoto University, Japan</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The most difficult point in the digital analysis of classical Chinese texts is that they don't have any spaces or punctuations between words or between sentences. They consist of continuous strings of Chinese characters from the start to the end of texts. Contrary to the analysis of modern Chinese texts, which have several punctuation marks and can be fragmented into phrases with these punctuation marks, the analysis of classical Chinese texts has to begin with finding out the ends of sentences.</p>
+  <p xmlns="">Classical Chinese is an isolative language, which doesn't have any inflection or agglutination. Furthermore, we don't have any generally accepted word-class system for classical Chinese. We first ought to develop machine-supported word-class system for classical Chinese. However, in classical Chinese, many morphemes may be observed as nouns and verbs, etc. In this paper we propose a method to analyze classical Chinese texts. In our method, we use our original morphological analyzer based on MeCab <cite href="#n1">1</cite>. We propose a new four-level word-class system for classical Chinese on the MeCab-based analyzer. We design the top level of the word-class system to represent the predicate-object structure of classical Chinese. The second level is the ordinary word-class of classical Chinese. The third and fourth levels are word-subclasses to describe detailed behavior of the words in classical Chinese texts.</p>
+  <p xmlns="">The development of our four-level word-class system for classical Chinese was not straightforward. At the early stage, we developed a prototype dictionary from <em>IPA Japanese Dictionary</em> <cite href="#n2">2</cite> and defined a prototype word-class system for classical Chinese. We also developed a prototype corpus along the prototype word-class system. And then, at the later stage, we examined the prototype corpus and redefined our four-level word-class system to be more suitable and systematic for classical Chinese. Especially, we excluded “adjective” from the second level of our new word-class system, since, in classical Chinese, there exists no essential distinction between “verb” and “adjective” <cite href="#n3">3</cite>. We refactored the prototype dictionary into our new dictionary, and the prototype corpus into our new corpus.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/paper41-1a.jpg"/>
+    <figcaption/>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/paper41-1b.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">Fig. 1: Our Four-Level Word-Class System for Classical Chinese</p>
+  <p xmlns="">In our new word-class system (Fig.1), the top level, which we call “word-superclass,” is defined to represent the predicate-object structure of classical Chinese: “n” represents objectives, “v” represents predicates, and “p” represents others. The second level is the ordinary word-class of classical Chinese: noun, pronoun, numeral, verb, preposition, adverb, auxiliary verb, particle, and interjection. We first constructed the word-class from a famous classical-Chinese dictionary Zenyaku Kanjikai <cite href="#n4">4</cite>, and we reconstructed the word-class, especially excluding adjective. In our system, noun, pronoun, and numeral compose “n” word-superclass; verb, preposition, adverb, and auxiliary verb compose “v” word-superclass; particle and interjection compose “p” word-superclass.</p>
+  <p xmlns="">The third and fourth levels are word-subclasses to describe detailed behavior of the words in classical Chinese texts. We first tried to construct these word-subclasses from <em>Word List by Semantic Principles</em><cite href="#n5">5</cite>. However, its levels were stratified too deep and its category was highly depended on Japanese. Therefore we constucted rather shallow word-subclasses, suitable for a morphological analysis of classical Chinese texts, from scratch (Fig.1). We have often revised the third and fourth levels of our word-class system. Whenever we revise our word-class system, we should modify our dictionary and corpus.</p>
+  <p xmlns="">For the development of a large corpus, the collaboration of linguistic experts, scholars of classical Chinese, input operators, and data managers is required. We use a distributed version control system, Git, to support the collaboration for the development of our corpus. Git is a powerful but complicated system, so we restrict our use of Git to avoid conflicts between versions of our corpus. And we have developed our own “skin” to hide the complicatedness of Git. Our own “skin” mainly consists of Git-based corpus manager, our Mecab-corpus editor (mentioned below), a system updater of our dictionary and corpus, and a system updater of the framework.</p>
+  <p xmlns="">In order to make corpus for classical Chinese on MeCab, we have constructed a MeCab-corpus editor based on XEmacs CHISE <cite href="#n6">6</cite>. We use the MeCab-corpus editor to compile our digital corpus and our digital dictionary based on our four-level word-class system for classical Chinese (Fig.2). In our MeCab-corpus editor we first input typical sentences from classical Chinese texts. Second we push the right-most button “classical Chinese” of the editor, then we obtain a morpheme sequence temporarily segmented by MeCab. Third we edit the sequence to categorize its words, looking up authoritative textbook refereneces of the sequences. And last we include the morpheme sequence in our corpus for classical Chinese.</p>
+  <p xmlns="">Our corpus for classical Chinese on MeCab now includes about 20,000 sentences, written in our four-level word-class system. Our dictionary for classical Chinese on MeCab includes about 5,000 words, which we categoraized into our four-level word-class system. We keep increasing our corpus, and we also keep selecting new words from our corpus to add them into our dictionary.</p>
+  <p xmlns="">In conclusion, we made a morphological analyzer for classical Chinese. The analyzer required a dictionary and a corpus based on a word-class system. We developed our four-level word-class system, suitable for analysis of classical Chinese, originally made from some other dictionaries, and then we reconstructed the word-class system. We also developed the Git-based framework including our Mecab-corpus editor, which allowed us to edit the corpus and dictionary effectively.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/paper41-2.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">Fig. 2: Screenshot of an Authoritative Textbook and Our MeCab-Corpus Editor</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>T. Kudo, K. Yamamoto and Y. Matsumoto</strong> (2004): <em>Applying Conditional Random Fields to Japanese Morphological Analysis</em>, Conference on Empirical Methods in Natural Language Processing, pp.230-237.</p>
+  <p xmlns="">2. <em>mecab-ipadic, <a href="http://code.google.com/p/mecab/downloads/detail?name=mecab-ipadic-2.7.0-20070801.tar.gz">code.google.com/p/mecab/downloads/detail?name=mecab-ipadic-2.7.0-20070801.tar.gz</a></em></p>
+  <p xmlns="">3. <strong>N. Yamazaki, T. Morioka and K. Yasuoka</strong>: <em>Refactoring of Wordclasses for Morphological Analysis of Classical Chinese</em>, The Computers and the Humanities Symposium 2012, pp.39-46.</p>
+  <p xmlns="">4. <strong>Y. Togawa, et al.</strong> (2011): <em>Zenyaku Kanjikai</em>, 3rd Ed., Sanseido.</p>
+  <p xmlns="">5. <strong>National Institute for Japanese Language and Linguistics</strong> (2004): <em>Word List by Semantic Principles</em>, Revised &amp; Enlarged Ed., Dainippon Tosho.</p>
+  <p xmlns="">6. <strong>T. Morioka</strong> (2008): <em>CHISE: Character Processing Based on Character Ontology</em>, 3rd International Conference on Large-Scale Knowledge Resources LKR, pp.148-162.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

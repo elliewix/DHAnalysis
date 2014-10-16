@@ -1,0 +1,157 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-220.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Sentiment Analysis for the Humanities: the Case of Historical Texts</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>413 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:amarchetti@fbk.eu"><span class="author-surname">Marchetti</span>,
+									<span class="author-forename">Alessandro</span></a>
+        <a href="http://www.google.com/#q=Marchetti, Alessandro">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Fondazione Bruno Kessler</span>
+      </li>
+      <li>
+        <a href="mailto:sprugnoli@fbk.eu"><span class="author-surname">Sprugnoli</span>,
+									<span class="author-forename">Rachele</span></a>
+        <a href="http://www.google.com/#q=Sprugnoli, Rachele">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Fondazione Bruno Kessler / University of Trento</span>
+      </li>
+      <li>
+        <a href="mailto:satonelli@fbk.eu"><span class="author-surname">Tonelli</span>,
+									<span class="author-forename">Sara</span></a>
+        <a href="http://www.google.com/#q=Tonelli, Sara">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Fondazione Bruno Kessler</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">In this paper we investigate the possibility to adapt existing lexical resources and Natural Language Processing (NLP) methodologies related to Sentiment Analysis (SA) to the historical domain. </p>
+  <p xmlns="">Sentiment analysis aims at the computational treatment of opinion, sentiment and subjectivity in texts .<cite href="#n1">1</cite></p>
+  <p xmlns="">Current research in SA mainly focuses on the identification of sentiment and opinions in areas such as social media <cite href="#n2">2</cite>,  news <cite href="#n3">3</cite>  <cite href="#n4">4</cite>, political speeches <cite href="#n5">5</cite> , customer and movie reviews <cite href="#n6">6</cite> <cite href="#n7">7</cite><cite href="#n8">8</cite>. To our knowledge, SA in the context of the humanities has been rarely explored <cite href="#n9">9</cite> <cite href="#n10">10</cite> <cite href="#n11">11</cite>.</p>
+  <p xmlns="">Many SA tools often take advantage of polarity lexicons, i.e. a lexicon of positive and negative words and n-grams. In a polarity lexicon, each word is associated with its <em>prior polarity</em>, i.e. the polarity of the word out of the context. A SA system uses these lexicons to evaluate the polarity of a whole text, a sentence or a topic within a text. The availability of a sentiment lexicon is thus a crucial step toward the creation and training of any SA application. Unfortunately, the majority of existing SA lexicons are for English (e.g. Harvard General Inquirer <cite href="#n12">12</cite>) while no lexicon for Italian has been developed yet.</p>
+  <p xmlns="">The polarity of a word can however be different according to its context of use. A word can be negated and change its polarity (‘ice-cream is good’ vs ‘ice-cream is <em>not </em>good’) or have different usages (‘they fought a terrific battle"’ vs ‘I loved the film, it was <em>terrific</em>!’). To account for these differences, a system must be able to handle the <em>contextual polarity</em> of a word, i.e. the different  polarity of a word according to its syntactic, semantic or pragmatic context <cite href="#n13">13</cite> <cite href="#n14">14</cite><cite href="#n15">15</cite> <cite href="#n16">16</cite>.</p>
+  <p xmlns="">Apart from manual annotation or automatic mapping from English, crowdsourcing methodologies can offer a viable solution to collect a polarity lexicon<cite href="#n17">17</cite> and to annotate a large dataset <cite href="#n18">18</cite>.</p>
+  <p xmlns="">The need to explore the application of SA to historical texts has emerged thanks to the collaboration between the authors and the <em>Italian-German Historical Institute</em> (ISIG) in Trento. This collaboration is aimed at developing tools that can help historians access and understand textual data through the adoption of NLP methods. In particular, SA has been identified as notably relevant to quantify the general sentiment of single documents, to track the attitude towards a specific topic or entity over time and across a large collection of texts, and to allow specific search based on sentiment. This is crucial, for instance, to research on the history of ideology, evolution of political thought, etc.</p>
+  <p xmlns="">The dataset used for our research is the complete corpus of writings of Alcide De Gasperi, one of the founders of the Italian Republic, made of about 3,000 documents and 3,000,000 words.</p>
+  <p xmlns="">Using this corpus as a case study, two experiments have been carried out and are described in this paper. The aim of these experiments is the evaluation of i) how existing lexical resources for SA perform in the historical domain and ii) the feasibility of a sentiment annotation task for historical texts either with expert annotators and crowdsourcing contributors.</p>
+  <h2 xmlns="">2. Prior Polarity Experiment</h2>
+  <p xmlns="">The first experiment on De Gasperi's corpus has been carried out using two existing polarity lexicons, namely SentiWordNet <cite href="#n19">19</cite> and WordNet-Affect <cite href="#n20">20</cite>, to calculate the prior polarity of lemmas and measure the general sentiment of each document within the corpus. The goal was to test how resources built on contemporary languages can deal with historical texts.</p>
+  <p xmlns="">SentiWordNet and WordNet-Affect have the great advantage of being extensions of a well-known resource called WordNet <cite href="#n21">21</cite>. This allowed us to map the word senses (called <em>synsets</em>) with a positive, negative or neutral polarity in SentiWordNet and WordNet-Affect to the corresponding Italian synsets in MultiWordNet <cite href="#n22">22</cite>, in which Italian synsets are aligned with WordNet ones. At the same time, lemmas were automatically extracted from De Gasperi's corpus using the TextPro tool <cite href="#n23">23</cite>: the total of 70,178 lemmas was reduced to 36,304 after excluding lemmas that can’t have a polarity score (e.g. numbers, articles). Each lemma was then automatically associated with the most frequent synset in MultiWordNet and its polarity score: this association covered 14,874 lemmas (40.97%) among which 9,650 were neutral. This process, followed by a manual check of the scores, produced a list of 5,224 lemmas with a polarity score: 449 with an absolute positive score (e.g. 'giubilo'/<em>rejoicing</em>), 576 with an absolute negative score (e.g. 'affranto'/<em>broken-hearted</em>) and the others with an intermediate score.</p>
+  <p xmlns="">The general sentiment of each document in the corpus was finally calculated summing up the polarity scores of the lemmas appearing both in the documents and in our list, and visualized through a gauge diagram in the A.L.C.I.D.E. web platform [<a href="http://dh.fbk.eu/projects/alcide-analysis-language-and-content-digital-environment">dh.fbk.eu/projects/alcide-analysis-language-and-content-digital-environment</a>] (Figure 1).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_183_immaginona_min.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Document visualization: sentiment and key-concepts</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Historians’ evaluation of the results was positive for most of the documents but a more specific need emerged: historians are indeed more interested in the polarity of a specific topic and in its evolution over time, rather than in the global polarity of a document that can give us indications only about the general sentiment conveyed in it. However, as historical texts are complex documents in which several topics can be identified, the global polarity of the document is not enough to identify the polarity of a single topic.</p>
+  <p xmlns="">To address these requirements, we performed the experiment presented in Section 3 aimed at annotating SA at the level of topic in De Gasperi's corpus, following a contextual polarity approach.</p>
+  <h2 xmlns="">3. Crowdsourcing Experiment for Contextual Polarity</h2>
+  <p xmlns="">In order to perform a pilot experiment, we identified two topics which were relevant in De Gasperi's writings, namely "sindacato'"(<em>trade union</em>) and "sindacalismo" (<em>trade-unionism</em>).</p>
+  <p xmlns="">A corpus of 525 sentences was automatically extracted from De Gasperi's corpus, where each sentence contained at least one of the two lemmas “sindacato” and “sindacalismo”. The previous and the following sentence were added as a context as well. Each sentence was annotated by two expert annotators, while a third annotation was collected through the crowdsourcing platform CrowdFlower [<a href="http://www.crowdflower.com">www.crowdflower.com</a>] after performing a majority voting over 5 judgements.</p>
+  <p xmlns="">The two expert annotators were asked to create gold standard data (GS), i.e. a set of sentences on which both annotators gave the same judgements, from a subset of the corpus (60 sentences, 11% of the whole corpus). Both expert annotators and crowdsourcing contributors were then asked to annotate the contextual polarity of the two topics in the sentences with one of the four possible judegments (i.e. positive, negative, neutral, unknown) given a simple set of instructions and some annotation example. </p>
+  <p xmlns="">In addition to the manual annotation, we also calculated the prior polarity for each sentence using the same algorithm applied to the documents and described in Section 2.</p>
+  <p xmlns="">1. The feasibility of this task was then evaluated calculating:</p>
+  <ol xmlns="">
+    <li>
+      <p>2. the accuracy of the crowdsourced annotation over GS (figure 2), i.e. how well non-expert contributors performed the task;</p>
+    </li>
+    <li>
+      <p>3. the accuracy of the prior polarity for each sentence over GS (figure 2), i.e. how well the Italian prior polarity lexicon performed on the sentences in comparison to the contextual polarity approach;</p>
+    </li>
+    <li>
+      <p>the inter-annotator agreement (IAA) with the Fleiss's kappa measure (figure 3)<cite href="#n24">24</cite> , i.e. the level of consensus between the annotators. </p>
+      <div class="figure">
+        <img src="/data/figures/DH2014/DH2014_183_accuracy.jpg"/>
+        <figcaption>
+          <p>Fig. 2: Accuracy scores</p>
+        </figcaption>
+      </div>
+    </li>
+  </ol>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_183_fleiss.jpg"/>
+    <figcaption>
+      <p>Fig. 3: IAA results</p>
+    </figcaption>
+  </div>
+  <p xmlns="">The overall accuracy score for the crowd-collected judgements in Figure 2 (68.3%) indicates the general complexity of the task. In particular negative and positive polarities are more difficult to identify (55.5% and 46.6%) than neutral polarity (80%).</p>
+  <p xmlns="">Considering the prior polarity scores in Figure 2, we observe that accuracy is always lower than in the crowd annotation setting, except for the positive judgements (86%). </p>
+  <p xmlns="">The IAA agreement in Figure 3 confirms that SA is a a challenging task <cite href="#n25">25</cite> . The highest kappa-score is found if we consider the two expert annotators (0.46), but it is not much higher than the situation in which we consider 3 annotators (0.39) or one of the two experts and the crowd judgement (0.35). In general, the type of documents have a great influence on the agreement scores: past works report that news stories can achieve an agreement of 0.81 <cite href="#n26">26</cite>, whereas social media (tweets) can be as low as 0.321 <cite href="#n27">27</cite>.</p>
+  <h2 xmlns="">4. Conclusions and Future Works</h2>
+  <p xmlns="">This paper presented two experiments related to SA and involving a corpus of historical texts. In the first one we created a new Italian lexical resource for sentiment analysis starting from two existing lexicons for English and we applied it to measure the polarity of an entire document using a prior polarity approach. In the second experiment, the use of crowdsourced annotation to obtain contextual polarity of a specific topic was exploited.</p>
+  <p xmlns="">The long term goal of our ongoing research is to create a system to support historical studies, which is able to analyze the sentiment in historical texts and to discover the opinion about a topic and its change over time.</p>
+  <p xmlns="">In the near future we plan to perform domain adaptation of existing annotation schemes developed for SA <cite href="#n28">28</cite> <cite href="#n29">29</cite> and of the Italian lexical resource we created. Particular attention will be devoted to a step-by-step evaluation by historians in order to tailor the results of our work to their needs.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Pang, B. and Lee, L.</strong> (2008). <em>Opinion mining and sentiment analysis, Foundations and Trends</em> in Information Retrieval 2 (1-2) , 1-135.
+          </p>
+  <p xmlns=""><strong>Basile, V. and Nissim, M.</strong> (2013). <em>Sentiment analysis on Italian tweets</em>. Proceedings of the 4th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis, pp. 100–107, Atlanta, United States.
+          </p>
+  <p xmlns=""><strong>Wiebe, J., Wilson, T., and Cardie, C.</strong> (2005). <em>Annotating Expressions of Opinions and Emotions in Language</em>, Language Resources and Evaluation 39 (2/3) , 164-210.
+          </p>
+  <p xmlns=""><strong>Amer-Yahia, S., Anjum, S., Ghenai, A., Siddique, A., Abbar, S., Madden, S., Marcus, A. and El-Haddad, M.</strong> (2012). <em>MAQSA: a system for social analytics on news.</em>, in K. Selçuk Candan; Yi Chen 0001; Richard T. Snodgrass; Luis Gravano and Ariel Fuxman, ed., 'SIGMOD Conference' , ACM, , pp. 653-656.
+          </p>
+  <p xmlns=""><strong>Somasundaran, S. and Wiebe, J.</strong> (2010). <em>Recognizing Stances in Ideological On-line Debates</em>, in Proceedings of the NAACL HLT 2010 Workshop on Computational Approaches to Analysis and Generation of Emotion in Text, pp. 116-124, Los Angeles, CA. Association for Computational Linguistics.
+          </p>
+  <p xmlns=""><strong>Hu, M. and Liu, B.</strong> (2004). <em>Mining and Summarizing Customer Reviews</em>, in Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining, pp. 168-177 .
+          </p>
+  <p xmlns=""><strong>Pang, B. and Lee, L.</strong> (2004). <em>A Sentimental Education: Sentiment Analysis Using Subjectivity Summarization Based on Minimum Cuts</em>, in Proceedings of the 42nd annual meeting on Association for Computational Linguistics, Barcelona, ES , pp. 271-278 .
+          </p>
+  <p xmlns=""><strong>Maas, A. L., Daly, R. E., Pham, P. T., Huang, D., Ng, A. Y., and Potts, C.</strong> (2011). <em>Learning word vectors for sentiment analysis</em>, in Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies-Volume 1, pp. 142-150.
+          </p>
+  <p xmlns=""><strong>Cooper, D. and Gregory, I. N.</strong> (2011), <em>Mapping the English Lake District: a literary GIS</em>. Transactions of the Institute of British Geographers, 36: 89–108.
+          </p>
+  <p xmlns=""><strong>Kakkonen, T. and Kakkonen, G.G.</strong> (2011). <em>SentiProfiler: Creating Comparable Visual Profiles of Sentimental Content in Texts</em>, in Proceedings of the Workshop on Language Technologies for Digital Humanities and Cultural Heritage, pp. 62–69, Hissar, Bulgaria. <a href="http://www.aclweb.org/anthology/W11-4110.">www.aclweb.org/anthology/W11-4110.</a></p>
+  <p xmlns=""><strong>Mohammad, S.</strong> (2011). <em>From Once Upon a Time to Happily Ever After: Tracking Emotions in Novels and Fairy Tales</em>, in Proceedings of the 5th ACL-HLT Workshop on Language Technology for Cultural Heritage, Social Sciences, and Humanities, pages 105–114, Portland, OR, USA. Association for Computational Linguistics. <a href="http://www.aclweb.org/anthology/W11-1514.">www.aclweb.org/anthology/W11-1514.</a></p>
+  <p xmlns=""><strong>Stone, P.</strong> (1997). <em>Thematic text analysis: new agendas for analyzing text content</em>, in Carl Roberts, ed., Text Analysis for the Social Sciences, Lawerence Erlbaum Associates, Mahwah, NJ .
+          </p>
+  <p xmlns=""><strong>Kim, S. M., and Hovy, E.</strong> (2004). <em>Determining the sentiment of opinions</em>, in Proceedings of the 20th international conference on Computational Linguistics.
+          </p>
+  <p xmlns=""><strong>Wilson, T., Wiebe, J., and Hoffmann, P.</strong> (2005). <em>Recognizing Contextual Polarity in Phrase-Level Sentiment Analysis</em>, in Proceedings of the conference on human language technology and empirical methods in natural language processing, pp. 347-354.
+          </p>
+  <p xmlns=""><strong>Nasukawa, T. and Yi, J.</strong> (2003). <em>Sentiment Analysis: Capturing Favorability Using Natural Language Processing</em>, in Proceedings of the Conference on Knowledge Capture (K-CAP).
+          </p>
+  <p xmlns=""><strong>Socher, R., Perelygin, A., Wu, J. Y., Chuang, J., Manning, C. D., Ng, A. Y., and Potts, C.</strong> (2013). <em>Recursive deep models for semantic compositionality over a sentimen</em>t treebank, in Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 1631-1642.
+          </p>
+  <p xmlns=""><strong>Mohammad, S. and Turney, P. D.</strong> (2013). <em>Crowdsourcing a Word-Emotion Association Lexicon</em>. Computational Intelligence 29 (3) , 436-465.
+          </p>
+  <p xmlns=""><strong>Pang, B. and Lee, L.</strong> (2004). <em>A Sentimental Education: Sentiment Analysis Using Subjectivity Summarization Based on Minimum Cuts</em>, in Proceedings of the 42nd annual meeting on Association for Computational Linguistics, Barcelona, ES , pp. 271-278 .
+          </p>
+  <p xmlns=""><strong>Baccianella, A. E. S. and Sebastiani, F.</strong> (2010). <em>SentiWordNet 3.0: An Enhanced Lexical Resource for Sentiment Analysis and Opinion Mining</em>, in Proceedings of the Seventh conference on International Language Resources and Evaluation (LREC'10).
+          </p>
+  <p xmlns=""><strong>Strapparava, C. and Valitutti, A.</strong> (2004). <em>WordNet-Affect: An affective extension of WordNet</em>, in Proceedings of the 4th International Conference on Language Resources and Evaluation, pp. 1083-1086.
+          </p>
+  <p xmlns=""><strong>Fellbaum, C.</strong>, ed. (1998). <em>Wordnet, an Electronic Lexical Database</em>, MIT Press.
+          </p>
+  <p xmlns=""><strong>Pianta, E., Bentivogli, L. and Girardi, C.</strong> (2002). <em>MultiWordNet: developing an aligned multilingual database</em>, in Proceedings of the First International Conference on Global WordNet.
+          </p>
+  <p xmlns=""><strong>Pianta, E., Girardi, C. and Zanoli, R.</strong> (2008). <em>The TextPro Tool Suite</em>, in Proceedings of the 5th Conference on Language Resources and Evaluation (LREC'06).
+          </p>
+  <p xmlns=""><strong>Artstein, R., and Poesio, M.</strong> (2008). <em>Inter-coder agreement for computational linguistics</em>. Computational Linguistics, 34(4), 555-596.
+          </p>
+  <p xmlns=""><strong>Pang, B. and Lee, L.</strong> (2008). <em>Opinion mining and sentiment analysis, Foundations and Trends</em> in Information Retrieval 2 (1-2) , 1-135.
+          </p>
+  <p xmlns=""><strong>Balahur, A., and Steinberger, R.</strong> (2009). <em>Rethinking Sentiment Analysis</em> in the News: from Theory to Practice and back. Proceeding of WOMSA.
+          </p>
+  <p xmlns=""><strong>Basile, V. and Nissim, M.</strong> (2013). <em>Sentiment analysis on Italian tweets</em>. Proceedings of the 4th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis, pp. 100–107, Atlanta, United States.
+          </p>
+  <p xmlns=""><strong>Wiebe, J., Wilson, T. and Cardie, C.</strong> (2005), <em>Annotating Expressions of Opinions and Emotions</em> in Language, Language Resources and Evaluation 39 (2/3) , 164-210.
+          </p>
+  <p xmlns=""><strong>Di Bari, M., Sharoff, S., and Thomas, M.</strong> (2013). <em>SentiML: functional annotation for multilingual sentiment analysis</em>. In Proceedings of the 1st International Workshop on Collaborative Annotations in Shared Environment: metadata, vocabularies and techniques in the Digital Humanities.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

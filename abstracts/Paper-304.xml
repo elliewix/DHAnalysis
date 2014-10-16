@@ -1,0 +1,170 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-304.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Mixed data, mixed audience: building a flexible platform for the Visionary Cross project</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>3</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>13:45:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:roberto.rossellidelturco@gmail.com"><span class="author-surname">Rosselli Del Turco</span>,
+									<span class="author-forename">Roberto</span></a>
+        <a href="http://www.google.com/#q=Rosselli Del Turco, Roberto">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Università di Torino</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">Due to an exceptional
+event, a fragment of <em>The Dream of the Rood</em> poem is found on the
+Ruthwell Cross (Dumfriesshire, Scotland) in the form of an
+inscription in runic characters; another fragment of the same work,
+although much smaller, is visible on the Brussels Cross (St. Michael
+and St. Gudula Cathedral, Brussels, Belgium); the two monumental
+crosses of Ruthwell and Bewcastle (Cumbria, England) share the
+presence of runic inscriptions and the same type of carved
+decorations; the two poems <em>Elene</em> and <em>The Dream of the Rood</em>
+(full version) are part of a <em>florilegium</em> of religious works, the Vercelli
+Book (MS CXVII, Biblioteca
+Capitolare di Vercelli, Italy), in virtue of the central role that the Cross plays in both: the first poem belongs to the texts inspired
+by the legend of the <em>inventio crucis</em> by St. Elena,
+mother of emperor Constantine, while in the second one the Cross
+itself appears in dream to the author and tells its own story. These witnesses of the Anglo-Saxon Middle Ages are closely related from a
+thematic point of view as well as for their contents<cite href="#n1">1</cite>: one could say
+that this specific thematic cluster was handled by means of a
+sophisticated multimedia approach by Anglo-Saxon authors, especially
+visible in the case of the Ruthwell and Bewcastle crosses. The
+Visionary Cross project<cite href="#n2">2</cite> aims
+at creating a mixed media edition of these artifacts putting together
+not only the critical edition of the poem, which is going to be
+showed together with the digitized images of the Vercelli Book, but
+also the three-dimensional data related to the Crosses.</p>
+  <h2 xmlns="">2. Methodological issues I: integration of heterogeneous data</h2>
+  <p xmlns="">Within the scope of the
+project I am currently working with the ISTI-CNR researchers (Pisa)
+to refine and improve the current version of a combined 3D model /
+textual edition browsing software<cite href="#n3">3</cite>, and to prepare a digital edition
+of the runic version of the <em>Dream of the Rood</em> poem. During this work we faced two critical issues: 
+</p>
+  <ul xmlns="">
+    <li>
+            the integration of
+	heterogeneous data on the web platform that we are building to
+	visualize the edition: namely, the 3D model of the Ruthwell Cross, which is
+	in a standard format (PLY - Polygon File Format<cite href="#n4">4</cite>) but needs specialized software libraries to be
+	displayed in a Web browser window; the digitized images of the
+	Vercelli Book manuscript; and finally, the edition texts (diplomatic
+	and critical editions of the poem fragment); 
+	
+          </li>
+    <li>
+            the adoption of an
+	encoding standard that would allow to preserve the different layers
+	of the text (on the graphic level: rune characters vs.
+	transliterated characters vs. modern rendering of text; on the
+	edition level: diplomatic, interpreted and critical editions) at the
+	same time connecting seamlessly with the 3D and 2D elements included
+	in the web platform. 
+	
+          </li>
+  </ul>
+  <p xmlns="">The two issues mentioned
+above are currently being solved by means of a software framework
+designed to be flexible enough to be adapted to different types of
+media and to cope with the specific characteristics of each object;
+and by use of the TEI XML schemas<cite href="#n5">5</cite>, in a <em>ad
+hoc</em> customization using only the TEI P5 modules needed for our purposes, to accomplish an encoding of the runic text
+which is fully interoperable with both the web-based visualization
+system and the tools commonly used in the digital philology field.
+The rationale being that, while 3D models have recently started to
+appear and gain in popularity, they still are self-contained objects
+with little to no concession to the (possibly very relevant) textual
+content of the original artifact: our goal is to integrate the
+separate components in such a way that all the subtle interrelations
+and connections between the different objects, in short their
+original multimedia nature, are exposed and made explorable in a
+flexible browsing environment. For instance, the runes are inscribed on the two narrower sides of the Ruthwell Cross and it is likely that each side, including the larger ones with figural panels, were to be "interpreted" in turn according to the movement of the sun<cite href="#n6">6</cite>; furthermore, the Bewcastle Cross shows similar iconographic content, but with subtle differences that can be ascribed to the influence of larger cultural traditions (Celtic, Roman) on the work of local artisans.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_247_Presenter-RC-runes-01.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Experimental edition of the runic text of the Ruthwell Cross</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">3. Methodological issues II: defining the user and what s/he can do with the edition</h2>
+  <p xmlns="">While exploring the
+future shape of the aforementioned environment, though, we came up with new
+research questions begging for an answer:</p>
+  <ul xmlns="">
+    <li>
+            who is going to be
+	the “typical” user of our edition? This is apparently an easy
+	question, but when we considered possible use cases we came up with
+	many more than first anticipated, so that the perspective audience almost looks as heterogeneous as the different media of the edition; taking into account these use
+	cases has led to new functionality being added to the browsing
+	environment, and to the decision that it should be as modular and
+	flexible as possible for future expansion;
+          </li>
+  </ul>
+  <ul xmlns="">
+    <li>
+            what is our user
+	going to do with our edition? Another apparently innocuous question,
+	especially since we considered from the start, besides simple
+	browsing of the content, the possibility of user annotation of
+	edition objects; what is different, as we could try for ourselves,
+	is that giving more powers to the user leads to interesting (and
+	potentially risky) new scenarios.
+          </li>
+  </ul>
+  <p xmlns="">A traditional edition
+lets the user verify the soundness of the editor’s <em>constitutio
+textus</em> by means of the critical apparatus: the latter is a very
+successful compromise dictated by the limits of the printed edition
+format, but a digital edition can go beyond such limits and make it
+possible not only to verify the current version of the edited text
+but also to experiment with alternatives<cite href="#n7">7</cite>, creating a “personal
+edition” on the basis of the available material and the tools
+provided by the browsing platform, and sharing it according to the “social edition” concept<cite href="#n8">8</cite>, although this will be limited to the "collaborative annotation" feature described by Siemens rather than to the "user derived content" one (in other words, we are not thinking of a full "collaborative edition"). Note that in theory this is
+possible not only with regard to textual content, but also for the 3D
+reconstruction we offer: the Ruthwell Cross is suffering by problems
+of incompleteness (the horizontal arm is a spurious piece dating to
+the XIX century), wrong reconstruction (the top piece was placed
+back-to-front), legibility of the inscriptions (part of the runes
+have been effaced by the prolonged exposure to the weather and other
+damages): making the 3D model dynamic and open to alternative
+positioning of selected parts, and offering digital restoration tools
+to insert “digital runes” where the original ones are no longer
+visible, it will be possible to build and check different theories
+about the Cross and the text it bears.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_247_Presenter-RC-02.jpg"/>
+    <figcaption>
+      <p>Fig. 2: The Ruthwell Cross 3D model as a teaching tool, clicking on the presentation arrows the model rotates andmoves to the location described in the slide</p>
+    </figcaption>
+  </div>
+  <p xmlns="">We intend to offer suitable tools to verify our own (as editors) hypotheses, but also to create and manage newhypotheses and to share them with other users, be they related to the textual layers of the edition or to thematerial aspects of the artifact(s) available in the browsing environment. To do this we will have to go beyond asimple catalog of possible use cases, but also prepare the environment for different user “roles”, assigning to eachrole an appropriate set of capabilities (and responsibilities). While the original plan was that of a singleenvironment for all types of possible users, in fact, our initial work with text and 3D models convinced us that it isimpossible to conflate together extremely heterogeneous features. Hence the need to set up a very small numberof different environments in which part of the functionality is shared and always present, while other features arespecifically targeted to a particular type of user.</p>
+  <h2 xmlns="">Conclusion</h2>
+  <p xmlns="">This paper will report on the methodological issues described above, explaining which solutions have already beenfound and at least in part implemented in the browsing environment, which issues are still open and how theproject researchers intend to deal with them. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Karkov, C., Keefer, S.L. and Jolly, S.L.</strong> (eds.) (2008). <em>Cross and Culture in Anglo-Saxon England</em>. Morgantown: West Virginia University Press.
+          </p>
+  <p xmlns="">
+            2. Project web site: <a href="http://www.visionarycross.org/.">www.visionarycross.org/.</a></p>
+  <p xmlns="">3. <strong>Callieri, M., Leoni, C., Dellepiane, M., Scopigno, R.</strong> (2013). <em>Artworks narrating a story: a modular framework for the integrated presentation of three-dimensional and textual contents.</em> ACM WEB3D - 18th International Conference on 3D Web Technology, pp. 167-175.
+          </p>
+  <p xmlns="">
+            4. See <a href="http://en.wikipedia.org/wiki/PLY_(file_format).">en.wikipedia.org/wiki/PLY_(file_format).</a></p>
+  <p xmlns="">5. <strong>Burnard, L., and S. Bauman</strong> (eds.) <em>TEI P5: Guidelines for Electronic Text Encoding and Interchang</em>e. 2.6.0. Last updated on 20th January 2014. <a href="http://www.tei-c.org/P5/.">www.tei-c.org/P5/.</a></p>
+  <p xmlns="">6. <strong>Ó Carragáin, É.</strong> (2007). <em>Christian Inculturation in Eighth-Century Northumbria: The Bewcastle and Ruthwell Crosses</em>. Colloquium Journal 4. <a href="http://ism.yale.edu/sites/default/files/files/Christian%20Inculturation%20in%20Eighth.pdf">ism.yale.edu/sites/default/files/files/Christian%20Inculturation%20in%20Eighth.pdf</a></p>
+  <p xmlns="">7. <strong>Gabler, H. W.</strong> (2010). <em>Theorizing the Digital</em> Scholarly Edition. Literature Compass 7 (2). 43.
+          </p>
+  <p xmlns="">8. <strong>Siemens, R., et al.</strong> (2012). <em>Toward modeling the social edition: An approach to understanding the electronic scholarly edition in the context of new and emerging Media</em>. Literary and Linguistic Computing 27 (4). 445-61.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

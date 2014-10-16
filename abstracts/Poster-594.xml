@@ -1,0 +1,75 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-594.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>A Text Encoding Support System for Pre-modern Japanese Historical Materials</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:t_yamada@hi.u-tokyo.ac.jp"><span class="author-surname">Yamada</span>,
+									<span class="author-forename">Taizo</span></a>
+        <a href="http://www.google.com/#q=Yamada, Taizo">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Historiographical Institute, The University of Tokyo</span>
+      </li>
+      <li>
+        <a href="mailto:inoue@hi.u-tokyo.ac.jp"><span class="author-surname">Inoue</span>,
+									<span class="author-forename">Satoshi</span></a>
+        <a href="http://www.google.com/#q=Inoue, Satoshi">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Historiographical Institute, The University of Tokyo</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">Reading comprehension of historical materials is one of important elements in historical study. The results of the reading comprehension should be encoded as texts; however, in Japanese historical study amount of the texts is a few rather than of digital images. Almost encoded texts are not shared and there are no rules for text structuring. </p>
+  <p xmlns="">In the study due to structuring encoded texts automatically and sharing the texts among researchers, we developed a text encoding support system for pre-modern Japanese historical materials, especially Japanese medieval period. The features of our system are follows: web-based system, automatic text structuring, text editing, text sharing and support for reading the characters in the materials. Our system doesn’t have and manage any material’s catalogues. We suppose that the system uses a ready-made system to search catalogue. Particularly, we use “Catalogue database of holding materials”<cite href="#n1">1</cite> (called “HICAT”) in Historiographical Institute the University of Tokyo.</p>
+  <h2 xmlns="">2. Our System</h2>
+  <h2 xmlns="">2.1. Basic Methods</h2>
+  <p xmlns="">Our system has 2 methods; search method and authoring method. The search method allows a user to search for images, texts and annotations. An annotation assignment is one of important work in encoding for research of Japanese history. Our system can deal with following 2 annotation types: marginal note and format note. In the study we defined that a marginal note is a description of “a result of reading comprehension or research” and disappear in the material. Examples of marginal note are personal name, location name, correction and so on. Format note indicates descriptive pattern for strings (e.g. erasure, divide note,…) or lines (address, title, subject,…).</p>
+  <p xmlns="">Editing the texts and the annotations can be supported by the authoring method. Using the authoring method, the system starts text structuring automatically as soon as a user edit a text. If the text editing is finished and the text is committed, then new version of the text is created. A version is identified by a user ID, modified time and image ID (as URI). A user can use the previous version and the versions of other users. If the user edits other user’s version, the new version will be created. The new version takes over all annotations in original version and can be edited freely. Therefore, the method of text reuse never violates other user’s text.</p>
+  <h2 xmlns="">2.2. Attempt
+of converting into TEI</h2>
+  <p xmlns="">The system can output XML document as the result
+of text encoding. The structure is useful only in our system, because the structure
+is specialized in the system. We think an encoded text should be outputted in a
+general format when the text is used outside our system. Because TEI P5<cite href="#n2">2</cite> is “de
+facto standard” of text encoding in Humanities, we attempted convert our text
+into TEI P5. We carefully treat the expression of the line and the annotation
+in the conversion, because in our system text is represented as a set of lines
+and annotations. For the expression of the marginal notes as personal name,
+place name, and correction, we use &lt;persName&gt;, &lt;placeName&gt;, and
+&lt;choice&gt; respectively.</p>
+  <p xmlns=""> Moreover, we consider automatical assignment of
+opener and closer in the text. We analyze a form pattern of Japanese historical
+materials, and the assignment is realized by the basis of the results.</p>
+  <h2 xmlns="">2.3. Reading Support Method</h2>
+  <p xmlns="">Since the encoding a historical material is
+very hard, the researcher of Japanese history is needed training or practice
+for a long time. In order to support the encoding, we provide a suggestion
+method for support of inputting character. When a user input string in a text
+field on our system, the suggestion method presents a candidate character which
+appears after current inputted string. The method is realized by character n-gram
+model. A learning data of the n-gram is constructed by texts extracted from
+fulltext database of Historiographical Institute. In order to improve the
+precision of the suggestion method, we use Modified Kneser-Ney Smoothing method<cite href="#n3">3</cite>.
+We experiment for the confirming the performance of the suggestion method. As
+the experimental result, the hit ratio whether a set of candidate character in
+top 20 includes a correct is 0.72. The ratio might seem to low, but it can be effectively used in the actual work.</p>
+  <h2 xmlns="">3. Conclusion</h2>
+  <p xmlns="">Our system has been developed for managing texts which are represented as results of reading comprehension. We believe that the most important element of the study is to provide an environment in which researchers of Japanese history can encode texts pleasantly and comfortably. In order to achieve it, we'd like to improve the expressiveness of texts and performance of methods in the system.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <em>Databases of HI</em>. <a href="http://wwwap.hi.u-tokyo.ac.jp/ships/.">wwwap.hi.u-tokyo.ac.jp/ships/.</a></p>
+  <p xmlns="">2. <em>TEI guidelines</em>. <a href="http://www.tei-c.org/Guidelines/P5/.">www.tei-c.org/Guidelines/P5/.</a></p>
+  <p xmlns="">3. <strong>F. James</strong> (2000), <em>Modified Kneser-Ney Smoothing of n-gram Models</em>, Technical report, RIACS Technical Report 00.07, <a href="http://www.riacs.edu/navroot/Research/TRpdf/">www.riacs.edu/navroot/Research/TRpdf/</a>.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-787.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Computational Models of Narrative: Using Artificial Intelligence to Operationalize Russian Formalist and French Structuralist Theories</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>412 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Sack</span>,
+									<span class="author-forename">Graham Alexander </span></a>
+        <a href="http://www.google.com/#q=Sack, Graham Alexander ">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Columbia University</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Finlayson</span>,
+									<span class="author-forename">Mark</span></a>
+        <a href="http://www.google.com/#q=Finlayson, Mark">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation"> MIT CSAIL</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Gervas</span>,
+									<span class="author-forename">Pablo</span></a>
+        <a href="http://www.google.com/#q=Gervas, Pablo">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Universidad Complutense de Madrid</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">Panel Description:</h2>
+  <p xmlns="">Narrative has become an active research focus in the artificial intelligence community in recent years, with efforts aimed at the construction of computational models for storytelling and story understanding. AI researchers often speak of narrative as its own form of intelligence—a complex cognitive phenomenon encompassing natural language understanding and generation, common-sense reasoning, analogical reasoning, planning, physical perception, imagination, and social cognition. Computational models of narrative draw upon a multitude of different techniques from the AI toolkit, ranging from detailed symbolic knowledge representation to large-scale statistical analyses</p>
+  <p xmlns="">Our purpose in proposing this panel for Digital Humanities 2014 is two-fold. First, we want to introduce literary critics and other humanities scholars to parallel efforts underway in AI-narrative research and computational modeling. Second, we want to open a dialogue about the process for and implications of operationalizing canonical narrative theories, especially those from Russian Formalism and French Structuralism, for the computational analysis and generation of stories.</p>
+  <p xmlns="">We have selected the panel papers to represent two broad categories of research: </p>
+  <ol xmlns="">
+    <li><em>Narrative Analysis</em>: use of computational techniques to identify, classify, or extract plot structures from a single text or a corpus of texts; </li>
+    <li><em>Narrative Generation</em>: use of computational techniques to generate new stories based on story grammars, case-based reasoning, or other mechanisms</li>
+  </ol>
+  <p xmlns="">Computational narrative analysis dates at least as far back as the 1960s, when researchers such as Alan Dundes  experimented with the automated classification of folktale themes using punch-card systems. Generative computational models date to the early 1970s, with systems such as TALE-SPIN.  Most approaches to narrative generation have been based on either story-grammars or case-based reasoning: MINSTEL , BRUTUS , and MEXICA  are canonical examples in the field. Recently, new approaches have leveraged crowd-sourcing  and alternative generation mechanisms, such as games  and network models.</p>
+  <p xmlns="">We believe that this panel will be interesting and valuable for conference attendees both because of the innovative nature of recent AI-narrative research and because of its connection to the Russian Formalist and French Structuralist critical traditions. The papers by Finlayson and Gervás, respectively, adapt Propp’s <em>Morphology of the Folktale</em>  to the analysis and generation of narratives. Finlayson augments Propp with machine learning algorithms, while Gervás tests Propp’s formalism with combinatorial simulations. Sack combines Rene Girard’s classic theory of “triangular desire” in the 19th Century Novel with social network analysis to create a mechanism for the generation of narrative event sequences.</p>
+  <p xmlns="">Operationalizing Formalist and Structuralist concepts by implementing them computationally both gives new life to canonical theories and raises a number of significant practical and theoretical questions. In what ways are Formalist story-grammars such as Propp’s well-specified and in what ways are they under-specified? Can they be successfully generalized beyond their original domains? How can the analytical tools of literary critics be redeployed for generative purposes?</p>
+  <p xmlns="">We hope that the panel will spur lively discussion around these and other questions.</p>
+  <h2 xmlns="">Panel papers :</h2>
+  <h2 xmlns="">Paper #1: Learning Propp’s <em>Morphology of the Folktal</em></h2>
+  <p xmlns=""><strong>Abstract</strong>: Vladimir Propp's <em>Morphology of the Folktale</em> is a seminal and highly influential piece of work, and it is one of the most computationally-amenable theories of narrative structure that has been proposed.  Until now we have not had the computational techniques that would allow us to learn Propp’s theory automatically. I describe Analogical Story Merging (ASM), a machine-learning algorithm for extracting Proppian plot patterns from sets of stories. Remarkably, ASM can learn a substantive portion of Propp’s theory of the structure of folktale plots.  I will outline the abilities and deficiencies of the algorithm in detail.  I will also discuss the data collection infrastructure that enables this work, namely, the Story Workbench, a general-purpose linguistic text annotation tool that supports the semi-automatic markup of over twenty different syntactic and semantic representations</p>
+  <p xmlns=""><strong>Bio</strong>: Dr. Mark Finlayson is a Research Scientist at the Computer Science and Artificial Intelligence Laboratory at MIT. His research focuses on representing, extracting, and using higher-order semantic patterns in natural language, especially focusing on narrative. He received the B.S.E from the University of Michigan in 1998, and the M.S. and Ph.D. from MIT in 2001 and 2011, respectively, all in Electrical Engineering and Computer Science.  He is general chair of the Computational Models of Narrative Workshop series</p>
+  <p xmlns=""><strong>Email</strong>: <a href="mailto:markaf@mit.edu">markaf@mit.edu</a></p>
+  <p xmlns=""><strong>Homepage</strong>: <a href="http://www.mit.edu/~markaf/">www.mit.edu/~markaf</a></p>
+  <h2 xmlns="">Paper #2: Generating Russian Folk Tales: A Computational Look at Some Aspects Propp Did Not Formalize</h2>
+  <p xmlns=""><strong>Abstract</strong>: Although it was never conceived as a computational framework, the semi-formal analysis of Russian folk tales carried out by Vladimir Propp has often been used as theoretical background for the automated generation of stories. Many story generation systems attempted to generalize Propp’s account to other types of stories or to combine it with other techniques. The added distance introduced by these extensions obscured the nature of the extensions required to transform an analytical view into a computational generative one. Deliberately constraining the domain to Russian folk tales, I revisit Propp’s work to explore the gaps between Propp’s original proposal and the requirements of a modern computational solution. These involve a number of procedures and considerations that Propp describes as fundamental to the process of story generation, but does not formalize. I will describe an existing system under development which respects the core concepts of Propp’s morphology and extends them with additional computational elements for these missing aspects that are reverse engineered from Propp’s descriptions and the examples in his book. </p>
+  <p xmlns=""><strong>Bio</strong>: Dr. Pablo Gervás is an Associate Professor at the Facultad de Informática at Universidad Complutense de Madrid. He received his PhD from Imperial College in 1995. He has worked on natural language processing, computational creativity, and computational narratology. In the area of creative text generation, he has done work on automatically generating narrative, metaphors, and formal poetry. His current research focuses on studying the role of narrative in human communication, with a view to applying it in human-computer interaction. He is the director of the NIL research group (<a href="http://nil.fdi.ucm.es">nil.fdi.ucm.es</a> and also of the Instituto de Tecnología del Conocimiento (<a href="http://www.itc.ucm.es">www.itc.ucm.es</a>). Dr. Gervás has taken part in the organization of several scientific meetings on topics related to computational creativity, and he is currently involved in three projects funded by the European Commission on this topic, including the PROSECCO initiative (<a href="http://prosecco.computationalcreativity.net/">prosecco.computationalcreativity.net</a>).</p>
+  <p xmlns=""><strong>Email</strong>: <a href="mailto.pgervas@sip.ucm.es">pgervas@sip.ucm.es</a></p>
+  <p xmlns=""><strong>Homepage</strong>: <a href="http://nil.fdi.ucm.es/index.php?q=node/92">nil.fdi.ucm.es/index.php?q=node/92</a></p>
+  <h2 xmlns="">Paper #3: Character Networks for Narrative Generation: Structural Balance Theory and the Emergence of Proto-Narratives</h2>
+  <p xmlns=""><strong>Abstract</strong>: This paper models narrative as a complex adaptive system in which the temporal sequence of events constituting a story emerges out of cascading local interactions between nodes in a social network. The approach is not intended as a general theory of narrative, but rather as a particular generative mechanism relevant to several academic communities: (1) literary critics and narrative theorists interested in new models for narrative analysis, (2) artificial intelligence researchers interested in new mechanisms for narrative generation, and (3) complex systems theorists interested in novel applications of agent-based modeling and network theory. </p>
+  <p xmlns="">The paper is divided into two parts. The first part offers examples of research by literary critics on the relationship between social networks of fictional characters and the structure of long-form narratives. Rene Girard’s theory of “triangular desire” in the 19th Century Novel serves as a key theoretical foundation.    The second part provides an example of schematic story generation based on a simulation of the structural balance network model. I will argue that if literary critics can better understand sophisticated narratives by extracting networks from them, then narrative intelligence researchers can benefit by inverting the process, that is, by generating narratives from networks</p>
+  <p xmlns=""><strong>Author</strong>: Graham Sack is a Doctoral Candidate in English &amp; Comparative Literature at Columbia University. His research focuses on the application of quantitative and computational methods to literary and cultural criticism, particularly the use of network analysis to study plot and characterization and the use of simulation to model the behavior of literary markets and the cultural evolution of literary genres. He holds an MA in English &amp; Comparative Literature from Columbia University, an MSc in Economics from the London School of Economics, and a BA in Physics from Harvard College.</p>
+  <p xmlns=""><strong>Email</strong>: <a href="mailto:gas2117@columbia.edu">gas2117@columbia.edu</a></p>
+  <p xmlns=""><strong>Homepage</strong>: <a href="http://www.columbia.edu/~gas2117/grahamsack.html">www.columbia.edu/~gas2117/grahamsack.html</a></p>
+  <h2 xmlns="">Corresponding Panel Organizer:</h2>
+  <p xmlns="">Graham Sack</p>
+  <p xmlns="">Doctoral Candidate</p>
+  <p xmlns="">Columbia University</p>
+  <p xmlns="">English &amp; Comparative Literature Department</p>
+  <p xmlns="">
+    <a href="mailto:gas2117@columbia.edu">gas2117@columbia.edu</a>
+  </p>
+  <p xmlns="">857-472-0062</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Dundes, Alan</strong>. (1965). <em>On Computers and Folktales</em>. Western Folklore, Vol. 24, No. 3. 185-193</p>
+  <p xmlns=""><strong>Meehan, J. R</strong>. (1977). <em>Tale-spin, an Interactive Program That Writes Stories</em>. In Proceedings of the Fifth International Joint</p>
+  <p xmlns="">Conference on Artificial Intelligence, 91-98. Los Altos, CA: William Kaufmann, Inc.</p>
+  <p xmlns=""><strong>Turner, S.R</strong>. (1993). <em>Minstrel: A Computer Model of Creativity and Storytelling</em>. Ph.D. dissertation, University of California at Los Angeles, Los Angeles, CA.</p>
+  <p xmlns=""><strong>Selmer Bringsjord and David A. Ferrucci</strong>. (1999). <em>Artificial Intelligence and Literary Creativity: Inside the Mind of BRUTUS, a Storytelling Machine</em>. Erlbaum.</p>
+  <p xmlns=""><strong>Perez y Perez, R.</strong> (1999). <em>Mexica: A Computer Model of Creativity in Writing</em>. Ph.D. Dissertation, The University of Sussex, Falmer, UK.</p>
+  <p xmlns=""><strong>Li, B., Lee-Ubran, S., Appling, D.S., Riedl, M.O</strong>. (2012). <em>Automatically Learning to Tell Stories about Social Situations from theCrowd</em>. Proceedings of Computational Models of Narrative, LREC 2012</p>
+  <p xmlns=""><strong>Gervás, P</strong>. (2012). <em>Stories from Games: Content and Focalization Selection in Narrative Composition</em>. I Spanish Symposium on Entertainment Computing. Universidad Complutense de Madrid, Madrid, Spain</p>
+  <p xmlns=""><strong>Propp, Vladimir</strong> (1968). <em>Morphology of the Folktale</em>. 2nd edition. University of Texas Press, Austin, TX.</p>
+  <p xmlns=""><strong>Girard, Rene</strong> (1961). <em>Deceit, Desire, and the Novel: Self and Other in Literary Structure.</em> Johns Hopkins Press, Baltimore.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

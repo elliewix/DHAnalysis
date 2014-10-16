@@ -1,0 +1,63 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-131.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Crowdsourcing Performing Arts History with NYPL's ENSEMBLE</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>6</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>315 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:dougreside@gmail.com"><span class="author-surname">Reside</span>,
+									<span class="author-forename">Doug</span></a>
+        <a href="http://www.google.com/#q=Reside, Doug">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">NYPL</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">The New York Public Library for the Performing Arts holds in its collection over one million programs documenting a large number of the major theater, music, and dance events performed around the country since the end of the Civil War. Although the collection grows each month, the Library estimates that it currently holds approximately 125,000 dance, 400,000 music, and over one million theater programs. These programs are valuable as individual artifacts, of course, but as an aggregated collection they serve as a sort of analog database of performing arts history.  Unfortunately, querying this “database” is, at present, very inefficient.  The materials are available only to researchers who come to New York to view them in person, and can only be viewed one at a time. Further, many are printed on crumbling paper that may not survive many more examinations by even careful researchers.</p>
+  <p xmlns="">In early 2013, motivated both by our responsibility to preserve these artifacts and out of a desire to better expose the data they contain, we launched an effort to create digital images of our program collection and organize a crowd-sourced effort to transcribe and structure the information contained within it.  The project, launched in beta under the name <em>Ensemble<cite href="#n1">1</cite></em> in June of 2013, is now part of a new NEH-funded Digital Humanities Implementation grant to create tools for crowd-sourced transcription projects<cite href="#n2">2</cite>.  This paper will discuss the lessons the team learned from the beta release as well as the modifications we are planning for the upcoming full release in 2014.</p>
+  <h2 xmlns="">2. Behind the Beta</h2>
+  <p xmlns="">Although it is our goal is to scan and transcribe every program in the Library’s collection, for the beta release we scanned 5 reels of microfilm containing 200 programs connected to theatrical productions in New York City performed between 1860 and 1930.  We selected this content for several reasons:</p>
+  <ul xmlns="">
+    <li>The relatively low cost and high efficiency of microfilm scanning allowed us to add a relatively large number of programs to our initial set very cheaply and quickly.  Although in most cases we would prefer to digitize originals, the programs preserved on these reels no longer exist in our collections.</li>
+    <li>Performing arts events from this period are not well-documented by other online databases (such as the Internet Broadway Database<cite href="#n3">3</cite> or Playbill Vault<cite href="#n4">4</cite>).</li>
+    <li>These programs are almost certainly in the public domain; therefore they can be scanned and published online in their entirety. (If programs printed between 1923 and 1950 ever were in copyright, they were not likely not renewed and so passed into the public domain 28 years after publication).</li>
+    <li>This period was an especially fertile time in the development of the American performing arts; Carnegie Hall was built<cite href="#n5">5</cite>, and Vaudeville and American Musical Theater both developed during these decades.</li>
+  </ul>
+  <h2 xmlns="">3. What we learned</h2>
+  <p xmlns="">The beta release of <em>Ensemble</em> has, as of this writing, produced almost 11,500 transcriptions of data from our initial test set of 200 programs.  Although this is significant, it falls far short of the activity seen by other crowd-sourcing projects released by NYPL Labs.  In its first three years, the menus transcription project has had over 1.2 million dishes transcribed. Over 60,000 buildings were checked in the first days of the “Building Inspector” app<cite href="#n6">6</cite>. By comparison, participation in Ensemble is very low.</p>
+  <p xmlns="">In part, these lower numbers may reflect the relative difficulty of the task <em>Ensemble</em>assigns to its users.  Rather than asking for a simple transcription (as the Menus project does), users of <em>Ensemble</em>are required to identify relationships among text on the page (and occasionally to bring to it their own understanding of the theater industry).  For instance, a program in our collection purports to be a record of “Jesse L. Lasky’s Aristic Novelty: Fleurette.” A user assigned this program must determine whether Jesse L. Lasky is the playwright, the producer, or perhaps the director.</p>
+  <p xmlns="">In some cases, our interface may not even have an appropriate category.  Lacking a consistently adopted schema for performing arts data, the user is required to engage in a bit of amateur taxonomy. In our first official release, we plan to revise and publish our schema, and make it easier for novice users to perform less demanding tasks while saving more challenging assignments for “advanced” levels of the game. Zooniverse's transcription project, <em>Old Weather<cite href="#n7">7</cite></em>, has had success with a similar approach.</p>
+  <p xmlns=""> Following the model of the citizen sciences like Zooniverse’s <em>Galaxy Zoo</em>, Ensemble requires “agreement” by several users before accepting a crowd-sourced transcription as correct. The level of agreement among different transcriptions of the same text is processed by our systems and will eventually be used to determine what assertions are stored in the database that users of <em>Ensemble</em> construct. In our initial version, we attempted to expose the quality assurance/”user-agreement.”  Our hope was that those who were suspicious of the accuracy of any database constructed by the “crowd” would be somewhat reassured after they understood how the process worked.  More often, though, we found that users who were the first to transcribe a fact, and then saw that the system had a low “degree of confidence” in the work they had just submitted (since no one else had yet “agreed” with them) misunderstood what they were being told and felt either insulted or disheartened. We quickly removed these visualization (although we may want to find a way to incorporate them in a more clearly contextualized way in the final version of the tool).</p>
+  <h2 xmlns="">4. Potential uses of the data</h2>
+  <p xmlns="">Of course, the reason for engaging the crowd to produce this dataset in the first place is based on the assumption that it will be useful to future researchers.  Some initial use cases have imagined include:</p>
+  <p xmlns=""><strong>Aggregating archives:</strong> At present, researching historic performing arts events can be difficult as most of the primary sources are held in collections centered on a particular person. For example, if a scholar is researching the George M. Cohen musical <em>Little Johnny Jones</em> he or she will quickly discover that there is no large Little Johnny Jones collection at any major library. Once all of the data in our programs is available, however, a researcher could write a computer program that, given a title of a show, could generate a list of people associated with it and automatically search Worldcat for libraries that hold archives related to these people.</p>
+  <p xmlns=""><strong>Discovering untold biographies:</strong> The lives of star performers and successful writers are often studied, but the careers of those members of a production whose role is less visible, but no less vital, often go unchronicled. <em>Ensemble</em> will enable researchers to track, for instance, which stage managers are most often associated with successful plays, which celloists were featured in the best orchestras of the 1920s, and, which constellation of artists and technicians is most often associated with the success or failure of the production of a Shakespeare play.</p>
+  <p xmlns=""><strong>Mapping the arts:</strong> Where in New York City in 1920 would one mostly likely find an opera performed? What about a burlesque? A jazz concert? By opening up the data in the programs, it will be possible for software developers and geographers to combine the performance data with our digitized historical map collection and plot the kinds of performing arts events performed in particular regions of the City during a defined time period. This data may confirm or overturn scholarly assumptions about the geographical history of the city.</p>
+  <p xmlns="">It is possible that the most illuminating and exciting uses of the data in these programs have yet to be imagined because, at the moment, surprisingly little of this information from this period is available at all.  It is our hope that <em>Ensemble</em>will soon become the backbone of an extensive, linked, open set of performing arts data that will allow researchers of all kinds to discover new information about the rich history of the performing arts in New York.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Ensemble</strong> (2013). <em>Ensemble: Help Build an Open Database of the Performing Arts.</em><a href="http://ensemble.nypl.org/">ensemble.nypl.org/</a> Web. 27 Oct. 2013.
+					</p>
+  <p xmlns="">2. <em>Announcing 6 Digital Humanities Implementation Grant Awards (July 2013) | National Endowment for the Humanities</em> (2013). <a href="http://www.neh.gov/divisions/odh/grant-news/announcing-6-digital-humanities-implementation-grant-awards-july-2013">www.neh.gov/divisions/odh/grant-news/announcing-6-digital-humanities-implementation-grant-awards-july-2013</a> Web. 27 Oct. 2013.
+					</p>
+  <p xmlns="">3. <em>IBDB: The Official Source for Broadway Information.</em> ibdb.com Web. 27 Oct. 2013.
+					</p>
+  <p xmlns="">4. <em>The Largest Internet Database of Broadway Information - Playbill Vault.</em> playbillvault.com Web. 27 Oct. 2013.
+					</p>
+  <p xmlns="">5. <em>History of the Hall | Carnegie Hall.</em><a href="http://www.carnegiehall.org/History/">www.carnegiehall.org/History</a> Web. 27 Oct. 2013.
+					</p>
+  <p xmlns="">6. <em>Building Inspector by NYPL Labs.</em><a href="http://buildinginspector.nypl.org/">buildinginspector.nypl.org</a> Web. 27 Oct. 2013.
+					</p>
+  <p xmlns="">7. <strong>Alexandra Eveleigh, Charlene Jennett, Stuart Lynn and Anna Cox</strong> (2013). <em>I want to be a Captain! I want to be a Captain!":  Gamification in the Old Weather Citizen Science Project</em>. <a href="http://uwaterloo.ca/gamification/sites/ca.gamification/files/uploads/files/">uwaterloo.ca/gamification/sites/ca.gamification/files/uploads/files</a> 26 Oct 2013
+					</p>
+  <p xmlns="">8. <em>Galaxy Zoo.</em><a href="http://www.galaxyzoo.org/">www.galaxyzoo.org</a>  Web. 27 Oct. 2013.
+					</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-374.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>An XML annotation schema for speech, thought and writing representation</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:annelen_brunner@gmx.de"><span class="author-surname">Brunner</span>,
+									<span class="author-forename">Annelen</span></a>
+        <a href="http://www.google.com/#q=Brunner, Annelen">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Institut für deutsche Sprache</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">This contribution presents an
+XML schema for annotating a high level narratological category: 
+speech, thought and writing representation (ST&amp;WR). It focusses
+on two aspects: Firstly, the original schema is presented as an
+example for the challenge to encode a narrative feature in a
+structured and flexible way and secondly, ways of adapting this schema
+to TEI are considered, in order to make it usable for other, TEI-based projects.</p>
+  <h2 xmlns="">The phenomenon ST&amp;WR</h2>
+  <p xmlns="">ST&amp;WR
+refers to the way the voice of a character is embedded in the
+narrator's text and is a feature that is present in most works of
+fiction. It has been widely studied in narratology, as it contributes
+to the construction of a fictional character, the narrator-character
+relationship and fictional world-building in general. Though ST&amp;WR
+is partly defined by formal features like punctuation, verb mode, and
+sentence structure, narrative function is what is of interest in
+literary studies (cf. <cite href="#n1">1</cite> for an overview). The
+challenge is to develop an annotation schema which is sufficiently structured
+to allow consistent annotation (especially with multiple
+annotators) and still captures nuances that are relevant for literary
+scholars.</p>
+  <p xmlns="">The
+schema presented here – called ST&amp;WR schema (ST&amp;WR-S) –
+ties into literature studies as it uses categories agreed upon by most scholars and is similar to
+categorial systems proposed by narratologists Genette and Leech/Short
+(cf. <cite href="#n2">2</cite>, <cite href="#n3">3</cite>). The main influence was a
+project of Semino and Short, who annotated a corpus of English
+fictional, newspaper and (auto)biographical texts for ST&amp;WR with
+an SGML-conformant schema (cf. <cite href="#n4">4</cite>).</p>
+  <h2 xmlns="">
+
+ST&amp;WR schema</h2>
+  <p xmlns="">ST&amp;WR-S was
+developed for manual annotation of a corpus of 13 German narrative
+texts written between 1786 and 1917 (about 57 000 tokens). This
+corpus was then used as a reference for the development and
+evaluation of automatic methods for ST&amp;WR recognition (cf.
+<cite href="#n5">5</cite>). The purpose of ST&amp;WR-S was twofold: It allows for a
+very fine-grained classification of ST&amp;WR instances which is
+helpful in order to study the phenomenon and to do statistical
+studies on manually annotated data, like in Semino/Short's project.
+On the other hand it was designed to be modular and easily simplified
+to accommodate for the rougher classifications of automatic
+recognizers. Experiences during
+corpus annotation strongly influenced the design of the annotation schema.</p>
+  <p xmlns="">ST&amp;WR-S
+has three levels of specificity: Main categories, attributes and in
+some cases different values for further specifications of certain attributes. These are modelled as XML tags with attributes and values. </p>
+  <p xmlns="">The manual
+annotation was done in the GATE framework for natural language
+processing (cf. <cite href="#n6">6</cite>, http://gate.ac.uk). ST&amp;WR-S is
+specified in XML schema files used by the plugin Schema_Annotation_Editor. Primarily, it is designed for inline XML, but GATE internally manages annotations as nodes and can convert them to a standoff XML format.
+</p>
+  <p xmlns="">The main categories can be described with two axes: One axis represents the
+medium – speech, thought or written text
+(e.g. a quote from a character's letter). The second axis represents
+the four most common techniques of ST&amp;WR: direct representation
+("He said 'I am hungry.'"), free indirect
+representation ("Well, where would he get something to eat now?"), indirect
+representation ("He said that he was hungry."), and reported representation,
+which can be a mere mentioning of a speech, thought or writing act
+("They talked about lunch.").
+This results in twelve main categories which are modelled as XML tags
+(<em>direct_speech, </em><em>direct_thought</em>, etc.).
+</p>
+  <p xmlns="">
+However, such a set of categories
+is necessarily rigid. When annotating a narrative phenomenon in
+a real corpus you will find many instances which are not clear-cut
+realisations of a predefined category. To deal with this fact, rather than just adding a
+confidence marker to the annotation, attributes are used to classify
+the type of deviation, so that the cases may be further studied and
+contrasted. As all attributes are optional and can be added to any
+main category, ST&amp;WR-S allows for different levels of detail very
+easily. It is also possible to filter your annotation results afterwards by ignoring instances that carry a certain attribute.</p>
+  <p xmlns="">Structurally,
+there is one numerical attribute (<em>level</em>),
+three attributes which are binary and just indicating whether the
+feature is present or not <em>(</em><em>narr, prag,
+metaph</em>), two with optional further
+specification (<em>border, non-fact</em>)
+and one with mandatory further specification (<em>ambig</em>).
+All lists of attribute values are closed sets. Table 1 gives an
+overview. 
+</p>
+  <table xmlns="">
+    <tr>
+      <td> Attribute name</td>
+      <td> Description</td>
+      <td>Values </td>
+    </tr>
+    <tr>
+      <td> <em>level</em></td>
+      <td> level of embedment</td>
+      <td> numeric (default: 1)</td>
+    </tr>
+    <tr>
+      <td> <em>ambig</em></td>
+      <td> ambiguity of the main category</td>
+      <td> Name of an alternative main category</td>
+    </tr>
+    <tr>
+      <td> <em>non-fact</em></td>
+      <td> non-factual (eg. negated or hypothetical ST&amp;WR) ("He did not admit that he loved her.") </td>
+      <td> <em>neg, hyp, fut, ques, imp, plan, unspec</em> (default: <em>unspec</em>)</td>
+    </tr>
+    <tr>
+      <td> <em>border</em></td>
+      <td> borderline case of ST&amp;WR("He knew that he had lost.")</td>
+      <td> <em>percept, feel, state, unspec</em>(default: <em>unspec</em>)</td>
+    </tr>
+    <tr>
+      <td> <em>narr</em></td>
+      <td> Ambiguity between ST&amp;WR and non-verbal action("She greeted her friends.")</td>
+      <td> binary (dummy value: <em>yes</em>)</td>
+    </tr>
+    <tr>
+      <td> <em>prag</em></td>
+      <td> ST&amp;WR, but with non-representional intent (e.g. politeness("I suggest you leave now.")</td>
+      <td> binary (dummy value: <em>yes</em>)</td>
+    </tr>
+    <tr>
+      <td>
+        <em> metaph</em>
+      </td>
+      <td> metaphorical use("His conscience told him to go.")</td>
+      <td> binary (dummy value: <em>yes</em>)</td>
+    </tr>
+  </table>
+  <p xmlns="">
+Functionally,<em>level</em> stands alone in the group as it
+does not mark a non-prototypical instance but is rather a 'monitor
+attribute'. It captures the level of embedment of a ST&amp;WR
+instance, e.g. an instance of indirect thought that appears as part of an
+instance of direct speech would be tagged as <em>level=”2”</em>.
+This marker can then be used to study the behaviour of such embedded
+instances and compare their behaviour to non-embedded ones. 
+</p>
+  <p xmlns="">
+All other attributes deal
+with instances that deviate from the prototypical idea of ST&amp;WR
+in relation to the definition of the main categories. 
+</p>
+  <p xmlns=""><em>Ambig</em>
+and <em>narr</em>
+both mark ambiguity. While <em>ambig</em>
+indicates that there is uncertainty as to which main category should
+be applied, <em>narr</em>
+signals that it is uncertain whether the instance is a case of ST&amp;WR
+at all. 
+</p>
+  <p xmlns=""><em>Border</em>
+deals with uncertainty in regard to what is considered speech,
+thought and writing respectively.
+Especially thought representation is extremely tricky, as you have to
+decide what constitutes a thought. For example, the sentence “He
+knew he had lost.” would be marked as <em>&lt;</em><em>indirect_thought
+border=”state”&gt;</em>, as “to know”
+expresses a state of knowledge rather than a clear-cut thought.
+<em>Border</em> can
+also be applied to speech representation, e.g. if it is unclear
+whether there is a true verbalization like in the sentence “He
+screamed bloody murder.”</p>
+  <p xmlns=""><em>Non-fact</em>
+deals with instances where the ST&amp;WR is non-factual and thus not
+a real 'representation' in the story world. Similarly, <em>prag</em>
+marks instances where ST&amp;WR forms are used for
+non-representational purposes, especially politeness, and <em>metaph</em>
+represents metaphorical use of ST&amp;WR.
+</p>
+  <p xmlns="">In addition to
+that, the ST&amp;WR-S contains two special categories modelled as XML
+tags. One is <em>frame</em>, which
+marks the framing clause of a direct representation which is not part
+of the representation itself but still interesting in the context of
+ST&amp;WR. The other is called <em>embedded</em>.
+It can
+be used to mark embedded narratives which appear in direct
+representation (usually direct speech), e.g. if a character tells a
+story. Marking such cases with <em>embedded</em>
+essentially
+shifts the whole annotation level into a new narrative frame and
+gives it a different status than <em>direct_speech</em>.
+The use of <em>embedded</em>
+is optional and the tag can be easily transformed to <em>direct_speech</em>
+if this effect is not desired. 
+</p>
+  <h2 xmlns="">Adaptation to TEI Guidelines</h2>
+  <p xmlns="">
+ST&amp;WR-S is
+a valid XML schema but not compliant to TEI Guidelines. For
+sustainability it would be desirable to adapt it, as this would allow
+its usage in TEI-conformant documents without compromising their
+validity. 
+</p>
+  <p xmlns="">
+However, such
+an adaptation is not straightforward. The logical starting point is
+<em>&lt;said&gt;</em>,
+a tag from the quotation context which is defined for passages
+thought or spoken by real people or fictional characters (cf. <cite href="#n7">7</cite>). Though
+<em>&lt;said&gt;</em>
+is clearly intended to capture instances of ST&amp;WR, its scope is
+narrower than the instances covered by ST&amp;WR-S. In its core form,
+it only carries the attributes <em>aloud</em>and
+<em>direct</em>, both
+specified by truth values. <em>Aloud</em>
+is designed to distinguish between silent thought and passages spoken
+aloud (speech), but does not accomodate writing representation.
+<em>Direct</em>
+does not allow for any distinction between the ST&amp;WR categories free indirect,
+indirect and reported. Of course, the rich attribute system of
+ST&amp;WR-S does not have a predefined equivalent in TEI, either. </p>
+  <p xmlns="">Several possibilities are considered how to adapt ST&amp;WR-S while conserving its power as well as its
+modularity as much as possible. Ideas include use of standoff markup, possibly
+	via the <em>&lt;span&gt;</em> tag, modelling of the complex
+	categorizations via feature structures, referenced by the <em>@ana</em>
+	attribute, or extentions of exisiting
+	TEI-tags (most likely <em>&lt;said&gt;</em>).
+ 
+</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>McHale, B</strong> (2013). <em>Speech Representation</em>, in: Hühn, Peter et al. (eds.): The living handbook of narratology, Hamburg: Hamburg University Press, 2013 URL: <a href="http://www.lhn.uni-hamburg.de/article/speech-representation">www.lhn.uni-hamburg.de/article/speech-representation</a> (last checked 17.10.2013).
+          </p>
+  <p xmlns="">2. <strong>Genette, G.</strong>(1980). <em>Narrative discourse</em>. An Essay in Method, Oxford: Blackwell.
+          </p>
+  <p xmlns="">3. <strong>Leech, G. and Short, M.</strong> (2007). <em>Style in fiction</em>. A Linguistic Introduction to English Fictional Prose 2. ed., London: Pearson Education Limited.
+          </p>
+  <p xmlns="">4. <strong>Semino, E. and Short, M.</strong> (2004). <em>Corpus stylistics</em>. Speech, writing and thought presentation in a corpus of English writing, London/New York: Routledge.
+          </p>
+  <p xmlns="">5. <strong>Brunner, A</strong> (2013). <em>Automatic recognition of speech, thought, and writing representation in German narrative texts</em>. Literary and Linguistic Computing 2013; doi: 10.1093/llc/fqt024
+          </p>
+  <p xmlns="">6. <strong>Cunningham, H. et al.</strong> (2011). <em>Text Processing with GATE (Version 6)</em>: <a href="http://www.tinyurl/gatebook">www.tinyurl/gatebook</a> (last checked 01.11.2013).
+          </p>
+  <p xmlns="">7. <strong>Text Encoding Initiative</strong> (2013). <em>P5: Guidelines for Electronic Text Encoding and Interchange</em>, URL: <a href="http://www.tei-c.org/Guidelines/P5/">www.tei-c.org/Guidelines/P5</a> (last checked 31.10.2013)
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

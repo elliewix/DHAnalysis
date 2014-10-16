@@ -1,0 +1,177 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-766.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Making Waves: Algorithmic Criticism Revisited</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>4</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>413 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Hoover</span>,
+									<span class="author-forename">David L.</span></a>
+        <a href="http://www.google.com/#q=Hoover, David L.">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">New York University, United States of America</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">In <em>Reading Machines: Toward an Algorithmic Criticism</em>, Stephen Ramsay suggests that
+computational literary studies remain marginalized because they lack “bold statements, strong
+readings, and broad generalizations” (2011: 2). They are too cautious, too scientific, to interest
+literary critics, who value opening texts to new interpretations over solving problems (10-11).
+Ramsay suggests that a feminist discussion of <em>The Waves</em> challenges algorithmic criticism:
+“literary critical arguments of this sort do not stand in the same relationship to facts, claims, and
+evidence as the more empirical forms of inquiry. There is no experiment that can verify the idea
+that Woolf’s . . . ‘elision of corporeal materiality’ exceeds the dominant Western subject” (7).
+Although many critical claims are computationally intractable, Woolf’s “elision of corporeal
+materiality” surely has textual implications that might be tested computationally. Literary
+criticism’s problematic relationship to facts, claims, and evidence seems more like a bug than a
+feature, but here I want to re-examine and interrogate Ramsay’s algorithmic provocation.
+</p>
+  <p xmlns="">Three male and three female characters in <em>The Waves</em> speak in alternating monologues, an
+experimental technique that has invited critical comment about what axes of difference or unity
+characterize the novel. “The ‘problem’ . . . with Woolf’s novel is that despite evidence of a
+unified style, one suspects that we can read and interpret it using a set of underlying distinctions.
+We can uncover those distinctions by reading carefully. We can also uncover them using a
+computer” (Ramsay 2011: 10-11).</p>
+  <p xmlns="">Ramsay treats the six monologues as a corpus of documents and investigates them with
+tf-idf, from the field of information retrieval: tf*(N/df). This, he suggests, should identify each
+monologue’s characteristic words more effectively than a traditional word-frequency list. Tf-idf
+is the term’s frequency (tf) multiplied by the total number of documents (N; here 6) divided by
+the number of documents containing the term (df; document frequency). Tf-idf reduces the
+importance of function words and increases the importance of speakers’ characteristic words
+because the frequencies of words used by only one speaker are multiplied by six (6/1), while the
+frequencies of words used by all six speakers are multiplied by one (6/6) (Ramsay 2011: 11).
+After identifying each speaker’s most characteristic words, he reveals that he has actually used
+the formula, 1 + tf *log(N/df), which includes a log function (reducing the effect of a word’s
+appearance in only one speaker), and adds 1 (preventing the measure from becoming negative).
+The purpose of the alterations “is not to bring the results into closer conformity with ‘reality,’ but
+merely to render the weighting numbers more sensible to the analyst” (Ramsay 2011: 15). Yet the
+variants are not “merely” at the whim of the analyst; they have testable consequences.
+</p>
+  <p xmlns="">But let us travel a bit further with Ramsay. He presents the words with the highest tf-idf
+scores in Louis’s monologue (listed in Fig. 1, along with his tf-idf scores, my tf-idf scores, and  their frequencies), and suggests that “Few readers of <em>The Waves</em> would fail to see some
+emergence of pattern in this list” (12). For example, <em>western</em> seems to echo Louis’s concern
+about his <em>Australian accent</em>, and <em>England</em> (all top 25). But actually <em>western</em>, <em>wilt</em>, and <em>thou</em> appear
+only in Louis’s quotations from a sixteenth-century poem. Ramsay’s provocation ignores some
+interesting questions: should Louis’s quotations be considered his speech (and retained?), or the
+anonymous author’s (and omitted?). </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_104-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Louis’s Most Characteristic Words</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Trying to recreate Ramsay’s analysis reveals further interesting points. The mismatched
+tf-idf scores (bold) reflect different word frequencies. His score for <em>beast</em> requires 6 occurrences,
+not 5, but the 6th is in the omniscient narration). His score for <em>accent</em> requires 13 occurrences,
+not 14, but Rhoda’s most characteristic words include <em>them</em>– and <em>accent</em> occurs once as accent–,
+which presumably reduces his count by 1. (What constitutes a word is a surprisingly complex
+question, but treating <em>accent</em>– as a word seems odd.) The rarity of the words shows how strongly
+tf-idf privileges words limited to one character (only <em>accent</em> appears in 2). Ramsay’s intervention
+raises interesting questions: What does it mean to choose this algorithm? How do the results
+
+
+
+
+
+					affect our emerging reading of <em>The Waves</em>? (Ramsay 15). But how to answer these questions? </p>
+  <p xmlns="">Even the identification of characteristic words is problematic. <em>Tick</em> and <em>hoot</em> both occur 4
+times, only in Bernard, but all 8 occurrences are in 3 consecutive sentences. How “characteristic”
+is that? Low occurs just 5 times, “only” in Bernard, yet it also occurs in the omniscient narration.
+Analyzing only the 6 characters seems reasonable, but should Bernard’s characteristic words also
+occur in the narration? (Some consider Bernard to be modeled on Woolf herself [Ramsay 2011:
+13].) Including the narration seems both intriguing and problematic, not least because it is not
+dialogue. Doing so removes <em>low</em>, <em>canopy</em>, <em>bowled</em>, and <em>brushed</em> from Bernard’s most
+characteristic words and <em>beast</em>, <em>steel</em>, and <em>discord</em> from Louis’s. What questions does this raise?
+</p>
+  <p xmlns="">Most algorithms for computational approaches come from authorship attribution, where
+ostensibly correct answers exist. But Ramsay is right that the existence of “correct” answers to
+questions like “Do the men and women speak differently?” or “Do the characters have distinct
+and consistent voices?” is precisely at issue. Examining <em>The Waves </em>in the light of Ramsay’s
+provocation raises so many intriguing questions that they cannot all be addressed here. But we
+can approach the question of character individualization by using a radical deformation. I
+randomly sorted the lines of the six monologues, then selected the first 6067 words of each, the
+length of the shortest monologue (Susan’s). I identified the 50 most characteristic words using
+Ramsay’s tf-idf formula, and tested how well they group with the remainders of the longer
+monologues using cluster-analysis, starting with all 300 words (in descending tf-idf order), then
+reducing the number gradually. The best result, for the 20 most characteristic words, is shown in
+Fig. 2. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_104-2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Tf-idf and Character-Individualization</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Bernard’s and Louis’s sections group together, while Neville’s and Rhoda’s fail (Jinny and Susan
+have too little text for 2 sections). A simple word frequency list, however, correctly groups all 4
+in many analyses (see Fig. 3, based on the 300 mfw), providing a tentative answer to the question
+of distinct voices. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_104-3.jpg"/>
+    <figcaption>
+      <p>Fig. 3: The Most Frequent Words and Character-Individualization</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Selecting the 50 most characteristic words for each monologue using Zeta (Craig and
+Kinney 2011), also produces many perfect results (see Fig. 4, based on the 200 most
+characteristic words). This very different method, which measures consistency of use rather than
+frequency, confirms the distinctness of the voices. Finally, testing the six characters in
+2,000-word sections with 2-grams (based on the six full monologues) also yields many
+completely correct clusters (see Fig. 5 for an analysis based on the 900 mf2Grams). </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_104-4.jpg"/>
+    <figcaption>
+      <p>Fig. 4: Zeta and Character-Individualization</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_104-5.jpg"/>
+    <figcaption>
+      <p>Fig. 5: 2Grams and Character-Individualization</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Ramsay suggests that treating the question of whether the six characters in The Waves
+share “the same stylistic voice” as a problem to solve is a “category error,” and that the proper
+question–one computers cannot answer–is “Can I interpret (or read) it this way?” (2011: 9-10).
+Critics still can read the novel as a single stylistic voice, and the six monologues undoubtedly
+share many characteristics, but, in spite of a host of very interesting remaining questions about
+the status of algorithms, arguments, and evidence, it seems reasonable to make the bold claim
+that there are six distinct character voices in <em>The Waves</em>.</p>
+  <p xmlns="">Ramsay’s provocative intervention is valuable for forcing us to re-examine our methods
+and focus on questions of interest to traditional literary scholars. But further analysis of his
+provocation and his algorithm suggests that more attention to the text, to the nature and function
+of the algorithms, and to method may prompt bold claims that rest on a sounder foundation.
+Further work will help us explore the boundary between computationally-tractable and
+computationally-intractable questions and the significance of that boundary. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">
+            Ramsay does not analyze, then interpret, a method criticized by Fish (2012). He begins with a literary judgment, then investigates it. Despite Fish’s criticism, both methods seem valuable.
+          </p>
+  <p xmlns="">
+            Ramsay actually uses (1+LN(tf))*LN(N/df), not 1+tf *log(N/df). Many tf-idf formulas exist; for the 4 I tested, 20 of the 25 most characteristic words are the same.
+          </p>
+  <p xmlns="">
+            It also reveals that Ramsay has (not unreasonably) omitted Bernard’s final long “summing up” chapter, as I have also done.
+          </p>
+  <p xmlns="">
+            The characters do not group completely by gender in the graphs above, also suggesting a tentative answer to “Do the men and women speak differently?” that is different from Ramsay’s.
+          </p>
+  <p xmlns=""><strong>Craig, H., and A. Kinney</strong>. (2010).<em> Shakespeare, Computers, and the Mystery of Authorship</em>. Cambridge
+            UP.
+          </p>
+  <p xmlns=""><strong>Hoover, D. L. </strong>(2007). <em>“The End of the Irrelevant Text: Electronic Texts, Linguistics, and Literary
+            Theory,”</em> Digital Humanities Quarterly 1(2).
+          </p>
+  <p xmlns=""><strong>Ramsay, S</strong>. (2011). <em>Reading Machines: Toward an Algorithmic Criticism</em>. Urbana: University of
+            Illinois Press.
+          </p>
+  <p xmlns=""><strong>Fish, S.</strong> (2012) <em>“Mind Your P’s and B’s: The Digital Humanities and Interpretation,”</em> The New York
+            Times, online, January 23.. </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

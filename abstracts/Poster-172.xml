@@ -1,0 +1,71 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-172.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Taco: A Metadata System for Hierarchical Structured Data Collections</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:thomas.zastrow@rzg.mpg.de"><span class="author-surname">Zastrow</span>,
+									<span class="author-forename">Thomas</span></a>
+        <a href="http://www.google.com/#q=Zastrow, Thomas">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">RZG</span>
+      </li>
+      <li>
+        <a href="mailto:karin.gross@rzg.mpg.de"><span class="author-surname">Gross</span>,
+									<span class="author-forename">Karin</span></a>
+        <a href="http://www.google.com/#q=Gross, Karin">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">RZG</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">Today, any modern file system offers the possibility to create hierarchical nested folder structures with an arbitrary depth. This leads often to large accumulations of data, where the only regulative element is the hierarchy of folders. Such a directory structure represents meta information about the data it contains, but because this information is not bound to specific datastreams of bits, it is often not included into traditional metadata formats which are used to describe data stored in files <cite href="#n1">1</cite>.
+Taco (short for „Tags &amp; Components“) is a metadata system which allows to assign metadata directly to the folders of a file system. </p>
+  <h2 xmlns="">1.1. Overview</h2>
+  <p xmlns="">Tags are community-specific, predefined attribute-value pairs of a specific data type, while a component is a collection of tags, contextually affiliated with each other. Such a component can then be assigned to a folder, describing the content of the folder as a whole. It doesn't matter how deep or where exactly in the file system hierarchy the folder is located. The metadata is stored as key-value pairs in plain text files. These files can be converted to any other metadata format or exported via OAI-PMH<cite href="#n2">2</cite>. After the creation of the Taco components, a harvester parses the whole hierarchy recursively and indexes all assigned metadata components. The assignment of components to folders is optional, with one exception: At the root level of the projects file system hierarchy, a „header“ component is mandatory. It represents the top-most entry point for a specific project. It contains general information like owner, contact information and a description about the whole project. It is used as an anchor for all other components: all non-header components can be seen in relation to the header.</p>
+  <p xmlns="">The Taco System does not prohibit the use of common metadata formats like CMDI  for describing individual file(s) – optionally, these file-based metadata formats can be included into the Taco system.</p>
+  <p xmlns="">The Taco system consists of three parts (Figure 1): (I) TacoEdit, a desktop application for assigning components to folders, (II) TacoHarvest, a harvesting application which collects the components inside a folder hierarchy and stores them in a (relational) database and (III) TacoBrowse, a web application that provides simple access to that database. All three parts are built around predefined and community-specific tags and components.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_149_threeParts.jpg"/>
+    <figcaption>
+      <p>Fig. 1: The three parts of the Taco System</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">2. The Taco System</h2>
+  <h2 xmlns="">2.1. The Editor</h2>
+  <p xmlns="">TacoEdit is a user-friendly desktop application. It loads the predefined tags and components and offers an overview of the project's data set, starting with the current project's root folder. From here, the user can create new and edit existing components underneath the root directory. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_149_TacoScreenshot.jpg"/>
+    <figcaption>
+      <p>Fig. 2: The TaCo Editor Application</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">2.2. Harvesting &amp; Indexing</h2>
+  <p xmlns="">After the user has created metadata components, the second part of the tool chain can be applied to the folder hierarchy. It scans the folder recursively and extracts the metadata, compiling a tree of metadata components which typifies the whole metadata of a project. This tree of metadata can be exported to a number of XML based metadata formats like CMDI or odML <cite href="#n4">4</cite> . In addition, TacoHarvest can automatically generate a relational database schema from the predefined list of components and insert the specific metadata via SQL commands. This database is the basis for the third part of the tool chain, TacoBrowse.</p>
+  <h2 xmlns="">2.3. Browsing &amp; Exploring</h2>
+  <p xmlns="">TacoBrowse is a web application. It can be used to access the database which was created by TacoHarvest. It offers convenient „wizards“ to perform semi-automated search requests to the database. The result of such a request is always one or several folders, represented by the assigned metadata components and its content in form of files and other folders. The user has the choice to either display the metadata component or the files, stored in the result folder(s).</p>
+  <h2 xmlns="">3. Use Cases</h2>
+  <p xmlns="">The Taco System was originally designed for the Max Planck Institute for Ornithology. Here, it will be used to assign metadata to a very large collection of projects and files (ca. 70 millions files), stored in a migrating file system. The Taco System is designed to be independent of a specific research discipline and can be used wherever data is stored in a hierarchical way. This applies not only in natural sciences, but also to many humanity disciplines which are dealing with large collections of texts, images, videos or other digital content.</p>
+  <h2 xmlns="">4. Conclusion</h2>
+  <p xmlns="">The Taco System is a complete software solution for assigning, editing and querying metadata assigned to folders in a file system hierarchy. With the current implementation, it is possible to search for tags or components in relation to a project's root directory, represented by the metadata header. In upcoming versions, it will be possible to define explicitly relations between the components and include these into the queries.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Schmidt, Ingrid</strong> (2004). <em>Modellierung von Metadaten</em>. In: Henning Lobin; Lothar Lemnitzer: Texttechnologie. Perspektiven und Anwendungen. Stauffenburg, Tübingen, ISBN 3-86057-287-3, S. 143–164.
+          </p>
+  <p xmlns="">2. Open Archives Initiative Protocol for Metadata Harvesting: <a href="http://www.openarchives.org/pmh/">www.openarchives.org/pmh/</a></p>
+  <p xmlns="">3. <strong>Broeder, D., Schonefeld, O., Trippel, T., Van Uytvanck, D., and Witt, A.</strong> (2011). <em>A pragmatic approach to XML interoperability the component metadata infrastructure (CMDI)</em>. In Balisage: The Markup Conference 2011, volume 7.
+          </p>
+  <p xmlns="">4. <strong>Grewe J., Wachtler T. and Benda J.</strong> (2011). <em>A bottom-up approach to data annotation in neurophysiology. Front</em>. Neuroinform. 5:16. doi: 10.3389/fninf.2011.00016
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

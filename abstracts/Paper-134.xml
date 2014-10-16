@@ -1,0 +1,74 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-134.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Two new tools for multimodal editions</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>4</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>415 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:dougreside@gmail.com"><span class="author-surname">Reside</span>,
+									<span class="author-forename">Doug</span></a>
+        <a href="http://www.google.com/#q=Reside, Doug">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">NYPL</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">From the earliest e-Text centers at Oxford<cite href="#n1">1</cite> and the University of Virginia <cite href="#n2">2</cite>, through the development of the TEI in the late 1980s<cite href="#n3">3</cite>, to the publication of image-based editions in projects like The William Blake Archive <cite href="#n4">4</cite>, digital editing projects have long been a core activity of the Digital Humanities. Until very recently, though, the limitations of reliably available technology and complicated intellectual property laws have kept all but the most adventurous editors from venturing beyond the media of text and image to multimodal editions that incorporated video and audio recordings. Over the past year, however, the New York Public Library for the Performing Arts has released two new digital editing projects: an online tool for producing editions of dance video and a mobile app for publishing multimodal, variorum editions of musical theater libretti. This paper will examine both projects and what they imply for the future of critical edition building in the 21st century.</p>
+  <h2 xmlns="">2. Antecedents</h2>
+  <p xmlns="">Although most digital editions produced by digital humanities scholars have presented only text and image, over the past two decades, a few pioneers attempted to produce multimodal texts of various kinds. In the 1993s the Voyager Company produced a series of Hypercard and CD-ROM based multimodal editions (such as a Companion to Beethoven’s 9th Symphony)
+<cite href="#n5">5</cite>. A 2002 project led by Janet Murray produced a critical digital edition of the film, <em>Casablanca</em> <cite href="#n6">6</cite>.  More recently, the Maryland Institute for Technology in the Humanities, Music Theatre Online, produced with an NEH Digital Humanities Startup grant by the Maryland Institute for Technology in the Humanities, linked several libretti of the 2008 musical Glory Days to mp3 files from live performances<cite href="#n7">7</cite>.  Although each was an interesting experiment that advanced the field of digital editing, the Voyager CD-ROMs were never financially successful <cite href="#n8">8</cite> , copyright restrictions prevented the widespread release of Murray's Casablanca edition, and Music Theater Online never found a large audience.</p>
+  <p xmlns="">Over the last five years, though, several new technologies have emerged which have made the production and dissemination of multimodal editions much easier. The now widely adopted, video-and-audio-friendly HTML 5 specification and code libraries like Popcorn.js have made it much easier to embed and control audio and moving image recordings on web pages without relying on external plugins like Adobe's Flash or Microsoft's Shockwave. Cloud-based streaming services with public APIs such as Rdio<cite href="#n9">9</cite> and YouTube<cite href="#n10">10</cite> allow digital editors to make use of content hosted by third parties (making rights clearance less of a concern). Further, the ever accelerating migration of users from desktops and laptops to mobile devices and their app-based ecosystem makes it possible to publish these editions on hardware that has become a comfortable technology for long-form reading (thereby overcoming some of the ergonomic obstacles that prevented wide-spread adoption of many earlier digital editions).</p>
+  <h2 xmlns="">3. Our projects</h2>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_115_Screenshot 2013-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Two video synchronized and shown together</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_115_Screenshot 2013-2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: The editing environment</p>
+    </figcaption>
+  </div>
+  <p xmlns="">In October of 2013, the New York Public Library for the Performing Arts released a collection of over 1000 hours of video of dance performance via a new web-based collections portal. In addition, we released a web-based video editor, based on the JavaScript library Popcorn.js, which allows users to synchronize different videos of the same event (or work) together to be watched side-by-side (thereby creating a kind of multimodal variorum edition) [see figure A].  The tool also allows segments of multiple videos from various sources (e.g. NYPL Archives and YouTube) to be edited together into a playlist and annotated (either with text or additional videos) to create a video critical edition [see figure B]. The individual elements of any "edition" created with this tool will only be played in locations where rights agreements allow (for instance, in one of the 88 branches of New York Public Library), but any publicly viewable content and textual annotations can be seen anywhere in the world.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_115_Screenshot_2013-10-28-09-52-12.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Libretto: The Android App</p>
+    </figcaption>
+  </div>
+  <p xmlns="">In February of 2014, the Library will also release an NEH-funded eBook app (provisionally titled Libretto) for Android operating systems capable of presenting variorum editions of texts linked to audio recordings. Readers will be able to switch among variant versions of the same text, and (through an implementation of the new ePub 3.0 ebook standard) click portions of the text to hear associated audio (e.g. music associated with lyrics in an opera libretto) [see figure C].  In most cases, the music should be bundled with the text, but, in cases where obtaining a license to redistribute the music proves impossible, the editor may link the reader to an online store (such as Amazon.com) to purchase recordings which will automatically be synched to the text based on timestamps included in the editorial metadata.</p>
+  <h2 xmlns="">4. Analysis</h2>
+  <p xmlns="">It is our hypothesis that scholarly users of the multimodal editions created for these environments will find the multichannel approach we have taken useful. However, relatively little research has been done in exactly this context. The Voyager company's CD-ROMS and the Casablanca edition were similar, but designed only for desktops and optical media, and so represented a different experience than we hope to provide with both our mobile eBook reader and the web-based video editor. However, by July, the video editing tool will have be public for nine months and Android app will have been public for about five.  During this period we will track usage of both, and in this short paper will report on the response of both editors and “readers” of these new tools for multimodal editions and what it suggests for the scholarly editors of the future.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>IT Services, 13 Banbury Road</strong>. <em>The University of Oxford Text Archive.</em> Text. <a href="http://ota.ahds.ac.uk/Web">ota.ahds.ac.uk/Web</a>. 28 Oct. 2013.
+					</p>
+  <p xmlns="">2. <em>About The Etext Center | University of Virginia Library Digital Curation Services.</em><a href="http://www.digitalcurationservices.org/digital-stewardship-services/etext/">www.digitalcurationservices.org/digital-stewardship-services/etext</a> Web. 28 Oct. 2013.
+					</p>
+  <p xmlns="">3. <em>TEI guidelines</em>. <a href="http://www.tei-c.org/Guidelines/P5/.">www.tei-c.org/Guidelines/P5/</a>.
+					</p>
+  <p xmlns="">4. <em>The William Blake Archive Homepage.</em><a href="http://www.blakearchive.org/blake/">www.blakearchive.org/blake/</a> Web. 28 Oct. 2013.
+					</p>
+  <p xmlns="">5. <strong>Brown, Geoffrey</strong>. <em>Developing Virtual CD-ROM Collections: The Voyager Company Publications.</em> International Journal of Digital Curation 7.2 (2012): 3–20. www.ijdc.net. Web. 28 Oct. 2013.
+					</p>
+  <p xmlns="">6. <em>Here’s Looking at Casablanca.</em> National Endowment for the Humanities. Accessed October 28, 2013. <a href="http://www.neh.gov/humanities/2005/septemberoctober/feature/here%E2%80%99s-looking-casablanca">www.neh.gov/humanities/2005/septemberoctober/feature/here%E2%80%99s-looking-casablanca</a>.
+					</p>
+  <p xmlns="">7. <em>Music Theatre Online.</em><a href="http://mith.umd.edu/mto">mith.umd.edu/mto</a> Web. 28 Oct. 2013.
+					</p>
+  <p xmlns="">8. <strong>Reid, Calvin</strong>. <em>Voyager Shakeup: In Wake of Stein’s Exit, It’s up for Grabs.</em> Publishers Weekly, November 18, 1996. General OneFile.
+					</p>
+  <p xmlns="">9. <em>Rdio - Welcome to the Rdio API.</em> Accessed October 28, 2013. <a href="http://developer.rdio.com/">developer.rdio.com</a>.
+					</p>
+  <p xmlns="">10. <em>YouTube JavaScript Player API Reference - YouTube — Google Developers.</em> Accessed October 28, 2013. <a href="http://developers.google.com/youtube/js_api_reference">developers.google.com/youtube/js_api_reference</a>.
+					</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-472.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>The Cryptic Novel:  A Computational Taxonomy of the Eighteenth-Century Literary Field</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>8</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>319 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:mark.algee-hewitt@stanford.edu"><span class="author-surname">Algee-Hewitt</span>,
+									<span class="author-forename">Mark</span></a>
+        <a href="http://www.google.com/#q=Algee-Hewitt, Mark">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Stanford University</span>
+      </li>
+      <li>
+        <a href="mailto:lmeidem@stanford.edu"><span class="author-surname">Eidem</span>,
+									<span class="author-forename">Laura</span></a>
+        <a href="http://www.google.com/#q=Eidem, Laura">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Stanford University</span>
+      </li>
+      <li>
+        <a href="mailto:heuser@stanford.edu"><span class="author-surname">Heuser</span>,
+									<span class="author-forename">Ryan</span></a>
+        <a href="http://www.google.com/#q=Heuser, Ryan">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Stanford University</span>
+      </li>
+      <li>
+        <a href="mailto:anital@stanford.edu"><span class="author-surname">Law</span>,
+									<span class="author-forename">Anita</span></a>
+        <a href="http://www.google.com/#q=Law, Anita">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Stanford University</span>
+      </li>
+      <li>
+        <a href="mailto:tanya.llewellyn@gmail.com"><span class="author-surname">Llewellyn</span>,
+									<span class="author-forename">Tanya</span></a>
+        <a href="http://www.google.com/#q=Llewellyn, Tanya">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Stanford University</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Overview
+
+ 
+
+</h2>
+  <p xmlns="">This
+project employs machine learning and other text-mining based clustering
+techniques to study the relationship between taxonomic systems for categorizing
+prose fiction in the eighteenth century. Our goal is to challenge narratives of
+the so-called “rise” of the novel (Watt, 1957<cite href="#n1">1</cite>; McKeon, 1987<cite href="#n2">2</cite>; Richetti 1999<cite href="#n3">3</cite>)
+that trace a continuity between the prose fiction that emerged in the
+eighteenth-century and the novel as a fully realized critical object in the
+late nineteenth century. Our project instead uses statistical modeling methods
+to theorize an alternate history for the novel: not, as proposed in Franco
+Moretti’s Graphs, Maps, Trees<cite href="#n4">4</cite>, as a history of genres, but instead as a
+history of genre labels--that is, a history formed by the interaction between
+paratextual, self-identified literary labels that circulated in the
+eighteenth-century marketplace and the texts that they defined. Our project,
+which is currently in its final stages at Stanford University’s Literary Lab,
+bridges the historical and computational to enact a form of literary history
+that puts pressure on traditional theories focused on charting the rise of the
+novel. The project is deeply invested in using digital and statistical methods
+to excavate the nuances in the ways in which eighteenth-century genres evolved.
+Instead of analyzing texts via contemporary genre categorizations, we recover
+the relationship between the self-applied taxonomy of eighteenth-century prose
+fiction and the lexical and semantic features of the texts themselves to recuperate
+a historically-determined literary field that has been largely overlooked (or
+noted and elided) by modern criticism. Drawing from a corpus of 2,385 digitized
+texts from the Eighteenth Century Collections Online (ECCO) database, we ask
+how new computational methods can aid us in uncovering what kinds of work
+self-identified genre labels in titles (specifically “story,” “history,”
+“tale,” “letters,” “romance,” “life,” “adventure,” and “novel”) accomplished
+within the literary marketplace of the long eighteenth-century, and how that
+kind of work is distinct from critically- or retroactively-designated genres
+(“gothic,” “jacobin,” “epistolary,” “historical,” “it-narrative,” “oriental
+tale.”) </p>
+  <h2 xmlns="">Aims</h2>
+  <p xmlns="">Our
+project seeks to answer a series of critical questions about the taxonomic
+systems of eighteenth-century fiction using computer generated models. Do
+generic labels formally differentiate separate kinds of writing in a useful way
+(such that a “novel” is lexically, semantically or formally different from a “romance”)
+or do they merely function as signals within the marketplace itself, so that
+there is no textual or formal differences between a “tale” or a “story” beyond
+mere marketplace convention? How does the relationship between different genre
+labels change over time, and how can it assist us in understanding the
+evolution of titles as a representative labeling system? This approach takes
+advantage of recent advances in probabilistic modeling to recover the meaning
+of labels that have been homogeneously condensed under the rubric of novel; it
+simplifies the complexity of the word “novel,” with all its attendant genres
+and subgenres, to make the field that “novel” inhabits more complex. Developing
+from these research questions, our method-driven aims are: (1) to detect and
+assess large-scale trends in the development of and relation between genre
+labels across time (2) to isolate formal differences in the corresponding full
+texts identified under these categorical labels, and (3) to compare these
+differences to a corpus of texts categorized according to modern genre
+designations. </p>
+  <h2 xmlns="">Methods
+and Narrative 
+
+ 
+
+</h2>
+  <p xmlns="">In
+the early stages of our project, we began with an exploratory approach to our
+data, using statistical, unsupervised learning techniques to identify word patterns
+and clusters within the texts, prior to classifying the texts’ content onto the
+label categories. Our initial approach sought to determine if some underlying
+structure existed among these texts that we could then map onto a taxonomic
+system, such as genre, or in our case, title labels. Using a series of
+clustering techniques built off of different feature sets (most frequent words,
+most distinctive words, etc), we found that the assumptions that provided the
+foundation for our project were vindicated: not only did the titles under each
+label cluster together based on the Most Frequent Words in each text, but there
+were intriguing differences between clusters. For instance, though a coherent
+cluster of “history” is present from the first quarter of the century,
+definitively clustered labels “novel” and “romance” don’t emerge until later in
+the century. These differences opened our research to a new set of concerns,
+such as the relative stability of each category, or the ways in which the
+labels individually and collectively change across time. Indeed, a major
+finding of this phase was the dramatic influence time itself had over every
+other variable we considered. Such a finding strengthened the presence of a
+literary-historical component of our research and prompted us to pay closer
+attention to the divisions of time we were employing.</p>
+  <p xmlns="">In
+our current work, we have employed supervised learning techniques and machine
+classification to specifically interrogate the relationship between text and
+label: which labels have a high level of cohesion, and thus predictability, and
+which labels are less cohesive, and were perhaps more tolerant of formal
+deviation and experimentation? To answer this question, we employed a
+discriminant function analysis to determine if texts could be reliably
+algorithmically classified into their labels, treated in our analysis as a
+taxonomic system. These results were validated through a leave-one-out cross
+validation to determine the strength of our predictive model. . The results confirmed
+the findings of the PCA: our model performed better than chance, categorizing
+each of our labels, on average, 75% correctly. Another dimension of our study
+was to investigate differences on a label-by-label basis: what does it mean,
+textually, that a “life” is harder to algorithmically classify than a
+“romance”? Did difficulties in categorization have anything to do with the
+textual heterogeneity within the labels themselves? These questions prompted us
+toward another set of analyses designed to evaluate the self-similarity of each
+label. We divided each text in our corpus into ten equal parts, measuring the
+distance from each part to the other in a matrix that, when averaged, resulted
+in a distance score for each. The findings from this activity helped to both
+clarify and complicate the story that was emerging regarding labels over the
+course of the century.</p>
+  <p xmlns="">Our
+most recent work has taken us in a more broadly comparative direction: to
+examine the textual and larger structural differences between our current
+corpus of texts, classified according to generic labels, and another corpus we
+have compiled from modern, genre-focused bibliographies. Using the same
+techniques of machine learning and self-similarity, we have started to
+interrogate the logics by which generic labels organize and describe the
+literary field of the eighteenth century in ways we have yet to discover.</p>
+  <h2 xmlns="">Results</h2>
+  <p xmlns="">
+
+ 
+Our
+initial results proved the value and worth of studying this type of paratextual
+literary categorization. The temporalization of data allowed by our method lets
+us observe, first, the simultaneous dominance and differentiation of “novel”
+and “tale” at the end of the century, leading us to speculate, as Anthony
+Jarrells (2012)<cite href="#n5">5</cite> has, on twin “rises” of genre in this century as opposed to one
+rise; that is, the eighteenth-century appears to be as much a story of the rise
+of “novel” as it is of the rise of “tale.” The result of our machine learning
+classifications and self-similarity form a compelling argument for the ways in
+which, throughout the eighteenth-century, the field of prose fiction underwent
+a transformation through the processes of both differentiation and
+consolidation. From these results, we argue that the novel can be viewed as
+merely one branch, rather than the single formal end to which all
+eighteenth-century prose fiction trends. Other important results, observed from
+our PCA charts, indicate a general movement across all generically-labelled
+texts from the usage of words that indicate exteriority (such as “law,” “city,”
+“army,” “money,” “order,” and “public”) to words that indicate interiority (such as
+“lover,” “marry,” “imagine,” “woman,” “write” and “read”). In the final stages
+of the project, we are working to apply similar computational tools to genres
+conventionalized by modern criticism -- such as the Gothic novel or Oriental
+tale -- to examine how such categorizations relate to self-applied genre
+labels.  Preliminary results indicate that, after sampling our texts and
+controlling for time period and author, generic labels classify with a success
+rate comparable to texts designated as such by critics. The question then
+becomes not whether genre labels organize more successfully than conventional
+genres, but whether and how they organize differently--if generic labels can
+tell us something about the trajectory and organization of formal literary
+history that genre cannot. Our presentation will include a more detailed
+discussion of our methods and results and of the implications of the latter for
+traditional teleological narratives of eighteenth-century prose fiction</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Watt, Ian</strong> (1957). <em>The Rise of the Novel: Studies</em> in Defoe, Richardson, Fielding. London: Chatto and Windus.
+          </p>
+  <p xmlns="">2. <strong>McKeon, Michael</strong> (1987). <em>The Origins of the English Novel: 1600-1740</em>. Baltimore: Johns Hopkins UP
+          </p>
+  <p xmlns="">3. <strong>Richetti, John</strong> (1999). <em>The English Novel in History, 1700-1780</em>. London: Routledge.
+          </p>
+  <p xmlns="">4. <strong>Moretti, Franco</strong> (2004). <em>Graphs, Maps, Trees: Abstract Models for Literary History</em>. New York: Verso
+          </p>
+  <p xmlns="">5. <strong>Jarrells, Anthony</strong> (2012). <em>After Novels: Short Fictional Forms and the Rise of the Tale.</em> The Oxford History of  the Novel in English. 12 vols. Vol. 2. Eds. Peter Garside and Karen O'Brien. Oxford: Oxford UP.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

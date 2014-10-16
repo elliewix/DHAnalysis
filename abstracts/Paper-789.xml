@@ -1,0 +1,114 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-789.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Photogrammar: Organizing Visual Culture through Geography, Text Mining, and Statistical Analysis</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Tilton</span>,
+									<span class="author-forename">Lauren</span></a>
+        <a href="http://www.google.com/#q=Tilton, Lauren">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Yale University, United States of America</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Leonard</span>,
+									<span class="author-forename">Peter</span></a>
+        <a href="http://www.google.com/#q=Leonard, Peter">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Yale University, United States of America</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Arnold</span>,
+									<span class="author-forename">Taylor</span></a>
+        <a href="http://www.google.com/#q=Arnold, Taylor">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Independent Scholar </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The <em>Farm Security Administration – Office of War Information photographic datase</em>t is a
+collection of over 170,000 monochrome and colour photographs, commissioned between 1935
+and 1945 by the government of the United States of America. Offering a unique snapshot of the
+nation during the period, it serves as an important visual record for scholars and the
+public­at­large. The FSA­OWI photographic archive has been digitized by United States Library
+of Congress, and because the photographs were taken on behalf of the United States
+Government, access to and use of the collection is essentially free and open.
+</p>
+  <p xmlns="">Under the direction of Professor Laura Wexler, (American Studies and Women, Gender &amp;
+Sexuality Studies, Yale University), the Photogrammar project takes the conditions of this
+archive (pre­digitized and publicly accessible) as the starting point for a digital, scholarly and
+open source platform that builds upon, and significantly extends, the Library of Congress’ online
+collection. The subject of a successful Digital Humanities Start­Up Grant from the United States
+National Endowment for the Humanities, the project seeks to answer research questions that
+emerged from scholars at Yale University. Our paper will focus on three Digital Humanities
+techniques that we have used to analyze the corpus:
+</p>
+  <p xmlns=""><strong>Geospatial</strong>: Computational derivation of latitude and longitude;
+</p>
+  <p xmlns=""><strong>Text Mining</strong>: Vector­space analysis to expose thematic similarity;
+</p>
+  <p xmlns=""><strong>Statistical Analysis</strong>: Contextual inference to “re­discover” missing metadata.
+</p>
+  <p xmlns="">Each of these techniques is associated with significant information gain, relative to the previous
+state of scholarship on the corpus:
+</p>
+  <p xmlns=""><strong>Geographic</strong>: The collection is often characterized as being about the dust bowl and rural
+poverty in the American south during the Great Depression. In fact, by mapping the photographs
+and analyzing photograph density at the county level by year, the popular characterization of the
+FSA­OWI does not hold. Rather, the scope of sight was much broader including a large focus on
+the United States Northeast and Midwest, as well as photographs beyond the continental United States such as the Virgin Islands and Europe.</p>
+  <p xmlns=""><strong>Text Mining</strong>: The 1940s ontology of the collection only allowed a photograph to be classified in
+one category at once. By looking at latent patterns in the free­form textual descriptions, we are
+able to surface photographs that participate in multiple and overlapping clusters. In this way, we
+can discover thematic similarity between the work of several different photographers, active at
+different times and in different places in the country (and around the world). This approach
+reflects a more general turn towards ‘latent’ patterns in unstructured data within the archive.
+</p>
+  <p xmlns=""><strong>Statistical Analysis</strong>: The relatively large scale of the collection (available as both digitized
+negatives and physical prints) as well as constantly changing organizational systems through
+the years has unfortunately left a majority of the negatives with minimal documentation. Utilizing
+latent metadata attached to the photographs, we are able to take individual photographs and to
+put them back into strips of four and five. In turn, this allowed for us to insert new metadata into
+the photographs. For example, if a frame with an unknown photographer and location is between
+photos by John Vachon in Chicago, then we know the unknown frame is by this photographer in
+this location. We will discuss the statistical methods applied using R.
+</p>
+  <p xmlns="">These three techniques open up new questions about this collection and historic period, and
+challenge previous scholarship. We believe the Photogrammar project can serve as one
+example of the general question of how to engage with large­scale digital archives of visual
+culture. This question is of particular importance for scholars who seek to bring Digital
+Humanities techniques to “Big Data” collections, whether those curated by libraries, museums,
+or scholars themselves. We anticipate both similarities — and important differences — with
+European archives of the same period, including the UK Mass Observation Archive
+(1937­1960s), and forthcoming collections hosted by Europeana Online.
+</p>
+  <p xmlns="">In addition, we will discuss how this project offers a new, user­friendly way to access a visual
+archive of this size by sitting at the intersection of <em>public</em> and <em>digital</em> humanities. We will discuss
+the ways in which we intend to open up the collection to contributions from the public at large,
+with lessons learned from previous attempts to crowdsource metadata for this collection (Flickr
+Commons / New York Public Library 20084, Flickr Commons Library of Congress 20095). We
+will show a prototype of a publically­accessible Geographic Referencer, to allow end users to
+more accurately and appropriately locate photographs on both current and historic maps. And
+we will discuss some of the challenges in incorporating crowd­sourced metadata corrections
+into a historic archive, while preserving the integrity and historic character of a large visual
+collection. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">http://www.loc.gov/pictures/collection/fsa/</p>
+  <p xmlns="">http://www.loc.gov/rr/print/res/071_fsab.html</p>
+  <p xmlns="">http://americanstudies.yale.edu/faculty/laura­wexler </p>
+  <p xmlns="">http://www.flickr.com/photos/nypl/sets/72157610969038056/</p>
+  <p xmlns="">http://www.flickr.com/photos/library_of_congress/sets/72157618541455384/ </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

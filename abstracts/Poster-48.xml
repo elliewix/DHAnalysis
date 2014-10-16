@@ -1,0 +1,103 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-48.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>The SMART-GS Project: An Approach to Image-based Digital Humanities</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:yhashimoto1984@gmail.com"><span class="author-surname">Hashimoto</span>,
+									<span class="author-forename">Yuta</span></a>
+        <a href="http://www.google.com/#q=Hashimoto, Yuta">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Kyoto University</span>
+      </li>
+      <li>
+        <a href="mailto:kenro.aihara@nii.ac.jp"><span class="author-surname">Aihara</span>,
+									<span class="author-forename">Kenro</span></a>
+        <a href="http://www.google.com/#q=Aihara, Kenro">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">National Institute of Informatics, Japan</span>
+      </li>
+      <li>
+        <a href="mailto:susumu@shayashi.jp"><span class="author-surname">Hayashi</span>,
+									<span class="author-forename">Susumu</span></a>
+        <a href="http://www.google.com/#q=Hayashi, Susumu">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Kyoto University</span>
+      </li>
+      <li>
+        <a href="mailto:minao.kukita@gmail.com"><span class="author-surname">Kukita</span>,
+									<span class="author-forename">Minao</span></a>
+        <a href="http://www.google.com/#q=Kukita, Minao">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Kyoto University</span>
+      </li>
+      <li>
+        <a href="mailto:Makoto.Ohura@mb4.seikyou.ne.jp"><span class="author-surname">Ohura</span>,
+									<span class="author-forename">Makoto</span></a>
+        <a href="http://www.google.com/#q=Ohura, Makoto">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Kyoto University</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction: Difficulties in Working with Handwritten Manuscripts </h2>
+  <p xmlns="">Some of historically important manuscripts, especially those written in the modern age, are hard to read due to their authors' unclear handwriting. Transcription processes for these manuscripts tend to be more time-consuming, eventually decreasing historians' productivity. When manuscripts are written in East-Asian languages such as Japanese, which have a vast number of characters, transcriptions are even harder. Because historians of the modern age face the challenge of studying a large number of documents, these difficulties can be crucial to them. </p>
+  <p xmlns="">SMART-GS, a system for image-based historical studies, has been
+ developed by Japanese historians and developers since 2006 to help historians work on such manuscripts, and has been successfully applied to six historical research 
+projects<cite href="#n1">1</cite>. It is written in Java, and runs on Windows, OS X, and Linux. 
+Its source code is distributed on sourceforge.jp under the GPL 2.0 license<cite href="#n2">2</cite>. In this paper, we will discuss the approach 
+the SMART-GS project has taken, and its applications to historical 
+studies of handwritten documents. </p>
+  <h2 xmlns="">Project Background</h2>
+  <p xmlns="">SMART-GS was originally developed by Susumu Hayashi for his study of the history of 
+19th century mathematics. It was first built for helping the analysis of the mathematical notebooks of the prominent mathematician David Hilbert. These notebooks consist of short notes, each expressing Hilbert's mathematical ideas. In order to identify
+the time of writing of the notes, Hayashi developed a system that supports image-and-text markup, one-to-many
+links between markups, search of handwritten texts, and so on. Later the system, named SMART-GS, turned out to
+be applicable to other historical studies and has been adopted so far by six research programs for the analysis of
+handwritten manuscripts. </p>
+  <p xmlns="">There are a number of applications and web services which look similar to SMART-GS, such as Image-Markup-Tool<cite href="#n3">3</cite> and T-PEN<cite href="#n4">4</cite>. However, they are mainly aimed at creating transcriptions or annotations for archival purposes, whereas SMART-GS is designed for a different purpose: to streamline historians' work flows, making them more productive.</p>
+  <h2 xmlns="">Supported Features</h2>
+  <p xmlns="">One of the most basic features of SMART-GS is its markup system for texts and images. SMART-GS can markup an image region in various ways: selecting it with a rectangle or polygon 
+shape, putting comments on it, drawing an 
+arrow from one region to another, and so on (See Fig. 1). This markup information will be stored in an XML file separately from the original images. Therefore a user only has to exchange a small XML file to share his or her project with others; provided they have the same image files. In addition, it's possible to create a bidirectional and one-to-many link between any two markups. This feature enables users to make correspondences between an image region and its transcribed text. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_40_markups.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Markups for image and text</p>
+    </figcaption>
+  </div>
+  <p xmlns="">For deciphering illegible words in manuscripts SMART-GS features an image search function. Using this feature users can easily find a word or phrase that has a similar shape to the query image (See Fig. 2). Also, SMART-GS supports adaptive-repetitive search, in which users can recursively increase the relevance of search results.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_40_search.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Search results for an image query "Scheler", a German philosopher's name</p>
+    </figcaption>
+  </div>
+  <p xmlns="">For team-based projects SMART-GS offers resource sharing through the Internet. Metadata added on documents and their revision histories can be uploaded to and saved in the subversion-like version control server HCP (Humanities Cyber Platform), so that the project members can work together on the same documents (further cloud collaboration support is planned). </p>
+  <h2 xmlns="">Conclusion</h2>
+  <p xmlns="">Historical studies based on handwritten texts generally require considerable time and experiences. SMART-GS' features such as image-and-text markup, image search, and project sharing through the Internet, can streamline historians' workflows so that they can focus on the analysis of the content in the manuscripts. </p>
+  <p xmlns="">Currently we are implementing two other features into SMART-GS: a built-in TEI editor and automatic mass transcription function. Since at present SMART-GS only supports relatively simple HTML markup for texts, the semantic richness of TEI will bring more power of expression to its markup and link system. The automatic mass transcription will be realized as an application of SMART-GS' image search function. This feature will make it much more efficient to transcribe texts to which OCR is not applicable.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>SMART-GS was for the first time presented in Hayashi, S.</strong> (2007). <em>SMART-GS Project: a tool for seaching, marking up, and linking historical documents</em>. A talk delivered in the 3rd international symposium of Grant-in-Aid for Scientific Research Areas "Japanese Technological Innovations". <a href="http://sts.kahaku.go.jp/tokutei/intforumprogram_No2.php">sts.kahaku.go.jp/tokutei/intforumprogram_No2.php</a> (Japanese)
+          </p>
+  <p xmlns="">2. <a href="http://en.sourceforge.jp/projects/smart-gs/">en.sourceforge.jp/projects/smart-gs/</a></p>
+  <p xmlns="">3. <a href="http://tapor.uvic.ca/~mholmes/image_markup/">tapor.uvic.ca/~mholmes/image_markup/</a></p>
+  <p xmlns="">4. <a href="http://t-pen.org/TPEN/">t-pen.org/TPEN/</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

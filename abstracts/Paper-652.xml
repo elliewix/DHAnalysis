@@ -1,0 +1,106 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-652.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>5 Design Rules for Visualizing Text Variant Graphs</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>4</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:stjaenicke@informatik.uni-leipzig.de"><span class="author-surname">Jänicke</span>,
+									<span class="author-forename">Stefan</span></a>
+        <a href="http://www.google.com/#q=Jänicke, Stefan">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Image and Signal Processing Group, Institute for Computer Science, Leipzig University, Germany</span>
+      </li>
+      <li>
+        <a href="mailto:agessner@gcdh.de"><span class="author-surname">Geßner</span>,
+									<span class="author-forename">Annette</span></a>
+        <a href="http://www.google.com/#q=Geßner, Annette">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Göttingen Centre for Digital Humanities, University of Göttingen, Germany</span>
+      </li>
+      <li>
+        <a href="mailto:mbuechler@gcdh.de"><span class="author-surname">Büchler</span>,
+									<span class="author-forename">Marco</span></a>
+        <a href="http://www.google.com/#q=Büchler, Marco">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Göttingen Centre for Digital Humanities, University of Göttingen, Germany</span>
+      </li>
+      <li>
+        <a href="mailto:scheuermann@informatik.uni-leipzig.de"><span class="author-surname">Scheuermann</span>,
+									<span class="author-forename">Gerik</span></a>
+        <a href="http://www.google.com/#q=Scheuermann, Gerik">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Image and Signal Processing Group, Institute for Computer Science, Leipzig University, Germany</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Motivation</h2>
+  <p xmlns="">After Schmidt’s article <cite href="#n1">1</cite> on modelling and representing various versions of text with so called Variant Graphs was published in 2009, web-based tools were developed that utilize and adopt the presented model to facilitate the work with digital editions of text in the browser. CollateX <cite href="#n2">2</cite> is one of these tools. It computes a static, horizontally aligned, directed acyclic graph with vertices showing the various text fragments and edges labeled with edition identifiers connecting subsequent text fragments. The tool Stemmaweb <cite href="#n3">3</cite> extends the CollateX graph to allow for user-driven annotation and modification of the graph structure (e.g., merging and splitting of vertices). Despite the attached interaction capabilities, it seems that there is little value put on designing the graphs. The purpose of this paper is to raise awareness for improving the readability of Text Variant Graphs. We propose a list of design rules for styling the graph and its vertices and edges to facilitate a rapid comprehension of the underlying alignment structure by the user.</p>
+  <h2 xmlns="">2. Design Rules for Text Variant Graphs</h2>
+  <p xmlns="">When defining rules for the layout of Text Variant Graphs, we refer to the visualization of CollateX, as its layout is also used in Stemmaweb, and it can be seen as an improvement in comparison to the generated graph of the tool NMerge <cite href="#n4">4</cite> – provided by Schmidt –, where edges carry all types of information. </p>
+  <p xmlns="">When we take a look at a resultant CollateX graph (see Figure 1), it is hard to find out how often a text fragment occurs over all given editions. Thus, it is hard to compare, e.g. the numbers of synonyms. The only chance is to count the edition identifiers at the labels of the incoming edges of the desired vertices. But we can easily put this information on the vertex layouts, which leads us to <strong>Rule 1: Vary vertex label sizes!</strong> As Wattenberg proposes for the ”Word Tree” <cite href="#n5">5</cite>, we suggest weighted vertices also for Text Variant Graphs. The usage of font size as a metaphor to reflect the number of occurrences of individual text fragments helps to immediately differentiate between frequent and infrequent branches of the graph.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_487_collatex.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Fourth Bible verse in 7 different editions: Text Variant Graph computed with CollateX</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_487_bibleviz.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Fourth Bible verse in 7 different editions: Our visualization</p>
+    </figcaption>
+  </div>
+  <p xmlns="">It seems to be obvious to draw the edges of a directed acyclic graph in the shape of arrows. But for what reason, when we know that we read a text with a dedicated writing direction? Then, most probably, the user is supposed to read the graph in the same direction, and it is counterintuitive to move the eyes backwards when reading (in Figure 1, we find an edge from ”saw” (right-top) to ”the light” (bottom-left) – we call this a backward edge). In graph theory, the common style for a directed acyclic graph is a so called layered graph drawing <cite href="#n6">6</cite> with all edges pointing in the same direction. Thus, we define <strong><strong>Rule 2: Abolish backward edges!</strong></strong> When doing so, we can reduce the cognitive load of the visualization by drawing undirected edges instead of arrows.</p>
+  <p xmlns="">The labeling of edges with edition identifiers as it is done in CollateX leads to two problems. Firstly, the additional text labels interfere with the vertices' texts. Thus, the reader has to visually separate vertex labels (text fragments) from edge labels (identifiers). Secondly, if lots of editions pass an edge or long edition identifiers are used, the corresponding edge labels become very large. As a consequence, adjacent vertices drift apart and the reader quickly loses the context of a text fragment. Therefore, follows our <strong>Rule 3: Do not label edges!</strong> As an alternative, we suggest drawing an edge for each edition in a different color. However, as the human ability to distinguish colors is limited, it only works well or a small number (&lt;10) of editions. But, with varying stroke styles for edges (e.g., line, dashed line, dotted line) we are again able to increase this number. In any case, a legend is required to map the given styles (or in the CollateX case, the identifiers) to its corresponding edition name. </p>
+  <p xmlns="">When analyzing and comparing text editions to each other, the user is often interested in those editions, that deviate from the ”general case”. Within the Stemmaweb tool <cite href="#n7">7</cite>, edges, that are passed by most editions, are labeled with "majority”, thus, the labels are bundled. When following Rule 3, we receive multiple lines instead of multiple labels, hence, <strong>Rule 4: Bundle major edges!</strong> We highlight both resultant edge types – bundled and unbundled edges – in a different way. Unbundled edges receive saturated colors in visually attracting hues, whereas bundled edges are colored in a plain gray, but drawn with slightly thicker strokes. Thus, the deviations from the general case can be detected easily. When following Rules 3 and 4, we are able to reduce the number of edges to be drawn – and therefore, the cognitive load of our approach – to a passable minimum. </p>
+  <p xmlns="">Last but not least, the main problem we identified when reading the horizontal aligned Text Variant Graphs was the required horizontal scrolling. Especially, when the source texts are long, the user quickly loses the context and it is hard to keep track of how individual editions disseminate in the graph. Moreover, a lot of space is wasted since the height of the graph is rather small compared to the height of the screen. The outcome of a survey within the TAdER Project <cite href="#n8">8</cite> to avoid horizontal scrolling when reading texts in the browser underpins our hypothesis that the user is accustomed to scroll vertically. Thus, here comes our final <strong>Rule 5: Insert line breaks!</strong> It may sound tricky to cut the graph into pieces, and thereby, keeping it easily readable. But, why shouldn’t we adopt the behavior of a text flowing in a book (with line breaks) for Text Variant Graphs? When following Rule 3, we receive different colored edges (or edge bundles) at the end of each line, so that all paths are visually seizable at the beginning of the next line. This approach supports the user in following individual editions even for large graphs, and the user also receives more context on the screen for a specific position in the graph.</p>
+  <p xmlns="">Figures 1 and 2 juxtapose the resultant Text Variant Graphs for the fourth Bible verse with CollateX and our visualization that implements the listed design rules above.</p>
+  <h2 xmlns="">3. Following the Rules: 7 English Translations of the Bible</h2>
+  <p xmlns="">We are working with seven English translations of the Bible in our project <cite href="#n9">9</cite>, which turned out to be a very good use-case for the presented visualization approach, not only because the Bible is a very influential and well-known text. Another reason is, that these translations are all derivatives of the same Hebrew and Greek original, often trying hard to preserve the exact wording, and refer to an existing and well structured text, divided into canonical books and verses. </p>
+  <p xmlns="">Figure 3 shows a screenshot of the first five Bible verses. After tokenization, normalization and alignment procedures, we layout the resultant directed acyclic graph by following the rules proposed in the previous section. For the seven editions, we chose the following colors of the 12-color palette for categorial usage suggested by Ware <cite href="#n10">10</cite> to facilitate maximal visual differentiation by the user: red, blue, green, yellow, orange, brown, and purple. To support answering various research questions, the user is able to modify the visualization. Firstly, when the user hovers a vertex all individual edges of the corresponding editions are drawn in the dedicated colors. This mean of interaction helps to highlight the paths containing the dedicated token and to clarify those editions forming majority edges. Secondly, unimportant editions can be removed from the graph. Thirdly, the user is able to select one of the editions as a main branch, so that the corresponding vertices are drawn on the same horizontal level – variations to the other editions can be considered easily.</p>
+  <p xmlns="">During the development phase, the humanists of our project steadily evaluated our design, so that the result remains intuitive even for the inexperienced, maybe sceptical user. We strongly recommend such an iterative process when developing visualizations for humanistic applications as it turned out to be very successful. In comparison to a plain graph layout, the presented design for the Text Variant Graph and the project page reminds the user, that it is a book to be read, not just some string of letters – which was a major concern of the humanists.</p>
+  <p xmlns="">Our presented approach is still applicable for examples where whole blocks of text have different orders among the various editions, but matching text blocks may strongly drift apart. In the future, we direct our attention on developing algorithms that visually align such structures more properly.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_487_bible2.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Screenshot of the Bible use case. In Genesis 1:4, all paths containing the token
+”divided” are highlighted.</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Desmond Schmidt and Robert Colomb</strong>. <em>A data structure for representing multi-version texts online</em>. International Journal of Human-Computer Studies, 67(6):497–514, 2009.
+          </p>
+  <p xmlns="">2. <strong>Ronald H. Dekker and Gregor Middell</strong>. <em>Computer-Supported Collation with CollateX: Managing Textual Variance in an Environment with Varying Requirements</em>. Supporting Digital Humanities 2011, University of Copenhagen, Denmark, 17–18 November 2011.
+          </p>
+  <p xmlns="">3. <strong>Tara L. Andrews and Caroline Mac</strong>. <em>Beyond the tree of texts: Building an empirical model of scribal variation through graph analysis of texts and stemmata</em>. Literary and Linguistic Computing, 2013.
+          </p>
+  <p xmlns="">4. <strong>Multiversiondocs: Merge</strong>, edit and compare N versions in one document. <a href="http://code.google.com/p/multiversiondocs/">code.google.com/p/multiversiondocs/</a> (Retrieved 2013-10-30).
+          </p>
+  <p xmlns="">5. <strong>Martin Wattenberg and Fernanda B</strong>. <em>Viégas</em>. The Word Tree, an Interactive Visual Concordance. IEEE Transactions on Visualization and Computer Graphics, 14(6):1221–1228, November 2008.
+          </p>
+  <p xmlns="">6. <strong>Kozo Sugiyama, Shojiro Tagawa, and Mitsuhiko Toda.</strong><em>Methods for Visual Understanding of Hierarchical System Structures. Systems, Man and Cybernetics</em>, IEEE Transactions on, 11(2):109–125, Feb 1981.
+          </p>
+  <p xmlns="">7. <em>Stemmaweb – a collection of tools for analysis of collated texts.</em><a href="http://byzantini.st/stemmaweb/">byzantini.st/stemmaweb/</a> (Retrieved 2013-10-30).
+          </p>
+  <p xmlns="">8. <em>TAdER – Text Adaptability is Essential for Reading</em>. <a href="http://www.tader.info/scrolling.html">www.tader.info/scrolling.html</a> (Retrieved 2013-10-30).
+          </p>
+  <p xmlns="">9. <em>Holy Bible – Verses in Various English Translations.</em><a href="http://informatik.uni-leipzig.de/HolyBible">informatik.uni-leipzig.de/HolyBible</a> (2013).
+          </p>
+  <p xmlns="">10. <strong>Desmond Schmidt and Robert Colomb.</strong><em>A data structure for representing multi-version texts online</em>. International Journal of Human-Computer Studies, 67(6):497–514, 2009.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

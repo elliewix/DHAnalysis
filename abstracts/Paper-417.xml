@@ -1,0 +1,212 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-417.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Towards a Semantic Network of Dante’s Works and Their Contextual Knowledge</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>415 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:mirko.tavoni@gmail.com"><span class="author-surname">Tavoni</span>,
+									<span class="author-forename">Mirko</span></a>
+        <a href="http://www.google.com/#q=Tavoni, Mirko">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Dipartimento di Filologia, Letteratura e Linguistica, Università di Pisa</span>
+      </li>
+      <li>
+        <a href="mailto:paola.andriani@gmail.com"><span class="author-surname">Andriani</span>,
+									<span class="author-forename">Paola</span></a>
+        <a href="http://www.google.com/#q=Andriani, Paola">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Dipartimento di Filologia, Letteratura e Linguistica, Università di Pisa</span>
+      </li>
+      <li>
+        <a href="mailto:valentina.bartalesi@isti.cnr.it"><span class="author-surname">Bartalesi</span>,
+									<span class="author-forename">Valentina</span></a>
+        <a href="http://www.google.com/#q=Bartalesi, Valentina">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">ISTI-CNR</span>
+      </li>
+      <li>
+        <a href="mailto:elvira.locuratolo@isti.cnr.it"><span class="author-surname">Locuratolo</span>,
+									<span class="author-forename">Elvira</span></a>
+        <a href="http://www.google.com/#q=Locuratolo, Elvira">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">ISTI-CNR</span>
+      </li>
+      <li>
+        <a href="mailto:carlo.meghini@isti.cnr.it"><span class="author-surname">Meghini</span>,
+									<span class="author-forename">Carlo</span></a>
+        <a href="http://www.google.com/#q=Meghini, Carlo">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">ISTI-CNR</span>
+      </li>
+      <li>
+        <a href="mailto:loredana.versienti@isti.cnr.it"><span class="author-surname">Versienti</span>,
+									<span class="author-forename">Loredana</span></a>
+        <a href="http://www.google.com/#q=Versienti, Loredana">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">ISTI-CNR</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">In the field of digital humanities, scholars
+are increasingly producing digital editions of texts and manuscripts. The
+representation of knowledge included in literary texts is a complex issue,
+requiring rich vocabularies, also called ontologies, for representing the many
+different aspects that are investigated by scholars. In literature, there are many ontologies that
+focus on different aspects of textual information but one single ontology representing all these aspects does
+not exist.</p>
+  <p xmlns="">The “Towards a Digital Dante Encyclopedia” project
+is a three years Italian National Research Project, started in 2012, that aims
+at building a prototypical digital library endowed with services supporting
+scholars in creating, evolving and consulting a digital encyclopedia of Dante
+Alighieri and of his works. The digital library is based on a semantic
+representation of Dante’s works and of the knowledge embedded in them in RDF
+language <cite href="#n1">1</cite>, a language recommended by the Web Consortium
+for the representation of knowledge. In RDF, every piece of knowledge is
+represented as a triple (subject predicate object), and a set of triples form
+an RDF graph, generally called semantic network, in order to highlight the formal linguistic nature of the
+representation. The services being developed address several tasks carried out
+by the scholars building the encyclopedia, starting with the visualization of
+references to primary sources (i.e., other authors’ works which Dante referred to his own works), their
+types and their distribution both in time and in the works of Dante. The
+overall goal is to shed light into the cultural context in which Dante wrote
+his works and into the development of Dante’s reference library over time.</p>
+  <p xmlns="">This part of the project is divided in several
+phases. The first phase regards the creation of an ontology for the knowledge
+embedded in scholarly commentaries to Convivio <cite href="#n2">2</cite>, the philosophical treatise which we choose
+as initial case study. In the second phase, the ontological model is
+generalized to represent the knowledge embedded in the scholarly commentaries
+to other Dante’s works. In the third phase, Dante’s works along with their
+attached commentaries are inserted into the digital library, as part of the
+semantic network being built. In the fourth phase, the primary sources referenced
+by Dante in his works, as reported by the commentaries, are inserted into the digital
+library, following the same semantic approach. In the last phase, services are
+developed, as web applications that allow scholars to browse the semantic
+network of Dante’s work, of primary sources, or of references linking the
+former to the latter. The references will be visualized in an intuitive way
+through tables and charts, highlighting their distribution in Dante’s work and
+over time.</p>
+  <p xmlns="">We present the structure of the semantic
+network, as it currently stands and indicate how it will be further developed. Furthermore, we highlight the
+benefits brought by the visualization service of primary sources to scholars.</p>
+  <h2 xmlns="">2. <strong>Ontology for the representation of <em>convivio</em></strong></h2>
+  <p xmlns="">In order to detect the primary
+sources used by Dante to write his Convivio,
+we relied on the most recent and updated commentary to the text, that of Gianfranco Fioravanti (Mondadori, in the
+press), and created an ontology for representing
+the relevant knowledge carried by this commentary. In particular, our ontology
+represents:</p>
+  <ul xmlns="">
+    <li>the passage of Dante’s
+text (e.g., “Sì come dice lo Filosofo nel principio della Prima Filosofia”) to
+which a quotation from a source refers;</li>
+    <li>the correspondent
+book, chapter and paragraph of Dante’s text</li>
+    <li>the author of the work
+referenced in the commentary (e.g.,
+Aristotle);</li>
+    <li>the title of the work
+referenced in the commentary (e.g., Metaphysics);</li>
+    <li>the thematic area of
+the work referenced in the commentary (e.g.,
+Aristotelianism).</li>
+  </ul>
+  <p xmlns="">In order to create an ontology
+for the semantic representation of the above information, we investigated
+several existing ontologies (e.g. CIDOC-CRM <cite href="#n3">3</cite>, FRBR <cite href="#n4">4</cite> ,
+FaBiO <cite href="#n5">5</cite>, SKOS <cite href="#n6">6</cite>), and we chose the classes and properties that we
+considered the most appropriate to represent the above information. Furthermore,
+we added our own classes and properties for the representation of the categories
+of knowledge that were not addressed by the existing ontologies. Then, we
+transformed the initial commentary into an RDF graph structured according to
+the ontology <cite href="#n7">7</cite>.</p>
+  <p xmlns="">On the basis of our ontology, we
+are approaching the remaining phases of the “Towards a Digital Dante
+Encyclopedia” project. To such aim, we are using the ontology developed so far in order to represent
+other works of Dante (e.g. <em>De Vulgari Eloquentia</em>, <em>Monarchia</em>) as well as the knowledge carried by
+commentaries to them. At the same time, we are collecting the primary sources
+of Dante’s work in a digital format, for insertion into the semantic network
+underlying the digital library. Our diachronic analysis, in fact, aims at
+representing the evolution of Dante’s knowledge about primary sources.</p>
+  <h2 xmlns="">3. <strong>The model population</strong></h2>
+  <p xmlns="">In order to enrich our RDF graph, as we have
+done for Convivio, we are collecting information for other
+Dante’s works. In particular we are focusing on (i) the text of the work along
+with the attached commentaries; (ii) the primary sources referenced in the
+notes. We are currently storing the RDF triples generated according to our ontology
+both for the notes and the primary sources. We are relying on the Virtuoso [8] technology for storing and accessing large RDF
+graphs.</p>
+  <p xmlns="">It is important to note that the works of
+Dante, as well as most of their primary sources, exist in some digital format. However, to the best of our knowledge, there is no
+semantic representation that integrates this information
+into a unique body of knowledge, expressed through a formal ontology. We do not expect the knowledge base that we build to give a coherent
+view of Dante’s works. The knowledge in it may, and in general will be
+incoherent and incomplete, and our ontology is flexible enough to allow both.</p>
+  <p xmlns="">
+
+The creation of the semantic network is a very
+time-consuming and knowledge-intensive process. It requires researching the
+most appropriate ontologies for representing all aspects, and in several cases
+it requires developing a new ontology to fill the gaps of existing ones. Once
+the ontology is created, the works of Dante, the primary sources, and the knowledge
+embedded in them will have to be expressed in this ontology, and this is also a
+technically demanding task. But the benefits are enormous. The digital representation of
+the knowledge can support scholars in several conceptually simple but time-consuming
+tasks, allowing them to focus on the more intellectual aspects of their work.
+The semantic network will be usable for a wide variety of purposes, which go
+well beyond the specific services built by our project. It will constitute a
+backbone that can be enriched with other knowledge about Dante and the
+historical events, people, artistic movements, etc. that have come across Dante
+and as such contribute to form the context in which Dante’s life and art took
+place. In this sense, creating the semantic network is the most important
+achievement of our project. Our project will build only one part of this network,
+but will also lay the bases for the extensions and enrichments that will
+complete what we have started.</p>
+  <h2 xmlns="">4. <strong>Why this unified archive will be important tu study the culture of Dante</strong></h2>
+  <p xmlns="">The importance of the archive and tools described above in order to
+study how the culture of Dante developed in time is obvious. The fact of gathering the
+current information on the primary sources used by Dante in his works, and the
+fact of having this information available in digital format, will improve and
+make more efficient the research of primary sources by the scholars. Having
+all the information dispersed on paper books, in fact, makes impossible a
+systematic overview of the culture of Dante and a well-ordered perception of
+how it was gradually set up in time. On the contrary, the automatic visualization of data about primary
+resources, according to different parameters (in chronological order, or by
+type of source, or by author, by work, etc.), will allow to explore the
+dynamics of the multi-faceted culture of Dante in relation to the diverse and
+often conflicting stages of his biography and to study the evolution in time of
+Dante’s cultural background.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Manola F., Miller, E.</strong> (2004). <em>RDF Primer</em>. W3C Recommendation 10 February 2004. Available at: <a href="http://www.w3.org/TR/rdf-primer/">www.w3.org/TR/rdf-primer/</a></p>
+  <p xmlns="">2. <strong>Alighieri, Dante</strong>. (1987). <em>Convivio</em>, a c. di P. Cudini, Milano, Garzanti
+          </p>
+  <p xmlns="">3. <strong>Doerr, M.</strong> (2003). <em>The CIDOC CRM - an ontological approach to semantic interoperability of metadata</em>. AI Magazine, vol. 24(3), 75-92
+          </p>
+  <p xmlns="">4. <strong>Tillett, B.</strong> (2004). <em>What is FRBR? A conceptual model for the bibliographic universe</em>. Library of Congress Cataloging Distribution Service, vol. 25(5), 1-8.
+          </p>
+  <p xmlns="">5. <strong>Peroni, S., and Shotton, D.</strong> (2012). <em>FaBiO and CiTO: Ontologies for describing bibliographic resources and citations.</em> J. Web Semantics: Science, Services and Agents on the World Wide Web.
+          </p>
+  <p xmlns="">6. <strong>Alistair, M., Matthews, B., Wilson M., amd Brickley, D.</strong> (2005). <em>SKOS Core: Simple knowledge organisation for the Web</em>. In Proceedings of Dublin Core Conference.
+          </p>
+  <p xmlns="">7. <strong>Bartalesi, V., Meghini, C., Locuratolo, E., Versienti, L.</strong> (2013). <em>A preliminary study on the semantic representation of the notes to Dante Alighieri's Convivio.</em> In Proceedings of the 1st International Workshop on Collaborative Annotations in Shared Environment: metadata, vocabularies and techniques in the Digital Humanities (DH-CASE '13). ACM, New York, NY, USA.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

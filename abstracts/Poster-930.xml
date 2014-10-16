@@ -1,0 +1,135 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-930.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>The SyMoGIH project : Sharing and publishing historical and geographical data in a standard, open and interoperable way</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:severine.gedzelman@ens-lyon.fr"><span class="author-surname">Gedzelman</span>,
+									<span class="author-forename">Séverine, Sonia</span></a>
+        <a href="http://www.google.com/#q=Gedzelman, Séverine, Sonia">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Triangle, France</span>
+      </li>
+      <li>
+        <a href="mailto:francesco.beretta@ish-lyon.cnrs.fr "><span class="author-surname">Beretta</span>,
+									<span class="author-forename">Francesco</span></a>
+        <a href="http://www.google.com/#q=Beretta, Francesco">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">LARHRA, France </span>
+      </li>
+      <li>
+        <a href="mailto:djamel.ferhod@ish-lyon.cnrs.fr"><span class="author-surname">Ferhod</span>,
+									<span class="author-forename">Djamel</span></a>
+        <a href="http://www.google.com/#q=Ferhod, Djamel">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">LARHRA, France </span>
+      </li>
+      <li>
+        <a href="mailto:sylvain.boschetto@ish-lyon.cnrs.fr"><span class="author-surname">Boschetto</span>,
+									<span class="author-forename">Sylvain</span></a>
+        <a href="http://www.google.com/#q=Boschetto, Sylvain">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">LARHRA, France</span>
+      </li>
+      <li>
+        <a href="mailto:charlotte.butez@ish-lyon.cnrs.fr"><span class="author-surname">Butez</span>,
+									<span class="author-forename">Claire-Charlotte</span></a>
+        <a href="http://www.google.com/#q=Butez, Claire-Charlotte">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">LARHRA, France</span>
+      </li>
+      <li>
+        <a href="mailto:pierre.vernus@ens-lyon.fr"><span class="author-surname">Vernus</span>,
+									<span class="author-forename">Pierre</span></a>
+        <a href="http://www.google.com/#q=Vernus, Pierre">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">LARHRA, France </span>
+      </li>
+      <li>
+        <a href="mailto:bernard.hours@univ-lyon3.fr "><span class="author-surname">Hours</span>,
+									<span class="author-forename">Bernard</span></a>
+        <a href="http://www.google.com/#q=Hours, Bernard">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">LARHRA, France </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">
+    <strong>1. The SyMoGIH project and linked data</strong>
+  </h2>
+  <p xmlns="">The SyMoGIH project has created an open modular platform for storing geo-historical information. The benefit of the platform is to allow researchers to share their data and texts in a collaborative environment. Up to now, about fifty students and scholars are contributing or contributed to the information collection, and ten research projects are using the platform to store data concerning different domains, such as intellectual, economic, social, institutional or religious history. The richness and heterogeneity of the shared information requires a generic data model which was designed with Merise (ERD) modeling method (cf. <em>Beretta, Vernus 2012</em>) and implemented in a relational postgreSQL database, to which users can connect via a user friendly AJAX web application (cf. Beretta, Vernus &amp; Hours 2012). In parallel, we have recently proposed an environment using eXist-db to share XML/TEI encoded texts. The semantic annotation of named entities and knowledge units (i.e. informations) that we find in the texts is achieved by linking the semantic tags to the resources defined in the relational database.</p>
+  <p xmlns="">In carrying out the latter, we realized the importance of identifying the database objects using URIs. In addition to the websites we offer for publishing the different datasets related to specific projects (for instance <a href="http://www.patronsdefrance.fr/">www.patronsdefrance.fr</a>), we also created a generic website to deliver to the public the whole of our authority files and the knowledge units which the participating scholars decided to make public (<a href="http://www.symogih.org/">www.symogih.org</a>). As a first step, this website provides dereferencing of our URIs in form of a web page with the description of the resource (e.g. <a href="http://www.symogih.org/resource/Actr195">www.symogih.org/resource/Actr195</a> for Johannes Kepler) but it raises the issue of providing dereferencement in form of RDF data and, more widely, of connecting our data to those produced elsewhere. For this purpose, we made an ontology that suits our needs. </p>
+  <h2 xmlns="">
+    <strong>2. From a project-specific ontology to a generic semantic model for historians</strong>
+  </h2>
+  <p xmlns="">The generic nature of the SyMoGIH data model allows to easily transpose it to an OWL DL ontology. This project-specific ontology is designed to publish our data and it is based on four main classes : <em>Object, KnowledgeUnit, Role </em>and <em>Sourcing</em> (cf. Image 1). An <em>Object</em> can be a person, a place, a concept, a bibliographical object, etc. and can be linked to a <em>KnowledgeUnit</em> through a <em>Role</em>. A superclass <em>AssociatedObject</em> gathers Objects and KnowledgeUnits: this allows a KnowledgeUnit to be associated to another one as if it was an object. KnowledgeUnits are divided in two subclasses: an <em>Information</em> expresses knowledge as it is constructed by the historian using critical method and extracting it from different sources; a <em>Content</em> reproduces knowledge as it was meant by one and only one source, even if we know the source is wrong about an event date or circumstances. In both cases, <em>Sourcing</em> provides the origin of each knowledge unit. Specific KnowledgeUnits' and Roles' types appear as instances of the KnowledgeUnitType and RoleType classes: this means that the ontology is versatile, can be gradually expanded and virtually handles any type of knowledge.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_156-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Classes and properties of the Symogih ontology (An instance like “Johannes Kepler (1571-1594)” belongs to the class http://symogih.org/ontology/Actor)</p>
+    </figcaption>
+  </div>
+  <p xmlns="">The SyMoGIH ontology bears close resemblance to similar ontologies elaborated by historians and scholars interested in the development of prosopographical databases, particularly the “factoïd” data model developed in King's College Department of Digital Humanities, London (Bradley/Pasin, 2013) and the “Aspekte” data model developed by the Personendaten-Repositorium (<a href="http://pdr.bbaw.de/">http://pdr.bbaw.de/</a>) (Berlin-Brandenburgische Akademie der Wissenschaften). Although independently conceived, the SyMoGIH ontology shows also close similarities to the Simple Event Model ontology (van Hage et al. 2011) and the TemporalEntity in CIDOC-CRM (Doerr, 2003). This convergence of different semantic models treating time-related information has recently risen a discussion between their designers about the definition of a common ontology for publishing and sharing data produced by historical research.
+</p>
+  <h2 xmlns="">
+    <strong>3. Publishing and querying linked data</strong>
+  </h2>
+  <p xmlns="">Pending the achievement of this very important discussion, we used our ontology to create an RDF view on our collaborative database. The implementation uses D2RQ1 to create a SPARQL endpoint by means of a term map realized according to the RDB2RDF principles2 that rewrites the database structure according to the SyMoGIH ontology. To increase the SPARQL endpoint performance and allow more sophisticated queries, we periodically dump the available data from D2RQ to an OpenLink Virtuoso triple store3 and we use OntoWiki4 for a visual presentation of the dataset. This project is still in experimental phase: at the moment, we are manually interlinking our resources with the one's found in DBPedia, IDRef5, etc. and we are testing federated queries to visualize and compare informations coming from different datasets. We are also testing semi-automatic interlinking with other data providers, like DBPedia or GND6. This will allow us not only to publish our data on the semantic web but also to compare the quality of available datasets and enrich them, offering new interesting perspectives to researchers in history (cf. <em>Meroño-Peñuela et al 2013</em>).</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Beretta, F., &amp; Vernus, P. </strong>(2012). <em>Le projet SyMoGIH et la modélisation de l’information: une opération scientifique au service de l’histoire</em>. Les Carnets du LARHRA, (1), 81–107. (http://halshs.archives-ouvertes.fr/halshs-00677658)</p>
+  <p xmlns=""><strong>Beretta, F., Vernus, P., &amp; Hours, B. </strong>(2012).<em> Le Système modulaire de gestion de l’information historique (SyMoGIH): une plateforme collaborative et cumulative de stockage et d’exploitation de l’information géo-historique.</em> Presented at the Digital Humanities 2012 in Hamburg (<a href="http://larhra.ish-lyon.cnrs.fr/iDocuments/SyMoGIH/Poster_SYMOGIH3_jpg.pdf">http://larhra.ish-lyon.cnrs.fr/iDocuments/SyMoGIH/Poster_SYMOGIH3_jpg.pdf</a>). </p>
+  <p xmlns=""><strong>Michele Pasin and John Bradley</strong> (2013), <em>Factoid-based prosopography and computer ontologies: Towards an integrated approach</em>, Literary and Linguistic Computing Advance Access published June 29, 2013.</p>
+  <p xmlns=""><strong>Doerr, M. </strong>(2003). <em>The CIDOC CRM - An ontological approach to semantic interoperability of metadata.</em> AI Magazine, 24, 2003. </p>
+  <p xmlns=""><strong>Meroño-Peñuela, A., van Erp, M., Breure, L., Scharnhorst, A., Schlobach, S., &amp; van Harmelen, F.</strong> (2013). <em>Semantic Technologies for Historical Research: A Survey.</em>Semantic Web journal. </p>
+  <p xmlns=""><strong>van Hage, W. R., Malaisé, V., Segers, R., Hollink, L., &amp; Schreiber, G.</strong> (2011).<em> Design and use of the Simple Event Model (SEM). </em>Web Semantics: Science, Services and Agents on the World Wide Web, 9(2), 128–136. doi:10.1016/j.websem.2011.03.003 </p>
+  <p xmlns=""><strong>Vernus, P. </strong>(2009). <em>ANR Système d’information: “Patrons et patronat français - XIXe - XXe siècles” (SIPPAF).</em> Retrieved from http://halshs.archives-ouvertes.fr/halshs-00474109 </p>
+  <p xmlns="">
+    <a href="http://virtuoso.openlinksw.com/">http://virtuoso.openlinksw.com/</a>
+  </p>
+  <p xmlns="">
+    <a href="http://www.idref.fr/autorites/autorites.html">http://www.idref.fr/autorites/autorites.html</a>
+  </p>
+  <p xmlns="">
+    <a href="http://www.w3.org/2001/sw/rdb2rdf/r2rml/">http://www.w3.org/2001/sw/rdb2rdf/r2rml/</a>
+  </p>
+  <p xmlns="">
+    <a href="http://d2rq.org/">http://d2rq.org/</a>
+  </p>
+  <p xmlns="">
+    <a href="http://pdr.bbaw.de/">http://pdr.bbaw.de/</a>
+  </p>
+  <p xmlns="">
+    <a href="http://sippaf.ish-lyon.cnrs.fr/">http://</a>
+    <a href="http://www.patronsdefrance.fr/">www.patronsdefrance.fr</a>
+  </p>
+  <p xmlns="">
+    <a href="http://www.loa.istc.cnr.it/DOLCE.html">http://www.loa.istc.cnr.it/DOLCE.html</a>
+  </p>
+  <p xmlns="">
+    <a href="http://symogih.org/ontology/Actor">http://symogih.org/ontology/Actor</a>
+  </p>
+  <p xmlns="">
+    <a href="http://www.dnb.de/EN/Standardisierung/GND/gnd.html;jsessionid=6711606F2145D190952E722CC5D8C737.prod-worker2">http://www.dnb.de/EN/gnd</a>
+  </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

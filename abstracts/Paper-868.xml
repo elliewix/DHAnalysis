@@ -1,0 +1,145 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-868.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Framework of an Advisory Message Board for Women Victims after Disasters</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Hashimoto</span>,
+									<span class="author-forename">Takako</span></a>
+        <a href="http://www.google.com/#q=Hashimoto, Takako">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Chiba University of Commerce, Japan</span>
+      </li>
+      <li>
+        <a href="mailto:yukari.shirota@gakushuin.ac.jp "><span class="author-surname">Shirota</span>,
+									<span class="author-forename">Yukari</span></a>
+        <a href="http://www.google.com/#q=Shirota, Yukari">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Gakushuin University, Japan</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">After the East Japan Great Earthquake, women victims have been suffering from different problems and worries: they had to care elders, raise children, and find jobs. They needed women-specific items. Administrative authorities wanted to recognize women victims’ specific problems and give them appropriate supports. However, it was difficult to grasp women victims’ requirements timely, because they were really patient and their needs were sometimes neglected under the environments and conditions that had changed from moment to moment. Because it takes a lot of labor to conduct interviews or questionnaire investigations to acquire their needs, we need a more useful and easily way to obtain women victims’ needs. </p>
+  <p xmlns="">To properly detect and analyze needs of women victims, we set our research goal was a development of an advisory message board for women victims on the web. To achieve our goal, this paper aims to make clear issues for acquiring women victims’ needs and propose the frame work of an advisory message board for women victims after disasters. In our proposed message board, women victims can post their messages freely, and data mining techniques are utilized to analyze messages and detect specific needs. </p>
+  <h2 xmlns="">2. Our Previous Work </h2>
+  <p xmlns="">We have already developed the prototype system for detecting time series victims’ needs changes from social media data. The target data was the social media provided by the non-profit organization that aims the March 11 earthquake and Tsunami relief. In our previous work, time series victims’ needs changes/transitions were shown as changes of topics by adopting data mining techniques (Figure 1).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_DH2014-0219-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Example of our previous work result (小文字にすべき単語が)</p>
+    </figcaption>
+  </div>
+  <p xmlns="">In Figure 1, the horizontal line shows time, and each circle shows one requirement. Lines between circles show transitions between requirements. There were three types of needs in affected people concerning the time length. The first is basic needs that appear for a long time, the second is early stage needs that appear immediately after the earthquake, and the third is needs after time passed. Needs about relief supplies and jobs are recognized as basic needs. On the other hand, there are needs for moves to temporary houses and evacuation center improvements at an early stage. After time passed, needs have changed, for example needs for new houses, cars, and mental cares, complaints about facilities of temporary houses, fears about the uncertain future, and wishes of living with families, appear. </p>
+  <p xmlns="">Our previous method is useful to visualize victims’ needs changes/transitions easily. However, the extracted needs were basically common to all. They were not special to women victims. Actually, most writers of the blog are male, and women victims tend to hesitate to publish their opinions, needs, or problems on social media. </p>
+  <h2 xmlns="">3. Developing Framework of an Advisory Message Board for Women Victims after Disasters</h2>
+  <h2 xmlns="">3.1 Target Data</h2>
+  <p xmlns="">As a source of data, we used the following data on the web:</p>
+  <ul xmlns="">
+    <li>Case Study Data: “The Support Women Victim Wanted! A Collection of Good Practices in Disaster Responses based on the East Japan Disaster”</li>
+  </ul>
+  <p xmlns="">This booklet collects examples of disaster response activities undertaken by various organizations in, and after, the East Japan Disaster. The data was collected by interviews and questionnaires and provided by the non-profit organization, Women's Network for East Japan Disaster(Rise Together).</p>
+  <p xmlns="">To design a framework of an advisory message board, it is important to understand what kind of requirements women victims have, and make clear issues for their needs acquisition.</p>
+  <h2 xmlns="">3.2 Issues on Acquiring Women Victims’ Needs</h2>
+  <p xmlns="">For the target data[9], we adopted the morphological analysis technique to extractkeywords for characterizing women victims’ needs. Then, we evaluated each keyword and tried to connect it to one of three types of needs extracted by our previous method (Table I).</p>
+  <p xmlns="">
+    <em>Table I. Relationships between general needs and women victims’ specific keywords</em>
+  </p>
+  <table xmlns="">
+    <tr>
+      <td>
+        <p>General Needs (men and women)</p>
+      </td>
+      <td>
+        <p>Women Victims Specific Needs</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <strong>Basic Needs</strong>
+        </p>
+        <p>Needs for relief supplies </p>
+        <p>Needs for Jobs </p>
+      </td>
+      <td>
+        <p/>
+        <p>Sanitary goods, Shorts, Bladder control pads, Cosmetics, Sunscreen, Babys’ diaper, Burglar alarm, etc.</p>
+        <p>Day nursery, Day-care center for elders, Incubation </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <strong>Early Stage Needs</strong>
+        </p>
+        <p>Needs for immediately moving to temporary Houses</p>
+      </td>
+      <td>
+        <p/>
+        <p>Female Workers, Clear temporally toilet, Women Area, Respite days</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <strong>Needs after time passed</strong>
+        </p>
+        <p>Needs for new houses, cars, mental cares</p>
+        <p>Complaints about temporary houses</p>
+        <p>Complaints about government</p>
+        <p>Hope to live with families</p>
+      </td>
+      <td>
+        <p/>
+        <p>Networking among women, Health consultation</p>
+        <p>Women area, Gender-segregated toilets, European style toilet</p>
+        <p>Female workers, Violence hotline, Translation for foreigners</p>
+        <p>Support for caring elders, support handicapped people</p>
+      </td>
+    </tr>
+  </table>
+  <p xmlns="">For example, the relief supplies that women victims needed were “sanitary goods”, “shorts”, “bladder control pads”, “cosmetics”, “diaper”, “burglar alarm”, etc. As for the needs of jobs, women victims needed “day nursery”, “day-care center for elders”, and “incubation”. As for the complaints about governmental responses, women victims needed “female agents”, “a violence hotline”, and “a translation for foreigners” at the early stage. As for the complaints about temporary houses, women victims needed women areas, gender-segregated toilets, and so on. As for the needs of mental care, “networking among women”, and “health consultation” were requested as women victims’ specific needs.</p>
+  <p xmlns="">Women victims needs did not appear in the general social media data. We found analyzing just general social media data was not enough for acquiring women victims’ needs. Issues on acquiring women victims’ needs are as follows:</p>
+  <ul xmlns="">
+    <li>Women tend to hesitate to unfold their specific needs </li>
+    <li>Women’s needs tend to be put little emphasis on </li>
+    <li>An interview and a questionnaire take a lot of labor</li>
+    <li>Because after the disaster, women become very busy, it is difficult to make a time to post messages </li>
+  </ul>
+  <h2 xmlns="">3.3 Framework of anA dvisory Message Board for Women Victims after Disasters </h2>
+  <p xmlns="">Figure 2 illustrates our proposed framework.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_DH2014-0219-2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Proposed framework: an advisory message board for women victims after disaster</p>
+    </figcaption>
+  </div>
+  <p xmlns="">We suppose that the board is organized by a responsible organization such as a public agency. In our framework, first, women victims who want to use this service, register themselves (1). Basically, it is an anonymous board but only administrator can identify them. "Anonymity" is the point for acquiring women victims’ needs easily. </p>
+  <p xmlns="">Then they will select their needs/problems/requirements from the menu provided by the system (2, 3). The menu is hierarchically designed in advance according to our investigation. By providing problems candidates from the menu, the time for inputting messages should be decreased because they are busy. Then, solutions for solving their needs will be shown to them. If there are no corresponding problems in the menu, victims can input a text message freely. As for the free text, data mining technique will be adopted for analyzing problems, and solution candidates will be shown to them (5, 6). The menu contents will be maintained according to victims’ inputs and responses. </p>
+  <p xmlns="">The points of the framework is to clarify and predict problems of women victims, and continue to be improved according to their inputs and responses for providing appropriate supports at appropriate timing. </p>
+  <h2 xmlns="">4. Conclusion</h2>
+  <p xmlns=""> In this paper, first, we introduced our previous work, and then made clear issues for acquiring women victims’ needs. Finally we proposed the frame work of an advisory message board for women victims after disaster. In our proposed message board, women victims can post their messages (requirements/opinions/complaints) freely, and data mining techniques are utilized to analyze messages and detect specific needs. </p>
+  <p xmlns="">As the future work, we will develop the prototype system of the framework, and conduct the field work with non-profit organizations and actual women victims to receive feedbacks from them. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><em>Bannya Nippou</em>, <a href="http://sviwatebanya.wordpress.com/‎">sviwatebanya.wordpress.com</a></p>
+  <p xmlns=""><em>SAVE IWATE</em>, http://sviwate.wordpress.com/in-english/</p>
+  <p xmlns=""><strong>Hashimoto, T., Kuboyama, T., Chakraborty, B., Shirota, Y., </strong>(2012),<em> Discovering Topic Transition about the East Japan Great Earthquake in Dynamic Social Media</em>, Proc. Of GHTC 2012, 259–264.</p>
+  <p xmlns=""><strong>Hashimoto, T. and Chakraborty, B</strong>., (2013) <em>Temporal Awareness of Needs after East Japan Great Earthquake using Latent Semantic Analysis</em>, Proc. of EJC2013, 214-226. </p>
+  <p xmlns=""><strong>Newman, M. E. J.</strong> (2006), <em>Modularity and community structure in networks</em>, National Academy of Science USA 103(23), 8577–8696,.</p>
+  <p xmlns=""><strong>Landauer, T. K., Dumais, S. T</strong>. (1997), <em>A solution to Plato’s problem: The latent semantic analysis theory of the acquisition,</em> induction, and representation of knowledge, Psychological Review, 104(2), 211Ð240.</p>
+  <p xmlns=""><strong>Salton G, McGill MJ. </strong>(1986),<em> Introduction to modern information retrieval</em>. McGraw-Hill. ISBN 0-07-054484-0.</p>
+  <p xmlns=""><strong>Church, K. W., Gale, W. A</strong>. (1995), <em>Poisson mixtures</em>, Natural Language Engineering 1, 163– 190.</p>
+  <p xmlns=""><em>Integrating Gender and Diversity Perspectives into Disaster Responsem: The Support We Wanted!</em> A Collection of Good Practice in Disaster Response based on the East Japan Disaster, <a href="http://risetogetherjp.org/?p=3909">risetogetherjp.org/?p=3909</a></p>
+  <p xmlns=""><em>Women's Network for East Japan Disaster</em> (Rise Together), <a href="http://risetogetherjp.org">risetogetherjp.org</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Workshops-799.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Introduction to Text Analysis and Topic Modeling with R</h1>
+    <ul id="details">
+      <li><label>Category:</label>Workshops</li>
+      <li><label>Session:</label></li>
+      <li><label>Date:</label>2014-07-07<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>2B - SwissTech</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Jockers</span>,
+									<span class="author-forename">Matthew</span></a>
+        <a href="http://www.google.com/#q=Jockers, Matthew">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Nebraska-Lincoln, United States of America </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">General Description:</h2>
+  <p xmlns="">Introduction to Text Analysis and Topic Modeling with R is a sequence of two workshops that will provide a practical introduction to text analysis with a special emphasis on topic modeling. Taken together, the workshops will cover basic text processing, data ingestion, data preparation, and topic modeling. The main computing environment for the workshops will be R: "the open source programming language and software environment for statistical computing and graphics." While no programming experience is required, students must have basic computer skills, must be familiar with their computer's file system, and must be comfortable entering commands in a command line environment. Though the two workshops are designed to stand alone, the second one is more advanced and assumes some basic familiarity with topic modeling. Participants might want to visit The LDA Buffet is Now Open; or, Latent Dirichlet Allocation for English Majors for a general overview.</p>
+  <h2 xmlns="">Suggested Workshop Preparation:</h2>
+  <p xmlns="">While not required, participants are encouraged to work through at least the first two of the seven basic R lessons available at R Code School prior to taking this workshop.</p>
+  <h2 xmlns="">In advance of the workshop, students should:</h2>
+  <ol xmlns="">
+    <li>Download the current version of R (at the time of this writing version 3.0.0) from the CRAN website by clicking on the link that is appropriate to your operating system (see <a href="http://cran.at.r-project.org">cran.at.r-project.org</a>):
+					<ul><li>If you use MS Windows, click on the "base" and then on the link to the executable (i.e. ".exe") setup file.</li><li>If you are running Mac OSX, choose the link to the most current package.</li><li>If you use Linux, choose your distribution and then the installer file. Follow the instructions for installing R on your system in the standard or "default" directory. You will now have the base installation of R on your system.</li><li>If you are on a Windows or Macintosh computer, you will find the R application in the directory on your system where Programs (Windows) Applications (Macintosh) are stored. If you want to launch the R GUI, you can double click the icon to start the R GUI. We will not be using the R GUI in the workshop. We will use RStudio (see below).</li><li>If you are on a Linux/Unix system, simply type "R" at the command line to enter the R program environment.</li></ul></li>
+    <li>Download and Install RStudio
+					<ul><li>The R GUI application is fine for a lot of simple programming, but RStudio is an application that offers a very nice user environment for writing and running R programs. RStudio is an IDE, that’s "Integrated Development Environment" for R. RStudio runs happily on Windows, Mac, and Linux. After you have downloaded R (by following the instructions above) you must download the "Desktop" version (i.e. not the Server version) of RStudio from <a href="http://www.rstudio.com">www.rstudio.com</a>. Follow the installation instructions and then launch RStudio just like you would any other program/application. When you launch RStudio, you do not have to also launch the R program. RStudio accesses the R program you installed in the first step.</li></ul></li>
+  </ol>
+  <h2 xmlns="">Workshop Syllabus:</h2>
+  <p xmlns=""><strong>Important</strong>: It is critical that you arrive on time to every session and be ready to roll with RStudio installed and running. The workshop will begin on schedule, and if you miss the first few minutes of any session you'll be lost!</p>
+  <h2 xmlns="">Workshop One: Introduction to Text Analysis with Applications in R</h2>
+  <p xmlns=""><strong>Summary:</strong> In this workshop you will be introduced to the R programming language while learning the basics of computational text analysis. You will learn basic R syntax and be introduced to the RStudio programing environment. Text analysis topics covered will include text ingestion and tokenization, word frequency analysis, dispersion plots, and if time permits, correlation analysis.</p>
+  <ul xmlns="">
+    <li><em>Session one</em> (9:00-10:15)*
+					<ul><li>The R computing environment </li><li>R console vs. RStudio</li><li>Basic text manipulation in R </li><li>Word Frequency</li></ul></li>
+    <li><em>Break</em> (10:15-10:30)</li>
+    <li><em>Session two</em> (10:30-12:00)
+					<ul><li>Dispersion Plots</li><li>Correlation</li></ul></li>
+  </ul>
+  <p xmlns="">* Times are for illustration only.</p>
+  <h2 xmlns="">Workshop Two: Introduction to Topic Modeling with Applications in R</h2>
+  <p xmlns=""><strong>Summary</strong>: In this workshop, you will be introduced to topic modeling and learn how to analyze and visualize topic model output in R. For this work, we will use the R implementation of MALLET that was developed by David Mimno. Student will also learn how to parse TEI-based XML and how to segment large texts into chucks. We will discuss various text pre-processing procedures including how to do part of speech tagging in R using the openNLP package. Though this will be a hands-on workshop, some techniques explored here a quite advanced and those unfamiliar with such things as XML document structure and basic text analysis may find it better to observe and then use the included documentation to practice the techniques at home.</p>
+  <ul xmlns="">
+    <li><em>Session three</em> (13:00-14:30)*
+					<ul><li>Loading a corpus </li><li>Preparing files for Topic Modeling </li></ul></li>
+    <li><em>Break</em> (14:30-14:45)
+			</li>
+    <li><em>Session four </em>(14:45-16:00)
+			<ul><li>Running the Model</li><li>Exploring topic coherence with term clouds</li><li>Topic data analysis</li></ul></li>
+  </ul>
+  <p xmlns="">* Times are for illustration only. </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

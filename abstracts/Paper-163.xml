@@ -1,0 +1,112 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-163.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>The Telltale Hat: LDA and Classification Problems in a Large Folklore Corpus</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>4</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>414 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:mimno@cornell.edu"><span class="author-surname">Mimno</span>,
+									<span class="author-forename">David</span></a>
+        <a href="http://www.google.com/#q=Mimno, David">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Cornell University Department of Information Science</span>
+      </li>
+      <li>
+        <a href="mailto:broadwell@library.ucla.edu"><span class="author-surname">Broadwell</span>,
+									<span class="author-forename">Peter M.</span></a>
+        <a href="http://www.google.com/#q=Broadwell, Peter M.">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">UCLA Library</span>
+      </li>
+      <li>
+        <a href="mailto:tango@humnet.ucla.edu"><span class="author-surname">Tangherlini</span>,
+									<span class="author-forename">Timothy R.</span></a>
+        <a href="http://www.google.com/#q=Tangherlini, Timothy R.">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">UCLA Scandinavian Section and Department of Asian Languages and Cultures</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">Classification is a vexing problem in folkloristics. Indexing collections that often include tens of thousands of records is essential, but neither fully manual nor fully automated methods are adequate. In this work, we combine human notions of genre and topic classification with computational classifiers and topic analysis to produce an indexing that is both appropriate for scholarly goals and robust in the presence of ambiguity.</p>
+  <p xmlns="">Traditional scholarly indexes have been limited by time and technology. Although broad genre classifications such as “ballad”, “folktale”, and “legend” are well established, these formal classifications are coarse and do little more than sort the materials into large, internally diverse groupings. Most standard classification schemes assign each record to a single classification and do not allow for cross-genre classification (e.g., a ballad and a legend about the same murder will be in different categories).<cite href="#n1">1</cite><cite href="#n2">2</cite><cite href="#n3">3</cite><cite href="#n4">4</cite> The inadequacy of these classification schemes has significantly constrained research on verbal folklore, particularly because such categorizations are often the only available topic index for any given collection.</p>
+  <p xmlns="">New unsupervised machine learning methods offer scalability but lack human intelligence. Clustering algorithms partition a corpus into groups of documents that are similar. Topic modeling is more flexible, allowing each document to express multiple automatically detected themes. But such methods usually rely on simple bag-of-words representations that miss aspects of a text that are clear to readers familiar with the corpus. In addition, patterns found by algorithms may be statistically valid but uninteresting to scholars. </p>
+  <p xmlns="">We explore the problem of classification in a large corpus (~35,000 records) of nineteenth-century Danish folklore and suggest possible solutions to these problems through classification and topic-modeling strategies that combine human labels with machine learning. We consider two classification schemes for the collection: in the first, each document receives one label, whereas the second assigns multiple labels to each document.</p>
+  <h2 xmlns="">One label per story</h2>
+  <p xmlns="">The original collector assigned each story to exactly one of 36 labels, but we are most interested in “borderline” stories that could fit in many classes. These “liminal” stories not only reveal the challenges to classification that arise when a system can only accommodate a single label—as in the original index—but also help researchers to discover stories that are anomalous. </p>
+  <p xmlns="">An excellent example of such an anomalous story appears in our target corpus, <em>Danske sagn</em> [Danish Legends]:<cite href="#n5">5</cite></p>
+  <p xmlns="">
+    <strong>DS_I_056:</strong>
+  </p>
+  <p xmlns="">
+    <em>Per Overlade was out one evening shooting hares. It was up on Kræn Møller’s field. Kræn was in the process of moving his farm, and the old farm had not been completely disassembled yet, and Per intended to hide amid the old frame that was still standing and shoot a hare or two. But when he gets there, he sees an old man who is sitting in there with a red cap on who nods to him. Per gets scared and doesn’t dare go in there, and so he doesn’t catch any hares.</em>
+  </p>
+  <p xmlns="">Originally labeled as a story about “mound dwellers/hidden folk,” the story could just as easily be classified in several other categories: poaching, household guardian spirits (<em>nisse</em>, suggested by the old man’s red hat), and law breaking, to name but three. The story also touches on shifting agricultural practices and the significant reorganization of the Danish landscape in the early 1800s, when farms were routinely dismantled and moved out onto the newly reapportioned fields. </p>
+  <p xmlns="">Where else could the editor/archivist have placed this story? To answer this question, we train a Naïve Bayes classifier by estimating a word-frequency histogram for each label. We then measure the similarity of a document to each of the resulting histograms, taking care to remove the word counts for the “query” document from the histogram for its original label. For many stories, the “true” label is the closest, but not in this case. Its top five labels in order are:</p>
+  <table xmlns="">
+    <tr>
+      <td>ID</td>
+      <td>Story label</td>
+    </tr>
+    <tr>
+      <td> 36</td>
+      <td>Our forbears' way of thinking and spiritual life</td>
+    </tr>
+    <tr>
+      <td> 35</td>
+      <td>Outdoor life </td>
+    </tr>
+    <tr>
+      <td> 29</td>
+      <td>Witches and their sport </td>
+    </tr>
+    <tr>
+      <td> 27</td>
+      <td>Being in league with the Devil </td>
+    </tr>
+    <tr>
+      <td>
+        <strong> 1</strong>
+      </td>
+      <td>
+        <strong>Mound dwellers/hidden folk</strong>
+      </td>
+    </tr>
+  </table>
+  <p xmlns="">Although the first assignment is so broad as to be of little use—emphasizing the inadequacy of the original index—the association of the story with topic 35 highlights its affinity to stories about hunting and poaching, while topic 29 indicates the story's connection with hares—animals most commonly associated with witches.</p>
+  <p xmlns="">Additionally, we can use this classification scheme to initialize a 36-topic model, creating one topic per original label. We assign each word token to the same topic as the label of its document. We then resample topic assignments for each word token in turn. Given the topic assignments of the tokens in a document, we can rank the topics for that document. After one sweep through the entire corpus, the “Mound dwellers” topic still accounts for more than 80% of the tokens in the story of Per Overlade, but after 10 sweeps, only 21% of the words remain in that topic. “Our forebears' way of thinking” and “Being in league with the Devil” instead account for a greater proportion, with the “Devil” topic triggered by words about shooting hares. Overall, the original topic class now accounts for the majority of tokens in 74% of the stories in the collection.</p>
+  <p xmlns="">As we increase the number of sweeps through the corpus, the relationship between the topics of the model and the original labels becomes attenuated. At 100 sweeps, the majority of tokens remains in the original class for only 39% of the stories. In our sample story, the prominent topics are “From the time of villeinage”, “Wiverns and small creepy-crawlies”, “Our forebears' way of thinking”, and “Death portents”. Words about shooting and hares are now assigned to the “Wiverns” topic, indicating that we should be careful in using these labels. The “Death portents” topic is represented by the words <em>forskrækket</em> (scared) and <em>sidder</em> (sitting). </p>
+  <p xmlns="">Finding anomalous stories is not simply a question of precision and recall: the very fact that a story is “missed” in a given classification makes it particularly interesting. One of the jobs of the folklorist is to reconstruct the imaginary boundaries of the belief world, so stories that question or test those boundaries are the ones that are most important. Computationally cross-validating a traditional human-generated index, as described above, is an effective way to discover such liminal cases.</p>
+  <h2 xmlns="">Multiple human-generated labels</h2>
+  <p xmlns="">We can also construct computational story classifiers when editors assign more than one label to each document. Human experts have catalogued a subset of the documents in our target corpus by assigning multiple labels to each document from a modern ontology that includes aspects of stories such as people, locations, and events. We would like to know how these labels map to the words in the documents, but simply counting the words in every document assigned to a label may result in noisy histograms. To improve our ability to interpret the results, we use a labeled topic model to learn which words are associated with which labels.</p>
+  <p xmlns="">Multiple labels add complexity but allow us to make stronger assumptions. Since each document has more than one label, we cannot easily translate these labels into word-level assignments as in the previous experiment. On the other hand, we can be reasonably certain that the absence of a label implies that it is not relevant. Similar to LabeledLDA<cite href="#n6">6</cite>, we can therefore estimate word-topic assignments under the constraint that words can only be assigned to one of the labels for the document, or to a “Background” label that can absorb frequent words not related to any label. We then re-estimate topic-word distributions given these assignments, and repeat the process as needed.</p>
+  <p xmlns="">To evaluate the resulting word distributions, the original creator of the ontology marked individual words that are highly relevant to each label. At each stage of the algorithm, we have a ranked list of words for each label. Given relevance assignments, we can compute mean average precision (MAP) for the model at each stage. Under the initial noisy distributions, MAP for precision up to rank 20 is .26. After the first iteration, MAP increases to .33, but then begins falling in subsequent iterations, indicating that the model may be overfitting.</p>
+  <p xmlns="">Consistent differences in ranking quality provide insight into labels. We are more successful at finding words related to concrete themes such as people, animals, and objects. More abstract labels, such as story resolutions and actions or events, were mostly unsuccessful. But there are exceptions: we identified no words related to the label “Farmer”, despite the fact that this is a very common label, while events such as “Disease” and “Death” identified many specific words.</p>
+  <h2 xmlns="">Conclusion</h2>
+  <p xmlns="">We demonstrate that classification and topic modeling methods can be used to improve existing manual annotations in a collection of Danish folklore. We find that incorporating human labels into machine learning methods—even when the labels are noisy or incomplete—produces indexes that have the benefits of both scholarly domain expertise and data-driven analysis. We believe that these results are applicable for many corpora both in digital humanities and the wider document analysis community. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Uther, Hans-Jörg</strong>. (2004). <em>The Types of International Folktales: A Classification and Bibliography, Based on the System of Antti Aarne and Stith Thompson</em>. FF Communications. Helsinki: Suomalainen Tiedeakatemia.
+          </p>
+  <p xmlns="">2. <strong>Grundtvig, Svend, Axel Olrik, Hakon Grüner-Nielsen, Karl-Ivar Hildeman, Erik Dal, Iørn Piø, Thorkild Knudsen, Svend Nielsen, and Nils Schiørring</strong>, eds. 1966–1976 [1853–1976]. <em>Danmarks gamle Folkeviser</em>. 12 volumes. Copenhagen: Universitets-Jubilæets Danske Samfund (Akademisk forlag).
+          </p>
+  <p xmlns="">3. <strong>Taylor, Archer</strong>. (1934). <em>An Index to "The Proverb"</em>. FF Communications 113. Helsinki: Suomalainen Tiedeakatemia, 1934.
+          </p>
+  <p xmlns="">4. <strong>Christiansen, Reidar T</strong>. (1958). <em>The Migratory Legends</em>. FF Communications 175. Helsinki: Suomalainen Tiedeakatemia.
+          </p>
+  <p xmlns="">5. <strong>Kristensen, Evald Tang</strong>. (1892). <em>Danske sagn, som de har lydt i folkemunde</em>. Århus and Silkeborg: Århus Folkeblads Bogtrykkeri.
+          </p>
+  <p xmlns="">6. <strong>Ramage, Daniel, David Hall, Ramesh Nallapati, and Christopher D. Manning</strong>. (2009). <em>Labeled LDA: A Supervised Topic Model for Credit Attribution in Multi-Labeled Corpora</em>. Proceedings of the 2009 Conference on Empirical Methods in Natural Language Processing. 248-256.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

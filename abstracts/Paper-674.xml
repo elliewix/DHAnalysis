@@ -1,0 +1,104 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-674.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Building a metrical ontology as a model to link digital poetic repertoires</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>4</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>414 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:egonzalezblanco@flog.uned.es"><span class="author-surname">González-Blanco</span>,
+									<span class="author-forename">Elena</span></a>
+        <a href="http://www.google.com/#q=González-Blanco, Elena">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Universidad Nacional de Educación Distancia, España</span>
+      </li>
+      <li>
+        <a href="mailto:levente.selaf@gmail.com"><span class="author-surname">Seláf</span>,
+									<span class="author-forename">Levente</span></a>
+        <a href="http://www.google.com/#q=Seláf, Levente">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">ELTE University, Budapest</span>
+      </li>
+      <li>
+        <a href="mailto:guineveregime@hotmail.com"><span class="author-surname">Del Rio Riande</span>,
+									<span class="author-forename">María Gimena</span></a>
+        <a href="http://www.google.com/#q=Del Rio Riande, María Gimena">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Secrit-CONICET, Argentina</span>
+      </li>
+      <li>
+        <a href="mailto:cimartinez@flog.uned.es"><span class="author-surname">Martínez Cantón</span>,
+									<span class="author-forename">Clara Isabel</span></a>
+        <a href="http://www.google.com/#q=Martínez Cantón, Clara Isabel">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Universidad Nacional de Educación Distancia, España</span>
+      </li>
+      <li>
+        <a href="mailto:mdmartos@flog.uned.es"><span class="author-surname">Martos Pérez</span>,
+									<span class="author-forename">María Dolores</span></a>
+        <a href="http://www.google.com/#q=Martos Pérez, María Dolores">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Universidad Nacional de Educación Distancia, España</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <h2 xmlns="">1.1. Overview</h2>
+  <p xmlns="">The technology of semantic web seems to be a suitable environment to offer solutions for linking poetic repertoires that belong to different European traditions and literatures (González-Blanco &amp; Sélaf 2013)<cite href="#n1">1</cite>. The problem of linking poetic repertoires is not simple, as there are not only technical issues involved, but also conceptual and terminological problems: each repertoire belongs to its own poetical tradition and each tradition has developed its own analytical terminology for years in a different and independent way. The result of this uncoordinated evolution is a bunch of varied terminologies to explain analogous metrical phenomena through the different poetic systems whose correspondences have been hardly studied.</p>
+  <h2 xmlns="">1.2. Methodology</h2>
+  <p xmlns="">The aim of this paper is to present a model able to serve as a uniform solution for terminological issues in order to build a solid semantic structure as a basis to link the different poetic systems. This structure will be used to publish repertoires on the web in a structured format and using open standards in order to build an open-source and collaborative platform based on a poetic ontology which lets interoperability among the different European metrical repertoires with different applications, such as faceted searches based on SPARQL or different kinds of visualizations, very helpful for comparative analysis.</p>
+  <p xmlns="">The first step to organize and manage repertoires and database systems was the construction of conceptual schema to define their basic entities and relationships. The ER (Entity-Relationship) data model is the most commonly used for this purpose, together with the data model based on records for the logical implementation (Elmasri &amp; Navathe 2011, 27-ss)<cite href="#n2">2</cite>, which is also widely accepted.</p>
+  <p xmlns="">To implement this conceptual model, the project ReMetCa (Digital Repertoire on Medieval Spanish Poetry: www.uned.es/remetca) has tested different systems (commercial, free, open-source, and proprietary). The final decision, after experimenting with Oracle Express Edition (González-Blanco &amp; Rodríguez 2013)<cite href="#n3">3</cite>, has been MySQL combined with a XML tagging using the TEI-verse module. The relationship between ontological models and TEI is being taken into consideration very seriously in the last years, as it is shown by the activity of the SIG ontologies group <a href="http://wiki.tei-c.org/index.php/SIG:Ontologies">wiki.tei-c.org/index.php/SIG:Ontologies</a> and the specific papers published on this topic (Eide &amp; Ore 2007)<cite href="#n4">4</cite>. There are also projects that have applied these techniques to the study and analysis of medieval documents (Ciula, Spence &amp; Vieira 2008)<cite href="#n5">5</cite>.</p>
+  <h2 xmlns="">2. Getting Started</h2>
+  <p xmlns="">From the three levels described (conceptual, logical and physical), this paper will focus on the first layer: the semantic description with the design of the semantic ontology, whose elements will be extensible and reusable for its application to other poetic repertoires. The conceptual model, designed on the basis of ReMetCa, will be transferred to the semantic Web as Linked Open Data. The abstraction of this initial model is prepared to be amplified with the necessary fields and terms to define metrical phenomena which are not shown in the Spanish poetic system or in the other repertoires which have been taken into account to design this first version of the semantic prototype. In order to enlarge its horizons, structure, description and contents, datasets of the following corpora have also been taken into account:</p>
+  <ul xmlns="">
+    <li>The Cantigas de Santa Maria Database: <a href="http://csm.mml.ox.ac.uk/">csm.mml.ox.ac.uk</a></li>
+    <li>Analecta Hymnica Digitalia: database on Medieval Latin poetry: <a href="http://webserver.erwin-rauner.de/crophius/Analecta_conspectus.htm">webserver.erwin-rauner.de/crophius/Analecta_conspectus.htm</a></li>
+    <li>Bibliografia Elettronica dei Trovatori: <a href="http://w3.uniroma1.it/bedt/BEdT_03_20/">w3.uniroma1.it/bedt/BEdT_03_20</a></li>
+    <li>Le Nouveau Naetebus: database on French narrative Medieval poetry : <a href="http://www.nouveaunaetebus.elte.hu/">www.nouveaunaetebus.elte.hu</a></li>
+    <li>Répertoire de la Poésie Hongroise Ancienne (RPHA) : Repertoire on Medieval Hungarian poetry: <a href="http://rpha.elte.hu/">rpha.elte.hu</a></li>
+    <li>MedDB: Lírica Profana Galego-Portuguesa <a href="http://www.cirp.es/pls/bdo2/f?p=MEDDB2">www.cirp.es/pls/bdo2/f?p=MEDDB2</a></li>
+    <li>Corpus rhythmorum musicum (IV-IX secolo): database on Latin Medieval poetry accompanied with music <a href="http://www.corimu.unisi.it/">www.corimu.unisi.it</a></li>
+    <li>Skaldic poetry of Scandinavian Middle Ages: <a href="https://www.abdn.ac.uk/skaldic/db.php">https://www.abdn.ac.uk/skaldic/db.php</a></li>
+    <li>English Broadside Ballad: <a href="http://ebba.english.ucsb.edu/">ebba.english.ucsb.edu/</a></li>
+    <li>Dimev: Digital index of medieval English verse: <a href="http://www.cddc.vt.edu/host/imev/record.php?recID=6768">www.cddc.vt.edu/host/imev/record.php?recID=6768</a></li>
+  </ul>
+  <p xmlns="">To implement the conceptual model, the project uses one of the most recognized standards for semantic Web description: the Ontology Web Language (OWL), developed by W3C as an extension of RDFS. OWL is used to define the different classes, their properties and the instances of classes. It integrates sets of predefined metadata using namespaces. The set joins not only traditional well-known initiatives, such as Dublin Core, MARC or TEI, but also local proposals such as those used by some of the digital poetic repertoires that serve as a basis for this project. The TEI-Verse module<cite href="#n6">6</cite>plays also an important role, due to the use that several repertoires have made of it, such as Henrik Ibsens (http://www.ibsen.uio.no) or the project of Lyrik des Hohen Mittelalters, (whose web access is not public yet), or ReMetCa itself by the addition of a XMLType field to its relational database.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_206_imagen%20base%20datos.jpg"/>
+    <figcaption>
+      <p>Fig. 1: ReMetCa database screen with XML-type field</p>
+    </figcaption>
+  </div>
+  <p xmlns="">The software used to build the collaborative ontology is Webprotege (Tudorache et al. 2011)<cite href="#n7">7</cite>, initially combined with Poolparty to create and organize vocabularies. It has been installed at ReMetCa server and opened via web in order to let participation of researchers with similar projects in the field of metrical repertoires. This system presents a light and intuitive interface but solid enough to develop a complex ontology with OWL. An important advantage is that it offers multilingual edition, which is very important for the development of such an international proposal. Once the model had been set, a metadata system has been designed to link the conceptual and logical levels based on a global abstract classification (schema), in which the different particular embodiments of each poetical tradition will be progressively included. This proposal shows both the consistency of this general language purpose and the benefits that can be obtained from the application of this model to the different local projects using a collaborative and open work system, which is essential for this new paradigm.</p>
+  <p xmlns="">There are a few studies which deal obliquely with some of the above mentioned aspects (Bootz &amp; Szoniecky 2008<cite href="#n8">8</cite>and Zöllner-Weber 2009)<cite href="#n9">9</cite>, but there is not yet a conceptual model of ontology referred to metrics and poetry. The closest related works to this topic are probably the conceptual model of CIDOC (<a href="http://www.cidoc-crm.org/">www.cidoc-crm.org</a>), the vocabularies of the Getty Museum, as they are designed to express relations and artistic manifestations in the field of humanities (http://www.getty.edu/research/tools/vocabularies/), the controlled vocabularies of English Broadside Ballad Project <a href="http://ebba.english.ucsb.edu/">http://ebba.english.ucsb.edu/</a> and the linked data relations offered by the Library of Congress (http://id.loc.gov/), which do not offer a deep information on metrics vocabulary.</p>
+  <p xmlns="">To sum up, this project of a poetic and metrical ontology intends be much more than a repository of datasets, thesauri or controlled vocabularies. It aims to create a semantic standardized structure to describe, analyze and develop logical operations through the different poetic digital repertories and their related resources. Its final objective is to interconnect, reuse and locate the data disseminated through poetic databases in order to get interoperability among projects, to perform complex searches and to make the different resources “talk” to each other following a unique but adaptive model.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>González-Blanco, E. &amp; L. Seláf</strong> (2013), <em>Megarep: A comprehensive research tool in Medieval and Renaissance poetic and metrical repertoires</em>, Humanitats a la xarxa: món medieval / Humanities on the web: the medieval world, edited by L. Soriano, M. Coderch, H. Rovira, G. Sabaté &amp; X. Espluga., Oxford, Bern, Berlin, Bruxelles, Frankfurt am Main, New York, Wien, Peter Lang (forthcoming).
+						</p>
+  <p xmlns="">2. <strong>Elmarsi, R. &amp; S. B. Navathe</strong> (2011), <em>Fundamentos de Sistemas de Bases de Datos</em>, Madrid, Pearson, Addison Wesley.
+						</p>
+  <p xmlns="">3. <strong>González-Blanco, E. &amp; J. L. Rodríguez</strong> (2013), <em>ReMetCa: a TEI based digital repertory on Medieval Spanish poetry</em>, at The Linked TEI: Text Encoding in the Web, Book of Abstracts - electronic edition. Abstracts of the TEI Conference and Members Meeting 2013: October 2-5, Rome edited by Fabio Ciotti &amp; Arianna Ciula, DIGILAB Sapienza University &amp; TEI Consortium, Rome, 178-185. <a href="http://digilab2.let.uniroma1.it/teiconf2013/abstracts/.">digilab2.let.uniroma1.it/teiconf2013/abstracts/.</a> Accessed 30-10-2013.
+						</p>
+  <p xmlns="">4. <strong>Eide, Ø. &amp; C.-E. Ore</strong> (2007), <em>From TEI to a CIDOC-CRM Conforming Model: Towards a Better Integration between Text Collections and Other Sources of Cultural Historical Documentation</em>, paper presented at the DH conference 2007. Abstract available at: <a href="http://www.edd.uio.no/artiklar/tekstkoding/poster_156_eide.html">www.edd.uio.no/artiklar/tekstkoding/poster_156_eide.html</a></p>
+  <p xmlns="">5. <strong>Ciula, A., P. Spence &amp; J. M. Vieira</strong> (2008), <em>Expressing complex associations in medieval historical documents: the Henry III Fine Rolls Project</em>, Literary and Linguist Computing, 23 (3): 311-325.
+						</p>
+  <p xmlns="">6. <strong>Burnard, L.</strong> &amp; S. Bauman, eds., <em>TEI P5: Guidelines for Electronic Text Encoding and Interchange. Ver. 2.5.0.</em> Accessed 30-10-2013. <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/">www.tei-c.org/release/doc/tei-p5-doc/en/html/</a></p>
+  <p xmlns="">7. <strong>Tudorache, T., C. I. Nyulas, N.F. Noy &amp; M.A. Musen</strong> (2011), <em>WebProtégé: A Collaborative Ontology Editor and Knowledge Acquisition Tool for the Web</em>, Semantic Web Journal, IOS Press. <a href="http://www.semantic-web-journal.net/content/webprot%C3%A9g%C3%A9-distributed-ontology-editor-and-knowledge-acquisition-tool-web.">www.semantic-web-journal.net/content/webprot%C3%A9g%C3%A9-distributed-ontology-editor-and-knowledge-acquisition-tool-web.</a> Accessed: 30/10/2013.
+						</p>
+  <p xmlns="">8. <strong>Bootz, P. &amp; S. Szoniecky</strong> (2008), <em>Towards an ontology of the field of digital poetry</em>, paper presented at Electronic Literature in Europe. Full text available at <a href="http://elmcip.net/node/415">elmcip.net/node/415</a> 9. Zöllner-Weber, A., “Ontologies and Logic Reasoning as Tools in Humanities?”, DHQ 2009, 3: 4. <a href="http://www.digitalhumanities.org/dhq/vol/3/4/000068/000068.html">www.digitalhumanities.org/dhq/vol/3/4/000068/000068.html</a> Accessed: 30/10/2013.
+						</p>
+  <p xmlns="">9. <strong>Zöllner-Weber, A.</strong> (2009), <em>Ontologies and Logic Reasoning as Tools in Humanities?</em>, DHQ, 3: 4. <a href="http://www.digitalhumanities.org/dhq/vol/3/4/000068/000068.html">www.digitalhumanities.org/dhq/vol/3/4/000068/000068.html</a> Accessed: 30/10/2013.
+						</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

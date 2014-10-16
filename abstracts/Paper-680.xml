@@ -1,0 +1,93 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-680.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Relating texts to 3D-information: A generic software environment for Spatial Humanities</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:martin.unold@fh-mainz.de"><span class="author-surname">Unold</span>,
+									<span class="author-forename">Martin</span></a>
+        <a href="http://www.google.com/#q=Unold, Martin">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">i3mainz - Fachhochschule Mainz</span>
+      </li>
+      <li>
+        <a href="mailto:felix.lange@adwmainz.de"><span class="author-surname">Lange</span>,
+									<span class="author-forename">Felix</span></a>
+        <a href="http://www.google.com/#q=Lange, Felix">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Akademie der Wissenschaften und der Literatur Mainz</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">Research in the emergent field of Spatial Humanities, especially in GIS-based approaches, is primarily conducted on a spatial macro-level. Statistical information, such as distributions of archaeological finds or movement and communication patterns is generally mapped to two-dimensional representations of the areas under consideration.<cite href="#n1">1</cite><cite href="#n2">2</cite></p>
+  <p xmlns="">Humanities research related to spatial contexts is not limited to quantitative scope. Studies in archeology, art history and human geography, to name only a few disciplines, focus on places as small as public spaces and buildings as the stage for liturgical, political and economic practices.<cite href="#n3">3</cite> But important analytical approaches in these fields necessitate three-dimensional representations. Important functional properties of objects in space, such as visibility and accessibility, cannot always be determined by two-dimensional ground plots.</p>
+  <p xmlns="">To tackle this shortcoming, the research project Inscriptions in their Spatial Context (IBR) develops research methods and corresponding software tools for Spatial Humanities research on the 3D-geometry of smaller environments like building interiors. Geometric data drawn from geodetic scannings are semantically enriched and connected to scientific textual and visual data. Theoretical foundations as well as the software are being tested in an extensive case study on a medieval church. IBR is a joint research project of the Institute for Spatial Information and Surveying Technology at the FH Mainz - University of Applied Sciences (i3mainz) and the Academy of Sciences and Literature in Mainz. It is funded by the German Federal Ministry of Education and Research (BMBF) and brings together experts from the fields of geoinformatics, surveying engineering, digital humanities, art history and epigraphy.</p>
+  <h2 xmlns="">2. Acquisition of geometries</h2>
+  <p xmlns="">Panoramic photography has become a common technique for merging smaller photographs into one larger image. Not only established software solutions like Google Street View are able to visualize such panoramic images. Also popular scientific applications<cite href="#n4">4</cite> are able to convey the impression of standing at the captured location.</p>
+  <p xmlns="">Since images do not represent 3D-information, a measuring campaign is necessary to fulfill the real needs of spatial research. Terrestrial Laser Scanning (TLS) creates high quality point clouds in the range up to several hundred meters.<cite href="#n5">5</cite> Until now, tools for processing this kind of information have been mainly designed for the use in the field of engineering. In the Cultural Heritage domain, as in archeology, TLS is usually used for documentation and modeling only or for 2D-analysis, such as for the extraction of floor plans. Parts of the content of the point cloud data are often neither extracted nor used, but can now be reused with the IBR software.</p>
+  <p xmlns="">The “GenericViewer” is an easy to handle web-application which provides typical functions of a panorama viewer and allows the user to identify objects in point clouds and to annotate them semantically. Thereby it is possible to work on 3D-objects in an intuitive way, because the software connects panoramic images with point cloud data.<cite href="#n6">6</cite></p>
+  <p xmlns="">The application communicates with two data storage units: A triple store contains all connections between expert data, spatial data and external resources. Another database handles point clouds, panorama images and spatial objects. It is possible to access the user created data via the GenericViewer itself and through a machine-readable interface. Only Javascript and a browser with webGL-support are necessary to use the web application.</p>
+  <h2 xmlns="">3. Semantic enrichment</h2>
+  <p xmlns="">The GenericViewer integrates a customized version of the website-annotator Pundit.<cite href="#n7">7</cite><cite href="#n8">8</cite> Users formulate simple subject-predicate-object-statements over geometries and texts that are stored in the form of OAC-conformant RDF-triplets. Semantic entities can be drawn from generic ontologies like DBpedia and if more specialized vocabularies<cite href="#n9">9</cite> do not suffice, also from project-specific resources.</p>
+  <p xmlns="">Physical objects identified in the point cloud are represented by 3D-coordinates, i.e. numerical values. To make them become meaningful objects, some semantic description is necessary. Therefore, geometries can be identified as specimen of a certain type, e.g. a tomb slab, and semantically connected to other textual and geometric resources. The tomb slab, for example, can be tagged as an instance of the class “tomb_slab”, and its inscription can be connected to a corresponding critical edition by the relation “is_edition_of”. If a researcher wants to suggest a sculptor for this object, knowing that this attribution remains merely a hypothesis and that there might be conflicting opinions, that hypothesis can be expressed as such via suitable predicate. Thanks to the OAC format, annotations come to represent a scholarly discourse rather than just a set of semantic descriptions. The annotation repository can be programmatically accessed and queried via a SPARQL-endpoint, thereby enabling quantitative analyses (e.g. how many tomb-slabs are there in the church) and the creation of aggregate resources with new applications and information services on top of it. The goal is to create a 3D-GIS for quantitative as well as qualitative research with a focus on the interconnection of resources and geometric analysis, as an alternative to approaches centered on multimedia presentations.<cite href="#n10">10</cite></p>
+  <h2 xmlns="">4. Case study</h2>
+  <p xmlns="">The GenericViewer is currently being used experimentally in a case study on the late-gothic parish church Liebfrauenkirche in Oberwesel (Middle Rhine Valley, Germany), using 3D-data that has been gathered in a TLS-campaign. The study investigates inter alia the placement of tombs and memorial inscriptions. It looks at potentially relevant factors like the social division of the congregation room, procession routes, and other places of liturgical practices. Among the research questions are: What does the placement of a tomb say about the social status of the deceased, given social features of the surrounding tombs? How does an inscription text relate to liturgical texts that were read on procession stations in its proximity? Who could actually see an inscription from which position in the church, and do some texts appear to have been directed at certain groups within the congregation room? The evidence relevant to such questions as well as conclusions drawn from the data are connected to the 3D-representation as semantic annotations. </p>
+  <p xmlns="">An important textual source in this study is the epigraphic database “German Inscriptions Online” (DIO), which provides critical editions for the inscriptions under consideration. The spatial configuration of the objects bearing inscriptions and liturgical "key-positions" like the apse and the chancel have been analysed with respect to visibility patterns. The analytical perspective of Space Syntax<cite href="#n11">11</cite>, which has been been successfully employed in earlier works on historic liturgy and interiour church architecture<cite href="#n12">12</cite>, seems to be a promising approach. Due to the complexity of the spatial configurations, our approach offers advantages over conventional text-image representations in terms of analysability and confirmability.</p>
+  <p xmlns="">The foundational inscription, a glass painting in the apse of the church<cite href="#n13">13</cite>, is a case in point. It has been described as a self-assured, even provocative message from the citizenry who build the church to the clergy and especially the bishop. The founders chose the rather exceptional place of the apse windows, 
+because here it was most visible from the choir and the main altar, 
+where the clergy assembled.<cite href="#n14">14</cite> This presupposition was empirically tested in a visibility analysis.</p>
+  <h2 xmlns="">5. Discussion</h2>
+  <p xmlns="">At the moment, the GenericViewer is usable with TLS-Data only. However, scanning campaigns can be quite expensive, and the geometrical accuracy delivered by this technology is not needed in every case. There are other measurement techniques, e.g. “structure from motion”, that should be supported in future versions.</p>
+  <p xmlns="">Visibility is relative to human perception and it is dependent on a variety of factors, many of which can not currently be modelled in our algorithms. Certain aspects of visibility, e.g. the ability to recognize a certain gesture from a distance, still have to be approximated by human experiments.<cite href="#n15">15</cite></p>
+  <p xmlns="">How useful the data produced with our software is for a broader scientific community will depend on the choice of semantic resource (users are always faced with a trade-off between specificity and generalizability) and the underlying text-document. Pundit, like many similar annotation tools<cite href="#n16">16</cite>, annotates positions in the DOM-tree of HTML-documents. But that means annotating the presentational layer of a text rather than the text itself. Because of that, IBR decided to annotate tree positions in TEI-encoded XML-documents. But not many digital documents in the humanities domain are available in this format, and it is not clear yet how to treat PDF-files. </p>
+  <p xmlns="">IBR offers the possibility to contribute to or extend the open source code and to connect third-party applications, analysis tools and ontologies. More informations are available on www.spatialhumanities.de.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Hernandez, Armando Anaya; Guenter, Stanley P.; Zender, Marc U.</strong> (2003): <em>Sak Tz'i', a Classic Maya Center: A Locational Model Based on GIS and Epigraphy</em>. In: Latin American Antiquity, Vol. 14, No. 2 (Society for American Archaeology, Jun., 2003), pp. 179-191.
+          </p>
+  <p xmlns="">2. <strong>v. Lünen, Alexander and Travis, Charles</strong> (ed.): <em>History and GIS. Epistemologies, Considerations and Reflections</em>. Heidelberg [et al.]: Springer, 2013.
+          </p>
+  <p xmlns="">3. <strong>Ananieva, Anna; Bauer, Alexander; Leis, Daniel; Morlang-Schardon, Bettina; Steyer, Kristina</strong> (ed.): <em>Räume der Macht. Metamorphosen von Stadt und Garten im Europa der Frühen Neuzeit</em>. Bielefeld: transcript Verlag, 2013.
+          </p>
+  <p xmlns="">
+            4. 3D-viewer of the Romanic dome of Speyer: www.kaiserdom-virtuell.de.
+          </p>
+  <p xmlns="">5. <strong>Kern, F., Bruhn, K.-Ch., Mehlig, S.</strong>: <em>Messtechnik und Inschriftenforschung - Anwendungsbezogene Arbeiten im Projekt "Deutsche Inschriften Online 3D".</em> In: Photogrammetrie, Laserscanning, Optische 3D-Messtechnik - Beiträge der Oldenburger 3D-Tage 2012, hg. v. Th. Luhmann, Ch. Müller, S. 22-33.
+          </p>
+  <p xmlns="">6. <strong>Kern, F., Mehlig, S., Siegrist, B.</strong>: <em>Geometrische Qualität von aus Einzelphotos zusammengesetzten Panoramen</em>. In: 29. Wissenschaftliche Jahrestagung der DGPF - Mainz - Geodaten - Eine Ressource des 21. Jahrhunderts (Publikationen der Deutschen Gesellschaft für Photogrammetrie, Fernerkundung und Geoinformation e.V., Band 20, 2011), hg. v. E. Seyfert, S. 129-136.
+          </p>
+  <p xmlns="">
+            7. Pundit Semantic Annotation Tool: thepund.it.
+          </p>
+  <p xmlns="">8. <strong>Grassi, Marco; Morbidoni, Christian; Nucci, Michele; Fonda, Simone; Ledda, Giovanni</strong> (2012): <em> Pundit: Semantically Structured Annotations for Web Contents and Digital Libraries</em>. In: Mitschick, Annett; Loizides, Fernando; Predoiu, Livia; Nürnberger, Andreas; Ross, Seamus (ed.): Semantic Digital Archives 2012. Proceedings of the Second International Workshop on Semantic Digital Archives (SDA 2012), Paphos, Cyprus, September 27, 2012, CEUR-WS.org/Vol-912.
+          </p>
+  <p xmlns="">
+            9. Getty Art &amp; Architecture Thesaurus: www.getty.edu/research/tools/vocabularies/aat/index.html
+          </p>
+  <p xmlns="">10. <strong>Corrigan, John</strong> (2010): <em>Qualitative GIS and Emergent Semantics</em>. In: Bodenhamer, David J.; Corrigan, John; Harris, Trevor M. ( ed.): The Spatial Humanities: GIS and the Future of Humanities Scholarship. Bloomington: Indiana University Press, pp. 76-88.
+          </p>
+  <p xmlns="">11. <strong>Hillier, Bill</strong>: <em>Space is the Machine: A Configurational Theory of Architecture</em>, Cambridge: University Press, 1999.
+          </p>
+  <p xmlns="">12. <strong>Clark, David L. Chatford</strong> (2007): <em>Viewing the Liturgy: A Space Syntax Study of Changing Visibility and Accessibility in the Development of the Byzantine Church in Jordan</em>. In: World Archeology, Vol. 39 No. 1 (Mar. 2007), pp. 84-104.
+          </p>
+  <p xmlns="">
+            13. Epigraphic Database “Deutsche Inschriften Online” (DIO): www.inschriften.net.  DIO 60-27: www.inschriften.net/rhein-hunsrueck-kreis/inschrift/nr/di060-0027.html.
+          </p>
+  <p xmlns="">14. <strong>Nikitsch, Eberhard Josef</strong> (1996): <em>Ein Kirchenbau zwischen Bischof und Stadtgemeinde</em>. Zur angeblich verlorenen Bauinschrift von 1308 in der Liebfrauenkirche zu Oberwesel am Rhein. In: JbWdtLg 22 (1996),  pp. 95–112.
+          </p>
+  <p xmlns="">15. <strong>Clark, David L. Chatford</strong> (2007): <em>Viewing the Liturgy: A Space Syntax Study of Changing Visibility and Accessibility in the Development of the Byzantine Church in Jordan</em>. In: World Archeology, Vol. 39 No. 1 (Mar. 2007), pp. 87.
+          </p>
+  <p xmlns="">16. <strong>Khalili, Ali ; Auer, Sören; Hladky, Daniel</strong> (2012): <em>The RDFa Content Editor – From WYSIWYG to WYSIWYM</em>. In: Proceedings of COMPSAC 2012 – Trustworthy Software Systems for the Digital Society, July 16-20, 2012, Izmir, Turkey, 2012.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

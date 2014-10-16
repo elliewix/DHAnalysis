@@ -1,0 +1,129 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-928.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Binarization-free Text Line Extraction for Historical Manuscripts</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>315 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:nick.arvanitopoulos@epfl.ch"><span class="author-surname">Arvanitopoulos Darginis</span>,
+									<span class="author-forename">Nikolaos</span></a>
+        <a href="http://www.google.com/#q=Arvanitopoulos Darginis, Nikolaos">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">EPFL, Switzerland </span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Süsstrunk</span>,
+									<span class="author-forename">Sabine</span></a>
+        <a href="http://www.google.com/#q=Süsstrunk, Sabine">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">EPFL, Switzerland </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1 Introduction</h2>
+  <p xmlns="">Nowadays, large collections of old historical manuscripts, which contain valuable information about our cultural heritage, exist in libraries around the world. Recently, there has been much interest in their digitization for preservation reasons, since many of the available manuscripts’ quality has deteriorated from exposure to the environment. Digitization though is only the first step to make the information contained in manuscripts accessible to researchers and to the interested public. What we create after digitization is only a “digital image” of the page and further processing steps need to be applied during the<em> handwriting recognition process</em>, so that the manuscript’s content is transformed into a form that is interpretable by a computer.</p>
+  <p xmlns="">One important step in the handwriting recognition process is that of <em>text line extraction</em>, which aims at extracting individual text lines from the manuscript page. In this paper, we propose a binarization-free text line extraction method using seam carving. The main idea is to compute an energy map of the input text blocks and determine minimum energy paths that pass through them. The energy map is constructed in a way so that gaps between text lines have low energy values. Therefore, a minimum energy path will pass only through these regions and will successfully separate two text lines.</p>
+  <p xmlns="">Our algorithm has the following two advantages:</p>
+  <p xmlns="">1. We make direct use of the original image representation of the manuscript page without any need for prior binarization, which can introduce information loss. This loss can produce unreliable results for the text line extraction algorithm (see Figure 1).</p>
+  <p xmlns="">2. Our algorithm is general and can be applied to diverse manuscripts of different time periods and handwritings. Results in Figures 3 and 4 show the applicability of our algorithm to diverse historical manuscripts.</p>
+  <h2 xmlns="">2 Related Work</h2>
+  <p xmlns="">We briefly summarize the research that has already been done for text line extraction.</p>
+  <p xmlns="">Most of the state-of-the-art approaches operate on a binary image of the historical manuscript. One method based on dynamic programming computes the paths with minimum cost between two consecutive lines [11] and has been extensively used in automatic transcription and ground truth creation of historical documents [8, 7]. The work of [6] is based on horizontal projection profiles of black pixel changes. An additional post-processing step is applied, which follows the contour of the ink obtaining curve-linear line separators. Another similar approach is proposed in [13] where the output of the horizontal projections is post-processed based on properties of the computed connected components. The works of [12, 10] are based on the Hough transform, which is able to detect straight lines in images. Smearing methods, such as the ones in [17, 16, 14], try to fill-in the white pixel gaps with black pixels if their distance is less than a threshold. That way, homogeneous blocks of the document page are grouped together. Other approaches use multi-oriented filters and active contours for text line extraction [4, 5]. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Left: seams generated using the original scanned image of the manuscript as input. Right: seams generated using a binary version of the original manuscript scan as input. The information loss in the binary version is so extensive that the generated seams do not clearly separate text lines of the original manuscript scan.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">A notable exception of an algorithm, which does not depend on binarization, is the work of, where the text lines are found using extracted features from interest points of the original manuscript image. A very recent work uses a framework similar to that in adapted this time to the text line extraction problem.</p>
+  <p xmlns="">Our method is closely related to the one in, where the authors use seam carving to generate seams that pass through connected components of a binary image. Unclassified components, which do not belong to any text line are assigned in a post-processing step according to their position and geometric characteristics. The main difference in our approach is that we do not need to binarize the input, which can lead to information loss. Additionally, we are able to generate robust text contours even for manuscripts of deteriorated quality (see Figures 1, 4). The text contours can always be overlaid on the original manuscript scan, even if they have been generated using as input a binarized version of the original scan. However, the technique of , which assigns text components to lines is not able to extract lines from the original manuscript, since the binarization process is not reversible. Binary text components contain only a subset of the information available in the original manuscript image.</p>
+  <h2 xmlns="">3 Our Approach</h2>
+  <p xmlns="">Our proposed algorithm is inspired by <em>Seam Carving</em>, a computer vision algorithm used for image resizing [1]. We build upon this idea and propose a seam carving algorithm, which operates on the original color image and extracts lines in a sequential way. First, an energy map is calculated and the minimum energy path is computed based on dynamic programming. From the peaks of the horizontal projection profile of the derivative image we can find horizontal line positions. In each such region between two consecutive lines, we apply our seam carving algorithm sequentially until the whole manuscript image has been processed. In Figure 2 we show some examples of seams between two such lines.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Examples of image blocks and their computed seams.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">In the following we use the convention that an image <em>I</em> ∊ ℝ <em>n×m</em> converted to grayscale has <em>n</em> rows and <em>m</em> columns. The notation <em>I(i,j)</em> denotes the image value at the <em>i</em>-th row and <em>j</em>-th column. The coordinate system has its origin in the upper left corner of the image.</p>
+  <h2 xmlns="">3.1 Energy Map</h2>
+  <p xmlns="">We modify the energy function proposed in [1] so that it can be effectively used for generating text line separation contours. First, we compute an edge image as</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-formule1.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">Let us denote the energy map between two text lines by <em>E<em>b</em> = E(J,:) ∊ R<em>l×m</em></em>, where <em>J = {s,...,e} </em>is the set of <strong>i</strong> coordinates between the start and the end of the energy block map and <em>l = e - s + 1</em>. This energy block is weighted by the following linear function, which penalizes the larger <strong>i</strong> coordinates more:</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-formule2.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">and the final energy map for this block is</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-formule3.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">The idea behind this weighting is the observation that we want our seam to be closer to the upper line than the lower one. This will correct for situations where the author has written words in the gap between lines, which always belong to the lower line (see Figure 2a).</p>
+  <h2 xmlns="">3.2 Seam Computation</h2>
+  <p xmlns="">A seam that passes horizontally through an image block can be defined as</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-formule4.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">The seam computation is done using dynamic programming. We look for the optimal seam in the image block that minimizes </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-formule5.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">The first step is to traverse the image block and compute the cumulative minimum energy Mb for all possible connected seams for each pixel position: </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-formule6.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">The minimum value of the last column in <em>M<em>b</em></em> will indicate the end of the minimal connected horizontal seam. Therefore, in the second step we traverse the cumulative energy <em>M<em>b</em></em> backwards to find the path of the optimal seam.</p>
+  <h2 xmlns="">4 Experimental Results</h2>
+  <p xmlns="">We apply our algorithm to original manuscript pages of the work Aline by the important Swiss-French writer Charles-Ferdinand Ramuz. Some examples of manuscript pages overlaid with the text line extraction seams are shown in Figure 3. We observe that our algorithm creates seams that pass through parchment regions, successfully segmenting the text lines. Even when the writer corrects a line or a word and writes above, the seam is able to avoid cutting the text and assigns the word to the line below it. In order to illustrate the ability of the algorithm to generalize to diverse manuscripts, we provide in Figure 4 results on manuscripts of the 16-th and 18-th century. We observe that our algorithm can be applied to manuscripts of very different quality and handwriting styles.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-3.jpg"/>
+    <figcaption>
+      <p>Fig. 9: Seam carving results on two pages of Aline (1905), C.F. Ramuz.</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_533-4.jpg"/>
+    <figcaption>
+      <p>Fig. 10: Seam carving results on manuscripts of the 16-th and 18-th century respectively. Even in the lower left manuscript with extreme bleed-through, our algorithm is able to produce a robust result.</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">5 Conclusion</h2>
+  <p xmlns="">We propose a novel text line extraction algorithm for color scans of historical manuscripts based on seam carving. We show that we can obtain state-of-the-art results on these color images without any prior binarization. The next step after the text line extraction process is the application of a learning algorithm for handwritten word recognition in each extracted text line.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">[1] <strong>Shai Avidan and Ariel Shamir </strong>(2007). <em>Seam Carving for Content-Aware Image Resizing</em>. ACM Transactions on Graphics, 26(3):10</p>
+  <p xmlns="">[2] <strong> M. Baechler and R. Ingold </strong>(2011).<em> Multi Resolution Layout Analysis of Medieval Manuscripts Using Dynamic MLP.</em> In International Conference on Document Analysis and Recognition, pages 1185–1189.</p>
+  <p xmlns="">[3] <strong>M. Baechler, M. Liwicki, and R. Ingold</strong> (2013). <em>Text Line Extraction using DMLP Classifiers for Historical Manuscripts</em>. In International Conference on Document Analysis and Recognition.</p>
+  <p xmlns="">[4] <strong>S.S. Bukhari, F. Shafait, and T.M. Breuel </strong>(2009). <em>Script-Independent Handwritten Textlines Segmentation Using Active Contours</em>. In International Conference on Document Analysis and Recognition, pages
+					446–450, 2009.</p>
+  <p xmlns="">[5] <strong>S.S. Bukhari, F. Shafait, and T.M. Breuel</strong> (2011).<em> Text-Line Extraction Using a Convolution of Isotropic Gaussian Filter with a Set of Line Filters.</em> In International Conference on Document Analysis and
+					Recognition, pages 579–583.</p>
+  <p xmlns="">[6] <strong>M. Bulacu, R. van Koert, L. Schomaker, and T. van der Zant </strong>(2007). <em>Layout Analysis of Handwritten Historical Documents for Searching the Archive of the Cabinet of the Dutch Queen.</em> In International Conference on Document Analysis and Recognition, pages 357–361.</p>
+  <p xmlns="">[7] <strong>A. Fischer, E. Indermu ̈hle, H. Bunke, G. Viehhauser, and M. Stolz</strong> (2010). <em>Ground truth creation for hand- writing recognition in historical documents.</em> In IAPR International Workshop on Document Analysis
+					Systems, pages 3–10.</p>
+  <p xmlns="">[8] <strong> A. Fischer, M. Wuthrich, M. Liwicki, V. Frinken, H. Bunke, G. Viehhauser, and M. Stolz</strong> (2009). <em>Automatic Transcription of Handwritten Medieval Documents.</em> In International Conference on Virtual Systems and Multimedia, pages 137–142.</p>
+  <p xmlns="">[9] <strong>A. Garz, A. Fischer, R. Sablatnig, and H. Bunke</strong> (2012). <em>Binarization-Free Text Line Segmentation for Historical Documents Based on Interest Point Clustering. </em>In IAPR International Workshop on Document Analysis Systems, pages 95–99.</p>
+  <p xmlns="">[10] <strong>L. Likforman-Sulem, A. Hanimyan, and C. Faure</strong> (1995). <em>A Hough based algorithm for extracting text lines in handwritten documents.</em> In International Conference on Document Analysis and Recognition, volume 2, pages 774–777.</p>
+  <p xmlns="">[11] <strong>M. Liwicki, E. Indermuhle, and H. Bunk</strong>e (2007). <em>On-line handwritten text line detection using dynamic programming.</em> In International Conference on Document Analysis and Recognition, volume 1, pages 447–451.</p>
+  <p xmlns="">[12] <strong> G. Louloudis, B. Gatos, I. Pratikakis, and C. Halatsis </strong>(2008). <em>Text line detection in handwritten documents</em>. Pattern Recognition, 41(12):3758–3772, dec 2008.</p>
+  <p xmlns="">[13] <strong>U.V. Marti and H. Bunke </strong>(2011).<em> Using a Statistical Language Model to Improve the Performance of an HMM-based Cursive Handwriting Recognition System</em>. International Journal of Pattern Recognition and Artificial Intelligence, 15(01):65–90.</p>
+  <p xmlns="">[14] <strong>N. Nikolaou, M. Makridis, B. Gatos, N. Stamatopoulos, and N. Papamarkos</strong> (2010). <em>Segmentation of historical machine-printed documents using Adaptive Run Length Smoothing and skeleton segmentation paths</em>. Image and Vision Computing, 28(4):590–604, April 2010.</p>
+  <p xmlns="">[15] <strong>R. Saabni and J. El-Sana</strong> (2011). <em>Language-Independent Text Lines Extraction Using Seam Carving</em>. In Document Analysis and Recognition (ICDAR), 2011 International Conference on, pages 563–568.</p>
+  <p xmlns="">[16] <strong> Z. Shi and V. Govindaraju </strong>(2004). <em>Line Separation for Complex Document Images Using Guzzy Runlength</em>. In International Workshop on Document Image Analysis for Libraries, pages 306–312.</p>
+  <p xmlns="">[17] <strong>K.Y. Wong and F.M </strong>(1982). <em>Wahl. Document analysis system</em>. IBM Journal of Research and Development, 26:647–656.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

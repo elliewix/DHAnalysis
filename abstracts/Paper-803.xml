@@ -1,0 +1,71 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-803.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Automating the Search for Cross-language Text Reuse</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>315 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Gawley</span>,
+									<span class="author-forename">James</span></a>
+        <a href="http://www.google.com/#q=Gawley, James">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University at Buffalo, United States of America</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Forstall</span>,
+									<span class="author-forename">Christopher</span></a>
+        <a href="http://www.google.com/#q=Forstall, Christopher">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University at Buffalo, United States of America</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Clark</span>,
+									<span class="author-forename">Konnor</span></a>
+        <a href="http://www.google.com/#q=Clark, Konnor">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University at Buffalo, United States of America</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">Tesserae is a open-source, online tool for detecting allusions in Classical literature on an automated basis. Originally limited to Latin poetry, the corpus of texts available to Tesserae has recently expanded to include Greek poetry and drama. Word-level n-grams form the foundation of the existing detection algorithm: a standard search returns all instances wherein two words a phrase in a later text shares two words with a phrase in an earlier text. This method has been previously demonstrated to reliably capture intertextual parallels already noted by philologists and to identify significant, previously unrecorded intertexts.</p>
+  <p xmlns="">The ability to detect allusions across the language barrier would represent an evolutionary expansion in Tesserae’s functionality as well as a significant contribution to Classical philology. Roman poets openly acknowledged their indebtedness to Greek literature (Horace famously remarked, “Greece, being conquered, tamed its wild conqueror, and brought the Arts to rustic Latium") and scholarly studies of Latin poetry have long commented on allusions to earlier Greek sources. To apply the existing system where Latin text alludes to Greek, Tesserae requires a translation dictionary linking Greek lemmata to associated Latin lemmata. This paper details two methods for building such a dictionary on an automated basis and compares their relative merits as measured by their ability to capture parallels between book one of Vergil's <em>Aeneid</em> and the <em>Iliad</em> of Homer, as noted by G.N. Knauer in his commentary.</p>
+  <p xmlns="">The first method represents an original application of Bayes' theorem to a word-by-
+word alignment of the Greek New Testament with Jerome's Latin Vulgate.
+</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_formula.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">For a given Greek word Gi, the set of Greek Bible verses in which it appears is identified. The words contained in the Latin translation of these verses become the set of possible translation candidates <em>L</em>. For each <em>Li</em>, the set of possible Greek words G is gathered from the set of Greek verses corresponding to the Latin verses in which <em>Li</em> appears. <em>P</em>(<em>Gi</em>|<em>Li</em>) is represented by the number of words in set G which may share a lemma with Gi, divided by the total number of words in that set. The probability of <em>Gi</em> is represented by a similar calculation, where the set of all words within the Greek text is substituted for <em>G</em>. The value of <em>P(Li)</em> is analogous. The success of this relatively simple alignment algorithm as compared with more classical IBM Models or Hidden Markov Models may be explained by the grammatical similarity of these two inflected languages and importance placed by the translator in remaining precisely faithful to the syntax of the original text. </p>
+  <p xmlns="">The second method employs English as a pivot language, in a method inspired by work done previously by Jeffrey Rydberg-Cox at Perseus on Latin-Greek synonymy. Using the XML-encoded digital editions of Lewis and Short’s Latin-English Lexicon and Liddell and Scott’s Greek-English Lexicon, two dictionaries widely considered authoritative for Classical languages and available through the Perseus Digital Library, each Latin or Greek headword is characterized by a feature set composed of the English words appearing in its definition. The Python-based Gensim topic modelling tools are then used to transform the English word counts to TF-IDF weights and calculate similarities between the dictionary entries. The similarity scores between entries are then interpreted as similarities in meaning between the respective headwords.  </p>
+  <p xmlns="">Each of the two methods described above produces pairwise similarities between all Greek and Latin words considered, with those pairings rated by a probability measure between 0 and 1. Because each Greek word may have more than one possible Latin translation, each method accepts the top two translation candidates as valid. </p>
+  <p xmlns="">The text of Homer’s <em>Iliad</em> is then indexed according to a feature set made up of Latin translation candidates. Each Greek token is lemmatized, and the token is then indexed according to all possible Latin translation candidates. Because lemmatization is unsupervised, ambiguous forms may have multiple possible Greek lemmata. Each possible Greek lemma will have two translation candidates if the respective translation method is successful, or zero if no translations are found. The text of Vergil’s Aeneid is indexed simply according to the possible Latin lemmata of each token. A given token in Vergil matches a token in Homer where one or more possible lemmata for the Latin word match against the set of translation candidates for the Greek word. A pair of phrases, one in Greek and the other in Latin, which share two or more words that match in this way, is returned as a possible allusion.</p>
+  <p xmlns="">The two methods are evaluated by their ability to detect a subset of <em>Aeneid-Iliad</em> parallels collated from the commentary of G.N. Knauer. Each method retrieves a distinct, though partially overlapping, subset of the parallels noted by Knauer. Comparison of the respective performance of both methods suggests that, while each method can be shown to identify significant Latin-Greek allusions, the Bayesian alignment method provides better recall of the benchmark set than the 'pivot' method at the expense of precision. We ultimately aim to combine the output of both approaches into a single feature set.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><em>Tesserae</em>, <a href="http://tesserae.caset.buffalo.edu/">tesserae.caset.buffalo.edu</a> (Accessed on November 1, 2013).
+          </p>
+  <p xmlns=""><strong>Coffee, N. et. al</strong> (2012).: <em>"Intertextuality in the Digital Age."</em> Transactions of the American Philological Association, Volume 142, Number 2, Autumn 2012 pp. 383-422
+          </p>
+  <p xmlns=""><em>Epistles</em>, 2.1.156–7
+          </p>
+  <p xmlns=""><strong>G.N. Knauer</strong> (1964): <em>"Die Aeneis und Homer: Studien zur poetischen Technik Vergils mit Listen der Homerzitate in der Aeneis."</em> Gottingen: Vandenhoeck &amp; Ruprecht.
+          </p>
+  <p xmlns="">
+            Personal communication with author; tool archived at <a href="http://perseus.mpiwg-berlin.mpg.de/PR/syn.ann.html">perseus.mpiwg-berlin.mpg.de/PR/syn.ann.html</a></p>
+  <p xmlns="">
+    <a href="http://www.perseus.tufts.edu">www.perseus.tufts.edu</a>
+  </p>
+  <p xmlns="">
+    <a href="http://radimrehurek.com/gensim/">radimrehurek.com/gensim</a>
+  </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

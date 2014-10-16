@@ -1,0 +1,64 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-199.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Small-Scale Big Data: Experimental Literature and Distributed Computing</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>3</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>13:45:00</li>
+      <li><label>Room:</label>415 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:mauro@uvic.ca"><span class="author-surname">Mauro</span>,
+									<span class="author-forename">Aaron</span></a>
+        <a href="http://www.google.com/#q=Mauro, Aaron">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Victoria, Electronic Textual Cultures Lab</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">This short paper describes how a small-scale implementation of big data text analysis can be used for reading single texts and testing algorithmic processes. By using a small Hadoop cluster, distributed computing methods can be used to parse typographically experimental texts and delineate even minute units of meaning. This experiment takes Ron Silliman’s 26-volume collection entitled The Alphabet (1979-2008) as an object of study because it anticipates and resists quantitative analysis techniques. Silliman describes his brand of “language writing” as a kind of “composition as investigation” that requires active participation of the reader to make meaning.<cite href="#n1">1</cite> The process of running resistant texts through an algorithmic system also exposes the interpretive biases of computational methods of reading poetry. Large scale text analysis can reveal promising texts for further inquiry, but these systems can also be used on a small-scale to complement qualitative human readings with quantitative results. Matthew Jockers has recently warned in Macroanalysis (2013) that “from thirty thousand feet, something important will inevitably be missed. The two scales of analysis, therefore, should and need to coexist.”<cite href="#n2">2</cite> This paper shows how a proximate use of “distant reading” can render a text productively unfamiliar and also show how distributed computing systems can be used to structure highly experimental literary texts.</p>
+  <h2 xmlns="">Background</h2>
+  <p xmlns="">The core of my method is animated by two observations: First, Google has become a constant touchstone for DH scholarship. The proceedings for the 2013 meeting of DH in Lincoln, Nebraska includes 156 references to Google Search or other Google products, including Anna Jobin and Frederic Kaplan’s attempt to reverse engineer Google’s autocomplete algorithms. <cite href="#n3">3</cite> However, the scale and sophistication of Google’s systems make them impenetrable for all but the most experienced Google employees responsible for building these proprietary systems. Second, there has been a recent boom in avant-garde or experimental writing that is fuelled by the growing awareness of large scale text analysis. I argue, therefore, that experimental literature has begun to function as a resistant dataset that can test and even react to algorithmic methods. This new experimental corpus thereby engages in a reciprocal critique of both literary and technical systems. My experiment is grounded in contemporary cultural and technological contexts, while seeking to explore the relationship between corporate analysis tools and literary production. The technologies that support this “Big Data Revolution” were developed by many of the most important technology companies in the US, with Google, Yahoo, and Facebook among them. <cite href="#n4">4</cite> Hadoop was derived from Google’s MapReduce and Google File System white papers. Doug Cutting (Yahoo!) and Mike Cafarella (Google) spun off an open source implementation in 2005 that is now released by Apache. <cite href="#n5">5</cite><cite href="#n6">6</cite> Hive was written by Facebook to streamline the process of writing MapReduce jobs in Java by allowing queries to be written in SQL. A secondary purpose for this research explores the capabilities and weaknesses of proprietary systems from their open source derivatives. </p>
+  <h2 xmlns="">Implementation	</h2>
+  <p xmlns="">A small-scale implementation of Hadoop and Hive on Amazon Web Services Elastic Map Reduce (EMR) platform is a highly reliable and cost effective means of working with distributed computing methods. As both a pedagogical and rapid experimental tool, EMR automates the networking between data nodes throughout the system and opens the scalability of Hadoop to an extremely broad user base. Hive allows for queries to be written in HiveQL, which does not follow the full SQL-92 standard but rather retains many of the features of MySQL. <cite href="#n7">7</cite> While the distributed nodes are often virtualized on EMR and the user has no way to determine the full composition of the cluster, the costs remain extremely low and do not require complex discussions with system administrators in a restrictive institutional environment. <cite href="#n8">8</cite> Hadoop’s speed and flexibility is the result of its very simple order of operations and physical architecture that allows for scaling from just three to potentially thousands of nodes. <cite href="#n9">9</cite> As the corpus size expands, this system can scale rapidly with only modest additional investment of research funds.</p>
+  <h2 xmlns="">Analysis</h2>
+  <p xmlns="">The term “distant reading” first articulated by Franco Moretti has come to describe the process of quantitative analysis. <cite href="#n10">10</cite> It arose out of a very human inability to read all the texts that compose World Literature. A remarkable number of issues emerge from this very simple state of affairs. Firstly, we now have a kind of writing that acts like reading. In other words, the SQL queries used to parse and structure vast strings of data represents a readable trace of reading. Coding commands for this system represents a “composition as investigation." <cite href="#n11">11</cite> Secondly, the scalability of these systems allows for machine reading systems to perform human lifetimes worth of reading tasks in mere minutes or hours. The computer’s ability to perform repetitive tasks at speeds also means that the interpretive experience of texts is now outside the domain of human perception. “The Hadoop Distributed File System” white paper described the pace of operations through the “heartbeats” that guide the operations of the distributed machines by explaining how the TaskTracker “can process thousands of heartbeats per second.” <cite href="#n12">12</cite> Thirdly, this technological moment represents the collapse of the false dichotomy between philosophical, subjective, and speculative analysis, and scientific, objective, empirical analysis. Quantitative methods have the potential to erase the long held doctrine of the “two cultures” that divides the sciences and humanities and presumes that “Intellectuals, in particular literary intellectuals, are natural Luddites.” <cite href="#n13">13</cite></p>
+  <h2 xmlns="">Conclusion</h2>
+  <p xmlns="">The use of the word “experimental” carries a strategic significance in this context. It is a word that simultaneously accesses literary, scientific, and technological discourses. My experiment is primarily animated by the “aesthetic provocation” of avant-guard writing.<cite href="#n14">14</cite> Because computation relies upon symbolically stable inputs, making computational sense of non-sense characters becomes a central challenge to overcome in the study of contemporary experimental literature with computational methods; in order to read these non-sense characters, the “stop list" for this topic model may need to comprise the entire corpus of proper words. Rather than treating literature as strictly quantifiable data that algorithmic analysis can simply glean information from, I propose a methodology that assumes that literary information is profoundly resistant, reactive, and unpredictable. Kenneth Goldsmith claims, in Uncreative Writing (2011), that “digital media has set the stage for a literary revolution.” <cite href="#n15">15</cite> While Goldsmith is thinking here about distribution methods on the Web, there is little doubt that literature is responding to the technological context into which it is published. It is now time to include the algorithm in this history of the avant-guard.</p>
+  <h2 xmlns="">Acknowledgements</h2>
+  <p xmlns="">I would also like to thank the generous support of the Electronic Textual Cultures Lab at the University of Victoria and Implementing New Knowledge Environments group. This work is supported by the Social Science and Humanities Research Council of Canada.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Silliman, Ron</strong> (1984). <em>For L=A=N=G=U=A=G=E.</em> The Language Book. Eds. Bruce Andrews and Charles Bernstein. Southern Illinois UP. 14. Print.
+          </p>
+  <p xmlns="">2. <strong>Jockers, Matthew</strong> (2013). <em>Macroanalysis: Digital Methods and Literary History</em>. Urbana: U of Illinois P. 9. Print.
+          </p>
+  <p xmlns="">3. <strong>Broeckmann, Andreas</strong>. <em>Digital Culture, Art, and Technology.</em> IEEE Multimedia 12.4 (Oct.-Dec. 2005): 9-11. Web. 8 April 2013.
+          </p>
+  <p xmlns="">4. <strong>Mayer-Schönberger and Kenneth Cukier</strong> (2013). <em>Big Data: A Revolution that Will Transform how We Think Live, Work, and Think</em>. New York: Houghton Mifflin Harcourt. Print.
+          </p>
+  <p xmlns="">5. <strong>Shvachko, Konstantin, Hairong Kuang, Sanjay Radia, Robert Chansler</strong> (2010). <em>The Hadoop Distributed File System.</em> Symposium on Massive Storage Systems and Technologies and Co-located Events. IEEE: Computer Society. Web. 22nd Oct. 2013.
+          </p>
+  <p xmlns="">6. <strong>Dean, Jeffrey and Sanjay Ghemawat.</strong> (2004) <em>MapReduce: Simplified Data Processing on Large Clusters.</em> USENIX Association OSDI ‘04: 6th Symposium on Operating Systems Design and Implementation. Web. 22nd Oct. 2013.
+          </p>
+  <p xmlns="">7. Apache Hive. <a href="http://hive.apache.org/">hive.apache.org/</a></p>
+  <p xmlns="">8. Amazon Elastic MapReduce (Amazon EMR). <a href="http://aws.amazon.com/elasticmapreduce/">aws.amazon.com/elasticmapreduce/</a></p>
+  <p xmlns="">9. Apache Hadoop. <a href="http://hadoop.apache.org/">hadoop.apache.org/</a></p>
+  <p xmlns="">10. <strong>Moretti, Franco</strong>. <em>Conjectures on World Literature.</em> New Left Review 1 (Jan./Feb. 2000): 54-68. Web. 30 July 2013.
+          </p>
+  <p xmlns="">11. <strong>Silliman, Ron.</strong> (2008) <em>The Alphabe</em>t. Tuscaloosa: U Alabama P. 1057. Print.
+          </p>
+  <p xmlns="">12. <strong>Shvachko, Konstantin, Hairong Kuang, Sanjay Radia, Robert Chansler.</strong><em>The Hadoop Distributed File System.</em> Symposium on Massive Storage Systems and Technologies and Co-located Events. IEEE: Computer Society, 2010. Web. 22nd Oct. 2013.
+          </p>
+  <p xmlns="">13. <strong>Snow, C.P.</strong> (1961) <em>The Two Cultures and the Scientific Revolution</em>. New York: Cambridge UP. 23. Print.
+          </p>
+  <p xmlns="">14. <strong>Drucker, Johanna</strong> (2009). <em>SpecLab: Digital Aesthetics and Projects in Speculative Computing</em>. Chicago: U of Chicago P. xi. Print.
+          </p>
+  <p xmlns="">15. <strong>Goldsmith, Kenneth</strong> (2011). <em>Uncreative Writing.</em> New York: Columbia UP. 15. Print.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

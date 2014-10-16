@@ -1,0 +1,315 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-925.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Active Authentication through Psychometrics</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>6</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>315 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Noecker Jr</span>,
+									<span class="author-forename">John</span></a>
+        <a href="http://www.google.com/#q=Noecker Jr, John">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Juola &amp; Associates, United States of America </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">What can your computer habits reveal about you?  The answer might surprise you.  Previous work (Juola, et al., 2013) has shown that just a few
+minutes of computer usage can be used to identify who is at the keyboard and
+their demographic and psychological attributes with a fairly high degree of
+accuracy.  We expand upon this to show
+that the same usage data can be used to thoroughly profile a previously-unknown
+user to obtain valuable psychological information about the user.</p>
+  <p xmlns="">
+
+Authorship attribution, the analysis of a document’s writing
+style to infer the author’s identity, is a well-established problem in text
+classification.  Previously, we used
+classical authorship attribution techniques to identify “who was at the
+keyboard” using the DARPA Active Authentication Corpus (Juola et al, 2013).  Researchers have successfully applied the
+analysis of language usage to infer authorship of written documents (Juola,
+2006. Koppel et al, 2009. Stamatatos,
+2009. Jockers &amp; Witten, 2010), and stylometric analysis has also been
+applied to things like gender (Argamon et al, 2006), personality (Luyckx &amp; Daelemans, 2008),
+and even psychological disorders like depression (Rude et al, 2004).</p>
+  <p xmlns="">Here, we attempt to perform the same technique with groups
+composed of individuals who share common psychological traits.  Previous work (Luyckx &amp;
+Daelemans, 2008. Noecker &amp; Juola, 2013) on personality profiling has so far
+focused on analyzing previously-written documents.  In contrast, our system provides a method for
+real-time psychological profiling of a user based on his or her interactions
+with a computer over a relatively short period of time (approximately 30
+minutes).  The ultimate goal is two-fold:
+to learn something about a previously-unobserved user (traditional stylometric
+identification techniques require us to have training data on a user before we
+can identify him) and to use psychological traits as an enhancement to current
+user authentication methods.</p>
+  <p xmlns="">Currently, exact accuracy on the user-based authentication
+is approximately 90%.  This task becomes
+more difficult (and the accuracy becomes correspondingly lower) as the pool of
+potential author models grows.  In order
+to improve overall accuracy of the user authentication task, we propose to
+include these psychological profiling tools in the authentication system.  If a given user can be identified as the most
+likely candidate with 90% probability, and several facets of that user’s
+personality can be confirmed with similarly high confidence, this will increase
+the overall robustness of the authentication system.</p>
+  <p xmlns="">For our purposes, we used two personality/intelligence
+measurement systems to profile users: Myers-Briggs Type Indicator (MBTI) and Multiple
+Intelligences Developmental Assessment Scales (MIDAS).</p>
+  <p xmlns="">The Myers-Briggs type indicator (MBTI) assigns four binary
+classifications to define personality (Myers &amp; Myers, 1980)
+
+</p>
+  <ul xmlns="">
+    <li>Extroversion
+     vs Introversion</li>
+    <li>iNtuition
+     vs Sensing</li>
+    <li>Thinking
+     vs Feeling</li>
+    <li>Judgement
+     vs Perception</li>
+  </ul>
+  <p xmlns="">
+The Multiple Intelligences Developmental Assessment Scales
+(MIDAS) were developed by Dr. Howard Gardner in his 1983 book “Frames of Mind”
+(Gardner, 1983).  He used a unique
+definition of intelligence: “The ability to solve a problem or create a product
+that is valued within one or more cultures” (MI Research and
+Consulting).  He identified 8 primary
+intelligent scales, each of which have several subscales (MI
+Research and Consulting):
+
+ 
+
+</p>
+  <ul xmlns="">
+    <li>
+            Musical
+            <ul><li>
+                Vocal Ability
+              </li><li>
+                Instrumental Skill
+              </li><li>
+                Composer
+              </li><li>
+                Appreciation
+              </li></ul></li>
+    <li>
+            Kinesthetic
+            <ul><li>
+                Athletics
+              </li><li>
+                Dexterity 
+              </li></ul></li>
+    <li>
+            Logical-Mathematical
+
+            <ul><li>
+                Everyday Math 
+              </li><li>
+                School Math 
+              </li><li>
+                Everyday Problem Solving 
+              </li><li>
+                Strategy Games 
+              </li></ul></li>
+    <li>
+            Spatial 
+            <ul><li>
+                Space Awareness 
+              </li><li>
+                Working with Objects
+              </li><li>
+                Artistic Design 
+              </li></ul></li>
+    <li>
+            Linguistic
+
+            <ul><li>
+                Expressive Sensitivity
+              </li><li>
+                Rhetorical Skill
+              </li><li>
+                Written-academic
+              </li></ul></li>
+    <li>
+            Interpersonal
+            <ul><li>
+                Social Sensitivity
+              </li><li>
+                Social Persuasion
+              </li><li>
+                Interpersonal Work
+              </li></ul></li>
+    <li>
+            Intrapersonal
+            <ul><li>
+                Personal Knowledge / Efficacy
+              </li><li>
+                Effectiveness
+              </li><li>
+                Calculations
+              </li><li>
+                Spatial Problem Solving
+              </li></ul></li>
+    <li>
+            Naturalist
+            <ul><li>
+                Animal Care 
+              </li><li>
+                Plant Care 
+              </li></ul></li>
+  </ul>
+  <p xmlns="">We also include a 9<em>th</em> main scale, <em>Leadership</em>, with its own subscales: <em>Communication, Management, and Social.</em></p>
+  <h2 xmlns="">
+    <strong>Materials and Methods</strong>
+  </h2>
+  <h2 xmlns="">Corpus</h2>
+  <p xmlns="">
+
+ 
+In order to create the most accurate corpus possible, we set
+up a simulated office environment and hired 80 temporary workers for one week
+each.  Workers were tasked to perform a
+long-term blogging project (research and write blog articles on topics “related
+to Pittsburgh in some way”) over the course of a normal workweek.  For this study, we use the Free Key Logger
+output, which provides the exact text typed by each user.  We do not include any information about the
+applications being used or any data the user pastes from the clipboard.</p>
+  <h2 xmlns="">Feature Extraction</h2>
+  <p xmlns="">
+
+For our analysis, we used the Java Graphical Authorship
+Attribution Program (JGAAP) (Juola et al, 2009).  JGAAP is a
+Java-based, modular program for textual analysis, text categorization, and
+authorship attribution.  It provides a
+comprehensive framework, allowing us to rapidly test the effectiveness of
+different analysis techniques on the recorded data.</p>
+  <p xmlns="">JGAAP divides analysis into several steps: Canonicization
+(Preprocessing), Event Set (Feature) Generation, and Analysis.  In Canonicization, preprocessors are used to
+standardize the text.  For this step, we
+converted all input letters to lower case (“Unify Case”) and converted all
+strings of whitespace characters into a single space character (“Normalize
+Whitespace”).  At this stage, we also
+processed a variety of special keyboard characters, converting these
+non-printable characters into a printable placeholder (e.g. “backspace” was
+replaced with “β”). 
+Finally, we divided the input data into blocks of 1,000 characters, representing
+about 30 minutes of computer usage.</p>
+  <p xmlns="">For the event set generation, we tested character N-grams
+for all N from 1 to 15, and word N-grams for N from 1 to 5.  We then applied a number of analysis methods
+for each experiment: Cosine Distance, Intersection Distance, Manhattan
+Distance, and Matusita Distance.  For
+each method, we used a centroid-based nearest neighbor classifier.  We performed leave-one-out cross-validation
+to reach our final conclusion.</p>
+  <h2 xmlns="">Models</h2>
+  <p xmlns="">For the MBTI classifiers, we built four binary classifiers
+(i.e. E vs I, N vs S, T vs F, and J vs P). 
+For the MIDAS classifiers, we first built a single 9-way classifier to
+identify a user’s principle main scale.  This
+was the scale along which the user scored highest (i.e. the scale for which the
+user showed the highest preference).  For
+example, a user might have a preference for “Musical” or “Linguistic”.  We also developed subscale classifiers, which
+identify a user’s preference within each major scale.  For instance, a user might be identified as
+“(Musical) Vocal Ability” and “(Kinesthetic) Dexterity”, etc.  Thus, each user was identified by a single
+main scale preference as well as nine subscale preferences.
+
+ 
+
+</p>
+  <h2 xmlns="">
+    <strong>Results</strong>
+  </h2>
+  <h2 xmlns="">MBTI</h2>
+  <p xmlns="">For the MBTI classifiers, we averaged an accuracy of
+81.5%.  The expected baseline average
+(assuming we pick the most prevalent personality type for each category) is
+55%. </p>
+  <h2 xmlns="">MIDAS</h2>
+  <p xmlns="">For the MIDAS main category identification, our best
+performing classifier had accuracy of 70.7%. 
+This was using character 15 grams with Intersection Distance.  The expected baseline accuracy (achieved by
+choosing the most common main scale, “Linguistic”) was 22.1%.</p>
+  <p xmlns="">For the MIDAS subscale identification, the best performing
+classifiers used a variety of Character n-grams, again with Intersection
+Distance as the top performing analysis method. 
+The average subscale accuracy was 81%.</p>
+  <h2 xmlns="">
+    <strong>Conclusion</strong>
+  </h2>
+  <p xmlns="">We have shown here a method to reliably psychologically
+profile a computer user based on only a short period (about 30 minutes) of
+usage time.  In addition to providing
+valuable information about the user in question, this method can also be used
+to provide additional layers of security for the active authentication system
+we have described previously.  Even in an
+adversarial situation, the difficulty of imitating both an individual user’s
+style, as well as mimicking the psychological profile of the user, will provide
+additional security to the authentication system.</p>
+  <p xmlns="">Also interesting to note is the limited usage data required
+to perform these analyses.  The initial
+user psychological testing period took approximately 3 hours, but accurate
+results were obtained for only 30 minutes of computer usage.  In addition, the three hours of testing were
+completely lost time – the users were able to work only on the tests during
+this time.  In contrast, the 30 minutes
+of analysis can be done on whatever the user is working on at the time.  No downtime is required to perform these
+analyses.  We believe this system could
+be useful anywhere a non-intrusive analysis of a user might be beneficial (e.g. determining whether a potential
+employee would be a good fit).</p>
+  <p xmlns="">For future work, we intend to focus on reducing the amount
+of data needed even further.  Preliminary
+results on as little as 500 characters (about 15 minutes of usage time) have
+been promising.  Additional work is also
+being done to integrate these methods into the broader active authentication
+system in order to bolster the overall reliability of the system.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Argamon, S., Koppel, M., Fine, J., Shimoni, A. R</strong> (2006). <em>“Gender,
+            Genre, and Writing Style in Formal Written Texts”. </em>Interdisciplinary Journal for the Study of Discourse. Volume 23.
+            Issue 3. pp. 321-346.</p>
+  <p xmlns=""><em>“Broad Agency Announcement: Active Authentication”.</em> (2012). <em>DARPA.
+            Solicitation No. DARPA-BAA-12-06</em>. 12 Jan. 2012. &lt;http://www.fbo.gov/index?tab=documents&amp;t
+            abmode=form&amp;subtab=core&amp;tabid=494b6b2c612c4 fd3db6cb018d4467e21&gt;.</p>
+  <p xmlns=""><strong>Gardner, Howard</strong> (1983). <em>“Frames of Mind: The Theory of Multiple
+            Intelligences”.</em>  Basic Books.</p>
+  <p xmlns=""><strong>Jockers, M. L., Witten, D.</strong> (2010) “<em>A Comparative Study of Machine
+            Learning Methods for Authorship Attribution”.</em>Literary and Linguistic
+            Computing, vol. 25, no. 2. pp. 215–23.</p>
+  <p xmlns=""><strong>Juola, P. </strong>(2006) <em>“Authorship Attribution”.</em>Foundations and
+            Trends in Information Retrieval, vol. 1, no. 3.  pp. 233–334.</p>
+  <p xmlns=""><em><strong>Juola, Patrick, Noecker Jr., John, Ryan, Mike, Speer, Sandy </strong>(2009).</em>
+            “JGAAP 4.0 – A Revised Authorship Attribution Tool”. Proc. Digital Humanities 2009. pp. 357–359. Maryland Insitute. for
+            Technology in the Humanities. University of Maryland.</p>
+  <p xmlns=""><strong>Juola, Patrick, Noecker Jr., John, Stolerman, Ariel, Ryan,
+            Michael, Brennan, Patrick, Greenstadt, Rachel </strong>(2013). <em>"Keyboard Behavior Based
+              Authentication for Security"</em>. IT Professional. 18 June 2013.
+            IEEE computer Society Digital Library. IEEE Computer Society.
+            &lt;http://doi.ieeecomputersociety.org/10.1109/MITP.2013.49&gt;.</p>
+  <p xmlns=""><strong>Koppel, M., Schler, J., Argamon, S. </strong>(2009)<em>“Computational Methods
+            in Authorship Attribution”. </em>J. Amer. Soc. Information Science and Technology,
+            vol. 60, no. 1. pp. 9–26.</p>
+  <p xmlns=""><strong>Luyckx, K., Daelemans, W. </strong>(2008) <em>“Personae, a Corpus for Author and
+            Personality Prediction from Text”.</em>Proceedings
+            of the Sixth International Conference on Language Resources and Evaluation.
+            Marrakech, Morroco.</p>
+  <p xmlns=""><strong>MI Research and Consulting, Inc</strong>. <em>“Multiple Intelligences
+            Theory”. </em> &lt;www.miresearch.org/mi_theory.html&gt;.</p>
+  <p xmlns=""><strong>Myers I B, Myers P.</strong> (1980)<em>“Gifts Differing: Understanding
+            Personality Type”. </em>Palo Alto, CA. Consulting Psychologists Press.</p>
+  <p xmlns=""><strong>Noecker Jr., J. Juola, P. </strong>(2013)<em> “Psychological Profiling Through
+            Textual Analysis”. </em>Literary and Linguist
+            Computing.</p>
+  <p xmlns=""><strong>Rude, S., Gortner, E., Pennebaker, J. </strong>(2004) <em>“Language Use of
+            Depressed and Depression-Vulnerable College Students”.</em>Cognition and Emotion.</p>
+  <p xmlns=""><strong>Stamatatos, E</strong>. (2009) <em>“A Survey of Modern Authorship Attribution
+            Methods”</em>. J. Amer. Soc. Information Science and Technology, vol. 60, no.
+            3. pp. 538–556.</p>
+  <p xmlns=""><strong>Zheng, N., Paloski, A., Wang, H. </strong>(2011) <em>“An Efficient User
+            Verification System via Mouse Movements,”</em>Proc. 18th ACM Conf. Computer and
+            Communications Security (CCS 11). ACM. pp. 139–150.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

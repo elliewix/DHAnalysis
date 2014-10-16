@@ -1,0 +1,131 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-849.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Digitizing the Dead and Dismembered: DH Technologies for the Study of Coptic Texts</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>5</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>412 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Schroeder</span>,
+									<span class="author-forename">Caroline T.</span></a>
+        <a href="http://www.google.com/#q=Schroeder, Caroline T.">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of the Pacific, United States of America</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Zeldes</span>,
+									<span class="author-forename">Amir</span></a>
+        <a href="http://www.google.com/#q=Zeldes, Amir">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Humboldt University, Berlin</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The
+Coptic language evolved from the language of the hieroglyphs of the pharaonic
+era and represents the last phase of the Egyptian language.  It is pivotal for a wide range of humanistic
+disciplines, such as linguistics, biblical studies, the history of Christianity,
+Egyptology, and ancient history.  Whereas
+languages like Classical Greek and Latin have enjoyed advances made in digital
+humanities with fully-fledged online research environments accessible to
+students and scholars (such as the Perseus Digital Library), until recently, no
+computational tools for Coptic have existed. Nor has an open digital research
+corpus been available.  The research team
+developing Coptic SCRIPTORIUM (<strong>S</strong>ahidic
+<strong><strong>C</strong></strong>orpus <strong>R</strong>esearch: <strong>I</strong>nternet <strong>P</strong>la<strong>t</strong>f<strong>or</strong>m for <strong>I</strong>nterdisciplinary m<strong>u</strong>ltilayer
+<strong>M</strong>ethods) is developing and providing
+open-source technologies and methodologies for interdisciplinary research
+across multiple disciplines in the Coptic language.  This paper will address the automated tools
+we are developing for annotating and conducting research on a Coptic digital
+corpus.  </p>
+  <p xmlns="">Conducting digitally-assisted
+and computational research in Coptic using available DH resources is complex
+for several reasons.  Most texts are
+preserved from damaged, incomplete, and dismembered manuscripts or papyri.  The DH project papyri.info has begun to
+create an online open-access resource for the study of Greek papyri and is
+beginning to digitize Coptic papyri and ostraca (ancient pot-shards with
+writing).  These texts, however, are
+primarily documentary, consisting of wills, contracts, personal letters,
+etc.  Coptic literary and monastic texts,
+the core of Coptic SCRIPTORIUM, are essential for the study of the Bible,
+intellectual history, literary history, and religious history.  The manuscripts containing these texts were
+removed from Egypt in the seventeenth through nineteenth centuries piece by
+piece (sometimes page by page).  Some
+have been published, many have not, and very few have been digitized in a
+format suitable for digital and computational work.  Texts must be must be reconstructed from pieces
+of manuscripts published in fragments and/or stored in various libraries and
+museums worldwide. The status of Coptic
+literary and monastic complicates metadata management and corpus
+architecture:  what constitutes a “work”
+– the codex in which a copy of the text appeared (and which may be dispersed
+across multiple physical repositories)? the manuscript fragment housed in a
+particular library or museum repository or the work, which only might survive
+in fragments of multiple codices (all copies of a “book” from the monastery’s
+library), and thus in fragments not only from more than one codex but also more
+than one modern repository?</p>
+  <p xmlns="">Coptic
+scholarship still lacks many standards for digital publication and language
+research that are taken for granted in Greek and Latin. As with other ancient
+languages, Coptic manuscripts are written without spaces.  However, in contrast to its ancient
+counterparts, scholarly conventions on word division differ substantially from
+scholar to scholar. Additionally, since Coptic is an
+agglutinative language, the relevant unit for linguistic analysis is the
+morpheme, below the ‘word’ level.  This
+means that segmentation guidelines must be developed for both levels of
+resolution. In order to search multiple texts, guidelines and tools for
+normalization, part-of-speech tagging and lemmatization of Coptic must be
+developed.  These tools need to take into
+account Coptic’s agglutinative nature, e.g. normalizing and annotating on the
+morpheme and word levels.</p>
+  <p xmlns="">Finally,
+the development of the Coptic language during Egypt’s Greco-Roman era raises
+questions about the origins of the language, its usage in a multilingual
+context, and the language practices of its ancient speakers and writers.  Coptic consists of Egyptian grammar,
+vocabulary, and syntax written primarily in the Greek alphabet; some Egyptian
+letters were retained, and some Greek and Latin vocabulary was incorporated
+into the language. The richness of the vocabulary’s languages of
+origin varies from author to author, genre to genre.  And despite recent publications on the topic,
+much research remains to be conducted on the extent and nature of
+multilingualism in late antique Egypt, especially during the fourth and fifth
+centuries. Additionally, due to the agglutinative nature
+of the language, one word can be comprised of morphemes with different
+languages of origin.</p>
+  <p xmlns="">This paper will focus on the
+automated tools our project is developing to process the language, especially
+tokenizing and part-of-speech annotations. 
+Coptic SCRIPTORIUM has developed the first tokenizer and part-of-speech
+tagger for the language, and in fact for any language in the Egyptian language
+family. The presentation will address the unique challenges to processing and
+annotating the Coptic language.  We will
+present our current technical solutions, their accuracy rates, and the
+potential for future research.  We will
+also address the ways in which this language’s and corpus’s unique featured
+differentiate them from other more widely studied ancient languages, such as
+Greek and Latin.  Examples will be drawn
+from the open-access corpora we are developing and annotating with these tools,
+available at <a href="http://coptic.pacific.edu">coptic.pacific.edu</a>
+(backup site <a href="http://www.carrieschroeder.com/scriptorium">www.carrieschroeder.com/scriptorium</a>).  The Coptic
+corpora processed and annotated with these tools can be searched and visualized
+in ANNIS, a tool for multi-layer annotated corpora.  We anticipate this presentation to be of
+interest to scholars in digital humanities working with ancient languages and
+manuscript corpora as well as DH linguists and corpus linguists.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Bentley Layton </strong>(2011), <em>A Coptic Grammar</em>, 3rd Edition,
+            Rev, Porta Linguarum Orientalium Neue Serie 20 (Wiesbaden: Harrassowitz, 2011),
+            19–20.</p>
+  <p xmlns=""><strong>Layton</strong>, <em>Coptic Grammar</em>, 5.</p>
+  <p xmlns=""><strong>J. N. Adams, Mark Janse, and Simon Swain</strong> (2002), <em>Bilingualism
+            in Ancient Society</em> (Oxford: Oxford University Press, 2002); Arietta
+            Papaconstantinou, ed., <em>The Multilingual Experience in Egypt from the
+              Ptolemies to the Abassids</em> (Burlington: Ashgate, 2010).</p>
+  <p xmlns="">http://www.sfb632.uni-potsdam.de/annis/</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

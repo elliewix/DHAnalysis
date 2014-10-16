@@ -1,0 +1,40 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-722.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Semantic Blumenbach: Exploration of text-object relationship with sematic web technologies in the history of science</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:jwettla@gwdg.de"><span class="author-surname">Wettlaufer</span>,
+									<span class="author-forename">Jörg</span></a>
+        <a href="http://www.google.com/#q=Wettlaufer, Jörg">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Göttingen Centre for Digital Humanities (GCDH), Akademie der Wissenschaften zu Göttingen (ADWG)</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">Blumenbach-online, a project of the Göttingen Academy of Sciences and Humanities, started in January 2010 and aims at both digitizing and presenting the writings and collections of the influential Gottingen physician and naturalist Johann Friedrich Blumenbach (1752-1840), one of the founding fathers of physical anthropology, online. To date, almost half of the textual material (77.000 pages altogether) and roughly a quarter of the collections have been digitized and converted into TEI-encoded texts or entered into a database. It is through an exploration and application of Semantic Web technologies in a spin-off project called "Semantic Blumenbach" that we hope to establish robust and powerful methods for presenting and providing heterogeneous machine-readable linked data for Blumenbach-online. </p>
+  <p xmlns="">Two major tasks have been completed so far. The first is carrying out Named Entity Recognition (NER) on the TEI P5 Tite<cite href="#n1">1</cite> encoded full-texts that have been provided to Semantic Blumenbach<cite href="#n2">2</cite> by Blumenbach-online. These texts lacked the semantic markup e.g. for places, persons and objects from the natural history domain. In addition, we had to deal with historical and irregular orthography of multilingual texts from the second half of the 18th century. Currently we are able to recognize precisely (96%) most (96%) of the technical terms that appear in the text using a list-based algorithm. This algorithm is also able to detect binominal entities from the Linnaean taxonomy, even when they appear as separate strings in different parts of the text. For modeling the relationship between entities in the text and metadata in the collection, we use the WissKI Framework for scientific communication (www.wiss-ki.eu) that allows presenting and using data from various sources in a robust and open system, which is both scalable and reusable by other projects. With the help of the Erlangen CRM Ontology<cite href="#n3">3</cite>, an OWL-DL 1.0 implementation of the CIDOC CRM<cite href="#n4">4</cite> and a special application ontology, we model the semantic relationships between objects described in TEI-encoded texts and metadata of these objects.<cite href="#n5">5</cite> We particularly focus on place names, persons and special terms from the natural history domain, including the Latin names of animals and geological objects and construct the relationship between both types of data by using our NER to encode reference strings in the TEI text. </p>
+  <p xmlns="">The Erlangen CRM provides a way to classify these objects in a meaningful way and to model the relationship between the occurrence of the objects in the writings of Blumenbach and the University of Göttingen’s collections. With the help of colleagues from the WissKI Project at Erlangen and Nurnberg we have been able to develop new modules for the Drupal-based system to ingest the TEI and triplify the metadata that we created in the texts. Following a policy of Open Access and Linked Open Data, we will test and implement ways to generate and publish results of academic research in a way that it can be reused in other contexts and by other researchers. Finally, we plan to use a full-text search index (Apache solr) to make both texts and object-related data available in a way that allows both triplyfied metadata and XML full-text to be searched efficiently. </p>
+  <p xmlns="">URL: <a href="http://dhfv-ent2.gcdh.de/blumenbach/wisski/">dhfv-ent2.gcdh.de/blumenbach/wisski</a></p>
+  <p xmlns="">Username and password available on request. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <a href="http://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_tite.doc.html">www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_tite.doc.html</a></p>
+  <p xmlns="">2. 
+            <strong>Wettlaufer, Jörg &amp; Thotempudi, Sree Ganesh</strong> (2013): <em>Poster - NER in historical Text corpora</em>. Lessons learned so far. 4.-6.03.2013, Mehr Personen – Mehr Daten – Mehr Repositorien, Tagung des Personendatenrepositoriums der BBAW, Berlin. <a href="http://www.gcdh.de/index.php/download_file/view/168/405/">www.gcdh.de/index.php/download_file/view/168/405</a></p>
+  <p xmlns="">
+            3. <a href="http://erlangen-crm.org/">erlangen-crm.org</a></p>
+  <p xmlns="">
+            4. “CIDOC CRM,” n.d. <a href="http://www.cidoc-crm.org/index.html">www.cidoc-crm.org/index.html</a>.
+          </p>
+  <p xmlns="">
+            5. C.f. <a href="http://www.tei-c.org/SIG/Ontologies/meetings/m20131003.html">www.tei-c.org/SIG/Ontologies/meetings/m20131003.html</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

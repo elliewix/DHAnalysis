@@ -1,0 +1,98 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-529.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Problems in Modeling Transactions</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>6</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>415 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:s.bauman@neu.edu"><span class="author-surname">Tomasek</span>,
+									<span class="author-forename">Kathryn</span></a>
+        <a href="http://www.google.com/#q=Tomasek, Kathryn">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Wheaton College, Norton, Massachusetts, United States of America</span>
+      </li>
+      <li>
+        <a href="mailto:s.bauman@neu.edu"><span class="author-surname">Bauman</span>,
+									<span class="author-forename">Syd</span></a>
+        <a href="http://www.google.com/#q=Bauman, Syd">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Northeastern University, United States of America</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">In a paper we presented at the 2012 TEI Members' Meeting[1] and published in the Journal of the TEI[2], we introduced the idea of the "transactionography" as a way to model transactions found in historical financial records (HFRs). In this short paper we briefly review transactionography as a model and discuss a few problems that have arisen as we have been testing it.</p>
+  <h2 xmlns="">Transactionography</h2>
+  <p xmlns="">We have developed a data structure for recording transactions found in historical financial records and linking that data structure with the segments of running prose or apparently tabular information that attest it or refer to it. While this is certainly a labor-intensive approach, we consider it nonetheless one worth serious consideration.</p>
+  <p xmlns="">Our model is similar to the TEI P5 models for contextualization, which offer TEI-compliant models for standoff markup of extra-textual information in files such as prosopographies and gazetteers. Thus in the same way that a prosopography maps how a name of a person that appears in running prose refers to said person, a transactionography maps how the financial records that attest a transaction refer to said transaction. That is, there exists a real-world thing or action that is being referred to by the words (or other marks) in a document we are encoding. The transactionography is a separate file that brings together information that is attested in multiple archival documents to describe a series of transactions.</p>
+  <p xmlns=""> We noted in our previous paper:</p>
+  <p xmlns=""> </p>
+  <p xmlns="">Our model of a transaction is perhaps somewhat more inclusive than some dictionary definitions. We think of a transaction as a coherent set of one or more transfers of something of perceived value from one entity to another. A transfer has three main components, which may be summarized as "what", "from whom", and "to whom". Furthermore, the "what" is likely to be divisible into a certain amount (that is, a quantity and a unit) of a given commodity. It is worth noting that transfers take place at a certain point in time, even if we don’t know when that time was. Or, at least, transfers are completed at a certain point in time. A transfer may occupy a signiﬁcant duration of time from start to finish. For example, a transaction may be conducted by ground postal service.      </p>
+  <p xmlns=""> Some common transaction categories can be identified.</p>
+  <ul xmlns="">
+    <li>A standard exchange of money for goods is a purchase, consisting of two transfers: e.g., I transfer $2 to the convenience store, and a  tiny little bottle of apple juice is transferred from the store to me.</li>
+    <li>A similar trade that does not involve currency is  a barter, for example, trading a large red paper clip for a fish-shaped pen.</li>
+    <li>A gift is a single uni-directional voluntary transfer; a single uni-directional involuntary transfer is called theft or embezzlement.</li>
+    <li>A set of transfers among more than two entities may be referred to as a multilateral trade. </li>
+  </ul>
+  <p xmlns="">To model the "what", the TEI &lt;measure&gt; (or &lt;measureGrp&gt;) element seems tailor-made for the purpose. To model the "when", the attributes from the TEI att.datable class seem to be quite reasonable: they can handle specific dates, times, date ranges, and particular dates that took place sometime within a range.</p>
+  <p xmlns=""> </p>
+  <p xmlns="">For representing "from whom" and "to whom" we have created new attributes, fra= and til= (Norwegian for "from" and "to") as the attributes from= and to= already occur in TEI, and creditor= and debtor= have different meanings in different contexts.</p>
+  <h2 xmlns="">Problems</h2>
+  <h2 xmlns="">Data capture interface</h2>
+  <h2 xmlns="">Complex transactions</h2>
+  <p xmlns="">In our model, a _transaction_ is a series of one or more _transfer_s from one entity to another. (An entity here is a person, an organization, or an account.) This works well for simple purchases, barters, and trades (each of which comprises 2 transfers), as well as gifts and theft (each of which comprises 1 transfer). It also works well for simple multilateral trades. E.g., if Mr. Baxter gives 86.50 USD to Mr. Sheldrake, who gives flowers to Ms. Kubelik, who gives basketball tickets to Mr. Baxter, the transaction comprises three transfers.</p>
+  <p xmlns=""> Our model does not yet include a way to handle more complex transactions that involve multiple entities paying and receiving different amounts of cash. Such a transaction might look like this:</p>
+  <p xmlns=""> </p>
+  <p xmlns="">A pays $2</p>
+  <p xmlns="">B pays $4</p>
+  <p xmlns="">C gets $3</p>
+  <p xmlns="">D gets $3</p>
+  <p xmlns=""/>
+  <p xmlns="">Our model requires the addition of a fifth entity to hold contributions before distributions can be made. A fictional or temporary account entity could easily be used for this purpose. Colloquially, we might refer to this account as a "pot" or "kitty," borrowing terminology from card playing games.A different model, one perhaps in which transfers were listed by person or account rather than by event or date, might solve this problem. E.g., the following models the example above.</p>
+  <p xmlns=""/>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/529-1.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">(Note that this example is quite simplified, in that whatever C &amp; D give A &amp; B in return for the $6 is not included.) However, this sort of model seems overall more cumbersome in the simpler cases.While we note this as an outlier case that our model handles only clumsily, we question how often it would occur in practice, and thus how much of a burden on the encoder of HFRs it would present.</p>
+  <h2 xmlns="">Services</h2>
+  <p xmlns="">We noted in our poster presented at TEI 2013[3] that services are a problem, but adding the attribute @service to the TEI &lt;measure&gt; element might solve it. We quote from said poster:</p>
+  <p xmlns="">Many historical financial records, however, include or are even primarily about the exchange of money for services (e.g., laundering, room and board, or domestic service). Since these services were more usually performed by women and often recorded by women, study of these types of HFRs is of particular interest to practitioners of women’s history.</p>
+  <p xmlns="">In our “transactionography” we have heretofore used the TEI &lt;measure&gt; element, with its @quantity, @unit, and @commodity attributes, to represent that which is transferred from one person or account to another in a transaction. But in the laundry list case, the work performed by the laundress is not a “commodity” but a “service”, the service for which the boarder paid the boardinghouse keeper in this transaction. However, using the &lt;measure&gt; element with existing attributes leads to markup that fails to distinguish the purchase of a garment from paying for the service of laundering it. One possible solution is to add a new attribute, @service. Thus for instance, a line from a laundry list might be marked up as follows:</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/529-2.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">This solution seems to have broad application. E.g.:</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/529-3.jpg"/>
+    <figcaption/>
+  </div>
+  <p xmlns="">We will not be surprised, however, if there are cases it does not handle well.</p>
+  <p xmlns="">Another approach might be to think of "shirt" as the unit and "launder" as the commodity. This would have the advantage of not requiring the addition of an extra attribute to the &lt;measure&gt; element. And since we have marked the unit as "count" in both the examples of framing and shoe shining, these examples might suggest that this latter approach is more elegant than our more verbose use of @service. We wonder, though, whether the programming example might point to a place where the option of greater verbosity constitutes an advantage.Nor does the alternative approach offer a solution to at least two other complexities that occur when we try to formalize references to women’s work in HFRs. We might call these multiplicity and indirection. We quote again from our TEI 2013 poster:</p>
+  <p xmlns=""> </p>
+  <p xmlns="">By “multiplicity” we mean that the goods or services being transferred are actually a combination of distinct separate goods or services being transferred as a unit. A common example of this is a suit of men’s clothes, which at one point in the twentieth century might have meant either a jacket and trousers or a jacket, a vest, and trousers.</p>
+  <p xmlns="">The problem of “indirection” occurs when the goods or services being transferred are referred to indirectly or metaphorically. ...</p>
+  <p xmlns="">These two problems can, and often do, occur simultaneously. For example, the reference to “steak” on a restaurant receipt does not refer to a single chunk of uncooked meat as it would on the receipt from a butcher shop. Rather, it refers to the meat, and perhaps some sauce, in addition to the services of cooking the dish and delivering it to the table.</p>
+  <p xmlns=""/>
+  <p xmlns="">We do not know, at least not yet, which of these approaches is superior. However, we feel they are probably close enough to each other in expressive power and usability that the important thing, as Tommie Usdin points out[4], is for the HFR encoding community to pick one.</p>
+  <h2 xmlns="">Conclusion</h2>
+  <p xmlns="">We have considered here some problems that have arisen as we have tested the transactionography model. We are aware of numerous projects in which scholars are working with problems related to markup of HFRs, and we have created a website with space for both discussion of these problems and display of proposed solutions. We invite our colleagues to contribute to Encoding Historical Financial Records &lt;encodinghfrs.org&gt; as we continue to explore TEI-conformant models for markup of these abundant archival records.</p>
+  <h2 xmlns="">Acknowledgement</h2>
+  <p xmlns="">The authors would like to gratefully acknowledge C. Michael Sperberg-McQueen for not only finding problems with transactionogrophies, but also allowing us to bounce ideas around.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">[1] <strong>Tomasek, Kathryn and Bauman, Syd</strong> (2012), <em>“Encoding Financial Records for Historical Research”</em>. Presented at _TEI and the C{rl}O{wu}D: the Text Encoding Initiative Conference, College Station, TX, November 8–10, 2012.</p>
+  <p xmlns="">[2] <strong>Tomasek, Kathryn and Bauman, Syd</strong>, <em>“Encoding Financial Records for Historical Research”</em>. _Journal of the Text Encoding Initiative_, issue 6.</p>
+  <p xmlns="">[3] <strong>Tomasek, Kathryn and Bauman, Syd</strong> (2013), <em>“Laundry Lists and Boarding Records: challenges in encoding ‘women’s work’”</em>. Poster presented at The Linked TEI: Text Encoding in the Web: the TEI Conference, 2013, Rome, Italy, October 2–5, 2013.</p>
+  <p xmlns="">[4] <strong>Usdin, Tommie</strong> (2002), <em>“When “It Doesn’t Matter” means “It Matters””</em>, presented at Extreme Markup Languages 2002, Montréal QC. <a href="http://conferences.idealliance.org/extreme/html/2002/Usdin01/EML2002Usdin01.html">conferences.idealliance.org/extreme/html/2002/Usdin01/EML2002Usdin01.html</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-94.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Big Data and the Literary Archive: Topic Modeling the Watson-McLuhan Correspondence</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:hquamen@ualberta.ca"><span class="author-surname">Quamen</span>,
+									<span class="author-forename">Harvey</span></a>
+        <a href="http://www.google.com/#q=Quamen, Harvey">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Alberta</span>
+      </li>
+      <li>
+        <a href="mailto:phjartar@ualberta.ca"><span class="author-surname">Hjartarson</span>,
+									<span class="author-forename">Paul</span></a>
+        <a href="http://www.google.com/#q=Hjartarson, Paul">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Alberta</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">The world of Big Data has introduced humanist scholars to new and relatively unfamiliar data-handling techniques such as data mining, graph visualizations, document clustering, and topic modeling. Topic modeling techniques “are statistical methods that analyze the words of the original texts to discover the themes that run through them, how those themes are connected to each other, and how they change over time.”<cite href="#n1">1</cite> This paper examines how one digital humanities project—the digitization of a literary archive—is using topic modeling in order to help users browse and discover the contents of the archive.</p>
+  <h2 xmlns="">Background and Methodology</h2>
+  <p xmlns="">Topic models have been commonly used to classify documents <cite href="#n2">2</cite><cite href="#n3">3</cite> or to cluster tagged artifacts <cite href="#n4">4</cite>; however, researchers are increasingly using topic modeling as a way to allow users to browse and search large corpora, often through data visualizations. <cite href="#n5">5</cite><cite href="#n6">6</cite><cite href="#n7">7</cite> Traditional search techniques often fail with large corpora because, as one researcher puts it, "users may not be familiar with the vocabulary that defines the topics of their interest, or simply they may wish to get a broad summary of the collection in order to guide their searches."<cite href="#n8">8</cite> If data visualization in the sciences typically happens after the research and number crunching is finished, data visualization in the humanities often serves as a preliminary tool of exploration and discovery. Literary archives are a perfect litmus test: online finding aids often lack detail and there’s a storied tradition of having to pay one’s scholarly dues by enduring long, physically exhausting archival sessions whose consequences range from bad posture and poor eyesight to contagion and even meningitis.<cite href="#n9">9</cite> Digitization and new search techniques can help make archival research more accessible for all scholars.</p>
+  <p xmlns="">Our research team is experimenting with a wide variety of big data techniques as we continue a project funded by the Social Sciences and Humanities Research Council of Canada to digitize the archives of Wilfred and Sheila Watson, two 20th-century Canadian writers. The Watson Archive—a lifetime of journals, manuscript drafts, notes, sketches, artwork, newspaper clippings, reviews, and correspondence distributed across two universities 1500 km apart—clearly exceeds the scope of any one publication or scholarly project. In archival terms, Wilfred's papers occupy 10.6 metres of shelf space (producing over 101,000 digital images), while Sheila's occupy a further 8.4 metres, none of which has yet been digitized. Topic modeling is one promising way for scholars to understand the the content and the contours of these two separate but related Watson archives in ways that move significantly beyond online finding aids or the serendipity of sifting through the materials in person.</p>
+  <p xmlns="">Big data techniques like topic modeling have found a mixed reception in the humanities, however. Twenty-five years ago, Carlo Ginzburg argued that the humanities were different from the sciences because while the humanities privileged “the study of individual cases, situations, and documents precisely because they are individual,” the sciences investigated only phenomena that were quantifiable and repeatable.<cite href="#n10">10</cite> Big Data has begun to challenge that neat division: perhaps most famously, Franco Moretti has used quantitative techniques in order to “distant read” literary history,<cite href="#n11">11</cite> while, more recently, Johanna Drucker has indicted those same methods as “pernicious” because they “violat[e] the very premises of humanistic inquiry.”<cite href="#n12">12</cite></p>
+  <h2 xmlns="">Research</h2>
+  <p xmlns="">This paper engages those debates in light of one particular test case, a corpus of 413 letters that Wilfred Watson, Sheila Watson, and Marshall McLuhan wrote to each other over a period of more than twenty years. Because Sheila Watson studied for her PhD under McLuhan’s supervision and Wilfred Watson collaborated with McLuhan on the 1970 monograph <em>From Cliché to Archetype</em>,<cite href="#n13">13</cite> the archival letters range across a wide spectrum of topics from the personal to the professional, from the microdata of timelines, draft revisions, and gossip to the macrodata of history, culture and civilization. Topic modeling offers scholars one browsable entrance into such an unwieldy corpus, a corpus that is nonetheless just a tiny fraction of the entire archive. Our team has built a prototype interface that allows scholars to choose the number of topics into which the algorithm should cluster the letters and then, in the resulting force-directed graph, users are able to click on nodes that reveal the significant words that form each cluster and to browse each cluster’s individual letters. Data visualization merges with user interface design to provide scholars a new means of engaging the Watson archive.</p>
+  <p xmlns="">Our interface prototype provides scholars a hybrid between a “distant reading” of the archive and a full text search. Broad, long-term patterns and topic shifts become immediately visible. For example, clustering the letters into as few as three or four groups reveals that, as McLuhan and co-author Wilfred Watson collaborated on <em>From Cliché to Archetype</em>, their paradigmatic literary figure shifted from Wyndham Lewis to James Joyce. The conversations about why Joyce proved more satisfactory than Lewis, of course, appear only in the letters and not in the finished monograph. Through data visualization and topic modeling, however, scholars can explore how ideas shift and change over time and can “zoom in” to important moments in the corpus of letters.</p>
+  <p xmlns="">Our argument, then, is that topic modeling and other big data techniques are increasingly invaluable to humanists, especially as scholars are confronted by the overwhelming data available in even the most modest-sized archives. Topic modeling provides humanist scholars a valuable new way to explore large collections of texts and artifacts—not necessarily to determine definitively or algorithmically how texts should be classified or clustered, but as experimental, dynamic means of seeing patterns of similarity and difference in a wide range of materials. The result is that humanists are now increasingly able to move beyond the individual, idiosyncratic cases that Ginzburg described to see how people and ideas and discourses change over time.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Blei, David M.</strong> (2011) <em>Introduction to Probabilistic Topic Models.</em><a href="http://www.cs.princeton.edu/~blei/papers/Blei2011.pdf">www.cs.princeton.edu/~blei/papers/Blei2011.pdf</a>. p.2.
+          </p>
+  <p xmlns="">2. <strong>Zhou, Shibin, Kan Li and Yushu Liu</strong> (2009). <em>Text Categorization Based on Topic Model.</em> International Journal of Computational Intelligence Systems 2.4 (December 2009): 398-409.
+          </p>
+  <p xmlns="">3. <strong>Song, Min, and Su Yeon Kim</strong> (2013). <em>Detecting the Knowledge Structure of Bioinformatics by Mining Full-Text Collections.</em> Scientometrics 96: 182-201.
+          </p>
+  <p xmlns="">4. <strong>García-Plaza, Alberto Pérez, Arkaitz Zubiaga, Víctor Fresno, and Raquel Martínez</strong> (2012). <em>Reorganizing Clouds: A Study on Tag Clustering and Evaluation.</em> Expert Systems with Applications 39: 9483–9493.
+          </p>
+  <p xmlns="">5. <strong>Shao, Jian, Shuai Ma, Weiming Lu, and Yueting Zhuang</strong> (2012). <em>A Unified Framework for Web Video Topic Discovery and Visualization.</em> Pattern Recognition Letters 33: 410–419.
+          </p>
+  <p xmlns="">6. <strong>Anaya-Sánchez, Henry, Aurora Pons-Porrata, and Rafael Berlanga-Llavori</strong> (2010). <em>A Document Clustering Algorithm for Discovering and Describing Topics.</em> Pattern Recognition Letters 31: 502–510.
+          </p>
+  <p xmlns="">7. <strong>Gretarsson, Brynjar, John O'Donovan, Svetlin Bostandjiev, Tobias Hollerer, Arthur Asuncion, David Newman, and Padhraic Smyth</strong> (2012). <em>TopicNets: Visual Analysis of Large Text Corpora with Topic Modeling.</em> ACM Transactions on Intelligent Systems and Technology 3.2 (February 2012): Article 23. 26pp.
+          </p>
+  <p xmlns="">8. <strong>Anaya-Sánchez</strong> (2010), p. 502.
+          </p>
+  <p xmlns="">9. <strong>O'Driscoll, Michael and Edward Bishop</strong> (2004). <em>Archiving 'Archiving.'</em> English Studies in Canada 30.1 (March 2004): 1-16.
+          </p>
+  <p xmlns="">10. <strong>Ginzburg, Carlo</strong> (1989). <em>Clues: Roots of an Evidential Paradigm.</em> In Clues, Myths, and the Historical Method. Trans. John and Anne C. Tedeschi. Baltimore: Johns Hopkins, UP. 96-125.
+          </p>
+  <p xmlns="">11. <strong>Moretti, Franco</strong> (2005). <em>Graphs, Maps, Trees: Abstract Models for Literary History</em>. London: Verso.
+          </p>
+  <p xmlns="">12. <strong>Drucker, Johanna</strong> (2011). <em>Humanities Approaches to Graphical Display.</em> Digital Humanities Quarterly 5.1. <a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html">www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html</a></p>
+  <p xmlns="">13. <strong>McLuhan, Marshall and Wilfred Watson</strong> (1970). <em>From Cliché to Archetype</em>. NY: Viking.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

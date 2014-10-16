@@ -1,0 +1,146 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Workshops-904.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Curation, Management, and Analysis of Highly Connected Data in the Humanities</h1>
+    <ul id="details">
+      <li><label>Category:</label>Workshops</li>
+      <li><label>Session:</label></li>
+      <li><label>Date:</label>2014-07-08<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>1A - SwissTech</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">de la Rosa</span>,
+									<span class="author-forename">Javier</span></a>
+        <a href="http://www.google.com/#q=de la Rosa, Javier">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Western Ontario, Canada </span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Brown</span>,
+									<span class="author-forename">David Michael</span></a>
+        <a href="http://www.google.com/#q=Brown, David Michael">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Western Ontario, Canada </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">This half-day workshop will instruct participants in the use of SylvaDB [1] to manage large sets of highly connected and semantically rich data. Beginning with raw metadata gleaned from cultural objects, participants will learn how to design a productive data model, store the data according to that model, and administer it collaboratively. Furthermore, they will learn how to integrate the data with other applications, analyze it using a powerful analysis framework, and organize their results logical collections called reports. The following proposal outlines the workshop and its relevance in four sections: 1) an introduction with an overview of the SylvaDB database management system and its applicability in a humanities context, 2) expected participant outcomes, 3) workshop content, and 4) a brief conclusion.</p>
+  <h2 xmlns="">1. Introduction</h2>
+  <h2 xmlns="">1.1 SylvaDB</h2>
+  <p xmlns="">SylvaDB is a browser based database management application developed by the CulturePlex Lab at Western University Canada. Written on top of the Neo4j graph database backend, SylvaDB allows users to create their own databases, each with an easy to use interface for: designing flexible data models, performing Create, Read, Update, and Delete (CRUD) operations, controlling user permissions, building and executing graph style queries, analyzing/visualizing data. These features were specifically designed to empower non-programmers by providing them user-friendly access to the power and flexibility of the graph database data structure.</p>
+  <p xmlns="">For developers, SylvaDB features a streaming API that facilitates integration with new or existing applications. The API is implemented as a RESTful service that supports input and output for read/write operations and data analysis procedures. Furthermore, SylvaDB features a set of graph algorithms that can be run by users in server-mode. Finally, SylvaDB is an open source project, which, simply put, promotes transparency and customizability by allowing developers to fully understand the product they are using. </p>
+  <h2 xmlns="">1.2 SylvaDB in the Humanities</h2>
+  <p xmlns="">SylvaDB was originally designed to handle the problems of data storage, management, and analysis specifically encountered in a Digital Humanities research context. The advent of innovative and increasingly sophisticated methods for analysis in the humanities results in an increased need for computational infrastructure to store and process data [2]. However, access to this infrastructure is not necessarily equal, and many non-programmers lack the technical expertise to implement the necessary solutions, or the resources to hire a programmer to do it. SylvaDB overcomes this limitation by providing a powerful, easy to use framework for data management and processing.</p>
+  <p xmlns="">Part of SylvaDB’s power rests in the technology upon which it was built: Neo4j’s graph database. This model for data storage provides the base for a system that is at once powerful, semantically rich, and flexible. These characteristics directly corresponds to challenges presented by humanities research:</p>
+  <ul xmlns="">
+    <li>Humanities data can be messy, unsure,or likely to change at some point, hence necessitating a flexible storage framework [3]. SylvaDB provides an interface for the user to design a flexible data model that best fits their data, and change it as necessary.</li>
+    <li>In the case of highly interconnected—or network—data [4], analysis can be quite costly in terms of both time and memory. SylvaDB supports native graph style queries designed for traversing millions of nodes and relationships in milliseconds and providing an efficient way to generate network and descriptive statistics. It is then easy to analyze query results using SylvaDB’s flexible data analysis environment to produce rich, interactive visualizations.</li>
+    <li>Humanities data is semantically rich, often taking the form of highly structured and interconnected metadata, which is difficult or inefficient to manage using SQL database technology. SylvaDB utilizes graph database models to allow semantic information stored as types and attributes in both nodes (data points) and the relationships between them, effectively facilitating semantic querying capabilities.</li>
+  </ul>
+  <h2 xmlns="">2. Outcomes</h2>
+  <p xmlns="">This workshop focuses on SylvaDB as a tool that empowers non-programmers to take control of their data; however, in a broader sense, its goal is to explore the concepts and practices behind effective data storage, management, and analysis. The specific learning outcomes for the workshop are as follows:</p>
+  <ul xmlns="">
+    <li> Mastery of the entire SylvaDB application package including: data modeling, CRUD operations, data administration, permissions controls, data import/export, query building, analysis, and report generation. </li>
+    <li>Awareness of fundamental database data modeling concepts: objects, types, attributes, relationships, schemas.</li>
+    <li>Practice with design thinking for data modeling—designing your model to solve a specific humanities problem.</li>
+    <li>Awareness of different database storage models and their pros and cons in a humanities context.</li>
+    <li>Expanded knowledge of types of data analysis/visualization, the reasoning behind them, as well as their usefulness to better understand complex humanities problems.</li>
+  </ul>
+  <h2 xmlns="">3. Content</h2>
+  <p xmlns="">The content of the workshop will be presented in three sections: 1) a general overview of databases and the associated concepts, 2) a database building activity that introduces SylvaDB and its features, and 3) an experiential learning session in which small groups model, store, and analyze a real data set. Participants are strongly encouraged to create accounts at <a href="http://testing.sylvadb.com/">testing.sylvadb.com</a> prior to the workshop, and bring their laptops.</p>
+  <h2 xmlns="">3.1 Overview</h2>
+  <p xmlns="">The goal of this section is to introduce essential concepts and terminology associated with databases. Beginning with the concept of data types and attributes, participants will be exposed to different models for data storage: relational tables, document/key-value stores, and graphs. Real world examples will be provided of each type of database, along with a discussion of the potential use cases and advantages/disadvantages of each system. Here the focus will fall primarily on the motivation behind using each storage method, and provide an introduction to the concepts behind data modelling.</p>
+  <h2 xmlns="">3.2 SylvaDB Use and Features</h2>
+  <p xmlns="">After the participants are familiar with the basics of data storage, we will see how these concepts have been applied in SylvaDB. The instructors will provide a quick introduction of the SylvaDB software package and its features, focusing particularly on data model (schema) creation, CRUD operations, building queries, and visualizing query results. This will be presented as a live demo using SylvaDB, and participants will be encouraged to follow along using their own laptops. Next, the participants will be presented with a small, easy to model data set. As a class, we will learn how to build and process a graph database, encouraging participation and student input regarding the following processes:</p>
+  <ul xmlns="">
+    <li>Schema creation: Students will learn to utilize the full capabilities of SylvaDB’s schema creation interface. This section will exemplify the process of creating schema types to represent different types of data, adding attributes to the types, determining relationships between them, and adding semantic annotation to the relationships. In this section, instructors will emphasize the importance of purposeful schema creation in order to produce insightful results during the analysis phase.</li>
+    <li>Data management: Students will learn to store and manage data using the schema we have created. The participants will become familiar with performing CRUD operations and controlling collaborator permissions. Also, this section will include an overview of using SylvaDB’s tabular data display to search the database, with emphasis on how to use the built-in filters for maximum search efficiency.</li>
+    <li>Analysis: The instructors will present an expanded dataset based on the previous example schema and data. This data will be used to familiarize the participants with SylvaDB’s query builder and data analysis environment. Participants will learn how to build several different type of queries and visualize their results using the built in data analysis environment. During this process, instructors will focus on providing examples of querying and visualization practices that fit the unique characteristics of the data set.</li>
+  </ul>
+  <h2 xmlns="">3.3 Small Group Activity</h2>
+  <p xmlns="">Participants will use what they have learned to model, store, and analyze a real humanities data set. The instructors will present a data set that consists of metadata gleaned from library holdings. In small groups, participants will evaluate the data and determine how it could best be modelled using SylvaDB. After a brief discussion of possible data models, we will build a standard schema model that will allow each group to import pre-configured data into their database. This reduces the complication and time commitment of manually inputting data, and allows the groups to focus on building effective queries and visualizing the results. Each group will design a series queries to visualize whatever aspect of data they choose, and then configure a report that includes their prefered visualization. At the end of the workshop, drawing from the results obtained, students will present and discuss their mini-project conclusions.</p>
+  <h2 xmlns="">4. Conclusion</h2>
+  <p xmlns="">This workshop presents SylvaDB as a tool that enables non-programmers to harness the full power of a graph database, create expressive and flexible data models, and perform complex analytical procedures. Upon completing this workshop, participants will not only have learned to use a powerful software package, but also the fundamental concepts behind databases, data modeling, and analytics. Perhaps most importantly, this knowledge will inspire confidence in humanities practitioners that move in a field increasingly focused on data [5], enabling them to take their research to new heights and levels of excellence.</p>
+  <h2 xmlns="">5. References</h2>
+  <p xmlns="">1. <strong>de la Rosa, J., Suárez, J.L., Sancho, F.</strong><em>SylvaDB: a Polyglot and Multi-Backend Graph
+Database Management System.</em> DATA Conference, Iceland. 2013.</p>
+  <p xmlns="">2. <strong>Poole, Alex H.</strong><em>“Now Is the Future Now? The Urgency of Digital Curation in the Digital
+Humanities.</em>” 7.2 (2013): n. pag. Digital Humanities Quarterly. Web. 10 Feb. 2014.</p>
+  <p xmlns="">3.<strong> Schöch, Christof</strong>. “<em>Big? Smart? Clean? Messy? Data in the Humanities.”</em> Journal of Digital
+Humanities. N. p., 22 Nov. 2013. Web. 10 Feb. 2014.</p>
+  <p xmlns="">4. <strong>Meeks, Elijah</strong>. “<em>Modeling Transportation in the Roman World: Implications for World Systems.</em>”
+Leonardo 46.3 (2013): 278. Print.</p>
+  <p xmlns="">5. <strong>Fallon, Dorothy</strong>. “<em>Big Data in the Humanities: The Need for Big Questions.</em>” Science in Culture. Web. 14 Feb. 2014. </p>
+  <h2 xmlns="">6. Outline</h2>
+  <ol xmlns="">
+    <li>Intro to database concepts - 20 min
+        		<ol><li>Data types, attributes, and relationships</li><li>Models for storage and their pros/cons
+        				<ol><li>Relational</li><li>Key-value/document</li><li>Graph</li></ol></li></ol></li>
+    <li>General overview of SylvaDB’s features - 20 min
+        		<ol><li>Schema Creation</li><li>CRUD operations</li><li>Searches/Filtering</li><li>Query Builder</li><li>Analysis Environment</li></ol></li>
+    <li>Activity 1 - Group Database Building Activity - 50 min
+        		<ol><li>Data modeling and Schema Generation</li><li>Data Entry</li><li>Management - User Permissions Searches</li><li>Analysis - Query Building Activity</li></ol></li>
+    <li>Activity 2 - Small Group Data Modeling and Analysis - 60 min</li>
+    <li>Presentation of Results and Discussion - 30 min</li>
+  </ol>
+  <h2 xmlns="">Workshop Leaders</h2>
+  <p xmlns="">
+    <strong>Javier de la Rosa</strong>
+  </p>
+  <p xmlns="">versae@gmail.com</p>
+  <p xmlns="">CulturePlex Lab. University of Western Ontario</p>
+  <p xmlns="">519-661-2111 Ext. 89251 </p>
+  <p xmlns="">Javier is a 3rd year PhD student at Western University. His general research interests are in graphs, graph databases, query languages, complex networks, and temporal ontologies. His main research interest is in Network Theory.</p>
+  <p xmlns="">
+    <strong>David Brown</strong>
+  </p>
+  <p xmlns="">dbrow52@uwo.ca</p>
+  <p xmlns="">davidmichaelbrown1@gmail.com</p>
+  <p xmlns="">CulturePlex Lab. University of Western Ontario</p>
+  <p xmlns="">519-661-2111 Ext. 89251</p>
+  <p xmlns="">David is a 2nd year Ph.D. student at Western University. His primary research interests are:
+graph databases, network analysis, maps, Mesoamerican culture, New Spain, and web
+development using Python and Javascript. He is currently developing his expertise in applying
+data-intesive analysis techniques to shed light on questions from the humanities and social
+sciences.</p>
+  <p xmlns="">
+    <strong>Elika Ortega</strong>
+  </p>
+  <p xmlns="">eortegag@uwo.ca</p>
+  <p xmlns="">CulturePlex Lab. University of Western Ontario</p>
+  <p xmlns="">519-661-2111 Ext. 82822</p>
+  <p xmlns="">Elika is a Postdoctoral Fellow at the CulturePlex Lab, Western University. Her research focuses
+on narrative in digital media and the study of narrative networks. She is especially interested in
+the ways in which digital media have revitalized the sociality of narrative and the interactions of
+print and digital media, as well as on the network structures of convergence media texts.</p>
+  <p xmlns="">
+    <strong>Juan Luis Suarez</strong>
+  </p>
+  <p xmlns="">jsuarez@uwo.ca</p>
+  <p xmlns="">CulturePlex Lab. University of Western Ontario</p>
+  <p xmlns="">519-661-2111 Ext. 85858</p>
+  <p xmlns="">Juan Luis is a Professor of Hispanic Studies in the Modern Languages and Literatures
+Department as well as the Director of the CulturePlex Lab at Western U. His research deals with
+cultural complexity and complexity theory, digital humanities, technologies of humanism,
+Hispanic Baroque, as well as globalization and new literatures. Some of his books are "Tecnologías del Humanismo", "Herederos de Proteo", and "Calderón: El escenario de la
+imaginación". Very recently, he also spearheaded a successful IDI proposal at Western U. in the
+field of Digital Humanities on which he is collaborating with participants from a broad spectrum of
+fields of study.</p>
+  <p xmlns=""> </p>
+  <p xmlns="">
+    <strong>Target Audience</strong>
+  </p>
+  <p xmlns="">This workshop is intended for anybody interested in learning the skills to better model, store,
+manage, and analyze data. It is of particular interest to researchers that deal with highly
+connected data, and are interested in harnessing the power of the graph database for storage
+and analysis. No programming skills are necessary, and no previous knowledge of databases is
+required; however, the focus on graph databases and the SylvaDB toolkit makes this workshop
+relevant for experienced database users and developers. In past, much smaller conferences, our
+SylvaDB workshop has attracted approximately 20-30 people.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

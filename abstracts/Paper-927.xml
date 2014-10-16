@@ -1,0 +1,351 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-927.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>The MAAYA Project: Multimedia Analysis and Access for Documentation and Decipherment of Maya Epigraphy</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>3</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>13:45:00</li>
+      <li><label>Room:</label>415 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto: EPFL, Switzerland;gatica@idiap.ch "><span class="author-surname">Gatica-Perez</span>,
+									<span class="author-forename">Daniel</span></a>
+        <a href="http://www.google.com/#q=Gatica-Perez, Daniel">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Idiap Research Institute, Switzerland</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Pallan</span>,
+									<span class="author-forename">Carlos</span></a>
+        <a href="http://www.google.com/#q=Pallan, Carlos">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Bonn, Germany</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Marchand-Maillet</span>,
+									<span class="author-forename">Stephane</span></a>
+        <a href="http://www.google.com/#q=Marchand-Maillet, Stephane">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Geneva, Switzerland </span>
+      </li>
+      <li>
+        <a href="mailto: EPFL, Switzerland;"><span class="author-surname">Odobez</span>,
+									<span class="author-forename">Jean-Marc</span></a>
+        <a href="http://www.google.com/#q=Odobez, Jean-Marc">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Idiap Research Institute, Switzerland</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Roman Rangel</span>,
+									<span class="author-forename">Edgar</span></a>
+        <a href="http://www.google.com/#q=Roman Rangel, Edgar">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Geneva, Switzerland </span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Grube</span>,
+									<span class="author-forename">Nikolai</span></a>
+        <a href="http://www.google.com/#q=Grube, Nikolai">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Bonn, Germany</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">
+    <strong>1.
+Introduction</strong>
+  </h2>
+  <p xmlns="">Archaeology and epigraphy have made significant
+progress to decipher the hieroglyphic writings of the Ancient Maya, which today
+can be found spread over space (in sites in Mexico and Central America and
+museums in the US and Europe) and media types (in stone, ceramics, and
+codices.) While the deciphering goal remains unfinished, technological advances
+in automatic analysis of digital images and large-scale information management
+systems are enabling the possibility to analyze, organize, and visualize
+hieroglyphic data that can ultimately support and accelerate the deciphering
+challenge.</p>
+  <p xmlns="">
+
+We present an overview of the MAAYA project
+(<a href="http://www.idiap.ch/project/maaya/">http://www.idiap.ch/project/maaya/</a>), an interdisciplinary effort integrating the work of epigraphists and
+computer scientists with three goals:</p>
+  <ul xmlns="">
+    <li>(1) Design and development of computational
+tools for visual analysis and information management that effectively support
+the work of Maya hieroglyphic scholars; </li>
+    <li>(2) Advancement of the state of Maya epigraphy
+through the coupling of expert knowledge and the use of these tools; and </li>
+    <li>(3) Design and implementation of an online
+system that supports search and retrieval, annotation, and visualization tasks.
+</li>
+  </ul>
+  <p xmlns="">
+
+
+Our team approaches the above goals
+acknowledging that work needs to be conducted at multiple levels, including data
+preparation and modeling; epigraphic analysis; semi-automated and automated
+pattern analysis of visual and textual data; and information search, discovery,
+and visualization. In this abstract, we concisely describe three ongoing
+research threads, namely data sources
+and epigraphic analysis (Section 2), glyph visual analysis (Section 3), and data access and visualization (Section 4). We provide final remarks in Section 5.</p>
+  <h2 xmlns="">
+    <strong>2. Data sources
+and epigraphic analysis</strong>
+  </h2>
+  <p xmlns="">The project focuses on Maya hieroglyphic inscriptions
+produced within the Yucatan Peninsula, inside the northern Maya lowlands, which
+encompasses sites within the Mexican states of Yucatan, Campeche, parts of
+Quintana Roo and a northern-most portion of Belize (see <strong>Fig. 1</strong>). Our research targets the three Maya Books (Codices)
+produced inside the Yucatan peninsula during the Postclassic period (1000-1521
+AD). The
+first one is the Dresden Codex, housed at the University Library of Dresden,
+Germany.  For this data source, our project relies on
+published facsimiles (Förstemann, 1880; Codex Dresden, 1962; Codex Dresden,
+1989) and on high-resolution, open-access images provided by the SLUB.
+The Codex Madrid is stored at the <em>Museo
+de América</em> in Madrid, Spain, and for its study, our project relies on
+published facsimiles and line drawings (Codex Madrid, 1967; Villacorta and
+Villacorta, 1976). For the Paris Codex, the project relies on published
+facsimiles and images provided online by the <em>Biblioteque Nationale de France.</em></p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_maaya1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Map indicating main archaeological sites under study by our project.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Codex
+pages were usually divided by red lines or t'ols
+(<strong>Fig. 2</strong>). Each of these t'ols is further subdivided in frames
+relevant to the specific dates, texts and imagery depicted. Frames contain
+several glyph blocks organized in a grid-like pattern with columns and rows,
+calendric glyphs, captions, and iconographic motives. Briefly stated, t'ols are "segmented" into
+their main constituent elements (<strong>Fig. 2</strong>).
+Images are post-processed and from these, high-quality, scale-independent
+vectorial images of the individual hieroglyphs and iconography are generated in
+three modes: (a) grayscale/color, (b) binary, and (c) reconstructed forms
+(marked in blue), which are based on epigraphic comparison of all available
+similar contexts (<strong>Figs. 3-4</strong>)</p>
+  <h2 xmlns="">
+
+ </h2>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_maaya2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Page 47c (44c) of the Dresden Codex framing main individual constituent elements (by Carlos Pallán based on SLUB online  open source image)</p>
+    </figcaption>
+  </div>
+  <p xmlns="">The
+process of annotating the Codices entails an analysis comprising the following
+steps: (a) identification of individual signs on (Thompson, 1964) catalog, i.e.
+T0588:0181; (b) identification of individual signs on (Macri and Vail, 2008)
+catalog, i.e. SSL:ZU1; (c) identification of individual signs on (Evrenov et
+al., 1961) catalog, i.e. 400-010-030; (d) identification of signs on
+(Zimmermann, 1956) catalog, i.e., Z0702-0060; (e) transcription, specifying
+phonetic values for individual signs as syllables (lowercase bold) or logograms
+(uppercase bold), i.e. <strong>K'UH-OK-ki</strong>; (f)
+transliteration, conveying reconstructed Classic Maya speech (words) formed by
+the combination of individual signs, i.e. k'uhul
+ook); (g) morphological segmentation, a division into morphemes for later
+linguistic analysis), i.e. k'uh-ul Ok;
+(h) morphological analysis, assigning each of the previous segments to a
+definite linguistic category, i.e. god-ADJ step(s)/foot; (i) English
+translation: "Divine step(s)/foot". Taken together, the processing
+steps within this workflow provide the ground for more advanced multimedia
+analyses (<strong>Fig. 5</strong>).  </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_maaya3.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Process to generate vectorial representations of the Dresden Codex: a)color/grayscale; b) binary; c) reconstructed (blue) forms (by Carlos Pallán based on SLUB online  open source images)</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_maaya4.jpg"/>
+    <figcaption>
+      <p>Fig. 4: Vectorial representations of the Madrid Codex, Page  (T'ol) 10b, Frame 1: a) color/grayscale; b) binary; c) reconstructed (blue) forms (by Guido Krempel based on (Codex Madrid, 1967))</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_maaya5.jpg"/>
+    <figcaption>
+      <p>Fig. 5: Multivariable fields used to annotate textual contents of Dresden Page (T'ol) 47c (44c) (by Carlos Pallán)</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">
+    <strong>3.
+Visual analysis of glyphs</strong>
+  </h2>
+  <p xmlns="">Modeling Maya
+glyph shape is challenging due to the complexity and high intra-class
+variability of glyphs. We are developing methods to characterize glyphs for visual matching and retrieval tasks.
+In previous work, we proposed a shape descriptor based on visual bags-of-words (HOOSC:
+Histogram-of-Orientations-Shape Context) and used it for isolated glyph
+retrieval (Roman-Rangel, 2011). We are pursuing two research lines to
+extend our current capabilities.</p>
+  <p xmlns=""><strong><strong>Improved shape representations</strong>.</strong> Three
+directions are being considered: (1) the improvement
+of bag representations to retrieve syllabic glyphs. In particular, we developed
+a method to detect visual stop-words (Roman-Rangel, 2013a), and a statistical
+approach to construct robust bag-of-phrases (Roman-Rangel, 2013b); (2)
+the use of neural-network architectures like auto-encoders (Ngiam, 2011) that
+automatically build representations from training data. These approaches represent
+an alternative to handcrafted descriptors like the HOOSC, and provide a principled
+way to quickly adapt representations to different data sources (codex vs.
+monument glyphs); (3) the use of representations based on the decomposition of glyphs
+into graphs of segments, from which shape primitives can be extracted. This
+representation might
+be more suitable than histogram-based descriptors like HOOSC at identifying
+which strokes of a shape are discriminative, potentially allowing comparisons
+with so-called diagnostic features provided by epigraphers (<strong>Fig. 6</strong>).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_maaya6.jpg"/>
+    <figcaption>
+      <p>Fig. 6: Three glyph instances of the same sign. Right: one diagnostic features and variant.</p>
+    </figcaption>
+  </div>
+  <p xmlns=""><strong><strong>Co-occurrence modeling</strong></strong>. We are
+exploring ways to exploit the fact that glyphs do not occur in isolation within
+inscriptions but in ordered groups (glyph-blocks) (<strong>Fig. 2</strong>). To this end, we are studying options to build models
+relying on glyph co-occurrence statistics or further accounting for the glyph spatial
+position within the blocks. We plan to investigate how such information can be
+used in a retrieval system to improve performance and to help scholars deal with
+unknown or damaged glyphs. This has several dimensions like query types (e.g. single
+glyphs with known identity of other glyphs within the block), and contextual
+combination of shape similarity with text metadata.</p>
+  <h2 xmlns="">
+    <strong>4. Data access
+and visualization </strong>
+  </h2>
+  <p xmlns="">Our work in this direction focuses on visualization of and
+effective access to image databases with archaeological value. We are
+developing a repository that will serve further goals within the project. This
+database stores visual elements of the Madrid, Dresden, and Paris codices. It
+is complemented with an online system, shown in <strong>Fig. 7</strong>, which allows for capturing and annotation of codices. More
+specifically, the repository contains relevant information regarding the
+composition of the codices, such as hierarchical relations between components
+and bounding boxes of glyphs. Therefore, it allows to query visual elements at
+different levels of semantic structure, i.e., page, t'ol, glyph-block,
+individual glyph, etc. The repository will also allow to query and study
+statistics of the Mayan writing system, e.g., hieroglyph co-occurrences.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_maaya7.jpg"/>
+    <figcaption>
+      <p>Fig. 7: Snapshot of the online tool that feeds the database with imagery data and its corresponding annotations, i.e., codex name, t'ol, glyph-block reference, Thompson and Macri and Looper catalogs.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">The second research line is the advancement of
+visualization techniques, and more precisely, the development of techniques
+that will allow exploring the feature space of a number of visual shape
+descriptors used to represent Mayan hieroglyphs for retrieval purposes. By
+relying on these visualization methods, our goals are detecting, understanding,
+and interactively overcoming some of the drawbacks associated with the shape
+descriptors currently in use (Vondrick, 2013).</p>
+  <h2 xmlns="">
+    <strong>5. Conclusions</strong>
+  </h2>
+  <p xmlns="">We presented an overview of the MAAYA
+project’s work-in-progress on epigraphic analysis, automatic visual analysis,
+and data access and visualization. Our close integration of work in computing
+and epigraphy is producing initial steps towards the design of computing methods
+tailored for epigraphy work; and can create opportunities to revisit findings
+in Maya epigraphy under the light of what computer-based methods can reveal
+(e.g., data-driven analyses of glyph diagnostic features.) At the same time,
+several of our machine learning, computer vision, and information retrieval
+methods are applicable to other problems in digital humanities. We would be
+interested in investigating applications of these methodologies to other
+sources of Cultural Heritage materials.</p>
+  <h2 xmlns="">
+    <strong>Acknowledgments.
+</strong>
+  </h2>
+  <p xmlns="">We thank the support of the
+Swiss National Science Foundation (SNSF) and the German Research Foundation
+(DFG). We also thank all the members of the team (Rui Hu, Gulcan Can, April
+Morton, Oscar Dabrowski, and Peter Biro) for their contribution.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Codex Dresden</strong> (1962). <em>Codex
+            Dresdensis: Maya Handscschrift der Sächsischen Landesbibliothek Dresden</em>.  Edited by the Sächsische Landesbibliothek
+            Dresden from Prof. Dr. phil. habil. Eva Lips. Akademie-Verlag GmbH. Berlin.
+            (Issue 626 from 700 printed.)</p>
+  <p xmlns=""><strong>Codex Dresden </strong>(1989).
+            <em>Die Dresdner Maya-Handschrift. Sonderausgabe
+              des Kommentarbandes zur vollständigen Faksimile-Ausgabe des Codex Dresdensis</em>. Akademische Druckerei- und
+            Verlags-Anstalt, Graz 1989, 
+            including Helmut Deckert: Zur
+            Geschichte der Dresdner Maya-Handschrift and
+            Ferdinand Anders: Die Dresdner
+            Maya-Handschrift.</p>
+  <p xmlns=""><strong>Codex Madrid</strong> (1967).<em> Codex Tro-Cortesianus</em>. Museo de América Madrid.
+            Facsimilar Edition 1967      Moderated by Francisco Sauer and Josepho
+            Stummvoll. Introduction and Summary by F. Anders. Akademische Druck- und
+            Verlaganstalt Graz- Austria.</p>
+  <p xmlns=""><strong>Evrenov,
+            E.B., Kosarev, Y. and Ustinov, B.A. </strong>(1961).
+            <em>The Application of Electronic Computers in Research of the Ancient Maya Writing</em>.
+            USSR, Novosibirsk.</p>
+  <p xmlns=""><strong>Förstemann, E.W </strong>(1880). <em>Die Maya-Handschrift der königlichen
+            Bibliothek zu Dresden,</em> hrsg. von Ernst Wilhelm Förstemann. - Leipzig : Verlag
+            der Naumann'schen Lichtdruckerei, 1880.</p>
+  <p xmlns=""><strong>Macri, M. and
+            Vail, G.</strong> (2008). <em>The New Catalog of Maya
+              Hieroglyphs, Volume Two: The Codical Texts</em>. University of Oklahoma Press,
+            308 pp.  </p>
+  <p xmlns=""><strong>Ngiam, J. </strong>(2011).<em> Unsupervised
+            feature learning and deep learning tutorial.</em>
+            http://ufldl.stanford.edu/wiki/index.php/UFLDL Tutorial.</p>
+  <p xmlns=""><strong>Roman-Rangel,
+            E., Pallan, C., Odobez, J.-M. and Gatica-Perez, D.</strong> (2011). <em>Analyzing Ancient
+              Maya Glyph Collections with Contextual Shape Descriptors</em>, Int. Journal of
+            Computer Vision, Special Issue on e-Heritage, Vol. 94, No. 1, pp. 101-117, Aug.
+            2011.</p>
+  <p xmlns=""><strong>Roman-Rangel, E. and Marchand-Maillet, S. </strong>(2013). <em>Stopwords
+            Detection in Bag-of-Visual-Words: The Case of Retrieving Maya Hieroglyphs</em>. International
+            Workshop on Multimedia for Cultural Heritage (MM4CH), at International
+            Conference on Image Analysis and Processing.</p>
+  <p xmlns=""><strong>Roman-Rangel, E. and Marchand-Maillet, S. </strong>(2013). <em>Bag-of-Visual-Phrases
+            via Local Contexts</em>.  Workshop on Recent
+            Advances in Computer Vision and Pattern Recognition (RACVPR), at Asian
+            Conference on Pattern Recognition. </p>
+  <p xmlns=""><strong>Thompson,
+            J. E. S. </strong>(1964). <em>A Catalog of Maya Hieroglyphs</em>. University of Oklahoma Press. Available online at: <a href="http://www.famsi.org/mayawriting/thompson/index.html">http://www.famsi.org/mayawriting/thompson/index.html</a></p>
+  <p xmlns=""><strong>Villacorta, J. A. and Villacortax,
+            C. A.</strong> (1976)  <em>Códices Mayas
+              (reproducidos y desarrollados por)</em>. Sociedad de Geografía e Historia de
+            Guatemala, Guatemala, C.A. (second edition.) </p>
+  <p xmlns=""><strong>Vondrick, C., Khosla, A.,
+            Malisiewicz, T., Torralba, A.</strong> (2013). <em>HOGgles:
+              Visualizing Object Detection Features.</em>International
+            Conference on Computer Vision.</p>
+  <p xmlns=""><strong>Zimmermann, G.</strong> (1956).  <em>Die Hieroglyphen der Maya Handschriften. </em>Abhandlungen
+            aus dem Gebiet der Auslandskunde, Band 62- Reihe B, Universität  Hamburg.
+          </p>
+  <p xmlns="">SLUB: Sächsischen
+            Landes- und Universitätsbibliothek Dresden</p>
+  <p xmlns="">
+    <a href="http://digital.slub-dresden.de/werkansicht/dlf/2967/1/cache.off">http://digital.slub-dresden.de/werkansicht/dlf/2967/1/cache.off</a>
+  </p>
+  <p xmlns="">
+    <a href="http://gallica.bnf.fr/ark:/12148/btv1b8446947j/f1.zoom.r=Codex%20Peresianus.langDE">http://gallica.bnf.fr/ark:/12148/btv1b8446947j/f1.zoom.r=Codex%20Peresianus.langDE</a>
+  </p>
+  <p xmlns="">
+    <a href="http://digital.slub-dresden.de/werkansicht/cache.off?id=5363&amp;tx_dlf%5Bid%5D=2967&amp;tx_dlf%5Bpage%5D=47">http://digital.slub-dresden.de/werkansicht/cache.off?id=5363&amp;tx_dlf%5Bid%5D=2967&amp;tx_dlf%5Bpage%5D=47</a>
+  </p>
+  <p xmlns="">
+    <a href="http://digital.slub-dresden.de/werkansicht/cache.off?id=5363&amp;tx_dlf%5Bid%5D=2967&amp;tx_dlf%5Bpage%5D=47">http://digital.slub-dresden.de/werkansicht/cache.off?id=5363&amp;tx_dlf%5Bid%5D=2967&amp;tx_dlf%5Bpage%5D=47</a>
+  </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

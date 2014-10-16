@@ -1,0 +1,148 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-253.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Process Data for Digital Scholarly Editions</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>8</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>413 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:gunter.vasold@uni-graz.at"><span class="author-surname">Vasold</span>,
+									<span class="author-forename">Gunter</span></a>
+        <a href="http://www.google.com/#q=Vasold, Gunter">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Graz</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">Working on scholarly edition in general can be seen as a chain of working steps. Each step leads to an intermediate result, which other steps may build upon. At the end of this chain stands the published edition as the final result. Traditionally these steps, thus the editorial process, are described in form of methodological guidelines and editorial principles. Digital scholarly editions not only add new aspects like the separation of data and presentation or the chance to include additional materials <cite href="#n1">1</cite><cite href="#n2">2</cite><cite href="#n3">3</cite><cite href="#n4">4</cite>, they might also change the way we document editorial processes. This 
+seems particularly important for new forms of digital scholarly editions
+ like <em>open source editions</em><cite href="#n5">5</cite>, <em>work in progress editions</em> <cite href="#n6">6</cite>, <em>editions 2.0</em> <cite href="#n7">7</cite> or <em>social editions</em><cite href="#n8">8</cite>.
+ Such editions are evolving over time, they are possibly incomplete 
+(work in progress), they might have been created in a collaborative way 
+by many editors, or they provide not only canonical texts but also 
+accompanying materials or results from intermediate stages like 
+graphemic transcriptions, pre-normalized texts etc. as raw data for 
+further enrichment and research.</p>
+  <p xmlns="">As a consequence it is questionable if traditional ways of documenting how an edition was made are still appropriate. If we want to deal with the fact that digital scholarly editions are no longer static resources but collections of evolving results, we must put a stronger focus on process aspects. For evolving scholarly editions we should consider to understand formal process documentation as an essential part of such editions.</p>
+  <h2 xmlns="">Problems</h2>
+  <p xmlns="">First we have to define what we mean with editorial processes. Creating a scholarly edition includes a large number of activities like searching, collecting and evaluating sources, other textual witnesses, literature and images, the review of existing and preliminary editorial work, making transcriptions, collations, normalized texts, abstracts, indexes, glossaries. It also implies tasks like dicscrimen veri ac falsi, stylometric, paleographic, prosopographic, and sphragistic research. Some of these tasks have to be done only once, but the majority of editorial activities is either recursive and/or has to be repeated over and over again, e. g. for each charter of a collection.</p>
+  <p xmlns="">Documenting such processes seems easy, but if we take a closer look, we find that the documenting of single processes requires a clear and formalized concept of processing steps based on the definition that a process is a directed activity which leads from one state to another. I assume that editorial activities can be separated from each other and can therefore be handled as addressable and formally describable units of action. This is a basic prerequisite for process documentation, because we need distinct entities to refer to. Each process has to be defined with its starting point, a defined ending point and a set of activities which lie in between. This means that we do not only have to describe activities, but we also have to create relations between a specific activity and the data sets which represent the starting and ending points of the activity.</p>
+  <p xmlns="">Another issue is how we should describe
+editorial processes. This includes three basically inseparable sub-questions:
+(1) what should be documented to what extent (2) how should this be put into
+practice and (3) which data formats are feasible. The extent of documentation
+depends on the objectives of an editorial project, but a minimal set should include
+timestamps, actors (persons or algorithms), a formalized description and
+possibly an additional free-text description of the action and, as mentioned
+before, pointers to the initial and resulting data. </p>
+  <p xmlns="">The second question deals with the problem
+that documenting single editorial activities seems to put a massive overhead to
+editorial work. But for the greater part this data can be generated
+automatically if we use appropriate working environments.  The question of feasible data formats is
+twofold: we have to distinguish between process data used within a project and
+data which becomes a formal part of the edition. The former needs little
+discussion, as it depends on technical environments. But the latter is still an
+open problem which requires further discussion and research although some solutions
+already exist. It seems that graph based models are particularly suitable for
+the problem <cite href="#n9">9</cite><cite href="#n10">10</cite>, but also XML-based
+standards for process descriptions like PREMIS must be investigated as possibly
+adaptable models.</p>
+  <p xmlns="">The third and most fundamental question is what can we do with this data
+or more pragmatic: why should we start collecting process data at all?
+Formalizing editorial processes and the availability of such data has multiple
+benefits. From a project management point of view this data can be used to get
+an overview of the project status at any point in time. One can use this data
+to find out for example how long a task takes on average, which might become
+important for future project planning. Process data also can be used to trigger
+actions like sending a message to co-workers if a certain state has been
+reached or even to move a document automatically along a predefined workflow
+based chain of tasks. In quality control process data can be utilized to
+identify systematic errors. </p>
+  <p xmlns="">From a user point of view quality control
+will become more important with new forms of scholarly editions. If an edition has
+many contributors, or if an edition has no final result, it is partly up to the
+user to decide if a particular element of an edition is trustworthy. Peter
+Robinson has claimed that every act of editing should be attributed to the
+person who did it, because this allows attribution and trust <cite href="#n11">11</cite>. Process
+metadata describing when and by whom an element was added or changed can therefore
+be an important indicator for the reliability.  </p>
+  <p xmlns="">Open ended and collaborative editions
+consist of an ever increasing number of representation forms and versions,
+which constitute multidimensional knowledge spaces. Process data can be used to
+construct references and therefore contexts between the single components of
+such a multidimensional scholarly edition <cite href="#n12">12</cite>. Hence, process data
+can give important directions when users want to leave the paths predetermined by
+editors.</p>
+  <h2 xmlns="">Approaches</h2>
+  <p xmlns="">The problem of process planning and process documentation is of course not unique to scholarly editions. One example is software development, where many contributors can work on the same project, continuously creating new and refactoring existing code. This requires the use of software versioning and control system like Apache Subversion or Git for the creation and organization of process metadata which document different versions of files and development branches. In science there is a long tradition of hand written log books with the purpose to keep laboratory work reproducible and transparent. Nowadays these log books are replaced by electronic systems which generate and log great parts of process metadata automatically <cite href="#n13">13</cite>. </p>
+  <p xmlns="">Most advanced in this domain is business
+process management (BPM) as a discipline of business informatics <cite href="#n14">14</cite>. It is focusing on process optimization which is not the
+main problem with scholarly editions, but BPM has developed a domain specific
+terminology, conceptual frameworks, software tools and standards like WfMC, WSFL,
+XPDL, BPEL or BPMN, which turn out to be very useful for understanding our
+topic. Concerning the problems they try to solve document related technologies<cite href="#n15">15</cite>, especially (enterprise)
+content management <cite href="#n16">16</cite> <cite href="#n17">17</cite> seem to be more applicable
+to digital scholarly editions than BPM. Content management describes the life
+cycle of a document through a chain of states in an abstract way. Content
+management systems implement these formalized life cycles by providing states,
+workflows, users and roles. They are able to keep track of stages and versions,
+are able to automatically route documents through defined paths and to collect
+metadata for every stage and action. Enterprise content management must not be
+confused with web content management, as web content management systems are mostly
+simplistic, monolithic and proprietary applications, which are not suitable in
+terms of long time availability.</p>
+  <h2 xmlns="">Conclusion
+
+</h2>
+  <p xmlns="">New open forms of digital editions require
+a stronger focus on editorial processes. This affects the planning of work,
+needs support for process specific workflows and requires process specific
+metadata which has to be seen as an essential part of an edition. Other fields,
+particularly (enterprise) content management has requirements similar to those
+of scholarly editions. Upcoming software tools for digital editions should
+investigate CMS with regard to process aspects and adopt useful features. Special
+focus has to be put on the development of an appropriate, interchangeable
+format for edition-related process metadata.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Sahle, P.</strong> (2013). <em>Digitale Editionsformen, Vol. 2: Befunde, Theorie und Methodik</em>. BoD: Norderstedt.
+          </p>
+  <p xmlns="">2. <strong>Robinson, P.</strong> (2013). <em>Towards a Theory of Digital Edition</em>s. In: Variants – Journal of the European Society for Textual Scholarship, 10, 105-131.
+          </p>
+  <p xmlns="">3. <strong>Pierazzo, E</strong> (2011). <em>A rationale of digital documentary editions</em>. In: Literary and Linguistic Computing, 26, 463-477.
+          </p>
+  <p xmlns="">4. <strong>Dahlström, M.</strong> (2004). <em>How Reproductive is a Scholarly Edition?</em> In: Literary and Linguistic Computing, 19, 17-33.
+          </p>
+  <p xmlns="">5. <strong>Bodard, G. and Garcés, J.</strong> (2009). <em>Open Source Critical Editions: A Rationale</em>. In: Deegan, M, Sutherland K. (eds.) Text Editing, Print and the Digital World. Farnham: Ashgate, 83-98.
+          </p>
+  <p xmlns="">6. <strong>Kropač, I. H.</strong> (2008). <em>Work in Progress: Vom Digitalisat zum edierten Text</em>. In: Thumser, M., Tandecki, J. (eds.) Editionswissenschaftliche Kolloquien 2005/2007. Toruń: TNT, 167-183.
+          </p>
+  <p xmlns="">7. <strong>Boot, P. and van Zundert, J.</strong> (2011). <em>The Digital Edition 2.0 and The Digital Library: Services, not Resources. In: Bibliothek und Wissenschaft</em>, 44, 141-152.
+          </p>
+  <p xmlns="">8. <strong>Osborne, R. et al.</strong> (2013). <em>eResearch Tools to Support the Collaborative Authoring and Management of Electronic Scholarly Editions</em>. In: Digital Humanities 2013, Conference Abstracts, 334-337.
+          </p>
+  <p xmlns="">9. <strong>Osborne, R. et al. (2013). <em>eResearch Tools to Support the Collaborative Authoring and Management of Electronic Scholarly Editions</em>. In: Digital Humanities 2013, Conference Abstracts, 334-337.</strong></p>
+  <p xmlns="">10. <strong>DeFerrari, J. et al.</strong> (2002). <em>Managing the Lifecycle of Information</em>. Hamburg: AIIM.
+          </p>
+  <p xmlns="">11. <strong>Robinson, P</strong> (2013). <em>Five desiderata for scholarly editions in digital form</em>. In: Digital Humanities 2013: Conference Abstracts, 355-356.
+          </p>
+  <p xmlns="">12. <strong>Vasold, G.</strong> (2014). <em>Progressive Editionen als multidimensionale Informationsräume</em>. In: Ambrosio, S. et al. (eds.) Digital Diplomatics. The Computer as a Tool for the Diplomatist? AfD Beiheft 14, Köln: Böhlau, 75-88.
+          </p>
+  <p xmlns="">13. <strong>Potthoff, J. et al.</strong> (2011).<em> Elektronisches Laborbuch: Beweiswerterhaltung und Langzeitarchivierung in der Forschung</em>. In:  Schomburg, S. et al. (eds.) Digitale Wissenschaft. Köln: hbz, 149-156.
+          </p>
+  <p xmlns="">14. <strong>Vom Brocke, J. and Rosemann, M.</strong> (2010). <em>Handbook on Business Process Management</em>. Springer: Berlin.
+          </p>
+  <p xmlns="">15. <strong>Kampffmeyer U.</strong> (2003). <em>Dokumenten-Technologien</em>. Hamburg: Project Consult.
+          </p>
+  <p xmlns="">16. <strong>DeFerrari, J. et al.</strong> (2002). <em>Managing the Lifecycle of Information</em>. Hamburg: AIIM.
+          </p>
+  <p xmlns="">17. <strong>Cameron, S.</strong> (2011). <em>Enterprise Content Management</em>. Swindon: BCS.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

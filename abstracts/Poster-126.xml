@@ -1,0 +1,179 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-126.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0"><header xmlns=""><h1>Combining Macro- and Microanalysis for Exploring the Construal of Scientific Disciplinarity</h1><ul id="details"><li><label>Category:</label>Poster</li><li><label>Session:</label>2</li><li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li><li><label>Room:</label>Amphipôle Common Area</li></ul><ul id="authors"><li><a href="mailto:fankhauser@ids-mannheim.de"><span class="author-surname">Fankhauser</span>,
+									<span class="author-forename">Peter</span></a><a href="http://www.google.com/#q=Fankhauser, Peter"><img src="/i/search.png"/></a><span class="author-affiliation">IDS Mannheim, Germany</span></li><li><a href="mailto:h.kermes@mx.uni-saarland.de"><span class="author-surname">Kermes</span>,
+									<span class="author-forename">Hannah</span></a><a href="http://www.google.com/#q=Kermes, Hannah"><img src="/i/search.png"/></a><span class="author-affiliation">Saarland University, Germany</span></li><li><a href="mailto:e.teich@mx.uni-saarland.de"><span class="author-surname">Teich</span>,
+									<span class="author-forename">Elke</span></a><a href="http://www.google.com/#q=Teich, Elke"><img src="/i/search.png"/></a><span class="author-affiliation">Saarland University, Germany</span></li></ul></header><p xmlns=""/><p xmlns=""/><p xmlns=""/><h2 xmlns="">1. Introduction</h2><p xmlns="">The English Scientific Text Corpus (SciTex) consists of about 5000 scientific
+papers with about 34 Mio tokens in two time slots, 1970/80s and 2000s <cite href="#n1">1</cite>, <cite href="#n2">2</cite>. It has been
+compiled to investigate the construal of scientific disciplinarity,
+in particular, how interdisciplinary <em>contact</em> disciplines
+emerge from their <em>seed</em> disciplines. Both time slots consist of
+nine disciplines: Computer Science (A) as one seed discipline,
+Linguistics (C1), Biology (C2), Mechanical Engineering (C3),
+Electrical Engineering (C4) as the other seed disciplines, and
+Computational Linguistics (B1), Bioinformatics (B2), Digital
+Construction (B3), and Microelectronics (B4) as the corresponding
+contact disciplines between A and C1-C4. The individual articles
+are subdivided into Abstract, Introduction, Main, and Conclusion.</p><p xmlns="">The orthogonal dimensions time, discipline, and logical structure
+provide for many, potentially interesting setups of variational
+analysis: We can explore the diachronic evolution of contact
+disciplines in comparison to their seed disciplines, variation
+between contact disciplines and their seed disciplines, and genre
+variation between abstracts and text bodies in individual
+disciplines. In this paper we present an approach that combines a
+macroanalytic perspective <cite href="#n3">3</cite> with the more traditional
+microanalytic perspective served by concordance search to explore variation along these dimensions.</p><h2 xmlns="">2. Approach</h2><h2 xmlns="">2.1. Macroanalysis</h2><p xmlns="">For supporting explorative macroanalysis, we use well understood
+visualization techniques – heatmaps and wordclouds – and combine
+them with intuitive exploration paradigms – drill down and side by
+side comparison (see Figure 1). The heatmaps and wordclouds are
+interactive, allowing for a closer inspection at various levels. The
+leftmost heatmap visualizes the highest level contrast between
+abstracts and text bodies in the two time slots (1970s/80s and
+2000s). The middle and right heatmaps serve for inspecting a chosen
+contrast at a lower level at the level of individual disciplines. A
+particular contrast can be chosen by clicking on the respective
+square, numbers indicating which contrast is displayed in the middle
+(Selection 1) and right heatmap (Selection 2).  In this example, the
+middle heatmap visualizes the distances between abstracts and text
+bodies, and the right heatmap visualizes the distances between text
+bodies and abstracts.</p><p xmlns="">The wordclouds underneath the heatmaps display the most typical
+words for a chosen contrast. In Figure 1 the wordcloud to the left
+visualizes the most typical words for abstracts as opposed to
+text bodies in the 2000s. Unlike in the common use of wordclouds, the size
+of words is proportional to their contribution to the distance (as
+defined in Section 2.2), whereas relative frequency is visualized by
+color, ranging from purple to red.</p><div xmlns="" class="figure"><img src="/data/figures/DH2014/DH2014_43_dh2014-figure1.jpg"/><figcaption><p>Fig. 1: Contrast between Abstracts and Text Bodies</p></figcaption></div><p xmlns="">Having a closer look at Figure 1, we can observe that the distance
+between abstracts is generally larger than the distance between text
+bodies, and that it has increased in the 30 years period. This
+general trend is mirrored in the individual disciplines (not shown
+here). Looking at the middle and right heatmaps, we can see that - not
+surprisingly - the distance between particular disciplines are at a
+minimum (squares forming the main diagonal), and the distances among
+the seed disciplines (A and C corpora), are generally larger than the
+distances among contract disciplines.</p><p xmlns="">The  corresponding wordclouds visualize the most typical words
+for abstracts (middle heatmap) and for text bodies (right heatmap) in
+the discipline B1 (Computational Linguistics). In this particular
+contrast, words typical for abstracts are clearly centered around
+constructions of exposition (<em>we propose, describe, investigate</em>),
+main topics of B1 (<em>natural, language (generation), machine
+translation</em>), words describing the methodology (<em>method,
+statistical, computational, system</em>) and function words (<em>and,
+of, on</em>).  Words typical for text bodies are markedly different:
+they comprise B1's main entities of topic elaboration (<em>tokens,
+nouns, object, vp, john, probability</em>), references (<em>see figure,
+table, section</em>),  conjunctions (<em>when, since, because, if</em>),
+auxiliary and modal verbs (<em>be, is, was, were, do, will, would,
+may</em>), and prominently, the determiner <em>the</em>. In summary,
+abstracts exhibit characteristics of an informationally dense text
+(e.g., omission of determiners) with topic oriented content. In
+contrast, text bodies are less dense (determiners, references,
+modality) and more elaborated.</p><p xmlns="">Other contrastive pairs, such as the synchronic comparison between
+disciplines or the diachronic comparison of the two time slots,
+corroborate the results derived by means of computationally much more
+demanding techniques from machine learning [1], [2].</p><h2 xmlns="">2.2. Corpus Representation and Distance Measures</h2><p xmlns="">The individual corpora are tokenized, and tokens are transformed
+to lower case. Stopwords are deliberately not excluded to inspect all
+levels of variation: style, lexico-grammar, and theme. On this basis,
+corpora are represented by means of unigram language models smoothed
+with Jelinek-Mercer smoothing, which is a linear interpolation
+between the relative frequency of a word in a subcorpus and its
+relative frequency in the entire corpus <cite href="#n4">4</cite>. The distance between
+two corpora <em>P</em> and <em>Q</em> is measured by relative entropy <em>D</em>,
+also known as Kullback-Leibler Divergence:</p><em xmlns="">D</em>(<em xmlns="">P</em>||<em xmlns="">Q</em>)&gt;=Sum<em xmlns="">_w p</em>(<em xmlns="">w</em>)<em xmlns="">*</em>log<em xmlns="">_</em>2(<em xmlns="">p(w)/q(w</em>))<p xmlns="">Here <em>p</em>(<em>w</em>) is the probability of a word <em>w</em> in <em>P</em>,
+and <em>q</em>(<em>w</em>) is its probability in <em>Q</em>.
+Relative entropy thus measures the average amount of <em>additional</em>
+bits per word needed to encode words distributed according to <em>P</em>
+by using an encoding optimized for <em>Q</em>.
+Note that this measure is asymmetric, i.e., <em>D</em>(<em>P</em>||<em>Q</em>) !=<em> D</em>(<em>Q</em>||<em>P</em>), and has its minimum at 0
+for <em>P </em>=<em> Q</em><cite href="#n5">5</cite>.</p><p xmlns="">The individual word weights are
+calculated by the pointwise
+Kullback-Leibler Divergence <cite href="#n6">6</cite>:</p><em xmlns="">D</em>_<em xmlns="">w</em>(<em xmlns="">P</em>||<em xmlns="">Q</em>) = <em xmlns="">p</em>(<em xmlns="">w</em>)*log_2(<em xmlns="">p</em>(<em xmlns="">w</em>)/<em xmlns="">q</em>(<em xmlns="">w</em>))<p xmlns="">For all words the statistical
+significance of a difference is calculated based on an unpaired Welch
+t-test on the observed word probabilities in the individual documents
+of a corpus. This is used for discarding words below a given level
+of significance (p-value). A more detailed comparison with other
+measures for comparing corpora <cite href="#n7">7</cite> is beyond the scope of this
+paper and will appear in another venue.</p><h2 xmlns="">2.3. Microanalysis</h2><p xmlns="">Wordclouds serve as a bridge
+between the big distance picture of macroanalysis and microanalyis.
+To this end, they are seamlessly integrated with the IMS Open Corpus Workbench (CQPWeb: http://cwb.sourceforge.net/index.php),
+which provides for an expressive corpus query language and several
+summarization tools, such as collocations and comparative word
+frequency lists. A click on a word sends a query to CQPWeb, which
+returns the word in the chosen context. For example, clicking on
+“do” in the right heatmap (B1 (Txt00) vs. B1 (Abs00)) generates
+the following query shown in Figure 2.</p><div xmlns="" class="figure"><img src="/data/figures/DH2014/DH2014_43_dh2014-figure2.jpg"/><figcaption><p>Fig. 2: Concordance for “do” in B1, text bodies, 2000s</p></figcaption></div><p xmlns="">This query returns a concordance for
+“do” in the 2000s slot of SciTex constrained to subcorpus B1 and
+to the divisions Introduction, Main, and Conclusion. Based on this
+list one can inspect the larger context of
+individual hits and get a ranked list of collocations to distinguish
+the uses of “do” as an auxiliary vs. main verb.</p><h2 xmlns="">3. Related Work</h2><p xmlns="">The need for combining
+macroanalysis with microanalysis is well recognized in the DH
+community <cite href="#n8">8</cite>, <cite href="#n9">9</cite>, and there does exist a variety of frameworks with
+similar goals. Due to space restrictions, we can only give an
+exemplary selection; for a comprehensive overview see
+TAPoR 2.0 (http://tapor.ca/).
+The MONK workbench <cite href="#n10">10</cite> allows to compare pairs of corpora using
+Dunning's log-likelihood ratio <cite href="#n11">11</cite> for word weighting. Apart from the
+different distance measure, the main difference of our approach is
+that we combine the macro perspective of overall distance with the
+micro perspective of individual word weights to allow for an
+explorative analysis of variation. The Voyant Tools <cite href="#n12">12</cite> provide a
+plethora of text visualizations, including word clouds,
+cooccurrences, and word trends based on frequencies. The focus of
+these tools, however, lies on summarizing and visualizing one text or
+corpus, rather than on exploring variation among corpora. Finally,
+the TXM platform <cite href="#n13">13</cite> integrates the IMS Corpus Workbench with some
+macroanalysis R packages such as factorial correspondence analysis,
+contrastive word specificity, and cooccurrence analysis. While this
+integration certainly provides a broader set of analysis techniques,
+it is arguably more complicated to use than the system presented in
+this paper.</p><h2 xmlns=""> 4. Summary and Future
+Work
+</h2><p xmlns="">We
+have presented a system that combines macroanalysis with
+microanalysis to explore language variation, and briefly illustrated
+its use for analyzing differences along the dimensions time,
+discipline, and genre in a corpus of scientific text. Future work
+will be devoted both to technical as well as methodological
+enhancements. A useful technical extension is the facility to
+interactively group subcorpora to larger units, maybe with the help
+of hierarchical clustering based on the distance matrix to form
+meaningful groups. More generally, the support for importing external
+corpora and exporting distance matrices and word weights for analysis
+with other tools is desirable – the presented system has been
+evaluated based on a number of corpora, but the underlying processing
+pipeline certainly needs to be generalized and improved. On the
+methodological side the main challenge lies in supporting a broader
+variety of feature sets beyond simple unigram language models. This
+includes latent language models such as topic models <cite href="#n14">14</cite> and hidden
+markov models <cite href="#n15">15</cite>, but also enriched representations such as
+part-of-speech tagging, and other extensions of unigram models. Such
+richer feature sets allow to focus analysis by means of feature
+selection, but also bear new challenges in measuring and visualizing
+the contribution of features to a contrast at hand, and translating
+features into meaningful queries against the underlying corpus.</p><h2 xmlns="">References</h2><p xmlns="">
+            1. <strong>Elke Teich and Peter Fankhauser</strong> (2010). <em>Exploring a Corpus of Scientific Texts using Data Mining</em>. In S. Gries, S. Wulff, and M. Davies, editors, Corpus-linguistic applications: Current studies, new directions, pp. 233–247. Rodopi, Amsterdam and New York.
+          </p><p xmlns="">
+            2. <strong>Stefania Degaetano-Ortlieb, Hannah Kermes, Ekaterina Lapshinova-Koltunski, and Elke Teich</strong> (2013). <em>SciTex: A diachronic corpus for analyzing the development of scientific registers</em>. In Paul Bennett, Martin Durrell, Silke Scheible, and Richard J. Whitt, editors, New Methods in Historical Corpus Linguistics, Corpus Linguistics and Interdisciplinary Perspectives on Language (CLIP), Volume 3, Narr, Tübingen.
+          </p><p xmlns="">
+            3. <strong>Matthew L. Jockers</strong> (2013). <em>Macroanalysis: Digital Methods</em> &amp; Literary History. University of Illinois Press, Urbana, Chicago, and Springfield.
+          </p><p xmlns="">
+            4. <strong>Chengxiang Zhai and John Lafferty</strong> (2004). <em>A study of smoothing methods for language models applied to information retrieval</em>. ACM Transactions on Information Systems (TOIS), 22(2):179–214.
+          </p><p xmlns="">
+            5. <strong>David J. C. MacKay</strong> (2002). <em>Information Theory</em>, Inference &amp; Learning Algorithms. Cambridge University Press, New York, NY, USA.
+          </p><p xmlns="">
+            6. <strong>Takashi Tomokiyo and Matthew Hurst</strong> (2003). <em>A language model approach to keyphrase extraction</em>. Proceedings of the ACL 2003 Workshop on Multiword Expressions: Analysis, Acquisition and Treatment (MWE '03), Vol. 18, Association for Computational Linguistics,  Stroudsburg, PA, USA, pp. 33–40. DOI=10.3115/1119282.1119287 <a href="http://dx.doi.org/10.3115/1119282.1119287">dx.doi.org/10.3115/1119282.1119287</a></p><p xmlns="">
+            7. <strong>Adam Kilgarriff</strong> (2001). <em>Comparing Corpora</em>. International Journal of Corpus Linguistics, 6(1):97–133.
+          </p><p xmlns="">
+            8. <strong>Michael Correll and Michael Gleicher</strong> (2012). <em>What Shakespeare Taught Us About Text Visualization</em>. IEEE Visualization Workshop Proceedings,  2nd Workshop on Interactive Visual Text Analytics: Task-Driven Analysis of Social Media Content, Seattle, Washington, USA, Oct 2012.
+          </p><p xmlns="">
+            9. <strong>Matthew L. Jockers and Julia Flanders</strong> (2013). <em>A Matter of Scale</em>. Staged debate at the Boston Area Days of Digital Humanities Conference at Northeastern University, March 18, 2013. <a href="http://digitalcommons.unl.edu/englishfacpubs/106/">digitalcommons.unl.edu/englishfacpubs/106/</a></p><p xmlns="">
+            10. <strong>John Unsworth and Martin Mueller</strong> (2009). <em>The MONK Project Final Report</em>. Sep 2009. <a href="http://www.monkproject.org/MONKProjectFinalReport.pdf">www.monkproject.org/MONKProjectFinalReport.pdf</a></p><p xmlns="">
+            11. <strong>Ted Dunning</strong> (1993). <em>Accurate methods for the statistics of surprise and coincidence</em>. Computational Linguistics 19(1):61–74.
+          </p><p xmlns="">
+            12. <strong>Stéfan Sinclair, Geoffrey Rockwell and the Voyant Tools Team</strong> (2012). <em>Voyant Tools</em> (web application). <a href="http://http">http</a>://voyant-tools.org/
+          </p><p xmlns="">
+            13. <strong>Serge Heiden</strong> (2010). <em>The TXM Platform: Building Open-Source Textual Analysis Software Compatible with the TEI Encoding Scheme</em>. Proceedings of the 24th Pacific Asia Conference on Language, Information and Computation, Institute for Digital Enhancement of Cognitive Development, Waseda University, Japan, Nov 2010, pp. 389-398.
+          </p><p xmlns="">
+            14. <strong>David. M. Blei, Andrew Y. Ng, and Michael I. Jordan</strong> (2003). <em>Latent Dirichlet Allocation</em>. Journal of Machine Learning Research, 3:993–1022.
+          </p><p xmlns="">
+            15. <strong>Sharon Goldwater and Tom Griffiths</strong> (2007). <em>A fully Bayesian approach to unsupervised part-of-speech tagging</em>. Proceedings of the 45th Annual Meeting of the Association of Computational Linguistics (ACL'07). Association for Computational Linguistics, Prague, Czech Republic, June 2007, pp. 744–751. <a href="http://www.aclweb.org/anthology/P07-1094">www.aclweb.org/anthology/P07-1094</a></p></article>
+</div></section><footer><hr/></footer></body></html>

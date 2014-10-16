@@ -1,0 +1,126 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-496.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Leaves of Grass: Data Animation and XML Technologies</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>3</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>13:45:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:bbarney2@unl.edu"><span class="author-surname">Barney</span>,
+									<span class="author-forename">Brett</span></a>
+        <a href="http://www.google.com/#q=Barney, Brett">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Nebraska-Lincoln</span>
+      </li>
+      <li>
+        <a href="mailto:brian.pytlikzillig@gmail.com"><span class="author-surname">Pytlik Zillig</span>,
+									<span class="author-forename">Brian</span></a>
+        <a href="http://www.google.com/#q=Pytlik Zillig, Brian">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Nebraska-Lincoln</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">Walt Whitman’s <em>Leaves of Grass</em> is one of the most famous and often-studied works of American
+literature. In the century since Van Wyck Brooks declared Whitman the
+originator of “the sense of something organic in American life”—the first to
+combine high art and rude experience—Whitman’s masterwork has been thoroughly
+digested into a series of critical truisms that gives even new readers of the poems
+a sense of familiarity. Whether we have his poems committed to memory or have
+never actually read one of them, we “all know” that Whitman eschewed
+traditionally poetic diction, that his is a poetry of inclusiveness, that the
+first edition of his text in 1855 is more daring, lively, and experimental than
+later editions, etc. </p>
+  <p xmlns="">Such axioms are comforting in the face of what is on many
+levels a difficult text (actually, a set of texts) to assimilate. Because
+Whitman applied the title “Leaves of Grass” to more than ten distinctly
+different volumes over the course of three and a half decades—not only adding
+poems but also retitling, cancelling, drastically revising, combining, and
+re-grouping existing ones—the goal of accurately tracing the book’s evolution
+has consistently frustrated scholars. Recognizing that “for the reader to
+understand how <em>Leaves of Grass</em> grew
+from edition to edition, some sense had to be made of these often bewildering
+textual permutations,” a group of late-twentieth century scholars labored for
+over a decade to produce a variorum edition, a tremendous accomplishment that
+has, unfortunately, done little to alleviate the bewilderment of permutations. </p>
+  <p xmlns="">The hope that digital technologies might offer a way, at
+last, to lucidly represent the various stages in the evolution of Leaves of Grass was one of the early motivations
+for the creators of the <em>Whitman Archive</em>
+in the late 1990s. We have often revisited the question of how to convey
+visually the information represented in the arcane coding of the 3-volume print
+variorum and inherent in the separate digitized editions. Nearly two decades
+later, however, we haven’t made much progress. </p>
+  <p xmlns="">Though they cannot provide the kind of detailed, objective
+understanding that might be conveyed by the schematic, interactive interfaces
+that we’ve sometimes (very hazily) imagined—ones that somehow collate whole
+texts, poems, lines, and phrases—we have begun to experiment with distant
+reading strategies that provide a different sort of view. So while collation
+tools do not cope well with the scope of transformation involved in Whitman’s
+reworking the first edition’s 10,000-word prose preface into the 4,000-word
+poem “By Blue Ontario’s Shore,” text analysis tools such as Voyant offer a
+number of potentially enlightening prospects on the two works and their
+relationship. </p>
+  <p xmlns="">Likewise, such tools can begin to offer ways to assay and
+          quantify some of the critical commonplaces that have grown up around <em>Leaves of Grass</em>: Is Whitman’s diction,
+in fact, innovative and what makes it so? How do Whitman’s early poems compare to
+his later poems? What basis might be found for claims that Whitman is the great
+poet of America, women, the body, male homoeroticism, or democracy?</p>
+  <p xmlns="">At the University of Nebraska–Lincoln's Center for Digital
+Research in the Humanities we have been experimenting with a new way of
+visualizing phenomena in TEI corpora and have created Indigo, an experimental
+XSLT-based tool that queries TEI files and generates animated videos of the
+results. Using XPath and XQuery techniques, this tool makes it possible to ask
+specific or general questions of a corpus. The data are then output as scalable
+vector graphic (SVG) files that are converted to raster images and rendered in
+high definition H.264 video at 30 frames per second. At its core, Indigo is a
+program for performing scripted stop-motion animation, arranged in one or more
+scenes. What each scene contains is up to the user: it might include letters,
+numbers, shapes, colors, gradients, patterns, lines, paths, or imported raster
+images, each moving or not moving. The only requirement is that a scene must be
+modeled in XSLT, with SVG structures as the initial output. For the user
+wishing to visualize aspects of TEI text corpora, the news is good, for that format
+shares membership with XSLT and SVG in the XML ecosystem. Indigo provides a
+method for presenting, in fresh and unexpected ways, quantitative data relevant
+to scholarly questions in a way that is open-ended, making the user a
+co-creator with Whitman in the “meaning” of his texts. </p>
+  <p xmlns="">
+
+Our experiment involves such activities as creating quantitive analyses of some of the linguistic characteristics of Whitman's poetic corpus, comparing them to those of some of his popular contemporaries, and then "presenting" the results as a video sequence. Such a procedure is admittedly outside the mainstream of critical methodology in the humanities, but it is entirely in keeping with
+Whitman’s own theories of the proper relationships among authors, readers, and
+texts. “The process of reading,” he said, “is not a half-sleep, but, in highest
+sense, an exercise, a gymnast’s struggle; . . . the reader is to do something
+for himself, . . . must himself or herself construct indeed the poem, argument,
+history, metaphysical essay—the text furnishing the hints, the clue, the start
+or frame-work.”<cite href="#n1">1</cite></p>
+  <p xmlns="">As Tanya Clement has recently observed, "sometimes the
+view facilitated by digital tools generates the same data human beings . . .
+could generate by hand, but more quickly," and sometimes "these
+vantage points are remarkably different . . . and provide us with a new
+perspective on texts."<cite href="#n2">2</cite> And as Dana Solomon has written, "due in large
+part to its often powerful and aesthetically pleasing visual impact, relatively
+quick learning curve … and overall 'cool,' the practice of visualizing textual
+data has been widely adopted by the digital humanities."<cite href="#n3">3</cite></p>
+  <p xmlns="">In representing the literary work as an absorbing
+performance, one that comprises both "data" and "art," the
+method we are presenting is calculated to provoke responses in both
+informational and aesthetic registers. It is, in the terms of Jerome McGann and
+Lisa Samuels, an act of “interpretive deformance,” whereby “we are brought to a
+critical position in which we can imagine things about the text that we didn’t
+and perhaps couldn’t otherwise know.”<cite href="#n4">4</cite></p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Whitman, Walt</strong> (1892). <em>Democratic Vistas</em> in Complete Prose Works, (Philadelphia: David McKay), p. 257.
+          </p>
+  <p xmlns="">2. <strong>Clement, T</strong> (2013). <em>Text Analysis, Data Mining, and Visualizations in Literary Scholarship</em> in Literary Studies in the Digital Age: An Evolving Anthology (eds., Kenneth M. Price, Ray Siemens). Modern Language Association.
+          </p>
+  <p xmlns="">3. <strong>Solomon, D.</strong> (2013). <em>Building the Infrastructural Layer: Reading Data Visualization in the Digital Humanities.</em> MLA 2013 Conference Presentation. url: <a href="http://danaryansolomon.wordpress.com/2013/01/08/mla-2013-conference-presentation-from-sunday-162013/">danaryansolomon.wordpress.com/2013/01/08/mla-2013-conference-presentation-from-sunday-162013/</a></p>
+  <p xmlns="">4. <strong>McGann, Jerome and Lisa Samuels.</strong><em>Deformance and Interpretation</em> url: <a href="http://www2.iath.virginia.edu/jjm2f/old/deform.html">www2.iath.virginia.edu/jjm2f/old/deform.html</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

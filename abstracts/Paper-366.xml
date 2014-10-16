@@ -1,0 +1,87 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-366.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Encoding Metaknowledge for Historical Databases</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>8</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:nuessli.ma@gmail.com"><span class="author-surname">Nuessli</span>,
+									<span class="author-forename">Marc-Antoine</span></a>
+        <a href="http://www.google.com/#q=Nuessli, Marc-Antoine">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">EPFL</span>
+      </li>
+      <li>
+        <a href="mailto:frederic.kaplan@epfl.ch"><span class="author-surname">Kaplan</span>,
+									<span class="author-forename">Frédéric</span></a>
+        <a href="http://www.google.com/#q=Kaplan, Frédéric">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">EPFL</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Motivation</h2>
+  <p xmlns="">Historical knowledge is fundamentally uncertain. A given account of an historical event is typically based on a series of sources and on sequences of interpretation and reasoning based on these sources. Generally, the product of this historical research takes the form of a synthesis, like a narrative or a map, but does not give a precise account of the intellectual process that led to this result.</p>
+  <p xmlns="">
+Our project consists of developing a methodology, based on semantic web technologies, to encode historical knowledge, while documenting, in detail, the intellectual sequences linking the historical sources with a given encoding, also know as<em> paradata</em><cite href="#n1">1</cite>. More generally, the aim of this methodology is to build systems capable of representing multiple historical realities, as they are used to document the underlying processes in the construction of possible knowledge spaces.</p>
+  <h2 xmlns="">Overview of the Approach</h2>
+  <p xmlns="">Semantic web technologies, with formal languages like <em>RDF</em> and <em>OWL</em>, offer relevant solutions for deploying sustainable, large-scale and collaborative historical databases (see for instance <cite href="#n2">2</cite>). Compared to traditional relational databases, these technologies offer more flexibility and scalability, avoiding the painful problems of large schema migration. They are grounded in logic and thus permit us to easily conduct semantic inferences.  Some very stable semantic based ontologies like <em>CIDOC-CRM</em>, now an ISO standard, have been used successfully in the cultural heritage domain for about 20 years <cite href="#n3">3</cite>.</p>
+  <p xmlns="">
+However, the languages used in the semantic web technologies have a major limitation that prevents their usage for encoding metahistorical information. Expressed knowledge is typically formalised with <em>RDF</em> triplets which are not objects in the same order as the knowledge content (<em>RDF</em> resources identified with <em>URIs</em>) to which they link. For example, it is difficult to document the source, the author or the uncertainty of given <em>RDF</em> statement.</p>
+  <p xmlns="">
+One way to compensate for this flaw, while respecting the <em>W3C </em>norms, consists of transforming each <em>RDF</em> triplet (<em>subject predicate object</em>) into three triplets (<em>statement rdf:subject subject</em>), (<em>statement rdf:predicate predicate</em>), (<em>statement rdf:object object</em>). Using this approach, it becomes possible to add new triplets with a given statement as subject, documenting additional paradata about this statement. The resulting knowledge base can include metahistorical information, i.e. information about historical information creation processes. This metainformation can document the choice of sources, transcription phases, coding strategies, interpretation methods and whether these steps are realised by humans or machines. Thus, each historical database designed following this methodology integrates two levels of knowledge. The first level provides the documentation about the origin, the nature and the formalisation used to encode historical data, while the second level codes for the historical data itself. </p>
+  <h2 xmlns="">The Knowledge Construction Vocabulary (KCV)</h2>
+  <p xmlns="">We are working on a specific <em>RDF </em>vocabulary, called <em>Knowledge Construction Vocabulary</em> (KCV), which will enable us to implement the two level organisation using the standards of the semantic web. <em>KCV RDF</em> statements represent knowledge construction steps, while effective historical knowledge is only expressed through reified triplets. An important concept in this vocabulary is the notion of <em>knowledge spaces</em>. A knowledge space designates a closed set of coherent knowledge, typically based on a defined set of sources and methods. Examples of knowledge spaces include documentary spaces (e.g. a defined corpus of sources) and fictional spaces (e.g a coherent world typically described in a book).</p>
+  <p xmlns=""> 
+Figure 1 shows an example of the kind of graphs that can be built using the KCV vocabulary.  In this example, two knowledge spaces have been defined: one documentary space <em>(</em><em>DHLABDocuments)</em> and one so-called fictional space <em>(HistoireVenise_S1)</em>. Each of these two spaces is defined as a unique resource with an associated URI.  A statement <em>(Statement1)</em> stands for a reified triplet defining that <em>(HistoireVenise)</em> is a kind of <em>Book </em>and<em> </em>is linked to the documentary space. The KCV vocabulary allows us to document who entered the information (<em>fournier</em>) and the creation time of the statement (<em>May 06th</em>). To formalise the fact that the book, <em>HistoireVenise,</em> is used as a knowledge source, a specific resources <em>HistoireVenise_KS</em> is created and linked with the <em>HistoireVenise</em>, the book, and the general document space <em>DHLABDocuments</em>. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_3_kcv-schema.jpg"/>
+    <figcaption>
+      <p>Fig. 1: A "toy" example of the use of the KCV vocabulary to code historical and metahistorical information</p>
+    </figcaption>
+  </div>
+  <p xmlns="">In the fictional space <em>HistoireVenise_S1</em>, a statement <em>(Statement2)</em> codes for a reified triplet indicating that the reconstruction of the Rialto bridge occurred during the period of 1588-1591. Information about the author, the creation date and the reliability of <em>Statement2</em> are documented using various <em>KCV</em> triplets. The link between the document space and the fictional space is encoded by a link between the knowledge source <em>HistoireVenise_KS</em> and a statement, <em>Statement2_origin</em>, linked to <em>Statement2</em> of type <em>interpretedtextknowledge</em>. </p>
+  <p xmlns="">We can make three remarks:</p>
+  <ol xmlns="">
+    <li>This is obviously a "toy" example (real graphs encoding historical data are typically much bigger), but it illustrates how historical and metahistorical information can be coded with a linked data approach. This allows us to envision queries mixing both historical and metahistorical requests, for instance reconstructing an historical context based only on certain kinds of sources or excluding information that was provided to the database by some authors.</li>
+    <li>The kind of intellectual processes documented by <em>KCV</em> can easily include algorithmic steps like digitisation, optical character recognition pipelines on documents,  text mining, semantic disambiguation, etc. The version and the author of the algorithms used can easily be included using <em>KCV</em> statements. This kind of documentation permits us to exclude historical information linked with some processing using early versions of algorithms that may have "polluted" the data. This is an important prerequisite for building sustainable databases in the long term. </li>
+    <li>Documenting metahistorical information using <em>KCV</em> may look like a tedious process; however, in most cases, this information can be inserted automatically using a higher-level interface. A database interface in which the user is logged permits to easily produce historical data based on the<em> KCV</em> vocabulary, taking the form of reified <em>RDF </em>triplets, while documenting the author, the data and the methods used. </li>
+  </ol>
+  <h2 xmlns="">Ontologies Matching</h2>
+  <p xmlns="">The <em>KCV</em> approach for encoding historical databases is also interesting from the perspective of ontologies alignment: a notoriously difficult issue <cite href="#n4">4</cite>. Each research group tended to code historical data using their own local ontologies, adapted to their research approach. The metahistorical documentation provided by the KCV vocabulary enables us to envision strategies for mapping such ontologies to a pivot ontology. Figure 2 shows this general process in which several knowledge spaces are linked. Each group locally describes the source documents used (1), transcribes their content (2) and eventually codes/interprets this content (3). Throughout this process, two groups produced two independent custom ontologies (A and B). The alignment process proceed in two additional steps. First, both local ontologies are mapped onto a general content ontology (4) (for instance CIDOC-CRM, but not necessarily) and then, once expressed in this common conceptual model, the information contained in the graph is aligned and the content is merged (5). </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_3_kcv-schema2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: The general process of ontologies matching</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Figure 3 gives a more detailed account of the final step. First knowledge sources are mapped, then types are mapped and eventually predicates are mapped. In some cases, only a partial level of correspondence can be reached. These steps can be done manually or automatically and are, of course, subject to errors. It is therefore crucial to document the authors of these matching steps, whether they are humans or algorithms. This is why the authors are, linked all the other steps, described in the KCV vocabulary. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_3_kcv-schema3.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Detail of the ontologies matching process</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">Conclusion</h2>
+  <p xmlns="">The approach briefly presented in this paper enables us to encode historical and metahistorical data in a unified framework. The method we describe is fully compliant with the current technologies and standards of the semantic web (RDF, SPARQL, etc.). It does impose a unified historical terminology but can also be used in conjunction with existing standards. For instance CIDOC-CRM can be used to describe historical knowledge extracted from archival documents (e.g events, people, places) using RDF triplets and KCV can be used to code information about the CIDOC-CRM triplets themselves, such as documenting who entered a particular triplet. The originality of our proposal comes from the introduction of the this second level (metahistorical) on top of the existing RDF ontologies.  This does not necessarily impose an additional burden on the person encoding the historical data. Using a dedicated web interface, the metahistorical information can be added automatically as the data is progressively entered. </p>
+  <p xmlns="">Coding metahistorical information by making explicit the many underlying modelling processes allows us to prepare for possible ontology evolution and enables easier ontology matching. More importantly, our approach does not impose the search for a global truth (a unique and common version of historical events) but pushes towards the explication of the intellectual and technical processes involved in historical research, thus giving the possibility of fully documented historical reconstructions. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Bentkowska-Kafel A., Denard H., and Baker D.</strong> (2012). <em>Paradata and Transparency in Virtual Heritage</em>. Ashgate Publishing, Ltd.
+          </p>
+  <p xmlns="">2. <strong>Ide, N., and D. Woolner</strong> (2007). <em>Historical Ontologies.</em> Words and Intelligence II: 137–152.
+          </p>
+  <p xmlns="">3. <strong>Doerr, M.</strong> (2003) <em>The CIDOC CRM – an Ontological Approach to Semantic Interoperability of Metadata.</em> AI Magazine 24, no. 3.
+          </p>
+  <p xmlns="">4. <strong>Shvaiko P. and J. Euzenat</strong> (2013). <em>Ontology matching: state of the art and future challenges</em>. IEEE Transactions on Knowledge and Data Engineering, 25(1): 158-176.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

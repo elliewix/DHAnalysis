@@ -1,0 +1,92 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-34.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>LAUDATIO-Repository: Accessing a heterogeneous field of linguistic corpora with the help of an open access repository</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Krause</span>,
+									<span class="author-forename">Thomas</span></a>
+        <a href="http://www.google.com/#q=Krause, Thomas">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Humboldt-Universität zu Berlin</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Lüdeling</span>,
+									<span class="author-forename">Anke</span></a>
+        <a href="http://www.google.com/#q=Lüdeling, Anke">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Humboldt-Universität zu Berlin</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Odebrecht</span>,
+									<span class="author-forename">Carolin</span></a>
+        <a href="http://www.google.com/#q=Odebrecht, Carolin">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Humboldt-Universität zu Berlin</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Romary</span>,
+									<span class="author-forename">Laurent</span></a>
+        <a href="http://www.google.com/#q=Romary, Laurent">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Humboldt-Universität zu Berlin, INRIA France</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Schirmbacher</span>,
+									<span class="author-forename">Peter</span></a>
+        <a href="http://www.google.com/#q=Schirmbacher, Peter">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Humboldt-Universität zu Berlin</span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Zielke</span>,
+									<span class="author-forename">Dennis</span></a>
+        <a href="http://www.google.com/#q=Zielke, Dennis">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Humboldt-Universität zu Berlin</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">Open access to digital research data for historical linguistics enables a fruitful exchange of resources and  methods. To achieve this goal the LAUDATIO-Repository provides long-term storage and open access to historical corpus linguistic data. We build a research data repository that on the one hand serves a set of well-defined scholarly communities’ needs, but is on the other hand flexible enough to be used and extended to serve other communities not considered beforehand. In order to consider the scholar's needs, a clear understanding of the research data usage and research practice is required.</p>
+  <p xmlns="">Digitalization and annotation of historical texts for linguistic purposes is a methodologically and technologically challenging task that consumes a lot of time and resources. Linguistic analysis uses various annotations and methods such as multiple segmentations¹ <cite href="#n1">1</cite>, normalizations <cite href="#n2">2</cite>, constituent syntax trees, dependency annotations and (semi-) automatic consistency checks <cite href="#n3">3</cite>. Having the chance to either look up these methods and their results, the corpus itself, or to re-use existing corpora for further research may facilitate and enrich the research methods and possibilities of the linguistic community. An extensive documentation of the whole corpus preparation phase including annotation, tools and the resulting data allows a uniform and structured access to such a heterogeneous field of research data and thereby a first establishment of best practice standards.</p>
+  <p xmlns="">There are many tools and formats that are used to annotate and process historical corpora, e.g. for token based annotations and parses. g. <cite href="#n4">4</cite>, <cite href="#n5">5</cite>). Thus the repository is open to all formats. The repository is based on the Open-Source Software Fedora 3.6 <cite href="#n6">6</cite> and a custom web interface that uses its API. A single corpus can be stored and downloaded in multiple formats. A specific corpus version therefore comprises any number of data streams that capture the same dataset at a certain point in time. This mechanism is flexible enough to deal with annotation format diversity deriving from existing annotation tools such as EXMARaLDA, @nnotate or ELAN and as well as new formats (that have not been invented yet).</p>
+  <p xmlns="">We have also developed a unified meta-model for (historical) text corpora that is used to describe heterogeneous corpus linguistic data and that can be modified according to future developments in the research field. Our repository will support all existing metadata versions for compatibility reasons. For each corpus in the repository a metadata documentation using this meta-model exists. Each corpus’ metadata is automatically validated against the scheme while being imported into the repository. To enable a flexible metadata modeling we chose a customization of TEI XML with the help of an ODD <cite href="#n7">7</cite> specification. The meta-model indirectly refers to basic concepts of corpora.<em>2</em> Each corpus has a structured and uniform documentation which comprises information about the corpus creation, the documents and every kind of annotation. For instance the authorship of each annotation layer is reported for citation and copyright reasons. Furthermore the whole corpus preparation process is covered as well.</p>
+  <p xmlns="">In order to support re-use of existing corpora and to reduce duplicate work, researchers can search, download and import new corpora. Additionally, new annotations or documents can be added as new versions of existing corpora. The detailed metadata documentation helps researchers to understand the corpus and its context. Moreover LAUDATIO provides a faceted and free-text search for certain annotation methods, tools or annotation values (see  <cite href="#n8">8</cite> for an extensive discussion of faceted search). ElasticSearch³<em/>
+is used as a technical backend.</p>
+  <p xmlns="">The flexible technical infrastructure and the extensive corpus documentation of LAUDATIO will be presented in the demo session.</p>
+  <h2 xmlns="">Footnotes</h2>
+  <p xmlns="">1 Multiple segmentations or tokenizations are used to represent different, possible conflicting, interpretations of the smallest units in a corpus.</p>
+  <p xmlns="">2 The current documentation of the metadata can be accessed under <a href="http://korpling.german.hu-berlin.de/schemata/laudatio/doc/S6/corpus/">korpling.german.hu-berlin.de/schemata/laudatio/doc/S6/corpus</a></p>
+  <p xmlns="">3 ElasticSearch website, <a href="http://www.elasticsearch.org">www.elasticsearch.org</a>, accessed 29 Oct. 2013</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Krause, Thomas, Lüdeling, Anke, Odebrecht, Carolin, Zeldes, Amir</strong> (2012) <em>Multiple Tokenization in a Diachronic Corpus</em>. Exploring Ancient Languages through Corpora Conference (EALC), 14.-16.Juni 2012.
+          </p>
+  <p xmlns="">2. <strong>Bollmann, Marcel, Petran, Florian, Dipper, Stefanie</strong> (2011) <em>Rule-Based Normalization of Historical Texts</em>. Proceedings of Language Technologies for Digital Humanities and		Cultural Heritage Workshop Hissar, Bulgaria, 16 September 2011. pp. 34–42.
+          </p>
+  <p xmlns="">3. <strong>Dickinson, Markus, and W. Detmar Meurers.</strong> . <em>Detecting errors in part-of-speech annotation.</em> Proceedings of the tenth conference on European chapter of the Association for Computational Linguistics-Volume 1. Association for Computational Linguistics.
+          </p>
+  <p xmlns="">4. <strong>Schmidt, Thomas</strong> (2009) <em>Creating and Working with Spoken Language Corpora in	EXMARaLDA</em>. In: Lyding, V. (ed.) LULCL II: Lesser Used Languages &amp; Computer Linguistics II. pp. 151-164.
+          </p>
+  <p xmlns="">5. <strong>Brugman, Hennie, Russel, Albert</strong> (2004). <em>Annotating Multimedia/ Multi-modal resources with	 ELAN</em>. In: Proceedings of LREC 2004, Fourth International Conference on Language Resources and Evaluation.
+          </p>
+  <p xmlns="">6. <strong>Lagoze, Carl, et al.</strong> (2006) <em>Fedora: an architecture for complex objects and their relationships.</em> International Journal on Digital Libraries 6.2: 124-138.
+          </p>
+  <p xmlns="">7. <strong>Burnard, Lou, Rahtz, Sebastian</strong> (2004) <em>RelaxNG with Son of ODD</em>. Extreme Markup Languages Proceedings 2004. Montréal, Québec.
+          </p>
+  <p xmlns="">8. <strong>Tunkelang, Daniel</strong> (2009) <em>Faceted search</em>. Synthesis Lectures on Information Concepts, Retrieval, and Services 1.1. pp. 1-80.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

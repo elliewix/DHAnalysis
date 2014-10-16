@@ -1,0 +1,42 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-219.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Cirilo Client: An application for data curation and content preservation</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:elisabeth.steiner@uni-graz.at"><span class="author-surname">Steiner</span>,
+									<span class="author-forename">Elisabeth</span></a>
+        <a href="http://www.google.com/#q=Steiner, Elisabeth">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Graz</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">GAMS: A Fedora Commons instance</h2>
+  <p xmlns="">Since 2003 the Centre for Information Modeling - Austrian Centre for Digital Humanities at the University of Graz (Austria) provides an infrastructure for a variety of DH projects. After years of building insular solutions, the Centre introduced a powerful yet flexible new infrastructure, called GAMS (Geisteswissenschaftliches Asset Management System, AMS for the Humanities). It is based on the Fedora Commons architecture. Thus, the infrastructure inherits all features already provided by Fedora: full OAIS-compliance, strict separation of data and metadata, and predefined interfaces like OAI-PMH. A central advantage of the Fedora architecture is its object model: An asset consists of a primary source, some metadata and virtual representations derived from the primary source. The object is completely self-descriptive: It knows about all changes that have been made to it, its version history, datastreams and assigned context objects. Finally, it also knows about all possible representation forms. Each object contains all the necessary information to store, preserve, retrieve and view it. </p>
+  <h2 xmlns="">Cirilo Client: Mass operations in Fedora made easy</h2>
+  <p xmlns="">Although Fedora is a powerful tool, front-end object management is not always easy, especially with regard to mass operations. The Centre has developed a tool for this use case, complementing Fedora’s built-in Admin Client. Cirilo is a java application developed for data curation and content preservation in Fedora-based repository systems. Content preservation and data curation in our sense include object management and creation, versioning, normalization and standards, and choice of data formats. </p>
+  <p xmlns="">Cirilo makes use of Fedora’s management-API (API-M). It offers applications which are particularly prone to being used as tools for mass operations on Fedora repository objects, such as ingest or replacement processes: With Cirilo ingest processes can be performed from the file system, from an eXist database or an Excel spreadsheet. During the ingest metadata is automatically extracted from the source document and written to the newly created object (for instance in DC format).</p>
+  <p xmlns="">  The client operates on a collection of predefined content models which can be used without further adjustments for standard workflow scenarios like the management of collections of TEI objects. The content models, which are based on the Fedora object model, are class definitions: On the one hand they define the (MIME-)type of the contained data streams, on the other hand they designate dissemination methods operating on these data streams. Every object in the repository is an instance of one of these class definitions. The advantage of this concept lies in the fact that very complex data sources and workflows can be handled easily. </p>
+  <p xmlns="">Currently, the client offers various content models for specific purposes, special emphasis lies on the TEI model. The TEI ingest processes can be flexibly costumized: during ingest policies for the extraction of semantic information can be applied, referenced images can be uploaded simultaneously and ontology concepts can be resolved. A new content model currently in development creates the appropriate ontology objects, especially SKOS objects. A designated query object makes it possible to pose queries with parameters to the Mulgara triplestore. With the help of these ontology and query objects dynamic indices can be created. There is a container object for the creation of collections available, which makes it easy to organize your resources. Finally, there are some models optimized for specified primary sources like METS/MODS, HTML, PDF, BibTeX or external resources accessible via an URL. A content model for linguistic resources is in development (in cooperation with ICLTT, Vienna). Currently, we are testing how controlled vocabularies and thesauri (for instance geonames.org), can be sensibly integrated in the system. </p>
+  <p xmlns="">The user can assign numerous virtual representations via the client. The METS/MODS object is designed to be viewed in the DFG-Viewer. TEI objects can be directly used as the input for the Voyant Tools or the Versioning Machine. The members of a context object can be projected on a map using Google Maps. Basically any web-based service can be integrated into the infrastructure. Of course, user- and project-specific stylesheets are often employed.</p>
+  <p xmlns="">The Cirilo Client will be made available as an open source software project, including documentation, as a contribution of the Centre for Information Modeling - Austrian Centre for Digital Humanities to DARIAH-AT in 2014.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">DARIAH-EU: <a href="http://www.dariah.eu">www.dariah.eu</a> [2013-10-28]</p>
+  <p xmlns="">DFG-Viewer: <a href="http://dfg-viewer.de/ueber-das-projekt/">dfg-viewer.de/ueber-das-projekt</a> [2013-10-28]</p>
+  <p xmlns="">Fedora Commons: <a href="http://www.fedora-commons.org/">www.fedora-commons.org</a> [2013-10-28]</p>
+  <p xmlns="">Google Maps: <a href="https://maps.google.at/">maps.google.at</a> [2013-10-28]</p>
+  <p xmlns="">Geisteswissenschaftliches Asset Management System, AMS for the Humanities: <a href="http://gams.uni-graz.at/">gams.uni-graz.at</a> [2013-10-28]</p>
+  <p xmlns=""><strong>Carl Lagoze, Sandy Payette, Edwin Shin, Chris Wilper, Fedora</strong> (2005). An Architecture for Complex Objects and their Relationships. <a href="http://arxiv.org/ftp/cs/papers/0501/0501012.pdf">arxiv.org/ftp/cs/papers/0501/0501012.pdf</a> [2013-10-28]</p>
+  <p xmlns="">Versioning Machine: <a href="http://v-machine.org/">v-machine.org</a> [2013-10-28]</p>
+  <p xmlns="">Voyant Tools: <a href="http://voyant-tools.org/">voyant-tools.org</a> [2013-10-28]</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

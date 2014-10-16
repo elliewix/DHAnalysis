@@ -1,0 +1,76 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-842.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Kiln: XML Publishing Framework</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Vieira</span>,
+									<span class="author-forename">Miguel</span></a>
+        <a href="http://www.google.com/#q=Vieira, Miguel">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">King's College London, United Kingdom </span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Norrish</span>,
+									<span class="author-forename">Jamie</span></a>
+        <a href="http://www.google.com/#q=Norrish, Jamie">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">King's College London, United Kingdom </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">Getting an XML-based website up and running can be a repetitive, time consuming and tedious task. It usually also requires someone with good technical knowledge to bring all of the pieces together into a complete package. Kiln is a tool that allows a non-technical user to quickly and easily create a working web application that provides base functionality for publishing, indexing and searching XML source content.</p>
+  <p xmlns="">The user is free to focus on developing the content, and can easily assess the way in which content is used and review changes to see how they are reflected in the published output. Importantly this ease of use does not preclude the customisation of the existing functionality, nor the addition of new tools, processes and outputs.</p>
+  <p xmlns="">Kiln, previously known as xMod, is an open source multi-platform framework for building and deploying complex websites whose source content is primarily in TEI/XML. It brings together various independent software components into an integrated whole that provides the infrastructure and base functionality for such sites.</p>
+  <p xmlns="">Kiln is developed and maintained by a team at the Department of Digital Humanities, King’s College London. Over the past years and over several versions, Kiln has been used to generate more than 50 websites for digital humanities research projects which have very different source materials and customised functionality.</p>
+  <p xmlns="">The main Kiln components are:</p>
+  <ul xmlns="">
+    <li>Apache Cocoon web development framework for XML processing.</li>
+    <li>Jetty web application server.</li>
+    <li>Apache Solr, a searching platform for indexing, searching and browsing of contents.</li>
+    <li>Sesame, a framework for processing RDF data.</li>
+  </ul>
+  <p xmlns="">In a production web server context, Kiln integrates with other web publishing tools to support images, maps and other data sources, like relational databases. It can equally easily be used to provide a full web application solution, or as a backend providing content to be surfaced by some other technology, such as Django or WordPress.</p>
+  <p xmlns="">Kiln has been developed around the concept of the separation of roles, allowing people with different backgrounds, knowledge and skills to work simultaneously on the same project without interfering with one another’s work. The parts of the system used by developers, designers and content editors are distinct. For example, the templating engine handles the general structure of an output document in individual files, with reference to separate sources which supply the individual content elements. Templating is also achieved using a lightweight syntax that allows frontend development to take place without any knowledge of XSLT.Kiln has two competing design goals: to support the development of unique, complex web applications; and to provide an out-of-the-box system suitable for a single non-technical person to publish a TEI-based site. The former demands not only the customisability of every component, but also the avoidance of any technical magic that makes one way easier at the cost of another way being harder. The latter requires a large amount of built-in behaviour that can be easily tweaked in isolation, and excellent documentation. Kiln’s documentation includes a tutorial showing how to customise each of the major elements of a site, as required beyond the provided defaults.</p>
+  <p xmlns="">In comparison with other publishing tools, such as XTF, SADE and TE- ICHI, Kiln offers some advantages. It is mature and flexible, as it has been in active development for 10 years since its initial version, and has been used in many research projects. It is standalone (beyond an installation of the Java language), requiring no other software for any of its functionality, and it provides a working site, including a faceted search, with no more than placing TEI files in a particular directory.</p>
+  <p xmlns="">The proposed poster will provide a diagrammatic overview of a Kiln project structure, and an accompanying interactive demo will show the system in action, from creating a new project through to displaying content as a website.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">
+    <em>1. <a href="http://kcl-ddh.github.io/kiln/">kcl-ddh.github.io/kiln/</a></em>
+  </p>
+  <p xmlns="">
+    <em>2. A list of some of these projects is available at <a href="http://kiln.readthedocs.org/en/latest/">kiln.readthedocs.org/en/latest/</a> projects.html.</em>
+  </p>
+  <p xmlns="">
+    <em>3. <a href="http://cocoon.apache.org/2.1/">cocoon.apache.org/2.1/</a></em>
+  </p>
+  <p xmlns="">
+    <em>4. <a href="http://www.eclipse.org/jetty/">www.eclipse.org/jetty/</a></em>
+  </p>
+  <p xmlns="">
+    <em>5. <a href="http://lucene.apache.org/solr/">lucene.apache.org/solr/</a></em>
+  </p>
+  <p xmlns="">
+    <em>6. <a href="http://www.openrdf.org/">www.openrdf.org/</a></em>
+  </p>
+  <p xmlns="">
+    <em>7. <a href="http://xtf.cdlib.org/">xtf.cdlib.org/</a></em>
+  </p>
+  <p xmlns="">
+    <em>8. <a href="http://www.bbaw.de/telota/software/sade/sade-1">www.bbaw.de/telota/software/sade/sade-1</a></em>
+  </p>
+  <p xmlns="">
+    <em>9. <a href="http://www.teichi.org/">www.teichi.org/</a></em>
+  </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

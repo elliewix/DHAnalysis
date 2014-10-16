@@ -1,0 +1,132 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-205.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>XML-Print.  Typesetting arbitrary XML documents in high quality</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>321 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:lukas.georgieff@hotmail.com"><span class="author-surname">Georgieff</span>,
+									<span class="author-forename">Lukas</span></a>
+        <a href="http://www.google.com/#q=Georgieff, Lukas">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">UAS Worms</span>
+      </li>
+      <li>
+        <a href="mailto:kuester@fh-worms.de"><span class="author-surname">Küster</span>,
+									<span class="author-forename">Marc Wilhelm</span></a>
+        <a href="http://www.google.com/#q=Küster, Marc Wilhelm">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">UAS Worms</span>
+      </li>
+      <li>
+        <a href="mailto:selig@fh-worms.de"><span class="author-surname">Selig</span>,
+									<span class="author-forename">Thomas</span></a>
+        <a href="http://www.google.com/#q=Selig, Thomas">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">UAS Worms</span>
+      </li>
+      <li>
+        <a href="mailto:sievers@uni-trier.de"><span class="author-surname">Sievers</span>,
+									<span class="author-forename">Martin</span></a>
+        <a href="http://www.google.com/#q=Sievers, Martin">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Trier</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction/Motivation</h2>
+  <p xmlns="">Also in the age of electronic publishing print publications often remain the points of reference. While many humanities' projects finally build on XML and in particular TEI <cite href="#n1">1</cite> and embrace electronic publications, they still want or need to target print publications as one or even the main form of sharing the results of their scholarship with the community. Paper remains the principal scholarly format accepted in many circles and in spite of all activities on long-term digital archiving <cite href="#n2">2</cite><cite href="#n3">3</cite>, it remains a central medium to disseminate and conserve patrimonial content over the decades and centuries.However, how can you combine an XML-based workflow with the need to publish high-quality, multilingual print output respecting the often arcane typesetting requirements of scholarly texts in humanities publishing and notably in the realm of critical editions? While there are commercial <cite href="#n4">4</cite><cite href="#n5">5</cite> and free <cite href="#n6">6</cite> <cite href="#n7">7</cite><cite href="#n8">8</cite> products out there that can help for some parts of the job, they are too expensive or too difficult to use in most humanities projects. This was the starting point of the DFG-funded XML-Print, an Open Source project that tackles the typesetting requirements for multilingual critical editions while offering a user-friendly frontend.XML-Print has already been presented to the DH community in two well-received short papers <cite href="#n9">9</cite><cite href="#n10">10</cite> on specific aspects of the project's progress and technical challenges. In this long paper we present the project’s overall results.</p>
+  <h2 xmlns="">Typesetting Features</h2>
+  <p xmlns="">XML-Print consists of two components:</p>
+  <ul xmlns="">
+    <li>an interactive graphical user interface (GUI) based on Eclipse, to define the rules for typesetting the XML texts in direct interaction with the source XML text</li>
+    <li>a command-line typesetting engine, written from bottom up in F#, to actually transform the XML text into pdf for print </li>
+  </ul>
+  <p xmlns="">Normally scholars will interact with the GUI to map their XML structures on layout rules. The typesetting engine is then transparent to them. However, more automated workflows can integrate the engine directly. In section 5 we present examples for both scenarios. Beyond most standard typesetting functionalities of XSL-FO <cite href="#n11">11</cite><cite href="#n12">12</cite> XML-Print supports in particular the following three requirements specific for publishing in humanities scholarship:</p>
+  <h2 xmlns="">Columns</h2>
+  <p xmlns="">A page always consists of different rectangular regions to add header/footer, marginals and the main text. However, this main text is often not limited to a one-column layout, but rather flows in multiple columns. As XSL-FO lacks in this requirement, XSL-FO+ adds a special interface to set-up arbitrary complex column-layouts, even mixed on one page. Each column has its own width and writing direction (left-to-right vs. right-to-left) allowing even “exotic” layouts to be applied within XML-Print.</p>
+  <h2 xmlns="">Cross references</h2>
+  <p xmlns="">When using cross-references we must use placeholders, not only in the main text, but also for the header and footer of a page, where page number and sectioning information are commonly used, and for apparatus’ entries, where typographic information like referenced line numbers can change during the editorial process.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_171_1_mit_Aussenrahmen.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Two user-defined reference systems for an edition</p>
+    </figcaption>
+  </div>
+  <p xmlns="">XML-Print incorporates a concept of “reference fields” to define structural and typographic elements to be counted. This way the user can even combine these two types, e.g. for having a global line count and a local one being reset at a specific XML structure. In addition the corresponding “title” of an reference field can as well be made available.</p>
+  <h2 xmlns="">Apparatuses</h2>
+  <p xmlns="">Based on reference fields users can define “referencing schemas” to be used in apparatuses. Predefined typographic elements like a global page, column and line numbering can be combined with user-defined fields, arbitrary fixed strings and special characters, e.g. a non-breakable space.As the concrete output of the schema might depend on previous apparatus’ entries, exceptions with regard to repeated items, e.g. same chapter, can be formulated as well.</p>
+  <h2 xmlns="">General Architecture and Technologies</h2>
+  <h2 xmlns="">Standards</h2>
+  <p xmlns="">Modern functional programming languages reusing established frameworks and libraries allow to build a high-quality, multilingual typesetting engine generating archiving-ready PDF/A-1 <cite href="#n13">13</cite>  much faster than even a decade ago. With a comparatively small development team we have been able to meet the project’s major objectives within the funding period.</p>
+  <p xmlns=""> XML-Print builds on Open Standards, especially on XML as the input language, XSL-FO to express formatting and XSLT to transform data from XML to XSL-FO. The project has extended XSL-FO to cover features such as apparatus and advanced referencing not currently supported by the specification (XSL-FO+).For the typesetting engine the project uses the .NET functional language F# <cite href="#n14">14</cite>, running on the cross-platform Open Source .NET implementation mono. To handle OpenType <cite href="#n15">15</cite> fonts and generate pdf we have settled on the Open Source library iText <cite href="#n16">16</cite> that exists for both .NET and Java. We contributed to the library's support for some of advanced OpenType features such as “real” small caps and aspects of bidirectional scripts.</p>
+  <h2 xmlns="">Algorithms</h2>
+  <p xmlns="">A major advantage of functional programming languages is the lack of mutable variables and states. Algorithms are commonly more compact and easier to parallelize without mutable variables to share across multiple threads. The XML-Print backend for example parallelizes the parsing of certain XSL-FO elements and the rendering of chapters respectively page sequences. </p>
+  <p xmlns=""> Initially the rendering module was mainly based on the iText library. Now we are replacing all iText algorithms by our self-developed algorithms. They are specialized on the requirements of XML-Print and so are more efficient and easier to extend. We also decided to develop an own line-breaking algorithm. Going beyond the algorithm by Knuth and Plass <cite href="#n17">17</cite>, we take advantage of today’s hardware capacities.</p>
+  <p xmlns=""> The line breaking algorithm creates a tree structure for all possible line combinations of an entire paragraph. The best path in this tree structure is calculated by taking several characteristics into account, e.g. interword spaces, hyphenations, etc. The final implementation will be parallelized and produce a tree structure with “cross-connected” nodes, i.e. nodes that represent identical paragraph sections are reduced and replaced by additional arcs, thus increasing the efficiency by avoiding redundant line combinations. Figure 1 illustrates the process of line breaking. Each node represents a possible line. The numbers at the arcs represent the processing order. Equal numbers on the same level mean a parallelized section. The bolded path represents the final paragraph, consisting of the nodes Line_1^2, Line_2^5, Line_3^2 and Line_4^4.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_171_line_breaking_algorithm.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Line breaking algorithm</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">Graphical User Interface</h2>
+  <p xmlns="">XML-Print addresses beginners as well as expert users. For the latter the GUI has to offer enough details while the former should not be overwhelmed by too many information at first. To achieve this goal XML-Print categorizes functionality and provides a basic and an expert layer.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_171_XML-Print%20_003.jpg"/>
+    <figcaption>
+      <p>Fig. 3: GUI for XML-Print</p>
+    </figcaption>
+  </div>
+  <p xmlns="">We face, however, one inherent problem. To guarantee a high-quality output the typesetting incorporates a rich repertoire of typesetting logic and features which the user expects to appear somewhere in the graphical user interface. It is not always possible to shield users from these inherent complexities, while mapping all possible options onto GUI elements.</p>
+  <p xmlns="">Apart from defining formats and declaring "mappings" between XML elements and corresponding formats, the GUI offers several possibilities to modify aspects of typesetting, from preprocessing the XML source to altering the PDF output format, from configuring the page size to influencing hyphenation.</p>
+  <h2 xmlns="">Use Case Examples</h2>
+  <h2 xmlns="">Edition “Kurt Schwitters: Wie Kritik zu Kunst wird”</h2>
+  <p xmlns="">During the starting phase of the XML-Print project, staff members of the editorial project “Kurt Schwitters: Wie Kritik zu Kunst wird” <cite href="#n18">18</cite> already used recent version of the software to proofread their XML transcriptions. At a later stage, formats and mappings for critical and commentary apparatus were added.</p>
+  <h2 xmlns="">Dictionaries: The “Trierer Wörterbuchnetz”</h2>
+  <p xmlns="">The “Deutsche Wörterbuch von Jacob und Wilhelm Grimm” is a digitized version of the leading German Dictionary with more than 300.000 entries stored as XML inside a database. The pdf is a byproduct, creating pdf files on the fly is the only effective approach. The XML-Print typesetting engine was wrapped via a simple webservice interface, allowing remote access. Decoupling typesetting engine and GUI improves on flexibility and scalability, as it adds the options of cluster-processing and batch processing to the standard interactive processing. </p>
+  <h2 xmlns="">Outlook</h2>
+  <p xmlns="">To ensure the long-term viability of the project beyond the end of funding in May 2014 XML-Print integrates with TextGrid <cite href="#n19">19</cite> to complement the current stand-alone mode. In parallel we build up a community on SourceForge http://sourceforge.net/projects/xml-print/, reaching even now more than 50 monthly downloads on average.Further development of XML-Print is also intimately linked to the needs of its customers, especially the critical editions using it, evolving in response to specific requirements.XML-Print is there to play a key role in creating, sharing and preserving our digital and non-digital textual cultural heritage and humanities digital resources on one of the most durable media yet known to humankind – paper.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Burnard, Lou, and Syd Bauman.</strong> (2007). <em>TEI P5: Guidelines for Electronic Text Encoding and Interchange</em>. Text Encoding Initiative.
+          </p>
+  <p xmlns="">2. <strong>Hedges, M, A Jordanous, S Dunn, C Roueche, Marc Wilhelm Küster, Thomas Selig, M Bittorf, and W Artes.</strong> (2012). <em>New Models for Collaborative Textual Scholarship.</em> In 6th IEEE International Conference on Digital Ecosystems Technologies (DEST), 1–6. doi:10.1109/DEST.2012.6227933.
+          </p>
+  <p xmlns="">3. <strong>Neuroth, Heike.</strong> (2009). Nestor Handbuch.
+          </p>
+  <p xmlns="">4. Global Publishing Solution. (2013). 3B2 (Aka APP, Arbortext Print Publisher). 2013 ed. Accessed November 29. <a href="http://www.3b2.com/3b2/.">www.3b2.com/3b2/.</a></p>
+  <p xmlns="">5. Adobe- 2013. Desktop Publishing (DTP), Digital Publishing | Adobe InDesign CC, <a href="http://www.adobe.com/lu_de/products/indesign.html">www.adobe.com/lu_de/products/indesign.html</a>, accessed: 29-Oct-2013.
+          </p>
+  <p xmlns="">6. <strong>Knuth, D E.</strong> 1986. <em>The TEXbook (Computers &amp; Typesetting Volume a).</em></p>
+  <p xmlns="">7. <strong>Apache Foundation</strong>. (2013). <em>Apache FOP - a Print Formatter Driven by XSL Formatting Objects and an Output Independent Formatter.</em> Xmlgraphics.Apache.org. <a href="http://xmlgraphics.apache.org/fop/.">xmlgraphics.apache.org/fop/.</a></p>
+  <p xmlns="">8. <strong>Lamport, Leslie</strong>. (1986). <em>LaTeX: User's Guide &amp; Reference Manual.</em> Addison-Wesley 1986.
+          </p>
+  <p xmlns="">9. <strong>Burch, Thomas, Martin Sievers, Marc Wilhelm Küster, Claudine Moulin, Roland Schwarz, and Yu Gan</strong>. (2012). <em>XML-Print: an Ergonomic Typesetting System for Complex Text Structures.</em> In Abstracts of Digital Humanities 2012, 375–379. Hamburg. <a href="http://www.dh2012.uni-hamburg.de/wp-content/uploads/2012/07/HamburgUP_dh2012_BoA.pdf.">www.dh2012.uni-hamburg.de/wp-content/uploads/2012/07/HamburgUP_dh2012_BoA.pdf.</a></p>
+  <p xmlns="">10. <strong>Küster, Marc Wilhelm, Thomas Selig, Lukas Georgieff, Martin Sievers, and M Bittorf</strong>. (2013). <em>XML-Print: Addressing Challenges for Scholarly Typesetting.</em> In Abstracts for Digital Humanities 2013, 269–272. Lincoln, NE. <a href="http://dh2013.unl.edu/abstracts/files/downloads/DH2013_conference_abstracts_print.pdf.">dh2013.unl.edu/abstracts/files/downloads/DH2013_conference_abstracts_print.pdf.</a></p>
+  <p xmlns="">11. <strong>Berglund, Anders</strong>, ed. (2006). <em>Extensible Stylesheet Language (XSL) Version 1.1.</em> W3C. <a href="http://www.w3.org/TR/2006/REC-xsl11-20061205/.">www.w3.org/TR/2006/REC-xsl11-20061205/.</a></p>
+  <p xmlns="">12. <strong>Pawson, D.</strong> (2002). <em>XSL-FO: Making XML Look Good in Print.</em></p>
+  <p xmlns="">13. ISO, and ISO TC 171 SC 2. (2005). <em>ISO 19005-1:2005 Document Management -- Electronic Document File Format for Long-Term Preservation -- Part 1: Use of PDF 1.4 (PDF/a-1).</em> 19005. 1st ed. ISO.
+          </p>
+  <p xmlns="">14. <strong>Smith, Chris</strong>. 82012). <em>Programming F# 3.0</em>. 2nd ed. O'Reilly Media. <a href="http://www.amazon.de/Programming-F-3-0-Chris-Smith/dp/1449320295.">www.amazon.de/Programming-F-3-0-Chris-Smith/dp/1449320295.</a></p>
+  <p xmlns="">
+            15. <strong>Microsoft, Adobe. 2009. “Microsoft Typography - OpenType Specification.” Microsoft.com. 21.09.2009. <a href="http://www.microsoft.com/typography/otspec/default.htm.">www.microsoft.com/typography/otspec/default.htm.</a> Accessed 2013-10-29.</strong></p>
+  <p xmlns="">16. <strong>“iText Core | iText Software.” 2013. “iText Core | iText Software.” Itextpdf.com. <a href="http://itextpdf.com/product/itext.">itextpdf.com/product/itext.</a> Accessed: 2013-10-29.</strong></p>
+  <p xmlns="">17. Stanford University. <strong>Computer Science Dept, D E Knuth, and M F Plass</strong>. (1980). Breaking Paragraphs Into Lines.
+          </p>
+  <p xmlns="">18. <strong>Kocher, Ursula, and Isabel Schultz</strong>. (2013). <em>Wie Kritik Zu Kunst Wird: Kurt Schwitters' Strategien Der Produktiven Rezeption.</em> Avl.Uni-Wuppertal.De. <a href="http://www.avl.uni-wuppertal.de/forschung/projekte/wie-kritik-zu-kunst-wird.html.">www.avl.uni-wuppertal.de/forschung/projekte/wie-kritik-zu-kunst-wird.html.</a></p>
+  <p xmlns="">19. <strong>TextGrid Konsortium</strong>. (2010). <em>TextGrid: Über TextGrid.</em><a href="http://www.textgrid.de/ueber-textgrid.html.">www.textgrid.de/ueber-textgrid.html.</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

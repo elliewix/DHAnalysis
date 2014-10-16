@@ -1,0 +1,115 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-900.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Quantifying "The Thing Not Named": A Computational Analysis of Willa Cather’s "Unfurnished" Writing Style(s)”</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:rankenbrand@gmail.com"><span class="author-surname">Ankenbrand</span>,
+									<span class="author-forename">Rebecca</span></a>
+        <a href="http://www.google.com/#q=Ankenbrand, Rebecca">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Nebraska, United States of America </span>
+      </li>
+      <li>
+        <a href="mailto:aterina.bernardini@gmail.com"><span class="author-surname">Bernardini</span>,
+									<span class="author-forename">Caterina</span></a>
+        <a href="http://www.google.com/#q=Bernardini, Caterina">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Nebraska, United States of America </span>
+      </li>
+      <li>
+        <a href="mailto:mikalbeckstrom@icloud.com"><span class="author-surname">Brotnov Eckstrom</span>,
+									<span class="author-forename">Mikal</span></a>
+        <a href="http://www.google.com/#q=Brotnov Eckstrom, Mikal">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Nebraska, United States of America </span>
+      </li>
+      <li>
+        <a href="mailto:aokinnaman@gmail.com"><span class="author-surname">Kinnaman</span>,
+									<span class="author-forename">Alex</span></a>
+        <a href="http://www.google.com/#q=Kinnaman, Alex">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Nebraska, United States of America </span>
+      </li>
+      <li>
+        <a href="mailto:ktedrow2@unl.edu"><span class="author-surname">Tedrow</span>,
+									<span class="author-forename">Kimberly Ann </span></a>
+        <a href="http://www.google.com/#q=Tedrow, Kimberly Ann ">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Nebraska, United States of America </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Overview:</h2>
+  <p xmlns="">Willa Cather enunciated the theoretical foundations of her writing style in her 1922 ars poetica essay “The Novel <em>Démeublé</em>” (Transl. “The Novel Unfurnished”). In this work, Cather calls for a realistic writing style that is rooted in an economy of prose still rich in suggestion and emotions. Cather describes a writing style capable of creating a bare scene where literalness ceases and where readers can detect the presence of what she calls “the thing not named.” Such expositions prompt us to ask questions about what it means <em>to unfurnish</em>a literary piece and to wonder if the writing style Cather described in this seminal essay is present in her own fiction—either throughout her entire fictional corpus, or only after her manifesto. </p>
+  <p xmlns="">These questions provide the impetus for our computational study of Cather’s fiction, and the results of our analysis provide insight into the question of how we evaluate whether the author’s production is congruent with the author’s <em>ars poetica</em>. Starting from Cather’s declarations in “The Novel Démeublé,” we defined the criteria for a lexical and syntactical analysis of her fiction. Our analysis indicates that Cather’s writing style remained consistent across her corpus both before and after her stylistic declaration in “The Novel <em>Démeublé</em>,” providing new answers to the long-standing scholarly debate as to whether Cather ascribed to the ideas in the essay.</p>
+  <h2 xmlns="">Methodology:</h2>
+  <p xmlns="">	In this work, we use high frequency words and selected parts of speech to explore whether a chronological shift from a more ornate style to a minimalist style can be detected across a career spanning forty-eight years. Our team utilized over sixty examples of Willa Cather’s fictional work currently housed at the Willa Cather Archive in XML format. The textual data was composed of two “genre sets.” The first set included all of Cather’s novelistic fiction and the second, Cather’s short story fiction. Using R (R Core Team, 2013), our team parsed, tokenized, and POS tagged all of the XML into word and parts of speech frequency tables which could then be studied chronologically and in isolation.</p>
+  <p xmlns="">Using this derivative data, our team specifically studied Cather’s use of determiners, adverbs, adjectives, and personal pronouns as a way of measuring Cather’s idea of unencumbered prose. A more “unencumbered” prose, we hypothesized, would be less ornate and utilize fewer of these markers. To facilitate this investigation, we calculated the mean for each selected parts of speech and used those means as a basis for further examining outliers within the long form and short form fiction. Among other things, our team compared the part of speech frequencies between Cather’s long form fiction (Fig 1) and short form fiction (Fig 2) and then specifically analyzed pronouns (Fig 3), determiners (Fig 4), and adverbs within the respective corpora (Fig 5).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_603-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1:  Parts of Speech in Death Comes to the Archbishop with Cather’s Long form fiction (LFF)</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_603-2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Parts of Speech in Tale of the White Pyramid with Cather’s short form fiction (SFF)</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_603-3.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Use of top five personal pronouns in Tale of the White Pyramid against the mean in Cather’s short form fiction (SFF) and in Death Comes to the Archbishop versus the mean in Long form fiction (LFF)</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_603-4.jpg"/>
+    <figcaption>
+      <p>Fig. 4: Use of top two determiners in Tale of the White Pyramid against the mean in Cather’s short form fiction (SFF) and in Death Comes to the Archbishop versus the mean in Long form fiction (LFF)</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_603-5.jpg"/>
+    <figcaption>
+      <p>Fig. 5: Use of adverbs in Tale of the White Pyramid against the mean in Cather’s short form fiction (SFF) and in Death Comes to the Archbishop versus the mean in Long form fiction (LFF)</p>
+    </figcaption>
+  </div>
+  <p xmlns="">For our analysis of the high frequency words, we created a minimum mean threshold and examined those words within a minimum relative frequency across the corpus of 0.5.  This threshold had the effect of excluding context sensitive words from the analysis. All of this derivative data was merged with metadata from the texts and then explored and organized using the Euclidian metric as a basis for a hierarchical clustering. The clustering allowed us to investigate the similarities between sixty-six samples of Cather’s fictional writing. A dendogram (Fig 6) shows the results of this clustering.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_603-6.jpg"/>
+    <figcaption>
+      <p>Fig. 6: Word Frequency Clustering of Entire Fictional Corpus</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">Conclusion:</h2>
+  <p xmlns="">Our analysis of Cather’s use of specific parts of speech and high frequency words indicated no significant change in her usage patterns over time. Our results suggest that the style Cather advocated in “The Novel Démeublé” is the style that she employed throughout her career.  Despite a generally stable signal over time, though, two outliers emerged: <em>Death Comes to the Archbishop</em> and <em>A Tale of the White Pyramid</em>.  The former was a distant outlier within a closed set of her novelistic fiction but was found to be consistent with her shorter fiction. The latter was the sole outlier of the entire corpus, which is not surprising given that Cather wrote it as a student.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>E. K. Brown</strong> (2003) <em>"Homage to Willa Cather,"</em> in Willa Cather Critical Assessments, Guy Reyonolds, ed. Mountfield: East Sussex. Vol. I</p>
+  <p xmlns=""><strong>Maciej Eder</strong><em>“Stylo R Package.”</em>sites.google.com/site/computationalstylistics/stylo</p>
+  <p xmlns=""><strong>David Hoover</strong> (2003)<em>, “Another Perspective on Vocabulary Richness,”</em> Computers and the Humanities, 37:15`-178.</p>
+  <p xmlns=""><strong>Mary Ann O’Farrell</strong> (2005), <em>"Words To Do with Things",</em> in Willa Cather and Material Culture, Janis P. Stout, ed., University of Alabama Press: Tuscaloosa.</p>
+  <p xmlns=""><strong>David Oshinksy </strong>(2007),<em> “No Thanks, Mr. Nabokov,”</em> New York Times, September 9. <a href="http://www.nytimes.com/2007/09/09/books/review/Oshinsky-t.html?_r=0">www.nytimes.com/2007/09/09/books/review/Oshinsky-t.html?_r=0</a>.</p>
+  <p xmlns=""><strong>R Core Team</strong> (2013). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing, Vienna, Austria, <a href="http://www.R-project.org/">www.R-project.org</a>.</p>
+  <p xmlns=""><strong>Lionel Trilling </strong>(2003), <em>"Willa Cather,"</em>in Willa Cather Critical Assessments, Guy Reyonolds, ed. Mountfield: East Sussex. Vol. I.</p>
+  <p xmlns="">This research began in a class taught by<strong> Matthew Jockers</strong> and has continued under his direction as a project of the Nebraska Literary Lab.</p>
+  <p xmlns="">See: <em>Willa Cather Archive. “The Novel Démeublé</em>” cather.unl.edu/nf012.html. First published in the New Republic, 30 (April 12, 1922): 5-6.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

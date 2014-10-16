@@ -1,0 +1,117 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-876.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Supporting cross-media analyses by automatically linking multiple collections</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:kleppe@eshcc.eur.nl"><span class="author-surname">Kleppe</span>,
+									<span class="author-forename">Martijn</span></a>
+        <a href="http://www.google.com/#q=Kleppe, Martijn">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Erasmus University Rotterdam, Netherlands, The </span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Kemman </span>,
+									<span class="author-forename">Max</span></a>
+        <a href="http://www.google.com/#q=Kemman , Max">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Erasmus University Rotterdam, Netherlands, The </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction
+</h2>
+  <p xmlns="">Analysing media coverage across several types of media-outlets is a challenging task for Humanities
+researchers. Up until now, the focus has been on newspaper articles: being generally available in
+digital, computer-readable format, these can be studied relatively easily. Analyses of visual material
+like photos or television programs are however rarely undertaken. This poster presents the results of
+the PoliMedia project that aimed to showcase the potential of cross-media analysis by linking the
+digitised transcriptions of the debates at the Dutch Parliament with three media-outlets: 1) newspapers
+in its original format and lay-out of the historical newspaper archive at the National Library, 2) radio
+bulletins of the Dutch National Press Agency (ANP) and 3) newscasts and current affairs programmes
+from the Netherlands Institute for Sound and Vision (Kleppe et al., 2014; Kemman &amp; Kleppe, 2013).
+The PoliMedia search user interface allows researchers to search through the debates and analyse
+the related media coverage via www.polimedia.nl. The main research question that can be addressed
+using PoliMedia is: <em>What choices do different media make in the coverage of people and topics while
+reporting on debates in the Dutch parliament since the first televised evening news in 1956 until 1995?
+</em>An advantage of PoliMedia is that the coverage in the media is incorporated in its original form,
+enabling analyses of both the mark-up of news articles as well as the photos in newspapers.
+PoliMedia demonstrates the application of Linked Open Data in the Digital Humanities: not only was a
+search interface developed for scholars, the data was published online and made publicly available via
+a SPARQL endpoint at data.polimedia.nl. This enables researchers to build customised tools that can
+support their specific research.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_401-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Screenshot of the PoliMedia search results page</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">
+				Method
+</h2>
+  <p xmlns="">The basis of PoliMedia lies in the minutes of the Dutch parliament from 1814-1995, containing circa
+2.5 million pages of debates with speeches that have been OCR’d and thus allow full-text search. The
+minutes have been converted to structured data in XML form in previous research (Gielissen &amp; Marx,
+2009). For each speech (i.e. a fragment from a single speaker in a debate), we extract information to
+represent this speech; the speaker, the date, important terms (i.e. named entities) from its content and
+important terms from the description of the debate in which the speech is held. This information is then
+combined to create a query with which we search the archives of the newspapers, radio bulletins and
+television programmes. Media items that correspond to this query are retrieved, after which a link is
+created between the speech and the media item, using semantic web technologies (Juric, Hollink, &amp;
+Houben, 2013). In order to navigate these links, a search user interface was developed, based on a
+requirements study with five scholars in history and political communication. During development, an
+initial version of this interface was evaluated in an eye tracking study with 24 scholars (Kemman,
+Kleppe, &amp; Maarseveen, 2013).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_401-2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Screenshot of the PoliMedia debate page</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">Results </h2>
+  <p xmlns="">From an evaluation of a set of links to newspaper articles, it was found that the recall of the algorithm
+is approximately 62%, with a precision of 80% (Juric et al., 2013; Kleppe et al., 2014). However, no
+links to television programmes could be made. At this point we can make no conclusions about
+whether this was due to the size of the television dataset, the lack of full-text search or due to lack of
+suitability of the linking algorithm. Linking to television programs thus remains a question for future
+research. The combination of a search interface and a SPARQL endpoint resulted in PoliMedia
+becoming the finalist of the Semantic Web Challenge 2013 en winning the first prize in the LinkedUp
+Veni Competition.1 The poster presentation will be accompanied with a live demo of the system via
+www.polimedia.nl.
+</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Gielissen, T., &amp; Marx, M.</strong> (2009). <em>Exemelification of parliamentary debates. In Proceedings of the 9th
+            Dutch-Belgian Workshop on Information Retrieval</em> (DIR 2009) (pp. 19–25).
+          </p>
+  <p xmlns=""><strong>Juric, D., Hollink, L., &amp; Houben, G. </strong>(2013). <em>Discovering links between political debates and media</em>. In
+            The 13th International Conference on Web Engineering (ICWE’13). Aalborg, Denmark.
+            doi:10.1007/978-3-642-39200-9_30
+          </p>
+  <p xmlns="">http://challenge.semanticweb.org/2013/finalists.html &amp; http://blog.okfn.org/2013/09/17/linkedup-open-education-veni-
+            competition-the-winners/
+          </p>
+  <p xmlns=""><strong>Kemman, M., &amp; Kleppe, M. </strong>(2013). <em>PoliMedia - Improving Analyses of Radio, TV &amp; Newspaper
+            Coverage of Political Debates</em>. In Research and Advanced Technology for Digital Libraries (pp.
+            401–404). Springer-Verlag Berlin Heidelberg. doi:10.1007/978-3-642-40501-3_46
+          </p>
+  <p xmlns=""><strong>Kemman, M., Kleppe, M., &amp; Maarseveen, J. </strong>(2013). <em>Eye Tracking the Use of a Collapsible Facets
+            Panel in a Search Interface.</em> In Research and Advanced Technology for Digital Libraries (pp.
+            405–408). Springer-Verlag Berlin Heidelberg. doi:10.1007/978-3-642-40501-3_47
+          </p>
+  <p xmlns=""><strong>Kleppe, M., Hollink, L., Kemman, M., Juric, D., Beunders, H., Blom, Oomen, J., Houben, G.-J.</strong> (2014).
+            <em>PoliMedia - Analysing Media Coverage of Political Debates By Automatically Generated Links to
+              Radio &amp; Newspaper Items.</em> In M. D’Aquin, S. Dietze, H. Drachsler, M. Guy, &amp; E. Herder (Eds.),
+            Proceedings of the LinkedUp Veni Competition on Linked and Open Data for Education. Geneva,
+            Switzerland: CEUR-WS. </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

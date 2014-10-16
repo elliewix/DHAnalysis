@@ -1,0 +1,95 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-297.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Taking manuscripts apart, and putting them together</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:emeryr@upenn.edu"><span class="author-surname">Emery</span>,
+									<span class="author-forename">R. Douglas</span></a>
+        <a href="http://www.google.com/#q=Emery, R. Douglas">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Schoenberg Institute for Manuscript Studies, University of Pennsylvania</span>
+      </li>
+      <li>
+        <a href="mailto:dot.porter@gmail.com"><span class="author-surname">Porter</span>,
+									<span class="author-forename">Dot</span></a>
+        <a href="http://www.google.com/#q=Porter, Dot">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Schoenberg Institute for Manuscript Studies, University of Pennsylvania</span>
+      </li>
+      <li>
+        <a href="mailto:alberto.campagnolo@gmail.com"><span class="author-surname">Campagnolo</span>,
+									<span class="author-forename">Alberto</span></a>
+        <a href="http://www.google.com/#q=Campagnolo, Alberto">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of the Arts, London</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">Our poster will demonstrate recent work on generating
+visualizations of codex manuscript structure, and visualizations of reconstructed historical manuscripts known through palimpsest. Next steps,
+presented at DH2014, will include linking the visualization to digital images
+of the manuscript pages, and work to parse more complex collation formulas. The
+purpose is to enable scholars and students to consider the manuscript, as a
+physical object, in ways not otherwise possible.</p>
+  <h2 xmlns="">Taking manuscripts apart</h2>
+  <p xmlns="">We have started our collation visualization proof-of-concept work using the collation formulae from The Digital Walters TEI manuscript description files.<cite href="#n1">1</cite> They use a simple subtraction-only system that describes the manuscript as it exists now, but makes no claims for how it came to be that way. This distinguishes it from other manuscript collation formulae, which typically distinguish between leaves added and leaves deleted.<cite href="#n2">2</cite> In the Walters formula added folios are treated as half a sheet, of which the other half has been removed. For example, a manuscript with a leaf added between the second and third quires, and with a leaf removed in the middle of the fourth quire, would be described using this formula:</p>
+  <p xmlns="">1(8), 2(10, -1), 3(8), 4(10, -6)</p>
+  <p xmlns="">Quire 1 has eight leaves. Quire 2 has nine leaves, with the last leaf added (=the conjoin of the last leaf noted as missing). Quire 3 has eight leaves. Quire 4 has nine leaves, with the sixth leaf missing.</p>
+  <p xmlns="">Although it lacks the description found in other formulas developed for manuscripts and printed books, it has the benefit of being simple to parse - perfect for a proof-of-concept.</p>
+  <p xmlns="">We find all of the collation formulas in the Digital Walters manuscript descriptions (not all of them include a formula), and then parse the formulas to generate a simple XML file describing the number of quires, number of leaves in each quire, and any "missing" leaves.</p>
+  <p xmlns="">&lt;quires&gt;</p>
+  <p xmlns="">  &lt;quire n="1" leaves="8"/&gt;</p>
+  <p xmlns="">  &lt;quire n="2" leaves="10"&gt;</p>
+  <p xmlns="">    &lt;less&gt;1&lt;/less&gt;</p>
+  <p xmlns="">  &lt;/quire&gt;</p>
+  <p xmlns="">  &lt;quire n="3" leaves="8"/&gt;</p>
+  <p xmlns="">  &lt;quire n="4" leaves="10"&gt;</p>
+  <p xmlns="">    &lt;less&gt;6&lt;/less&gt;</p>
+  <p xmlns="">  &lt;/quire&gt;</p>
+  <p xmlns="">&lt;/quires&gt;</p>
+  <p xmlns=""> We then use this file to generate a set of SVG files, one for each quire. Leaves marked with &lt;less&gt; are currently indicated using outline, which existing leaves are indicated using dark lines.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_242_1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Sample quire, missing the first leaf</p>
+    </figcaption>
+  </div>
+  <p xmlns="">At this point in the project (October 2013), we have the building blocks we need to begin constructing interactive collation visualizations for the manuscripts in The Digital Walters. Below, we will outline next steps for the project.</p>
+  <h2 xmlns="">Putting manuscripts together</h2>
+  <p xmlns="">Our work with reconstructing palimpsest manuscripts is within the context of the Sinai Palimpsest Project and was initially presented at the TEI Member's Meeting and Conference, Rome 2013.<cite href="#n3">3</cite> The situation with the Sinai palimpsests is complex. Manuscripts were erased (the ink scraped off) and the pages re-used in other manuscripts. In some cases, fragments from several different historical manuscripts have been stitched together to create new leaves. Some fragments have been re-used more than once, resulting in layers of palimpsest. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_242_Arabic_NF_8_019v.jpg"/>
+    <figcaption>
+      <p>Fig. 2: A sample folio from Sinai Arabic NF 8, consisting of four fragments from different historical manuscripts, stitched together for form a new folio.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">We are developing a system using TEI to describe both historical manuscripts (the manuscripts from which the palimpsests originated) and the extant manuscripts (the manuscripts as they exist now, with parts of historical manuscripts distributed through them), and linking the two together while also creating visualizations of the historical manuscripts. We are interested not only in reconstructing individual palimpsest folios, but also in reconstructing complete manuscripts (as has already been done for the so-called Archimedes Palimpsest)<cite href="#n4">4</cite>. This is the point at which our work taking manuscripts apart and our work putting manuscripts together overlaps: creating visualizations of the physical structure of both existing and historical manuscripts.</p>
+  <h2 xmlns="">Poster session and next steps</h2>
+  <p xmlns="">At DH2014 we will present our most recent work on both taking manuscripts apart, and on putting them back together. Our poster will highlight the methods we use: how we describe our data, what we use to process the data, and visualization practices. We will also be prepared to demonstrate the methods in real time, particularly the process for translating a collation formula into a visualization. </p>
+  <p xmlns="">Next steps will focus on expanding the collation visualization approach to more descriptive collation formulas<cite href="#n5">5</cite></p>
+  <p xmlns="">, linking the collation visualization to digital images of the manuscript folios, and presenting the collation visualizations within an interface that would act as a workspace for scholars.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <em>The Digital Walters</em>, <a href="http://www.thedigitalwalters.org/Data/WaltersManuscripts/ManuscriptDescriptions/">www.thedigitalwalters.org/Data/WaltersManuscripts/ManuscriptDescriptions/</a></p>
+  <p xmlns="">2. <strong>Clemens, R. and T. Graham</strong> (2007), <em>Introduction to Manuscript Studies</em> (Cornell University Press), pp. 130-131
+          </p>
+  <p xmlns="">3. <strong>Emery, D. and D. Porter,</strong> (2013), <em>"TEI and the Description of the Sinai Palimpsests"</em> presented at The Linked TEI: Text Encoding in the Web, TEI Conference and Member's Meeting 2013, Rome, Italy. <a href="http://digilab2.let.uniroma1.it/teiconf2013/program/papers/abstracts-paper#C140">digilab2.let.uniroma1.it/teiconf2013/program/papers/abstracts-paper#C140</a></p>
+  <p xmlns="">4. <strong>Netz, Reviel et al.</strong><em>The Archimedes Palimpsest Volume 1: Catalogue and Commentary</em> (Cambridge University Press, 2011)
+          </p>
+  <p xmlns="">5. <strong>Bowers, Fredson. </strong>(1962). <em>Principles of Bibliographic Description</em>. New York: Russell &amp; Russell.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

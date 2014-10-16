@@ -1,0 +1,108 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-226.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Network Analysis for the History of Religions – The SeNeReKo project</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:frederik.elwert@rub.de"><span class="author-surname">Elwert</span>,
+									<span class="author-forename">Frederik</span></a>
+        <a href="http://www.google.com/#q=Elwert, Frederik">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Ruhr-University Bochum</span>
+      </li>
+      <li>
+        <a href="mailto:sven.wortmann@rub.de"><span class="author-surname">Wortmann</span>,
+									<span class="author-forename">Sven</span></a>
+        <a href="http://www.google.com/#q=Wortmann, Sven">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Ruhr-University Bochum</span>
+      </li>
+      <li>
+        <a href="mailto:beate.hofmann@rub.de"><span class="author-surname">Hofmann</span>,
+									<span class="author-forename">Beate</span></a>
+        <a href="http://www.google.com/#q=Hofmann, Beate">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Ruhr-University Bochum</span>
+      </li>
+      <li>
+        <a href="mailto:knauth@uni-trier.de"><span class="author-surname">Knauth</span>,
+									<span class="author-forename">Jürgen</span></a>
+        <a href="http://www.google.com/#q=Knauth, Jürgen">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Trier University</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">The SeNeReKo project is a joint research project of the Center for
+Religious Studies (Bochum, Germany) and the Center for Digital
+Humanities (Trier, Germany), funded by the German Federal Ministry of
+Education and Research. The project develops methods for the
+application of network analysis as a tool for the study of historical
+religious texts. Informed by theoretical approaches in the study of
+religion which stress the importance of interreligious contacts for
+the formation and development of religious traditions, concepts from
+network theory are used in order to analyse the context
+and interdependence of religious actors and concepts. Religious traditions are seen as developing face to face of each other, developing their own meaning systems by at the same time recognising and rejecting – or adopting and transforming – meaning systems of “others”.<cite href="#n1">1</cite> The relational framework of network analysis is taken as a methodological tool to operationalise such approaches.</p>
+  <p xmlns="">The analytical process consists of two steps: Firstly, networks
+have to be created on the basis of the textual sources by identifying
+nodes and their relations. In contrast to
+applications of network analysis that are only interested
+in the relations of (historical or literary) social actors,<cite href="#n2">2</cite> the project also takes semantic
+structures into account. During the first step, methods from computational linguistics
+(e.g. part-of-speech tagging, lemmatisation, syntax parsing, anaphora
+resolution) are applied in order to identify relevant terms
+(nodes) and their relations (edges). Since such tools are not
+available for the target languages, existing state-of-the-art tools are adapted for these tasks. Building on these linguistic annotations, networks of words (terms/lemmas) are created. For this purpose, a set of tools is built, implementing several existing and newly developed network creation algorithms.<cite href="#n3">3</cite> These tools are compatible to the CLARIN WebLicht infrastructure, using TCF as their data exchange format, and ISOcat for handling linguistic tag sets. They will be made available under an open source license.</p>
+  <p xmlns="">Secondly, the resulting networks are
+analysed using methods from network analysis. During this step, centrality measures and clustering algorithms are applied in order to discover semantic structures.<cite href="#n4">4</cite> Results of these analytical methods are compared to other approaches like Topic Modelling.<cite href="#n5">5</cite></p>
+  <p xmlns="">Two independent corpora are used as separate test cases for the development
+and application of the methodological approach: The Buddhist Pali
+Canon and a selection of ancient egyptian texts. These diverse corpora are used as a test bed for the development and application of language independent analytical tools. These corpora are available only in project specific 
+formats. In order to have a generic starting point for analysis, they 
+are converted to TEI compliant XML. </p>
+  <p xmlns="">The Pali Canon is a huge collection of Buddhist texts in the
+middle Indic language Pali. It has been composed around the Common
+Era in Northern India and Sri Lanka and is nowadays available in a
+digital version.<cite href="#n6">6</cite> The Canon contains a lot of narratives in which the
+Buddhist authors depict the Buddha and his followers in relation to
+competing religious groups or individuals. Therefore the Pali Canon
+is a rich source for the analysis of interreligious dynamics in
+ancient South Asia. As the Canon is too huge for manual analysis,
+computational analysis is needed to get a clear picture of the
+social-semantic structures inherent in these narratives.</p>
+  <p xmlns="">The database Thesaurus Linguae Aegyptiae<cite href="#n7">7</cite> represents an annotated
+selection of ancient Egyptian texts from different genres and
+periods. In our case it is used to analyse religious dynamics in the
+history of Ancient Egypt. An application of network analysis shall
+open up another perspective for an interpretation of interreligious
+contacts between Egypt and for instance the Near East. For this
+purpose the relations between actors,and  between actors and concepts
+are extracted from syntactic and semantic structures.</p>
+  <p xmlns="">The project contributes to the development of new analytical tools for the humanities. These should be of use for further research beyond the project. At the same time, significant results are expected for the fields of Egyptology, Indology, and the study of religions. Building on past digitisation efforts, the project allows for new insights based on the computational analysis of the corpora, complementing conventional hermeneutic approaches. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>cf. Krech, Volkhard</strong>. (2012). <em>Religious Contacts in Past and Present Times: Aspects of a Research Programme.</em> Religion 42 (2): 191–213. doi:10.1080/0048721X.2012.642572.
+          </p>
+  <p xmlns="">2. <strong>cf. Gramsch, Robert</strong>. (2013). <em>Das Reich als Netzwerk der Fürsten: politische Strukturen unter dem Doppelkönigtum Friedrichs II</em>. und Heinrichs (VII.) 1225-1235.
+          </p>
+  <p xmlns="">3. <strong>cf. Biemann, Christian, Stefan Bordag, Gerhard Heyer, Uwe Quasthoff, and Christian Wolff</strong>. (2004). <em>Language-Independent Methods for Compiling Monolingual Lexical Data.</em> In Computational Linguistics and Intelligent Text Processing, edited by Alexander Gelbukh, 217–28. Lecture Notes in Computer Science 2945. Springer Berlin Heidelberg. <a href="http://link.springer.com/chapter/10.1007/978-3-540-24630-5_27.">link.springer.com/chapter/10.1007/978-3-540-24630-5_27.</a> Ferrer i Cancho, Ramon, Ricard V. Solé, and Reinhard Köhler. 2004. “Patterns in Syntactic Dependency Networks.” Physical Review E 69 (5): 051915. Ferrer2004. doi:10.1103/PhysRevE.69.051915. Paranyushkin, Dmitry. 2011. “Identifying the Pathways for Meaning Circulation Using Text Network Analysis”. Nodus Labs. <a href="http://noduslabs.com/research/pathways-meaning-circulation-text-network-analysis/.">noduslabs.com/research/pathways-meaning-circulation-text-network-analysis/.</a></p>
+  <p xmlns="">4. <strong>cf. Dorow, Beate, and Dominic Widdows</strong>. (2003). <em>Discovering Corpus-Specific Word Senses</em>. In Proceedings of the Tenth Conference on European Chapter of the Association for Computational Linguistics - Volume 2, 79–82. EACL ’03. Stroudsburg, PA, USA: Association for Computational Linguistics. doi:10.3115/1067737.1067753. <a href="http://dx.doi.org/10.3115/1067737.1067753.">dx.doi.org/10.3115/1067737.1067753.</a></p>
+  <p xmlns="">5. <strong>cf. Blei, David M., Andrew Y. Ng, and Michael I. Jordan</strong>. (2003). <em>Latent Dirichlet Allocation</em>. J. Mach. Learn. Res. 3: 993–1022.
+          </p>
+  <p xmlns="">6. <a href="http://tipitaka.org/">tipitaka.org</a></p>
+  <p xmlns="">7. <a href="http://aaew.bbaw.de/tla/">aaew.bbaw.de/tla</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

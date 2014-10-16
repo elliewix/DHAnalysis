@@ -1,0 +1,92 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-325.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Arch-V:  A Platform for Image-Based Search and Retrieval of Digital Archives</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>8</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>415 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:cstahmer@gmail.com"><span class="author-surname">Stahmer</span>,
+									<span class="author-forename">Carl</span></a>
+        <a href="http://www.google.com/#q=Stahmer, Carl">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">UC Santa Barbara</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">	Arch-V (short for Archive Vision) is a newly developed C++ application that provides image
+based search capabilities for digital archives of print materials. 
+In 2013 the English Broadside Ballad Archive (EBBA) at the Early
+Modern Center, University of California, Santa Barbara was awarded an
+NEH Start-Up Grant to begin work on the Ballad Impression Archive
+(BIA), a component of EBBA specifically devoted to cataloguing the
+over 9,000 (and growing) individual woodcut impressions in EBBA and
+making them fully searchable as an image collection. A key component
+of this award was the creation of software to provide automated,
+image based searching of the collection.  The proposed short paper will
+introduce and provide an overview of the implementation procedures
+for Arch-V.</p>
+  <h2 xmlns="">1.1. Overview</h2>
+  <p xmlns="">	 Arch-V is a
+platform for delivering automated, image-based indexing and searching
+of digital archives. While the state of the art in computerized image
+classification and recognition is quite advanced, the application of
+these technologies to the specific area of digital archives of
+printed material presents a unique set of challenges. As noted by
+Relja Arandjelovic and Andrew Zisserman, the problem of automated
+recognition of objects has been largely solved, “provided they have
+a light coating of texture” <cite href="#n1">1</cite>. This is because the state of the art
+in computer vision relies upon the refraction of light across the
+surface texture of  an object as it is captured in a digital image
+(or frame of video) in order to extract recognizable feature points
+as indexable markers of the object in the image. But in digital
+images of print artifacts, surface texture serves as a distraction
+from and not an indicator of the objects depicted in the print. This
+is because the texture belongs to the delivery medium, the carrier,
+and not to the objects being represented. As a result, the efficacy
+of current technologies is less than satisfying when applied to the
+area digital archives of printed materials. More importantly, this is
+not a problem that computer science researches are likely to solve
+for the humanities, as the primary interest, funding, and work effort
+in computer science is in the area of processing networked picture
+and video feeds such as surveillance footage, YouTube videos, and
+Facebook photos.</p>
+  <p xmlns="">	We were able to design and test a solution to this problem as part of the funding provided
+by the Start-Up award. This solution involves a process of
+normalizing color and black and white archival images to a common
+format prior to feature point extraction, utilizing a modified
+feature point extraction methodology, and combining the feature point
+extraction with a process of border contour extraction and
+comparison. This combination of practices allows us to produce a
+collection of feature points for each image that define the
+boundaries of the objects represented in them rather than variations
+in surface texture. Our solution has already been implement in the
+EBBA cataloguing interface, and it will be implemented on the EBBA
+website in early 2014. 
+</p>
+  <p xmlns="">	We continue to investigate and
+implement improvements (along lines identified during the start-up
+phase) to the image-based searching technology that specifically
+address its application for digital archives of print materials, to
+refactor the codebase as a distributable software package that can be
+easily implemented by other digital archives without advanced
+technical knowledge or experience, and to produce companion
+documentation to insure both success and ease of implementation by
+other archives.  In its current form, the complete c++ codebase is
+publicly available via Git at https://bitbucket.org/cstahmer/archv/. 
+</p>
+  <h2 xmlns="">1.2. Methodology</h2>
+  <p xmlns="">Arch-V utilizes of novel combination of SURF feature point extraction of raw images, and feature point extraction of extracted contours from the base image set into order to create a Visual Dictionary of extant features.  Each image in the archive is then processed using the same extraction algorithms and a Visual Word File representing a normalized histogram of the features found in each image is then created for each image.  The Visual Word Files are then indexed using Lucene, which serves as the query engine for image comparison.</p>
+  <h2 xmlns="">1.3 Scope of the Presentation</h2>
+  <p xmlns="">The proposed Short Paper will introduce the theoretical problems associated with performing visual searches of archives of print materials, give a short demonstration of the Arch-V software in action searching the over 9,000 images in the EBBA archive, and provide information on how users can Implement Arch-V in their own archives.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Reja Arandjelovic and Andrew Zisserman</strong> (2011). <em>Smooth Object Retrieval using a Bag of Boundaries</em>. Proceedings of the IEEE International Conference on Computer Vision. <a href="http://www.robots.ox.ac.uk/~vgg/publications/2011/Arandjelovic11/arandjelovic11.pdf.">www.robots.ox.ac.uk/~vgg/publications/2011/Arandjelovic11/arandjelovic11.pdf.</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

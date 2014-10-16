@@ -1,0 +1,63 @@
+This paper will argue that removing high-frequency,
+low-semantic weight words from topic models of poetry corpora improves the
+coherence of Latent Dirichlet Allocation (LDA) topics and addresses reasonable
+concerns by some literary scholars that removing such language undercuts the
+methodology’s value as a mode of literary inquiry.  Exposing technical and theoretical decisions
+made while topic modeling 4,500 English language poems, this paper demonstrates
+how words such as “look” and “saw” remain influential and
+semantically present in document to topic distributions. Finally, it suggests that literary scholars will need a different hermeneutic approach to topic models of poetic corpora that better accounts for ambiguity and figures of speech. Ekphrasis—poems to, for, and about the visual arts—offers a
+wealth of opportunities to ask familiar humanities questions about
+canon-formation, literary tradition, and genre definition, and at the same time
+affords avenues for the advancement or refinement of methods and tools in the
+field of digital humanities.  The story
+of the ekphrastic tradition, and women’s relationship to that tradition, is in
+many ways the story of data collection and curation.  In his influential essay on the genre, W. J.
+T. Mitchell radically shifts critical studies of poetic engagements with images
+away from metaphorical comparisons by arguing that ekphrasis activates
+historical and ideological oppositions between the linguistic and spatial arts
+as a staging of anxieties about “otherness.”1 
+Mitchell goes on to explain that the “treatment of the ekphrastic image
+as female other is commonplace in the genre” (164).  
+
+ 
+To date, Mitchell’s theorization of ekphrasis as social
+contest remains a powerful influence on our critical approaches to how the
+genre operates because it pushed beyond previous studies that simply compared
+the two arts formally.  Mitchell’s
+“cannon,” however, consists of four poems, all by male poets: Wallace Stevens’s
+“Anecdote of a Jar;” William Carols Williams’s “Portrait of a Lady,” John
+Keats’s “Ode on a Grecian Urn;” and Percy Bysshe Shelley’s “On the Medusa of
+Leonardo Da Vinci in the Florentine Gallery.” 
+Though recent scholars--such as Elizabeth Loizeaux2, Jane Hedley3, and
+Barbara Fischer4—have challenged the limitations of Mitchell’s model, two challenges
+have stymied its revision: identifying genre conventions as succinct and
+intuitive and surveying a much larger collection of ekphrastic examples. 
+
+ 
+Literary scholars respond to questions of genre by creating
+models.  For example, when Mitchell
+describes the “suturing of gender stereotypes” onto the “interworkings of
+ekphrasis,” he does so by creating a model he calls the ekphrastic
+triangle.  Mitchell’s triangle stages a
+relational exchange between a poet/speaker, 
+a feminized art object and the reader, in which the speaker instructs
+the reader to “look” and “see,” cautions him against silence and stillness, and
+confides a desire to ravish the feminized image. This presentation demonstrates that ekphrasis's re-deployment of multiple discourses expands our model of ekphrasis as a network  by situating individual poems among multiple, ongoing, and constantly changing discourses within the topic model.Computational tools, such as topic modeling, have the potential to help literary
+scholars redefine the limits of reading distance, not because they read better than humans but because
+computers compute better than
+humans.  Soon after he first coined the phrase
+“distant reading,” Franco Moretti claimed that distance is a “condition of knowledge”—one limit of
+many.5 6 Leveraging the strengths of
+technology to broaden the reach, scale, and scope of our exposure to ekphrastic
+poetry improves our capacity to view the ekphrastic tradition on a much larger scale. Although the history of ekphrasis—as the hostile, gendered contest between speaking male subjects and silent female objects—seems particularly inhospitable territory for women poets, many acclaimed poems by women in the 20th century participate in the genre, including Elizabeth Bishop's "Poem," Anne Sexton's "Starry Night," Jorie Graham's "San Supolcro" and Elizabeth Alexander's "The Venus Hottentot." Topic modeling’s generative, probabilistic, and non-semantic methods offer a promising opportunity to revise our critical understanding of ekphrasis.  Removing words such as "see," "look," and "say" from ekphrastic poems offers opportunities to refocus our critical lens on other language patterns that have been overlooked by human pattern recognition due to the high frequency of "look" and "see" throughout the ekphrastic canon.This paper asks: if we can discern salient questions about the ekphrastic tradition that computer reading is designed to address, how might we respond to Adrienne Rich’s call for “re-vision,” whereby learning to see what we already know differently is an act of survival?  Since we know that computers are
+not the same kind of readers that humans are, it is important to be aware of
+the “conditions” that shape the ways computers and humans read.  Questions that require attention to quantity,
+scope, and scale are particularly suited to computation, and computation helps adjust the aperture on the lens that a scholar can have of a corpus of texts.  The challenge, however, is to continue to refine our understanding of what questions might be most fruitfully asked with an awareness of computational and human conditions.  In the study of ekphrasis, for example, interpretive stress is placed on high-frequency words that, in prose, hold relatively little semantic weight--particularly words such as "look" and "see."  Distinct for its highly concentrated language, poetry places an increased degree of significance on even the poet's "smallest" word choices.  Preprocessing texts for topic modeling in Mallet strips documents of upper and lower case letters, removes line breaks and enjambments, deletes high-frequency words, including articles, prepositions, pronouns, conjunctions, and common verbs--like "is," "are," and "were"--and turns documents into strings of sequential words that no longer bear the same syntactical relationships they once did.  Given this, how can a methodology that requires radical decomposition of a poem's linguistic meaning offer valuable insights into exploring texts? For example, heavy with subtext, the first line of Robert Browning's "My Last Dutchess" would be removed in its entirety from the text of the poem through preprocessing using the default stop list available in Mallet.7  If the computer doesn't value such words, could the model it produces still be useful to someone interested in ekphrasis? To determine whether or not LDA could still produce models that would be useful to the study and revision of the ekphrastic tradition, four experiments were performed on a dataset of 4,500 English language poems using four different preprocessing techniques: 1.) removing no words before creating the model 2.) removing only 50% of the Mallet stopwords 3.) removing all the Mallet stopwords except a small group that relate to ekphrastic conventions (eg. look, see, saw, seen) and 4.) removing all the words on the suggested Mallet stoplist. After preprocessing, each dataset was treated identically, producing 40 topic models. This paper addresses the decision process for assembling each list and points to where the lists can be found online. Contrary to expectation, the model with the greatest topic key word distribution coherence was the model with the most stopwords removed.  Although ekphrastic poems beseech their readers to "look" and to "see" more clearly, the ekphrastic poems themselves surface more coherently in models where the words "see," "look," and "still" are removed.  Like ghosts in the model, similar topics focused on looking and describing form even when specific words referring to the activity are no longer present, and the model's prediction of topical distribution more accurately reflects human estimation of the numbers of "ekphrastic" versus "non-ekphrastic" poems were included in the dataset to begin with.  In fact, topics in the lightly edited stoplist test are reflected in the model where all stopwords are removed, but the list of most likely words associated with each topic is less coherent in the former than the latter's keyword list.  Using specific examples of topics created with models using various stopword lists, this paper tells the story of ekphrasis as it is told through stopword filters, as topical coherence rises, the questions one might ask about the corpus changes. Concentrating on terms such as "still," "look," and "see," this paper will demonstrate how LDA identifies topics where issues of vision, description, and color become refined as the words that directly refer to the act of observation are removed.  Visualizations of relationships between poetic topics and topic word and document distributions will also reveal the ways in which latent patterns of words that have been removed from the corpus can still be evident in topic formation.Copies of the model keyword distribution lists and document to topic distributions are available by request.
+
+This paper uncovers the complementary theoretical and methodological decisions required in order to approach questions of tradition and canon formation with topic modeling corpora of poetry.  An act of critical "deformance," topic modeling uncovers differences between Keats' "still unravish'd bride of quietness" and Carol Snow's "Positions of the Body" even without many of the words that scholars have argued were critical identifying features of the genre.  Such discoveries prompt us to return to close readings of ekphrastic poems with new questions about the conventions of a genre evident in Western letters since Homer's first description of Achilles' shield in the Illiad.1. Mitchell, W.J.T. (1994). Ekphrasis and the Other. Picture Theory. Chicago: University of Chicago Press. Print.
+          2. Loizeaux, Elizabeth. Twentieth Century Poetry and the Visual Arts. (2008). Cambridge, UK: Cambridge UP. Print.
+          3. Hedley, Jane, Nick Halpern, and Williard Spiegelman. (2009). In the Frame: Women's Ekphrastic Poetry from Marianne Moore to Susan Wheeler. Newark, DE: University of Delaware Press. Print.
+          4. Fischer, Barbara K. (2006). Museum Meditations: Reframing Ekphrasis in Contemporary American Poetry. 1st ed. New York: Routledge. Print.
+          5. Moretti, F. (2000). Conjectures on World Literature. New Left Review 1. newleftreview.org/II/1/franco-moretti-conjectures-on-world-literature6. Moretti, F. (2005). Graphs, Maps, Trees: Abstract Models for a Literary History. Verso.
+          7. McCallum, Andrew Kachites. (2002). Mallet: A Machine Learning for Language Toolkit. Web. 31 May 2013.
+          

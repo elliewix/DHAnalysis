@@ -1,0 +1,162 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-896.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Aiding Modern Textual Scholarship using a Virtual Hinman Collator</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>7</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>11:00:00</li>
+      <li><label>Room:</label>414 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Kejriwal</span>,
+									<span class="author-forename">Gaurav</span></a>
+        <a href="http://www.google.com/#q=Kejriwal, Gaurav">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Texas A&amp;M University, United States of America </span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Furuta</span>,
+									<span class="author-forename">Richard</span></a>
+        <a href="http://www.google.com/#q=Furuta, Richard">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Texas A&amp;M University, United States of America </span>
+      </li>
+      <li>
+        <a href="mailto:"><span class="author-surname">Olivieri</span>,
+									<span class="author-forename">Ryan </span></a>
+        <a href="http://www.google.com/#q=Olivieri, Ryan ">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Texas A&amp;M University, United States of America </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <h2 xmlns="">Introduction</h2>
+  <p xmlns="">Collation is an important step in textual criticism and it is most often an arduous task for most scholars involved in scholarly edition. Unsworth includes “collation” as one of the scholarly primitives which have been basic to scholarship across eras and media. Textual variation has been a pervasive problem affecting literary text since the invention of writing. It can arise in two forms - either due to repeated copying of a manuscript such as the variants in the First Folio of Shakespeare or those advertently inserted by the author/copyist such as the changes made in Mary Shelley’s Frankenstein. In the first case collation aids the scholar in generating a critical edition. In the latter case, collation can help the scholar understand the author’s purpose. Finding variations is important for research in bibliography and book history as well.</p>
+  <p xmlns="">Most of the focus in digital humanities until now has been on making documents available digitally. Much less focus has been on actually supporting the process of scholarly research. The area of collation too awaits a lot more from technology. In the late 1940s Charlton Hinman invented the Hinman collator. Using optical means, it allowed manual comparison of separate copies of a text in order to detect differences. Descendants of the Hinman, collators like the Mcleod collator, the Lindstrand collator and the Hailey's Comet, are still used today. Mechanical collators take time to setup correctly, cannot be used on varying fonts, can damage the books, and are expensive and not very portable. Another approach is to perform collation using tools like Juxta or Collate X on text obtained by transcription or by OCR. This method is flawed by the limits of OCR technology and human error. The Sapheos project approaches the collation problem interestingly by attempting to unwarp the pages and registering them using SIFT key points, but this approach will fail if the text differs significantly.</p>
+  <p xmlns="">Most of the tools used today are standalone which inhibits collaboration. Also scholars prefer original copies or facsimiles instead of OCR or transcription versions and most of these tools don’t support that.</p>
+  <p xmlns="">This work proposes to address these problems. A prototype of the virtual Hinman (vHinman) collator was created and user-evaluation was conducted amongst scholars experienced with collation work. Image-matching algorithms along with context information are used to match words and the tool was integrated into the creativity support environment CritSpace. Moreover, CritSpace provides the functionality to easily extend the tool to support collating multiple (&gt;2) copies.</p>
+  <h2 xmlns="">Methodology</h2>
+  <p xmlns="">We developed and evaluated some approaches towards comparing page-images.</p>
+  <p xmlns="">Some methods worked well only when the images are pre-registered and won’t be practical if the pages have different alignments and different font-sizes, so we used image processing techniques and image matching algorithms to perform comparison of images . We followed an approach similar to to compare word images amongst two scanned pages</p>
+  <p xmlns="">We find the unique corner points on the individual words and find a feature vector for these points. Then through clustering we assign an id to each point. Then we are able to use sequence of ids for a word to compare with other words for similarity. Then we take into account the context of the words to aid in finding the exact match for the words.</p>
+  <h2 xmlns="">Integration into CritSpace</h2>
+  <p xmlns="">Peter Robinson notes that the greatest effect of the digital revolution is that it is empowering a new model of collaboration among scholars, and between scholars and readers. In sync with this, the goal of this project is to integrate the collation tool into CritSpace to greatly increase its usefulness. CritSpace [Figure 1] is a web based creativity support environment that implements spatial information management strategies to assist scholars in their open-ended research tasks. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_581-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Sample workspace with a text panel, image panel and facsimile viewer</p>
+    </figcaption>
+  </div>
+  <p xmlns="">The user-interface explained in figures below was planned to generate an effortless user-experience for digital scholars.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_581-2_2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Figure 2 Screenshot highlighting the differences with green boxes around the words. These are displayed when the user clicks on "Differences" button. Notable differences like missing hyphens are outlined as well as the end of the page.</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_581-3.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Figure 3 Screenshot demonstrating the tracking feature. When the user hovers the mouse over any block of word its corresponding match is highlighted in the other page in red. The ones that have already been checked are turned black</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_581_581-4.jpg"/>
+    <figcaption>
+      <p>Fig. 4: Figure 4 Screenshot of the annotation feature. On enabling annotation mode, the user can select a word and a text box will appear. The text is displayed above the word every time annotation mode is set. A sample use-case has been outlined.</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_581-4.jpg"/>
+    <figcaption>
+      <p>Fig. 5: Screenshot of collation output of two 17th century versions of The Late Tryal and conviction of Count Tariff</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/581-5.jpg"/>
+    <figcaption>
+      <p>Fig. 6: Font variations in two versions of word "French"</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">Dataset</h2>
+  <p xmlns=""> We tested the vHinman tool on various scanned texts available on the Internet Archive website and within TAMU collections. Some of them are digital copies of <em>Sherlock</em><em>Holmes</em> , copies of early printings of Donne’s <em>Poems</em> (1633 and 1635) and copies of The Late Tryal and conviction of Count Tariff. These books have many print and edition variants; for the pages of <em>Sherlock</em><em>Holmes</em> tested, the tool shows an average accuracy of 95% in tracking the matches.</p>
+  <h2 xmlns="">User Evaluation</h2>
+  <p xmlns="">Five subjects were chosen to participate in this study which was a mix of semi-structured interview regarding the experience of scholars on collation, followed by a demo of the prototype and then by questions about the feedback of the tool and suggestions for its improvement.</p>
+  <table xmlns="">
+    <tr>
+      <td> ID </td>
+      <td> Area of interest </td>
+      <td> Career Stage </td>
+    </tr>
+    <tr>
+      <td> S1 </td>
+      <td> Eighteenth century literature </td>
+      <td> Senior </td>
+    </tr>
+    <tr>
+      <td> S2 </td>
+      <td> Bibliography </td>
+      <td> Senior </td>
+    </tr>
+    <tr>
+      <td> S3 </td>
+      <td> Scholarly editing </td>
+      <td> Senior </td>
+    </tr>
+    <tr>
+      <td> S4 </td>
+      <td> Scholarly editing </td>
+      <td> Senior </td>
+    </tr>
+    <tr>
+      <td> S5 </td>
+      <td> Book history, Linguistics </td>
+      <td> Senior </td>
+    </tr>
+  </table>
+  <p xmlns="">Most of the subjects had prior experience with collation either in their scholarly research or for some classroom activities. Some of the subjects had experience with mechanical collators or text based collators. Many of the subjects still prefer the paper-based manual collation method because they find the supporting tools either inaccurate or too cumbersome to use or both. The need of collation in the subjects’ research varied from the traditional scholarly editing process to bibliographic research and book history research. </p>
+  <p xmlns="">S4 pointed out that he didn’t have the resources to do the transcription for each of the documents he works on and also said that they are prone to errors.</p>
+  <p xmlns="">S1 pointed out the need to be able to find differences in font-styles, ligatures like the move from using the long “s” to the current “s”.</p>
+  <p xmlns="">S2 liked the idea of integrating the vHinman into CritSpace which can foster collaborative work. She also liked the idea that the tool could have multiple panels (more than two). She pointed out that while supporting multiple images we can display the n-images in the form of medium sized thumbnails as is seen in “Google images”, where the scholar can select any two panels to collate at a time. She noted that the tool could bring forward new uses of collation and could get collation adopted by scholars who currently don’t focus much on it attributing the manual effort and inherent inaccuracies in the current method.</p>
+  <p xmlns="">S5 suggested a novel use of the tool in verifying the authorship of a poem. </p>
+  <p xmlns="">	Some of the subjects felt the need to be able to point small differences like punctuation because this is important for a critical edition. Although our tool currently only supports identifying word differences, punctuation support can be added. S4 felt that the current implementation can quicken the collation process by addressing textual differences while punctuation can be addressed separately. The subjects in general liked the ability to use the original facsimile of the document via the tool rather than a transcription or a somewhat inaccurate OCR version of it.</p>
+  <h2 xmlns="">Conclusion</h2>
+  <p xmlns="">This work has investigated the way humanities scholars perform collation work and what role collation plays in their research output. Collation is known to be a laborious and monotonous task unaided by technology so far. To address this problem, a prototype has been developed to perform collation in an automated manner. Image matching techniques are employed in building this prototype, so that the scholars can use the original facsimiles of the documents. The tool was integrated into CritSpace and will benefit from the collaborative environment. A user evaluation was conducted with experienced scholars. In summary, the tool looks very promising to the scholars and also has a high accuracy rate for the books tested so far. Thus this kind of tool can save a massive amount of time for scholars and set up a paradigm of digital collation encouraging even more scholars in finding new uses of collation in their work. </p>
+  <p xmlns=""> It extends the Hinman’s principles by allowing collating multiple editions of a book in addition to multiple copies of same edition having minor differences.</p>
+  <p xmlns="">Since it is has application in creating a critical edition, bibliography and book history research, this tool has the capability of gaining widespread adoption.</p>
+  <h2 xmlns="">Future Work</h2>
+  <p xmlns="">Beyond printed material, it will be interesting to evaluate the tool for handwritten documents and make it robust for such documents. Also it will be great to test the tool for non-English documents. We can try out different visualization formats and different ways the scholars can use the output in their work. A detailed usability study can be conducted where scholars can perform some real collation work on few pages and compare their traditional method and the vHinman. Also the accuracy could be tested for warped images as most of the unobtrusive scanning methods produce some warping on the images.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Unsworth J.</strong> (2000) <em>"Scholarly Primitives: what methods do humanities researchers have in common, and how might our tools reflect this?” </em>In Humanities Computing: formal methods, experimental practice (13 May 2000) </p>
+  <p xmlns=""><strong>Schmidt, D., &amp; Colomb, R. </strong>(2009). <em>“A data structure for representing multi-version texts online.” </em>Journal of Human–Computer Studies, 67(6), 497–514.</p>
+  <p xmlns=""><strong>Smith, S.E. </strong>(2002) <em>“’Armadillos of Invention’: A Census of Mechanical Collators, Studies in Bibliography”</em> 55, pp. 133-170</p>
+  <p xmlns=""><strong>Cream R.</strong><em>“Sapheos Project”</em>, CDH University Of Southern Carolina <a href="http://sapheos.org/">sapheos.org</a></p>
+  <p xmlns=""><strong>Raabe W.</strong> “<em>Collation in Scholarly Editing: An Introduction”</em></p>
+  <p xmlns="">
+    <a href="http://wraabe.wordpress.com/2008/07/26/collation-in-scholarly-editing-an-introduction-draft">wraabe.wordpress.com/2008/07/26/collation-in-scholarly-editing-an-introduction-draft</a>
+  </p>
+  <p xmlns="">
+    <a href="http://www.juxtasoftware.org/">www.juxtasoftware.org</a>
+  </p>
+  <p xmlns="">
+    <a href="http://collatex.net/">collatex.net</a>
+  </p>
+  <p xmlns=""><strong>Lowe, D.G. </strong>(2004) <em>“Distinctive image features from scale-invariant keypoints.”</em> Int. J. Comput. Vision, 60:91–110, November 2004.</p>
+  <p xmlns=""><strong>Audenaert, N. and Furuta, R.</strong> (2010) <em>What Humanists Want: How Scholars use Primary Source Documents</em>, Proceedings of the 10th Annual Joint Conference on Digital Libraries, pp. 283-292.</p>
+  <p xmlns=""><strong>Yalniz, I. and Manmatha, R.</strong>, <em>"An efficient framework for searching text in noisy document images," </em>Proceedings of the 10th IAPR International Workshop on Document Analysis Systems (DAS'12)</p>
+  <p xmlns=""><strong>Robinson, Peter M. W.</strong> (1994). “<em>Collation, textual criticism, publication, and the computer.”</em> Text 7: 77-94. <a href="http://www.jstor.org/stable/pdfplus/30227694.pdf">www.jstor.org/stable/pdfplus/30227694.pdf. 16 Dec. 2011</a></p>
+  <p xmlns=""><strong>Audenaert, N., Lucchese, G. and Furuta, R.</strong><em>”CritSpace: a workspace for critical engagement within cultural heritage digital libraries”</em> ECDL'10 Proceedings of the 14th European conference on Research and advanced technology for digital libraries</p>
+  <p xmlns="">
+    <strong>Audenaert, N.</strong>
+    <em>“CritSpace: An interactive visual interface to digital collections of cultural heritage material”</em>
+  </p>
+  <p xmlns=""><strong>Marshall, C.C., Shipman, F.M. </strong><em>“Spatial hypertext and the practice of information triage.</em>” In: ACM Conference on Hypertext (Hypertext 1997), pp. 124–133 (1997)</p>
+  <p xmlns=""><strong>Rosten E., and Drummond T.</strong> (2006) <em>“Machine Learning for high-speed corner detection.”</em> In European Conference on Computer Vision. Volume I, 430-443, May 2006.</p>
+</article>
+</div></section><footer><hr/></footer></body></html>

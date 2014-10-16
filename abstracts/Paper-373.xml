@@ -1,0 +1,221 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-373.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Trading Consequences: A Case Study of Combining Text Mining &amp; Visualisation to Facilitate Document Exploration</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>3</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>13:45:00</li>
+      <li><label>Room:</label>414 - Amphimax</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:uh3@st-andrews.ac.uk"><span class="author-surname">Hinrichs</span>,
+									<span class="author-forename">Uta</span></a>
+        <a href="http://www.google.com/#q=Hinrichs, Uta">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">SACHI, University of St. Andrews</span>
+      </li>
+      <li>
+        <a href="mailto:balex@staffmail.ed.ac.uk"><span class="author-surname">Alex</span>,
+									<span class="author-forename">Beatrice</span></a>
+        <a href="http://www.google.com/#q=Alex, Beatrice">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">ILCC, School of Informatics, University of Edinburgh</span>
+      </li>
+      <li>
+        <a href="mailto:jim.clifford@usask.ca"><span class="author-surname">Clifford</span>,
+									<span class="author-forename">Jim</span></a>
+        <a href="http://www.google.com/#q=Clifford, Jim">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Department of History, University of Saskatchewan</span>
+      </li>
+      <li>
+        <a href="mailto:aquigley@st-andrews.ac.uk"><span class="author-surname">Quigley</span>,
+									<span class="author-forename">Aaron</span></a>
+        <a href="http://www.google.com/#q=Quigley, Aaron">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">SACHI, University of St. Andrews </span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">This paper reports on interdisciplinary work
+carried out as part of Trading Consequences <cite href="#n1">1</cite>, a two-year Digging into Data project <cite href="#n2">2</cite>.  The focus of the project is to mine large
+quantities of historical documents, extract information on commodity trading in
+the nineteenth century British World and visualise the mined output in dynamic
+and interesting ways, thereby bringing archives alive in ways that authors of
+original documents would have never imagined. The Trading Consequences
+interface is aimed at historians studying commodities and their environmental
+consequences. Their studies have tended to focus on a manageable number of commodities
+ (e.g. William Cronon's research on beef, lumber and wheat <cite href="#n3">3</cite>).  The Trading Consequences Project aims at identifying
+global trends in commodity trading for many different natural resources, raw
+materials or lightly processed goods by correlating information extracted for
+one commodity with that of others or showing all commodities relevant to
+particular locations and dates.</p>
+  <p xmlns="">In this paper, we first present an overview of this collaborative project
+that involved environmental historians,
+text mining, database experts and visualization researchers. We then report
+on lessons learned from a workshop where we collected feedback from historians
+and geographers after they interacted with the interface prototype in a series
+of exercises. This feedback informed the further adaptation of the underlying
+technologies for historical research.</p>
+  <p xmlns="">
+
+ </p>
+  <h2 xmlns="">2. Trading Consequences</h2>
+  <p xmlns="">The Trading Consequences system encompasses
+three main technical components: a text mining system, a database and a
+web-based user interface with dynamic visualisations (Fig. 1). The data
+analysed using this system is comprised up of several nineteenth century
+British and Canadian text collections <cite href="#n4">4</cite>. These sources amount to over 11 million pages
+and over 7 billion analysed word tokens.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/373_1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: System architecture.</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">2.1 Text Mining</h2>
+  <p xmlns="">The text mining (TM) tools are developed by the Language Technology Group at the University of Edinburgh. We adapted an existing pipeline built on LT-XML2 and LT-TTT2 to process historic text <cite href="#n5">5</cite>. The TM component is made up of a series of linguistic processing steps which build up the linguistic properties of the language in a given text.  A pre-processing stage includes tokenisation, sentence-splitting, part-of-speech tagging and lemmatisation to determine words and sentences, identify their syntax and compute canonical forms of word tokens. All of this information aids down-stream TM processes.  The next steps are named entity recognition and grounding. This means that mentions of locations, commodities and dates are automatically identified in the text and grounded to unique identifiers in existing knowledge databases.  We ground location mentions to GeoNames identifiers and their corresponding latitude/longitude values <cite href="#n6">6</cite>. We use an adapted version of the Edinburgh Geoparser for this geo-referencing process <cite href="#n7">7</cite>.  Commodity mentions are grounded to DBpedia <cite href="#n8">8</cite> concepts in a semi-automatically constructed commodity lexicon developed in this project <cite href="#n9">9</cite>. Finally, date mentions are grounded to year, month and date attributes.  The last TM step identifies relations between commodity, date and location mentions to identify the relevance of commodities in space and time. The extracted and enriched TM output is stored in a relational PostGreSQL database set up and hosted by EDINA <cite href="#n10">10</cite> for subsequent querying and visualisation.</p>
+  <h2 xmlns="">2.2 Interactive Visualisations</h2>
+  <p xmlns="">The strength of information visualisation is to make abstract concepts and relations within data visible and explorable <cite href="#n11">11</cite>. In the context of Trading Consequences we aim at providing visualisations of the mined data to: </p>
+  <ol xmlns="">
+    <li>- enable open-ended explorations of the document corpus beyond target search <cite href="#n12">12</cite>, i.e., supporting visual querying along spatial, temporal, and conceptual dimensions, and </li>
+    <li>- highlighting trends within a range of document data, for instance, relations between different commodity types.</li>
+  </ol>
+  <p xmlns="">While the first approach facilitates the discovery of related documents in ways that common text-based search interfaces cannot, the second approach can lead to new insights or research questions based on collection sizes that exceed possibilities of traditional research methods in the humanities. Our visualizations are web-based to make them easily accessible worldwide (see [1]). The implementation is based on JavaScript (D3.js and jQuery) and PHP.</p>
+  <p xmlns="">In this paper we briefly describe the Trading Consequences visualisation tool and how it was experienced by environmental historians as part of a workshop. Inspired by <cite href="#n13">13</cite>, our visualisation consists of three interlinked representations (Fig. 2): a map showing the geographic context in which commodities were mentioned, a vertical tag cloud showing the 50 most frequently mentioned commodities, and a bar chart representing the temporal distribution of documents within the collection. A ranked document list provides direct access to the relevant articles.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/373_2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: Interlinked visualisations provide an overview of the document collection.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Interaction with one visualisation acts as a filtering mechanism and adjusts the data shown in the other visualisations. For instance, zooming into the map adjusts the tag cloud to only include commodities mentioned in relation to visible locations; the bar chart only shows documents that include these commodity/location mentions (Fig. 3). Particular time frames can be selected to further filter the document corpus; the other visualisations are updated accordingly (Fig. 4).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/373_3.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Specifying the location adjusts the other visualisations.</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/373_4.jpg"/>
+    <figcaption>
+      <p>Fig. 4: Specifying a time frame adjusts commodities and locations shown in the tag cloud and map.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Lastly, historians can specify commodities of interest,
+either by textual query or by selecting commodities from the tag cloud. All
+visualisations adjust, with the tag cloud showing commodities related to the
+selected ones. An additional line chart presents the frequency of mentions of
+selected commodities across time (Fig. 5).</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/373_5.jpg"/>
+    <figcaption>
+      <p>Fig. 5: Specifying particular commodities of interest further adjusts the visualisation.</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">
+    <strong>3. Feedback from Historians</strong>
+  </h2>
+  <p xmlns="">To gain expert feedback on our approach of
+combining text mining with visualisations to facilitate research in environmental
+history, we conducted a half-day workshop where we introduced our visualisation
+prototype to historians. The workshop was held at the Canadian History &amp;
+Environment Summer School 2013 with over 20 environmental historians
+participating <cite href="#n14">14</cite>. At the workshop, we asked historians to
+explore the visualisation tool in small groups (Fig. 6). To promote engagement
+with the different visualisations and to fuel discussions, the explorations
+were guided by a number of open-ended tasks, such as querying for commodities
+of interest or focusing on a geographic area. 
+
+
+</p>
+  <p xmlns="">Some historians immediately started to focus on
+the Vancouver Island area where the workshop took place. Others experimented
+with commodities and locations related to their own research. In general, these
+first exploration periods were about verifying familiar facts to assess the
+capabilities of the visualisation and the trustworthiness of the underlying
+data. The historians quickly understood the general purpose and high-level
+functionality of the visualisations and were able to start their explorations
+immediately. There was some confusion, however, about lower level details. For
+instance, the meaning of the size and number of clusters in the map was unclear
+(e.g. do they represent number of documents, or number
+of commodity mentions?). Observing changes in the visualisations while adjusting parameters
+helped, but our observations highlight that clear labelling and tooltips are crucial
+for visualisations in the context of digital humanities, not only because these
+are a novel addition to traditional research methodologies, but also because
+they can be easily misinterpreted. The meaning of visual representations needs
+to be clear in order to make visualisations a valid research tool.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/373_6.jpg"/>
+    <figcaption>
+      <p>Fig. 6: User workshop at CHESS 2013.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Workshop participants found the meta-level
+overviews of the visualisations valuable as these can aggregate information
+about the document corpus beyond human capacity. In the short time of the
+workshop, historians made (sometimes surprising) discoveries that sparked their
+interest to conduct further research. While it is unclear if these discoveries withstand
+more detailed investigation (there is still some noise in the data), this shows
+that visualisation has the potential to support exploration and insight in the
+context of history research.</p>
+  <p xmlns="">A large part of the discussions focussed on
+what kind of insights can be gathered from the visualisations. Some historians
+pointed out that the visualisations represent the rhetoric around commodity trading in the 19th century: they
+show where and when a dialogue about particular commodities took place,
+rather than providing information about the occurrence of commodities in
+certain locations. This raises the question of how we can clarify what kind of
+data the visualisations are based on to avoid misinterpretation.</p>
+  <h2 xmlns="">4. Conclusion</h2>
+  <p xmlns="">In general, we received positive feedback
+about our approach of combining text mining and visualisation to help research
+processes in environmental history. Historians saw the largest potential in the
+amounts of data that can be considered for research but also in the open-ended
+character of the explorations that the visualisations support in contrast to
+common database search interfaces. Other types of visualisations were suggested
+to help analyse and discover relations and patterns in the data, something that
+we are currently developing. </p>
+  <p xmlns="">Our future research will explore how our
+approach integrates into research processes in environmental history and how it can produce
+profound outcomes. This will involve controlled experiments including directed and open-ended tasks. 
+We will also conduct long-term studies to evaluate the discoveries
+and limitations that historians encounter when using our tools. The
+wide-ranging feedback from the workshop was crucial in helping the
+computer science team members understand priorities and research methodologies
+of environmental historians. Expert feedback is an important component of
+interdisciplinary research in digital humanities.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. Trading Consequences: <a href="http://tradingconsequences.blogs.edina.ac.uk/">tradingconsequences.blogs.edina.ac.uk/</a></p>
+  <p xmlns="">2. Digging Into Data: <a href="http://www.diggingintodata.org/">www.diggingintodata.org/</a></p>
+  <p xmlns="">3. <strong>William Cronon</strong> (1992). <em>Nature’s Metropolis: Chicago and the Great West</em>. W.W. Norton, New York.
+          </p>
+  <p xmlns="">4. Data collections: <a href="http://tradingconsequences.blogs.edina.ac.uk/about/the-corpus/">tradingconsequences.blogs.edina.ac.uk/about/the-corpus/</a></p>
+  <p xmlns="">5. LT-XML2: <a href="http://www.ltg.ed.ac.uk/software/ltxml2">www.ltg.ed.ac.uk/software/ltxml2</a>; LT-TTT2: <a href="http://www.ltg.ed.ac.uk/software/lt-ttt2">www.ltg.ed.ac.uk/software/lt-ttt2</a></p>
+  <p xmlns="">6. GeoNames: <a href="http://www.geonames.org/">www.geonames.org/</a></p>
+  <p xmlns="">7. <strong>Claire Grover, Richard Tobin, Kate Byrne, Matthew Woollard, James Reid, Stuart Dunn, and Julian Ball</strong> (2010). <em>Use of the Edinburgh Geoparser for georeferencing digitised historical collections</em>. Philosophical Transactions of the Royal Society A.
+          </p>
+  <p xmlns="">8. DBpedia: <a href="http://dbpedia.org.">dbpedia.org.</a> We accessed DBpedia via the SPARQL endpoint (<a href="http://dbpedia.org/OnlineAccess)">dbpedia.org/OnlineAccess)</a>, most recently on 16/12/2013, corresponding to DBpedia version 3.9.
+          </p>
+  <p xmlns="">9. <strong>Ewan Klein, Beatrice Alex and Jim Clifford </strong>(2014). <em>Bootstrapping a historical commodities lexicon with SKOS and DBpedia</em>, In: Proceedings of the LaTeCH 2014 workshop at EACL 2014.
+          </p>
+  <p xmlns="">10. EDINA: Jisc-designated centre for digital expertise &amp; online service delivery; <a href="http://edina.ac.uk/">edina.ac.uk/</a></p>
+  <p xmlns="">11. <strong>Stuart K. Card, Jock D. Mackinlay, Ben Shneiderman</strong> (eds.) (1999). <em>Readings in Information Visualization: Using Vision to Think</em>. Morgan Kaufmann Publishers, Chapter 1, pp. 1-34.
+          </p>
+  <p xmlns="">12. <strong>Gary Marchionini</strong> (2006). <em>Exploratory search: From finding to understanding</em>. Communications of the ACM 49, 4, 41–46.
+          </p>
+  <p xmlns="">13. <strong>Marian Dörk, Sheelagh Carpendale, Christopher Collins and Carey Williamson </strong>(2008). <em>VisGets: Coordinated Visualizations for Web-based Information Exploration and Discovery</em>. IEEE Transactions on Visualization and Computer Graphics, 14(6), pp. 1205-1212.
+          </p>
+  <p xmlns="">14. CHESS 2013: <a href="http://70.32.75.219/2013/04/12/cfp-canadian-history-and-environment-summer-school-2013-vancouver-island/">70.32.75.219/2013/04/12/cfp-canadian-history-and-environment-summer-school-2013-vancouver-island/</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

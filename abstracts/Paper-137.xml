@@ -1,0 +1,485 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-137.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Does <em>colour</em> mean <em>color</em>?: Disambiguating word sense and ideology in British and American orthographic variants</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>6</li>
+      <li><label>Date:</label>2014-07-11<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>319 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:dustin.grue@gmail.com"><span class="author-surname">Grue</span>,
+									<span class="author-forename">Dustin</span></a>
+        <a href="http://www.google.com/#q=Grue, Dustin">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of British Columbia</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">The orthography/identity hypothesis proposes
+that a speaker’s motivation for selecting between available orthographic
+variants in a language (e.g. between British <em>colour</em> and American <em>color</em>
+in English) is to some extent informed by the speaker’s desire to express a
+certain identity <cite href="#n1">1</cite> <cite href="#n2">2</cite> <cite href="#n3">3</cite>.  In the Canadian context, where a mixture of
+American/British variants are used – often with non-categorical preference
+<cite href="#n4">4</cite><cite href="#n5">5</cite> – Heffernan et al. <cite href="#n6">6</cite> developed a method to
+qualify the orthography/identity connection in terms of ideology and show that
+during periods of increased “anti-Americanism,” specifically during unpopular
+American-led wars, American variant use declines relative to the British.  Heffernan et al.’s data cover the
+years 1921 to 2004, and are derived from the student newspaper <em>The Gateway</em> at the University of Alberta
+in Alberta, Canada.  Their method
+involved locating expressions of national sentiment for each year of the data,
+rating “anti-American sentiment” on a 7-point Likert scale (255 ratings over 85
+years performed by each author) and correlating this with the relative
+frequencies of 15 orthographic variables (Table 2, though <em>color </em>/ <em>colour </em>is my addition): the negative correlation obtained was quite high, with Pearson-r -0.715, <em>p</em> = 0.001.
+
+</p>
+  <p xmlns="">However, follow-up
+work by the present author, using data in the same timeframe from the archive of the University of British
+Columbia’s student newspaper <em>The Ubyssey</em>
+(~50 million words) in the neighbouring province of British Columbia, failed to
+find similar short-term diachronic changes in variant use correlated with
+periods of increased “anti-American sentiment” <cite href="#n7">7</cite>. 
+Following Heffernan et al.’s method, an insignificant correlation was
+obtained: Pearson-r -0.434,
+<em>p</em> = 0.064.  Historical relative orthographies do differ
+between Canada’s provinces <cite href="#n8">8</cite> <cite href="#n9">9</cite><cite href="#n10">10</cite> but,
+assuming the strong connection between orthography and identity, no clear
+explanation remains for the lack of correlation in other Canadian data.  Without dispensing with the
+orthography/identity hypothesis, I hypothesize that proximal linguistic contexts are also motivating factors in variant selection, and propose to integrate a more context sensitive model into this top-down, language-external theory of linguistic identity performance.</p>
+  <p xmlns="">To test for contextual
+differences, I treated the problem as one of word sense disambiguation, where
+the goal is to distinguish lexemes using a set of features and a computational language model—a
+technique most often used to distinguish between ambiguous meanings of homonyms
+(such as <em>judge</em>, <em>bank</em>, <em>bow</em>, etc.) <cite href="#n11">11</cite>.  Features used were a window of
+words surrounding each variant (8 words either side of the target was found
+optimal, excluding other instances of variables if present) and the model was
+Naïve Bayes.  If orthographic variants
+can be discriminated based on surrounding context, we can assume that those words
+are in some way unique—with the interesting implication, in the extreme case, that spelling variants
+might not just diverge orthographically but semantically, as well <cite href="#n12">12</cite>.  Maybe they mean different things.  My experiments attempted to disambiguate
+variants in each variable from one another using unsupervised and supervised classification, in both cases using
+the Naïve Bayes form.
+
+</p>
+  <p xmlns="">Though Naïve Bayes
+makes the linguistically improbable assumption of feature independence, it has
+been noted for its precision in classification problems in spite of this simplification
+(i.e. its ‘naiveté’) <cite href="#n13">13</cite>.  For unsupervised
+classification I used my own <em>Python</em> implementation
+of a Naïve Bayes classifier where the parameter estimates are learned through
+Estimation Maximization (EM), as described in e.g. Manning and Schütze <cite href="#n14">14</cite>.  As Pedersen <cite href="#n15">15</cite> observes, testing the
+results of unsupervised classification is complicated by the fact that the
+algorithm does not assign labels to inputs, instead clustering them, but accuracy
+can be represented as the proportion of the dominant variant in each cluster.  My classifier outputs two ‘sense groups’, which
+would ideally correspond to the American or Canadian variant.  After performing 10 trials and averaging the
+results, I found that only three variables out of 16 (Heffernan et al. exclude <em>color </em>/<em> </em><em>colour</em>—I include it) produced
+significant results, in that their prediction accuracies departed from – or improved upon – their ‘lower bound’ accuracies,
+where the lower bound is the relative frequency of each variant and therefore
+the accuracy one would achieve simply by assigning each variant to a category
+based on its occurrence.  For brevity,
+only these three are represented in Table 1.</p>
+  <table xmlns="">
+    <tr>
+      <td> <strong> American variant</strong></td>
+      <td>
+        <strong> accuracy </strong>
+      </td>
+      <td>
+        <strong> lower bound </strong>
+      </td>
+      <td>
+        <strong> Canadian variant </strong>
+      </td>
+      <td>
+        <strong> accuracy </strong>
+      </td>
+      <td>
+        <strong> lower bound </strong>
+      </td>
+    </tr>
+    <tr>
+      <td> color</td>
+      <td>55.5% </td>
+      <td>54% </td>
+      <td>colour </td>
+      <td>65.6% </td>
+      <td>46% </td>
+    </tr>
+    <tr>
+      <td> gray</td>
+      <td>23.2% </td>
+      <td>17% </td>
+      <td>grey </td>
+      <td>86.2% </td>
+      <td>83% </td>
+    </tr>
+    <tr>
+      <td> jewelry</td>
+      <td>51.3% </td>
+      <td>49% </td>
+      <td>jewellery </td>
+      <td>55.4% </td>
+      <td>51% </td>
+    </tr>
+  </table>
+  <p xmlns="">Unsupervised classification for <em>colour</em>
+improves accuracy by 19.4% over its lower bound, but increases for other
+variables are marginal and – like <em>colour</em>
+– generally apply to one variant only.</p>
+  <p xmlns="">For supervised classification I used the Naïve
+Bayes classifier in the <em>Python</em>
+library Natural Language Tool Kit (NLTK)<cite href="#n16">16</cite>, a similar method to
+Mahowald’s <cite href="#n17">17</cite> recent study in which <em>y</em>-
+and ­<em>th</em>- pronouns were disambiguated
+in a corpus of Shakespeare’s plays based on context.  Whereas unsupervised classification performed
+poorly, supervised classification obtained surprising accuracy for multiple
+variables after 10 validation trials.  These
+results are summarized in Table 2, ranked by accuracy, with an asterisk denoting
+significance at the <em>p</em> = 0.001
+level.  In this experiment, the lower
+bound for each variable is 50% because a random subset of the tokens was evaluated
+and counts were set equal for each variant during testing.</p>
+  <table xmlns="">
+    <tr>
+      <td>
+        <strong>         <strong>  variable                    </strong></strong>
+      </td>
+      <td>
+        <strong>
+          <strong>accuracy</strong>
+        </strong>
+      </td>
+      <td>
+      <strong><strong>total count</strong></strong></td>
+    </tr>
+    <tr>
+      <td>
+  jewelry / jewellery
+  </td>
+      <td>
+  81.6%*
+  </td>
+      <td>
+           564
+  </td>
+    </tr>
+    <tr>
+      <td>
+  gray / grey
+  </td>
+      <td>
+  79.3%*
+  </td>
+      <td>
+           3112
+  </td>
+    </tr>
+    <tr>
+      <td>
+  color /colour
+  </td>
+      <td>
+  74.5%*
+  </td>
+      <td>
+           5312
+  </td>
+    </tr>
+    <tr>
+      <td>
+  program / programme
+  </td>
+      <td>
+  70.1%*
+  </td>
+      <td>
+           5704
+  </td>
+    </tr>
+    <tr>
+      <td>
+  honor / honour
+  </td>
+      <td>
+  62.0%*
+  </td>
+      <td>
+           2538
+  </td>
+    </tr>
+    <tr>
+      <td>
+  enrollment / enrolment
+  </td>
+      <td>
+  61.2%*
+  </td>
+      <td>
+           2086
+  </td>
+    </tr>
+    <tr>
+      <td>
+  humor / humour
+  </td>
+      <td>
+  61.1%*
+  </td>
+      <td>
+           2862
+  </td>
+    </tr>
+    <tr>
+      <td>
+  neighbor / neighbour
+  </td>
+      <td>
+  60.7%*
+  </td>
+      <td>
+           494
+  </td>
+    </tr>
+    <tr>
+      <td>
+  defense / defence
+  </td>
+      <td>
+  58.6%*
+  </td>
+      <td>
+           5640
+  </td>
+    </tr>
+    <tr>
+      <td>
+  judgment / judgement
+  </td>
+      <td>
+  56.8%
+  </td>
+      <td>
+           928
+  </td>
+    </tr>
+    <tr>
+      <td>
+  offense / offence
+  </td>
+      <td>
+  56.3%*
+  </td>
+      <td>
+           1568
+  </td>
+    </tr>
+    <tr>
+      <td>
+  centered / centred
+  </td>
+      <td>
+  55.7%
+  </td>
+      <td>
+           488
+  </td>
+    </tr>
+    <tr>
+      <td>
+  marvelous / marvellous
+  </td>
+      <td>
+  55.6%
+  </td>
+      <td>
+           316
+  </td>
+    </tr>
+    <tr>
+      <td>
+  fulfill / fulfil
+  </td>
+      <td>
+  54.7%
+  </td>
+      <td>
+           312
+  </td>
+    </tr>
+    <tr>
+      <td>
+  labeled / labelled         
+  </td>
+      <td>
+  54.4%
+  </td>
+      <td>
+           270
+  </td>
+    </tr>
+    <tr>
+      <td>
+  kilometers / kilometres
+  </td>
+      <td>
+  40.0%
+  </td>
+      <td>
+          
+  72
+  </td>
+    </tr>
+  </table>
+  <p xmlns="">It would seem that we are able to predict, sometimes with high
+accuracy, whether certain variables will realize their American or British variant based on context.  But why?  If orthographic variations are simply
+different graphemes of the same lexeme, decided rather capriciously by an
+American lexicographer in the nineteenth century <cite href="#n18">18</cite>, why should
+this be possible?</p>
+  <p xmlns="">The Naïve Bayes module
+in NLTK provides output for identifying features most useful in making its
+decisions, and can help answer this question. 
+For <em>gray </em>/ <em>grey</em>, the case is clear, since the terms
+most likely to indicate British <em>grey</em>
+are <em>Pt.</em> and <em>Point </em>(Point Grey is the name of the land on which the University
+of British Columbia lies), and terms indicating American <em>gray</em> are proper nouns like <em>Bob</em>, <em>John</em>, and <em>Stuart </em>(Gray is a common
+surname).  A revealing result, but only
+so far as it reveals a highly restrictive context in non-compositional forms,
+and might suggest this variable be excluded from further testing.  Contexts for <em>color </em>/ <em>colour</em> are more interesting, however, and fall into two large
+subjective categories: ‘cultural’ and ‘technological’ (Table 3).</p>
+  <table xmlns="">
+    <tr>
+      <td>
+        <strong>
+          <strong>  variant</strong>
+        </strong>
+      </td>
+      <td>
+        <strong>
+          <strong>  category</strong>
+        </strong>
+      </td>
+      <td>
+        <strong>
+          <strong>  informative</strong>
+          <strong>features</strong>
+        </strong>
+      </td>
+    </tr>
+    <tr>
+      <td>colour</td>
+      <td>
+  cultural
+  </td>
+      <td>
+  diversity, women, people,
+  racism, queer
+  </td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>
+  cultural
+  </td>
+      <td>
+  people
+  </td>
+    </tr>
+    <tr>
+      <td>colour</td>
+      <td>
+  technological
+  </td>
+      <td>
+  connected, jet, print,
+  modem, monitor
+  </td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>
+  technological
+  </td>
+      <td>
+  cartoons,
+  TV
+ </td>
+    </tr>
+  </table>
+  <p xmlns="">As a collocation analysis reveals, in the ‘cultural’
+category phrases such as <em>women of colour</em>, <em>people of colour</em>, and<em>queers
+of colour</em> occur often with <em>colour </em>– 225 total instances, its most frequent collocate – but hardly ever with <em>color </em>(11 instances).  In the ‘technological’ category, computer
+terms appear with <em>colour</em> and
+entertainment terms with <em>color</em>, where
+these terms are often found in advertisements and the site of these interactions
+tend to be local for <em>colour</em> and
+global for <em>color</em> (a local transaction
+for a <em>colour monitor</em>, at least prior
+to the expansion of current global markets, but the international consumption
+of <em>color television</em>).  However, these phrases are easily
+recognizable as historically specific (to around post-1980).  Indeed, the unsupervised classification of <em>colour</em> backs up this historical
+selectivity: significantly more of the items grouped at 65.6% accuracy are from this
+decade—context and history are intertwined, of course, and it exceeds my scope
+to disambiguate these here.  But the more
+a-historical distribution of terms predicting <em>jewelry </em>/ <em>jewellery</em> suggests historical clustering is not inevitably
+the rule: local activities like <em>piercing</em>
+and <em>repairs</em>, and localities denoted
+by <em>West</em> and <em>Point</em> (i.e. the location of a shop in <em>West</em><em>Point</em> Grey) predict
+British <em>jewellery</em>, but generic sales
+terms <em>accessories</em>, <em>fine</em>, <em>place</em>, and <em>giftware</em> predict American <em>jewelry</em>.  In sum, advertisements, or, more generically,
+‘solicitations’, are the dominant vehicle of these variants and prefer the
+British when the activity is local (both economically and socially—these will
+be further described) and the American generally.  I will also further discuss how accounting for genre affects classification accuracy.  Overall, British variants are more uniquely contextualized, and therefore more easily discriminated, than American.
+
+</p>
+  <p xmlns="">Qualitative
+sociolinguistic approaches like Heffernan et al.’s (2010) locate identity as an
+exterior motivating condition for language, with the necessary assumption that orthography
+is selected independently of linguistic context.  And though this paper finds that this assumption
+does not hold, the ability to disambiguate orthographic variants based on
+context is interesting, but not explanatory in its own right.  These contexts are also motivated, and computational
+techniques take us full-circle back to considering ideological – but more
+interactional – motivations for linguistic context. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Lipski, J</strong>. (1975). <em>Orthographic variation and linguistic nationalism</em>. La Monda Lingvo-Problemo 6. 37-48.
+          </p>
+  <p xmlns="">2. <strong>Schieffelin, B. B., and Doucet, R. C.</strong> (1994). <em>The ‘real’ Haitian Creole: Ideology, metalinguistics and orthographic choice</em>. American Ethnologist 21. 176–200.
+          </p>
+  <p xmlns="">3. <strong>Sebba, M.</strong> (2000). <em>Orthography and ideology: Issues in Sranan spelling</em>. Linguistics 38. 925–948.
+          </p>
+  <p xmlns="">4. <strong>Chambers, J. K.</strong> (2011). <em>‘Canadian dainty’: The rise and decline of Briticisms in Canada</em>.  In Legacies of Colonial English: Studies in Transported Dialects, 224-241.  Cambridge: Cambridge UP.
+          </p>
+  <p xmlns="">5. <strong>Pratt, T. K.</strong> (1993). <em>The hobgoblin of Canadian English spelling</em>. In S. Clarke (ed.), Focus  on Canada, 45–64. Amsterdam: Benjamins.
+          </p>
+  <p xmlns="">6. <strong>Heffernan, K., Borden, A., Erath, A. C., and Yang, J-L.</strong> (2010). <em>Preserving Canada’s  ‘honour’: Ideology and diachronic change in Canadian spelling variants</em>.  Written Language and Literacy 13(1). 1-23.
+          </p>
+  <p xmlns="">7. <strong>Grue, D.</strong> (forthcoming). <em>Testing Canada's 'honour': Does orthography index ideology?</em> Strathy Student Working Papers on Canadian English.
+          </p>
+  <p xmlns="">8. <strong>Brinton, L. and Fee, M.</strong> (2001). <em>Canadian English</em>. In John Algeo (ed.), The  Cambridge history of the English language, vol. 6, 422-439. Cambridge:  Cambridge UP.
+          </p>
+  <p xmlns="">9. <strong>Ireland, R. J.</strong> (1979). <em>Canadian spelling: An empirical and historical survey of  selected word</em>s. Ph.D. dissertation, York University, Toronto.
+          </p>
+  <p xmlns="">10. <strong>Ireland, R. J.</strong> (1980). <em>Canadian spelling: How much British? How much  American?</em> English Quarterly 12(4). 64-80.
+          </p>
+  <p xmlns="">11. <strong>Pedersen, T.</strong> (2002). <em>A baseline methodology for word sense disambiguation</em>. Proceedings of the Third International Conference on Intelligent Text Processing and Computational Linguistics. 126-135.
+          </p>
+  <p xmlns="">12. <strong>Miller, G. A. and Charles, W. G.</strong> (1991). <em>Contextual correlates of semantic similarity</em>. Language and Cognitive Processes 6(1). 1-28.
+          </p>
+  <p xmlns="">13. <strong>Abney, S.</strong> (2008). <em>Semisupervised Learning for Computational Linguistics</em>. New York: Chapman &amp; Hall.
+          </p>
+  <p xmlns="">14. <strong>Manning, C. D. and Schütze, H.</strong> (1999). <em>Foundations of Statistical Natural Language Processing</em>. Cambridge, Mass.: MIT Press.
+          </p>
+  <p xmlns="">15. <strong>Pedersen, T.</strong> (1998). <em>Learning Probabilistic Models of Word Sense Disambiguation</em>. Ph.D. Dissertation, Southern Methodist University, University Park, Texas.
+          </p>
+  <p xmlns="">16. <strong>Bird, S., Klein, E., and E. Lopez.</strong> (2009). <em>Natural Language Processing with Python</em>. Sebastopol, CA: O'Reilly Media.
+          </p>
+  <p xmlns="">17. <strong>Mahowald, K.</strong> (2012). <em>A Naïve Bayes classifier for Shakespeare's second-person pronoun</em>. Literary and Linguistic Computing 27(1). 17-23.
+          </p>
+  <p xmlns="">18. <strong>Webster, N.</strong> (1846). <em>A dictionary of the English language</em>; abridged from the American dictionary. [American Dictionary]. New York: Huntington and Savage.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

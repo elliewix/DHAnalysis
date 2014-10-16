@@ -1,0 +1,98 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-248.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Visualization of Historical Knowledge Structures: An Analysis of the Bibliography of Philosophy</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>2</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>16:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:csula@pratt.edu"><span class="author-surname">Sula</span>,
+									<span class="author-forename">Chris Alen</span></a>
+        <a href="http://www.google.com/#q=Sula, Chris Alen">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Pratt Institute, School of Information &amp; Library S</span>
+      </li>
+      <li>
+        <a href="mailto:wdean@pratt.edu"><span class="author-surname">Dean</span>,
+									<span class="author-forename">Will</span></a>
+        <a href="http://www.google.com/#q=Dean, Will">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Pratt Institute, School of Information &amp; Library S</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">Bibliography is among the oldest forms of knowledge
+organization, both documenting knowledge artifacts and
+arranging them into specialized subject categories. Extant bibliographies date back to the 15th century, with more appearing in the 18th and 19th centuries with the rise of trade presses.<cite href="#n1">1</cite> Though the  bibliographic form was eclipsed in the late 20th century by digital systems, print
+bibliographies offer important insights into the history of knowledge production, especially for works that no longer exist. More importantly, bibliographers' choices of inclusion, exclusion, and subject headings provide unique insight into how works were received in different times and places—and in ways that do not rely on
+current, anachronistic understandings of disciplines and
+ their topologies.</p>
+  <p xmlns="">The potential for datamining these massive
+bibliographic efforts across five centuries has gone untapped in several
+senses. First, one might examine statistical patterns in
+publication dates and topics—akin to the "distance reading" method described by
+Moretti.<cite href="#n2">2</cite> Second, one might analyze geospatial
+relationships between text and locations, noting when an idea sprouted
+in a certain area, how long it took to spawn a translation elsewhere, or whether successive versions of the same text signal continued interest in
+and adoption of certain ideas. Third, one might exploit the associative connections between texts organized under the same subject headings, using those links to examine the intellectual structure of a field, its expansion (or contraction) over time, and its division into new (sub)fields. All of these analyses would be enriched by analyzing multiple bibliographies across different places and times, forming a field of "comparative bibliography" within the digital humanities<cite href="#n3">3</cite>.</p>
+  <p xmlns="">Philosophy is a prime candidate for this analysis both because extensive research exists on the history of the bibliography of philosophy<cite href="#n4">4</cite> and because philosophy once contained nearly all branches of knowledge (the exception being modern science), with other fields splitting off from philosophy from the Renaissance period to the present. General bibliographies of philosophy date back to the 15th century, though Johann Jacob Frisius’s 1593 bibliography<cite href="#n5">5</cite> may
+be regarded as the pioneer of the form, which was followed for several
+centuries by larger compendia. As Jasenas notes, these
+successive bibliographies reveal shifts in knowledge structures over time: "philosophy has always been in a state of flux, with differing conceptions of scope and interest prevailing at different times. In classical antiquity philosophy encompasses almost all fields
+of knowledge; but later many of them gradually became separated from
+philosophy as independent disciplines. Consequently, the history of the
+subject is largely colored by the continuing tendency to re-define and
+emphasize special areas of interest formerly included in larger
+definitions” ([4] p. 41). A variety of historical classifications is presented in Figure 1.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_207_1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: </p>
+    </figcaption>
+  </div>
+  <p xmlns="">Though there is noticeable overlap between these classifications (e.g., the inclusion of the <em>trivium</em> and <em>quadrivium</em> over several centuries), the differences are also telling, both in
+terms of the position of subjects within bibliographers' taxonomies and the presence or absence of certain subjects (e.g., medicine,
+agriculture, law) in one bibliography as compared to others. Jasenas
+attributes these differences to the influence of past bibliographers, the importance of the subject as perceived by
+ the bibliographer (e.g. Spach’s inclusion of ethics), and the
+university curriculum familiar to each bibliographer—all interesting fodder for a comparative analysis of the field. </p>
+  <p xmlns="">The last of these general
+bibliographies of philosophy came in 1905 with Benjamin Rand’s massive compilation<cite href="#n6">6</cite>, which catalogs over 67,000 books and journals. It has been succeeded only
+by smaller subject bibliographies. Rand's work drew on past efforts by dozens of bibliographers and contains over 700 subject headings, including 600 entries for specific philosophers' writings and secondary criticism about them. Bynagle notes that "Rand has been criticized, in his own time and
+ since, for omitting certain topics (e.g., philosophy of history and
+philosophy of language) and for other shortcomings. However, the
+magnitude of his effort is generally acknowledged and acclaimed, and its
+ product remains even now of some value, particularly for its nearly exhaustive
+ coverage of nineteenth-century authors."<cite href="#n7">7</cite></p>
+  <p xmlns="">Using Rand's bibliography, this poster presents statistical, geospatial, and network visualizations of the history of philosophy. This data is obtained from a digitized version of Rand's bibliography, which is parsed to extract structured information about each work and its subject heading. The main research questions of the poster are: (1) the emergence of particular topics across time and space (see Figure 2), (2) transmission of ideas as measured through publication location and version information, and (3) the topical shifts in the field over time as reflected by Rand's subject classification of texts.</p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_207_rand.jpg"/>
+    <figcaption>
+      <p>Fig. 2: An interactive geospatial visualization of publications over time, as well as two frequency charts: one showing of the total number of publications over time and another with publications separated by region. Data on Aristotle, Hume, and Kant is displayed.</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Schneider, G.</strong> (1934). <em>Theory and History of Bibliography</em>. Translated by Ralph Robert Shaw. New York: Scarecrow Press.
+          </p>
+  <p xmlns="">2. <strong>Moretti, F.</strong> (2005). <em>Graphs, Maps, Trees: Abstract Models for a Literary History</em>. Verso.
+          </p>
+  <p xmlns="">3. For an example in archaeology, see Maximillian Schich, César Hidalgo, Sune Lehmann, and Juyong Park. (2010). "The Network of Subject Co-Popularity in Classical Archaeology, Bollettino di Archeologia On-line I, 49–57.
+          </p>
+  <p xmlns="">4. <strong>Jasenas, Michael</strong>. (1973). <em>A History of the Bibliography of Philosophy</em>. New York: Georg Olms Verlag Hildesheim.
+          </p>
+  <p xmlns="">5. <strong>Frisius [Fries], JohannJacob</strong>. <em>Orationes de officio vitae ministrorum Ecclesiae et de eorumdem concordia</em>. Tiguri: Apud C. Froschouerum, 1593.
+          </p>
+  <p xmlns="">6. <strong>Rand, Benjamin</strong>. <em>Bibliography of Philosophy, Psychology, and Cognate Subjects</em>. Vol. III of Dictionary of Philosophy and Psychology. Edited by James Mark Baldwin. New York: Macmillan, 1901–05
+          </p>
+  <p xmlns="">7. <strong>Hans E. Bynagle</strong> (1997). <em>Philosophy: A Guide to the Reference Literature</em>, 2nd ed. Englewood, Colo. Libraries Unlimited, Inc. pp. 87–88.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

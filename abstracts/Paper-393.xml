@@ -1,0 +1,139 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-393.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>DH on the Fringes: Using Smartphones, Instagram, and Ruby on Rails to Archive the DH Experience at an HBCU</h1>
+    <ul id="details">
+      <li><label>Category:</label>Short Paper</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>315 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:desireedighton@gmail.com"><span class="author-surname">Dighton</span>,
+									<span class="author-forename">Desiree</span></a>
+        <a href="http://www.google.com/#q=Dighton, Desiree">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">Shaw University</span>
+      </li>
+      <li>
+        <a href="mailto:brnorber@ncsu.edu"><span class="author-surname">Norberg</span>,
+									<span class="author-forename">Brian</span></a>
+        <a href="http://www.google.com/#q=Norberg, Brian">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">North Carolina State University Libraries</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns="">Over the past few years, the
+literature on race in digital humanities has steadily grown. From various
+articles in Debates in the Digital
+Humanities to the development of Postcolonial Digital Humanities and MLA
+E-Roundtable, “Assessing Race in Digital Humanities”, many have explored the
+theoretical and activist potential of addressing race in DH. Simultaneously, venues
+and projects like THATCamp and The Praxis Program have progressively pushed DH beyond
+the bounds of research one institutes. However, much has yet to be said about the
+complexities of involving students with digital
+humanities at under-resourced institutions. Teaching humanities classes at Shaw University, the first
+historically black college in the South, has given me an excellent opportunity to
+do just that. </p>
+  <p xmlns="">This paper discusses how I dealt with a lack of technology and student confidence to create a modern
+archive of Shaw University student life, called <a href="http://myshawu.herokuapp.com/">#myshawu</a>, by using smartphones and an
+open-source Ruby On Rails engine for harvesting Instagram photos. Though the
+assignment taught me the potential of DH as an empowering tool for my students to
+tell their stories in a public venue, it ultimately convinced me that the
+greatest hurdle to getting people of race involved in the field is not just exposure
+to technology, but teaching them the skills and critical thinking necessary for
+true digital empowerment.</p>
+  <p xmlns="">The idea for the
+assignment began when I read the MacArthur Foundation report, “The Future of
+Learning Institutions in a Digital Age.”<cite href="#n1">1</cite> In the report, Cathy Davidson and
+David Goldberg disclose a sobering reality: “Despite government pronouncements
+to the contrary, ‘digital divide’ is not just an old concept but a current
+reality” (Davidson and Goldberg 20). The vast public acceptance of a so-called
+Internet Generation or Generation Y ignores the very real tech fluency
+differences that often exist along class and race lines. Siva Vaidhyanathan points
+out just how detrimental this assumption is for underprivileged students in his
+essay, “Generational Myth”: “to assume an entire generation is ‘born digital’
+willfully ignores the vast range of skills, knowledge, and experience of many
+segments of society. It ignores the needs and perspectives of those young
+people who are not socially or financially privileged. It presumes a level
+playing field and equal access to time, knowledge, skills, and technologies.”<cite href="#n2">2</cite></p>
+  <p xmlns="">My experience teaching at
+one of the country’s first HBCUs confirms the cautionary words of Davidson,
+Goldberg, and Vaidhyanathan. Additionally, when I came across Adeline Koh’s “Race and Digital
+Humanities: An Introduction” HASTAC presentation, Alan Liu’s “Where is the
+Cultural Criticism in Digital Humanities”, and other articles addressing the issue of DH and race, I began to wonder what digital humanities could do for my students. Could a DH project be a way to bridge this digital divide? Could a DH project be done with such limited resources?</p>
+  <p xmlns="">Not only do many of my students lack technological fluency, many of them don't own computers, there are few computers labs on Shaw's campus, and the university has no technology unit that students or myself can turn to for help. My struggle with these limitations coincided with an interesting project being done at a neighboring institution. NCSU Libraries was using mobile devices to have students generate an archive of its new library in a project called my #huntlibrary. A few conversations and a partnership later, #myshawu was born.</p>
+  <p xmlns="">#myshawu is a repository
+of student-generated images collected from Shaw’s first-year, almost exclusively
+first-generation students during a one-semester basic writing course into which
+90% of Shaw’s incoming freshman are placed. We bridged some digital access
+hurdles by using largely free tools and open source software. Students were already utilizing Instagram, an
+app accessible to most of them through their smartphones, a familiarity which
+lessened the learning curve and gave students the confidence to dive into the assignment.
+To gather all these images, I spun up an app which uses <a href="https://github.com/NCSU-Libraries/lentil">Lentil</a>, the Rails engine that drives My #huntlibrary, on
+a free hosting service, <a href="https://www.heroku.com/about">Heroku</a>.
+All the students had to do was use their Instagram accounts, take photos of
+their lives around campus, and tag them “#myshawu”. Through these simple steps,
+students were able to represent themselves and share their images with other
+students, the university community, their communities of origin, and the
+public. As a companion to the photo collection, students published long-form,
+photo-rich narratives on a class collaborative Wordpress blog of the same
+title, #<a href="http://myshawu.wordpress.com/">myshawu</a>. These essays focused
+on their photos and their understanding of themselves in relation to the
+university and, hence, in relation to their academic identity. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_324_Screen_Shot_2014-03-07_at_6.00.20_PM"/>
+    <figcaption>
+      <p>Fig. 1: A page of student-generated images from the #myshawu website.</p>
+    </figcaption>
+  </div>
+  <p xmlns="">When students submitted
+their Wordpress essays, they also completed a survey to indicate the level of
+difficulty and the level enjoyment they experienced with the assignment. Out of 91 students who completed the
+assignment, 14 had difficulty getting the required hardware, 10 had trouble
+setting up required software accounts, and 15 students had problems using this software.
+These numbers show the relative ease with which students were able to access
+the necessary technology, an ease dependent on using personal and open-source
+tech resources rather than non-existent institutional tech resources. Yet, many
+of the students struggled to complete the assignment as successfully as I’d
+hoped. Only about half the images that students used in their final essays on
+Wordpress ended up on #myshawu, and a good many of these images were copied
+from the Internet. However, 85% of the
+students who completed the assignment said it was not difficult to take
+pictures.</p>
+  <p xmlns="">There could be various
+reasons for this discrepancy between confidence and successful execution, such as poor resiliency or effort, and/or inconsistent
+classroom attendance. Yet despite some shortcomings, the unintended, often unquantifiable successes continue to emerge. As Shaw approaches its sesquicentennial and HBCU across the South consider closing their doors, the students involved with #myshawu are going to capture oral histories, chronicling in photos, video, and audio the stories of alumni so important to Shaw's history. The project has engaged many students beyond the classroom as they visit local history museums and inquire about the possibilities of exhibiting our work. They reimagine the project with me and ahead of me, asking for opportunities to use their pictures to raise funds to for my technology resources and for more campus events. </p>
+  <p xmlns="">Another facet of this
+project shines a light on students’ perspective on social media and adds another
+layer of complexity to the argument that media studies and DH scholars have
+been posing about race and technology. Logan Hill, in “Beyond Access”, put it
+best: “Universal access isn’t just about being able to surf the Web, it’s about
+the ability to participate and compete in a technology-driven industry and
+society” (29).<cite href="#n3">3</cite> To have a wide range of students from all race and class
+backgrounds succeed in this media-saturated society, we can’t just give them
+new technologies to create content only their friends will consume. We need to
+show them that the technologies they use every day can be harnessed to empower
+their academic and professional lives.</p>
+  <p xmlns="">#myshawu has also taught
+me the importance of digital humanities for helping my students develop a more critical perspective on technology. The full
+scope of what these kinds of projects teaches us about DH, HBCU students, cultural representation and empowerment is still unfolding, but it’s clear through
+collecting and analyzing data, student-generated reflective writing, and
+evaluations, that digital tools like these cause necessary shifts in students’
+understanding of their own agency, particularly the role that writing,
+technology, and image creation can have on their power as scholars and
+professionals. Unfortunately, largely due to financial constraints and the many needs pulling at institutions like Shaw, HBCUs are some of the most unlikely to support faculty technology training and least likely to have the resources to support digital projects. Yet DH tools belong in the hands of those who have the most at stake as they become invaluable tools for engagement and student success. That said, certain assitance is needed from the digital humanities community for these projects and these students to reach their full potential. Partnerships with other universities, academic technologists, and more accessible and flexible technologies are just some of the support that can be extended by the greater DH community to HBCUs like Shaw, thereby creating cross-institutional collaborations that highlight the strengths of all institutions. Then #myshawu can become just one effort in a larger movement towards developing a DH pedagogy that can be inclusively practiced without relying on the financial privilege so often synonymous with DH. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Davidson, Cathy N. and David Theo Goldberg</strong> (2009). <em>The future of learning institutions in a digital age.</em> Cambridge, Mass: MIT Press.
+          </p>
+  <p xmlns="">2. <strong>Vaidhyanathan, S.</strong> (2008). <em>Generational myth: Not all young people are tech-savvy</em>. The Chronicle Review, 55(4), B7. Retrieved October 19, 2013 from: <a href="http://chronicle.com.">chronicle.com.</a></p>
+  <p xmlns="">3. <strong>Nelson, Alondra and Thuy Linh N. Tu with Alicia Hedlam Hines</strong> (2001). <em>Technicolor: Race Technology, and Everyday Life</em>. New York: New York University Press.
+          </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

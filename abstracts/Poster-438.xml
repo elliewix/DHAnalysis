@@ -1,0 +1,202 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Poster-438.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Rethinking HathiTrust Metadata to Support Workset Creation for Scholarly Analysis</h1>
+    <ul id="details">
+      <li><label>Category:</label>Poster</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-10<label>Time:</label>14:00:00</li>
+      <li><label>Room:</label>Amphipôle Common Area</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:kfenlon2@illinois.edu"><span class="author-surname">Fenlon</span>,
+									<span class="author-forename">Katrina</span></a>
+        <a href="http://www.google.com/#q=Fenlon, Katrina">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Illinois at Urbana-Champaign, USA</span>
+      </li>
+      <li>
+        <a href="mailto:t-cole3@illinois.edu"><span class="author-surname">Cole</span>,
+									<span class="author-forename">Timothy</span></a>
+        <a href="http://www.google.com/#q=Cole, Timothy">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Illinois at Urbana-Champaign, USA</span>
+      </li>
+      <li>
+        <a href="mailto:mhan3@illinois.edu"><span class="author-surname">Han</span>,
+									<span class="author-forename">Myung-Ja </span></a>
+        <a href="http://www.google.com/#q=Han, Myung-Ja ">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Illinois at Urbana-Champaign, USA</span>
+      </li>
+      <li>
+        <a href="mailto:willis8@illinois.edu"><span class="author-surname">Willis</span>,
+									<span class="author-forename">Craig</span></a>
+        <a href="http://www.google.com/#q=Willis, Craig">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Illinois at Urbana-Champaign, USA</span>
+      </li>
+      <li>
+        <a href="mailto:mfall3@illinois.edu"><span class="author-surname">Fallaw</span>,
+									<span class="author-forename">Colleen</span></a>
+        <a href="http://www.google.com/#q=Fallaw, Colleen">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">University of Illinois at Urbana-Champaign, USA</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <p xmlns=""/>
+  <h2 xmlns="">1. Introduction</h2>
+  <p xmlns="">The HathiTrust Digital Library includes over 10
+million volumes digitized from more than 90 research libraries. The HathiTrust
+Research Center (HTRC) has been established to help scholars get the most from this massive
+text corpus by providing cutting-edge tools, services and cyberinfrastructure
+that enable advanced computational access to the HathiTrust corpus. An immediate
+objective for HTRC is to allow scholars to collect items together for computational
+analysis. This has required rethinking the HathiTrust metadata model,
+inherited from print-based library cataloging traditions. This poster describes
+the motivation for this work, shortcomings of the current metadata model, and
+requirements driving the updated model. </p>
+  <h2 xmlns="">2. Motivation</h2>
+  <p xmlns="">Humanities
+scholars regularly create collections in the course of their research –
+selecting, gathering, and organizing materials from disparate sources to answer
+specific research questions <cite href="#n1">1</cite><cite href="#n2">2</cite>. As scholars increasingly rely on digital sources, they need sophisticated tools for the
+management and manipulation of “custom collections” of digital texts <cite href="#n3">3</cite> <cite href="#n4">4</cite> <cite href="#n5">5</cite><cite href="#n6">6</cite> <cite href="#n7">7</cite> <cite href="#n8">8</cite><cite href="#n9">9</cite>.</p>
+  <p xmlns="">The HTRC workset creation tools will allow users to formally gather selected subsets of the HathiTrust corpus together for computational analysis. Early user studies <cite href="#n10">10</cite> suggest several requirements, e.g.: </p>
+  <ul xmlns="">
+    <li>Worksets must allow scholars
+     to gather not just the primary constituents of the HathiTrust corpus (books),
+     but also metadata and granular, intra-book content. </li>
+    <li>Worksets must allow
+     integration of external sources, such as linked datasets, secondary
+     literature, and references, as shown in Figure 1.</li>
+    <li>Scholars must be able to
+     identify and describe worksets so that they may function as sustainable
+     and reusable scholarly resources. </li>
+  </ul>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_360_DH2014_360_Fenlon-HTRC-fig1-Final.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Fig. 1: Creating worksets for scholarly analysis</p>
+    </figcaption>
+  </div>
+  <h2 xmlns="">
+    <strong>3. Limitations
+of MARC-based metadata</strong>
+  </h2>
+  <p xmlns="">Items in the
+HathiTrust corpus today are described exclusively by MARC. While MARC is the
+predominant bibliographic metadata standard used in libraries, it is proving inadequate to support the creation of scholarly
+worksets from large digital repositories such as the HathiTrust. </p>
+  <p xmlns="">To begin with MARC can accommodate
+only a fraction of properties of texts and their contexts that are of interest
+to scholars. For example, the MARC bibliographic format does not provide fields
+for describing an author’s gender, nationality, religion or social
+relationships. In addition, library catalogers rarely use the full expressiveness potential of MARC.
+The MARC specification defines more than 1,900 fields. However, most bibliographic
+records contain only a handful of these <cite href="#n11">11</cite>. Table 1 illustrates the use of MARC fields across the 6 million
+HathiTrust bibliographic records. Additionally fields used vary by class of text. Table 2 illustrates how infrequently subject headings are used in describing fictional works.</p>
+  <table xmlns="">
+    <tr>
+      <td> Property</td>
+      <td> Percent of Records Having</td>
+    </tr>
+    <tr>
+      <td> Title</td>
+      <td>&gt; 99% </td>
+    </tr>
+    <tr>
+      <td>Publisher</td>
+      <td> 87%</td>
+    </tr>
+    <tr>
+      <td>Subject -- Topical</td>
+      <td> 72%</td>
+    </tr>
+    <tr>
+      <td> LC / Dewey Classification Number</td>
+      <td> 41% / 17%</td>
+    </tr>
+    <tr>
+      <td> Subject -- Geographic</td>
+      <td> 37%</td>
+    </tr>
+    <tr>
+      <td> Subject -- Temporal </td>
+      <td> 10%</td>
+    </tr>
+    <tr>
+      <td> Fiction Literary Form</td>
+      <td> 5%</td>
+    </tr>
+  </table>
+  <table xmlns="">
+    <tr>
+      <td> Property</td>
+      <td> Percent of Fiction Records Having</td>
+    </tr>
+    <tr>
+      <td> Subject -- Topical</td>
+      <td> 25%</td>
+    </tr>
+    <tr>
+      <td> Subject -- Geographic</td>
+      <td> 10%</td>
+    </tr>
+    <tr>
+      <td> Subject -- Temporal</td>
+      <td> 5%</td>
+    </tr>
+  </table>
+  <h2 xmlns="">
+    <strong>4. Metadata
+Design Requirements to Support Workset Creation</strong>
+  </h2>
+  <p xmlns="">With the generous support of the Andrew W. Mellon Foundation, the Workset Creation for Scholarly Analysis (WCSA) project, a collaboration between the HTRC and 4 independent research groups (competitively selected from among 15 respondents to a Request For Proposals issued in November 2013), is exploring answers to the following intertwined questions:</p>
+  <ul xmlns="">
+    <li>Given sparseness of HathiTrust records, can we enrich the corpus metadata by distilling analytics over full
+text? Could we deploy/modify off-the-shelf tools, for example, to confirm or
+determine language(s) of the text, temporal coverage, spatial coverage, etc.? </li>
+    <li>Can we augment string-based metadata
+with URIs for entities – e.g., names, subjects, place of publication, etc.? If so, HTRC could leverage additional services to meet scholars' needs.</li>
+    <li>Can we formalize the notion of
+ worksets in HTRC, e.g., defining the necessary elements of a workset? In doing so, how do we balance rigor with extensibility and
+flexibility? What roles do “data”, “metadata”, “annotations”, “tags”, “feature
+sets”, and so on, play in the conception, creation, use and reuse of
+worksets?</li>
+  </ul>
+  <p xmlns="">In reporting on these questions, we expect to articulate recommendations
+to move away from a solely MARC-based metadata architecture towards a more
+RDF-centric metadata architecture relying on multiple library-specific and
+non-library standards, e.g., MARC, MODS, DC, SKOS, FOAF, schema.org, etc.</p>
+  <h2 xmlns="">References</h2>
+  <p xmlns="">1. <strong>Brogan, M.</strong> (2006). <em>Contexts and Contributions: Building the Distributed Library</em>. Digital Library Federation/Council on Library and Information Resources. Retrieved August2, 2010 from <a href="http://www.diglib.org/pubs/dlf106">www.diglib.org/pubs/dlf106</a></p>
+  <p xmlns="">2. <strong>Palmer, C. L.</strong> (2005). <em>Scholarly work and the shaping of digital access</em>. Journal of the American Society for Information Science and Technology, 56(11), 1140-1153.
+          </p>
+  <p xmlns="">3. <strong>Dempsey, L.</strong> (2006). <em>The (digital) library environment: Ten years after</em>. Ariadne, 46. Retrieved February 13, 2013 from <a href="http://www.ariadne.ac.uk/issue46/dempsey/">www.ariadne.ac.uk/issue46/dempsey/</a></p>
+  <p xmlns="">4. <strong>Green, H., Saylor, N.,&amp; Courtney, A.</strong> (2013). <em>Beyond the scanned image: A needs assessment of faculty users of digital collections</em>. Digital Humanities 2013, Lincoln, Nebraska.
+          </p>
+  <p xmlns="">5. <strong>Mueller, M.</strong> (2010). <em>Towards a Digital Carrel: A Report about Corpus Query Tools</em>, retrieved September 17, 2013 from <a href="http://panini.northwestern.edu/mmueller/corpusquerytools.pdf">panini.northwestern.edu/mmueller/corpusquerytools.pdf</a></p>
+  <p xmlns="">6. <strong>Spiro, L., &amp; Segal, J. </strong>(2005). <em>The Impact of Digital Resources on Humanities Research</em>, retrieved October 31, 2013 from <a href="http://library.rice.edu/services/dmc/about/projects/the-impact-of-digital-resources-on-humanities-research">library.rice.edu/services/dmc/about/projects/the-impact-of-digital-resources-on-humanities-research</a></p>
+  <p xmlns="">7. <strong>Warwick, C., Terras, M., Huntington, P., &amp; Pappa, N.</strong> (2008). <em>If you build it will they come? The Lairah Study: Quantifying the use of online resources in the arts and humanities through statistical analysis of user log data</em>. Literary and Linguistic Computing, 23(1), 85-102.
+          </p>
+  <p xmlns="">8. <strong>Sukovic, S.</strong> (2008). <em>Convergent flows: Humanities scholars and their interactions with electronic texts</em>. Library Quarterly 78(3), 263-284.
+          </p>
+  <p xmlns="">9. <strong>Sukovic, S.</strong>(2011). <em>E-Texts in Research Projects in the Humanities</em>. In A. Woodsworth &amp; W. D. Penniman (Eds.) Advances in Librarianship (131-202). Bingley, UK: Emerald Group Publishing.
+          </p>
+  <p xmlns="">10. <strong>Green, H., Fenlon, K., Senseney, M., Bhattacharyya, S., Willis, C., Organisciak, P., Downie, J. S., Cole, T., and Plale, E.</strong> (2014). <em>Using collections and worksets in large-scale corpora: Preliminary findings from the Workset Creation for Scholarly Analysis project</em>. Forthcoming paper to be presented at iConference 2014, Berlin, Germany.
+          </p>
+  <p xmlns="">11. <strong>Moen, William E. &amp; Benardino, P.</strong> (2003). <em>Assessing Metadata Utilization: An Analysis of MARC Content Designation Use</em>. 2003 Dublin Core Conference: Supporting Communities of Discourse and Practice — Metadata Research and Application, Seattle, Wash. Retrieved October 31, 2013 from <a href="http://www.unt.edu/wmoen/publications/MARCPaper_Final2003.pdf">www.unt.edu/wmoen/publications/MARCPaper_Final2003.pdf</a></p>
+</article>
+</div></section><footer><hr/></footer></body></html>

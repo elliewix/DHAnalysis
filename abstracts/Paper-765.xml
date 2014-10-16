@@ -1,0 +1,219 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>DHArchive</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="/s/dharchive.css"></link><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /></head><body><header><a href="/"><img src="/i/logo.png" id="logo" /><h1><acronym>dharchive</acronym>.org</h1></a></header><section><a href="/?c=DH2014"><img src="/data/figures/DH2014/banner.jpg" class="banner"/></a><div id="read"><aside><a class="btn" href="javascript:window.print();"><img src="/i/print.png"/> Print</a><a class="btn" href="/data/xml/DH2014/Paper-765.xml"><img src="/i/download.png"/> XML</a></aside><?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0">
+  <header xmlns="">
+    <h1>Tuning the Word Frequency List</h1>
+    <ul id="details">
+      <li><label>Category:</label>Long Paper</li>
+      <li><label>Session:</label>1</li>
+      <li><label>Date:</label>2014-07-09<label>Time:</label>09:00:00</li>
+      <li><label>Room:</label>319 - Amphipôle</li>
+    </ul>
+    <ul id="authors">
+      <li>
+        <a href="mailto:"><span class="author-surname">Hoover</span>,
+									<span class="author-forename">David L.</span></a>
+        <a href="http://www.google.com/#q=Hoover, David L.">
+          <img src="/i/search.png"/>
+        </a>
+        <span class="author-affiliation">New York University, United States of America</span>
+      </li>
+    </ul>
+  </header>
+  <p xmlns=""/>
+  <p xmlns="">One recent trend in computational stylistics and authorship attribution has been to “tune”
+the word list for better results. T-tests can identify words with statistically significant differences
+in frequency between two authors; they remain an excellent method for one-on-one problems
+(Burrows 1992; McKenna and Antonia 1996; Hoover 2010). Eder and Rybicki (2011) use
+elegant methods to identify “sweet spots” in the word frequency spectrum by testing a range of
+numbers of the most frequent words (MFW). They also progressively remove words from the top
+of the spectrum, eliminating the function words favored by so much previous work. Personal
+pronouns have been removed to minimize differences in point of view and the numbers of male
+and female characters (Hoover 2002). The word list has been “culled” by removing words that
+are frequent because of high frequencies in one text (Hoover 2003, 2004; Burrows 2005).
+Rybicki and Eder (2011), Jockers, Witten, and Criddle (2008), and Rybicki and Heydel (2013)
+have culled words absent from any or many texts. Burrows’s Zeta and Iota select words
+consistently used by one group and avoided by another, ignoring frequency. These tuning
+methods vary in effectiveness with the number, size, date, genre, and language of the texts, and
+with the number of authors involved.
+</p>
+  <p xmlns="">I propose here a transparently motivated form of tuning with a strong a priori plausibility:
+selecting unevenly distributed words, using the coefficient of variation (CoV). This dispersion
+measure is defined as Stdev/Ave. Freq.*100, expressed as a percentage of the average frequency.
+Consider the following four words, with statistics from 21 novels and short fiction by Willa
+Cather and Edith Wharton: </p>
+  <table xmlns="">
+    <tr>
+      <td>
+        <strong>Word</strong>
+      </td>
+      <td>
+        <strong>Ave. </strong>
+      </td>
+      <td>
+        <strong>Stdev </strong>
+      </td>
+      <td>
+        <strong>CoV </strong>
+      </td>
+      <td>
+        <strong># Texts </strong>
+      </td>
+      <td>
+        <strong>Rank </strong>
+      </td>
+    </tr>
+    <tr>
+      <td>magnificent </td>
+      <td>0.0034 </td>
+      <td>0.0064 </td>
+      <td>192% </td>
+      <td>5 </td>
+      <td>3374 </td>
+    </tr>
+    <tr>
+      <td>longing </td>
+      <td>0.0034 </td>
+      <td>0.0107 </td>
+      <td>316% </td>
+      <td>5 </td>
+      <td>2427 </td>
+    </tr>
+    <tr>
+      <td>generally </td>
+      <td>0.0036 </td>
+      <td>0.0059 </td>
+      <td>163% </td>
+      <td>7 </td>
+      <td>2994 </td>
+    </tr>
+    <tr>
+      <td>father </td>
+      <td>0.0368 </td>
+      <td>0.0600 </td>
+      <td>163% </td>
+      <td>14 </td>
+      <td>332 </td>
+    </tr>
+  </table>
+  <p xmlns=""><em>Magnificent</em> and <em>longing</em> both appear in 5 texts with similar average frequencies but very
+          different Stdev, CoV, and rank: longing varies much more in frequency than does <em>magnificent</em>.
+          <em>Generally</em> and <em>father</em> show that the Stdev is too closely tied to the average frequency to measure
+dispersion here: low-frequency words tend to have small Stdev’s. For the 21 texts above, among
+the 17,000 word types, only 1 of the 100 largest Stdev’s comes from a word ranking 1,000 or
+higher. The frequencies and Stdev’s of <em>father</em> are about 10 times those of <em>generally</em>, so both have
+the same CoV, which is thus a fairer measure of variability than the Stdev.
+</p>
+  <p xmlns="">Unfortunately, simply analyzing words with the highest CoV is unworkable. The Stdev
+tends to be lower for less frequent words, but rare words and those occurring in a small number
+of texts have very large CoV’s. For the 21 texts above, 9,000 of the 17,000 word types appear in
+only one text and share the largest CoV (447%), regardless of their frequency. Some character
+names in long texts rank as low as 63rd, but 7,200 are hapax legomena. Furthermore, only 300 of
+the words with the 12,000 largest CoV’s appear in more than two texts. The need to identify
+words used fairly frequently and in many texts but with widely varying frequencies suggests
+combining Rybicki-style culling with the CoV in a method I call CoV Tuning.
+Now, some experiments. First, consider the Cather/Wharton set above, containing 3
+
+					Wharton novellas and 7 stories and 11 Cather stories. Standard cluster analysis (Ward linkage,
+squared Euclidean distance, standardized variables) correctly groups all texts in analyses based
+on 990 and 900MFW and fail at 400MFW only for Wharton’s “The Hermit and the Wild
+Woman.” (The seemingly peculiar choice of 990MFW arises from a limitation in my statistics
+program, <em>Minitab</em>.) All other analyses based on the 100-800MFW show at least 3 errors,
+including that same story.
+</p>
+  <p xmlns="">I tuned the word list by sorting the 1,500MFW on the CoV. The words with largest
+CoV’s, mainly character names, appear in only one text, so I re-sorted the words on the number
+of texts they appear in, retained only words appearing in 7 or more texts, then re-sorted on the
+CoV and retained the 1,000 most variable words (MVW). Cluster analysis using CoV Tuning is
+very effective: all 7 analyses based on the 400-990MVW correctly group all the texts. Retaining
+words appearing in at least 5, 6, or 8 texts is slightly less effective. T-testing the 1,500MFW and
+retaining only the 352 words with p &lt; .05 gives perfect groupings using all 352 words and
+decreasing numbers of them, down to the two words with the highest T value, the classic
+authorship pair, <em>till</em> and <em>until</em>. Thus, for two-author problems, the t-test is clearly superior. Figures
+1-2 show standard and CoV Tuned analyses. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_103-1.jpg"/>
+    <figcaption>
+      <p>Fig. 1: Standard, 800MFW</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_103-2.jpg"/>
+    <figcaption>
+      <p>Fig. 2: CoV Tuned, 800MVW</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Now consider some difficult multi-author problems for which t-test tuning is unavailable.
+First I tested a set of 43 late 19th and early 20th century novels by 15 American authors, 2-3 novels
+each. Errors for at least 3 authors occur in all analyses using the standard method. Using CoV
+Tuning retaining only words found in 34 or more texts, analyses of the 900 and 700MVW have
+just 1 error, and analyses of the 500, 600, 800, and 990MVW have 2. Minimums of 22 and 38
+texts give weaker results. Figures 3-4 show standard and CoV Tuned analyses, respectively. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_103-3.jpg"/>
+    <figcaption>
+      <p>Fig. 3: Standard, 700MFW</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_103-4.jpg"/>
+    <figcaption>
+      <p>Fig. 4: CoV Tuned, 700MVW</p>
+    </figcaption>
+  </div>
+  <p xmlns="">Turning to a different genre and shorter texts, I tested 25 pieces of literary criticism by 14
+authors, 9 authors with 2 texts each, 1 with 3 texts, and 4 with 1 text (see Hoover 2001 for
+details). I made this problem more difficult by dividing the texts into 33 sections of about 4,000
+words. The standard method works well here, correctly grouping all sections by 12 of the 14
+authors in analyses of the 600, 700, 800, and 990MFW and 13 authors at 900MFW. I used CoV
+Tuning on this word list using whole texts, retained words found in 7 or more texts, and then
+tested the 4,000-word sections. The improvement over the standard method is less dramatic here:
+the 600MVW succeeded for just 10 authors, the 700 for 12 authors, and the 800, 900, and 990 for
+13. Minimums of 5, 6, or 8 texts are less effective. </p>
+  <p xmlns="">Finally, I assembled a set of 40 late 19th and early 20th century novels by 20 authors, 2
+novels each, intentionally selecting authors and texts known to be difficult to attribute. Standard
+cluster analysis correctly groups the texts by only 12 of the 20 authors, from 990 to 600MFW. I
+used CoV tuning on the word list as above, retaining only words found in at least 28 texts. Here,
+CoV Tuning matches the results for the standard method for the 700 and 800MVW, but correctly
+groups 13 authors for the 600MVW and 14 for the 900 and 990MVW. A minimum of 33 texts is
+less effective. Figures 5 and 6 show standard and CoV Tuned analyses. </p>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_103-5.jpg"/>
+    <figcaption>
+      <p>Fig. 5: Standard, 700MFW</p>
+    </figcaption>
+  </div>
+  <div xmlns="" class="figure">
+    <img src="/data/figures/DH2014/DH2014_548_103-6.jpg"/>
+    <figcaption>
+      <p>Fig. 6: CoV Tuned, 700MVW</p>
+    </figcaption>
+  </div>
+  <p xmlns="">More testing will be required to determine whether CoV Tuning gives consistently
+superior results on most sets of texts, and an automatic method for selecting the optimum limit to
+set on the minimum number of texts in each analysis is needed. However, CoV Tuning already
+seems to be a potentially valuable method of combining the information about word frequency
+that has long been the focus of authorship attribution and computational stylistics with the
+information about consistency of use on which recent methods like Zeta, Iota, and Full Spectrum
+analysis (Hoover 2013) are based. </p>
+  <h2 xmlns="">References</h2>
+  <p xmlns=""><strong>Burrows, J. F. </strong>(1992).<em> “Not Unless You Ask Nicely: The Interpretative Nexus Between Analysis  and Information."</em> LLC 7 (2): 91-109.<strong>Burrows, J. F.</strong> (2005). <em>“Who Wrote Shamela? Verifying the Authorship of a Parodic Text.”</em> LLC
+            20 (4): 437-450.</p>
+  <p xmlns=""><strong>Hoover, D. L.</strong> (2003). <em>”Statistical Stylistics and Authorship Attribution: An Empirical Investigation.”</em>  Literary and Linguistic Computing 16(4) 2001: 421-444.<strong>Hoover, D. L.</strong> (2003). <em>“Multivariate Analysis and the Study of Style Variation.”</em> LLC 18(4),
+            2003: 341-60.</p>
+  <p xmlns=""><strong>Hoover, D. L.</strong> (2004). <em>”Testing Burrows’s Delta.”</em> LLC 19 (4): 453-475.</p>
+  <p xmlns=""><strong>Hoover, D. L. </strong>(2010). <em>“Authorial Style,”</em> in Dan McIntyre and Beatrix Busse (eds), Language
+            and Style: Essays in Honour of Mick Short, New York: Palgrave: 250-71.</p>
+  <p xmlns=""><strong>Hoover, D. L.</strong> (2013). <em>“The Full-Spectrum Text-Analysis Spreadsheet,”</em> in Digital Humanities
+            2013, Lincoln, NE: Center for Digital Research in the Humanities, University of
+            Nebraska: 226-29.</p>
+  <p xmlns=""><strong>Jockers, M. L., D. M. Witten, and C. S. Criddle.</strong> (2008). <em>“Reassessing Authorship of the Book of
+            Mormon Using Delta and Nearest Shrunken Centroid Classification,”</em> LLC 23 (4):
+            465-491.</p>
+  <p xmlns=""><strong>McKenna, C. W. F., and A. Antonia.</strong> (1996). <em>“‘A few simple words’ of Interior Monologue in
+            Ulysses: Reconfiguring the Evidence.”</em> LLC 11 (2): 55-66.</p>
+  <p xmlns=""><strong>Rybicki, J., and M. Eder.</strong> (2011). <em>“Deeper Delta Across Genres and Languages: Do We Really
+            Need the Most Frequent Words?”</em> LLC 26: 315-21.</p>
+  <p xmlns=""><strong>Rybicki, J., and M. Heydel.</strong> (2013). <em>“The Stylistics and Stylometry of Collaborative Translation:
+            Woolf’s Night and Day in Polish,”</em> LLC, first published online May 27, 2013. </p>
+</article>
+</div></section><footer><hr/></footer></body></html>

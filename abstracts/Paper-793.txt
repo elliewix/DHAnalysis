@@ -1,0 +1,115 @@
+Since place names form
+the underlying semantic content of almost all geographic documents, the ability
+to identify them in texts and images is essential in any attempt to work with,
+compare or interpret them. For early maps and geographic texts this ability is
+especially important, because while they rarely conform to standard geometries
+or schemas, they often provide the earliest attestations to towns, peoples, and
+other spatially localized phenomena. Tools, infrastructure and resources for
+collating, aligning, and exploiting toponyms in early maps and geographic
+documents would therefore have a broad and significant impact across a range of
+fields, including Archaeology, History, Classics, Genealogy and Modern Languages.In this paper we
+showcase early work on the detection of possible toponyms in digitized texts
+and scanned old maps. It builds upon the successful Pelagios initiative which
+has been connecting a variety of heterogeneous online resources related to classical
+antiquity. In contrast, Pelagios 3 will extend its scope to the European,
+Islamic and Chinese Middle Ages, but focus predominantly on geographic works.
+These in turn will form a core body of material around which we hope to see a
+more diverse body of references accumulate in time.Since our ultimate aim
+is to enable humanities scholars to annotate and discover places in documents
+for themselves, we discuss our use and adaption of existing open source tools
+within a framework that puts a premium on flexible, lightweight and easy to use
+resources. Moreover, that discussion will be based on two real-case scenarios,
+in order to demonstrate the strengths of our approach and flag up potential
+issues that require further attention. Our first test case tackles the issue of extracting place names from
+a text. The Vicarello Goblets are a collection of four silver drinking vessels dated
+to around late third or early fourth century AD, engraved a land itinerary
+between Gades (modern Cadíz, Spain) and Rome. Each goblet indicates the
+road stations along the route (varying between 104 and 110 on each goblet), as
+well as the distances in miles between them. These unusual ‘texts’, the
+limited range of places that they represent, the easy identification of the
+majority of locations, along with the fact that there
+are images and transcriptions available online already, makes the Vicarello Goblets
+an optimal source for trialling the methodology that we will use on much larger
+corpora of texts, including travel guides, gazetteers, encyclopaedias and more.
+To obtain annotations from the Vicarello Goblets, all the toponyms
+are matched against places in a URI-based gazetteer, that is, a directory of
+places which assigns a persistent Web address to each entity, allowing for
+disambiguation at a global level. The engravings on the Vicarello Goblets
+already represent ordered lists of toponyms. Therefore we can directly match
+the lists against the gazetteer based on name similarity, and then disambiguate
+by taking into account geographic proximity between different places in the
+list. For further documents which are of a less structured nature (i.e. which
+contain more free-form narrative text) we are experimenting with a combination
+of ‘geoparsing’ technologies, including the Edinburgh Geoparser and the
+Stanford NLP Toolkit. Identification is only half the story, however. The data model that
+we have developed for Pelagios 3 allows for rich item metadata that cleanly
+differentiates between information about the item and information about the
+places that relate to it (and how). For instance, toponyms in a document may
+follow a certain sequence or layout. A simple mashup not only shows the
+toponyms from the four Vicarello Goblets on a map, but how they relate to one
+another as an itinerary. An information box at the bottom provides the
+information about the document itself (Fig. 1), while a small layer menu lets
+the user switch layers on and off for each individual goblet to allow immediate
+comparisons. Selecting a place displays a popup with a textual transcription
+from the Goblets, and metadata drawn from the gazetteer. What is noteworthy
+about this mashup, however, is not so much the map itself – for which comparable
+projects already exist – but rather that the map can be automatically
+generated from a simple Pelagios data file, containing item metadata and
+annotations in Open Annotation RDF format. Thus the pathway from data
+production to visualization is both efficient and highly scalable across large
+numbers of documents.Previous work on toponym
+recognition in scanned maps focuses on contemporary documents for the simple reason
+that old maps remain extremely difficult for machines to parse. Our proposal is to automate the
+identification of potential toponyms in terms of their location, extent and orientation on the map image, so that
+researchers can then associate the results with items in pre-existing gazetteer
+lists and ultimately with URI-based gazetteers. The example given here is of
+Ptolemy’s regional map of Ireland and Great Britain (Fig. 1), digitized by the
+British Library.Our first processing phase generates
+a black-and-white mask image, which isolates and separates “background” from
+“foreground”. The next phase locates and characterises features – in our case, connected objects – on the foreground image
+using an algorithm that detects contours. Since toponyms often consist of
+multiple features, the final phase aims to connect the detected features to
+groups that most likely represent a single toponym. Fig. 2 shows that for our
+test case the algorithm detected toponyms with a high success rate, correctly
+locating 38 of 41 places.Our initial work with additional
+(including visually more complex) maps has raised several error scenarios
+and prompted some initial responses:While we expect that the amount of
+manual tuning and intervention will be further reduced by refining the
+processing workflow, toponym identification on old maps will never be a fully
+automated process. Therefore, we are also developing user interfaces and
+graphical tools that help both professional and public users carry out the
+manual work of aligning imagery to the gazetteers. On the one hand, we are
+experimenting with ways of re-presenting the user with re-oriented and visually
+enhanced image fragments so that they can be more easily interpreted. On the
+other we can use the spatial information in such images, and data from previous
+annotations, to propose likely candidates for ‘one-click’ annotations, and
+auto-completion of transcriptions.The data produced will provide us
+with opportunities to visualise both maps and texts in new ways. For instance,
+corpora of structurally similar documents, such as portolan charts, can be
+directly compared in terms of the places they refer to, the toponyms used, and
+their sequence along a coastline, in a similar manner to the itineraries
+described above. Alternatively, we can also blend out and replace toponyms with
+either modern or ancient alternatives where known, helping make these important
+documents easier to interpret for both scholars and public alike (Fig. 3). Most
+importantly we see this as the firsts steps in drawing new connections between
+the extraordinarily diverse range of early geospatial documents that have come
+down to us.Fig. 1: Mashup showing route of the Vicarello Goblets
+(http://pelagios.github.io/demos/vicarello-alpha/)
+Fig. 2: Part of Ptolemy’s regional map of Ireland and Great Britain. (Ca. 1480 © The British
+Library Board. Harley MS 7182 ff.. 60v-61.) Toponyms identified automatically and
+annotated with oriented bounding boxes.
+Fig. 3: Original map (left) and map with original toponyms dynamically blended out and replaced with corresponding modern place names.Rainer Simon, Elton Barker, Leif Isaksen. (2012). Exploring Pelagios: A
+            Visual Browser for Geo-Tagged Datasets. In International
+            Workshop on Supporting Users' Exploration of Digital Libraries. Eneko Agirre, Kate Fernie, Arantxa
+            Otegi, Mark Stevenson (Eds.) Cyprus, Paphos, September 27, 2012, pp. 29 - 34.Schmidt, M. G. (2011), A
+            Gadibus Romam: Myth and Reality of an Ancient Route. Bulletin of the Institute of Classical
+            Studies, 54: 71–86.Elliott, T. & Gillies, S.
+            (2011). Pleiades: An UnGIS for Ancient Geography. Poster presented at Digital
+            Humanities 2011, Stanford University. Available at: http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-192.xmlGrover, C, Tobin, R, Byrne, K,
+            Woollard, M, Reid, J, Dunn, S & Ball, J (2010), 'Use of the Edinburgh
+              geoparser for georeferencing digitized historical collections' In Philosophical
+            Transactions of the Royal Society A: Mathematical, Physical & Engineering
+            Sciences, vol 368, no. 1925, pp. 3875-3889.http://nlp.stanford.edu/downloads/lex-parser.shtmlSee, for example, http://vici.org/ http://www.openannotation.org/http://www.bl.uk/onlinegallery/onlineex/unvbrit/p/001hrl000007182u00060vrb.htmlRainer
+            Simon, Peter Pilgerstorfer, Leif Isaksen, Elton Barker. (2013). Towards Semi-Automatic
+              Annotation of Toponyms on Old Maps. In 8th International Workshop on Digital
+            Approaches in Cartographic Heritage. Rome, Italy, September 19-20, 2013.
