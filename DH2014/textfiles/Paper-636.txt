@@ -1,0 +1,272 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+TheofPhilo. A prototype for a Thesaurus of Philosophy
+
+    
+Category:
+Short Paper
+
+      
+Session:
+8
+
+      
+Date:
+2014-07-11
+Time:
+14:00:00
+
+      
+Room:
+315 - Amphipôle
+
+    
+
+        
+Lamarra
+,
+									
+Antonio
+
+        
+
+          
+
+        
+CNR- Istituto per il Lessico Intellettuale Europeo e Storia delle Idee
+
+      
+
+      
+
+        
+Tardella
+,
+									
+Michela
+
+        
+
+          
+
+        
+CNR- Istituto per il Lessico Intellettuale Europeo e Storia delle Idee
+
+      
+
+    
+
+  
+
+  
+1. Introduction
+
+  
+Our paper aims at presenting TheofPhilo-Thesaurus of Philosophy, the prototype of a digital multilingual thesaurus in the field of Philosophy. With ‘thesaurus’ we mean a concept-based collection of terms
+1
+ that we are building by means of philosophical texts and dictionaries.
+
+  
+The purpose of TheofPhilo is to test potentials and limits opened by the interaction between digital tools and devices (such as digital archives and libraries) and the long tradition of historical and lexicological studies of the Istituto per il Lessico Intellettuale Europeo e Storia delle Idee (
+www.iliesi.cnr.it
+), which developed the thesaurus. The work on the prototype implied the cooperation of experts in History of philosophy, Linguistics and Computer science, and has been conceived in the frame of the semantic web. We are currently testing the collection of terms and building up an ontology finalized to semantic enrichment and to information retrieval of the digital resources uploaded in the portal Daphnet. Digital Archives of PHilosophical Texts on the NET (
+www.daphnet.org
+).
+
+  
+The plurality of languages coexisting in the portal lead us to design a multilingual collection of terms, in order to enable scholars, students, teachers and other interested users to search within the large quantity of texts in Daphnet and – this being an important added value – to make queries by using one owns mother tongue. TheofPhilo is not a dictionary of philosophy and it does not offer definitions of philosophical terms: we want it to be a useful map to enrich texts and to retrieve information.
+
+  
+TheofPhilo itself could be an interesting object of research as, once completed, it will allow a linguistic analysis of the philosophical terminology structured according to the criteria we are adopting (see § 3). For this reason we intend to carry out a parallel work on this tool, developing a linguistic and an historical-philosophical study on the collection of terms we have selected.
+
+  
+2. The content
+
+  
+The Daphnet portal, implemented within the project AGORA. Scholarly Open Access Research in European Philosophy (www.project-agora.org)
+2
+3
+, consists of two Open Access platforms, Ancient and Modern Philosophy. The first one contains (a) the transcription of the collection of Presocratic thinkers originally edited by H. Diels and W. Kranz, with the Italian translation edited by G. Giannantoni; (b) the transcription of the Socratis et Socraticorum Reliquiae by G. Giannantoni; (c) the volume Vita e opinioni dei filosofi (the editorial collection is by R. D. Hicks, H. S. Long and M. Marcovich, the Italian translation is by M. Gigante); (d) the Opera Omniaof Sextus Empiricus (ed. by H. Mutschmann). The second platform,Modern Philosophy, gives access to a number of Latin, Italian, French and German texts which are considered representative of the philosophical thinking of the 16th, 17th and 18th centuries. It includes works by Alexander Gottlieb Baumgarten, Giordano Bruno, René Descartes, Immanuel Kant, Gottfried Wilhelm Leibniz, John Locke, Baruch Spinoza and Giambattista Vico. Daphnet also presents an OJS platform dedicated to secondary sources, the Daphnet Digital Library, containing a wide selection of articles published in the journal Elenchos. Rivista di studi sul pensiero antico (Bibliopolis, Napoli), in Lexicon Philosophicum. Quaderni di Terminologia filosofica e storia delle idee, and in the volumes dedicated to the proceedings of the international conferences organized by CNR-ILIESI. In addition to these critical essays, the portal presents the monograph by Emidio Spinelli, Questioni Scettiche: letture introduttive al pirronismo antico (Lithos, 2005) and the brand new online journal Lexicon Philosophicum: International Journal for the History of Texts and Ideas(
+www.lexicon.cnr.it
+).
+
+  
+The set of lexical items extracted from texts and multilingual philosophical dictionaries (see § 3) includes Nouns, Adjectives, Verbs and Adverbs, both monorhematic and multiword expressions. Fig. 1 shows a query’s result, namely for the French philosophical subject ‘abduction’. The software presents the interlinguistic equivalents available in the five languages implemented so far (Latin, Greek, Italian, French, and English). Fig.2 shows another example, related to the multiword expression ‘harmonie préetablie’, that is presented in TheofPhilo both as autonomous lexeme included in the alphabetical list and in the box related to its belonging terms (Fig. 3). As result, from the expression ‘harmonie préetablie’, it is possible to reach the box related to the belonging lexeme ‘harmonie’ and viceversa.
+
+  
+
+    
+Fig. 1: Philosophical Subject ‘abduction’
+
+    
+
+  
+
+    
+Fig. 2: Philosophical Subject 'harmonie préetablie’
+
+    
+
+  
+
+    
+Fig. 3: Philosophical Subject 'harmonie’
+
+    
+
+  
+The complexity of terminological relations -caused by the complex and often problematic interchanges between cultures and languages during the history of philosophical thought- emerges not always so plainly as in the cases just presented. Fig. 4 shows the results of the query made for ‘acte’, which presents a large variety of equivalent terms. We can manage and control the large number of terms by using MySQL technology.
+
+  
+
+    
+Fig. 4: Philosophical Subject ‘acte’
+
+    
+
+  
+ 3. Tools and procedures
+
+  
+The ontology
+4
+5
+6
+ built to represent the content, is structured according to the following four categories: Persons (philosophers, scholars); Relevant Concepts (philosophical subjects, relevant events); Relevant Subjects (geographical entities, philosophical themes, philosophical schools, quotations, titles); Sources (secondary and primary sources).
+
+  
+ TheofPhilo’s specific purpose is to populate the sub-category of the philosophical subjects by two typologies of relations: interlinguistic equivalence and intralinguistic semantic relations.
+
+  
+ From the procedural point of view, the work was carried out according to the following phases: digitization in Excel format of the multilingual entries systems lemmatized in N. Abbagnano’s Dizionario di Filosofia (Torino 1998) and in A. Lalande’s Vocabulaire technique et critique de la philosophie (Paris 1983); merging of the Greek and French philosophical subjects selected for the semantic enrichment experiments; acquisition of relevant French and Greek terminology using S. Maso’s Lingua Philosophica Graeca (Milano-Udine, 2010), in which relevant Greek philosophical terms are presented along with their Latin, Italian, English, French and German equivalents; acquisition of Latin, Italian and English equivalents. In the last phase, in order to enrich the interlinguistic equivalences, we used the following lexicographical sources: A. Bailly, Dictionnaire Grec- Français, Édition revue par L. Séchan et P. Chantraine, Paris 1950 (16th ed.); J. M. Baldwin, Dictionary of Philosophy and Psychology, Gloucester, Mass. 1960 (2nd ed.); B. Cassin, Vocabulaire Européen des Philosophie, Tours 2004; Enciclopedia filosofica, Roma 1979 (2nd ed.); L. Rocci, Vocabolario Greco-Italianο, Perugia 1993 (37th ed.); Liddell-Scott, Greek- English Lexicon, Rev. by H. S. Jones, Oxford 1968 (9th ed.); T. Sanesi, Vocabolario Italiano-Greco, Pistoia-Siena 1916 (12th ed.).
+
+  
+ Currently the philosophical subjects are being implemented in a relational MySQL database created and managed by Dr. Ada Russo. This technology guarantees a more efficient data management, helps to control interlinguistic relation (equivalence), and supports the acquisition of Latin, Italian and English Subjects. At present the number of terms consists of 4549 (1006 Greeks, 948 French, 909 Italian, 895 English, 791 Latin), but it will increase, we in fact intend to implement also Spanish and German philosophical terminology.
+
+  
+ In order to build the ontology, we have been using Pundit (http://thepund.it), a semantic web annotator created by Net7 (www.netseven.it) and employed in the semantic enrichment and semantic interlinking activities in the frame of the AGORA project. Conceived in the increasingly wider context of the semantic web technologies for encoding, managing and enriching digital object, Pundit allows to produce semantic annotations, whose semantics is machine-processable. Each annotation consists of a RDF triple, which is a statement made up of a subject (S), a predicate (P) and an object (O)
+8
+; according to this technology you could create, for example, a triple that states: “Sextus Empiricus (S) is the author of (P) Pyrrhoneae Hypotyposes (O)”.
+
+  
+ Among the variety of annotations, the most useful to our purposes are those implying triples which connect: 
+
+  
+A textual fragment to a philosophical subject, such as: “The selected text fragment (S) DealsWith (P) the Greek philosophical subject to alethes (O)” (Fig. 5) or “The selected text fragment (S) Defines (P) the Greek philosophical subject ataraxia (O)” (Fig. 6). According to its project’s goals, CNR-ILIESI team preconfigured the following properties (the inverse properties in brackets):
+
+  
+Defines (IsDefinedBy);
+
+    
+IndirectlyDefines (IsIndirectlyDefinedBy);
+
+    
+IsAnExtensionalInstanceOf (IsExtensionallyInstantiatedBy);
+
+    
+IsAnIntensionalInstanceOf(IsIntensionallyInstantiatedBy);
+
+    
+DealsWith (IsDealtWithBy).
+
+  
+A philosophical subject to another philosophical subject.While the interlinguistic equivalents are already available in TheofPhilo (see §2 and related figures), the intralinguistic relations will be implemented during the next phase of our work. RDF triples will be created considering philosophical subjects both as Subject and as Object of each triple and connected by the following properties (the inverse properties in brackets):
+
+  
+IsSynonymOf (HasSynonym);
+
+    
+IsHomonymOf (HasHomonym);
+
+    
+IsHyperonymOf (HasHyperonym);
+
+    
+IsHyponymOf (HasHyponym);
+
+    
+IsCo-HyponymOf (HasCo-Hyponym);
+
+    
+IsAntonymOf (HasAntonym).
+
+  
+
+    
+Fig. 5: Annotation Text to Subject with the RDF property DealsWith
+
+    
+
+  
+
+    
+Fig. 6: Annotation Text to Subject with the RDF property Defines
+
+    
+
+  
+4. Conclusions
+
+  
+TheofPhilo is a tool still in its pilot phase and work at its implementation is in progress. However, once completed the semantic annotation activity, it will enable users to access texts dealing with the subject the query was made for, according to the specific language chosen by the user. TheofPhilo will also allow scholars to deepen their research, making queries on the texts, according to both interlinguistic and intralinguistic relations. Furthermore, TheofPhilo will be considered as a large corpus of philosophical -interweave- terms (around 5000 at present) and  it will be analysed from both linguistic and historical-philosophical approach. 
+
+  
+References
+
+  
+1. 
+Magris, M. et al.
+ (2002). Manuale di terminologia. Hoepli, Milano.
+          
+
+  
+2. 
+Tardella, M.
+ (2013). Agora. Scholarly Open Access Research in European  Philosophy, Blityri. Studi di storia delle idee sui segni e le lingue, II (1): 167-174.
+          
+
+  
+3. 
+Marras C. and Lamarra A.
+ (2013). Scholarly Open Access Research in Philosophy: Limits and Horizons of a European Innovative Project, Proceedings of Digital Humanities International Conference 2013 (University of Nebraska-Lincoln 7/13-15/2013). 
+dh2013.unl.edu/abstracts/ab-316.html
+ (date accessed: 10/31/2013).
+          
+
+  
+4. 
+Garshol, L. M.
+ (2004), Metadata? Thesauri? Taxonomies? Topic Maps! Making sense of it all,6. 
+www.ontopia.net/topicmaps/materials/tm-vs-thesauri.html#N773
+ (date accessed: 10/31/2013).
+          
+
+  
+5. 
+Grenon P. and Smith B.
+ (2009), Foundations of an ontology of philosophy, Synthese (2011): 185–204.5.
+          
+
+  
+6. 
+Gruber, T. R.
+ (1993). A translation approach to portable ontology specification, Knowledge Acquisition, 5 (2):4. 199-220
+          
+
+  
+7. 
+Andrews, P. et al.
+ (2011). A classiﬁcation of semantic annotation systems, Semantic Web Journal, 0 (2011): 1-27.7. 
+www.semantic-web-journal.net/sites/default/files/swj123_0.pdf
+ (date accessed: 10/31/2013).
+          
+
+  
+8. 
+Grassi, M. et al.
+ (2013). Pundit: augmenting web contents with semantics. Literary and Linguist Computing, 288. (4): 640-659 (date accessed: 02/20/2014).
+          
+

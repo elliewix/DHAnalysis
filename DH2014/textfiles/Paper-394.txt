@@ -1,0 +1,283 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+Tracking Semantic Drift in Ancient Languages: The Bible as Exemplar and Test Case
+
+    
+Category:
+Long Paper
+
+      
+Session:
+5
+
+      
+Date:
+2014-07-10
+Time:
+11:00:00
+
+      
+Room:
+319 - Amphipôle
+
+    
+
+        
+Munson
+,
+									
+Matthew
+
+        
+
+          
+
+        
+Georg-August-Universität Göttingen
+
+      
+
+    
+
+  
+Language changes. On this everyone would agree. But how can we track this ever-changing phenomenon? If we focus on modern languages, the task is easier since we have native speakers whom we can ask, “How is this usage different than this other one?”  But in the case of historical languages, and especially those spoken and written millennia ago, this task becomes much more difficult. How is it possible for us to create, or at least simulate, in ourselves the language proficiency of a society that has been dead for hundreds or thousands of years? And if we cannot rely on native proficiency, how can we track systematic language change and, thus, come to a better understanding of the language and texts of any particular period. The pioneering work most closely associated with John Sinclair gives us our best answer: Trust the Text!
+1
+  We have millions of words of, e.g., Greek, ranging over a time-span of 3000 years from Homer to the present day.
+2
+ What we need are methods that can help us to harness this huge amount of information. David Bamman and Gregory Crane have already begun working in the field of historical word-sense variation in Latin.
+3
+  Relying on translation equivalents, they were able to successfully track word sense variation in Latin in a 389-million word corpus. By their own admission, however, this method has the drawback of requiring “large amounts of parallel text data”
+4
+ in translation. In contrast, the method proposed here, comparison of co-occurrence patterns in two or more corpora, which has been applied in many other fields (see below), only requires simple, plain-text input in a single language.
+
+  
+The first theoretical
+foray into computational analysis of co-occurrence patterns came in 1955 with
+Warren Weaver’s article “Translation.”
+5
+ Starting from the recognition that the sense of any
+word is ambiguous if examined in isolation, he asserts, “But if one lengthens
+the slit in the opaque mask, until one can see not only the central word in
+question, but also say N words on either side, then if N is large enough one
+can unambiguously decide the meaning of the central word.”
+6
+  The necessary corpora and computational power to
+realize Weaver’s theory, however, only came much later.  Computational
+analysis of co-occurrence patterns on large-scale corpora began with the
+COBUILD project, which set out to build “the
+very first dictionaries to be based completely on corpus data” and, in doing
+so, systematically tracked collocations, defined as “the high-frequency words
+native English speakers naturally use with the target word.”
+7
+  Since then, co-occurrence analysis has been
+used in several fields in which word-sense disambiguation is necessary, such as
+speech recognition,
+8
+ machine translation,
+9
+ and topic modeling,
+10
+ and it is the basis for the field of
+distributional semantics.
+11
+
+  
+In
+this paper, I will present my application of co-occurrence analysis to the
+problem of historical word-sense variation, what I call in my title “semantic
+drift.”  I have
+chosen to carry out these experiments using as my two corpora the Greek Old
+Testament (the Septuagint) and the Greek New Testament for several reasons: the
+texts are easily available in digital form, have been deeply researched and,
+thus, deeply annotated, exist in multiple translations that can be used to
+benchmark methods and to test results, are of great interest to millions of
+people around the world, and, finally, because they are the most influential
+texts in the history of western civilization, the research can be easily
+extended to other corpora and, with more difficulty, even into other
+contemporary languages such as Latin, Hebrew, Aramaic, and Coptic, to name just
+a few.  The presentation will have two primary foci: the method and exemplary
+results.  
+
+  
+
+
+The method consists of the following steps.  First, I tokenized the texts and calculated
+co-occurrence counts for every word in an 8-word window.
+12
+  Using
+these co-occurrence tables, I calculated the statistical significance of each
+collocate word to each node word using the log-likelihood measure as described
+by Manning and Schütze.
+13
+
+Log-likelihood was chosen primarily because it deals very well with
+sparse data and can be easily interpreted without recourse to, e.g.,
+chi-squared tables.
+14
+  The former
+is important because most data in language is quite sparse and I was reluctant
+to eliminate a large amount of my data simply because the chosen method could not
+deal well with it.
+15
+  Ease of
+interpretation was important because, instead of using the measure as a means
+of hypothesis testing, in which I would expect to get a yes or no answer, I
+used it as hypothesis weighting, i.e., to measure how much more likely one
+thing is than another.  My purpose is not
+to decide if two words certainly form a set collocation but, instead, to
+measure the strength of collocation, ranging from strong repulsion to strong
+attraction, and compare this range with the ranges of other node words to find
+relationships.  Having calculated the
+statistical significance of these relationships, I used the cosine similarity
+16
+ measure to determine the strength of relationship,
+first, of every word in the Old Testament with its counterpart in the New
+Testament (e.g., θεός (God) in the Old Testament to θεός in
+the New Testament) and, second, of every word in the Old Testament with every
+other word in the Old Testament and the same for the New Testament.  These
+results allow me to discover which words’ senses have changed the most
+(comparison of Old Testament to New Testament) and how they have changed (comparison
+of the words most similar to, e.g., θεός in the Old Testament with those most
+similar to θεός in the New Testament).
+
+
+
+  
+
+    
+Fig. 1: Results based on the differences in cosine similarity measure between θεός (God) and the list words.  Those on the left are nearer to θεός in the OT, on the right to θεός in the NT.
+
+    
+
+  
+After relying purely on computational methods to this
+point, the final results of my research come through qualitative analysis of the
+comparisons described in the previous paragraph.  The two tables above show the 20 words most
+closely associated with θεός (God) in the Old Testament and the New Testament based on the
+differences between the cosine similarity scores in each testament between θεός (God) and
+the words in the list.  The colors have
+been added by me to highlight what I see to be related words in each list.  What we see on the left is that God in the
+Old Testament is more closely related to words concerning ruling (in yellow: “Solomon”,
+“command”, “anointed”, “Benjamin”), violence (red: “destroy utterly”, “to lay
+hold of”, “to drive away”, “to strike”), agriculture (brown: “field”, “cattle”),
+and the Exodus (green: “captivity”, “foreign”). 
+While in the New Testament, God is more closely related to (evil) rulers
+(yellow: “Satan”, “Pharisees”, “centurion”, “Pilate”), servants of God (dark
+purple: “Peter”, “Christ”, “apostle”, “Paul”, “disciple”), and words that
+relate the servants to God (light purple: “to believe”, “faith”, “gospel”, “grace”,
+“love”). So, by classifying the words most closely related with θεός (God) in
+each of the testaments, we are able to determine not only that the portrayal of
+God had changed from the Old Testament to the New Testament, but also to see
+how it changed (move from a ruler who leads and makes war to a patron who
+offers to and receives favors from clients) and to guess at the probable historical
+cause (change from an independent monarchy to a Roman province).  In the second part of this paper, salient
+examples, such as that described above for God, will be used to demonstrate the
+effectiveness of this method.
+
+  
+The final section of the paper will be a look forward
+at how this method could be extended to other corpora and even other languages,
+allowing us to tell the stories of language development with more precision and
+so, ultimately to understand historical texts better.
+
+  
+References
+
+  
+1. 
+John McHardy Sinclair
+ (2004). Trust the text : language, corpus and discourse. London: Routledge.
+          
+
+  
+2. The Thesaurus Lingua Graece collection claims to contain 105 million words of Greek “from Homer (8 c. B.C.) to the fall of Byzantium in AD 1453 and beyond.” Thesaurus Lingua Graece. n.d. 1 November 2013. 
+www.tlg.uci.edu
+.
+          
+
+  
+3. 
+David Bamman and Gregory Crane
+ (2011). Measuring Historical Word Sense Variation.
+www.perseus.tufts.edu/publications/bamman-11.pdf
+. 30 October 2013.
+          
+
+  
+4. 
+Bamman and Crane
+, 1.
+          
+
+  
+5. 
+Warren Weaver
+ (1955). Translation.
+www.mt-archive.info/Weaver-1949.pdf
+. 30 October 2013.
+          
+
+  
+6. 
+Weaver
+, 8.
+          
+
+  
+7. 
+www.mycobuild.com/about-cobuild.aspx
+
+  
+8. 
+www.mycobuild.com/about-cobuild.aspx
+
+  
+9. 
+en.wikipedia.org/wiki/Machine_translation#Disambiguation
+
+  
+10. 
+Mark Steyvers and Tom Griffiths
+ (2007). Probabilistic Topic Models.
+psiexp.ss.uci.edu/research/papers/SteyversGriffithsLSABookFormatted.pdf
+. 30 October 2013.
+          
+
+  
+11. This field was pioneered especially by J.R. Firth and Zellig Harris in the 1950s.  See especially Zellig S. Harris, „How Words Carry Meaning.“ 1986. Language and Information: The Bampton Lectures, Columbia University, 1986. Lecture. 1. November 2013. 
+www.ircs.upenn.edu/zellig/3_2.mp3
+ and John Rupert Firth. "A synopsis of linguistic theory 1930-1955." Selected Papers of J.R. Firth, 1952-1959. Ed. F.R. Palmer. Harlow: Longmans, 1968. 168-205.
+          
+
+  
+12. 
+Léon
+, p. 14, footnote 15.
+          
+
+  
+13. 
+Christopher Manning and Hinrich Schütze
+ (1999). Foundations of Statistical Natural Language Processing. Cambridge, Massachusetts: MIT Press. 172-175.
+          
+
+  
+
+            Manning and Schütze, 172.  On the topic of log-likelihood and spare data, see Ted Dunning. „Accurate Methods for the Statistics of Surprise and Coincidence.“ March 1993. ACL Anthology: A Digital Archive of Research Papers in Computational Linguistics. 1. November 2013. 
+acl.ldc.upenn.edu/J/J93/J93-1003.pdf
+
+  
+15. 
+Dunning
+, 61.
+          
+
+  
+16. 
+Manning and Schütze
+, 299-303.
+          
+

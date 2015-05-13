@@ -1,0 +1,225 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+Reading Between the Lines: Image-to-Segment Relationship Development and Analysis
+
+    
+Category:
+Poster
+
+      
+Session:
+1
+
+      
+Date:
+2014-07-10
+Time:
+14:00:00
+
+      
+Room:
+Amphipôle Common Area
+
+    
+
+        
+Smith
+,
+									
+Dustin
+
+        
+
+          
+
+        
+The University of Texas at Austin, United States of America 
+
+      
+
+      
+
+        
+Karadkar
+,
+									
+Unmil
+
+        
+
+          
+
+        
+The University of Texas at Austin, United States of America 
+
+      
+
+      
+
+        
+Galloway
+,
+									
+Pat
+
+        
+
+          
+
+        
+The University of Texas at Austin, United States of America 
+
+      
+
+      
+
+        
+Davis
+,
+									
+King
+
+        
+
+          
+
+        
+The University of Texas at Austin, United States of America 
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+1. Introduction
+
+
+  
+Crowdsourced transcription has been adopted successfully by institutions large and small in order to
+unlock cultural heritage data in handwritten documents. In the case of mental health documents,
+however, public transcription is not an option as the act of transcription involves reading them, which
+has implications for privacy of patients, doctors, and employees alike, potentially resulting in social
+repercussions to family and descendants. We are exploring mechanisms to crowdsource the
+transcription of such privacy-sensitive documents while maintaining the anonymity of individuals
+named in handwritten records by constraining the context of such mention as well as by exploiting
+other characteristics of documents. We report our promising initial results and describe our approach
+for generating structural metadata to identify multi-page units within large registers to improve the
+granularity of access.
+
+
+  
+1.1. Collection
+
+
+  
+Now called the Central State Hospital (CSH) [1], the first mental health institution for African-Ameri-
+cans in the USA was founded in 1870 near Petersburg, VA. The meticulous records maintained by the
+custodians of this historically significant institution have are now stored as tiff files at 400 dpi resolu-
+tion in a folder structure that reflects minimal structural information. The documents include hospital
+administrative and medical records of all stripes. The early records are handwritten and must be tran-
+scribed before these can be analyzed to observe patterns in administrative practices, as well as patient
+care. While the data set contains several types of handwritten cursive documents, including patient rec-
+ords, we are basing the development on board meeting minutes in order to minimize the risks in case of
+accidental exposure of these records.
+
+  
+
+    
+Fig. 1: Cursive document with line breaks using adaptive thresholds.
+
+    
+
+  
+1.2. Prior work
+
+
+  
+There is a vast body of literature on off-line handwriting recognition, focuing on methods for automatic
+character identification and transcription into machine-readable text [2]. Two examples of character
+recognition work are Tomai et al., [3] who provide a framework for mapping words in a transcript to a
+word image in a document and Guillevic et al., [4] who provide a character recognition approach to
+unconstrained, small-lexicon cursive handwriting. However, our corpus is heterogeneous, authored by
+many individuals, and uses a broad vocabulary.
+
+
+  
+2. Approach
+
+
+  
+We are using the Gamera libraries to segment documents for identifying individual words, in an effort
+to minimize the context available to potential transcribers, much like captchas are used to transcribe
+old, hard to OCR documents. As each document is different, and the text across lines overlaps in
+various ways, ruling out the use of bounding box-based methods. We using flexible, self-adjusting
+thresholds to detect lines. Fig. 1 shows the identified line breaks, with some breaks going through
+ascenders or descenders within characters in a line based on thresholds detected using document
+histograms. Additionally, we are using X-Y histogram profiles to identify and mark meeting minutes
+that span multiple pages (but begin on a fresh page) to improve the access granularity for these
+documents. Fig. 2 shows the current document structure using solid lines (pages within a register) and
+the intermediate minute structure superimposed by dashed lines.
+
+  
+
+    
+Fig. 2: Generation of multi-page document structure
+
+    
+
+  
+3. Discussion and Future Work
+
+
+  
+References
+
+  
+By employing a top-down, histogram-based approach to line and word recognition, our methods are
+            adaptable to a large body of handwritten documents that space text at varying distances. In addition, the
+            histograms also enable the generation of structural metadata that improves the access granularity.
+          
+
+  
+The next step is to identify words within each line, where the threshold-based approach will help us
+            locate spaces between inclined words. Transcribing at the word-level will enable us to expose varying
+            levels of documents contexts to potential transcribers, depending upon a computation assessment of
+            privacy sensitivity of content (for example, very short words are less likely to contain individual
+            information). Prevention of identity disclosure in these records is critical due to the stigma associated
+            with treatment for mental health issues. The methods we develop for transcribing handwritten
+            documents will also be applicable to other privacy-sensitive historical records, most immediately, those
+            of similar mental health institutions that followed the CSH.
+          
+
+  
+4. References
+          
+
+  
+The Central State Hospital
+. http://www.csh.dbhds.virginia.gov/
+          
+
+  
+Cattoni, R., Coianiz, T., Messelodi S., and Modena ,C. M
+. (1998). 'Geometric Layout Analysis Techniques for
+            Document Image Understanding: a Review' January 1998
+          
+
+  
+Tomai, C. I., Zhang, B. and Govindaraju V.
+ (2002). Transcript Mapping for Historical Handwritten Document Im-
+            ages. Proceedings of the Eighth International Workshop on Frontiers in Handwriting Recognition.
+          
+
+  
+Guillevic, D. and Suen, C.
+ (1995). Cursive Script Recognition applied to the Processing of Bank Cheques. 
+

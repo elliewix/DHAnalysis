@@ -1,0 +1,212 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+Scholarly primitives revisited: towards a practical taxonomy of digital humanities research activities and objects
+
+    
+Category:
+Short Paper
+
+      
+Session:
+7
+
+      
+Date:
+2014-07-11
+Time:
+11:00:00
+
+      
+Room:
+415 - Amphimax
+
+    
+
+        
+Borek
+,
+									
+Luise
+
+        
+
+          
+
+        
+Technical University of Darmstadt, Germany
+
+      
+
+      
+
+        
+Dombrowski
+,
+									
+Quinn
+
+        
+
+          
+
+        
+UC Berkeley
+
+      
+
+      
+
+        
+Munson
+,
+									
+Matthew
+
+        
+
+          
+
+        
+University of Göttingen, Germany
+
+      
+
+      
+
+        
+Perkins
+,
+									
+Jody
+
+        
+
+          
+
+        
+Miami University, United States of America
+
+      
+
+      
+
+        
+Schöch
+,
+									
+Christof
+
+        
+
+          
+
+        
+University of Würzburg, Germany
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+
+  
+1. Introduction
+
+  
+Today we have more information at our fingertips than at any other time in human history. The problem is no longer finding information, the problem is being overwhelmed with the amount of information. This is no different in the realm of the digital humanities.  Information on people, projects, resources, methods, and tools exists in quantity everywhere we look, and yet we still have difficulty finding what we need. This paper will describe a transatlantic effort on the part of DiRT in the United States and DARIAH in Europe to construct a taxonomy of scholarly methods, that can be used not only to organize single collections of DH information and resources but also to allow these collections to interface with each other, creating a web of linked data that can be effectively searched for information across distributed collections. DiRT and DARIAH are not trying to impose a restrictive, monolithic scheme on DH; rather, our goal is to construct a lightweight, basic taxonomy of higher order goals and first-order methods that can be easily expanded in all directions by linking lower order techniques to multiple goals and/or methods to create machine-readable paths among the various resources. In building this taxonomy, we heavily rely on input and feedback from the digital humanities community. Still, at least for the intended use cases, we believe a stable taxonomy has advantages over more open, folksonomy-based solutions.
+
+  
+The taxonomy as it exists now is based upon three primary sources: 1) the arts-humanities.net taxonomy of tools of DH projects, tools, centers, and other resources, especially as it has been expanded by digital.humanities@oxford in the UK and DRAPIer in Ireland; 2) the DiRT collection of digital research tools, re-launched under Project Bamboo in the US but now continuing on after the end of that project; and 3) the DARIAH ‘Doing Digital Humanities’ Zotero bibliography of literature on all facets of DH. These resources were studied and distilled into their essential parts, producing a simplified taxonomy of two levels: 8 top-level goals that are broadly based on the steps of the scholarly research process and a number of general methods under these goals that are typically used by scholars to achieve these research goals. The updating of the taxonomy and the definition of the types of relationships to be described in the resulting ontology will be carried out by a joint working group in the DARIAH-EU and the NeDiMAH projects in Europe, which will conduct large scale desk and field research into scholarly practice to determine how best to describe the relationships between and among the goals, methods, and techniques of scholarly practice.  The future expansion of this organizational system will not be as a hierarchical taxonomy but, instead, as a linked ontology as lower-level techniques are attached to one or more methods, linking all the existing entities in the ontology together. The projects and collections that use this schema will play an important role here: as resources are added to these collections and linked to the taxonomy, the resulting ontology will grow in complexity.  This complexity will be more help than hindrance precisely because it will be a machine-actionable complexity.  Computers will traverse this web of relationships for us, only bringing back results that are closely related to our needs.
+
+  
+This may seem excessively optimistic, but this paper will support these claims by describing three very different types of resources that have used and expanded the taxonomy not only to improve the findability within their own collections but, more importantly, to link to each other in a machine-actionable way. These resources are the DiRT directory of digital tools, the DARIAH ‘Doing Digital Humanities’ bibliography, and the DARIAH-DE service-oriented project portal. A brief description of each of these collections and how they will profit from this taxonomy/ontology follows. 
+
+  
+2. DiRT
+
+  
+DiRT (Digital Research Tools, http://dirt.projectbamboo.org) is a longstanding US-based directory for scholars interested in digital tools, which provides basic information about software that can facilitate the research process at different stages. The classification of tools by category has always been fundamental to DiRT: in its earlier incarnation as a wiki, wiki pages each corresponded to a category of tools, and the tools were presented in a list on the page. In 2011, DiRT was rebuilt using the Drupal content management system, which allowed information about each tool to be stored in a structured manner that enables faceted search and browsing. While users can now create complex queries on DiRT (e.g. using operating system and price to narrow their results), tool categories remain the primary way of navigating the site.
+
+  
+With support from the Andrew W. Mellon Foundation, DiRT is currently undergoing a new phase of development, with the goal of making information about digital tools available outside the DiRT directory itself. Since its inception, DiRT has used its own ad-hoc list of categories. All tools must belong to at least one category, though these categories can be supplemented with user-generated tags. The shortcomings of DiRT’s categories list can be illustrated through the example of OCR tools-- some are classified as “transcription”, others as “conversion”, and while neither is ideal, both are a reasonable approximation given the other options. Replacing DiRT’s former categories with the taxonomy will improve the consistency and quality of the data, and also provide a shared facet that can connect DiRT’s tool data with information provided by other projects, once DiRT’s contents are made available using RDF.
+
+  
+3. 'Doing Digital Humanities' bibliography
+
+  
+Another resource directly connected to the taxonomy is DARIAH-DE's ‘Doing Digital Humanities’ bibliography. The bibliography can be accessed on Zotero (
+www.zotero.org/groups/113737
+) or on the DARIAH-DE portal (
+https://de.dariah.eu/bibliography
+). Like DiRT, the bibliography is one of the seed activities for the taxonomy at the same time as being one of the already defined use cases, representing the application domain of making medium-sized collections of bibliographic references discoverable. This Zotero-based bibliography offers suggestions for introductory readings as well as more in-depth coverage of research literature in various areas of digital research, teaching and infrastructure planning in and for the humanities. The bibliography is carefully curated collaboratively, is freely accessible, currently has around 800 entries, and is being updated continuously.
+
+  
+Right now, the bibliography is already divided into thematic collections based on the "goals" defined in the taxonomy. Each collection, hence, covers one prototypical aspect or goal of the research process in the humanities as it is practiced with digital tools, methods and data. In addition, all entries in the bibliography are discoverable through keywords covering, on the one hand, typical research methods and activities in the humanities, and on the other hand, a wide range of objects of research. The current closed list of keyword represents an early draft version of the taxonomy described here. 
+
+  
+Once a first stable version of the taxonomy is available, the bibliography's keyword implementation will be updated. Sharing a keyword system with other projects will make it easier for users to find related resources. And the public documentation of the taxonomy, including concise scope notes for all methods and techniques, will make the bibliography's keyword-based search more transparent and increase its usability.
+
+  
+4. DARIAH-DE portal
+
+  
+A third use case aims to examine the taxonomy as a functional structure for DARIAH-DE’s service-oriented website, the DARIAH-DE-Portal. Launched in a first version in May 2013, it will receive a makeover in the early stage of the upcoming German DARIAH II project scheduled for March 2014 that is based on the taxonomy.
+
+  
+The website is designed to offer a wide range of services concerning Digital Humanities in Germany and addresses both researchers who already work digitally and those seeking information or advice. The services provided are as heterogeneous as the DH landscape. They cover informational aspects on specific research projects, information on DH Centers, Bachelor/Master Programmes and tools as well as their documentation, tutorials and teaching materials. Services offered by DARIAH-DE (like the embedded bibliography mentioned above, the DARIAH-DE Working Papers, or hosting services and a developer’s portal) are complemented by external resources like blogs and a DH-calendar (a cooperation with 
+calenda.org
+ being currently on its way).
+
+  
+The variety of this content leads to multi-purpose requirements that enable a flexible access to information relevant to individual users. This use case meets that challenge by implementing the taxonomy in RDF, thus interlinking content and making it multi-purpose. In that way, the taxonomy will function as a ‘meta-service’ that meets the interests of an active and interlinked community, that visualizes Digital Humanities and promotes its results.
+
+  
+ 5. Conclusion
+
+  
+The purpose of this talk is not to convince the audience that we in DiRT and DARIAH have all the right answers.  Instead, it is to continue a conversation about the importance of ontologies for managing the over-abundance of DH information, present our own work on this problem and our approach to gathering and incorporating community feedback, in hopes of spurring further work in this area.
+
+  
+References
+
+  
+Anderson, Sheila; Tobias Blanke; Stuart Dunn
+. (2010). Methodological Commons: Arts and Humanities E-Science Fundamentals. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences 368, no. 1925 (2010): 3779 –3796. http://rsta.royalsocietypublishing.org/content/368/1925/3779.abstract.
+
+  
+Benardou, Agiatis, Panos Constantopoulos, Costis Dallas, and Dimitris Gavrilis
+. Understanding the Information Requirements of Arts and Humanities Scholarship. International Journal of Digital Curation 5, no. 1 (June 22, 2010): 18–33. doi:10.2218/ijdc.v5i1.141.
+
+  
+Borgman, Christine
+ (2010). Scholarship in the Digital Age : Information, Infrastructure, and the Internet. Cambridge: MIT Press.
+
+  
+CLIR (Commission on Cyberinfrastructure for the Humanities and Social Sciences)
+. (2006). Our Cultural Commonwealth: The Report of the American Council of Learned Societies Commission on Cyberinfrastructure for the Humanities and Social Sciences. New York: American Council of Learned Societies, 2006.
+
+  
+Gasteiner, Martin, and Peter Haber
+, eds. (2010). Digitale Arbeitstechniken für die Geistes- und Kulturwissenschaften. Vienna: UTB. http://www.utb-shop.de/digitale-arbeitstechniken.html.
+
+  
+Reiche, Ruth; Rainer Becker; Michael Bender; Matthew Munson; Stefan Schmunk; Christof Schöch
+. (2014). Verfahren der Digital Humanities in den Geistes- und Kulturwissenschaften. DARIAH-DE Working Papers Nr. 4. Göttingen: DARIAH-DE (to appear). Preprint: https://dev2.dariah.eu/wiki/download/attachments/2295542/M223_DH-Verfahren.pdf.
+
+  
+Siemens, Ray; John Unsworth; Susan Schreibman
+, eds. (2004). A Companion to Digital Humanities. Hardcover. Oxford: Blackwell. http://www.digitalhumanities.org/companion/.
+
+  
+Unsworth, John
+. (2000). Scholarly Primitives: What Methods Do Humanities Researchers Have in Common, and How Might Our Tools Reflect This? London: King’s College London. http://www3.isrl.illinois.edu/~unsworth/Kings.5-00/primitives.html.
+

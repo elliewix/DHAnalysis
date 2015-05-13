@@ -1,0 +1,398 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+“Tout ce qui n'est point vers, est prose” : Raymond Queneau’s Matrix Analysis of Language, Syntactic Stylometry, and Exploratory Programming
+
+    
+Category:
+Poster
+
+      
+Session:
+2
+
+      
+Date:
+2014-07-10
+Time:
+16:00:00
+
+      
+Room:
+Amphipôle Common Area
+
+    
+
+        
+Wolff
+,
+									
+Mark
+
+        
+
+          
+
+        
+Hartwick College
+
+      
+
+    
+
+  
+Introduction
+
+  
+Established techniques in stylometry typically measure word and ngram frequencies with limited consideration of syntax. While it is often easier to access and interpret statistically significant words in a text, an analysis of syntax alone can provide interesting and unexpected results. The analysis presented here represents what Nick Montfort calls exploratory programming, where "there's no specification or problem to be solved, but there are things to be discovered."
+1
+ An initial research question can be a pretext for exploring computation as a means of discovery rather than modeling.
+
+  
+Raymond Queneau's Matrix Analysis of Langauge
+
+  
+Raymond Queneau, a founding member of the Oulipo who recognized the potential of computation for literary analysis and creation, developed a technique for measuring a text's syntax. In a paper he published in 1964
+2
+, Queneau explored the mathematical properties of a system of tagging parts of speech according to two categories: signifiers, which include nouns, adjectives, and verbs (except avoir and être); and formatives, which include everything else (avoir, être, pronouns, articles, conjunctions, prepositions, adverbs, interjections, etc.). Given a word group such as a sentence, one can construct two matrices where the first matrix contains all formatives and the second all signifiers. If a word group contains two consecutive formatives or signifiers, one can use a unitary element in order to construct the matrices:
+
+  
+
+    
+Fig. 1: The sentence “Le vilain chat a bien mangé la belle souris” can be represented as the product of two matrices.
+
+    
+
+  
+The product of a formative and a signifier is a bi-word. By adopting the conventions that neither (1 x 1) nor (A x 1) + (1 x B) are allowed, one avoids uninteresting or redundant bi-words. Any sentence can therefore be transformed into a sequence of pairs of words, and each pair is either a bi-word (B), a formative (F), or a signifier (S). According to this schema, the sentence in Fig. 1 can be rendered as 
+
+  
+B S F B B S
+.
+
+  
+Syntax and Textual Signals
+
+  
+In previous research I explored Queneau’s matrix analysis as a by-product of a more fundamental approach to ludic experimentation in computational literary analysis.
+3
+ Initial results showed that matrix analysis could be used to attribute authorship with reasonable success. With the development of the stylo package of stylometry tools for the R programming language,
+4
+ I combined matrix analysis with cluster analysis in order to determine if an authorial signal could be detected through syntax alone. Using a corpus of 17th-century French plays compiled by Fièvre
+5
+ and preprocessed by Schöch,
+6
+ I transformed the plays into sequences of the letters F, S, B and P using Schmid’s TreeTagger parser.
+7
+ I added the letter P to Queneau's schema to designate punctuation, which interrupts the flow of words and allows for occurrences of 
+F P S
+ instead of 
+F S
+ (which would be a bi-word, or 
+B
+). Spaces were inserted between the letters to facilitate word token analysis (instead of character analysis). The first lines of Molière’s Les Femmes savantes
+8
+
+  
+ 
+
+  
+
+    Quoi ? le beau nom de fille est un titre, ma soeur,
+  
+
+  
+
+    Dont vous voulez quitter la charmante douceur,
+  
+
+  
+
+    Et de vous marier vous osez faire fête ?
+  
+
+  
+
+    Ce vulgaire dessein vous peut monter en tête ?
+  
+
+  
+ 
+
+  
+are thus rendered as the following sequence of letters:
+
+  
+
+    
+F P B S B F B P B P S B S B S P S F B B S S P B S B S B P
+
+  
+
+  
+ 
+
+  
+A cluster analysis of the corpus reveals that that the dominant signal is not authorial but formal, depending on whether a text is written in verse or prose:
+
+  
+
+    
+Fig. 2: Cluster analysis of 17th-century French theatre texts reduced to their syntactic structure according to Queneau’s schema for matrix analysis.
+
+    
+
+  
+The corpus clustered perfectly into groups of verse texts (light) and prose texts (dark). These results are surprising, given that traditional verse is determined by meter and rhyme and not explicitly by syntax. Because texts in verse follow the convention of capitalizing the initial letter of the first word of each line, the TreeTagger parser occasionally identified conjunctions and other formatives as proper nouns, tagging them erroneously as signifiers. To see if capitalization affected significantly the clustering, I lowercased every letter (thus masking all proper nouns):
+
+  
+
+    
+Fig. 3: Cluster analysis of 17th-century French theatre corpus with lowercased texts.
+
+    
+
+  
+The results are nearly the same. A more accurate analysis would require documents encoded to identify proper nouns.
+
+  
+Principal Component Analysis of Syntax Sequences
+
+  
+In order to examine more closely the syntactic structures differentiating verse from prose, I adopted a technique developed by Khmelev and Tweedie using Markov chains of letters to detect low-level sequence patterns.
+9
+ Given any text, one can produce a transition matrix that represents the frequencies of Markov chains of bigrams based on Queneau’s schema. Here is the transition matrix for Les Femmes savantes:
+
+  
+ 
+
+      
+ S
+
+      
+ F
+
+      
+ B
+
+      
+ P
+
+    
+ 
+S
+
+      
+ 0.2183949
+
+      
+ 0.2482244
+
+      
+ 0.2769886
+
+      
+ 0.2563920
+
+    
+ 
+F
+
+      
+ 0.0000000
+
+      
+ 0.3890392
+
+      
+ 0.4995489
+
+      
+ 0.1114118
+
+    
+ 
+B
+
+      
+ 0.2373926
+
+      
+ 0.2155913
+
+      
+ 0.2045805
+
+      
+ 0.3424356
+
+    
+ 
+P
+
+      
+ 0.4042477
+
+      
+ 0.3707703
+
+      
+ 0.2221022
+
+      
+ 0.0028798
+
+    
+This produces sixteen possible bigram combinations, although in reality there are only fifteen because FS never occurs (FS = B). We can consider the frequency of each bigram as a distinct measurement of a text and then analyze all the texts in the corpus as 15-dimensional vectors (this approach is similar to that of Hirst and Feiguina
+10
+). I reduced the vector space to three principal components and generated the following three-dimensional triplot (projected here as three biplots): 
+
+  
+
+    
+Fig. 4: Projection of PC1 and PC2 from a PCA triplot.
+
+    
+
+  
+
+    
+Fig. 5: Projection of PC1 and PC3 from a PCA triplot.
+
+    
+
+  
+
+    
+Fig. 6: Projection of PC2 and PC3 from a PCA triplot.
+
+    
+
+  
+The significant rotations for PC1 are SP, PF, FF, BF and FP, correlated negatively with BB, SS, BS, FB, SB and PS; those for PC2 are BF, SF and FF, correlated negatively with FP, SS, PB and BP; and for PC3 the significant rotations are PP, FP and SF, correlated negatively with FB, FF, BB and PB. These results are preliminary but Fig. 7 clearly shows how prose and verse texts separate in the triplot:
+
+  
+
+    
+Fig. 7: Angled projection of PCA triplot.
+
+    
+
+  
+There is a higher tendency among verse texts toward SS (consecutive signifiers), PS (initial signifiers after punctuation), SB and BS (signifiers and a bi-words in either order). Prose texts tend toward lower frequencies of SP (signifiers with no preceding formatives, followed by punctuation), FF (consecutive formatives), PB (initial bi-words after punctuation), PF (punctuation followed by formatives) and BF (bi-words followed by formatives). From these observations we can extrapolate further and say tentatively that in the syntactical structure of a text, verse tends to feature signifiers and prose tends to avoid formatives.  These results confirm earlier analyses of classical French plays by Beaudouin and Yvon who detected high frequencies of nouns in the sixth and twelfth metrical positions of alexandrine verse.
+11
+
+  
+Conclusion
+
+  
+It would seem that the Maître de Philosophie in Molière’s Bourgeois gentilhomme (II, 4) is not entirely risible in explaining the difference between verse and prose to Monsieur Jourdain.
+12
+
+There appears to be a definite measurable difference between these two text forms, at least in French. What is remarkable with this finding is that the difference does not depend on specific word choice, meter or rhyme, even though those are the qualities readers appreciate in verse. I have completed a similar analysis with the ABU corpus
+13
+ (over 200 works in French spanning many centuries) and the results are comparable:
+
+  
+
+    
+Fig. 8: PCA triplot of the ABU corpus.
+
+    
+
+  
+Cluster analysis and principal component analysis indicate that verse and prose are measurably different according to a purely syntactical analysis, with no explicit reference to semantics, phonetics or scansion. This discovery resulted not from an initial hypothesis about the relationship between syntax and text type but from exploratory programming, where a statistical technique commonly used to test authorship was applied to a purely syntactical transcription of texts. The investigation of an initial hypothesis (that authorship can be attributed to syntactical patterns) led to an entirely different conclusion through experimentation with computational techniques. One could pursue this research further by using Queneau’s matrix analysis of language to test liminal works such as Baudelaire’s Petits poèmes en prose
+14
+ to determine if an example of modernist poetry classifies as verse or prose. It should not be overlooked, however, that computational text analysis can produce interesting results through serendipity. 
+
+  
+References
+
+  
+1. 
+Montfort, Nick.
+ (2014) Exploratory Programming. Critical Code Studies Working Group. Web. 7 March 2014.
+					
+
+  
+2. 
+Queneau, Raymond.
+ (1964) L’Analyse matricielle du langage. Etudes de linguistique appliquée 3: 37–50. Print.
+					
+
+  
+3. 
+Wolff, Mark.
+ (2007) Reading Potential: The Oulipo and the Meaning of Algorithms. 1.1. Digital Humanities Quarterly. Web. 30 Oct. 2013.
+					
+
+  
+4. 
+Eder, Maciej, Mike Kestemont, and Jan Rybicki.
+ (2013) Stylometry with R: a Suite of Tools. Digital Humanities: Conference Abstracts. Lincoln, NE: 2013. 487–89. PDF file.
+					
+
+  
+5. 
+Fièvre, P.
+ (ed. 2007-2013). Théâtre classique. Web. 30 Oct. 2013.
+					
+
+  
+6. 
+Schöch, Christof.
+ (2013) Data Is All You Need: Documentation for ‘Fine-Tuning Our Stylometric Tools’ at DH2013. The Dragonfly’s Gaze. Web. 30 Oct. 2013.
+					
+
+  
+7. 
+Schmid, Helmut.
+TreeTagger: a language independent part-of-speech tagger. Institute for Natural Language Processing, University of Stuttgart. Web. 30 Oct. 2013.
+					
+
+  
+8. 
+Molière.
+ (1672)Les Femmes savantes, comédie. 
+Fièvre.
+ Web. 30 Oct. 2013.
+					
+
+  
+9. 
+Khmelev, Dmitri V., and Fiona J. Tweedie.
+ (2001) Using Markov Chains for Identification of Writers. Literary and Linguistic Computing 16.3: 299–307. Web. 30 Oct. 2013.
+					
+
+  
+10. 
+Hirst, Graeme, and Ol’ga Feiguina.
+ (2007) Bigrams of Syntactic Labels for Authorship Discrimination of Short Texts. Literary and Linguistic Computing 22.4: 405–417. Web. 30 Oct. 2013.
+					
+
+  
+11. 
+Beaudouin, Valérie, and François Yvon.
+ (1996) The Metrometer : a Tool for Analysing French Verse. Literary and Linguistic Computing 11.1: 23-31. PDF file.
+					
+
+  
+12. 
+Molière.
+ (1670) Le Bourgeois gentilhomme, comédie-ballet. Fièvre. Web. 30 Oct. 2013.
+					
+
+  
+13. 
+ABU (Association des Bibliophiles Universels).
+ (1993-2013) La Bibliothèque Universelle. Web. 30 Oct. 2013.
+					
+
+  
+14. 
+Baudelaire, Charles.
+ (1869) Le Spleen de Paris ou Petits Poèmes en Prose. Litteratura.com. Web. 30 Oct. 2013.
+					
+

@@ -1,0 +1,338 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+Clustering Search to Navigate A Case Study of the Canadian World Wide Web as a Historical Resource
+
+    
+Category:
+Short Paper
+
+      
+Session:
+5
+
+      
+Date:
+2014-07-10
+Time:
+11:00:00
+
+      
+Room:
+415 - Amphimax
+
+    
+
+        
+Milligan
+,
+									
+Ian
+
+        
+
+          
+
+        
+University of Waterloo
+
+      
+
+    
+
+  
+1. Introduction
+
+  
+From a historian’s
+perspective, I present an approach to navigate large amounts of Internet
+Archive information, drawing on a case study of 4.7% of the top-level .ca
+domains preserved in a scrape of the entire World Wide Web, the March 2011 Wide
+Web Scrape. Every day, users record their thoughts, feelings, locations,
+ratings, votes, reviews, jokes, and so forth; an assemblage of traces of the
+past that historians will be able to mold into narratives. Here, I explain one
+way to access them beyond the WaybackMachine using open-source tools such as WARC Tools, Apache Solr, and Carrot2 Workbench.
+
+  
+
+
+2. Literature Review and Project Rationale
+
+  
+Information scholars and
+digital archivists are having a conversation around digital preservation and
+web archiving.
+1
+ However, there is a need to approach these issues
+from the perspective of a historian with an interest in using web archives. My
+focus is on use rather than preservation.
+
+  
+The current way to access
+this material is through the WaybackMachine, run on the Internet Archive’s
+server itself at 
+archive.org/web
+ or as a local installation.
+2
+ The WaybackMachine is simple from a user
+perspective: one enters a URL and then the available dates of various snapshots
+are displayed across the top of the screen, and the web page is displayed if it
+is available. 
+
+  
+I am concerned with the files that drive the
+WaybackMachine: the WebARChive (WARC) files, the international
+standard for preserving Web data.
+3
+ Archiving web sites is difficult: a single page
+is made up of hundreds of parts, with external calls for images or other code
+hosted elsewhere. A WARC file provides a container for it all.
+
+  
+There are good reasons for a historian to be interested
+in these files rather than merely using the WaybackMachine. Chief among them is
+the latter’s lack of a full-text search function. The WaybackMachine takes
+a URL and generates the corresponding archived website. WARC files are the
+system’s building blocks. They contain data with can be explored another way.
+
+  
+3. The Canadian Internet Case Study
+
+  
+I draw on the 80TB Wide
+Web Scrape, released in October 2012 to celebrate the Internet Archive’s accumulation
+of ten petabytes of data.
+4
+ The WARC files in this collection are the
+results of a crawl that began on 9 March 2011 and ended on 23 December 2011,
+totalling 2,713,676,341 websites over 29,032,069 hosts. It is important to note the limitations of this scrape. First, we do not have multiple ones: if we had more scrapes, we could compare them and thus establish temporal changes. My hope is that if we can make cogent cases for what we can do with this sort of data, more might be released. Second, the sampling practices of the Internet Archive profoundly impact this sample and are beyond my control. The exact percentage of preserved websites is unknown, but it is probably only a little more than half.
+5
+ Furthermore, they are not scraped and preserved on a temporally consistent basis. More work remains to be done to understand these processes, as they profoundly shape work done with it.
+
+  
+Beginning by downloading all 111,690 index files (one
+line per URL), I found the WARC files that contained the largest number of
+websites within the .ca domain. I subsequently downloaded the top hundred WARCs
+containing a total of 397,221 Canadian URLs. Based on Internet Archive
+statistics, this dataset is 4.7% of the indexed .ca top-level domain.
+
+  
+To
+extract information, I was primarily interested in drawing on the large body of
+text within this sample to analyze. Text analysis tools are most developed, and
+this is my active area of research interest. In order to convert these files into
+plain text, I relied upon the free and open-source WARC Tools collection. In short, this creates plain text files by
+running each website through Lynx, a text-based browser. I subsequently selected
+only those that had Canadian domain names, selected via regular expressions. Each
+of those full-text files was then transformed into an XML document with fields
+for the title (URL) and content (textual content of the website). This plain text conversion has also been extremely fruitful in exploring via
+other text analysis tools, such as Named Entity Recognition.
+
+  
+4. Findings
+
+  
+The interplay between two
+open-source tools, the Apache Solr
+search engine and the Carrot2
+clustering search engine, presents a fruitful way to explore these archives. Solr is a NoSQL search engine optimized
+for working with millions of documents. Once data is ingested into Solr, which provides basic search, I
+turn to Carrot2. It is useful because
+of the clustering function, which takes objects and groups them into sets sharing
+common characteristics. While Carrot2
+offers several clustering algorithms, Lingo clustering is most fruitful. Its
+goal is to "capture thematic threads in a search result, that is discover
+groups of related documents and describe the subject of these groups in a way
+meaningful to a human."
+6
+
+  
+I now want to provide an overview of what these
+processes were able to do in my explorations of the Wide Web Scrape. My choices
+of queries are necessarily limited, as this paper cannot do comprehensive
+justice. In my other work, I am a historian of youth cultures; how could this
+methodology help somebody with my research interests? Here, a query for
+‘children’:
+
+  
+
+    
+Fig. 1: The query ‘children’, demonstrating clusters within the collection
+
+    
+
+  
+At left is an input
+panel, at right a list of clusters with the documents themselves. At lower left
+we have visualization options. This visualization is akin to an archival
+finding aid: we learn what these WARC files tell us about ‘Children,’ and
+whether this is worth further investigation. We see files relating to children’s
+health (Health Canada, Tylenol), research into children at various
+universities, health and wellness services, as well as related topics such as
+Youth Services, Family Services, and mental health. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+Thus,
+we have both an ad-hoc finding aid equivalent as well as a way to move beyond
+distant and close reading levels. While future studies would need to expand the
+amount of websites studied, we can see in this tranche of 5% of the Web that we
+have a good amount of information pertaining to children’s health,
+universities, and beyond. For some researchers, this would be a boon – for
+others, an indication that they may need to look elsewhere. Some projects are
+purely exploratory, however, and with a confident sample we could begin to make
+overall statements concerning societal concerns towards children. Notably, this method helps us find relevant websites by putting them into easy-to-understand groups, allowing for both quantitative (number of sites) and qualitative (the sites themselves) findings.
+
+  
+Clusters often contain more than one object, and the
+relationship between clusters sheds light on the structure of a document
+collection. Consider the following:
+
+  
+
+    
+Fig. 2: The query ‘children’ visualized using the Aduna cluster visualization technique.
+
+    
+
+  
+Labels represent
+clusters. If a document spans multiple clusters, it is represented by a dot
+connected to both labels, which represent clusters. For example, “Christian
+Education” appears in the middle left of the chart. There is one document to
+the left of it (partially covered by the label), a document that belongs only
+to it. Yet there is one to the right of it connected with “Early Learning,”
+representing a website that falls into both categories. 
+
+
+
+  
+From this, we can learn quite a bit about the files that we can find in the Wide Web Scrape as well as suggest which might be most fruitful for exploration. In this chart, at the bottom we see  websites relating to children’s health, which connect to breastfeeding, which connect to timeframes, which actually then connect to employment (which often contains quite a bit of data and time information). We then also see that connect to early childhood workers, which in turn connects to early learning more generally. The structure of the web archive relating to children reveals itself. 
+
+  
+A
+downside is that the individual files are plain text. However,
+we can use the online WaybackMachine. Using an Automator script in OS X, a
+service can be configured to prefix the WaybackMachine’s URL (
+web.archive.org/web
+) to any URL. Through three steps (service
+receives text, adds the prefix string, and displays the webpage), we retrieve
+the archived version. See Fig 3, 4, and 5 below for this process:
+
+  
+
+    
+Fig. 3: An example of the plain text files that power the search engine
+
+    
+
+  
+
+    
+Fig. 4: WaybackMachine Plugin in Action
+
+    
+
+  
+
+    
+Fig. 5: From distant to close reading: the above website in the WaybackMachine.
+
+    
+
+  
+5. Conclusions
+
+  
+WARC files, and web
+archives more generally, should be understood as key components of a future historian’s
+professional training. Undertaking projects growing out of the 1990s or 2000s may
+require access to such archives. Finding aids are generally unavailable for
+this type of source, and would be impractical due to the sheer data quantity.
+This approach, integrating on-the-fly finding aid generation and access to both
+distant and close reading, should be considered for adoption by historians.  
+
+  
+This
+project shows that by drawing on a large dataset, 4.7% of the top-level .ca
+domain, historians will be able to derive meaningful information and find
+connections between disparate bodies of information. As history enters the web
+era, new tools and resources will be necessary.
+
+  
+References
+
+  
+1. 
+Song, JaJa, J
+. (2008). Fast browsing of archived Web contents in 8th International Web Archiving Workshop, Aarhus, Denmark, 
+www.umiacs.umd.edu/publications/fast-browsing-archived-web-contents
+; 
+Toyoda, M., Kitsuregawa, M.
+, (2012). The History of Web Archiving. Proceedings of the IEEE (Institute of Electrical and Electronics Engineers), 100, 1441–1443; 
+Brügger, N. 
+(2008). The Archived Website and Website Philology:  A New Type of Historical Document. Nordicom Review, 29, 155–175; 
+Brügger, N
+. (2009). Website history and the website as an object of study. New Media and Society, 11, 115–132; 
+Brügger, N.
+ (2010). Web History. Bern: Peter Lang Publishing; 
+Brügger, N.
+ (2012). Web History and the Web as a Historical Source. Zeithistorische Forschungen/Studies in Contemporary History. 9; 
+Brügger, N.
+, Finnemann, N.O. (2013). The Web and Digital Humanities: Theoretical and Methodological Concerns. Journal of Broadcasting and Electric Media 57, 66–80.
+          
+
+  
+2. 
+Internet Archive
+ (n.d). WaybackMachine Github. GitHub. URL 
+github.com/internetarchive/wayback
+ (accessed 5.29.13).
+          
+
+  
+3. 
+ISO
+ (2009). ISO 28500:2009.
+          
+
+  
+4. 
+Internet Archive
+ (2012). 80 terabytes of archived web crawl data available for research. Internet Archive Blog, 
+blog.archive.org/2012/10/26/80-terabytes-of-archived-web-crawl-data-available-for-research
+.
+          
+
+  
+5. 
+Ed Summers
+, The Web as a Preservation Medium Inkdroid.org, 26 November 2013, available online, 
+inkdroid.org/journal/2013/11/26/the-web-as-a-preservation-medium
+, accessed 20 February 2014.
+          
+
+  
+6. 
+Osiński, S., Stefanowski, J., Weiss, D
+ (2004). Lingo: Search Results Clustering Algorithm Based on Singular Value Decomposition, in: Advances in Soft Computing, Intelligent Information Processing and Web Mining, Proceedings of the International IIS: IIPWM ́04 Conference. Zakopane, Poland, pp. 359–368.
+          
+

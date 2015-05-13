@@ -1,0 +1,277 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+The Stanford Literary Lab Transhistorical Poetry Project Phase II: Metrical Form
+
+    
+Category:
+Long Paper
+
+      
+Session:
+7
+
+      
+Date:
+2014-07-11
+Time:
+11:00:00
+
+      
+Room:
+321 - Amphipôle
+
+    
+
+        
+Algee-Hewitt
+,
+									
+Mark
+
+        
+
+          
+
+        
+Stanford University, United States of America 
+
+      
+
+      
+
+        
+Heuser
+,
+									
+Ryan
+
+        
+
+          
+
+        
+Stanford University, United States of America 
+
+      
+
+      
+
+        
+Kraxenberger
+,
+									
+Maria
+
+        
+
+          
+
+        
+Stanford University, United States of America 
+
+      
+
+      
+
+        
+Porter
+,
+									
+J.D.
+
+        
+
+          
+
+        
+Stanford University, United States of America 
+
+      
+
+      
+
+        
+Sensenbaugh
+,
+									
+Jonny
+
+        
+
+          
+
+        
+Stanford University, United States of America 
+
+      
+
+      
+
+        
+Tackett
+,
+									
+Justin
+
+        
+
+          
+
+        
+Stanford University, United States of America 
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+To
+date, most studies that foreground quantitative analyses of literature have
+focused exclusively on prose writing (the novel in particular) rather than
+poetry (Stanford Literary Lab 2011, Clement 2008). In part, this state of
+affairs is due to poetry’s highly figurative language and complex communicative
+intent, which poses acute problems for text mining and similar quantitative
+analyses that rely on lexical and semantic meaning and whose methodological
+origins lie in the “hard” sciences (Pasanek and Sculley 2008, Bei 2008). Poetry,
+however, offers a unique subject for quantitative analysis, independent of lexical
+and semantic meaning, that is largely absent from prose works: meter. The
+practice of scansion is an ancient study that precedes the advent of the English
+language. It has, nevertheless, always consisted mainly of counting, sorting,
+and indexing words and word components, endeavors to which quantitative
+analysis is especially attuned. Despite this apparent sympathy between metrics
+and quantitative analysis, however, the algorithmic detection of the
+complexities of meter remains outside of the current capabilities of the
+Digital Humanities. The irregularity of stress, syllabic schemes, and the
+rule-bending nature of poetic diction runs counter to the binary presence/absence
+process of most computational analysis. 
+
+  
+In
+the second phase of the Stanford Literary Lab’s multi-year ongoing project to
+create a system for detecting the formal features of poetry, we have focused
+our attention on the question of meter. Using a new method that combines a
+series of rule-based analyses with an iterative probabilistic-based
+classification algorithm, we can now detect, with a high degree of accuracy,
+both the meter and line length of individual poems. We have trained our algorithm
+to recognize individual metrical feet, such as iambs, dactyls, anapests,
+trochees, and spondees, and to combine these identifications with a
+signal-processing approach to the entire poem to classify the overall metrical
+scheme of any given poem. We have trained and tested our algorithm on a corpus
+of over 300,000 English language poems from the late medieval period to the
+twentieth century. Moreover, we have also applied our algorithm to
+multi-lingual corpora: in our presentation we will demonstrate how our methods
+are effective on German and French, as well as English poetic forms. 
+
+  
+This
+project builds upon the first phase of our project, presented to the Alliance
+of Digital Humanities Organizations conference in Lincoln, Nebraska, which
+successfully sought to recognize the syllabic scheme patterns in poetic lines. The
+overarching goal of our project as a whole is perhaps simple to state, but
+challenging to execute: we seek to create a program that can automatically
+identify poetic forms. In other words, we are in the process of designing a
+program that can read any number of poems and tell us their exact syllable
+count, meter, rhyme scheme, use of traditional forms (e.g., sonnet, ballad,
+sestina), etc.  Success in creating such
+a program would represent an important tool for scholars in the Digital Humanities,
+and would offer the ability to:
+
+  
+
+          1)
+          Create an inventory of all poetic forms, traditional and untraditional.
+
+  
+ 2)
+          Trace the history of poetic forms, including:
+
+  
+ -
+variation among poetic forms (e.g., Which
+forms were most popular in a given period? Were some periods more formally
+diverse than others? How does form diversity change over time?)
+
+  
+ -
+          variation within poetic forms (e.g.,
+How do the forms themselves change over time? Are sonnets more metrically
+rigorous in one era than another?)
+
+  
+ 3)
+Better understand the relationship between form and meaning by relating
+analyses of scansion with those of lexical and semantic meaning.
+
+  
+ 4) Provide distant readings to help
+generate and/or support new close readings.
+        
+
+  
+In constructing
+such a program, we break down the task of recognizing metrical schemes into the
+simpler, but by no means simple, components of recognizing: 1) Syllable Scheme;
+2) Beat Scheme; 3) Rhyme Scheme; 4) Metrical Scheme; and then 5) matching any
+combination of these categories to a tradition name (e.g., sonnet, heroic
+couplets, rhyme royale, etc.) if one exists to describe it. 
+
+  
+We
+began by designing a program that could accurately detect the number of
+syllables in a given line of poetry (item 1 above) because we believed it would
+be the most straightforward element to analyze. We additionally realized that
+if we limited our sample according to metrical foot, then syllable count would
+present a shortcut toward detecting a rough approximation of meter. For
+example, if we started by analyzing only iambic poems (as recognized by human
+readers), and our syllabifier counted 9-11 syllables in each line of a given
+poem, then we could have reasonable assurance that the poem was written in
+pentameter. A similar process could be applied to other metrical patterns. In
+training our syllabifier, we purposely limited our sample to poems composed
+from roughly the late sixteenth century to the late nineteenth century because
+metrical forms were most stable and recognizable in this period. 
+
+  
+Building
+upon this earlier success, we have combined our ability to recognize syllabic
+scheme with a complex approach to meter that has, at present, an over 80%
+success rate in correctly classifying meter. Our presentation will discuss how
+our algorithm was built, the specific challenges that we faced (e.g., elision,
+extrametrical syllables, feminine endings, foreign words, and other features of
+meter that are commonly acceptable in the practice of poetics but that our program
+had difficulty overcoming), and we will present the results of our application
+of this technique to a large, multi-lingual corpus that shows the historical
+shape of various metrical forms important to European poetry from the sixteenth
+to the late nineteenth century. Our initial analysis, using only syllabic
+scheme, revealed a number of significant and unexpected observations, including
+the fact that the use of pentameter peaked around the middle of the seventeenth
+century and has been on the decline ever since, as well as the fact that the
+use of tetrameter has been reciprocally on the rise since the early eighteenth
+century and is today equally as popular as pentameter. In this second phase, we
+expand the results of this analysis to show the historical prominence of the
+sonnet and heroic couplet forms, the transnational inheritance of metrical form
+and the history of iambic pentameter in English poetry. 
+
+  
+We
+believe that what we have achieved with this work so far will aid in future
+quantitative and digital work on poetry, a lacuna that represents a critical
+problem for the use of digital humanities in the study of literature, given the
+enormous significance of the poetic tradition within literary studies. We also
+believe, moreover, that our program has application well beyond the study of
+poetry and could help to analyze and detect metrical schemes in song, drama,
+and prose as well, generating topics of analysis that likely would remain
+undetected without quantitative analysis.
+

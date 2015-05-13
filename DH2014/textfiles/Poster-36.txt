@@ -1,0 +1,283 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+Mapping French Press to the Digital Age
+
+    
+Category:
+Poster
+
+      
+Session:
+2
+
+      
+Date:
+2014-07-10
+Time:
+16:00:00
+
+      
+Room:
+Amphipôle Common Area
+
+    
+
+        
+Abi Haidar
+,
+									
+Alaa
+
+        
+
+          
+
+        
+Univeristy of Pierre and Marie Curie
+
+      
+
+      
+
+        
+Ganascia
+,
+									
+Jean-Gabriel
+
+        
+
+          
+
+        
+Univeristy of Pierre and Marie Curie
+
+      
+
+    
+
+  
+Abstract
+
+  
+The unsupervised use of dictionary-lookup is known to enhance NER, however dictionaries have limitations for being finite and ambiguous. On the other hand, supervised NER such as Stanford's NER Classifier that we tested here is known to perform very well but only with the availability of huge amounts of manually annotated training data that is very costly, time consuming and sometimes inaccurate due to inter-annotator inconsistencies. Therefore, we develop and discuss an original unsupervised approach for Named Entity Recognition (NER) and Disambiguation (UNERD) using a French knowledge-base and a statistical contextual disambiguation technique that slightly outperformed Stanford's NER Classifier (when trained on a small portion of manually annotated data) and Aleda's dictionary lookup. Furthermore, we devise a solution to identify and highlight named entity tagging on the original scanned images thus preserving the newspaper’s layout and feel. 
+
+  
+1. Introduction
+
+  
+Huge amounts of printed manuscripts from old French journals (from the 19th and 20th century) have been recently digitized and published by the National French Library, la Bibliotheque Nationale Francaise (BnF). However, the massive amounts of produced textual data are highly unstructured and hard to index or search, needless to mention the digitization errors resulting from ill-preserved or damaged manuscripts and imperfect Optical Character Recognition (OCR) techniques.
+
+  
+Named Entity Recognition (NER) is a task of information extraction that aims to identify in-text references to concepts such as people, locations and organizations, mainly in unstructured natural-language text. NER is very useful for text indexing, text summarization, question answering and several other tasks that enhance the experience between humans and literature. Furthermore, advanced NER and disambiguation techniques are capable of dealing with noise resulting from digitization errors.
+
+  
+Several supervised learning techniques, such as Stanford’s Conditional Random Field (CRF) Classifier 
+1
+, have been developed to address the question of NER very successfully, however they require large manually-annotated corpora of text, which is very expensive to obtain and maintain. On the other hand, with the abundance of publicly accessible knowledge bases and dictionaries, such as Freebase, geonames and Aleda 
+2
+, unsupervised methods have become popular especially since they require no pre-annotated training data. However,  several challenges have arisen from the choice of appropriate knowledge bases, resolving homonymous ambiguity, detecting entity boundaries, and identifying less common name entities. Moreover, most studies have been dedicated to English text while text in other languages, that has recently been digitized and published at astounding rates, has received little or no attention.
+
+  
+
+    
+Fig. 1: Original scanned image from "Le Petit Parisen"
+
+    
+
+  
+Here, we discuss our model of Unsupervised Named Entity Recognition and Disambiguation (UNERD), and validate it on digitized French text from the 19th century. We claim that NER using Knowledge based disambiguation is especially relevant for minimally annotated texts that are expensive to annotate in several languages and domains, which is often the case in Digital Humanities. More details about our algorithm and its performance are detailed in 
+3
+. We also discuss a solution that uses the XML digitized data in order to preserve the location of entities and highlight them on the original scanned image as well as in the OCRised text. 
+
+  
+2. Data
+
+  
+Here we discuss the data at hand, its format, encoding and necessary text processing. Next we discuss a portion of annotated data that is used for validation. Finally, we propose a solution that allows tagging the originally scanned journal image.
+
+  
+2.1. Corpus
+
+  
+The corpus consists of recently digitized and published old unlabelled French journals. More specifically, the data consists of a subset of “Le Petit Parisien” journal supplied by Bibliotheque nationale de France (BnF). It was originally published between 1863 and 1944 with a total of 29616 issues. The corpus we are using comprises 260 issues with a total of 1098 pages of natural French text. The pages were recently digitized and OCRised and encoded in the ALTO format, which is an open XML standard for representing OCR text. Both scanned pages and text formats of “Le Petit Parisien” are accessible at the BnF website via their digital portal, Gallica: 
+gallica.bnf.fr/ark:/12148/cb34419111x/date.langFR
+
+  
+2.2. Format
+
+  
+The ALTO file has 3 major sections:
+
+  
+<Description> contains the metadata about the ALTO file.
+
+  
+<Styles> specify the text and paragraph styles.
+
+  
+<Layout> describes the main content subdivided into <page> elements.
+
+  
+Each page of the content is further divided into margins and printspace, each of which containing  lines, images or textblocks.  The ALTO format provides OCR confidence for each word. The XML files are encoded using the iso-8859-1 encoding. Handling this dataset is challenging due to the old ill-preserved manuscripts resulting in many OCR errors. However, we exclude text blocks with low OCR confidence (lower than 0.85).
+
+  
+2.3. Validation Data
+
+  
+The corpus of French journals is very expensive and time consuming to annotate. Therefore we had experts annotate only a small portion of 4171 words of which the numbers annotated entities are 75 Person, 78 Location, and 22 Organisation entities.
+
+  
+2.4. Text Processing
+
+  
+Text preprocessing is essential for decoding and analysing the data and  the first step is to prepare OCR text for entity extraction such as converting the XML iso-8859-1 encoded corpus into standard UTF-8 encoded text, excluding text-blocks with confidence less than 85% or containing words with length more than 15 characters, applying Part of Speech Tagging (using TreeTagger) and removing French stop-words.
+
+  
+2.5. Representation
+
+  
+Here, we propose a solution that enables the ALTO XML format to keep track of the location of the words in order to highlight the entities not only for the OCRised text but also for on the original scanned image thus maintaining the layout, font types and feel or reading a newspaper.
+
+  
+The ALTO XML format preserves the location of all OCRised words using the tags HPOS and VPOS as illustrated in the following code for the text “Toussaint, humide et pluvieux;”:
+
+  
+
+    
+Fig. 2: Sample ALTO XML code representing 4 words and their positions on the scanned image
+
+    
+
+  
+
+    
+Fig. 3: Sample original scanned image from "Le Petit Parisien" highlighting entities corresponding to the following categories: Location (blue), Organization (green) and Person (red) names.
+
+    
+
+  
+3. Method
+
+  
+Our algorithm first uses a French knowledge-base, namely Aleda, to find contextual collocations (or word co-occurrences) for each entity class (Person, Location or Organisation) within a window of size n.  Next, we compare the context of the candidate entity with the classes'contextual cues that eventually suggest a class name for each contextual word around the entity-mention. The comparison may or may not rely on the position of the three neighboring words that make its context based on the following disambiguation techniques.
+
+  
+The single significant cue selects the class of the contextual cue with the highest TF-IDF score.
+
+    
+The bag of words selects the class of the contextual cue  with the highestTF-IDF ignoring the relative positions of the contextual cues.
+
+    
+The majority rule selects the class that has the majority of the votes by contextual cues or at least two out of three votes.
+
+  
+Finally, our algorithm uses the majority rule to select a class based on the results from the previous techniques i.e. if at least two disambiguation techniques agree on a class then this class is chosen. Furthermore, the entity-boundary detection uses a Parts of Speech (PoS) tagger that identifies noun phrase boundaries. 
+
+  
+3. Results
+
+  
+We tested our UNERD algorithm on a small portion of data that we had annotated by experts and we compared it using k-fold cross-validation to mere dictionary look-up, namely Aleda, and to Stanford’s NER Conditional Random Field (CRF) Classifier. The preliminary results reported using F-score are clearly in favor of our unsupervised method as shown in table 1. 
+
+  
+ F-score
+
+      
+ Aleda Look-up
+
+      
+ Stanford NER
+
+      
+ UNERD
+
+    
+ LOC
+
+      
+ 0.33
+
+      
+ 0.54
+
+      
+ 0.77
+
+    
+ PER
+
+      
+ 0.73
+
+      
+ 0.75
+
+      
+ 0.83
+
+    
+ ORG
+
+      
+ 0.20
+
+      
+ 0.44
+
+      
+ 0.46
+
+    
+ AVERAGE
+
+      
+ 0.42
+
+      
+ 0.58
+
+      
+ 0.69
+
+    
+For more details about K-fold cross-validation, F-score please refer to 
+4
+.
+
+  
+Conclusion
+
+  
+Here, discussed an original unsupervised named entity recognition and disambiguation approach which outperforms mere dictionary lookup and supervised learning on small portions of annotated data. Arguably, Stanford’s supervised NER can outperform our method if trained on a larger set of manually annotated data. However, that may be true with the availability of huge amounts of annotated data that are very expensive and time consuming to produce.  Our NER and disambiguation technique is statistical and is supposed to work on various languages and domains using no annotated data. We also discussed an approach for keeping track and making use of the ALTO XML format in order to highlight entities on the original scanned image. 
+
+  
+References
+
+  
+1. 
+Finkel, Jenny Rose, Trond Grenager, and Christopher Manning
+ (2005). Incorporating non-local information into information extraction systems by gibbs sampling. Proceedings of the 43rd Annual Meeting on Association for Computational Linguistics. Association for Computational Linguistics.
+					
+
+  
+2. 
+Benoit Sagot, Rosa Stern, et al.
+ (2012). Aleda, a free large-scale entity database for french. Proceedings of LREC 2012
+					
+
+  
+3. 
+Mosallem, Yusra, Abi-Haidar, Alaa and Ganascia Jean-Gabriel
+ (Submitted). Unsupervised Named Entity Recognition and Disambiguation: An Application to Old French Journals.
+					
+
+  
+4. 
+Feldman, Ronen, and James Sanger
+ (2007). The text mining handbook: advanced approaches in analyzing unstructured data. Cambridge University Press
+					
+

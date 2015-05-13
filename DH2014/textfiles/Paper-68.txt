@@ -1,0 +1,249 @@
+DHArchive
+dharchive
+.org
+ Print
+ XML
+National Data Curation and Service Center for Digital Research Data in the Humanities
+
+    
+Category:
+Long Paper
+
+      
+Session:
+1
+
+      
+Date:
+2014-07-09
+Time:
+09:00:00
+
+      
+Room:
+412 - Amphimax
+
+    
+
+        
+Rosenthaler
+,
+									
+Lukas
+
+        
+
+          
+
+        
+Digital Humanities Lab / University of Basel
+
+      
+
+      
+
+        
+Fornaro
+,
+									
+Peter
+
+        
+
+          
+
+        
+Digital Humanities Lab / University of Basel
+
+      
+
+      
+
+        
+Clivaz
+,
+									
+Claire
+
+        
+
+          
+
+        
+LADHUL / University of Lausanne
+
+      
+
+    
+
+  
+For quite a few years the long-term preservation of digital data and resources  has been an ongoing topic within the IT-industry and archiving community. While the OAIS reference model offers a very reasonable framework for long-term archival of digital data such as digitized images, sound or text documents, the archival of highly structured digital data such as databases still poses a lot of problems. Flattening databases to XML text files has been used successfully to archive the contents of relational databases (RDBMS) 
+1
+ 
+2
+ 
+3
+ . However this method reduces the accessibility, since the XML-files have usually to be read back into a RDBMS to be used. Todays best practice to keep the usability of structured data as high as possible is to migrate data repositories and it’s software environment (user interfaces , analytical tools etc.) to new technology to ensure its accessibility 
+4
+ . Yet, replacing obsolete hardware and software infrastructure is an ongoing labor-intensive process that requires continuous financial effort. In addition, given that online research data is usually constantly being modified to reflect new findings and thus is changing dynamically, referencing it (e.g. for citations) is not straight forward.
+
+  
+Despite these difficulties, the use of digital research data including databases has become very common in humanities. At the same time, the term itself of “data” is not sufficient to describe the resources used and produced by the humanist researchers: collections of digital data, digitized manuscripts, collections of digitized photographs and metadata related to it, as well as new digital resources and objects produced in the digital cultural framework. As long as project funding is available, many of these digital sources are made available to the research community. However, after the funding ceases, most of these digital sources will remain accessible only as long as the hardware and software remains in working order. After some time – typically some years – most data will go offline because of lack of maintenance. Thus, most of the digital sources created within research projects will have a rather short lifetime and are no longer available for the research community after some time. However, these digital sources are a valuable base for possible new projects but it's sustainability is not ensured due to missing fundings.
+
+  
+Given this disappointing situation, the Swiss Academy of Humanities and Social Sciences (SAHSS) - on the behalf of the State Secretariat for Education, Research and Innovation (SERI) - has launched a project to address this situation in the national context of Switzerland. The Digital Humanities Lab of the University of Basel (DHLab) in conjunction with the Universities of Lausanne (Ladhul) and Bern, in association with the Swiss National Archives, participated in a tender and have received the task to establish a solution. In a first two years period, a pilot for a "National curation and service center for digital data in Humanities" (DCSC) will be established. Using several test cases of different sizes and complexity from different disciplines, the methods and processes, legal aspects, infrastructure needs, and last but not least, the cost and expenses, have to be evaluated. The proposed DCSC is based on the following premises:
+
+  
+Preserving software in a useable and working condition is still a very difficult task, as illustrated by the recent meeting “Preserving.exe: Toward a National Strategy for Preserving Software” by the American Library of Congress 
+5
+ . Thus it would be to difficult and costly to maintain a multitude of different systems for a long time. Emulation of obsolete hard- and software as proposed by R. A Lorie 
+6
+ is also very difficult and has its share of problems (for example see 
+7
+). Therefore the different digital sources or databases have to be integrated into a minimal number of hard- and software infrastructures. Ideally, only one hard- and software system has to be maintained.
+
+  
+In a first phase the adoption of existing data sources of research projects at or beyond the end of funding will be dominant. In a second step the goal must be that researchers of ongoing or future research projects are escorted through the creation and use of digital sources in order to facilitate the accessibility of the data after the end of funding.
+
+  
+For the exchange with other platforms and infrastructures, the DCSC implements interfaces for import, export and querying of information (as far as not restricted by  legal constraints such as copyright issues and/or protection of personal rights). The adopted digital sources must be accessible through a powerful user interface for search/analysis,  a RESTful web-service or as SPARQL-endpoint in order to integrate the data into other research projects and/or databases. 
+
+  
+
+						The DCSC should encourage new research models in order to allow for optimial use of digital sources and to propose efficient training modules and support for all the new research projects funded by the Swiss National Science Fundation.
+					
+
+  
+International contacts are a key-point for this center, in order prepare Swiss digital Humanities research to be interrelated to international research.
+
+  
+ Given the nature of research in humanities, we expect data sources the DCSC has to deal with to be very heterogeneous and consisting mostly of qualitative data (which is possibly linked to digitized objects). We have chosen to use the virtual research environment SALSAH 
+8
+9
+ as a technical platform for consolidation of different data sources. SALSAH is RDF/RDFS-based and thus well suited to emulate the basic functionality of RDBMS's, simple databases such as MS-Access, FileMaker etc. SALSAH is currently actively developed by the DHLab.
+
+  
+
+    
+Fig. 1: The webinterface of SALSAH implements a desktop metaphor within the webbrowser window in order to work with  multiple sources simultaneously.
+
+    
+
+  
+
+    
+Fig. 2: SALSAH allows a dynamic visualization of the graph-like structure of the RDF-representation of the data.  
+
+    
+
+  
+Within a research project funded by the Swiss National Science Foundation SALSAH is currently being extended with several new important features (expected in 2015):
+
+  
+a "time machine" which will allow digital objects to be referenced by permalinks which include the time of referencing. Thus such a permalink will always show the digital object in the state it had at the time being referenced. These permalinks will add true "citability" to the SALSAH environment.
+
+  
+SALSAH, which is currently organized as a (technically) centralized system, will be transformed into distributed, self-organizing P2P system. At the same time, an archival system based on DISTARNET 
+10
+ will be added to SALSAH to secure the against data loss du to catastrophic events like hardware failure, flooding, fire etc.at any SALSAH location. DISTARENT also uses P2P technology to maintain redundant multiple backups of the data within the network.
+
+  
+Within the DCSC project, SALSAH will be extended to support "open data"-standards 
+11
+  for access and "linked data" 
+12
+ . However, open access may be restricted by legal reasons (copyright, privacy etc.). SALSAH includes a fine-grained identity and rights management.
+
+  
+SALSAH will be continuously enhanced according to the needs of the researchers using the platform. It is planned to move SALSAH to "open source" by the end of 2014.
+
+  
+The main tasks of the DCSC will be threefold:
+
+  
+ Maintaining the technological infrastructure and adapting it to the needs of the researchers and changing technology. This task will be located in Basel during the pilot phase, but since SALSAH will become an open source project, other institutions and individuals may contribute to the SALSAH base. However, in our experience open source projects need a powerful "coordinating institution" in order to be successful. The DHLab will be available to play this role.
+
+    
+ Assistance to the researchers. In Humanities many researchers working with digital sources do not have the technical knowledge to fully exploit the advantages of the digital processes. The DCSC will support the researchers to use digital methods and tools in the best possible way for their research, and encouraging training and education.
+
+    
+To create a report with recommendations on how to proceed and transfer the pilot project into a permanent institution.
+
+  
+It has to be noted that the projects funding goes way beyond a "normal“ scientific project funding and shows the strong commitment of all involved parties (SAHSS, SERI, Swiss National Science Foundation) to define a persistent national data curation and service center for digital research data in the humanities. The team composited of the University of Basel, Bern and Lausanne and the National Archives demonstrates that as well. The project pilot phase is financed by the SAHSS and the SERI. Since Switzerland is a multilingual nation with a highly federalistic structure, we decided to create the DCSC as a "virtual" center where the technological infrastructure currently will be located and maintained in Basel, but all the other tasks will be performed by local "branch offices" which are very close to the researches; during the pilot step, Lausanne and Bern are testing this “branch office” or “satellite” model. As soon as SALSAH has the P2P functionality implemented, also the technical infrastructure may be distributed if necessary or desired. Given the DISTARNET archival system, the data is secured against loss without the necessity of the local branches to build an expensive and complicated backup infrastructure.
+
+  
+References
+
+  
+
+1. 						SIARD of the National Archives of Switzerland, 
+www.bar.admin.ch/dienstleistungen/00823/00825/index.html?lang=en
+
+  
+
+2. 						XENA of the National Archives of Australia, 
+xena.sourceforge.net
+
+  
+
+3. 						kopal/koLibRi of the german Kopal-project, 
+kopal.langzeitarchivierung.de/index_koLibRI.php.en
+
+  
+4. 
+The Consultative Committee for Space Data Systems
+ (2012): Reference Model for an Open Archival Information System (OAIS) - recommended Practice, CCSDS Secretariat, Space Communication and Navigation Office, 7L70, Space Operation Mission Directorate, NASA Headquarters, Washington, DC 20546-001, USA
+					
+
+  
+5. 
+Preserving.exe: Toward a National Strategy for Preserving Software
+, May 20-21, 2013, Library of Congress, Washington DC, see also 
+www.digitalpreservation.gov/meetings/documents/othermeetings/preservingsoftware2013/Preserving_Exe_Agenda.pdf
+
+  
+6. 
+Lorie R. A.
+ (2001). Long term preservation of digital information. Proceedings of the 1st ACM/IEEE-CS joint conference on Digital libraries, Roanoke, Virginia, United States. 24–28 June 2001. New York, NY: Association of Computing Machinery. pp. 346-352 doi:10.1145/379437.379726
+					
+
+  
+7. 
+Feng Luan, Mads Nygard, Thomas Mesti
+ (2010), A survey of digital preservation strategies, World Digital Libraries, Vol3 (2), IOS Press
+					
+
+  
+
+8. 						See 
+www.salsah.org
+ for the generic entry point, 
+www.salsah.org/dokubib
+ for an (simplified) entrypoint for the Documentation Library of St. Moritz, and 
+www.salsah.org/kuhaba
+ for the Kunsthalle Basel.
+					
+
+  
+9. 
+Lukas Rosenthaler
+ (2012), Virtual Research Environments. A New Approach for Dealing with Digitized Sources in Research in Arts and Humanities”, in: Claire Clivaz u.a. (HG.): “Reading Tomorrow. From Ancient Manuscripts to the Digital Era”, Lausanne 2012, S. 661-670,  Ebook on 
+www.ppur.info/lire-demain.html
+
+  
+10. 
+Ivan Subotic, Lukas Rosenthaler and Heiko Schuldt
+, A Distributed Archival Network for Process-Oriented Autonomic Long-Term Digital Preservation, ACM Proceedings of the Joint Conference On Digital Libraries, ACM New York (2013), pp 29-38
+					
+
+  
+
+11. 						See Open Knowledge Foundation, 
+okfn.org
+
+  
+
+12. 						See 
+linkeddata.org
+
