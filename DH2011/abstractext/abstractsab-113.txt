@@ -1,0 +1,309 @@
+Paper: The Time Machine: Capturing Worlds across Time in Texts
+
+                    Juuso, Ilkka, 
+                    University of Oulu, Finland, 
+                    
+ilkka.juuso@ee.oulu.fi
+
+                
+
+                    Opas-Hänninen, Lisa Lena, 
+                    University of Oulu, Finland, 
+                    
+lisa.lena.opas-hanninen@oulu.fi
+
+                
+
+                    Johnson, Anthony, 
+                    University of Oulu, Finland, 
+                    
+anthony.johnson@oulu.fi
+
+                
+
+                    Seppänen, Tapio, 
+                    University of Oulu, Finland, 
+                    
+tapio.seppanen@oulu.fi
+
+                
+Introduction
+
+                
+This paper describes a number of ways in which a temporally-sensitive electronic
+                    dictionary resource, the Historical Thesaurus of the Oxford English Dictionary
+                    (2 vols; Oxford, 2009 [=HTOED]), may be employed in the automatic dating of
+                    words and entire texts. We investigate how the text captures time: most
+                    expressly, how the residue of the present (or the different ‘presents’ of
+                    language history) have managed to become trapped in the linguistic matrix of a
+                    narrative so that we sense, for instance, the difference between a period being
+                    represented and the narrator’s temporal positionality, or even the gap between
+                    an author and his or her narrative stance. Through computer-assisted means we
+                    analyze the impact of later historical and linguistic events on the reporting of
+                    earlier events. To this end, we have developed an automatic system for
+                    retrieving dating information and a colour-coded browsing interface for
+                    searching and viewing the time-coded text, calling it the ‘Time Machine’. 
+
+                
+Novels capture worlds, but however disparate the materials that may go into them,
+                    something of the space-time in which they have been written remains as a
+                    residue. This, in part, is a function of language itself: the instabilities,
+                    changes and, above all, affordances at any one moment of that linguistic mesh
+                    that Lotman (1990) might have called the semiosphere. In part, too, it is a
+                    function of what, within Cultural Imagology, might more concretely be called the
+                    texture of the iconosphere (Johnson 2005, 2006): the distinctiveness given to
+                    the world at any particular moment by the concatenation of signifying objects
+                    present within it. This is why it is an attractive idea to apply a tool such as
+                    a time-coded dictionary to novels written at time t purporting to convey events
+                    taking place at a time t-x. Within this frame of thought, the case of the
+                    historical novel is a particularly pronounced one. By definition, the genre
+                    tries to capture something of the iconosphere of a world that has passed us by
+                    (even though its semiosphere may remain that of a contemporary reader). And even
+                    in cases where the linguistic texture of the semiosphere is deliberately
+                    archaized – or localized by the use of dialect forms – the residue of the
+                    present remains. As a test case, we examine Diana Gabaldon’s Cross Stitch
+                    (1991): a text which flaunts traditional temporal typologies by figuring a
+                    protagonist who crosses from the iconosphere of the mid-twentieth century to
+                    that of the seventeenth century and becomes trapped there: perceiving the past
+                    in a lexis and syntax which palpably belong to a different age.
+
+                
+Time has previously been explored within documents in several ways. Some work has
+                    concentrated on identifying expressions of time within text in an attempt to
+                    build models of the succession of events. This has been particularly fruitful in
+                    the case of, for example, medical discharge records and road accident reports,
+                    where the sequence of events is of great importance (Hirschman 1981, Kayser and
+                    Nouioua 2009). Other work has used a training set of time-associated words and a
+                    Naïve Bayes Classifier to detect temporal concepts in blogs (Noro et al. 2006).
+                    While this work is promising in analyzing writings about daily life in a compact
+                    time frame, it seems ill-equipped for investigating iconospheres that deal with
+                    spans constituting years or even decades. Thus a tool that can retrieve
+                    time-related information from the HTOED automatically offers a very promising
+                    way forward for the literary and linguistic scholar.
+
+            
+            
+                
+Methodology
+
+                
+Using the ‘Time Machine’, we map out the iconospheric precision with which
+                    Gabaldon represents different characters in her fiction (not to mention the
+                    humour generated by the gradual blending of their discourses as the novel
+                    progresses). But beyond this, by linking our tool with the powerful additional
+                    resources which the HTOED has now opened up for those studying the ‘external’,
+                    ‘mental’ and ‘social’ worlds of the novel from a historical and etymological
+                    perspective, the project hopes to facilitate the achievement of a more nuanced
+                    understanding of the interrelationship between ‘real’ and ‘fictional’ time in
+                    the historical novel than has been possible before.
+
+                
+In order to better study iconospheres, we sought to develop a tool that would
+                    automatically look up dating information and definitions for words, processing
+                    entire texts at a time, thereby removing the need for manual queries using a
+                    dictionary. Furthermore, we wanted the tool, on the one hand, to enable users to
+                    specify time periods of interest for closer inspection while, on the other hand,
+                    it left them free to browse the material through diverse visualization schemes
+                    in order to discover trends or new time periods of interest.
+
+                
+At present the tool is a prototype, running inside a web browser, in order to
+                    enable rapid experimentation with new visualization schemes using CSS. We use a
+                    local SQL database to store the HTOED data. Texts can be uploaded via a browser
+                    interface and are processed in any user-defined units tagged in the text, e.g.
+                    page by page or speaker by speaker, or in the text as a whole. The tool reads
+                    both XML and plain text. To finish verifying that the visualization schemes we
+                    have chosen are useful, we wish to bring the tool to the digital humanities
+                    community, in addition to the poetics and linguistics community (Johnson et al.
+                    2010). Following this, we intend to develop the final tool in Java for inclusion
+                    within the LICHEN toolbox.
+
+            
+            
+                
+Results
+
+                
+What the HTOED is able to offer to the ‘Time Machine’ is the ability to isolate
+                    different experiential modes within particular iconospheres at the same time as
+                    it reveals the range of etymological meanings open to the reader at any given
+                    moment. (This, of course, is an invaluable aid for critics who wish to avoid
+                    anachronism in their own readings.) In our preliminary development of the ‘Time
+                    Machine’ we concentrated on its capacity for isolating different lexical
+                    categories within a given iconosphere and indicating the etymological choices
+                    available for particular readings. At the top of the screen, the Source section
+                    allows the user to choose either an entire text or some part of it (see Figure 1
+                    below: a case in which the speaker Jamie has been chosen). In the Filter
+                    section, the user can choose to narrow the search down to one particular word,
+                    or to all words that were in use at a particular time (choosing either first use
+                    date, last use date or both). To produce the present screen we started by
+                    choosing all the words that entered the language after 1742, in other words
+                    after the time period in which Jamie speaks. The Colour-coded text section then
+                    highlighted all those words which entered the language after the given date, as
+                    did our Wordlist section.
+
+                
+Our initial investigation found that the tool is able to pick out swathes of
+                    temporal incongruities from this playful text or, further, search out instances
+                    relating more specifically to the ‘external’, ‘mental’ and ‘social’ worlds of
+                    the novel. It spots moments when the eighteenth-century clansman Jamie seems
+                    prescient (mentioning ‘aesthetics’ for instance, or re-circulating the word
+                    ‘sadist’, which has been bandied to him by his twentieth-century wife). It
+                    detects instabilities not only in the iconosphere of the 1700s – which Gabaldon
+                    has carefully researched – but also in the representation of
+                    mid-twentieth-century England (which she appears to have taken more for
+                    granted).
+
+                
+However, despite the manifest advantage of using even this approach to the ‘Time
+                    Machine’ to spot faultlines and incongruities within the fictional world of a
+                    novel, some teething-troubles remained: the most significant being that, unlike
+                    human readers, the prototype cannot, of course, intuit the ‘correct’ lexical
+                    choice from the range of possible meanings thrown up by a search. Accordingly,
+                    we have tweaked the search and display capability of the ‘Time Machine’ so that
+                    it can also narrow its lexical catchment area by trawling parts of speech (such
+                    as substantives) in which cultural and temporal change exhibit their highest
+                    visibility. 
+Figure 1
+ demonstrates how,
+                    using these restrictions, the prototype is able to flag up the way in which
+                    Gabaldon has inadvertently endowed Jamie’s lexicon with three words
+                    stereotypically associated with Scottishness (‘Sassenach, shinty, sporran’)
+                    which were not, in fact, recorded until some time after the period in which
+                    Jamie is meant to be speaking.
+
+                
+In sum, our study indicates that automated access to chronological information,
+                    such as the date of first use for any given word, and full etymologies has
+                    promising applications in literary and historical research that has until now
+                    relied mostly on intuition and laborious manual methods to combine dating
+                    information and texts. And beyond this, with some adaptation, it is also clear
+                    that the ‘Time Machine’ could be of significance within areas such as forensic
+                    linguistics, collocation studies, and the study of micro-linguistic change over
+                    time in large corpora.
+
+            
+            
+                
+
+                    
+Figure 1
+
+                    
+Full Size Image 
+
+                
+            
+        
+References:
+
+            
+                
+                    
+
+                        Gabaldon, D.
+                        Cross Stitch, 
+                        Arrow Books Ltd.
+                        1991
+                    
+
+                    
+
+                        Historical Thesaurus of the Oxford English
+                            Dictionary, 
+                        Oxford: OUP
+                        2009
+                    
+
+                    
+
+                        Hirschman, L.
+                        1981
+                         “Retrieving time information from natural-language
+                            texts, ” 
+                        Proceedings of the 3rd Annual ACM Conference on Research
+                            and Development in Information Retrieval, 
+                    
+
+                    
+
+                        Johnson, Anthony W.
+                         “Notes Towards a New Imagology, ” 
+                        European English Messenger, 
+                        2005
+                        14
+                        1
+                        50-58
+                    
+
+                    
+
+                        Johnson, Anthony W.
+                         “New Methodologies: Imagology, Language and English
+                            Philology, ” 
+                        Linguistic Topics and Language Teaching, 
+                        2006
+                        Oulu University Press
+                        7-27
+                        Antilla, H.
+                        Gear, J.
+                        Heikkinen, A.
+                        Sallinen, Riitta
+                    
+
+                    
+
+                        Johnson, Anthony W.
+                        Opas-Hänninen, L.L.
+                        Juuso, I.
+                         “Stitches in Time and Switches in Text: Diana Gabaldon and
+                            the Historical Thesaurus of the Oxford English Dictionary, ” 
+                        Paper presented at PALA2010, 
+                        2010
+                    
+
+                    
+
+                        Kayser, D.
+                        Nouioua, F.
+                         “From the textual description of an accident to its
+                            causes, ” 
+                        Journal of Artificial Intelligence, 
+                        2009
+                        173
+                        12-13
+                    
+
+                    
+
+                        Lotman, Yuri M.
+                        Ann Shukman
+                        Universe of the Mind: A Semiotic Theory of Culture, 
+                        1990
+                        173
+                        12-13
+                    
+
+
+                    
+
+                        Noro, T.
+                        Inui, T.
+                        Takamura, H.
+                        Okumura, M.
+                        2006
+                         “Time period identification of events in text, ” 
+                        Proceedings of the 21st international Conference on
+                            Computational Linguistics and the 44th Annual Meeting of the Association
+                            for Computational Linguistics (Sydney, Australia, July 17 - 18, 2006).
+                            Association for Computational Linguistics, 
+                        
+         (
+link
+)
+   
+                    
+
+                
+            
+        

@@ -1,0 +1,351 @@
+Paper: Alma Cardell Curtin and Jeremiah Curtin: the Translator’s Wife's Stylistic
+					Fingerprint
+
+					Rybicki, Jan, 
+					Pedagogical University of Kraków, Poland, 
+					
+jkrybicki@gmail.com
+
+				
+The Problem
+
+				
+Poland’s first literary Nobel Prize winner, Henryk Sienkiewicz (1846-1916), owed
+					his great if short-lived fame to the very numerous if very mediocre translations
+					by Jeremiah Curtin (1835-1906), diplomat, ethnographer, polyglot. Born in a
+					Catholic Irish family in Wisconsin, he graduated from Harvard and was posted as
+					a secretary to the American mission in St. Petersburg, Russia; his fluency in
+					Russian made him a popular figure among the local aristocracy. Paradoxically, it
+					might have contributed to his conflict with Ambassador Clay and precipitated the
+					end of his diplomatic career (1869). Curtin switched to two professions he
+					continued till the end of his life: that of the ethnographer (employed, for a
+					time, by the Smithsonian Institution) and of the literary translator. In 1872,
+					he met and promptly married Alma Cardell (1847-1938), who soon abandoned her
+					post as a teacher in a Soldiers’ Orphans’ Home (for which her studies at the
+					Barre Academy had made her more than qualified) to become her husband’s
+					secretary, amanuensis and editor; until her peripatetic husband’s death, her
+					life was to be led in hotels and boarding houses around the globe – especially
+					after the Curtins stroke gold with Sienkiewicz’s international bestseller Quo vadis (1896). Alma devoted much work to virtually all
+					publications signed by Jeremiah: his translations of Sienkiewicz and of other
+					Polish authors (Orzeszkowa, Prus and Potocki); his translations from the Russian
+					(Gogol, Zagoskin’s and Alexy K. Tolstoy); and his ethnographic studies on myths
+					of Native Americans, Ireland and Slavic peoples. She also published and edited
+					three books on Mongols after her husband’s death.
+
+				
+Yet the story of Sienkiewicz’s translator is most extensively told in Memoirs of Jeremiah Curtin (1940), published after the
+					death of Alma Cardell Curtin. Although written in first-person narrative, they
+					have been since proven to be the work of the wife. Michael Jacek Miko? has shown
+					that Curtin’s alleged memoirs are in fact a compilation of “somewhat edited"
+					fragments of Alma’s diaries and letters to her family (Miko? 1990). The same
+					diaries (and not the Memoirs) show the extent of Alma’s
+					contribution to Jeremiah’s translations: after a whole day of taking her
+					husband’s dictation, he would go to sleep while she would copy and correct the
+					day’s work (Miko? 1994). And although she knew no Polish and, at most, but a
+					little Russian, it is not implausible to suspect that some traces of the
+					translator’s wife’s hand might have been left on Sienkiewicz’s fiction in
+					English. In the most radical hypothesis by Cheryl L. Collins, Alma, “held
+					hostage by Jeremiah’s almost pathological restlessness," could have been “his
+					full partner" in his literary work (Collins 2008).
+
+				
+This presents a nice authorship attribution problem. All that could have been
+					done in this respect with traditional methods has been done by Miko?; the rest
+					is the attributor’s nightmare, as all work published under Curtin’s name has
+					been preserved in manuscripts in Alma’s hand alone. And while traces of the
+					style of the Memoirs could perhaps be found in Alma’s
+					editions of Jeremiah’s ethnographic works, it is highly uncertain if similar
+					traces can at all be found in his translations.
+
+			
+			
+				
+The Method
+
+				
+All hope there is lies in non-traditional methods of authorship attribution,
+					developed at least since the seminal Inference and Disputed
+						Authorship: the Federalist (Mosteller, Wallace 1964) and proven to be
+					helpful in plagiarism detection (although Alma’s is plagiarism a rebours). This study applies Cluster Analysis to normalized word
+					frequencies in texts; as shown by (to name but a few) Burrows (1987, 2002),
+					Hoover (2004, 2004a) or Daren-Oskam (2007), this is one of the most precise
+					methods of “stylistic dactyloscopy." A script by Maciej Eder, written for the R
+					statistical environment, converts the electronic texts to produce complete
+					most-frequent-word (MFW) frequency lists, calculates their z-scores in each text
+					according to the Burrows Delta procedure (Burrows 2002); selects words for
+					analysis from various frequency ranges; performs additional procedures for
+					better accuracy (Hoover’s culling and pronoun deletion); compares the results
+					for individual texts; produces Cluster Analysis tree diagrams that show the
+					distances between the texts; and, finally, combines the tree diagrams made for
+					various parameters (number of words, degree of culling) in a bootstrap consensus
+					tree (Dunn et al. 2005, quoted in Baayen 2008: 143-147).
+
+				
+The analysis included all original works by Curtin (12 extensive studies) and a
+					great majority of his translations (21 novels or long novellas).
+
+				
+Figure 1. shows the patterns of similarity and difference of word frequencies in
+					all texts studied. The bootstrap consensus tree neatly divides Curtin’s oeuvre into two discrete groups: the upper branches are
+					his translations while his Memoirs and his ethnography
+					lie below. Yet the Memoirs are placed away from his
+					ethnographic studies; also, what has been proven by Miko? to be Alma’s work,
+					lies close to two of Jeremiah’s books on the Mongols, published by Alma after
+					his death.
+
+				
+
+					
+
+						
+Figure 1. Consensus tree for all texts
+
+						
+Full Size Image 
+
+					
+				
+				
+The length of the word list used in this study (all the way to the 5000th most
+					frequent word in the corpus) can raise doubts as to the validity, in this
+					context, of the term stylistic similarity: after all,
+					words so far down the frequency-ordered word list are often quite meaningful and
+					might reflect differences of content as well as of style. Any chance of finding
+					traces of the translator’s wife’s hand in the translations as well as in the Memoirs has to rely on somewhat shorter lists
+					(tentatively, from 10 to 150) from the top of the frequency-ordered
+					most-frequent-word list; dominated as it is by functions words and aided by a
+					100% culling rate (which limits the analysis to words that appear in all texts
+					studied) and personal pronoun deletion, it might help purge any impact of the
+					texts’ content to try to bring, say, a book on Irish myths and a translation of
+					Sienkiewicz’s historical romance, to a common stylistic, or perhaps simply
+					lexical, denominator.
+
+				
+The new result is presented in Figure 2. The texts attributed to Mrs Curtin
+					either by Miko? or by Figure 1. are still immediate neighbours; more
+					interestingly, the Memoirs (and the two “Mongol" works)
+					now grow on the same branch with two translations: Lillian
+						Morris and For Bread.
+
+				
+
+					
+
+						
+Figure 2. Consensus tree for short most-frequent-word lists and a 100%
+							culling
+
+						
+Full Size Image 
+
+					
+				
+			
+			
+				
+Conclusions
+
+				
+So far, attempts at finding stylistic traces of the translator or the editor have
+					been only partially successful. Word-frequency-based stylometric methods have
+					shown that they are better at attributing the author of the original than the
+					translator (Rybicki 2009, 2010; Rybicki, Eder 2010), or that Henry James’s
+					switch from writing to dictation left no stylistic trace (Hoover 2010).
+
+				
+This time, however, it is possible that the translator’s wife has left her mark.
+					First, Miko?’s attribution of the Memoirs of Jeremiah
+						Curtin is visible in the consensus tree diagrams; second, the diagrams
+					seem to validate the suspicions of Mrs Curtin’s significant contribution to The Mongols: A History and The Mongols
+						in Russia.
+
+				
+Even more importantly, the most frequent words in two of the Sienkiewicz
+					translations seem to exhibit a greater affinity to the Memoirs. It is hardly a coincidence that the two short stories depart
+					from Sienkiewicz’s usual male- and Poland-dominated writing. Indeed, Lillian Morris and For Bread are
+					two of Sienkiewicz’s so-called “American stories" (written during or immediately
+					after his stay in America, 1876-1879) and both feature a strong female
+					protagonist. If it ever made sense for Curtin to give his wife a somewhat freer
+					hand at shaping the final version of the English version of this or that
+					Sienkiewicz text, it would have been on the occasion of these two stories. After
+					all, during the work on Lillian Morris and For Bread in the Irish summer of 1893, Jeremiah was busy,
+					struggling with several other projects at the same time: he was collecting
+					material for one of his Irish mythologies, translating a couple of other short
+					works Sienkiewicz, and writing a lengthy “Translator’s Preface’ to the Polish
+					writer’s another historical romance, Pan Michael.
+
+			
+		
+References:
+
+			
+				
+					
+
+						Baayen, R.H.
+						2008
+						Analyzing Linguistic Data. A Practical Introduction to
+							Statistics using R, 
+						Cambridge
+					
+
+					
+
+						Burrows, J.F.
+						1987
+						Computation into Criticism: a Study of Jane Austen’s Novels
+							and an Experiment in Method, 
+						Oxford
+					
+
+					
+
+						Burrows, J.F.
+						2002
+						 “Delta: A Measure of Stylistic Difference and a Guide to
+							Likely Authorship, ” 
+						Literary and Linguistic Computing, 
+						17
+						267-287
+					
+
+					
+
+						Collins, C.L.
+						2008
+						 “Behind the Curtin, ” 
+						Milwaukee Magazine, 
+						1. April
+					
+
+					
+
+						Curtin, J.
+						1940
+						Memoirs of Jeremiah Curtin, 
+						Madison
+					
+
+					
+
+						Dalen-Oskam, K. van
+						Zundert, J. van
+						2007
+						 “Delta for Middle Dutch—Author and Copyist Distinction in
+							Walewein, ” 
+						Literary and Linguistic Computing, 
+						22
+						345-362
+					
+
+					
+
+						Dunn, M. 
+						Terrill, A. 
+						Reesink, G. 
+						Foley, R.A.
+						Levinson, S.C.
+						2005
+						 “Structural Phylogenetics and the Reconstruction of Ancient
+							Language History, ” 
+						Science, 
+						309
+						2072-2075
+					
+
+					
+
+						Hoover, D.L.
+						2004
+						 “Testing Burrows's Delta, ” 
+						Literary and Linguistic Computing, 
+						19
+						453-475
+					
+
+					
+
+						Hoover, D.L.
+						2004a
+						 “Delta Prime?, ” 
+						Literary and Linguistic Computing, 
+						19
+						477-495
+					
+
+					
+
+						Hoover, D.L.
+						2010
+						 “Modes of Composition in Henry James: Dictation, Style, and
+							What Maisie Knew, ” 
+						Proceedings of the Digital Humanities
+							2009 conference, 
+						College Park, MD, 
+					
+
+					
+
+						Miko, M.J.
+						1990
+						 “Alma Cardell Curtin, the Woman behind Jeremiah
+							Curtin, ” 
+						Milwaukee History, 
+						13
+						53-68
+					
+
+					
+
+						Miko, M.J.
+						1994
+						W pogoni za Sienkiewiczem, 
+						Warszawa
+					
+
+					
+
+						Mosteller, F.
+						Wallace, D.L.
+						1964
+						Inference and Disputed Authorship: The Federalist, 
+						Reading
+					
+
+					
+
+						Rybicki, J.
+						2009
+						 “Liczenie krasnoludków. Troch? inaczej o polskich
+							przek?adach trylogii Tolkiena, ” 
+						Ludzie i krasnoludki – powinowactwa z
+							wyboru? Conference proceedings, 
+						Warszawa, 
+					
+
+					
+
+						Rybicki, J.
+						2009
+						 “Translation and Delta Revisited: When We Read Translations,
+							Is It the Author or the Translator that We Really Read?, ” 
+						Proceedings of the Digital Humanities
+							2009 conference, 
+						College Park, MD, 
+					
+
+					
+
+						Rybicki, J.
+						Eder, M.
+						2011
+						 “Deeper Delta Across Genres and Languages: Do We Really Need
+							the Most Frequent Words?, ” 
+						Literary and Linguistic Computing, 
+						26
+						(forthcoming)
+					
+
+				
+			
+		

@@ -1,0 +1,344 @@
+Poster: A Visual Interface for Exploring Language Use in Slave Narratives
+
+                    Muralidharan, Aditi, 
+                    Department of Computer Science UC Berkeley, 
+                    
+aditi@cs.berkeley.edu
+
+                
+Abstract
+
+                
+The increasing prevalence of digitized source material in the humanities has led
+                    to uncertainty about how this suddenly available information will change
+                    scholars' research methods. What balance will scholars strike between in-depth
+                    examination of a few sources, and a more "distant reading" (Moretti 2005) of a
+                    large number of them? Our focus is specifically on text collections: comparing
+                    texts, and identifying and tracing patterns of language use. These tasks are not
+                    widely supported by any current software, but if humanities researchers want to
+                    use digitized text collections on a larger scale, they will need to do exactly
+                    such things.
+
+                
+We restrict ourselves to a particular collection: the North American antebellum
+                    slave narratives, written by fugitive slaves in the decades before the Civil War
+                    with the support of abolitionist sponsors. Scholars agree about the slave
+                    narrative's most basic conventions but it is likely that these narratives, with
+                    their extreme repetitiveness, may also manifest other regular features that have
+                    yet to be detected by scholars. This project aims to assist literary scholars in
+                    uncovering these patterns with computational techniques.
+
+                
+In collaboration with English scholars, we have built WordSeer ( 
+http://bebop.berkeley.edu/wordseer
+), a system that can compare two or
+                    more narratives' grammatical features, and analyze the distribution of textual
+                    patterns throughout an entire collection. Our goal is for English scholars to be
+                    able to use our system to gather accurate information about language use
+                    patterns in a way that is intuitive, and natural to them.
+
+                
+We will present the system currently under development, and share the lessons we
+                    have learned while building a text exploration interface for use in the
+                    humanities.
+
+            
+            
+                
+System Description: Computation
+
+                
+The goal of the computation is to extract grammatical structure from text. We use
+                    established techniques in computational linguistics that allow fast and reliable
+                    extraction of phrase boundaries, inter-word relationship categories (e.g.
+                    subject, verb, object, modifier etc.) and parts of speech. For example, the
+                    sentence, "Marsupial mammals have pouches." contains the meaningful unit
+                    "marsupial mammals" that functions as a noun and is therefore a noun-phrase. It
+                    further contains the word "marsupial" which is an adjective modifier of the word
+                    "mammals", which is a noun. The process is completely general, and can be
+                    applied to any TEI-encoded text collection.
+
+            
+            
+                
+System Description: Interface
+
+                
+Based on the features that our literary scholar collaborators found useful, our
+                    current interface supports three tasks: searching for grammatical or word-based
+                    patterns in text (Figures 1 and 2), visualizing their distribution in the entire
+                    collection (Figure 3), annotating sections of text with tags and notes (Figure
+                    4).
+                    
+
+                        
+Figure 1: Easily expressing the query, "How was God described?"
+
+                        
+Full Size Image 
+
+                    
+                    
+
+                        
+Figure 2: A list of search results augmented with a frequency
+                            visualization.
+
+                        
+Full Size Image 
+
+                    
+                    
+
+                        
+Figure 3: The distribution of the exact phrase "I was born" through the
+                            collection.
+
+                        
+Full Size Image 
+
+                    
+                
+                
+The power of extracting grammatical information is that a list search results is
+                    no longer an opaque list: trends and comparative frequencies can be extracted
+                    and displayed, giving an instant high-level picture: a guide to further
+                    exploration. For example, if a researcher were interested in the relationship
+                    between slaves and God, he or she might be interested in how God was described
+                    in the collection. Grammatical search makes this query easy to express: just
+                    type in "God" and choose the "described as" relationship, as shown in 
+Figure 1
+
+                
+The search results are augmented with the simple but powerful visualization of
+                    relative frequencies shown in 
+Figure
+                    2
+: all the words that God is "described as" arranged from most to least
+                    frequent. The presence of the adjectives "great, true, just" immediately evokes
+                    a picture of the relationship - one very different from the picture more
+                    negative adjectives might paint. While this is no substitute for careful
+                    literary analysis, it can be a quick way to judge the extent to which an entity
+                    or event is represented a certain way in a collection, and so help formulate new
+                    hypotheses.
+
+                
+While investigating stylistic similarities between documents in a collection, it
+                    is useful to be able to investigate occurrences of patterns of interest and
+                    compare their distributions across documents. We use a visualization called heat
+                    maps, which uses the visual metaphor of text as a brick wall, with each brick, a
+                    section of text, and each column of bricks a document. Typing in a phrase shows
+                    its distribution throughout the entire collection, and patterns, such as the
+                    overwhelming occurrence (Olney 1984) of the exact phrase "I was born" at the
+                    very beginnings of narratives ( 
+Figure
+                        3
+) are easily apparent.
+
+                
+The third research behavior we support is that of organizing sections of text
+                    into sets that illustrate a point. With our reading and annotation interface (
+                        
+Figure 4
+), researchers can
+                    highlight sections of text, and add tags and detailed notes. 
+                    
+
+                        
+Figure 4: Reading and annotating documents with tags and notes.
+
+                        
+Full Size Image 
+
+                    
+                    Adding a tag to a
+                    highlighted section of text is like adding it to a set. Researchers can use the
+                    sets they make in other parts of the application: searching within a set, or
+                    restricting the heat map visualization to documents in a set.
+            
+            
+                
+Related Work
+
+                
+In the digital humanities, the closest work to our project comes from two well-
+                    known text analytics efforts. The first is the MONK project (MONK) incorporating
+                    the SEASR analysis toolkit. These projects offers two computational linguistics
+                    tools in addition to word distribution and frequency statistics: tagging words
+                    with their parts of speech and extracting named entities. Users can visualize
+                    occurrence patterns of word sequences within a chosen text, and plot networks of
+                    how often named entities occur near each other. This research led to visual
+                    text-mining analyses of Emily Dickinson's correspondence (Catherine Plaisant et
+                    al. 2006), and of Gertrude Stein's "The Making of Americans" (Don et al. 2007)
+                    and an interface for exploring the parts of speech used near query words of
+                    interest (Vuillemot et al. 2009).
+
+                
+The second is Voyeur (Voyeur), which operates entirely at the word level. It
+                    allows users to plot word frequencies, see concordances (contexts in which words
+                    occur) and create tag clouds.
+
+                
+Other digital humanities projects have used more advanced language processing,
+                    but have not developed them into user interfaces or combined them with
+                    visualizations. Topic modeling is being applied to 19th Century British and
+                    American novels (Jockers 2010). These novels were also the subjects of
+                    cutting-edge computational linguistics research that showed how to automatically
+                    extract social networks from free text (Elson et al. 2010). Topic modeling is
+                    also being applied to the compendium of Danish, Norwegian, and Swedish folklore
+                    collected by Evald Tang Kristensen. In the field of visualization, applications
+                    to text in the humanities have been limited to word clouds, and node-and-link
+                    diagrams of named entities, and co-occurrences.
+
+                
+Outside the realm of text, but in the domain of comparative exploration, LISA, a
+                    comparison search interface for cultural heritage artifacts was created by (Amin
+                    et al. 2010).
+
+                
+The digital humanities work described above comes from the application of ideas
+                    from human-computer interaction and natural language processing. We are informed
+                    by general principles of search user interface design described by Hearst
+                    (Hearst 2009), and of visual exploration of large data-sets described by
+                    Shneiderman (Shneiderman 1996).
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Amin, A.K. et al.
+                        2010
+                         “Designing a thesaurus-based comparison search interface for
+                            linked cultural heritage sources, ” 
+                        Proceeding of the 14th international
+                            conference on Intelligent user interfaces, 
+                        249-258
+                    
+
+                    
+
+                        Voyeur Tools: See Through Your Texts | Hermeneuti.ca - The
+                            Rhetoric of Text Analysis, 
+                        October 29, 2010
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Don, A. et al.
+                        2007
+                         “Discovering interesting usage patterns in text collections:
+                            integrating text mining with visualization., ” 
+                        Proceedings of the sixteenth ACM
+                            conference on Conference on information and knowledge
+                            management, 
+                        Lisbon, Portugal, 
+                        213-222
+                    
+
+                    
+
+                        Elson, D. K.
+                        Dames, N.
+                        McKeown, K. R.
+                        2010
+                         “Extracting social networks from literary fiction, ” 
+                        Proceedings of the 48th Annual Meeting
+                            of the Association for Computational Linguistics, 
+                        138-147
+                    
+
+                    
+
+                        Hearst, M.
+                        2009
+                        Search user interfaces, 
+                        Cambridge Univ Press
+                        http://searchuserinterfaces.com
+                    
+
+                    
+
+                        Jockers, M L.
+                        What is a Literature Lab: Not Grunts and Dullards | Matthew
+                            L. Jockers., 
+                        October 29, 2010
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Moretti, F.
+                        2005
+                        Graphs, Maps, Trees: Abstract models for a literary
+                            history, 
+                        Verso Books
+                    
+
+                    
+
+                        Olney, J.
+                        1984
+                         “"I Was Born": Slave Narratives, Their Status as
+                            Autobiography and as Literature, ” 
+                        Callaloo, 
+                        46-73
+                    
+
+                    
+
+                        Plaisant, C,  et al.
+                        2006
+                         “Exploring erotics in Emily Dickinson's correspondence with
+                            text mining and visual interfaces, ” 
+                        Proceedings of the 6th ACM/IEEE-CS joint
+                            conference on Digital libraries, 
+                        Chapel Hill, NC, 
+                        141-150
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Shneiderman, B.
+                        1996
+                        The Eyes Have it: A Task by Data Type Taxonomy for
+                            Information Visualizations, 
+                        April 22, 2010
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Vuillemot, R. et al.
+                        2009
+                         “What's being said near "Martha"? Exploring name entities in
+                            literary text collections, ” 
+                        In Visual Analytics Science and Technology: VAST 2009. IEEE
+                            Symposium, 
+                        107-114
+                    
+
+                
+            
+        

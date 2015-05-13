@@ -1,0 +1,211 @@
+Paper: Expressive Power of Markup Languages and Graph Structures
+
+                    Marcoux,Yves, 
+                    Université de Montréal, Canada, 
+                    
+yves.marcoux@umontreal.ca
+
+                
+
+                    Sperberg-McQueen, Michael, 
+                    Black Mesa Technologies, 
+                    
+cmsmcq@blackmesatech.com
+
+                
+
+                    Huitfeldt,Claus, 
+                    University of Bergen, Norway, 
+                    
+claus.huitfeldt@uib.no
+
+                
+Extended Abstract
+
+                
+The problem of overlapping structures has long been familiar to the digital
+                    humanities community. Early on, the purely hierarchical structure has been
+                    identified as an important shortcoming of XML for the representation of
+                    meaningful features of complex works in the humanities. For example, the verse
+                    and line structures of a poem do not necessarily nest properly, but may overlap.
+                    To capture that complexity, it is necessary to host both structures in the same
+                    digital object, something which pure XML cannot do directly.
+
+                
+It is customary to represent the structure of a marked-up document by deriving
+                    from it a graph in which the adjacency relation among nodes corresponds to the
+                    embedding relation among the marked-up elements of the document. It is well
+                    known that, through such a construction, XML documents correspond to the
+                    subclass of graphs known as trees.
+
+                
+Numerous approaches to extend or specialize XML or SGML to handle overlapping
+                    structures in various ways have been proposed in the literature over the years
+                    (see for instance [B1995]). Some of these approaches work on the graph-structure
+                    view of XML. The graph-structure is no more required to be a tree, but it must
+                    still satisfy basic constraints (e.g., finiteness, non-circularity) that make
+                    them plausible models for “documents.” One such proposal is the GODDAG (General Ordered-Descendant Directed Acyclic Graph
+                    [SH2004]). Roughly, GODDAGs are like XML trees except that they allow multiple
+                    parenthood and do not require a total ordering on leaf nodes. (Thus, XML trees
+                    constitute a subset of GODDAGs.)
+
+                
+Other proposals address the problem by working on the markup language side. In
+                    this group, we find pure XML solutions (which represent the non-hierarchical
+                    structures through coding conventions and a corresponding ad hoc layer of
+                    semantics, e.g., milestones, fragmentation, virtual elements, etc. [B1995]
+                    [SH1999] [W2005]) and non-XML ones, based on generalizations of XML allowing non-embedding constructs, such as
+                    overlapping elements. Among the latter is TexMecs [HS2003], an XML-like markup
+                    language allowing overlapping elements (as well as other constructs).
+
+                
+An interesting question is how the various proposals compare with respect to
+                    their expressive power. Beyond a few obvious subset/superset relations that
+                    exist among the formalisms, very little is known in this area. In 2008, Marcoux
+                    established a result [M2008] linking a subclass of GOODAGs to a subset of
+                    TexMecs. Overlap-only TexMecs (or oo-
+                        TexMecs) is the subset of TexMecs that uses only embedding and
+                    overlapping elements (and none of the other constructs). A graph whose structure
+                    corresponds to an oo-TexMecs document is said to be oo-serializable. Marcoux showed (essentially) that the oo-serializable
+                    GODDAGs are exactly the completion-acyclic ones, thus
+                    showing that oo-TexMecs and the class of completion-acyclic GODDAGs have the
+                    same expressive power.
+
+                
+In this paper, we extend that result in two ways. First, we define child-ordered directed graphs (CODGs), a class of graphs
+                    strictly larger than that of GODDAGs, and argue that, in spite of its
+                    generality, it still captures a plausible and interesting notion of “document.”
+                    Then, we show that the strictly stronger expressive power of the CODG, compared
+                    to the GODDAG, vanishes when oo-serializability is required. This constitutes a
+                    strong indication that overlap-only markup languages may be insufficient for
+                    representing complex document structures.
+
+                
+More precisely, we show that the classes of single-root CODGs and GODDAGs
+                    coincide when restricted to completion-acyclic graphs. There are, however,
+                    completion-acyclic multiple-root CODGs that are not oo- serializable. We show
+                    that, for multiple-root CODGs, the stronger condition of full-completion-acyclicity characterizes oo-serializability.
+
+                
+The definition of fully-completion-acyclic graph does not in itself suggest an
+                    efficient algorithm for checking the condition, nor for computing a
+                    corresponding overlap-only document when the condition is satisfied. We present
+                    ideas that could be exploited to accomplish those tasks efficiently.
+
+                
+The main conclusion of this work is that markup languages that generalize XML
+                    only by allowing overlapping elements may not be expressive enough to represent
+                    complex document structures. Indeed, our results show that the requirement that
+                    a graph be serializable in an overlap-only language effectively prevents the
+                    presence of too complex structures in the graph. The new graph structure
+                    introduced in the paper, the CODG, is of interest in itself as an abstract
+                    document model. Finally, the ideas we present on how to detect whether a graph
+                    is serializable using only overlapping elements and on how to then compute a
+                    serialization would be helpful in authoring environments, because they would
+                    allow serializing documents using the most simple constructs (e.g., overlapping
+                    elements) whenever possible, while resorting to more complex constructs (e.g.,
+                    virtual elements) only when absolutely necessary.
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Barnard, David
+                        Burnard,Lou 
+                        Gaspart, Jean-Pierre
+                        Price, Lynne A.
+                        Sperberg-McQueen, C. M.
+                        Varile, Giovanni Battista
+                         ““Hierarchical Encoding of Text: Technical Problems and SGML
+                            Solutions”, ” 
+                        Computers and the Humanities, 
+                        29
+                        3
+                        1995
+                        211-231
+                        
+         (
+link
+)
+   
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Huitfeldt, Claus
+                        Sperberg-McQueen, C. M.
+                        TexMECS: An experimental markup meta-language for complex
+                            documents, 
+                        University of Bergen
+                        January 2001, rev. October 2003
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Marcoux, Yves
+                         “Graph characterization of overlap-only TexMECS and other
+                            overlapping markup formalisms, ” . Proceedings of
+                            the Balisage 2008 conference, 
+                        12-15 august 2008
+                        Montréal (Canada)
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Sperberg-McQueen, C. M.
+                        Huitfeldt, Claus
+                        GODDAG: A Data Structure for Overlapping
+                            Hierarchies, . Springer-Verlag (2004)
+
+                    
+
+                        C. M. Sperberg-McQueen
+                        Claus Huitfeldt
+                         ““Concurrent Document Hierarchies in MECS and SGML”, ” 
+                        Literary and Linguistic Computing, , 14 1999, pp.
+                        29-42. 
+         (
+link
+)
+   
+
+                    
+
+                        Witt, Andreas
+                        “Multiple Hierarchies: New Aspects of an Old Solution”
+                        Stefanie Dipper
+                        Michael Götze
+                        Manfred Stede
+                        Heterogeneity in Focus: Creating and and Using Linguistic
+                            Databases, 
+                        vol. 2Interdisciplinary Studies on
+                            Information Structure (ISIS), Working Papers of the SFB 632.
+                        University of Potsdam
+                        Germany2005
+         (
+link
+)
+   
+
+                
+            
+        

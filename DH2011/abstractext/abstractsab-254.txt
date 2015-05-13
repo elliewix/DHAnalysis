@@ -1,0 +1,327 @@
+Poster: Visualization of Visitor Circulation in Arts and Cultural Exhibition
+
+               Sookhanaphibarn, Kingkarn, 
+               Intelligent Computer Entertainment Laboratory, Global COE Program in
+                  Digital Humanities for Japanese Arts and Cultures, Ritsumeikan
+                  University, 
+               
+kingkarn@ice.ci.ritsumei.ac.jp
+
+            
+
+               Thawonmas, Ruck, 
+               Intelligent Computer Entertainment Laboratory, Global COE Program in
+                  Digital Humanities for Japanese Arts and Cultures, Ritsumeikan
+                  University, 
+               
+ruck@ci.ritsumei.ac.jp
+
+            
+
+               Rinaldo, Frank, 
+               Intelligent Computer Entertainment Laboratory, Global COE Program in
+                  Digital Humanities for Japanese Arts and Cultures, Ritsumeikan
+                  University, 
+               
+rinaldo@is.ritsumei.ac.jp
+
+            
+Introduction 
+
+
+            
+The topic of visitor circulation in museums and art galleries has been considered as
+               an important factor in all aspects of the museum experience (Bigood, 2006; Guy et al. 2010; Kaynar et al. 2009)
+               Circulation describes how visitors explore a set of exhibits in a particular space by
+               observing what pathways the visitors take. A visualization of visitor circulation can
+               confirm whether visitors circulate the way the designers intended. The visualization
+               can assist the designers to arrange a predefined pathway so that visitors will not
+               miss key exhibits. The well-designed circulation system can also increase the great
+               number of return visitors. 
+
+
+            
+Sookhanaphibarn and Thawonmas (2009) proposed the local and global visualizations
+               aims at presentation and analysis of visitor behaviors in 3D virtual museums. The
+               visitor path is displayed with a spectrum of colors in the form of connecting
+               segments from red to violet. The color of a particular segment indicates the passage
+               of time. The drawback of these visualizations is that they were strictly overlaid on
+               the layout map. To deal with the varying layouts commonly found in a museum with many
+               exhibition rooms, visualizations with an independent layout is an alternative
+               assistant tool for the visual analytics of circulation patterns. 
+
+
+            
+In this paper, we proposed a new visualization tool to represent a visitor path and
+               his/her time spent residing near the closest item. We encode a time interval residing
+               in an item boundary into a color-shaded line segment. Color shade is used as an
+               indicator of the proximity to the nearest item. The length of a segment is in
+               proportion to the total time spent in the layout. The time segment is placed in the
+               row corresponding to its item boundary. A path of visited items is illustrated by
+               connecting the time segments with vertical lines. 
+
+
+            
+With the proposed visualization, we can easily find the trend of visitor circulation
+               which strictly follows the pathway designed by a curator. The trend is represented by
+               the white line, called “Forward”, running from the most left above to the most right
+               bottom corners as shown in Figure 1. There are the other trends, which are called
+               “Backward”, “Bell” and “Inverted bell”, possibly influenced by the visitor
+               characteristics and/or preferences. The similar trends of visitor circulation will be
+               explained later in detail. 
+
+
+            
+
+               
+
+                  
+Figure 1: Four trends of circulation: (a) Forward, (b) Backward, (c) Bell,
+                     and (d) Inverted bell. 
+
+                  
+Full Size Image 
+
+               
+
+            
+               
+Layout-dependent visualization 
+
+
+               
+Most visualization techniques using traditional two dimensional maps represent
+                  visitor trajectories and their corresponding visit time directly over spatial
+                  layouts. In this paper, we call layout-dependent visualization as any
+                  visualization technique using the spatial layout of a target area as its graphical
+                  background in visualization. With the layout-dependent visualization, a
+                  circulation pattern is not easily extracted by a user who is not familiar with the
+                  target layout map. 
+
+
+               
+The layout-dependent visualization approach burdens users with a cost of requiring
+                  them to recognize the layout of items and routes by themselves. Some additional
+                  symbols indicating the position and boundary of items as well as arrowheads
+                  indicating representative routes must be placed in layout-dependent visualization.
+                  However, these symbols and arrowheads conceal visitor traces from users. 
+
+            
+         
+         
+            
+Design Decision 
+
+
+            
+This paper considers the use of a layout-independent display for visual analysis of
+               the path and residing time of the movement data in circulation, named “PARTY”. PARTY
+               is an abbreviation of Path And Residing Time display. Taking for example a museum in
+               a 3D virtual world, the circulation behaviors of visitors moving through museum of
+               interest are influenced by the items on which the visitors focus their attention. 
+
+
+            
+Designers of a musuem space require serveral types of information when examining the
+               circulation behavior of visitors. These include (1) residing locations, regions, or
+               item boundaries, (2) visit time intervals near an item, (3) paths of visited regions,
+               (4) global information showing multiple visitors residing in a region, and (5)
+               degrees of their interest. All of these information types are derived from two data
+               sources: (a) a log file of visitors’ positions including x-y coordinates and time and
+               (b) the map of a museum or a floor plan, where the location of items or the position
+               of rooms is provided at least. 
+
+
+            
+The design of PARTY aims to represent three dimensional entities, i.e. a time unit, a
+               visited item, and a visitor. The horizontal and vertical axes of PARTY represent time
+               and items which visitor moves through their boundaries. A stack of visitor stripes is
+               put inside an item block (row). As shown in Figure 2, there are five items of
+               interest and three visitors. The stack of three visitor stripes places inside each
+               item row. The order of three visitor stripes is consistent thorough five item rows.
+               Therefore, an PARTY entity represents a visitor v who stays near item X at time t. 
+
+
+            
+
+               
+
+                  
+Figure 2: A structural design of PARTY.
+
+                  
+Full Size Image 
+
+               
+            
+
+            
+We arrange the visitor stripes in every stack in the same order and rank them by the
+               similarity among their present circulation patterns. Then, we use the hierarchical
+               clustering technique for finding the similarity of all pairs of visitor paths. To
+               handle hundreds of visitors, the representative of each group of visitors can be used
+               rather than a single visitor. The representative is derived from the generalized
+               median defined as the visitor path having the nearest distances to all. 
+
+
+            
+Besides a path of nearest items versus time, the proximity distance to the nearest
+               item can be displayed in PARTY as a degree of visitor’s interest to each exhibit
+               item. A displaying color is computed using the observation distance and range based
+               on the location of all items. For example, given the visitor trace as shown in Figure
+               3, Figure 4 represents a visitor trace as our observation-based time series. The
+               visualization in Figure 4 consists of the horizontal axis corresponding to the visit
+               time, the vertical axis indicating an item belonging to the observation range at a
+               particular time, and the color showing the observation distance. This visualization
+               is produced by using the observation distance and range in the application of a 3D
+               virtual museum. 
+
+
+            
+
+                  
+Figure 3: A representation of a visitor trace tracked in a 3D virtual
+                     museum. 
+
+                  
+Full Size Image 
+
+               
+               
+
+                  
+Figure 4: Transformation of a single trace (Fig 3.) to PARTY representing
+                     the path of visited items (y-axis) and his/her interest to items by using color
+                     shades from brightness to darkness (highest to lowest degrees).
+
+                  
+Full Size Image 
+
+               
+            
+
+         
+
+
+         
+            
+Results and Implications 
+
+
+            
+This section presents an application of PARTY analyzing the avatars’ trajectories and
+               finding trends of circulation behaviors in the 3D virtual museum, named RDAP. RDAP,
+               owned by the Global Center of Excellenct in Digital Humanities Center for Japanese
+               Arts and Cultures, of Ritsumeikan University, was created in Second Life. An
+               objective of RDAP is to disseminate Japanese costumes, Kimonos, preserved them in a
+               digital achieving system. We synthesize the visitor trajectories based on the
+               metaphor of four animals as mentioned in (Sookhanaphibarn and Thawonmas, 2009). The
+               total number of synthesized trajectories is 36 where each visiting style has nine
+               trajectories. 
+
+            
+               
+Similar Trends of Circulation Patterns 
+
+
+               
+After applying the PARTY approach, visitor trajectories are transformed into time
+                  series data. Discovering similar trends of circulation patterns is achieved by a
+                  traditional dynamic time warping followed by the hierarchical clustering. Then,
+                  generalized median of each resulting cluster is calculated. Figure 1 shows four
+                  trends of circulation patterns including: 
+
+
+               
+
+                  
+a) Forward circulation: this trend illustrates that visitors prefer to turn
+                     right at entrance and move following the curators-guided path from the the fist
+                     to the last items. 
+
+
+                  
+b) Backward circulation: the direction of this circulation is backward from
+                     the forward one, i.e. turn left at the beginning. 
+
+
+                  
+c) Bell-shape circulation: visitors in this trend prefer to start and end
+                     their visit with the same item, and they turn right at entrance. 
+
+
+                  
+d) Inverted bell-shape circulation: This trend pattern is similar to the
+                     bell circulation but they turn left at entrance. 
+
+
+               
+
+               
+The other view of PARTY displays a stack of representative stripes of which the
+                  width denotes the size of their categories. The bell-shape circulation has the
+                  largest number of visitors followed by the backward, forward, and inverted
+                  bell-shape circulations, respectively. 
+
+            
+         
+      
+References:
+
+         
+            
+               
+Bitgood, S
+                  2006
+                   “An Analysis of Visitor Circulation: Movement Patterns and the
+                     General Value Principle, ” Curator: The Museum
+                     Journal, 
+                  49: 463–475
+                  
+         (
+link
+)
+   
+               
+
+
+               
+Guy, G.
+                  Dunn, S.
+                  Gold, N.
+                  2010
+                   “Capturing Visitor Experiences for Study and
+                     Preservation, ” Digital Humanities 2010, Conference
+                     Abstracts Book, 
+                  2
+                  160-16
+
+
+               
+Kaynar, I.R.
+                  Psarra, S.
+                  Wineman J.
+                  2009
+                   “Experiencing museum gallery layouts through local and global
+                     visibility properties in morphology: an inquiry on the YCBA, the MoMA and the
+                     HMA, ” 
+                  Proc. 7th International Space Syntax Symposium, 
+                  Stockholm, Sweden, 
+                  June 2009
+                  pp. 1-16
+
+
+               
+Sookhanaphibarn, K.
+                  Thawonmas, R.
+                  2010
+                   “Visualization and Analysis of Visiting Styles in 3D Virtual
+                     Museums, ” 
+                  Digital Humanities 2010, Conference Abstracts
+                     Book, 239-243
+               
+
+            
+         
+
+      

@@ -1,0 +1,148 @@
+Poster: Semantically Rich Tools for Text Exploration: TEI and SEASR
+
+                    Ashton, Andrew Thomas, 
+                    Brown University Library, 
+                    
+Andrew_Ashton@brown.edu
+
+                
+Much of the existing work of researchers using the Text Encoding Initiative (TEI)
+                    guidelines has been made available on the web via processes such as XSLT
+                    transformations, which are intended to reproduce a work as an enhanced digital
+                    surrogate using HTML, PDF, or another publication format. Recent innovations in
+                    scholarly software design offer opportunities to exploit the semantic depth of
+                    TEI collections by creating new tools for textual analysis; tools that are
+                    designed not specifically for digital publication, but for creating mash-ups,
+                    data sets, and expressions of semantic data intended for machine-readability,
+                    rather than online readership. To explore these opportunities, the Brown
+                    University Library’s Center for Digital Scholarship (STG) and the Brown
+                    University Women Writers Project (WWP) - with the support of the National
+                    Endowment for the Humanities’ Digital Humanities Start-Up Grant program - are
+                    developing a prototype suite of software tools to explore TEI encoded texts in
+                    the Software Environment for the Advancement of Scholarly Research (SEASR). A
+                    demonstration of these tools, information about their availability, and a
+                    discussion about their usefulness to digital humanities projects, offers an
+                    opportunity to examine this approach to exploring digital texts.
+
+            
+            
+                
+Exploring Data Through Experimentation and Play
+
+                
+SEASR is a software environment for creating and sharing text and data mining
+                    tools. Textual analyses and visualizations created in SEASR can be shared on the
+                    web and adapted by other scholars to support their own research. The
+                    characteristic of SEASR that permits such exploration and interchange is its
+                    modular approach to software architecture. Modularity – the ability to share and
+                    reuse discrete pieces of software within a broader framework – enables
+                    relatively simple software tools to be combined to produce results that were
+                    previously the domain of complex and often proprietary software. Within the
+                    SEASR environment, analysis is modeled as a “flow”: a pipeline, or a series of
+                    “components” arranged to produce a specific analysis (see figure 1). Each
+                    component in a flow is a small piece of software that ingests and processes
+                    data, then passes it to the next component in the flow. Each component performs
+                    a single function, but through their recombination and sequencing SEASR enables
+                    innumerable potential analyses. Once a flow of components is constructed, it can
+                    be made publicly available as a web service and reused on other data. The SEASR
+                    framework permits components and flows to be integrated into the publication
+                    interface of a digital project (as a way of working with project data), or to be
+                    used as part of an independent web-based workbench through which a scholar could
+                    examine data drawn from multiple projects. In addition, scholars wishing to
+                    demonstrate a new analysis or method can create interactive web applications to
+                    make their work accessible and reproducible. And because flows can be flexibly
+                    combined and altered, they permit much greater latitude in scholarly inquiry,
+                    instead of channeling text analysis into predetermined sequences.
+
+                
+
+                    
+Designing a SEASR "flow"
+
+                    
+
+                        
+Figure. Designing a SEASR "flow"
+
+                        
+Full Size Image 
+
+                    
+                
+            
+            
+                
+Working with TEI
+
+                
+TEI’s markup logic makes the semantic information encoded in a text tractable for
+                    the purposes of extraction, analysis, and reuse. When used in tandem with other
+                    data mining and visualization tools available in the SEASR environment (e.g.,
+                    MONK, Simile, OpenNLP), these TEI components for SEASR offer new venues for
+                    exploring questions germane to literary and textual scholars.
+
+                
+As an example, a research scenario involving the WWP texts might include
+                    examining the language of specific genres and structures, possibly in relation
+                    to other information axes (e.g. time, geography). For example, how does the
+                    language of lyric poetry change during the course of the long 18th century? How
+                    do women situate themselves as authors (in dedications, letters to the reader,
+                    and acknowledgements)? To what extent do women make use of cultural referents
+                    from European history in situating their work, and how does this change over
+                    time? In pursuing these questions a researcher might use SEASR (either within a
+                    project interface such as Women Writers Online, or within a separate workbench
+                    application) to:
+
+                
+                    
+Extract and separate a collection of texts by genre. In addition to
+                        offering text-level genre information (based on a basic differentiation
+                        between prose, verse, and drama, which MONK also exploits), like many TEI
+                        projects the WWP marks genre-specific structures within the text such as
+                        poems, dramatic speeches, letters, recipes, essays). SEASR modules can thus
+                        identify and extract single genres of interest (all lyric poetry, for
+                        instance) or divide the entire corpus by genre (verse, drama, prose, etc.)
+                        at a specified level of granularity.
+
+                    
+Extract specific pieces of text (quotes, verse stanzas, dedications) for
+                        downstream analysis.
+
+                    
+Distill from the selected texts or text pieces the personal names, and
+                        separate these by type (references to historical figures, mythological
+                        figures, biblical figures; place names; etc.)
+
+                    
+Sort a subset of data chronologically.
+
+                    
+Pass the data through a component that adds morphosyntactic information to
+                        each word.
+
+                    
+Generate a visualization such as a stacked area chart for each genre that
+                        analyzes changes in the association of certain adjectives with personal
+                        names, differentiated by gender.
+
+                
+            
+            
+                
+Conclusion
+
+                
+The primary outcome of this exploration is a set of SEASR components designed to
+                    extract and process many commonly encoded semantic features using the TEI P5
+                    Guidelines. This poster session will include a demonstration of the TEI tools
+                    for SEASR, as well as a discussion of the challenges of developing broadly
+                    applicable scholarly software tools such as these. Specifically, it will examine
+                    the difficulties and opportunities in designing software to work within a broad
+                    and diverse community of practice, such as the TEI community. The software,
+                    along with a set of sample analyses, will be available for download in a
+                    publicly available repository. In addition, a white paper, including an analysis
+                    of likely use-cases for these tools, will be available at the conclusion of the
+                    grant.
+
+            
+        

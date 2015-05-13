@@ -1,0 +1,448 @@
+ Panel: The Theory and Design of PlotVis
+
+                    Dobson, Teresa M., 
+                    University of British Columbia, Canada, 
+                    
+teresa.dobson@ubc.ca
+
+                
+
+                    Ruecker, Stan, 
+                    The University of Alberta, 
+                    
+sruecker@ualberta.ca
+
+                
+
+                    Brown, Monica, 
+                    
+mm2brown@interchange.ubc.ca
+
+                    University of British Columbia, Canada, 
+                
+
+                    Rodriguez, Omar, 
+                    
+omar.rodrigueza@gmail.com
+
+                    The University of Alberta, 
+                
+
+                    Michura, Piotr, 
+                    
+zemichur@cyf-kr.edu.pl
+
+                    Academy of Fine Arts, Krakow, Poland, 
+                
+
+                    Grue, Dustin, 
+                    
+dgrue@shaw.ca
+
+                    University of British Columbia, Canada, 
+                
+
+            
+                
+                    
+PlotVis is a 3D system for people interested in examining narrative action,
+                        or plot, from a variety of perspectives. The system was developed as one
+                        outcome of a funded study examining the teaching of complex narrative forms
+                        in secondary and undergraduate classrooms. Results of this study have
+                        revealed, inter alia, that conventional approaches to teaching fiction,
+                        particularly at the secondary level, fail to take account of the diversity
+                        of contemporary narrative (cf Dobson, 2006).
+
+                    
+For example, instructors, particularly at the secondary level, still rely
+                        heavily on the five-stage plot mapping first described by Gustav Freytag
+                        (1863) in Die Technik des Dramas (
+Figure
+                            1
+), and the superimposition of this model on forms beyond those it
+                        was originally intended to describe can be misleading (Dobson, Michura,
+                        Ruecker, 2010). 
+
+                            
+Figure 1: Freytag’s Pyramid shows five basic components of plot,
+                                based on Greek and Shakespearean tragedy.
+
+                            
+Full Size Image 
+
+                         In addition, the reliance on the Cartesian graph to model
+                        narrative generally – and there are a number of examples of such graphing
+                        (e.g., Sterne, 1847; Vonnegut, 1973) – is restricting because it fails to
+                        take account of the multiple dimensions of story.
+                    
+Considering the limitations of the Cartesian graph for modeling narrative
+                        along with conceptualizations of narrative as multidimensional (e.g.,
+                        Shields, 2000), our goal was to produce a three-dimensional digital
+                        environment that reifies different perspectives on plot, so that students
+                        and other scholars can quickly shift from one 3D object to another, or spend
+                        time exploring any of the visualizations in more detail. We currently
+                        support three perspectives and are beginning to experiment with the design
+                        of a fourth.
+
+                    
+This panel will examine the results of the PlotVis project from several
+                        different perspectives, including an introduction to the project, schema
+                        design for narrative encoding, a reading practices study, and design and
+                        programming.
+
+                
+                
+                    
+Introduction to PlotVis as a Form of Distant Reading
+
+                    
+ … what we really need is a little pact with the devil: we know how to
+                            read texts, now let’s learn how not to read them. Distant reading: where
+                            distance, let me repeat it, is a condition of knowledge: it allows you
+                            to focus on units that are much smaller or much larger than the text:
+                            devices, themes, tropes—or genres and systems. (Moretti, 2000, p.
+                            57).
+
+                    
+Recently, literary theorists and digital humanists alike have taken up
+                        Moretti’s appeal, later developed in Graphs, Maps,
+                            Trees (2005), for the development of new methods of textual
+                        analysis. Clement (2008), for example, uses mapping techniques and
+                        visualizations to facilitate, quite literally, new perspectives on a
+                        canonical text, Gertrude Stein’s The Making of
+                            Americans. By premising knowledge on distance rather than
+                        closeness, Clement discerns significant patterns in the narrative’s
+                        structure, in so doing discovering a new logic to Stein’s text. Such new
+                        insights, made possible by adapting the scale and focus of textual analysis,
+                        are exactly what Moretti expects readers will earn by learning how not to
+                        read texts—and, by extension, by learning how to use different technologies
+                        to complement, and corroborate, our readings of texts.
+
+                    
+ Experiments with distant reading challenge the truism that readers make
+                        sense of a story by seizing upon a narrative episode, using it as a key to
+                        gain entry into the deeper meaning inherent within the text, “as if meaning
+                        resided in a buried treasure chest or behind a lock door” (Clement, 2008, p.
+                        365). Clement proposes a different metaphor for understanding narrative
+                        structure, that of a map key, which instead implies that readers make sense
+                        of stories by using narrative structure as a guide. The metaphor of the map
+                        key offers a view of reading complex narrative as a process of orientation,
+                        through which readers manage their awareness of a text’s meanings by
+                        acquainting themselves with its structure.
+
+                    
+Similar views of distant reading and complex narrative inform the project of
+                        developing XML schemas for encoding digitized versions of fictional
+                        narratives. Undertaken as part of a larger study based out of the University
+                        of British Columbia, this project investigates, and proposes, methods of
+                        reading adapted to contemporary print and digital fiction’s “shift away from
+                        conventional narrative logic toward indeterminacy, fragmentation, and
+                        open-endedness” (Dobson, 2008, p. 1). While the goal of our larger study is
+                        the development of new models for writing, reading, and teaching complex
+                        print and digital narrative, the focus here will be the use of XML to encode
+                        fictional narratives as, in itself, a form of textual analysis, involving
+                        both closeness and distance, and enabling even further alterations, of the
+                        kind Moretti proposes, to the scale and focus of scholarly reading
+                        practices. 
+
+
+                
+                
+                    
+Towards a Schema Design for Narrative Encoding 
+
+                    
+This paper will discuss the iterative development and use of a set of
+                        Extensible Markup Language (XML) schemas for encoding digitized versions of
+                        fictional narratives. Although the Text Encoding Initiative (TEI) Guidelines
+                        for Electronic Text Encoding and Interchange define and document a thorough
+                        markup language for encoding humanities texts, including significant
+                        provisions for encoding scholarly editions of drama, poetry, and
+                        manuscripts, there presently exist only a handful of XML schemas designed
+                        specifically for marking up literary fiction (e.g., StoryML, FicML, PftML). 
+
+                    
+Drawing on principles and approaches from narratology, our literary encoding
+                        schemas combine TEI elements and attributes with tags that specifically mark
+                        up elements of narrative structure, such as actions, characters, dialogue,
+                        narration, objects, places, and time. Examples of encoded short stories,
+                        such as Alice Munro’s “The Love of a Good Woman” and Ernest Hemingway’s
+                        “Hills Like White Elephants,” will be used to demonstrate, and critique, the
+                        different possibilities we have explored for developing literary XML
+                        schemas. 
+
+
+                
+                
+                    
+From Envisaging to Visualization: Young People’s Narrative Reading
+                        Practices
+
+                    
+This paper will present findings of a study examining the reading practices
+                        of young adults. The study focused on the dialectic between how students of
+                        literature envisage narrative and how they actually
+                        visualize it in systematized approaches. Fifty participants in grades 11 and
+                        12 read Hemingway’s “Hills Like White Elephants” and O’Faolain’s “The
+                        Trout.” They then engaged in a series of activities: evaluating form by
+                        physically “cutting and pasting” a narrative’s text, sketching narrative
+                        diagrams, XML tagging of narratives, and an exit interview.
+
+                    
+Participants indicated that narratives were enjoyable because their plots
+                        were “unexpected,” but also un-enjoyable because they were “hard to
+                        understand.” That is, comprehension of a narrative is a condition of
+                        enjoyment and disappointment: narratives ought to be original but not
+                        confusing. In XML tagging, grade 11 students were given a basic schema to
+                        tag a narrative but were also encouraged to modify this schema. The schemas
+                        were altered beyond a systematized approach, instead revealing critical
+                        activity across a range of “levels.” Globally, for example, subjects
+                        modified the schemas beyond a “systematic” approach in order to highlight
+                        salient features particular to a text. Subjects added the tags setting and contradictory
+                            statements to the XML schema for “Hills,” suggesting a
+                        post-critical (and almost juridical) attitude. More locally, there is
+                        evidence that tagging is dependent on “spheres of lexical activity,” where
+                        tagging of features depends on the immediate context in which they occur.
+                        Furthermore, tagging appears to be not only independent of syntax, but also
+                        independent of the tagged-narrative’s grammar – subjects prescribe
+                        systematic rules, but do not follow them.
+
+
+                
+                
+                    
+PlotVis: Design and Implementation of Five Plot Models
+
+                    
+Our final panelists will discuss issues related to designing and programming
+                        four different views of narrative structure. In the first case, the user is
+                        able to see a Fibonacci series where one of the encoded plot elements is
+                        placed at the centre of the visualization, and other elements are arranged
+                        out from the centre, either sequentially as they appear in the text or else
+                        hierarchically as they are arranged in the XML tree (
+Figure 2
+). 
+
+                            
+Figure 2: This screenshot of Munro’s “Love of a Good Woman”
+                                demonstrates the complexity of the tagging, with each coloured
+                                cylinder representing one of roughly 7000 tagged pieces of
+                                text.
+
+                            
+Full Size Image 
+
+                         In this visualization, each piece of text appears as a coloured
+                        cylinder. The height of the cylinders can be associated with the length of
+                        the text they contain. The second visualization privileges sequence over
+                        centrality, with multiple pipelines representing the characters or narrator,
+                        and changes to the arrangement of the pipe showing where changes in time
+                        occur (
+Figure 3
+). 
+
+                            
+Figure 3: Our design sketch for a view that privileges sequence
+                                over centrality, with multiple pipelines representing the characters
+                                or narrator.
+
+                            
+Full Size Image 
+
+                         The third visualization is based on an architectural metaphor,
+                        where readers see the different kinds of encoded plot elements as floors of
+                        a building (
+Figure 4
+). 
+
+                            
+Figure 4: Our design sketch of the architectural concept of story
+                                visualization.
+
+                            
+Full Size Image 
+
+                         Text that occurs only within a single element tag fills a space on
+                        a single floor, while text that spans multiple elements appears as blocks
+                        that span the floors. Our fourth and most recent design resembles in some
+                        ways our sequential model, only in this case the text is represented by
+                        vertical walls of text that bend at locations where there are changes in
+                        time, while the other encoded plot elements appear as colours on the
+                        surfaces of the walls (
+Figure
+                            5
+).
+
+                            
+Figure 5: This screenshot shows the wall display. Vertical
+                                coloured bands represent the encoded text elements that are shown as
+                                nodes in Figure 2.
+
+                            
+Full Size Image 
+
+                         The visualization system was created using a popular game engine,
+                        called Unity3D, which provides us with a flexible platform for interaction
+                        with 3D objects, primarily through writing Javascript. The contents of the
+                        visualization, as indicated above, are produced from XML-encoded text
+                        files.
+                
+
+            
+            
+References:
+
+                
+                    
+                        
+
+                            Clement, T. E.
+                            2008
+                             “‘A thing not beginning and not ending’: using digital
+                                tools to distant-read gertrude stein’s the making of
+                                americans, ” 
+                            Literary and Linguistic Computing, 
+                            23(3)
+                            361-381
+                            Dobson, T.M.
+                            2008
+                            Reading, Writing, and Teaching Complex
+                                Narrative, 
+                            Standard Research Grant Application submitted to the
+                                Social Sciences and Humanities Research Council of Canada., 
+                        
+
+
+                        
+
+                            Dobson, T. M.
+                            2006
+                             “For the love of a good narrative: Digitality and
+                                textuality, ” 
+                            English Teaching: Practice and Critique, 
+                            5(2)
+                            56-68
+                        
+
+
+                        
+
+                            Dobson, T. M.
+                            Michura, P.
+                            Ruecker, S.
+                            2010
+                             “Visualizing plot in 3D, ” 
+                            Proceedings of the Fourth International Conference on
+                                Digital Society, 
+                        
+
+
+                        
+
+                            Freytag, G.
+                            1863/1983
+                            Die technik des dramas, 
+                        
+
+
+                        
+
+                            Hemingway, E.
+                            1927
+                            Men Without Women, 
+                        
+
+
+                        
+
+                            Jessop, M.
+                            2008
+                             “Digital visualization as a scholarly activity, ” 
+                            Literary and Linguistic Computing, 
+                            23(3)
+                            281-293
+                        
+
+
+                        
+
+                            McCarty, W.
+                            2002
+                             “Humanities computing: essential problems, experimental
+                                practice, ” 
+                            Literary and Linguistic Computing , 
+                            17(1)
+                            103-125
+                        
+
+
+                        
+
+                            Moretti, F.
+                            2005
+                            Graphs, maps, trees: Abstract models for a literary
+                                theory, 
+                        
+
+
+                        
+
+                            Munro, A.
+                            1998
+                            The love of a good woman, 
+                        
+
+
+                        
+
+                            O'Faolain, S.
+                            1980
+                             “The trout, ” 
+                            Collected stories. (Vol. I), 
+                            383-386
+                        
+
+
+                        
+
+                            Shields, C.
+                            2000
+                             ““Ilk”, ” 
+                            Dressing up for the carnival, 
+                            53-60
+                        
+
+
+                        
+
+                            Sterne, L.
+                            1847
+                            The works of Laurence Sterne, containing the life and
+                                opinions of Tristram Shandy, gentleman, 
+                        
+
+
+                        
+
+                            Van Peer, W.
+                            Chatman, S. B.
+                            2001
+                            New perspectives on narrative perspective, 
+                        
+
+
+                        
+
+                            Vonnegut, K.
+                            1973
+                            Breakfast of champions, 
+                        
+
+
+
+                    
+
+                
+
+            
+        

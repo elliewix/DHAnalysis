@@ -1,0 +1,233 @@
+Paper: Charlotte’s Web: Encoding the Literary History of the Sentimental
+					Novel
+
+					Melson, John, 
+					Women Writers Project, Brown University, 
+					
+John_Melson@brown.edu
+
+				
+
+					Funchion, John, 
+					University of Miami, 
+					
+jfunchion@mail.as.miami.edu
+
+				
+Ever since the cultural turn in literary studies, literary scholarship has
+					focused on examining the cultural work performed by texts. Indeed, one of the
+					enduring theoretical innovations of the 1980s was the reconceptualization of
+					literary value according to the concept of cultural work—the idea that texts
+					should be evaluated not by the innate aesthetic or formal qualities they
+					manifested, but according to their “designs upon their audience” and their
+					ability “to make people think and act in a particular way” (Tompkins 1985). As a
+					result, previously overlooked or marginalized texts have often been deemed
+					suitable for study in the ensuing years based largely the on degree to which
+					they are said to perform particular kinds of cultural work. In one familiar
+					example from the arena of nineteenth-century American literature, scholars have
+					come to see a stereotypically sentimental novel like Uncle
+						Tom’s Cabin as a canonical work primarily because its complex
+					entanglements with the politics of the antebellum United States allow it to be
+					read— to cite Tompkins once more—as part of a “monumental effort to reorganize
+					culture.” But while this approach has become an important characteristic of much
+					literary scholarship, the question of how to measure a
+					given text’s capacity to perform cultural work remains vague and often
+					myopically focused on the synchronic significance of the work in question at a
+					specific point in time. 
+
+
+				
+In this paper we investigate the matter of cultural work from the vantage point
+					offered by current scholarship in the digital humanities. We do so with an eye
+					toward developing a model of literary history that draws on uniquely digital
+					methods for structuring and formalizing intertextual relationships, and that
+					make it possible to chart the cultural and formal significance of literary works
+					across space and time. Specifically, we use Susanna Rowson’s late
+					eighteenth-century sentimental novel Charlotte Temple as
+					a case study in how digital literary history can evaluate the meaning and formal
+					significance of a text diachronically. Often cited as one of the earliest
+					American bestsellers, Rowson’s work was reprinted hundreds of times during the
+					nineteenth century and was referenced repeatedly in an extensive body of
+					writing, ranging from reviews and advertisements to melodramatic stage
+					adaptations and ostensibly factual regional histories of the United States.
+					Tracking the novel’s extended nineteenth-century afterlife through this complex
+					network of external references, we demonstrate how the application of detailed
+					interpretive markup to the multiple documents that reference Charlotte Temple (instead of the novel that would, more
+					conventionally, be thought of as the “primary” text) enacts a theory of literary
+					history in which concepts of cultural work may best be observed as phenomena
+					that develop over time. 
+
+
+				
+While the idea of interpretive markup is not new, it is most often used either as
+					a means of recording a layer of scholarly annotation on some particular document
+					or classifying portions of a document according to some external taxonomy. Both
+					uses are supported, for instance, by the current version of the Text Encoding
+					Initiative (TEI) Guidelines, which provides examples of specific methods for
+					encoding “semantic or syntactic interpretation” using a set of standard TEI XML
+					elements and attributes. In practice, though, discussions of interpretive markup
+					in digital humanities projects often revolve around questions of readability and
+					the appropriateness of stand-off versus inline markup (e.g. does excessive
+					interpretive markup pose problems for human readability of encoded text?
+					[Campbell 2002]), or issues of preservation, curation, and reliability (e.g.
+					what challenges for encoding textual information accurately and reliably are
+					created by allowing extensive interpretive markup? [Berrie et al. 2006]).
+					Although such questions are important in certain contexts, our project treats
+					them as less important than the question of how interpretive markup may be
+					enlisted as a surface for scholarly analysis—that is, how interpretive
+					structures can themselves be classified and interpreted. 
+
+
+				
+Our project adapts several of the interpretive structures provided in TEI XML to
+					represent the connection between specific formal properties in Charlotte Temple and external evidence of the novel’s broader cultural
+					influence, as attested by external references to it. We record basic metadata
+					about each external reference (author, title, date and location of publication,
+					etc.) while also indicating which specific features of the novel the reference
+					comments on, as well as the nature of that commentary. The result is a set of
+					XML-encoded documents classified according to the interpretive work they do: a
+					record, as it were, of how nineteenth-century readers interpreted and responded
+					to the novel’s formal properties. At the same time, a secondary layer of
+					interpretive markup further formalizes the relationships we identify across this
+					primary layer of interpretation. Taken together, both layers provide substantial
+					material for further abstraction: for instance, the automated generation of
+					topic maps that represent a variety of cultural knowledge structures. The result
+					is a web of connections in the form of citations, references, allusions,
+					parodies, and comments spanning the nineteenth century, whose formalized
+					structures constitute the interpretive tissue of digital literary history. The
+					ability to map and visualize these structures, we argue, offers significantly
+					new possibilities for observing cultural work as a phenomenon that evolves over
+					time, and whose connection to particular texts is most productively understood
+					as operating at the nexus of close reading and “distant reading” strategies. 
+
+
+				
+Our work constitutes an initial small-scale experiment, but it has relevance for
+					larger questions of scale, purpose, and method in both the digital humanities
+					and conventional modes of literary scholarship. In particular, it suggests that
+					although digital scholarship offers a potential reconceptualization of literary
+					history, practices of literary history also pose interesting challenges for work
+					in the digital humanities. In recent years, projects in the digital humanities
+					have increasingly responded to the question of scale by refining methods for
+					aggregating, classifying, and analyzing enormous bodies of textual material—in
+					other words, by treating text as a mass of data that can yield meaningful
+					responses to statistical analysis of its language. Whether offering answers to
+					now-familiar questions about scale itself— “What do you do with a million
+					books?”—or taking up Franco Moretti’s challenge to peer into the “cellars of
+					culture” represented by the tens of thousands of unread and unknown novels
+					published in the nineteenth century, text mining and other forms of
+					“computational humanities” have been increasingly held up as a means of
+					“checking the generalizations of literary history”(Crane 2006; Parry 2010;
+					Pasanek and Sculley 2008). At the same time, long-running digital humanities
+					projects with deep investments in scholarly text encoding have tended to
+					approach literary history from the opposite direction, emphasizing how “craft
+					encoding,” for instance, employs editorial methodologies and modes of textual
+					scholarship that participate in “making literary history” in the digital medium
+					(Flanders 2009; Dimock 2007). While neither approach directly contradicts the
+					other—indeed, in practice they often coexist harmoniously—they inflect the
+					concept of literary history in crucially different ways. The former often treats
+					the machine-processable language of texts as a primary axis along which
+					historical change in writing manifests itself: intertextual relationships are
+					revealed in changing patterns of linguistic borrowing, with the emphasis on
+					facilitating the “comparability of texts” (Mueller 2008). The latter, while
+					still valuing intertextual comparison, tends to prioritize the documentary and
+					contextual over the linguistic—for instance recording textual variation across
+					editions of the same text, or formalizing through encoding “rich environmental
+					contextualizations” for the study of particular texts (Folsom 2007). Our project
+					borrows from both strategies, and in doing so seeks to demonstrate in practice a
+					method by which digital literary history negotiates this apparent bifurcation. 
+
+
+			
+		
+References:
+
+			
+				
+					
+Berrie, Phill et al. 2006  “Electronic Textual Editing: Authenticating Electronic
+							Editions, ” 
+						Electronic Textual Editing, Burnard,
+							O’Keefe, and UnsworthNew York:
+							MLA
+         (
+link
+)
+   . 
+
+
+					
+Crane, Gregory2006  “What Do You Do with a Million Books?, ” 
+						D­Lib Magazine, 12
+							(3)[
+         (
+link
+)
+   ] 
+
+
+					
+Dimock, Wai Chee2007  “Introduction: Genres as Fields of Knowledge, ” PMLA, 
+						122 (5)1377-88 
+
+
+					
+Flanders, Julia2009Seminars in
+						Scholarly Text Encoding with TEI. Paper presented at the 2009 TEI annual conference, , Ann Arbor, Michigan. 
+         (
+link
+)
+   
+
+
+					
+Folsom, Ed
+						2007  “Database as Genre: The Epic Transformation of Archives, ”  PMLA,  122 (5)
+							1571-9. 
+
+
+					
+Mueller, Martin2008  “TEI-Analytics and the MONK Project, ”  Paper presented at the
+							2008 TEI annual conference, , London, UK. 
+         (
+link
+)
+   
+
+
+					
+Parry, Marc28 May 2010  “The Humanities Go Google, ”  The Chronicle of
+							Higher Education, . [
+         (
+link
+)
+   ] 
+
+
+					
+Pasanek, B. and D. Sculley2008  “Mining Millions of Metaphors, ” Literary and Linguistic Computing, , 23 (3): 345-60. 
+
+
+					
+Text Encoding Initiative. P5: Guidelines for Electronic
+							Text Encoding and Interchange,  
+         (
+link
+)
+    
+
+
+					
+Tompkins, Jane1985 Sensational Designs: The Cultural Work of American Fiction,
+							1790-­1860, New York: Oxford
+							University Press
+
+
+					
+Wilkens, Matthew2009  “Corpus Analysis and Literary History, ” Paper presented at
+							Digital Humanities 2009, , College Park, MD.
+					
+
+				
+			
+		

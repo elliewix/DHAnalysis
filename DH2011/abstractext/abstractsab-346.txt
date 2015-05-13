@@ -1,0 +1,246 @@
+Paper: Probabilistic Analysis of Middle English Orthography: the Auchinleck
+                    Manuscript
+
+                    Thaisen, Jacob, 
+                    University of Stavanger, 
+                    
+jthaisen@gmail.com
+
+                
+The bulk of the literary materials that survive from the Middle English period
+                    are scribal copies, rather than authorial compositions. Such copies pose a
+                    challenge to the stylometrist, the reason being that copies written in a single
+                    scribal hand may have non-identical orthographic profiles. Their non-identity is
+                    a product of their transmission history, as the typical copy will contain both
+                    spelling forms originating in the exemplars and other such forms introduced by
+                    the scribe. Historical dialectologists have developed methods for separating the
+                    mix of scribal usage and exemplar usage typically recorded in a single scribal
+                    copy. Although powerful, these methods rely on questionnaire-based interrogation
+                    of text samples and subsequent visual analysis of spelling forms arranged in
+                    tables. The arrival of digital transcripts has sped up the data collection
+                    process and has led to compilation of fuller profiles, but the questionnaire
+                    itself has stayed. Thus, these methods fail to take full advantage of the
+                    digital medium. 
+
+
+                
+This presentation demonstrates that a purpose of identifying and isolating
+                    locations in which the makeup of the spelling system changes during the full
+                    text of a longer Middle English literary manuscript may be met by
+                    probability-based comparison of text samples. What spelling forms happen to be
+                    attested in a given text is a function of what words happen to make up that
+                    text. The direct comparison of texts is therefore not readily possible. It has
+                    typically been made possible by considering profiles recording only the spelling
+                    forms of those words which may reasonably be expected to occur in every text,
+                    such as function words like "such", "that", and "these". The alternative
+                    solution proposed in this paper is to base assessment of similarity on "models"
+                    of text samples' spelling–exhaustive profiles of which letters and letter
+                    sequences occur in them and with which frequency. I shall refer to single
+                    letters as unigrams, ordered sequences of two letters as bigrams, etc. Such
+                    models are easily compiled from electronic diplomatic transcripts. The
+                    dissolution into n-grams is equal to identification of the between texts because
+                    comparison of the building blocks is in itself relatively independent of the
+                    word level. 
+
+
+                
+Similarity is measured between a text sample (the test sample) and a model
+                    derived from another text sample (the training sample). It is expressed as the
+                    overall probability that the test sample is an instance of the same spelling
+                    system as the system modelled. Computing this probability proceeds, with a
+                    trigram model, from consideration of each unigram in the context of the bigram
+                    preceding it–the reader may correctly recognise the "Markov assumption" in this
+                    description. What is output, however, is the reciprocal of the average
+                    probability per gram. This entity, called "perplexity", will conveniently always
+                    be a positive number larger than 1 with the present type of data. Moreover,
+                    techniques exist for "smoothing" a model, that is for reducing its dependence on
+                    the words constituting the training sample. This reduction is achieved by
+                    statistically manipulating the probabilities computed for the training sample
+                    n-grams. Smoothing additionally leads to probability being assigned to spelling
+                    forms unattested in the training sample. 
+
+
+                
+It is these properties of these techniques that makes their application on n-gram
+                    models based on Middle English texts further increase the comparability of those
+                    texts. Probabilistic modeling techniques have, however, as far as I am aware,
+                    rarely been applied for the stylometric analysis of Middle English materials,
+                    and it has yet to be established which specific smoothing technique produces the
+                    most satisfactory models of those materials. 
+
+
+                
+A simple example may illustrate. The spelling forms <suich, suyche, such>
+                    for the word "such" are found in text A, while the same word is spelt
+                    <suche> in text B. Intuitively, the text B spelling form <suche>
+                    falls within the range of variation characteristic of the spelling system of
+                    text A but happens to be unattested in it, while other known Middle English
+                    forms such as as <swylke, suilk> do not. The present methodology involves
+                    dissolving <suche> into <su, suc, uch, che, he> and establishing
+                    the smoothed conditional probability for each of these trigram building blocks
+                    in text A (thus obtaining a intuition that the spelling form is possible in the
+                    spelling system of text A. In practice, however, the quantification is not
+                    effected for the individual form but for the whole of text B in relation to text
+                    A. 
+
+
+                
+To illustrate the adequacy of perplexity-based comparison in stylometry, I trace
+                    changes in spelling in a large manuscript collecting several Middle English
+                    literary works. The corpus is the Auchinleck manuscript, Edinburgh, National
+                    Library of Scotland, Advocates' MS 19.2.1, produced in the London-Westminster
+                    area in the first half of the fourteenth century. The potential influences on
+                    the scribes include the literary structure, as the codex's total of almost
+                    59,000 lines of text are divided between no less than forty-four literary works
+                    representing a range of genres. A map showing locations in which the spelling
+                    system changes during the full text of the Auchinleck manuscript may be expected
+                    to reflect the literary structure only if the exemplars did so and the
+                    Auchinleck scribes reproduced them slavishly. By contrast, it is the boundaries
+                    of the scribal contributions that will be visible in the map if each scribe
+                    thoroughly converted into his own spelling system when copying. Six scribal
+                    hands are present. Of these, Scribe 4's contribution is too short (551 words) to
+                    constitute a reliable sample, while the usages of the other five scribes should
+                    be visible. They are distinct in terms of their typological classification on
+                    the dialect continuum, although they fall into an eastern cluster and a western
+                    one. Dialect analysis has thus placed Scribe 1 in Middlesex, Scribe 2 on the
+                    Gloucestershire-Worcestershire border, Scribe 3 in London, Scribe 5 in Essex,
+                    and Scribe 6 in Worcestershire (McIntosh, Samuels, et al 1986, I: 88; LPs 6510,
+                    6940, 6500, 6350, and 7820). 
+
+
+                
+To be able to compute and compare probability for sections of the Auchinleck
+                    manuscript against one another, I obtained a digital transcript of its text from
+                    the Oxford Text Archive (Burnley and Wiggins 2003). The transcript is suitable,
+                    because rather than modernise the spelling forms found in its source, it
+                    reproduces the source in conformity with standard practice of diplomatic
+                    transcription. My tool for constructing models and computing perplexity is the
+                    SRI Language Modeling Toolkit (SRILM; Stolcke 2002); this toolkit is freely
+                    available for noncommercial purposes from the website of its SRILM constructed
+                    and smoothed an interpolated model for every 200-line section; the smoothing
+                    technique selected was that described by Witten and Bell (1991). This technique
+                    was developed for purposes of text compression at the level of the word but it
+                    is appropriate for application on Middle English spelling data too. The reason
+                    is that the technique effectively assigns probability to collocating letters as
+                    if they were a single letter, rather than a series of independent units. 
+
+
+                
+The toolkit took the same modified transcripts of all the sections as the input
+                    and computed their similarity with the models. The computation resulted in a
+                    separate model for each section, and for every such model, a separate perplexity
+                    for every section. I established the mean perplexity and standard deviation for
+                    the perplexities obtained for each model. The box and whisker graph below shows
+                    the results. In this graph the vertical axis gives perplexity and the horizontal
+                    axis position in the text of the Auchinleck manuscript. The diamond represents
+                    mean perplexity and the T-bar represents half a standard deviation, so that one
+                    upright T-bar and its reverse together indicate an interval of one standard
+                    deviation from the mean. A dashed vertical line appears for ease of reference at
+                    the boundary of a scribal stint as established by palaeographers (Bliss 1951),
+                    with the outlined numbers identifying the scribes. 
+
+
+                
+As is apparent, the figure distinguishes the scribes of the Auchinleck
+                    manuscript. The rises and falls in mean perplexity during the text strongly
+                    correlate with the boundaries of the scribal stints, while mean perplexity is
+                    relatively constant within every such stint. Repetion of the experiment with
+                    other divisions of the text produced results sufficiently similar to 
+Figure 1
+ to establish the pattern as being
+                    a property of the data rather than an artefact of the method. 
+
+
+                
+It would have been time-consuming indeed to conduct a questionnaire-based
+                    interrogation of the full text of the Auchinleck manuscript. Visual analysis of
+                    the resulting profile to identify and isolate locations in which the spelling
+                    system changes would, moreover, have been complex, because of the amount of data
+                    and difficulty of isolating the diagnostic features. Perplexity-based comparison
+                    as illustrated above, by contrast, requires little preprocessing of the
+                    transcript, is effected in an afternoon, and is based on all the available
+                    data.
+
+            
+            
+                
+
+                    
+Mean perplexity and standard deviation in the Auchinleck manuscript
+                        (trigram models, 200-line sections)
+
+                    
+Full Size Image 
+
+                
+            
+        
+References:
+
+            
+                
+
+                    
+
+                        Bliss, A. J.
+                        1951
+                         “Notes on the Auchinleck Manuscript, ” 
+                        Speculum, 
+                        26
+                        652–58
+                    
+
+
+                    
+
+                        Burnley, D.
+                        A. Wiggins2003
+                        The Auchinleck Manuscript
+                        
+         (
+link
+)
+   
+                    
+
+
+                    
+
+                        McIntosh, A.
+                        M. L. Samuels
+                        M. Benskin
+                        1986
+                        A Linguistic Atlas of Late Mediaeval English,  
+                        4 vols
+                        Aberdeen
+                        Aberdeen University Press
+                    
+
+
+                    
+
+                        Stolcke, A.
+                        2002
+                        SRILM: An extensible language modeling toolkit
+                        Hansen, P. Pellom, B.
+                        Proceedings of the 7th International Conference on Spoken Language Processing
+                        Denver
+                        Casual Productions
+                        901–04
+                    
+
+
+                    
+
+                        Witten, I. H.
+                        T. C. Bell
+                        1991
+                        The Zero-Frequency Problem: Estimating the Probabilities of Novel Events in Adaptive Text Compression, 
+                        IEEE Transactions on Information Theory, 
+                        37
+                        1085–94
+                    
+
+                
+            
+        

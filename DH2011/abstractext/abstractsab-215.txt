@@ -1,0 +1,446 @@
+Poster: The Tesserae Project: Intertextual Analysis of Latin Poetry
+
+					Coffee, Neil, 
+					University at Buffalo, SUNY, 
+					
+ncoffee@buffalo.edu
+
+				
+
+					Koenig, J.-P., 
+					University at Buffalo, SUNY, 
+					
+jpkoenig@buffalo.edu
+
+				
+
+					Poornim, Shakthi, 
+					University at Buffalo, SUNY, 
+					
+poornima@buffalo.edu
+
+				
+
+					Forstall, Christopher, 
+					University at Buffalo, SUNY, 
+					
+forstall@buffalo.edu
+
+				
+
+					Ossewaarde, Roelant, 
+					University at Buffalo, SUNY, 
+					
+rao3@buffalo.edu
+
+				
+
+					Jacobson, Sarah, 
+					University at Buffalo, SUNY, 
+					
+
+				
+The Tesserae Project has created a freely available web tool for analyzing text
+					reuse (intertextuality) that automatically identifies matching two-word phrases
+					(bigrams) in Latin poets using one of two search algorithms. Comparison with the
+					results of traditional scholarship demonstrates the efficacy, current
+					limitations, and potential of this approach. Automatic bigram matching by
+					morphological form and dictionary headword detects a significant number of
+					parallels identified by traditional methods. Results so far do not fully
+					replicate traditional scholarship, but the incorporation of further feature sets
+					holds the potential of approaching this standard. Bigram detection produces more
+					systematic results, permits large-scale intertextual study, and identifies less
+					conspicuous parallels.
+
+			
+
+			
+				
+Computational Approaches to Intertextuality
+
+				
+The reuse of elements from other texts has been understood as a fundamental part
+					of textual signification from ancient Alexandria to modern times. Traditional
+					methods of identifying specific parallels have relied upon the scrutiny and
+					memory of scholars (Hinds 1998, Edmunds 2001). Researchers have recently begun
+					to employ computational means to facilitate and standardize intertextual study,
+					as well as to open new perspectives. Two major lines of approach are phrase
+					(n-gram) matching (e.g. Cummings 2009) and comparison of element length (Holmes
+					2010). In the field of classical Greek and Latin literature, the Perseus Project
+					has identified five computationally tractable features, including bigram
+					matches, for assessing the similarity of phrases in different texts and has
+					offered a method for cross-linguistic phrase matching (Bamman and Crane 2008,
+					Bamman and Crane forthcoming). A program developed by the eAQUA project locates
+					explicit quotations in the Thesaurus Linguae Graecae corpus of Greek texts
+					(Büchler, Geßner et al. 2010).
+
+			
+			
+				
+Tesserae Search
+
+				
+The goals of the Tesserae Project are to create a website that facilitates
+					intertextual search of classical Latin texts (
+http://tesserae.caset.buffalo.edu
+) and to make computational methods
+					and results accessible to traditional scholars. The Tesserae group chose bigram
+					matching as the method most similar to the standard philological search for
+					parallel phrases.
+
+
+				
+The tool finds similar phrases by matching two words in one text with two words
+					in another. Users can choose two of 26 prepared texts for comparison using one
+					of two search methods. Version 1 matches two identical words from each text, in
+					any order, with no more than four words between them. Version 2 matches words
+					anywhere in an individual sentence by dictionary headword using the Archimedes
+					Project Morphology Service
+					(http://archimedes.mpiwg-berlin.mpg.de/arch/archimedes.new.html), and employs an
+					experimental ranking system to help the assessment of their potential
+					significance. In both versions, the most common words are by default excluded to
+					eliminate potentially insignificant matches. Users can modify search settings
+					with an advanced tab.
+
+			
+
+			
+				
+Version 1 Test
+
+				
+A Version 1 test compared book 1 of Lucan’s 1st century CE epic Civil War with the whole of the 1st century BCE epic Aeneid by Vergil. The resulting 160 parallels were ranked for
+					significance by traditional philological analysis on a 5 (most significant) to 1
+					(error) scale. The ranked parallels were compared to those collated from a
+					standard commentary on Lucan’s Civil War (Viansino 1995).
+					Tesserae discovered 87 results judged significant (types 5-3) as compared with
+					81 of Viansino. Tesserae and Viansino shared only 14 results in common. Tesserae
+					returned results distributed more evenly through Civil
+						War book 1 than Viansino, whose parallels clustered at the beginning
+					and end of the book.
+
+			
+
+			
+				
+Version 2 Test
+
+				
+Version 2 eliminates errors from Version 1, matches by dictionary headword rather
+					than exact form to account for inflection, and takes whole sentences rather than
+					word windows as the unit of comparison. A Version 2 test again compared Civil War book 1 to the whole Aeneid, and the results were measured against the parallels given by
+					all major Lucan commentators (Heitland and Haskins 1887, Thompson and Bruère
+					1968, Viansino 1995, Roche 2009). The expanded search parameters of Version 2
+					returned significantly more results than did Version 1: 2,994 vs. 160. Version 2
+					produced numbers of types 5 and 4 comparable to Version 1, but considerably more
+					type 3s, as in the following table, where the results of commentators have been
+					collated and graded on the same scale for comparison.
+
+
+			
+			
+				
+Conclusions
+
+				
+Tesserae fulfills part of its purpose by quickly generating a convenient list of
+					possible intertextual parallels for inspection. The combined tests further
+					demonstrate that Version 1 and Version 2 deliver comparable numbers of the types
+					of parallels scholars have traditionally valued, close morphological
+					similarities of non-frequent words. These results are illustrated in the
+					following chart.
+
+
+
+				
+
+						
+Type 5 
+
+						
+Type 4 
+
+						
+Type 3 
+
+						
+Total Significant 
+
+					 
+Version 1 
+
+						
+19 
+
+						
+27 
+
+						
+41 
+
+						
+87 
+
+					 
+Version 2 
+
+						
+26 
+
+						
+43 
+
+						
+262 
+
+						
+331 
+
+					 
+Viansino 1995 
+
+						
+30 
+
+						
+17 
+
+						
+34 
+
+						
+81 
+
+					 
+Roche 2009 
+
+						
+85 
+
+						
+67 
+
+						
+170 
+
+						
+322 
+
+					 
+All commentators* 
+
+						
+96 
+
+						
+81 
+
+						
+195 
+
+						
+372 
+
+					 
+Parallels between Civil War 1 and Aeneid Found by Tesserae. Versions 1 and 2 Compared with
+						Commentators
+
+					
+type 5: strong verbal similarity with
+								meaningfully analogous context 
+
+					 
+type 4: moderate verbal similarity with
+								meaningfully analogous context 
+
+					 
+type 3: verbal similarity without
+								substantially analogous context 
+
+					 
+*All commentators: Heitland and Haskins 1887, Thompson and
+							Bruère 1968, and Viansino 1995, Roche 2009. This counts the total number
+							of unique parallels found, so the same parallel found by different
+							commentators is counted only once. 
+
+					 
+Although Tesserae found meaningful parallels, it did not discover the majority of
+					those found by the commentators. Most undetected matches had features that
+					Tesserae does not currently recognize, including similarity of location,
+					meaning, meter, and sound. The results that Tesserae did find, however, appeared
+					in patterns resembling those found by commentators. For example, the
+					commentators found fewer highly significant reference types in the second half
+					of Civil War 1 (type 5, 63 vs. 33 in the second half;
+					type 4, 41 vs. 40), and the combined Tesserae results show a similar, though
+					steeper, decline (type 5, 29 vs. 8; type 4, 30 vs. 27). Tesserae thus supports
+					the cumulative suggestion of the commentators that Lucan establishes
+					substantially more highly significant parallels to the Aeneid in the first half of Civil War book 1
+					than in the second.
+
+
+				
+Conversely, Tesserae detects more type 3 references in the first half of the poem
+					than the second, whereas the commentators find the opposite (Tesserae: 158 vs.
+					122; Commentators: 89 vs. 106). One possible explanation for this difference is
+					that commentators overlook less significant parallels when there are more
+					significant parallels in the same vicinity. On this interpretation, the larger
+					number of significant parallels in the first half of the Civil
+						War led to a correspondingly reduced detection of less significant
+					parallels by commentators, whereas Tesserae detected all types more
+					consistently. Tesserae search thus serves as a complement to and check on
+					traditional analysis in this and other respects, as when in several instances
+					Tesserae returned more links to a given phrase than were noted by
+					commentators.
+
+
+				
+For longer texts, the proportion of insignificant to significant parallels
+					presented is currently too high for Version 2 to be fully useful, as substantial
+					time is required to sort and analyze the results. Future work will involve
+					developing a system that replicates the manual scoring used for testing to more
+					easily identify different types of parallels. Other planned improvements include
+					the addition of new search parameters and texts, the addition of Greek and other
+					languages, user uploaded texts, and the ability to perform a secondary search
+					for found phrases across a corpus.
+
+			
+		
+References:
+
+			
+				
+					
+
+						Bamman, D. and G. Crane
+						2008
+						 “The Logic and Discovery of Textual Allusion., ” 
+						Proceedings of the Second Workshop on
+							Language Technology for Cultural Heritage Data (LaTeCH 2008), 
+						Marrakesh, 
+					
+
+
+					
+
+						Bamman, D. and G. Crane
+						Discovering Multilingual Text Reuse in Literary Texts
+							[forthcoming], 
+					
+
+
+					
+
+						Büchler, M., A. Geßner, et al.
+						2010
+						 “Unsupervised Detection and Visualization of Textual Reuse
+							on Ancient Greek Texts, ” 
+						Proceedings of the Chicago Colloquium on
+							Digital Humanities and Computer Science 1, 
+					
+
+
+					
+
+						Cummings, James
+						4 September 2009
+						 “TEI-Comparator, ” 
+						In my <element/>., 
+						
+         (
+link
+)
+   
+					
+
+
+					
+
+						Edmunds, L.
+						2001
+						Intertextuality and the Reading of Roman Poetry, 
+						Baltimore
+						Johns Hopkins University Press
+					
+
+
+					
+
+						Heitland, W. E. and C. E. Haskins
+						1887
+						M. Annaei Lucani Pharsalia, 
+						London
+						G. Bell
+					
+
+
+					
+
+						Hinds, S.
+						1998
+						Allusion and Intertext: Dynamics of Appropriation in Roman
+							Poetry., 
+						Cambridge
+						Cambridge University Press
+					
+
+
+					
+
+						Holmes, M.
+						2010
+						 “Using the Universal Similarity Metric to Map
+							Correspondences between Witnesses., ” 
+						Digital Humanities 2010 Abstracts, 
+						
+         (
+link
+)
+   
+					
+
+
+					
+
+						Roche, P., Ed.
+						2009
+						Lucan: De bello civili. Book 1, 
+						Oxford
+						Oxford University Press
+					
+
+					
+
+						Thompson, L. and R. T. Bruère
+						1968
+						 “Lucan’s Use of Vergilian Reminiscence, ” 
+						Classical Philology, 
+						63
+						1-21
+					
+
+					
+
+						Trillini, R. H. and S. Quassdorf
+						2010
+						 “A ‘Key to All Quotations’?: A Corpus-based Parameter Model
+							of Intertextuality., ” 
+						Literary and Linguistic Computing, 
+						25
+						269-86
+					
+
+					
+
+						Viansino, G.
+						1995
+						Marco Annaeo Lucano: La Guerra Civile (Farsaglia) libri
+							I-V., 
+						Milan
+						Arnoldo Mondadori
+					
+
+
+
+				
+			
+		

@@ -1,0 +1,333 @@
+Paper: An Ontological View of Canonical Citations
+
+                    Romanello, Matteo, 
+                    Kings College London, 
+                    
+matteo.romanello@kcl.ac.uk
+
+                
+
+                    Pasin, Michele, 
+                    Kings College London, 
+                    
+michele.pasin@kcl.ac.uk
+
+                
+Canonical citations are references to Classical (i.e. Greek and Latin) texts that are expressed by
+                    scholars by means of an abridged canonical format (Romanello 2008; Romanello 2007). They fulfil the
+                    function of providing an abstract reference scheme for texts (somehow similar to the function of
+                    geographical coordinates to express references to places) since they allow us to express references to
+                    them no matter what particular text edition we are actually looking at. For example, the reference to
+                    the twelfth book of Homer's Iliad expressed as “Hom. Il. XII 1” can be resolved to the text of the same
+                    passage as established in various critical editions of that work, where “XII” and “1” are the
+                    “coordinates” that allow us to locate that precise text passage within all critical editions of Homer's
+                    Iliad.
+
+                
+Historically, canonical references are the result of an effort – whose origins can be traced back to the
+                    Renaissance (Martin 2003; Berra 2011) – made by the scholarly community as a whole to provide a
+                    precise, stable and shared way to refer to Classical texts. Since the early stages of Humanities
+                    Computing and Digital Humanities (Bolter 1993; Crane 1987; McCarty 2005), canonical references
+                    were regarded as the ideal candidate on which to experiment the potentialities of hypertext: indeed
+                    they can be seen as hyperlinks in potentia pointing a text from within another. More recently (Crane et
+                    al. 2009) they were considered as a discipline-specific kind of named entities that Classics scholars
+                    should be provided with tools to search for within their texts.
+
+                
+J.D. Bolter describes classical philology as “the art of explicating an ancient text by exploring its
+                    relationships to other specific texts and to the corpus of ancient literature as a whole”. In such a
+                    discipline the act of referring to texts – that J. Unsworth has listed among the “scholarly primitives”
+                    (Unsworth 2000) – becomes even more crucial than in other disciplines since texts are the very
+                    research objects of classical philology and references to them play a key role in constructing
+                    argumentations.As N. Smith (2009) has already pointed out, canonical citations reflect an ontological
+                    view of texts in this specific domain and specifically how classicists perceive ancient texts as objects.
+                    In this paper we present the Humanities Citation Ontology (HuCit)
+         (
+link
+)
+   , an ontology that aims at
+                    characterising the semantics of citations as they are normally conceived and used in humanistic
+                    disciplines. We claim that the specification of such an ontology is worthwhile for at least the following
+                    reasons:
+
+                
+      
+                    
+it allows us to disentangle from an ontological point of view the complex relationships
+                        between, for instance, a canonical reference found in a journal paper and the manuscripts and
+                        editions of the text that we can access via that reference;
+
+                    
+it allows us to define types of references and alternative representations of the same reference:
+                        this is an important step towards tools that allow automatic formatting of such references
+                        according to various styles (as it happens already for modern bibliographic references with
+                        Zotero);
+
+                    
+it provides us with a way to access the meaning of canonical references beyond their surface
+                        appearance, which might vary substantially as in the case of “Hom. Od. I 1” and “α 1”, two
+                        canonical references to the same passage but conforming to different citation styles.From an
+                        initial analysis of the relevant literature we concluded that none of the existing ontologies
+                        actually model the deep meaning of canonical references. An interesting attempt to formalise
+                        citations by means of an ontology is CITO (Shotton 2010) which however looks exclusively at
+                        modern bibliographic references and focuses in particular on citation types. As it was observed
+                        already (Smith 2009; Mimno et al. 2005), the distinction made by FRBR (Functional
+                        Requirements for Bibliographic Records) between a work, its expressions and its
+                        manifestations can be adapted to represent texts in the Classics domain as well. In this paper
+                        we propose an initial implementation of a canonical reference ontology based on FRBRoo
+                        which is the result of a process aimed at harmonising FRBR with the CIDOC Conceptual
+                        Reference Model (CIDOC-CRM) (Doerr & LeBoeuf 2007).
+                    
+                
+                
+A key aspect we have to face is to determine at which ontological level of the cited object a canonical
+                    reference is pointing to. A citation such as “Hom. Od. I 1” is it referring to the abstract notion of
+                    Odyssey (i.e. a work in the FRBR model) or to a particular version (e.g. edition, translation, etc.) of
+                    that work (i.e. a FRBR expression)? It might help to observe that this reference can be solved by a
+                    human reader for example into the text of that passage in French translation: therefore it is not being
+                    specified at the expression level. The textual coordinates of the citation, namely “first line of the first
+                    book”, expressed by the string “I 1” clearly refer to a logical citation scheme that applies already to the
+                    abstract notion of Odyssey (i.e. a FRBR work). Thus we can say that a canonical citation follows a
+                    given citation scheme that characterises a particular literary text and might differ from one to another.
+                    That citation scheme is a conceptual object and is the result of the work of scholars to guarantee the
+                    ability of citing literary texts.
+
+                
+To illustrate the notion of logical citation scheme as opposed to a physical one let us examine a single
+                    case, that is the Athenaeus' Deipnosophistae. Scholars cite this work by means of canonical references
+                    that follow a logical citation scheme derived from a physical one (e.g. “Ath. Deipn. XV 694 e-f”). The
+                    textual coordinates “694 e-f” refer to the pagination of the edition of the text by Isaac Casaubon dated
+                    1598, and specifically to sections “e” to “f” of page 694 of that edition. At first it seems a physical
+                    citation scheme. But since all editions after Casaubon's provide the readers with marginal numbers
+                    referring to that pagination it became a logical citation scheme: indeed 694 does not refer anymore to a
+                    physical page within more recent editions such as Olson's.
+
+                
+Canonical citations have both form and content. Different citations might differ by form but they can
+                    still have the same content. The content of a citation is the abstract reference of which that citation is
+                    an expression. For example, a citation to the first line of Homer's Iliad can be written in several ways
+                    according to different citation styles. Nevertheless “Hom. Il. I 1”, “Α 1” and “Homer, Iliad 1.1” are
+                    different expressions of the same canonical reference to Homer's Iliad (cited by book and then by line).
+                    Given all these reasons, we propose to introduce - among the others - the classes Citation, Reference
+                    and Citation_Style to the "E28 Conceptual Object" branch of CIDOC-CRM (we will discuss the
+                    details of this approach at the conference, also in the light of most recent activities to harmonise
+                    CIDOC and FRBR). Further work is then required in order to extend this conceptual model so that it
+                    can support more complex reasoning tasks, such as translation mechanisms among different citation
+                    schemes, or the automated extraction of citations from non structured materials.
+
+                
+To sum up, in this paper we describe the implementation of an ontology to model canonical references
+                    that builds upon the solid conceptual models already defined by CIDOC-CRM and FRBRoo. In the
+                    framework of a Classics cyberinfrastructure (Crane et al. 2009), such an ontology is meant to support
+                    the interoperability of tools that are being currently developed to extract (Romanello et al. 2009),
+                    retrieve (Smith 2009) and solve (Ruddy & Rebillard 2009) canonical references.
+
+            
+            
+        
+References:
+
+            
+                
+                    
+Berra, A.
+                        2011
+                         “Manier le thésaurus grec., ” 
+                        Les main de l'intellect. Lieux de savoir., 
+                        C. Jacob
+                        Albin Michel
+                    Paris
+
+                    
+Bolter, J.D.
+                        1993
+                         “Hypertext and the Classical Commentary., ”  
+                        Accessing antiquity : the
+                        computerization of classical studies, 
+                        University of Arizona Press
+                        Tucson
+                        157-171
+
+                    
+Crane, G.
+                        1987
+                         “From the old to the new: intergrating hypertext into traditional scholarship., ”  
+                        Proceedings of the ACM conference on Hypertext, 
+                        Chapel Hill, North Carolina, United States, 
+                    51-55
+                        February
+                        2, 2009
+                        
+         (
+link
+)
+    
+
+                    
+Crane, G., Seales, B. & Terras, M.
+                        2009
+                         “Cyberinfrastructure for Classical Philology., ”  
+                        Digital
+                        Humanities Quarterly, 
+                        3(1)
+                        July 19, 2010
+                        
+         (
+link
+)
+   
+
+                    
+Doerr, M. & LeBoeuf, P.
+                        2007
+                         “Modelling Intellectual Processes: The FRBR - CRM Harmonization., ” 
+                        Digital Libraries: Research and Development. Lecture Notes in Computer Science, 
+                    C. Thanos, F. Borri, & L. Candela, eds. 
+                        D. Springer 
+                        Berlin / Heidelberg
+                        114-123
+                        
+         (
+link
+)
+   
+
+                    
+Martin, H.
+                        2003
+                         “Du livre a la lecture., ”  
+                        Des Alexandries II. Les métamorphoses du lecteur, 
+                        C. Jacob
+                        Bibliothèque nationale de France
+                        35-45
+                        October 26, 2010
+                        
+         (
+link
+)
+   
+
+                    
+McCarty, W.
+                        2005
+                        Humanities Computing, 
+                        Palgrave Macmillan
+
+                    
+Mimno, D., Crane, G. & Jones, A.
+                        2005
+                         “Hierarchical Catalog Records, ” 
+                        D-Lib Magazine, 
+                        11(10)
+                        July 22, 2010
+                    
+         (
+link
+)
+   
+
+                    
+Romanello, M.
+                        2008
+                         “A semantic linking framework to provide critical value-added services for Ejournals
+                        on classics., ”  
+                        ELPUB2008. Open Scholarship: Authority,
+                        Community, and Sustainability in the Age of Web 2.0 - Proceedings of the 12th International
+                        Conference on Electronic Publishing, 
+                        S. Mornati & L. Chan, eds.  
+                        Toronto, Canada,  
+                        25-27 June 2008
+                        401-414
+                        August 11, 2008
+                        
+         (
+link
+)
+   
+
+                    
+Romanello, M.
+                        2007
+                         “A Semantic Linking System for Canonical References to Electronic Corpora., ” 
+                        International Conference on Electronic Corpora of Ancient Languages :
+                        proceedings of the international conference, 
+                        P. Zemanek
+                        Prague, 
+                        November 16-17, 2007
+                        107–120
+                        
+         (
+link
+)
+   
+
+                    
+Romanello, M., Boschetti, F. & Crane, G.
+                        2009
+                         “Citations in the Digital Library of Classics:
+                        Extracting Canonical References by Using Conditional Random Fields., ”  
+                        Proceedings of the
+                        2009 Workshop on Text and Citation Analysis for Scholarly Digital Libraries, 
+                        Association for Computational Linguistics
+                        Suntec City, Singapore
+                        80–87
+                        
+         (
+link
+)
+   
+
+                    
+Ruddy, D. & Rebillard, E.
+                        2009
+                         “Text Linking in the Humanities:
+                        Citing Canonical Works Using OpenURL., ”  
+                        September 11, 2009
+                        
+         (
+link
+)
+    
+
+                    
+Shotton, D.
+                        2010
+                         “CiTO, the Citation Typing Ontology., ”  
+                        Journal of Biomedical Semantics, 
+                        1(Suppl 1)
+                    S6
+                        October 25, 2010
+                        
+         (
+link
+)
+   
+
+                    
+Smith, N.
+                        2009
+                         “Citation in Classical Studies., ”  
+                        Digital Humanities Quarterly, 
+                        3(1)
+                        March 15, 2009
+                        
+         (
+link
+)
+   
+
+                    
+Unsworth, J.
+                        2000
+                         “Scholarly Primitives: what methods do humanities researchers have in common,
+                        and how might our tools reflect this?, ”  
+                        
+         (
+link
+)
+   
+
+                    
+                
+            
+        

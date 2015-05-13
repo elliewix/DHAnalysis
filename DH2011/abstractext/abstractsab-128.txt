@@ -1,0 +1,241 @@
+Paper: Image Markup Tool 2.0
+
+                    Holmes, Martin, 
+                    Humanities Computing Media Centre, University of
+                        Victoria, 
+                    
+mholmes@uvic.ca
+
+                
+
+                    Timney, Meagan, 
+                    Electronic Textual Cultures Laboratory, University of
+                        Victoria, 
+                    
+mbtimney@uvic.ca
+
+                
+This paper discusses the re-development of The Image Markup Tool in two parts:
+                    (1) as a crossplatform desktop application and (2) as a web-based, html5
+                    standard, client-side browser application. Currently, a few text-based tools allow for markup of documents (most often) in
+                    XML/TEI. They range from legacy software such as the Analytical System Tools and
+                    SGML/XML Integration Applications (Anastasia)(ITSEE, University of
+                        Birmingham; http://www.sd-editions.com/anastasia/index.html) and
+                    Editing Digital Interactive Texts in an Online Network
+                        (EDITION),http://www.sd-editions.com/EDITION/ to more recent
+                    projects such as eLaborate,Huygens Instituut KNAW (a research institute
+                        for text edition and textual scholarship of the Royal Netherlands Academy of
+                        Arts and Sciences); http://www.e-laborate.nl/en/
+                        TextGrid,http://www.textgrid.de/ and
+                        TEXTvre.http://textvre.cerch.kcl.ac.uk/ TextGrid uses a
+                    collaborative document markup interface, as well as a project and user
+                    management system to facilitate the markup of texts. TEXTvre, which will be
+                    modeled on TextGrid, has been described as a “a working exemplar VRE for textual
+                    scholarship.” While each of these tools offers specific methods of text-based
+                    editing, The Image Markup Tool is image-based, allowing
+                    for the markup of encoded digital images of remediated textual objects.
+
+                
+We are building on the current iteration of The Image Markup Tool (v1), developed
+                    by Martin Holmes at the University of Victoria. Version 1 of the Image Markup
+                    Tool was first written in 2006, and has gone through several versions. It was
+                    originally conceived as part of the project Le mariage sous
+                        L'Ancien Régime,http://mariage.uvic.ca/ where it was used
+                    to mark up engravings (Carlin, Haswell and Holmes 2006; Carlin and Holmes 2008).
+                    Early versions of the tool used SVG code embedded into a TEI file to delineate
+                    areas of interest on an image, but the current version makes use of the
+                    Facsimile module recently added to the TEI schema, which enables the use of
+                    native TEI elements to define rectangular “zones” on “surfaces” (often pages)
+                    which are part of a facsimile.
+
+                
+However, version 1 of the Image Markup Tool suffers from a number of serious
+                    limitations, most of which were apparent from its inception. Firstly, it allows
+                    only rectangular areas (hereafter “zones”) to be specified on images. This was
+                    in line with the original specification of the Facsimile module in TEI, in which
+                    <zone> elements were similarly constrained, but users have been demanding
+                    the ability to specify polygonal shapes ever since the first release, and recent
+                    modifications to the TEI schema now allow the use of polygonal <zone>
+                    elements. Secondly, IMT version 1 can handle only one image per file. This was
+                    sufficient for its original projected use as part of the Mariage project, which focused on individual engravings, but makes the
+                    tool inadequate for serious facsimile work; most documents have multiple
+                    surfaces or pages. Thirdly, the program can handle only a one-to-one
+                    relationship between a single <zone> on a <surface>, and a single
+                    <div> in the <body> of the document. This is inadequate. It is a
+                    common requirement to link, for instance, a single block of text on an image to
+                    an original transcription, a modernized version of the transcription, and an
+                    editorial note or interpretation. Similarly, a single <div> (or in fact
+                    any other element) in the body of a text might conceivably be linked to more
+                    than one <zone>; multiple views of a particular surface or page might be
+                    provided in the facsimile, each with an equivalent <zone>. Finally, IMT
+                    version 1 was written as a Windows application using Borland Delphi. It will run
+                    on Linux using Wine, but there is no simple way to run it on a Macintosh
+                    computer.
+
+                
+Nevertheless, IMT version 1 has a number of strengths. As a compiled desktop
+                    application, using a very sophisticated open-source graphics library
+                    (Graphics32), it can to do high-quality resampling of images on-the-fly,
+                    enabling effective and rapid zooming of high-resolution images. Most file
+                    operations are very fast, and the interface itself is simple and relatively easy
+                    to use. For Windows and Linux users, it is easy to download and install.
+
+                
+The desktop version of IMT 2 is being written using Nokia's QT Creator tools.
+                    This will enable us to compile the application for Windows, Mac and Linux. Our
+                    intention is to build on the strengths of version 1 -- in particular, the speed
+                    and efficiency of graphics handling and file i/o, and the user-friendliness and
+                    simplicity of the interface -- while adding three important improvements:
+
+                
+
+                    
+                        
+Handling of an unlimited number of images.
+
+                        
+Many-to-many linking between <zone>s and any elements with
+                            @xml:id attributes in the <text> section of the file.
+
+                        
+Support for polygonal zones.
+
+                    
+                
+                
+These screenshots of early development pilots show how we envisage the user
+                    interface.
+
+                
+
+                    
+
+                        
+Full Size Image 
+
+                    
+                
+                
+The first shows the main window, with multiple folios (pages) listed down the
+                    left side. Clicking on a folio shows the corresponding image, and the polygonal
+                    zones defined on that image (in red). The selected zone has draggable circular
+                    nodes at all of its corners. The context menu for the selected zone is
+                    displayed, showing that the zone is linked to three different elements in the
+                    <text>.
+
+                
+
+                    
+
+                        
+Full Size Image 
+
+                    
+                
+                
+The second screenshot shows the corresponding dialog box, where the user can
+                    select an element in the <text> of the TEI file for linking to a zone.
+                    Three views of the file are available: the first is a read-only
+                    syntax-highlighted text view, the second consists of a list of all the @xml:id
+                    attributes in the file, along with a text box which can be used to filter them,
+                    and the third is an “outline” or tree view of the file. The user could use any
+                    of these to find and select an element to be linked to a zone. In addition, the
+                    user will be able to edit any element in the <text> of the TEI file
+                    directly, to add transcription, markup, @xml:id attributes, etc. We do not
+                    envisage that the majority of XML editing will be done in the Image Markup Tool
+                    itself; rather, the base transcription would be done using an XML editor such as
+                    oXygen, and the file brought into the IMT for the definition and linking of
+                    images and zones. However, it will be important to allow direct editing of the
+                    XML code so that corrections and changes can be made without moving the file
+                    back into an XML editor.
+
+                
+The web platform of the Image Markup Tool fills a gap in current collaborative
+                    editing models, and will provide a lightweight “edit-anywhere” version of the
+                    desktop application. The web-platform will be built for a large population of
+                    needs, but our first user-case study will be the Editing Modernism in Canada
+                    Project (EMiC).http://editingmodernism.ca Rather than following
+                    past practices of transcribing texts and marking up transcriptions in the
+                    creation of electronic texts, EMiC and its partners will pioneer image-based
+                    editing, semantic markup, analysis, and visualization of texts in a field of
+                    emergent practices in digital-humanities scholarship. Instead of producing
+                    reading environments based on linear-discursive transcriptions of texts, EMiC
+                    will produce in collaboration with its partners techniques and technologies for
+                    encoding and interpreting the complex relations among large collections of
+                    visual and audial objects in non-linear reading environments.
+
+                
+Our rationale for a web-based browser application includes facilitating RESTful
+                    architecture and interoperability with other systems via API (including, for
+                    example, Scripto,http://www.scripto.org developed at the Centre for
+                    History for New Media at George Mason University). The IMT web-platform will
+                    allow a user to load images and XML documents into a browser window (either
+                    locally or via URL). The drawing and linking of the polygonal <zone>s now
+                    supported in the TEI schema are made possible with the HTML5 <canvas>
+                    element. As in the desktop application, it is assumed that the user will perform
+                    most TEI markup with an XML editor (such as oXygen), but the application will
+                    also support lightweight XML editing. The most powerful feature of the web-based
+                    application will be the potential to feed linked XML documents and images
+                    directly into a collection-builder such as
+                        Omekahttp://www.omeka.org to facilitate scholarly edition
+                    building and electronic publishing via a suite of tools.
+
+            
+
+        
+References:
+
+            
+                
+                    
+
+                        Carlin, Claire, Eric Haswell and Martin Holmes
+                        2006
+                         “Problems with Marriage: Annotating Seventeenth-century
+                            French Engravings with TEI and SVG, ” 
+                        Digital Humanities 2006
+                            Conference, 
+                        July 2006
+                        
+         (
+link
+)
+   
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Carlin, Claire and Martin Holmes
+                        2008
+                         “Domestic strife in early modern Europe: images and texts in
+                            a virtual anthology, ” 
+                        Digital Humanities 2008, 
+                        26 June 2008
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Timney, Meagan and Dean Irvine
+                        Forthcoming: 2011
+                         “A New Build: Digital Tools for Archives, Commons, and
+                            Collaboration., ” 
+                        Archival Narratives for Canada: [Re] Telling Stories in a
+                            Changing Landscape, 
+                        Kathleen Garay and Christl Verduyn
+                        Fernwood Publishing
+                    
+
+
+                
+            
+        

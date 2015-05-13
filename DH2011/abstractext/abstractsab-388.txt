@@ -1,0 +1,480 @@
+Paper: Towards a Narrative GIS
+
+                    McIntosh, John, 
+                    
+jmcintosh@ou.edu
+
+                    University of Oklahoma, 
+                
+
+                    De Lozier, Grant, 
+                    
+ghaxed@gmail.com
+
+                    University of Oklahoma, 
+                
+
+                    Cantrell, Jacob , 
+                    
+jcantrell@ou.edu
+
+                    University of Oklahoma, 
+                
+
+                    Yuan, May, 
+                    
+myuan@ou.edu
+
+                    University of Oklahoma, 
+                
+Introduction
+
+                
+Research in narrative intelligence applies artificial intelligence approaches to
+                    study human ability to organize experience into narrative form (Mateas and
+                    Sengers 2003). Narratives are traditionally defined as “a series of temporally
+                    ordered clauses” (Labov 1972, p360-361). The time-centric approach leads to a
+                    lesser consideration of space in narrative construction and analysis. In
+                    contrast, we advocate a geospatial narrative in order to stress the importance
+                    of space and time in understanding the ordering and spatial interaction of
+                    events.
+
+                
+We define a geospatial narrative as a sequence of events in which space and time
+                    are equally important. Narratives are stories that constitutes sequential
+                    organizations of events (Franzosi 2010). Each event in a narrative relates
+                    sequential or consequential occurrence in space and time. The conventional
+                    Geographic Information Systems (GIS) center on information about spatial states
+                    of reality, and temporal information is handled as add-ons to spatial objects.
+                    Alternatively, we conceptualize a narrative GIS that emphasizes representing and
+                    ordering events in space and time as well as functional abilities to construct
+                    meaningful geospatial narratives. While an event is a complex, fuzzy term, we
+                    start with one basic linguistic element of narratives: action, as the primitive
+                    data construct to start building a narrative GIS. By relating action events
+                    across space and time, a narrative GIS aims to discover spatiotemporal
+                    correlates among actions and relate actions across scales.
+
+                
+Depending on the perspectives, there are many kinds of events, e.g. instantaneous
+                    events, discrete events, cyclic events, transitional events, and others. In
+                    contrast to TimeMaps (Farrimond et al. 2008), our vision of a Narrative GIS goes
+                    beyond spatiotemporal visualization to spatial analytics. By using action events
+                    as the primitive data constructs, a narrative GIS can support spatial queries of
+                    sequential and consequential actions. A Narrative GIS is therefore capable of
+                    revealing how time unfolds change and space unfolds interactions (Massey
+                    2005).
+
+                
+We use two distinctive corpuses of histories in building narrative GIS databases
+                    and narrative analytics as a proof of concepts: Dyer's Compendium of the War of the Rebellion and the Richmond Daily Dispatch. Frederick H. Dyers, a Civil War veteran
+                    compiled the Compendium based on materials from the
+                    Official Records of the Union and Confederate Armies and other sources. The
+                    compendium lists organizations and movements of regiment cavalries mustered by
+                    State and Federal Governments for services in the Union Armies. Collaborating
+                    with the digital scholarship group at the University of Richmond, we have
+                    started with four files from Dyer's Compendium: the 45th Massachusetts Infantry,
+                    the 107th Pennsylvania
+                    Infantry,the1stCaliforniaInfantry,andthe1stNewYorkCavalry. The Richmond Daily Dispatch was one of the primary news media in the south
+                    during the Civil War. The newspaper was one of the most widely distributed
+                    newspapers of the south and included news from the entire east coast. The Richmond Daily Dispatch retained the reputation as
+                    politically unbiased was published throughout the Civil War.
+
+
+            
+            
+                
+Methodology
+
+                
+Our idea of a narrative GIS consists of (1) semantic elements (who did what), (2)
+                    temporal elements (when), and (3) spatial elements (where). A geospatial
+                    narrative object integrates the three elements and enables search for and
+                    analysis of spatial and temporal relationships among narrative objects. Input
+                    data for narrative GIS vary widely from structured to unstructured sources. In
+                    this study, both input data are texts, albeit in very different structures.
+                    Dyer's Compendium concisely lists regiment movements. Richmond
+                        Daily Dispatch consists of news articles. Spatial and temporal
+                    connections among units in these texts are considerably different. Nevertheless,
+                    the conceptual framework of a narrative GIS demands the identifications of
+                    semantic, temporal, and spatial elements from the texts to form narrative
+                    objects and relationships. As such, our workflow includes six key steps: (1)
+                    extract text analysis units; (2) identify action verbs; (3) identify time for
+                    words and text units; (4) identify locations for words and text units; (5)
+                    combine all identified elements into a GIS database; and (6) build spatial and
+                    temporal relationships among narrative objects. A schematic view of the workflow
+                    is presented in 
+figure 1
+
+                    
+
+                        
+Figure 1
+
+                        
+Full Size Image 
+
+                    
+                
+                
+We begin with electronic versions of the historical documents. The texts are
+                    split into subsets such as newspaper articles or book chapters for processing.
+                    These subsets are typically written as a unit and need to be analyzed that way
+                    for successful interpretation. For each processing unit, we apply natural
+                    language processing to tokenize sentences and identify parts of speech (e.g.
+                    verbs and nouns). The parts of speech provide important clues to extract
+                    information.
+
+                
+The work presented here is centered on the location, time, and other
+                    characteristics of events. The part of speech tagging is used to identify verbs.
+                    We are most interested in “action” verbs and refine our list of potential
+                    candidates by removing stative and modal verbs. Location referencing begins with
+                    recognition of a standard grammatical structure to the way locations appear in
+                    text. In general, locations are proper nouns that do not directly follow a
+                    determiner (except for physical features).
+
+                
+Candidate words are matched to all their possible real-world geographic referents
+                    in the “Gazetteer Matching” process. A number of different gazetteers are
+                    utilized in the matching including the US Populated Places gazetteer and State
+                    hydrography datasets from the USGS, historical counties, states, and territories
+                    files from National Historical Geographic Information System, and the US Census
+                    Bureau’s historical 100 largest cities dataset (US BGN; US NHD; NHGIS 2008;
+                    Gibson 2008). These data are assembled in GIS and each location is identified
+                    with a historically and spatially appropriate hierarchy. The names of geographic
+                    locations are often highly ambiguous. For example “Georgetown” has over 70
+                    possible locations among U.S. cities. Disambiguating a word to its true location
+                    is an important and difficult task. A substantial amount of work has already
+                    been done on location disambiguation under the heading of “Toponym Resolution”
+                    (Leidner2007;Leidneretal2003). 
+Figure 2
+
+                    illustrates the steps in the location referencing process.
+                    
+
+                        
+Figure 2
+
+                        
+Full Size Image 
+
+                    
+                
+The temporal processing steps aim to extract dates, durations of events and the
+                    relative temporal ordering between events. Historical texts contain temporal
+                    information in a variety of formats. Most obvious are explicit dates that
+                    include information such as the day, month and year. In addition, these texts
+                    often include clues to derive dates and relative ordering of events. For example
+                    words such as “yesterday“ or “last week” allow the date to be derived based on a
+                    temporal relation to an anchor date (Han 2006). Similarly, relative temporal
+                    expressions allow explicit dates to be determined based on temporal relations to
+                    the current temporal focus (Han 2009).
+
+                
+Figure 3
+ outlines the steps in our
+                    approach. 
+                    
+
+                        
+Figure 3
+
+                        
+Full Size Image 
+
+                    We begin by extracting anchor dates such as the date of publication
+                    for a newspaper article and explicit dates found in the text. We use temporal
+                    indicator words to refine the date of events and help establish temporal
+                    ordering. Explicit dates contained in the text are modified by deictic or
+                    temporal expressions. Semantic relationships between events are extracted based
+                    on semantic indicators. When all of the temporal information is relative and
+                    there are no explicit dates to give an explicit order, thirteen temporal
+                    relationships are used to find the temporal ordering (Allen 1983).
+            
+            
+                
+Results and Concluding Remarks
+
+                
+Thus far, our effort has been focused on extraction of events from the natural
+                    language text sources, anchoring the events to geographical locations and in
+                    time, and extracting information on the actors and objects involved in the
+                    events. 
+Figure 4
+ illustrates results from
+                    Dyer's Compendium of the War of the Rebellion. 
+                    
+
+                        
+Figure 4
+
+                        
+Full Size Image 
+
+                    This figure shows the activity of
+                    the 6th New York Regiment Calvary in Maryland and Virginia in September and
+                    October of 1862. The processing identified the events including the regiment’s
+                    movements and splitting off of a reconnaissance mission from Lovettsville to
+                    Smithville while the main regiment moved to Kearnysville. While this example
+                    from a single source, it illustrates the potential for the system to support
+                    more complex geospatial narratives with the addition of information from other
+                    sources.
+                
+Figure 5
+ shows a visualization of a
+                    Richmond Daily Dispatch article. 
+
+                        
+Figure 5
+
+                        
+Full Size Image 
+
+                    
+                    The article describes a letter
+                    from a Union colonel to his family. It discusses the Union’s plan to move troops
+                    to Alexandria Virginia the next evening. The article illustrates that in
+                    addition to working with events that had already occurred the approach can also
+                    be used to help investigate the thoughts and motivation leading to events that
+                    had yet to occur.
+                
+These examples of preliminary results demonstrate the basic use of a Narrative
+                    GIS. As we continue building the event narrative database, additional functions
+                    will be built in for narrative analytics. For example, we are interested in
+                    deciphering the local, regional and national processes on emancipation and to
+                    identify scalar effects on military, political, and individual processes. One
+                    approach will be extracting reports on battles and run-away slaves and analyze
+                    spatial and temporal correlations among these events. When we extract events of
+                    different categories in space and time, a Narrative GIS will allow us to analyze
+                    spatial and temporal relationships among these kinds of events to draw insights
+                    into the integration of multiple perspectives and interpretations of geospatial
+                    narratives.
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Allen, J.
+                        Waltz, D. 
+                        1983
+                        Maintaining Knowledge about Temporal Intervals
+                        Communications of the ACM
+                        26
+                        11
+                        32-843
+                    
+
+                    
+
+                        Bird, S.
+                        Klein, E. 
+                        Loper, E. 
+                        2009
+                        Natural Language Processing with Python --- Analyzing Text with the
+                            Natural Language Toolkit
+                        Cambridge, MA
+                        O'Reilly Media
+                    
+
+                    
+
+                        Farrimond, B.
+                        Presland, S.
+                        Bonar-Law, J. 
+                        Pogson, F. 
+                        2008
+                        Making History Happen: Spatiotemporal Data Visualization for
+                            Historians
+                        Second UKSIM European Symposium on Computer Modeling and
+                            Simulation
+                        Liverpool, UK
+                        IEEE
+                        424-429
+                    
+
+                    
+
+                        Fellbaum, C.
+                        1998
+                        WordNet: An Electronic Lexical Database
+                        Cambridge, MA
+                        The MIT Press
+                    
+
+                    
+
+                        Franzosi, R.
+                        2010
+                        Quantitative Narrative Analysis
+                        Los Angelas, CA
+                        SAGE Publications, Inc.
+                    
+
+                    
+
+                        Gibson, C.
+                        2008
+                        Population Of The 100 Largest Cities And Other Urban Places In The
+                            United States: 1790 to 1990. U.S. Census Bureau, Population
+                            Division
+                        
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Han, B.
+                        Gates, D.
+                        Levin, L.
+                        2006
+                        From Language to Time: A Temporal Expression Anchorer
+                        Proc. 13th International Symposium on Temporal Representation and
+                            Reasoning
+                    
+
+                    
+
+                        Han, B.
+                        2009Reasoning about Temporal Scenario in Natural
+                            LanguageIn the Proceedings of AAAI Workshop on Spatial
+                            and Temporal Reasoning
+
+                    
+
+                        Jackendoff, R.
+                        1992
+                        Languages of the Mind
+                        Cambridge, MAThe MIT Press
+                    
+
+                    
+
+                        Labov, W.
+                        1972
+                        Language in the inner cityPhiladelphia
+                        University of Pennsylvania Press
+                    
+
+                    
+
+                        Leidner, J, L.
+                        Sinclair, G.
+                        Webber, B
+                        2003
+                        Grounding spatial named entities for information extraction and
+                            question answering
+                        Proceedings of the HLT-NAACL 2003 Workshop on Analysis of Geographic
+                            References
+                        Edmonton, CAN
+                    
+
+                    
+
+                        Leidner, J
+                        2007
+                        Toponym Resolution in Text: Annotation, Evaluation and Applications
+                            of Spatial Grounding of Place Names. Diss.
+                        University of Edinburgh, School of Informatics. Institute for
+                            Communicating and Collaborative Systems
+                    
+
+                    
+Massey, D.
+                        2005
+                        For Space
+                        Thousand Oaks, CA
+                        Sage
+                    
+
+                    
+
+                        Mateas, M.
+                        Sengers, P.
+                        2003
+                        Narrative Intelligence.
+                            Amsterdam/Philadelphia
+                        John Benjamins Publishing Company
+                    
+
+                    
+
+                        Miller, G.
+                        Beckwith, R. 
+                        Fellbaum, C.
+                        Gross, D.
+                        Miller, K.
+                        1993
+                        Introduction to WordNet: An Online Lexical Database (Revised)
+                        Princeton University
+                    
+
+                    
+
+                        Pouliquen, B.
+                        Kimler, M.
+                        Steinberger, R.
+                        Ignat, C.
+                        Oellinger, T.
+                        2006
+                        Geocoding Multilingual Texts: Recognition, Disambiguation and
+                            Visualisation
+                        In Proceedings of The Fifth International Conference on Language
+                            Resources and Evaluation(LREC)
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        National Historical Geographic Information System
+                        2008
+                        Minnesota Population Center: University of Minnesota.
+                        Minneapolis, MN
+                        
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        U.S. Board on Geographic Names: Domestic and Antarctic Names – State
+                            and Topical Gazetteer Download Files
+                        United States Geological Survey
+                        
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        U.S. Geological Survey: National Hydrography Dataset
+                        United States Geological Survey
+                        
+                        
+         (
+link
+)
+   
+                    
+
+                
+            
+
+        

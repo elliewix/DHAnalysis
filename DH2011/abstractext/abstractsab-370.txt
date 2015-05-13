@@ -1,0 +1,305 @@
+Paper: The Born Digital Graduate: Multiple Representations of and within Digital
+                    Humanities PhD Theses
+
+                    Webb, Sharon, 
+                    Department of History, National University of Ireland,
+                        Maynooth, 
+                    
+sharon.webb@nuim.ie
+
+                
+
+                    Teehan, Aja, 
+                    An Foras Feasa Research Institute, National University of Ireland,
+                        Maynooth, 
+                    
+aja.teehan@nuim.ie
+
+                
+
+                    Keating, John, 
+                    An Foras Feasa Research Institute, National University of Ireland,
+                        Maynooth, 
+                    
+john.keating@nuim.ie
+
+                
+Introduction
+
+                
+This paper describes the methodology used in the creation of digital chapters and
+                    subsequent recreation of digital entities or objects derived, modified,
+                    transformed and visualised from XML encoded scholarship. It considers the
+                    changing function of traditional printed theses and how the use of technologies
+                    affects the representation and functions of graduate digital scholarship.
+
+                
+This paper is based upon the working methodologies of two PhD theses.
+                    Specifically, Webb’s thesis examines the creation of factlets and subsequent
+                    visualisation of factoids, which inform not only the source information and
+                    encoding but also the development and completion of historical research outputs.
+                    These outputs, supported by XML, XQuery and factlets, demonstrate the use of
+                    digital technology as an essential feature of humanities research and its
+                    methodologies. Teehan’s thesis reflects upon current digital representation
+                    models for pre-existing sources relevant to humanities research. Focusing on
+                    transactional, or functional, documents, it proposes a methodology for
+                    contextually modeling and XML-encoding those resources, using established
+                    software engineering and computer science paradigms such as Use Case analysis
+                    and UML modeling, which foreground the User. Both theses examine procedures and
+                    strategies for conducting humanities research using digital tools and
+                    applications. Thus, this paper is central to a reflective and reflexive process
+                    resulting from, and in, the critical self-evaluation of the theses and their
+                    outputs.
+
+                
+Traditionally, research outputs codified as chapters or sections can be seen as
+                    the final manifestation of a PhD thesis and reflect the use of print or static
+                    technology. The functionality of these outputs varies according to different
+                    headings and ranges from literature reviews, general narrative and concept
+                    generation, to the development of structured arguments based on theory and
+                    source material, to the provision of essential referencing and bibliographic
+                    material. These functions are referred to as “generic characteristics of
+                    academic discourse” (Mingwei, 2010) in linguistic structural analysis. Chapter
+                    functionality represents and reflects the original research statement and
+                    provides the means to convey and articulate traditional scholarship within the
+                    medium of print. The use of XML, and XSLT, along with the provision of software
+                    libraries, creates a framework to add dynamic functionality to an otherwise
+                    static text. “Generic characteristics” (Mingwei, 2010) are encoded, which enable
+                    the use of the described framework.
+
+                
+This approach reflects the innate capability of the digital medium to layer extra
+                    functionality over the restricted functionality of printed works. Rather than
+                    creating just a single representation of scholarly output, the use of XSLT and
+                    software libraries generates and encourages a reflexive process between text,
+                    argument, narrative and source material.
+
+                
+These methods change reader and user activity - one user may be a reader while
+                    another may have access to an interactive environment. Different user roles and
+                    environments transform the user from a passive participant to an active one. The
+                    realisation of various use cases enables the user to do more than just read the
+                    text and this activity realises the importance of data reusability.
+
+                
+Figure 1
+ outlines the process involved in
+                    creating multiple representations of digital scholarship and will be used to
+                    detail the various stages involved in creating new digital objects based on
+                    specified use cases.
+                    
+
+                        
+Figure 1: The stages of creating new research outputs, various chapters
+                            are defined by various use cases.
+
+                        
+Full Size Image 
+
+                    
+                
+            
+            
+                
+Stage 1 - Defining the Use Cases, Creating the Model, Encoding the
+                    Source
+
+                
+Text is innately encoded with semantics and functionality and each chapter or
+                    section in a piece of scholarship establishes or conveys various essential
+                    processes in the life of a text. These processes consist of deduction, concept
+                    development, narrative, consequence, etc., and it is these “lexical relations”
+                    (Eggins, 2004) within a text which develop specific research statements. Other
+                    bibliographic properties of a section are concrete rather than abstract and
+                    provide essential functionality e.g. references, footnotes, paragraphs and
+                    titles.
+
+                
+Despite these multiple perspectives, transformation of a born-digital text (a
+                    thesis) into both the print and digital media relies upon the existence of a
+                    single, defining text-model. Figure 1 shows the process involved in creating new
+                    research objects. The first stage makes possible all subsequent processes;
+                    creating a unifying model allows the generation of XML schema and subsequent XML
+                    encoding in order to manifest the new research objects (the various chapters in
+                    a research thesis). The model is driven by specific Use Cases such as the
+                    production of both a static printed version of the text, and an interactive
+                    digital version.
+
+                
+The source chapters are encoded at the final stages of the research process,
+                    rather than during the writing process. The model considers both presentation
+                    properties (chapter, paragraph, section), which allows for transformations
+                    specifically for presentation purposes, and semantic properties which encode the
+                    “textual semantics” (Eggins, 2004) of the text, its logical class (Teehan,
+                    2010). This approach makes the text reusable and ensures “a single lexical can
+                    function very differently” (Landow, 2006) in different environments.
+
+                
+The model is translated into a schema which allows us to mark up the content of
+                    the scholarship, including narrative which in historical research pertains to
+                    ‘logical’ rather than ‘ideological’ content. We view narrative as the logical
+                    information contained in the text that contributes to a narrative of the past
+                    (Coffin, 2002). The encoding of dynamic narrative and data supports the creation
+                    of new research outputs as non-linear components derived from the text.
+
+            
+            
+                
+Stages 2 and 3 - Realising Use Cases
+
+                
+Stage 2 and 3 are the realisation of the various Use Cases. The XSLT transforms
+                    and software libraries are templates from which different text from different
+                    sources can be modified and transformed, in effect creating a suite of
+                    tools.
+
+                
+These various macros are supporting tools for manifestations of a text. Our
+                    encoded texts depict the various functions embedded in standard print theses,
+                    but augment those capabilities for these born-digital theses. Here, two specific
+                    Use Cases address (i) the creation of a dynamic bibliographic referencing model,
+                    and (ii) the context-dependent presentation of boundary
+                    objects.
+
+                
+A referencing model in XSLT can automatically create a dynamic bibliography for a
+                    chapter with features including “intertextual links” (Samraj, 2008) between the
+                    text and source material. Software libraries can be used to support the innate
+                    variability of a boundary object, which is defined as an object with user
+                    dependent functionality and meaning (Thomas). Thus, depending on the User’s
+                    activity and perspective, the presentation of the boundary object will change;
+                    for instance, a table diagram, static in the print version, may become
+                    interactive within a digital context.
+
+                
+These low-level Use Cases support our higher level one; dynamic creation of
+                    static or interactive versions of a base text-model. The print model transforms
+                    the original text to a print ready text, and can account for various
+                    institutional templates. Embedding references to the various primary sources
+                    used in the XML encoding instructs an XSLT to create a hypertext of linked
+                    resources and creates “intertextual links” (Samraj, 2008) and boundary objects
+                    for user interaction between the narrative and various digital objects within
+                    the digital medium. 
+Figure 2
+
+                    
+
+                        
+Figure 2: Text encoding of this proposal and XSLT transforms
+
+                        
+Full Size Image 
+
+                    
+            
+            
+                
+Conclusion
+
+                
+This paper demonstrates the process and production of support tools for digital
+                    scholarship, and how the creation of appropriate templates can make manifest
+                    various representations of Digital Humanities PhD theses from a single model.
+                    The Use Cases are reliant on the ability of the encoding and the schema to
+                    encapsulate both the functions of the text and the various transformations and
+                    software libraries. Figure 2 demonstrates the interactions between the encoded
+                    text, the transformations and the outputs.
+
+                
+Current research students in Digital Humanities constitute a newly ‘born digital’
+                    generation, the nature of whose outputs differs markedly from earlier
+                    generations. Reflections on this changing process should also include an
+                    analysis of new methods and techniques to create dynamic scholarship. The
+                    encoding of the final phase in a PhD thesis allows scholarship to be reused,
+                    modified, visualised and transformed, allowing for greater distribution and
+                    accessibility of digital scholarship. Thus the dissertation, in its multiple
+                    representations, can not only remain central to the discipline of Digital
+                    Humanities but shape its future development.
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Mingwei, Zhao
+                        Yajun Jiang
+                         “Dissertation acknowledgements: Generic structure and
+                            linguistic features, ” 
+                        Chinese journal of applied linguistics,  33 (1)
+                            2010
+                        94-109
+                    
+
+                    
+
+                        Eggins, Suzanne
+                         “An introduction to systemic functional linguistics, ” 
+                            Continuum, 
+                        2004
+                    
+
+                    
+
+                        Teehan, Aja
+                        John G. Keating
+                         “'A digital edition of a Spanish 18th- century account book,
+                            Part 1: User-driven digitisation', ” 
+                        Jahrbuch für Computer-Philologie,  10
+                            2010
+                        169-18
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Landow, George P
+                        Hypertext 3.0, Critical theory and new media in an era of
+                            globalization, 
+                        The John Hopkins University Press
+                        2006
+
+                    
+
+                        Coffin, Caroline
+                         “Constructing and giving value to the past: an investigation
+                            into secondary school history, ” . Genre and
+                            institutions, social processes in the workplace and school, 
+                        Frances Christie
+                        J.R. Martin
+                        London
+                        2002
+
+                    
+
+                        Samraj, Betty
+                         “A discourse analysis of master’s theses across disciplines
+                            with a focus on introductions, ” 
+                        Journal of English for academic purposes, 
+                        7
+                        2008
+                        55-67
+                    
+
+                    
+
+                        Thomas, Robyn
+                        Sargent, Leisa D
+                        Hardy, Cynthia
+                        Power and participation in the production of boundary objects
+                        
+         (
+link
+)
+   
+                    
+
+                
+            
+        

@@ -1,0 +1,390 @@
+Poster: Discovering Citation Relations among the Imperial Court Documents of Qing
+					China
+
+					Chen, Shih-Pei, 
+					Department of Computer Science and Information Engineering,
+						National Taiwan University, 
+					
+gail@turing.csie.ntu.edu.tw
+
+				
+
+					Ho, Hou-Ieong, 
+					Department of Computer Science and Information Engineering,
+						National Taiwan University, 
+					
+brent@turing.csie.ntu.edu.tw
+
+				
+
+					Tu, Hsieh-Chang, 
+					Department of Computer Science and Information Engineering,
+						National Taiwan University, 
+					
+champiyen@turing.csie.ntu.edu.tw
+
+				
+
+					Hsiang, Jieh, 
+					Department of Computer Science and Information Engineering,
+						National Taiwan University; Research Center for Digital Humanities, National
+						Taiwan University, 
+					
+jhsiang@ntu.edu.tw
+
+				
+1. Motivation and Introduction
+
+				
+The dynasties of imperial China had always had sophisticated governing systems to
+					run the vast empire (Chien, 1952). While many of these dynasties left large
+					quantities of imperial court documents, the last dynasty, Qing (1644-1911),
+					produced the largest volume. These documents have been a major source of primary
+					research material for studying Qing era China since they provided the most
+					direct and first-hand details of how national affairs were handled. Among them,
+					two of the most important kinds are Imperial Edicts (from
+					the emperors to his officials) and Memorials (reports
+					from officials to the emperor). The number of Memorials increased significantly
+					after Emperor Kang-xi (康熙 – reigned from 1662 to 1723) allowed senior local officials to report to him directly (Chuang, 1979).
+					The ability for the emperors to obtain first-hand information directly from
+					local officials was among the major reasons why the Qing imperial courts did not
+					suffer as much interference from people surrounding the emperors, such as
+					eunuchs and family members of the empress dowagers, as in the previous Ming
+					Dynasty. 
+
+				
+Qing Dynasty had a systematic way to archive official documents. However,
+					although most of the archives were organized chronologically, the court
+					documents involved in a specific event might span several months and were often
+					kept in different archives. For instance, if the emperor received a Memorial
+					reporting a rebellion in some province, he might decide to issue an Imperial
+					Edict to give instructions to relevant officials. The Memorial, depending on its
+					character, might be kept (or had copies made) in the Archives of the Imperial
+					Palace (宮中檔), Archives of the Grand Council (軍機處檔案), or the Grand Secretariat
+					Archives (內閣大庫). The Edict might have records in the Imperial Decrees Archives
+					(上諭檔), Archives of the Diary-Keepers (月摺檔, 起居注), or the Archives of the Imperial
+					Palace (宮中檔), or the Grand Secretariat Archives mentioned above. Worse yet,
+					these archives are now kept at different locations, notably the National Palace
+					Museum (National Palace Museum, 2001), the Institute of History and Philology of
+					Academia Sinica (Institute of History and Philology of Academia Sinica, 2001),
+					both in Taipei, and the First Historical Archives of China (FHAC, 1995), in
+					Beijing. Although digitization effort at the former two institutions made these
+					archives easier to access than before, it remains a cumbersome task to collect
+					documents covering the same event and rebuild their original linkage.
+
+				
+In this paper, we present an approach to restore an important relation: the
+					citation links among the imperial court documents. To be more precise, a
+					Memorial from an official often quotes earlier Imperial Edicts as the directive
+					for the activities that he is reporting. On the other hand, an Imperial Edict
+					may also cite earlier Memorials as the reason for issuing the decree. In an
+					important historical event such as the Taiping Rebellion, there may be hundreds
+					of Imperial Edicts and Memorials that form a complex web of successive
+					citations. We call such a graph an IE-M diagram. Figure 1 is an
+					illustration.
+
+				
+
+					
+
+						
+Fig. 1 An IE-M Diagram
+
+						
+Full Size Image 
+
+					
+				
+			
+			
+				
+2. Discovering IE-M Diagrams
+
+				
+To discover a citation relation we need to first detect whether a document has
+					cited previous documents. This problem is similar to plagiarism detection (or
+					copy detection), which is to detect whether a part of a document is copied from
+					other materials without acknowledging the source (Shivakumar and Garcia-Molina,
+					1995; Si, Leong and Lau, 1997; Timothy and Justin, 2003). However, unlike
+					plagiarism detection for which an exhaustive comparison among documents might be
+					necessary, in our case there are often specific phrases occurred around
+					quotations, which we call syntactic anchors. In the case
+					of a Memorial citing an Imperial Edict, the former usually contains an anchor
+					that starts with adhering to the Imperial Edict  (奉上諭)
+					and ends with By the Emperor Himself. That is all (欽此).
+					The text in between are quoted verbatim from the Edict (although usually not in
+					its entirety) (see Fig. 2). 
+					
+
+						
+Fig. 2 In a memorial, the sentences in between the syntactic anchors are
+							text quoted verbatim from the source edict.
+
+						
+Full Size Image 
+
+					
+					The anchors involved in an Imperial Edict citing a
+					Memorial may have a number of varieties. The quotations may also be done in a
+					more casual manner, since the emperors did not feel obliged to quote carefully.
+					After identifying the anchor and the quoted text, our method extracts a segment
+					of the latter (called signature) and applies a
+					text-matching algorithm to see if it appears in any document in the database. A
+					document of the right type that contains the signature is called a candidate.
+				
+We remark that because the quoted text may not be very precise, a certain degree
+					of fuzziness is incorporated in our algorithm so that minor differences can be
+					tolerated. A detailed algorithm is listed in Fig. 3. 
+					
+
+						
+Fig. 3 The text-matching algorithm used for Memorials citing Imperial
+							Edicts.
+
+						
+Full Size Image 
+
+					
+					The comparison produces a
+					list of document, signature, candidate tuples. We then
+					use metadata to filter unlikely tuples, and present the findings to historians
+					for manually validation to ensure accuracy. The overall process of our approach
+					is shown in Fig. 4.
+				
+
+					
+Fig. 4 The overall process of our approach.
+
+					
+Full Size Image 
+
+				
+			
+			
+				
+3. Experiments and Findings
+
+				
+We applied this method to the “Collection of Taiwan-related Court Documents from
+					the Ming and Qing Dynasties” corpus in THDL, the Taiwan History Digital Library
+					(Chen, Hsiang, Tu, and Wu, 2007; Research Center for Digital Humanities, 2009).
+					This corpus contains 37,831 imperial court documents of mostly Qing era that are
+					related to Taiwan. The documents, mainly Imperial Edicts and Memorials, were
+					selected from 235 different sources, including the archives mentioned earlier in
+					this paper. They were chosen by historians, typed as full text, punctuated,
+					proof-read, and were supplemented with metadata records (Wu, 2004; Chiu,
+					2006).
+
+				
+Using the method described above, we discovered 5,403 pairs of citation relations
+					from these documents, among which 3,947 pairs are Memorials citing Edicts, and
+					1,456 pairs are Edicts citing Memorials. By taking the transitivity on the
+					discovered citation pairs, we produced 1,258 IE-M diagrams (see Table 1), the
+					largest of which involves 152 documents. 
+					
+
+						
+Table 2 The main content of the IE-M diagrams sized over 50. All of them
+							are about major events in the Taiwanese history.
+
+						
+Full Size Image 
+
+					
+					Fig. 3 is an example of such a diagram,
+					in which the blocks at the top and bottom are Imperial Edicts while the middle
+					three are Memorials. The arrows between the blocks indicate citations.
+				
+After examining the diagrams, we found that all of the larger ones (size over 50)
+					are about major events in Taiwanese history (see Table 2). 
+					
+					
+
+						
+Table 1 A summary on the sizes of the 1,258 IE-M diagrams produced by our
+							method. 
+
+						
+Full Size Image 
+
+					
+					Tracing through the
+					citations shows the process of how the Qing Imperial Court dealt with crises
+					occurred in Taiwan, a far-flung island of the vast empire. For example, the
+					largest IE-M diagram illustrated how Emperor Qianlong (乾隆) handled the Lin
+					Shuangwen (林爽文) Rebellion, the largest civil unrest in Taiwan during the Qing
+					reign. The diagram vividly reflected how the rebellion, first dismissing as a
+					minor local disturbance, developed into an island-wide revolt. (The rebels even
+					overran a prefectural seat and had another under siege for more than six
+					months). It also showed how the local officials, failed at suppressing the
+					revolt, pointed fingers at each other or reported false victories. Qianlong
+					finally realized the severity of the situation and sent Fukangan (福康安), one of
+					his most trusted generals, to put down the rebellion. (Qianlong himself
+					considered the pacification of Lin Shuangwen Rebellion one of his “Top Ten
+					Military Achievements”.)
+			
+			
+				
+4. Concluding Remarks
+
+				
+In this paper we described an approach to discover citation relations among
+					Imperial Edicts and Memorials of the Qing Dynasty. The transitivity closures of
+					the relations are captured in a concept of IE-M diagram,
+					which reveals how a historical event developed through the correspondences
+					between the Qing imperial court and the local governments. Our method
+					demonstrates how to use information technology to explore and identify important
+					relations among historical documents that would be hard to find otherwise. We
+					applied this method to THDL, Taiwan Historical Digital Library, and found 1,258
+					such diagrams. We should remark, however, our method can be applied to other and
+					larger corpuses provided that the full text of the documents are available. We
+					are currently working with historians to explore other significant relations to
+					which our method can be applied. 
+
+			
+			
+				
+				
+				
+
+					
+Fig. 5 An example of IE-M diagram. 
+
+					
+Full Size Image 
+
+				
+				
+				
+				
+				
+			
+
+		
+References:
+
+			
+				
+					
+
+						Chen, S.P., Hsiang, J., Tu, H.C. & Wu, M.C. 
+						2007
+						 “On Building a Full-Text Digital Library of Historical
+							Documents, ” 
+						Asian Digital Libraries. Looking Back 10 Years and Forging
+							New Frontiers, Lecture Notes in Computer Science no. 4822, 
+						Goh, D.H.L., ed.
+						Springer Berlin, 
+						New York
+						49-60
+					
+
+					
+
+						Chien, M.
+						1952
+						Chung-kuo li tai cheng chih te shih, 
+						Hong Kong
+					
+
+					
+
+						Chiu, W.J.
+						2006
+						 “The Digital Project of Taiwan-Related Archives in Ming and
+							Qing Dynasty, ” 
+						The Library Yearbook of ROC 2006, 
+						National Central Library
+						Taipei
+					
+
+					
+
+						Chuang, J.F.
+						1979
+						Qing dai shi liao lun shu, 
+						National Place Museum
+						Taipei
+					
+
+					
+
+						The First Historical Archives of China (FHAC)
+						1995
+						Guangxu chao zhu pi zou zh, 
+						Zhonghua shu ju
+						Beijing
+					
+
+					
+
+						National Palace Museum
+						The Archives of the Grand Secretariat in Academia Sinica , 
+						10 March 2011
+						
+         (
+link
+)
+   
+					
+
+					
+
+						Research Center for Digital Humanities of National Taiwan
+							University
+						Taiwan History Digital Library, 
+						10 March 2011
+						
+         (
+link
+)
+   
+					
+
+					
+
+						Shivakumar, N. and Garcia-Molina, H.
+						1995
+						 “SCAM: A Copy Detection Mechanism for Digital
+							Documents, ” 
+						The 2nd International Conference in
+							Theory and Practice of Digital Libraries., 
+						Austin, Texas, 
+						1995
+					
+
+					
+
+						Si, A., Leong, H.V. and Lau, R.W.H.
+						1997
+						 “CHECK: a document plagiarism detection system, ” 
+						Proceedings of the 1997 ACM symposium on
+							Applied computing, 
+						San Jose, California, 
+						1997
+					
+
+					
+
+						Timothy, C. H. and Justin, Z.
+						2003
+						 “Methods for identifying versioned and plagiarized
+							documents. , ” 
+						Journal of the American Society for Information Science and
+							Technology, 
+						54(3)
+						203-215.
+					
+
+					
+
+						Wu, M.C.
+						2004
+						 Taiwan shi liao ji cheng ti yao, 
+						Council for Cultural Affairs
+						Taipei
+					
+
+				
+			
+		

@@ -1,0 +1,266 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8; charset=UTF-8" /><title>Visualizing Sound as Functional N-Grams in Homeric Greek Poetry</title><link rel="stylesheet" href="css/default/results.css" type="text/css" /><script src="script/yui/yahoo-dom-event.js" type="text/javascript"></script><script src="script/yui/connection-min.js" type="text/javascript"></script></head><body class="home blog"><div id="wrapper" class="hfeed"><div id="header"><div id="masthead"><div id="branding" role="banner"><h1 id="site-title"><span><a href="https://dh2011.stanford.edu/" title="Digital Humanities 2011: June 19 – 22" rel="home">Digital Humanities
+                2011: June 19 – 22</a></span></h1><div id="site-description">Big Tent Digital Humanities</div><img src="https://www.stanford.edu/group/dh2011/cgi-bin/wordpress/wp-content/uploads/2010/09/tieDyeLarge.jpg" width="940" height="198" alt="" /></div><div id="access" role="navigation"><div class="menu"><ul><li><a href="https://dh2011.stanford.edu/" title="Home">Home</a></li><li><a href="https://dh2011.stanford.edu/?page_id=3" title="About">About</a></li><li><a href="https://dh2011.stanford.edu/?page_id=15" title="Accommodations &amp; Travel">Accommodations &amp; Travel</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=887" title="Accommodations">Accommodations</a></li><li><a href="https://dh2011.stanford.edu/?page_id=883" title="Travel">Travel</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=311" title="Registration">Registration</a></li><li><a href="https://dh2011.stanford.edu/?page_id=411" title="Schedule">Schedule</a></li><li><a href="https://dh2011.stanford.edu/?page_id=475" title="Workshops">Workshops</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=489" title="Tutorial 1: Introductory TEI ODD">Tutorial 1: Introductory TEI ODD</a></li><li><a href="https://dh2011.stanford.edu/?page_id=499" title="Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the Undergraduate Curriculum">Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the
+                      Undergraduate Curriculum</a></li><li><a href="https://dh2011.stanford.edu/?page_id=507" title="Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can Help Your Project">Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can
+                      Help Your Project</a></li><li><a href="https://dh2011.stanford.edu/?page_id=517" title="Tutorial 4: Introduction to Text Analysis With Voyeur Tools">Tutorial
+                      4: Introduction to Text Analysis With Voyeur Tools</a></li><li><a href="https://dh2011.stanford.edu/?page_id=521" title="Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation">Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation</a></li><li><a href="https://dh2011.stanford.edu/?page_id=525" title="Tutorial 6: Natural Language Processing Tools for the Digital Humanities">Tutorial 6: Natural Language Processing Tools for the Digital Humanities</a></li><li><a href="https://dh2011.stanford.edu/?page_id=529" title="Tutorial 7: Network and Topical Analysis for the Humanities using NWB and Sci2">Tutorial 7: Network and Topical Analysis for the Humanities using NWB and
+                      Sci2</a></li><li><a href="https://dh2011.stanford.edu/?page_id=493" title="Workshop: Visualization for Literary History">Workshop: Visualization
+                      for Literary History</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=471" title="Social Program">Social
+                  Program</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=541" title="Literary San Francisco (Full Day)">Literary San Francisco (Full
+                      Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=547" title="Silicon Valley History (Half-Day)">Silicon Valley History
+                      (Half-Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=537" title="Sonoma Wine Country (Full-Day)">Sonoma Wine Country (Full-Day)</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=181" title="CFPs">CFPs</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=97" title="General CFP">General
+                      CFP</a></li><li><a href="https://dh2011.stanford.edu/?page_id=175" title="CFP en Español">CFP en
+                      Español</a></li><li><a href="https://dh2011.stanford.edu/?page_id=287" title="CFP in German">CFP in
+                      German</a></li><li><a href="https://dh2011.stanford.edu/?page_id=207" title="CFP in Greek">CFP in
+                      Greek</a></li><li><a href="https://dh2011.stanford.edu/?page_id=229" title="CFP in Hungarian">CFP
+                      in Hungarian</a></li><li><a href="https://dh2011.stanford.edu/?page_id=257" title="CFP in Italiano">CFP
+                      in Italiano</a></li><li><a href="https://dh2011.stanford.edu/?page_id=157" title="Tutorial/Workshop CFP">Tutorial/Workshop CFP</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=19" title="Contacts">Contacts</a></li><li><a href="https://dh2011.stanford.edu/?page_id=801" title="Venue">Venue</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=829" title="Local Lunch Spots">Local Lunch Spots</a></li><li><a href="https://dh2011.stanford.edu/?page_id=845" title="Palo Alto Restaurants">Palo Alto Restaurants</a></li></ul></li></ul></div></div><br class="clear" /></div></div><div class="resultsHeader"><table><tr><td><a href="http://dh2011abstracts.stanford.edu/xtf/search" target="_top">New Search</a> | <span class="notActive">Return to Search Results</span> | <a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;doc.view=print;chunk.id=0" target="_top">Print View</a></td><td align="right"><form action="http://dh2011abstracts.stanford.edu/xtf/view" target="_top" method="get"><input name="query" type="text" size="15" /><input type="hidden" name="docId" value="tei/ab-385.xml" /><input type="hidden" name="chunk.id" value="0" /><input type="submit" value="Search this Book" /></form></td></tr></table></div><hr /><div class="results"><h2>Poster: Visualizing Sound as Functional N-Grams in Homeric Greek Poetry</h2><h4>
+                    Forstall, Christopher, 
+                    State University of New York at Buffalo, 
+                    <a href="mailto:forstall@buffalo.edu">forstall@buffalo.edu</a>
+                </h4><h4>
+                    Scheirer, Walter J., 
+                    University of Colorado at Colorado Springs, 
+                    <a href="mailto:wjs3@vast.uccs.edu">wjs3@vast.uccs.edu</a>
+                </h4><hr />
+            
+                <p class="noindent"> The question of the stylistic integrity of Homer's corpus is a venerable one.
+                    For centuries, diverse models, subjective as well as quantitative, have claimed
+                    to explain the composition of the <i>Iliad</i> and <i>Odyssey</i>: some scholars have seen the poems as the work of
+                    a single, literate genius (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">West, 2001, 3</a>); others as
+                    a collective multitext, the superposition of generations of continually-changing
+                    performances handed down from one illiterate bard to the next (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Nagy, 1996, 107ff.</a>). Often much of the support for
+                    these claims is the perceived homo- or heterogeneity of the text. What is at
+                    stake in these examinations is larger than a nineteenth-century romantic notion
+                    of the artist and his genius; recent studies have used the structure of the
+                    ancient Greek epics to examine how cognition structures spoken poetry, and how
+                    the sounds of poetry in turn give structure to our thought (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Peabody, 1975, 168ff.</a>). A connection between
+                    low-level phonetic patterns and larger-scale poetics is not unique to oral
+                    composition, but has been shown to be equally active in literate authors as well
+                        (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Brierley and Atwell, 2010</a>). </p>
+                <p class="noindent"> The work in progress presented here attempts to examine internal heterogeneity
+                    in Homer's language using the tools of computer-based authorship analysis. As
+                    stylometric tools become finer-grained, scholars such as Hoover (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">2007</a>) and Andreev (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">2010</a>) have turned their gaze from the characterization of an author
+                    or corpus as a whole to considerations of an author's stylistic evolution over
+                    time, and the differences between and even within individual works. Previously,
+                    the authors of this poster have used character- and word-level functional
+                    n-grams to compare Homer's two epic poems to one another and to later written
+                    text (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Forstall and Scheirer, 2010a</a>). We have
+                    also adapted the functional n-gram to metrical data (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Forstall, Jacobson and Scheirer, 2010</a>). In the present research, we
+                    attempt to characterize the internal sound structure of Homer's epics using
+                    functional n-grams at the word, character and metrical levels. </p>
+                <p class="noindent"> We ask, 
+                        <li>How homogeneous is the author signal within a large work?</li>
+                        <li>Do the areas frequently identified as later additions stand
+                            out?</li>
+                        <li>Can internal patterns help us understand a poem's composition?</li>
+                    
+                </p>
+                <p class="noindent"> While statistical studies of Homer have been made before, it is often difficult
+                    for the critic to move comfortably between the numbers and the subjective
+                    experience of interpreting poetry. David W. Packard, in pioneering computational
+                    work on sound patterns in Homer, cautioned that "we cannot expect to
+                    identify expressive passages merely by counting letters" (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Packard, 1974</a>). More recently, Marjorie Perloff,
+                    noting that the significance of sound is all too often overlooked in poetry
+                    criticism, has laid part of the blame on "'scientific' prosodic
+                    analysis," which 
+                        <blockquote>has relied on an empiricist model that allows for little generalization
+                            about poetic modes and values: the more thorough the description of a
+                            given poem's rhythmic metrical units, its repetition of vowels and
+                            consonants, its pitch contours, the less we may be able to discern the
+                            larger contours of a given poet's particular practice, much less a
+                            period style or cultural construct.</blockquote>
+                        <p>(<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Perloff and Dworkin, 2009, 2</a>)</p>
+                     In this poster we focus on visualizing the data in ways that bridge the
+                    gap between empirical data and the subjective experience of interpreting poetry.
+                    We take our inspiration from work such as that of Plamondon (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">2009</a>) and the online <i>Poetess
+                        Archive</i>, which has shown that innovation in how we visualize data is
+                    vital to connecting computing with humanities scholarship. In particular, <a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Plamondon</a> used color to represent multi-parameter
+                    sound data over individual poems, allowing a subjective appreciation of the
+                    poem's structure based on objective values at a glance. </p>
+                <p class="noindent"> We divide the poem into samples of various sizes, and calculate n-gram
+                    frequencies for the most common features. We then use principal components
+                    analysis to concentrate the variance among fewer variables. The top three
+                    principal components are assigned to three component color channels: red = PC1,
+                    green = PC2, blue = PC3. Each sample is visualized as a color which
+                    simultaneously represents three parameters, each potentially comprehending the
+                    most important aspects of a much larger feature set. The flow of sound in the
+                    poem may be seen as a gradient with local and large-scale variation (see Figure
+                    1). As a control, we also treat a text of Homer's poetry in which the order of
+                    the lines has been randomized. This is in part a response to the sobering
+                    results shown by Eder (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">2010</a>), who made a strong case
+                    that authorship analysis was unreliable at samples fewer than several thousand
+                    words, and was improved with randomization in sampling. It may be that smaller
+                    samples are less reliable at the author level precisely because they are
+                    sensitive to internal patterns in the text, which the randomization should
+                    smooth over. </p>
+                <p class="noindent"> The color gradient produced by this visualization of PCA is useful to the
+                    classical philologist precisely because of its subjective quality; yet a more
+                    definitive analysis of the epics' internal heterogeneity is also desirable.
+                    Which sections are the "most different"? Are units which are
+                    functionally related, for example the type scenes which are played out over and
+                    over by different characters (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Lord, 2000, 68 ff.</a>),
+                    more consistent than the poem as a whole? Is the difference between the <i>Iliad</i> and <i>Odyssey</i> greater than the
+                    variation within each poem? In addressing such questions, the classicist cannot
+                    help but be biased: certain features, certain passages take on prominence at the
+                    expense of others. Here we turn to unsupervised classification for an answer
+                    which encompasses all of the text at once, and has no literary bias. Using the
+                    same features as for PCA, we now perform k-means classification for various
+                    numbers of categories; again, the randomized text is used as a control. In
+                    forcing the algorithm to subdivide our sample set into an arbitrary number of
+                    classes, we make no specific assumptions about the structure of the poem.
+                    Instead we ask, how is variation distributed within the text? For example, with
+                    only two or three classes, we find that samples from all are relatively evenly
+                    distributed within and between the two poems. With more classes, we find that
+                    some tend to be found more in one poem or the other in the ordered version of
+                    the text, while in the randomized text samples from all classes are found
+                    throughout. The computer-assigned, discrete classifications may be arbitrarily
+                    assigned to colors, which are then displayed alongside the continuously varying
+                    PCA data to contrast the more subjective, human-interpreted view of the poem's
+                    heterogeneity with the entirely objective computer-based analysis. </p>
+            
+            
+                <p class="noindent">
+                    <p>
+                        <h2>Figure 1</h2>
+                        <img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei//385/forstall1.jpg" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-385.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei//385/forstall1.jpg','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+                        <br /><span class="down1"> The entirety of the Iliad and Odyssey, in 35-line samples. The
+                            color of each sample represents the values of the first three principal
+                            components of a larger feature set composed of character bi-gram
+                            frequencies. </span>
+                    </p>
+                </p>
+            
+        <h2>References:</h2>
+            
+                
+                    <p>
+                        Andreev, V. S.
+                        2009
+                         “Patterns in Style Evolution of Poets, ” 
+                        <i>Digital Humanities 2009</i>, 
+                        University of Maryland, 
+                        June, 2009
+                        52–53
+                    </p>
+                    <p>
+                        Brierley, C.
+                        Atwell, E.
+                        2010
+                         “Holy Smoke: Vocalic Precursors of Phrase Breaks in Milton's
+                                <i>Paradise Lost</i>, ” 
+                        <i>Literary and Linguistic Computing</i>, 
+                        25(2)
+                        137–151
+                    </p>
+                    <p>
+                        Eder, M.
+                        2010
+                         “Does Size Matter? Authorship Attribution, Small Samples,
+                            Big Problem, ” 
+                        <i>Digital Humanities 2010</i>, 
+                        King's College London, 
+                        July 2010
+                        132–133
+                    </p>
+                    <p>
+                        Forstall, C. W.
+                        Scheirer, W. J.
+                        2010
+                         “Features From Frequency: Authorship and Stylistic Analysis
+                            Using Repetitive Sound, ” 
+                        <i>Proceedings of the Chicago Colloquium on
+                            Digital Humanities and Computer Science</i>, 
+                        1(2)
+                    </p>
+                    <p>
+                        Forstall, C. W.
+                        Jacobson, S. J.
+                        Scheirer, W. J.
+                        2010
+                         “Evidence of Intertextuality: Investigating Paul the
+                            Deacon's <i>Angustae Vitae</i>, ” 
+                        <i>Digital Humanities 2010</i>, 
+                        King's College London, 
+                        July 2010
+                        294–295
+                    </p>
+                    <p>
+                        Hoover, D. L.
+                        2007
+                         “Corpus Stylistics, Stylometry, and the Styles of Henry
+                            James, ” 
+                        <i>Style</i>, 
+                        41(2)
+                        160–189
+                    </p>
+                    <p>
+                        Lord, A. B.
+                        2000
+                        <i>The Singer of Tales</i>, 
+                        Harvard University Press
+                        Cambridge, MA
+                    </p>
+                    <p>
+                        Nagy, G.
+                        1996
+                        <i>Poetry as Performance: Homer and Beyond</i>, 
+                        Cambridge University Press
+                        Cambridge, UK
+                    </p>
+                    <p>
+                        Packard, D. W.
+                        1974
+                         “Sound Patterns in Homer, ” 
+                        <i>Transactions of the American Philological
+                            Association</i>, 
+                        104
+                        239–260
+                    </p>
+                    <p>
+                        Peabody, B.
+                        1975
+                        <i>The Winged Word: A Study in the Technique of Ancient Greek
+                            Oral Composition as Seen Principally Through Hesiod's "Works and
+                            Days"</i>, 
+                        State University of New York Press
+                        Albany, NY
+                    </p>
+                    <p>
+                        Perloff, M.
+                        Dworkin, C.
+                        2009
+                        <i>The Sound of Poetry, the Poetry of Sound</i>, 
+                        University of Chicago Press
+                        Chicago, IL
+                    </p>
+                    <p>
+                        Plamondon, M.
+                        2009
+                         “Computational Phonostylistics: Computing the Sounds of
+                            Poetry, ” 
+                        <i>Chicago Colloquium on Digital Humanities
+                            and Computer Science</i>, 
+                        Illinois Institute of Technology, 
+                        November 2009
+                    </p>
+                    <p>
+                        <i>The Poetess Archive</i>, 
+                        Mandell, L.
+                        09/14/2010
+                        
+         (<a href="http://www.poetessarchive.com" target="blank">link</a>)
+   
+                    </p>
+                    <p>
+                        West, M. L.
+                        2001
+                        <i>Studies in the Text and Transmission of the Iliad</i>, 
+                        K. G. Saur
+                        Munich
+                    </p>
+                
+            
+        </div></div></body></html>
