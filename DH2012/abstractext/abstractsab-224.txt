@@ -1,0 +1,197 @@
+Poster: CLAROS—Collaborating on Delivering the Future of the Past
+
+                    Rahtz, Sebastian, 
+                    University of Oxford Computing Services, 
+                    
+sebastian.rahtz@oucs.ox.ac.uk
+
+                
+
+                    Dutton, Alexander, 
+                    University of Oxford Computing Services, 
+                    
+alexander.dutton@oucs.ox.ac.uk
+
+                
+
+                    Kurtz, Donna, 
+                    Beazley Archive, University of Oxford, 
+                    
+donna.kurtz@beazley.ox.ac.uk
+
+                
+
+                    Klyne, Graham, 
+                    Department of Zoology, University of Oxford, 
+                    
+graham.klyne@zoology.ox.ac.uk
+
+                
+
+                    Zisserman, Andrew, 
+                    Department of Engineering Science, University of
+                        Oxford, 
+                    
+andrew.zisserman@eng.ox.ac.uk
+
+                
+
+                    Arandjelović, Relja, 
+                    Department of Engineering Science, University of
+                        Oxford, 
+                    
+relja.arandjelovic@chch.ox.ac.uk
+
+                
+CLAROS (Classical Art Research Online Services) is a technology and data
+                collaboration between classical art and archaeology research projects, museums and
+                semantic web researchers. Documenting objects from the museums of the world, CLAROS
+                aims to engage with the public across the widest possible spectrum. It builds on the
+                success of the Beazley Archive which has provided programmes for the public as well
+                as the scholar and an illustrated linked dictionary for more than fifteen years.
+                CLAROS (
+http://www.clarosnet.org/
+) is
+                based at the University of Oxford, with partners in the UK, France, Germany,
+                Switzerland and Greece. The portfolio includes an aggregating RDF database, web
+                discovery interfaces for different types of audience, visual search using image
+                analysis of shapes and images, semantic information extraction from digitized text,
+                place and name gazetteers, and investigation of avatars for resource discovery.
+                CLAROS aims to be an effective and powerful partner in the realm of semantic web and
+                linked data about the past. 
+
+
+            
+                
+Data Modelling
+
+                
+The CLAROS aggregating data cache pulls information from its partners, limiting
+                    itself to those interchange components which can be mapped to the CIDOC
+                    Conceptual Reference Model (CRM) ontology, with a few extensions relating to dates
+                    and geolocations. The majority of records so far use CRM concepts E22_Man-Made_Object, E53_Place,
+                        E52_Time-Span and E21_Person.
+                    The data contributions, using XML RDF as the ingest form, include the Beazley
+                    Archive (pottery and gems)
+                    and the Lexicon of Greek Personal Names (onomastic
+                        data)http://www.lgpn.ox.ac.uk/ at the University of Oxford, the
+                        Arachne Sculpture Archive, the Lexicon Iconographicum Mythologiae Classicae in Paris and Basel, and
+                    the German Archaeological Institute, producing an RDF triple store of over 20
+                    million assertions. The federating and subsidiarity principle of CLAROS is that
+                    it acts simply as a resource discovery system, with search results linking back
+                    to the host database for more information, preserving the IPR and intellectual
+                    integrity of each partner. A SPARQL interface and RESTful APIs are provided for
+                    expert use, but CLAROS itself provides an exemplar query and visualisation
+                    interface (the Explorer) with an emphasis on textual search, timeline display
+                    and mapping of results. It is expected that the user will start with broad
+                    search terms, receive back information from a wide variety of sources, and then
+                    gradually refine and explore the results, perhaps ending in unexpected
+                    places.
+
+
+                
+
+                    
+Full Size Image 
+
+                
+            
+
+            
+                
+Metamorphoses
+
+                
+One of the research subprojects of CLAROS is Metamorphoses, whose aim is to establish a working co-reference system for
+                    name, place and date information in classical art and archaeology and ancient
+                    history projects at Oxford. This will provide geo-naming and geo-locating
+                    services to both CLAROS partners in their normal research, and to the CLAROS
+                    Explorer in performing searches. One output is an aggregating Ancient Place
+                    Server with web services to answer queries about locations of places, names of
+                    places, and types of places within a chosen area. We work on a social model of
+                    places as objects which come into existence as a result of naming by one or more
+                    groups of people at a particular time. We expect places to have multiple names,
+                    to have different geographical limits over time, and to have relationships with
+                    other places. 
+
+            
+
+            
+                
+Visual Search
+
+                
+A novel aspect of CLAROS is that visual queries can be used to access and search
+                    the archives that are linked to within CLAROS. Suppose, for example, that a
+                    novice takes a photograph of a Greek vase in a museum on their iPhone, or finds
+                    an image of a Greek vase on the web, that they would like to know more about.
+                    This image can be use as a visual query to retrieve that vase from the archive,
+                    in much the same way as the text phrase “Greek vase” can be used as a query in
+                    Google to retrieve web pages which contain that phrase. The method is
+                    illustrated in Figure 1: the image is uploaded to a web server, and the server
+                    returns the matches in the archive together with meta-information – for instance
+                    identifying the type of the vase, its date, its material, its decorations etc.
+                        
+
+                        
+Full Size Image 
+
+                        
+Full Size Image 
+
+                        
+Full Size Image 
+
+                        
+Figure 1: Identifying a vase from a web photo: an image of a vase is uploaded
+                            from a web link (top), and is matched to one in the Beazley vase
+                            collection (middle) in real time (a search through over 100,000 images).
+                            This identifies the type of vase, its material, date and decorations
+                            from the meta-information (bottom) associated with this data in the
+                            Beazley archive.
+
+                         
+                    Figure 2 gives another example, this time for a visual search of the
+                        Arachne classical sculpture archive. 
+
+                        
+Full Size Image 
+
+                        
+Full Size Image 
+
+                        
+Figure 2: Identifying a sculpture from a web photo: an image of a sculpture is
+                            uploaded from a web link (top), and is matched to one in the Arachne
+                            sculpture collection. In turn, this provides links to other images of
+                            the sculpture in the collection and also to associated meta-information
+                            (bottom).
+
+                    
+                
+
+                
+That this visual search is possible, and indeed can be carried out with results
+                    being returned immediately, is due to recent methods developed in the computer
+                    vision community on visually searching for objects in large scale image datasets
+                    (see [1] for details).
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        J. Philbin, O. Chum, M. Isard, J. Sivic, and A. Zisserman
+                        2007
+                         “Object Retrieval with Large Vocabularies and Fast Spatial
+                            Matching, ” 
+                        IEEE Conference on Computer Vision and Pattern
+                            Recognition, 
+                    
+
+                
+            
+        

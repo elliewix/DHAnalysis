@@ -1,0 +1,340 @@
+Paper: Enroller: A Grid-based Research Platform for English and Scots
+                              Language
+
+                              Anderson, Jean, 
+                              University of Glasgow, 
+                              
+Jean.Anderson@glasgow.ac.uk
+
+                        
+
+                              Alexander, Marc, 
+                              University of Glasgow, 
+                              
+Marc.Alexander@glasgow.ac.uk
+
+                        
+Green, Johanna, 
+                              University of Glasgow, 
+                              
+Johanna.Green@glasgow.ac.uk
+
+                        
+Sarwar, Muhammad, 
+                              National e-Science Centre, UK, 
+                              
+Muhammad.Sarwar@glasgow.ac.uk
+
+                        
+
+                              Sinnott, Richard, 
+                              University of Melbourne, 
+                              
+rsinnott@unimelb.edu.au
+
+                        
+Summary
+
+                        
+This paper describes a collaboration between eScientists and humanists;
+                              specifically Grid scientists and language and literature scholars,
+                              working together to create a repository of data sets and tools,
+                              combining our most advanced knowledge in all areas. 
+
+                  
+
+                  
+                        
+
+                        
+Language and literature scholars make use of variety of language
+                              resources to conduct their research. Such resources include
+                              dictionaries, thesauri, corpora, images, audio and video collections.
+                              At present most of these resources are distributed, non-interoperable
+                              and license protected. As a result researchers typically conduct their
+                              research through direct access to independent data sets using multiple
+                              browser windows and multiple authorisations. This approach results in
+                              non-scalable and less productive research, and often leads to
+                              incomplete and/or non-verifiable results. 
+
+                        
+The JISC funded project, Enhancing Repositories for
+                                    Language and Literature Researchers (Enroller) is
+                              addressing these issues through development of a targeted eResearch
+                              environment. This paper presents the current state of progress and
+                              outlines how secure access to distributed data resources with targeted
+                              analysis and collaboration tools is supported. In the full paper we
+                              will also describe how Enroller is exploiting high performance
+                              computing infrastructures such as the UK National Grid Service and
+                              ScotGrid, and discuss a problematic issue that has arisen through the
+                              differing working practices of humanists and scientists.Consider a
+                              typical language and literature scenario where a researcher wants to
+                              search for a word such as "bonny" in the dictionary to find its
+                              meaning; in a thesaurus to look up the concepts and categories it is
+                              found in and in a corpus to find the documents containing it. The user
+                              may also want to see the concordances and word frequency of the word
+                              in each found document. In undertaking this process, they might want
+                              to save the different results; share them with others and possibly
+                              perform a comparison between many different resultant data sets. This
+                              scenario becomes more challenging when multiple dictionaries, thesauri
+                              and text corpora need to be cross-searched simultaneously, for example
+                              when the researcher wants to lookup the word "bonny" in the Oxford
+                              English Dictionary, in the Scottish National
+                                    Dictionary, and in the Dictionary of the
+                                    Older Scottish Tongue. The researcher may also want to
+                              search for the word in the Historical Thesaurus of
+                                    English to look up synonyms and related concepts and
+                              categories and then search for all of the matching concepts in further
+                              corpus resources. 
+
+                        
+Researchers will want to use the standard text analysis tools: e.g.
+                              concordances, word frequencies, collocation clouds. They may well wish
+                              to save and download the results for further analysis or use targeted
+                              tools to investigate, e.g. variant spellings of the word 'bonny'. The
+                              problem is further exacerbated if the researcher decides to search for
+                              multiple, possibly hundreds, of words at once and do all of the
+                              mentioned tasks at once. Most of the language and literature data
+                              environments do not permit scholars to do any of these activities,
+                              instead researchers are left with individual level data sets, coded
+                              differently (e.g. with different metadata and data formatting),
+                              accessible through individual web-based resources with individual
+                              access codes and methods. 
+
+                        
+ The challenge for the project is to maintain the data integrity of its
+                              collaborators and the security of access-limited data, while
+                              facilitating research across and between each dataset for the benefit
+                              of researchers in multiple fields. Enroller provides an interactive
+                              research infrastructure that provides seamless, secure access to all
+                              of the different language and literature data sets in a user-oriented
+                              environment. Furthermore, since many of the searching and analysis
+                              efforts can be computationally intensive – especially when bulk
+                              searching or building of indexes is required - we provide secure
+                              access to high performance computing infrastructures such as the UK
+                              e-Science National Grid Service (http://www.ngs.ac.uk) and ScotGrid
+                              (http://www.scotgrid.ac.uk). In this project, language and literature
+                              researchers, including an associated network of international
+                              scholars, are now able to access large amounts of language and
+                              literature data and analysis services from a single, easy-to-use
+                              portal. Enroller is currently working with the following data sets: 
+                                    
+The EPSRC and AHRC funded Scottish
+                                                Corpus of Text and Speech is a collection of
+                                          text and audio files covering a period from 1945 to the
+                                          present. The SCOTS corpus is available in TEI-compliant
+                                          XML. (http://www.scottishcorpus.ac.uk) 
+
+                                    
+The AHRC funded Corpus of Modern
+                                                Scottish Writing offers a collection of texts
+                                          and manuscript images from the period 1700 to 1945.
+                                          (http://www.scottishcorpus.ac.uk/cmsw/) 
+
+                                    
+The AHRC funded Newcastle Electronic
+                                                Corpus of Tyneside English provides a corpus of
+                                          dialect speech from Tyneside in Northeast England. The
+                                          NECTE corpus is encoded in TEI-compliant XML.
+                                          (http://www.ncl.ac.uk/necte) 
+
+                                    
+The Dictionary of the Scots
+                                                Language encompasses two major Scottish
+                                          language dictionaries: the Scottish
+                                                National Dictionary and the Dictionary of the Older Scottish Tongue. DSL
+                                          data is available in XML format.
+                                          (http://www.dsl.ac.uk/dsl) 
+
+                                    
+ The Historical Thesaurus of
+                                                English contains more than 750,000 words from
+                                          Old English to the present in 250,000 categories. HTE was
+                                          published in print form by Oxford University Press in 2009
+                                          and is a new and significant development for historical
+                                          language studies.
+                                          (http://libra.englang.arts.gla.ac.uk/historicalthesaurus/) 
+
+                                    
+ The Oxford English Dictionary is a
+                                          commercial resource published by Oxford University Press
+                                          and is the authority on English language vocabulary. It is
+                                          accessible through our search interface by API.
+                                          (http://www.oed.com) 
+
+                              
+                        
+                        
+ The inclusion of other data sets is underway, e.g. we have incorporated
+                              Hansard, early C19th to late C20th, and are negotiating for the 1755
+                                    Dictionary of Samuel Johnson. Many
+                              scholars have no platform or assistance to put texts online and make
+                              them accessible to others, far less can they make them interoperable
+                              with other relevant data sets. Enroller provides a place where users
+                              can deposit their own texts. Texts are wrapped in a basic, TEI minimal
+                              XML envelope and indexed. The user can choose whether a text is
+                              available to all or private. Once deposited a text can be searched
+                              from the portal with the other data sets. 
+
+                        
+The project has data at its heart, but it is also exploiting state of the
+                              art high-performance computing and security solutions. In particular
+                              the project is employing a Virtual Organisation Membership Service
+                              (VOMS)-based solution in accessing the NGS where pooled Enroller
+                              accounts are used by researchers accessing these resources through a
+                              targeted project portal. This includes use and exploitation of the
+                              Workload Management System (WMS) to provide resource broking based job
+                              scheduling across all of the NGS nodes. This job scheduling is
+                              targeted currently to supporting large-scale searching based upon the
+                              Google MapReduce application. 
+
+                        
+ The full paper will describe the Enroller project in more detail and
+                              outline the capabilities that are supported and our experiences so far
+                              in implementing this infrastructure. This includes a description of
+                              how the portal has been made accessible through the UK Access
+                              Management Federation; the easy to use search system and the reasons
+                              for its human-computer interface choices; the advanced Grid-based
+                              information retrieval system, capable of executing linguistic
+                              workflows, taking advantage of HPC facilities such as NGS and
+                              ScotGrid; how the system supports large-scale data indexes for fast
+                              searching; support for tools for linguistic analysis, including
+                              concordance, collocation and word frequency analysis; support for
+                              seamless secure access to licensed data; support for data deposition
+                              and automated indexing services; documented analysis of our user
+                              experiences in using of the infrastructure provided thus far. We will
+                              outline the plans for future adoption by the wider research community
+                              and end with our reflections on this eScience/humanities
+                              collaboration. 
+
+                  
+            
+References:
+
+                  
+                        
+                              
+
+                                    J. Watt
+                                    .O. Sinnott
+                                    T. Doherty
+                                    J. Jiang
+                                    2008
+                                     “Portal-based Access to Advanced Security
+                                          Infrastructures, ” 
+                                    UK e-Science All Hands
+                                          Meeting , 
+                                    Edinburgh, 
+                                    September 2008
+                                    17
+                              
+
+                              
+
+                                    M.S. Sarwar
+                                    R.O. Sinnott
+                                    2010
+                                     “Towards a Virtual Research Environment for
+                                          Language and Literature Researchers, ” 
+                                    IEEE e-Science 2010 , 
+                                    Brisbane, Australia, 
+                                    December 2010
+                                    8
+                              
+
+
+                              
+
+                                     Java Database Connectivity (JDBC) API, 
+                                    15/03/2011
+                                    
+         (
+link
+)
+   
+                              
+
+                              
+
+                                    The Internet2 Shibboleth framework , 
+                                    15/03/2011
+                                    
+         (
+link
+)
+   
+                              
+
+
+                              
+
+                                    Enroller, 
+                                    15/03/2011
+                                    
+         (
+link
+)
+   
+                              
+
+
+                              
+
+                                    Oxford English Dictionary , 
+                                    15/03/2011
+                                    
+         (
+link
+)
+   
+                              
+
+                              
+
+                                    Scotish Language Dictionaries , 
+                                    15/03/2011
+                                    
+         (
+link
+)
+   
+                              
+
+                              
+
+                                    The Scottish Corpus of Texts and Speech, 
+                                    15/03/2011
+                                    
+         (
+link
+)
+   
+                              
+
+                              
+
+                                    Newcastle Electronic Corpus of Tyneside
+                                          English, 
+                                    15/03/2011
+                                    
+         (
+link
+)
+   
+                              
+
+                              
+
+                                    The Historial Thesaurus of English , 
+                                    15/03/2011
+                                    
+         (
+link
+)
+   
+                              
+
+
+                        
+                  
+            

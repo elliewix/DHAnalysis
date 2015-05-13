@@ -1,0 +1,403 @@
+Paper: The Text-Image-Link-Editor: A tool for Linking Facsimiles &
+                    Transcriptions and Image Annotations
+
+                    Al-Hajj, Yahya Ahmed Ali, 
+                    Worms University of Applied Sciences, Germany, 
+                    
+alhajj@fh-worms.de
+
+                
+
+                    Küster, Marc Wilhelm, 
+                    Worms University of Applied Sciences, Germany, 
+                    
+kuester@fh-worms.de
+
+                
+Introduction
+
+                
+TextGrid’s Text-Image-Link-Editor (TBLE “stands for for Text-Bild-Link-Editor,
+                    German for Text-Image-Link-Editor”) is used to link segments of text with
+                    sections on the corresponding image. A typical application is linking of scans
+                    of facsimiles with their transcriptions, though these texts can also be created
+                    during the linking process, which allows e.g. also for image annotations. The
+                    information on the linking between manuscript fragments and the corresponding
+                    transcription is itself stored in TEI. TextGrid is as a virtual research
+                    environment (VRE) for the humanities disciplines dealing with texts in a wide
+                    sense (philologies, epigraphy, linguistics, musicology, art history etc.). The
+                    joint research project TextGrid is part of the D-Grid initiative, and is funded
+                    by the German Federal Ministry of Education and Research (BMBF) for the period
+                    starting June 1, 2009 to May 31, 2012 (reference number: 01UG0901A).
+
+                
+TextGrid consists of two principal building blocks, the grid-based backend
+                    TextGridRep that hosts both infrastructure services and the repository layer for
+                    access to research data and longterm archiving, and the user-facing TextGridLab.
+                    The TextGrid Laboratory (TextGridLab), a single point of entry to the virtual
+                    research environment, will provide integrated access to both new and existing
+                    tools and services via a user friendly software [TG]. TBLE is a key component of
+                    the TextGridLab that has been under continuous development since 2008 and is by
+                    now in practical use.
+
+            
+            
+                
+State of the Art
+
+                
+The integration of manuscript scans with their transcription and indeed the
+                    critical edition itself is a desideratum of modern editions: “While some people
+                    continue to think of electronic texts as exclusive of images, the fact is that
+                    digital images of manuscripts are electronic texts, as well. The most compelling
+                    scholarly editions of the future will make full use of markup schemes such as
+                    XML [...], but not without extensive integration of images” [Kiernan2006]. In
+                    this context TextGrid is not the only project that recognized the need for an
+                    tool to facilitate this linking of image sections with transcriptions. The
+                    Edition Production & Presentation Technology's (EPPT's) [EPPT] tool box for
+                    integrating images and text operates in much the same solution space.
+                    [Parker2009] proposes the development of a web-based Text-Image Linking
+                    Environment (TILE), and for much the same reasons as the TBLE, namely to
+                    facilitate “the linking of images and textual information [which] remains a slow
+                    and frustrating process for editors and curators”. [TILE] is currently under
+                        development.For the current status of the project cf. also its
+                        homepage 
+         (
+link
+)
+    Consulted 2011-03-14
+                    Unlike the Eclipse-based TBLE, TILE is Ajax-based, extending the Ajax XML
+                    Encoder.
+
+                
+Similar in objective to TBLE and developed in much the same timeframe is Tapor’s
+                    / the University of Victoria’s Image Markup Tool [Holmes2010]. Both
+                    independently decided to use formats based on TEI P5 to store linking
+                    information, though at this stage unfortunately not the same. Unlike TBLE, the
+                    Image Markup Tool is a desktop program only for the MS Windows platform and
+                    cannot be integrated into the TextGridLab.
+
+                
+[Cayless2008] reports on experiments to partially automate the linking between
+                    manuscripts and their transcriptions. TBLE plans to integrate similar
+                    functionality using OCR technology (cf. below).
+
+                
+As required in [Huitfeld2010], TBLE allows, in Peirce’s terminology, multiple
+                    “types” to be associated with one “token”, or in other words to associate one
+                    section in a manuscript with multiple, possibly contradictory interpretations /
+                    transcriptions. Image sections can overlap, so that divergent segmentations are
+                    possible.
+
+                
+As an aside, this type of linking is very different from the research field of
+                    automated image analysis and image annotation which attempts to automatically
+                    establish key metadata for an image, e.g. by identifying the objects or persons
+                    shown on a photo.
+
+
+            
+            
+                
+Functionality
+
+                
+The following use case is a typical example for working with the TBLE: A scholar
+                    wants to publish manuscripts as collection of images, which offer a digital
+                    representation of the original work, but also wants to publish his take on its
+                    correct transcription in view of establishing a critical edition. The solution
+                    is to write the content of these hand written documents as text in a
+                    human/machine readable format e.g. XML and this text can be divided into logical
+                    related segments for example: verses, lines and then these text segments can be
+                    easily linked with the corresponding sections on the images using the TBLE.
+
+                
+The TBLE can be used for:
+
+                
+                    
+Linking Existing Texts and Digitized Manuscripts
+
+                    
+Text and image are opened, then the corresponding components (text segment
+                        and selected image section) are marked by pairs and the linkage is
+                        confirmed. The results can be saved as a new file (local or in the
+                        TextGridRepository), which contains the linking information (image
+                        coordinates, text segment identifiers, URIs of the used text and image
+                        files). Sections can be rectangles or arbitrary polygons.
+
+                    
+The content of the new created file represents the saved information as a TEI
+                        document with an embedded [SVG] section (see section 4 “The TEI-Model” for
+                        more details). Once a file is saved, double clicking it reloads used images,
+                        texts and links to continue editing. Changing or adding new links as well as
+                        modifying the linked text is possible at any time.
+
+                    
+Instead of starting out with an existing transcription and linking it with
+                        the image data, the scholar can also decide to start from scratch with an
+                        empty text file. The new text segments can be inserted stepwise or at
+                        once.
+
+                    
+Any number of different and possibly conflicting transcriptions and
+                        segmentations can be linked against one set of digitized manuscripts.
+
+                
+                
+                    
+Annotation of Image Sections and Existing Links
+
+                    
+The Text-Image-Link-Editor offers many other useful features, that help
+                        annotating specific links or image sections. For example:
+
+                    
+
+                            
+It's possible to build logical groups of links (e.g. verses,
+                                comments, etc.) using the layers-tool.
+
+                            
+A text-direction (e.g. left-to-right & top-to-bottom) can be
+                                assigned to the links.
+
+                        
+                
+            
+            
+                
+The TEI-Model
+
+                
+The output file of the Text-Image-Link-Editor follows the TEI model with embedded
+                    svg description elements. The following is a list, which crudely describes the
+                    structure of the TEI document:
+
+                
+
+                        
+<teiHeader> this element could be used to save the metadata of
+                            the document.
+
+                        
+<facsimile> in this element is the svg element embedded, which
+                            keeps the topographic descriptions of images and links.
+
+                        
+<body> in the body element are the link groups, that contain the
+                            link elements. These link elements represent the relationship between
+                            the image sections and the corresponding text segments. The relationship
+                            between images and texts and links is represented in the following
+                            figure:
+
+                    
+                
+
+                        
+The TEI output file of the Text-Image-Link-Editor to describe the
+                            relationship between images and texts and links [Maynooth2010]
+
+                        
+Full Size Image 
+
+                    
+            
+            
+                
+Structure and Components
+
+                
+The Text-image-Link-Editor is a part of the TextGridLab and is implemented as a
+                    group of Eclipse plugins following the [MVC] patternThe
+                        Model-View-Controller (MVC) pattern separates the modeling of the domain,
+                        the presentation, and the actions based on user input into three separate
+                        classes.
+
+                
+This tool consists of a Toolkit and two views in addition to the XML Editor and
+                    the generic Navigator:
+
+                
+
+                        
+Image View: shows the images and enables you to
+                            select individual image sections to be linked.
+
+                        
+Thumb View: is used for navigation. It displays a
+                            reduced version of the entire image and the active image detail (which
+                            is enlarged in the Image View) which can easily be moved and
+                            zoomed.
+
+                        
+Toolkit: provides different functions for working
+                            on the Image View.
+
+                        
+XML Editor: allows you to open or create texts as
+                            well as to select individual text elements.
+
+                    
+                
+
+                    
+TBLE in action
+
+                    
+Full Size Image 
+
+                
+            
+            
+                
+Further Enhancement
+
+                
+TBLE is already actively used in a number of projects, but continues to be
+                    enhanced, taking into account new user requirements coming up in the field. In
+                    particular, we plan to implement a new feature in the Text-Image-Link-Editor to
+                    enable an automated segmentation of facsimiles using the [OCRopus] OCR-system,
+                    which offers a possibility to partially automate the linkage
+                        process.OCRopus (tm) is a state-of-the-art document analysis and OCR
+                        system, featuring pluggable layout analysis, pluggable character
+                        recognition, statistical natural language modeling, and multi-lingual
+                        capabilities. http://code.google.com/p/ocropus/ . Consulted
+                        2011-03-14
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Cayless, Hugh
+                        2008
+                         “Experiments in Automated Linking of TEI Transcripts to
+                            Manuscript Images, ” 
+                        TEI Members Meeting, 
+                        2008
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Kiernan, Kevin et al.
+                        Edition Production & Presentation Technology
+                            (EPPT), 
+                        2011-03-12
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Holmes, Martin
+                        The UvC Image Markup Tool Project. Project homepage, 
+                        2010-10-31
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Huitfeldt, Claus; Yves Marcoux and C. M. Sperberg-McQueen
+                        2010
+                         “Extension of the type/token distinction to document
+                            structure, ” 
+                        Proceedings of Balisage: The Markup Conference 2010, 
+                        Balisage Series on Markup Technologies
+                        5
+                        doi:10.4242/BalisageVol5.Huitfeldt01.
+                    
+
+                    
+
+                        [Kiernan2006]
+                        Kiernan, Kevin
+                        2006
+                         “Electronic Textual Editing: Digital Facsimiles in
+                            Editing, ” 
+                        Electronic Textual Editing, 
+                        Burnard, Lou; O'Brien O'Keeffe, Katherine and Unsworth, John
+                            (Eds)
+                        MLA
+                        2011-03-14
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        [Maynooth2010]
+                        Maynooth - Michael Leuk, Dr. Simon Rettelbach
+                        2010
+                        Cost Workshop, 
+                    
+
+                    
+
+                        [Parker2009]
+                        Porter, Dorothy Carr; Reside, Duke andWalsh, John
+                        2009
+                         “Text-Image Linking Environment (TILE), ” 
+                        Digital Humanities, 2009, 
+                        2009
+                        p. 388ff
+                    
+
+
+                    
+
+                        [SVG]
+                        W3C, Scalable Vector Graphics (SVG), 
+                        2011-03-14
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        [TEI]
+                        The Text Encoding Initiative, 
+                        2011-03-14
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        [TG]
+                        About TextGrid, 
+                        2011-03-14
+                        
+         (
+link
+)
+   
+                    
+
+                
+            
+        

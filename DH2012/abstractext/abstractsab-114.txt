@@ -1,0 +1,165 @@
+Tutorial: An Introduction to XForms for Digital Humanists: How XForms Can Help Your
+          Project
+
+          Sperberg-McQueen, Michael, 
+          Black Mesa Technologies LLC, United States of America, 
+          
+cmsmcq@acm.org
+
+        
+This tutorial will introduce participants to XForms, viewed as a technology for building
+          customized editors for XML documents.
+
+        
+Originally developed as a replacement for conventional HTML forms, XForms is designed to
+          work well in the Web browser, allowing forms to be specified using the familiar facilities
+          of XHTML and CSS. XForms is based on the model/view/controller architecture, and because
+          the model being operated upon consists of a set of XML documents, XForms provides a
+          convenient basis for developing custom tools for working with XML documents. With XForms,
+          it becomes feasible for projects to develop vocabulary- and task-specific editors for use
+          within the project. For suitably chosen tasks, specialized tools of this kind can require
+          less training and provide better task support than full XML editors; it is thus easier to
+          allow domain experts to examine and modify XML encoding, and routine tasks can be
+          performed more quickly and reliably.
+
+        
+Any project making systematic use of XML will involve a number of tasks requiring
+          systematic changes to XML documents, which may be more easily handled using XForms than
+          with other techniques. For example: 
+            
+The samples in the language corpus have been divided into sentences using a
+              probabilistic recognizer for sentence boundaries; we need to check to make sure that
+              all the boundaries proposed by the software are in fact real sentence boundaries, and
+              that no sentence boundaries have been missed.
+
+            
+The text has been processed by a named-entity recognition engine and phrases have
+              been marked up as personal names, clan names, place names, names of organizations, and
+              other names, but the process by which this has happened is not fully trusted; we would
+              like a specialist in the period and genre to check that the distinctions among place
+              names, clan names, and personal names have been drawn correctly.
+
+            
+Each of the seven hundred short documents in the project must be checked for
+              conformance to the project's new rules for hyperlinks, and problems need to be flagged
+              (not fixed, just flagged for later re-work).
+
+            
+In a software development project, we have developed a set of XML-encoded test
+              cases which the software should be able to handle. We have now realized that each test
+              case needs to include metadata of a kind not originally foreseen. It needs to be added
+              manually (or perhaps we can write a program that will get most of it right, but need a
+              manual check to catch errors, in cases where manual fixing is cheaper than making the
+              automatic process do the right thing).
+
+            
+We are converting a few thousand MARC records into TEI headers. The conversion
+              program tries to strip off the trailing punctuation added in the MARC record
+              (additional full stops, semi-colons, colons, etc., depending on the internal structure
+              of the MARC fields), but in a few cases out of every thousand fields, the algorithm is
+              not quite right. The program writes out the TEI header with its best guess at the
+              correct content of the element, but it also writes out the original trailing
+              punctuation, in a specially marked processing instruction. We wish for some reasonably
+              alert human being to go through the material and say, for each field, whether to
+              accept the program's proposal or to restore the original punctuation. In a very small
+              number of cases, neither the program's best guess nor the original punctuation is
+              correct, and the reviewer must specify some third form of the data.
+
+          
+        
+In each of these cases, a full-scale general-purpose XML editor can be used but has a
+          number of drawbacks. The user performing the task must be trained in the full editor, and
+          once the document is open in a general-purpose editor there are no limits to what changes
+          can be made, or in cases of inattention or confusion, no limits to the damage that can be
+          infliced on the document. It would be preferable to perform such specialized XML
+          modification tasks in what are sometimes called "padded cell" editors, which provide
+          simple limited interfaces for performing specific tasks. In a padded cell editor for
+          sentence-boundary correction, for example, the user should be able to open a document,
+          delete sentence boundaries (joining adjacent s elements), insert them (splitting s
+          elements), save the document, and quit. An editor which provides ONLY those operations
+          will be a lot easier to learn than a general purpose editor, and allows a careless or
+          hapless user to do much less harm. Special-purpose editors can also incorporate knowledge
+          of the underlying markup language and its usage in a particular project more effectively
+          than is possible for general-purpose editors.
+
+        
+It has rarely been feasible, however, to use conventional programming tools to build
+          special-purpose editors for individual XML vocabularies, let alone such specialized tasks:
+          using standard libraries, such editors would run to thousands or tens of thousands of
+          lines of Java or Objective C.
+
+        
+XForms (and some related technologies) change the equation.
+
+        
+XForms is built around the model / view / controller idiom, in which the model is a set
+          of XML documents, the view is specified using XHTML and the XForms widget set, and the
+          controller takes the form of declarative rules linking widgets to elements and attributes
+          in the markup. That is to say: XForms can be regarded as a technology for building
+          padded-cell editors; it has great potential for extensive application in any project
+          making systematic use of XML.
+
+        
+The tutorial will comprise four blocks of material, of about 45 minutes each.
+
+        
+          
+Introduction 
+              
+origin and design goals of XForms
+
+              
+the XForms model/view/controller processing model
+
+              
+XForms and padded-cell editors
+
+            
+          
+Atomic values 
+              
+the standard XForms widgets
+
+              
+datatypes and type awareness
+
+              
+auto-calculation
+
+              
+validation in the client
+
+              
+selective display of information
+
+              
+dynamic labels
+
+              
+multi-lingual interfaces
+
+            
+          
+More complex interfaces 
+              
+tabbed interfaces for multi-part forms
+
+              
+repetitions
+
+              
+XForms and mixed content
+
+            
+          
+Conclusion 
+              
+extensions of and alternatives to XForms
+
+              
+issues in the deployment of XForms
+
+            
+        
+      
+    

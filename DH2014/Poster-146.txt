@@ -1,0 +1,216 @@
+User-friendly lemmatization and morphological annotation of Early New High German manuscripts
+
+    
+Category:
+Poster
+
+      
+Session:
+2
+
+      
+Date:
+2014-07-10
+Time:
+16:00:00
+
+      
+Room:
+Amphipôle Common Area
+
+    
+
+        
+Gießler
+,
+									
+André
+
+        
+
+          
+
+        
+Martin-Luther-University Halle-Wittenberg, Institute of Computer Science
+
+      
+
+      
+
+        
+Ritter
+,
+									
+Jörg
+
+        
+
+          
+
+        
+Martin-Luther-University Halle-Wittenberg, Institute of Computer Science
+
+      
+
+      
+
+        
+Molitor
+,
+									
+Paul
+
+        
+
+          
+
+        
+Martin-Luther-University Halle-Wittenberg, Institute of Computer Science
+
+      
+
+      
+
+        
+Andert
+,
+									
+Martin
+
+        
+
+          
+
+        
+Martin-Luther-University Halle-Wittenberg, Institute of Computer Science
+
+      
+
+      
+
+        
+Kösser
+,
+									
+Sylwia
+
+        
+
+          
+
+        
+Martin-Luther-University Halle-Wittenberg, Institute of German Studies
+
+      
+
+      
+
+        
+Leipold
+,
+									
+Aletta
+
+        
+
+          
+
+        
+Martin-Luther-University Halle-Wittenberg, Institute of German Studies
+
+      
+
+    
+
+  
+In the humanities the study of ancient texts with multiple conveyed records is confronted with the problem to explicate the relationship among the records and to identify their commonalities and differences. The interdisciplinary project SaDA aims at that task. SaDA stands for "Semiautomatic difference analysis of complex text variants" 
+1
+. It is a BMBF funded project in which germanists, romanists and computer scientists work together. One focus of the project lies on the manuscript "Wundarznei" by Heinrich von Pfalzpaint of the 15th century, of which eleven records are known. The goal is to compare the variants and to display them in a critical edition and an on-line edition with synopsis and critical apparatus. Subject of this work is the philological preparation of the variants.
+
+  
+The way from variants to a critical edition starts with the transcribed manuscripts in Early New High German (ENHG). For a comparison the identification of corresponding words in the variants is crucial. But the German language in this stage lacks a common orthography, which leads to very different spellings of the same word in different variants. Actually, every newly discovered record reveals further spellings. Consequently, a prerequisite for text comparison is the mapping of word forms to signatures, by which corresponding word forms can be found. To get suitable signatures, the word forms are annotated with lemmata and additionally with part-of-speech tags and morphological data such as grammatical case, genus and numeral. The morphological data enables us to map one text more precisely to another text, if they are variants. Using precise query methods, e.g. for the state of certain phoneme building, other texts of this language stage could be dated, localised, dialectal determined or fitted into German language history. Such richly annotated texts are valuable witnesses for studies of ENHG and are therefore planned to be used for open research questions. To this end, accuracy of the annotation data has high priority.
+
+  
+ The annotation process is very tiresome, repeatedly lemmata have to be looked up in lexica and grammatical attributes have to be determined. The manual effort is quite high. In the project SaDA software solutions are developed which support humanists by supporting as many procedures as possible and finally reducing the effort drastically. In this work we present the tool Lemmano, which helps to annotate ENHG texts quickly and intuitively.
+
+  
+ From a computer scientists perspective several challenges arise in such a tool. At first the transcriptions have to be evaluated. They consist of UTF-8 encoded text files written by the transcriber. A special notation is used to mark details of the manuscript, such as information about peculiar spellings, diacritics, punctuation, transcribers comments, word separations or relationships between fragments of composed words. The notation follows rules, which have been developed by germanists from Bonn, Bochum and Halle for the encoding of old German texts in a readable and concise manner. A software for evaluating such transcriptions should be able to check the conformance to the transcription rules and to mark errors precisely. Primarily it has to identify the words of the text while recognising noted details such as diacritics, word separations and fragments of composed words. Once recognised a second challenge arises with the annotation of the words. For this task several automatic approaches exist. One approach uses grammatical rules, by which natural language processing tools recognise sentences, segments and phrases, which enables them to conclude part-of-speech tags and lemmata for the words. A second approach is based on lexica by looking up every word form and choosing the listed lemma and morphological data. A third approach is based on probabilities. Here, an annotation tool is trained using annotated exemplary texts. The tool learns word forms with their annotations depending on neighboured words. Once trained it can determine the lemma and annotation for known words in unknown texts with a certain probability.
+
+  
+ All these approaches have a major disadvantage: their results are defective because of the complexity and variability of the human language. A further drawback related to ancient manuscripts is their little tolerance for deviating spellings or spelling errors in words, which leads to a drastic decrease of their hit rate. These disadvantages combined with our high demands and unsteady orthography in ENHG manuscripts inhibit their use for the "Wundarznei".
+
+  
+ Lemmano's answer is therefore a semiautomatic approach: it presents high-quality suggestions for the current word form to the user by looking for similar word forms in lexica and taking their associated annotations, still allowing the manual annotation of every single word. In contrast to the automatic approaches the choice for the correct lemma and morphological data is made by the user. The user interface is intuitively usable and is designed for massive throughput.
+
+  
+ After the import and the check for conformance to the transcription rules the transcribed texts are presented easily readable and without transcription notation in their original line structure. Diacritics and encoded special characters are displayed using appropriate unicode characters. For every word, the user can open a dialogue by a mouse click or pressing the enter key where she can insert, modify and save annotation data. She can either enter all data from scratch or accept or modify a suggestion. The suggestions are computed with the help of lexica available to the tool. For a word form to be annotated the tool searches for "similar" word forms in the lexica, uses their associated annotations and presents them to the user after grouping and sorting. 
+
+  
+ Let us go into some details using the example of Heinrich von Pfalzpaint's "Wundarznei". There are eleven records known to exist, of which ten are available. The spelling of words in these variants varies that much, such that it is hard to uniquely map them to word forms in lexica. This problem has been addressed previously, for example by  
+2
+ and 
+3
+ resulting in tools used in 
+4
+. These approaches derive weighted replacement rules learnt by given training data consisting of pairs of original and normalised word forms. Using these rules a list of proposed word forms can be generated for a word form. Lemmano handles this problem similarly, but uses static instead of learnt replacement rules. Lemmano replaces letter combinations in a word by known equivalent letter combinations. For a given word form, a list of variants is created by replacing letter combinations by known equivalent letter combinations. For example, the word form "pffeyl" leads to the variants "pfeil", "pffeil", "pfejl", "pffejl", "pfeyl", "pffeyl". This approach generally leads to hits in a lexicon which we have extracted out of the "Bonner Korpus" 
+5
+, an annotated ENHG corpus. To further increase the quality of results Lemmano learns all annotations entered by the user and stores them in a separate lexicon. After annotating a certain amount of text, in more than 60% of the cases the annotation list which is suggested to the user contains the right entry in the first position and in more than 80% in the first or second position.
+
+  
+
+    
+Fig. 1: Annotation dialogue for a word form.
+
+    
+
+  
+Figure 1 shows the annotation dialogue for a word form which is a fragment of a composed word. On the left in the dialogue box there is the list of suggested annotations consisting of lemma, part-of-speech tag and morphological data. 
+
+  
+The manual annotation process can be done quickly, because the user can enter all data with the keyboard. For example selecting words in the text, opening the annotation dialogue and selecting from the suggestion list can be done without losing time with switching between keyboard and mouse. The input fields for lemma, part-of-speech tag and morphological attributes are equipped with auto completion functions, which propose more suitable entries with every entered character. In many cases a word form can be annotated with few keystrokes. The enter key on a word form opens the dialogue, the arrow keys select an entry from the suggestion list, the tab key switches to the input fields to modify or enter new data and a further hit on enter saves the annotation.
+
+  
+In the process of annotating the manuscripts of the "Wundarznei" Lemmano proved itself as a big help. Being a web based tool multiple users can annotate simultaneously and benefit from the learnt annotations of all users. 
+
+  
+In the ongoing project, Lemmano is being enriched with further functionality for marking commonalities and differences between variants and with functionality for displaying them as synopsis or critical apparatus. For the identification of corresponding text passages in the variants it uses the annotation data. To this end flexibility of Lemmano has to be extended on the sentence structure, such that text passages with equal content can be found at different places in the manuscripts, even with strong deviations in orthography and grammar.
+
+  
+References
+
+  
+1. 
+Project SaDA, Martin-Luther-University Halle-Wittenberg.
+ (2013). 
+www.informatik.uni-halle.de/ti/forschung/ehumanities/sada
+ (accessed 28 October 2013).
+          
+
+  
+2. 
+Reynaert, Martin.
+ (2011). Character confusion versus focus word-based correction of spelling and OCR variants in corpora. International Journal on Document Analysis and Recognition (IJDAR) June 2011, Volume 14, Issue 2, pp 173-187.
+          
+
+  
+3. 
+Hauser, Andreas W., Schulz, Klaus U.
+ (2007). Unsupervised Learning of Edit Distance Weights for Retrieving Historical Spelling Variations. Finite State Techniques and Approximate Search. Borovets, Bulgaria.
+          
+
+  
+4. 
+EU IMPACT. Improving Access to Text.
+ (2008-2011). 
+www.impact-project.eu
+ (accessed 28 October 2013). Project funded by European Commission.
+          
+
+  
+5. 
+Diel, Marcel and Fisseni, Bernhard and Lenders, Winfried and Schmitz, Hans-Christian.
+ (2002). XML-Kodierung des Bonner Frühneuhochdeutschkorpus, Universität Bonn. 
+www.korpora.org/Fnhd
+ (accessed 28 October 2013).
+          
+

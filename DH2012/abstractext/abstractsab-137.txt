@@ -1,0 +1,287 @@
+Poster: Toward a Digital Research Environment for Buddhist Studies
+
+					Nagasaki, Kiyonori , 
+					International Institute for Digital Humanities, 
+					
+nagasaki@dhii.jp
+
+				
+
+					Tomabechi, Toru, 
+					International Institute for Digital Humanities, 
+					
+tomabechi@dhii.jp
+
+				
+
+					Shimoda, Masahiro, 
+					University of Tokyo, 
+					
+shimoda@l.u-tokyo.ac.jp
+
+				
+ In recent times, digital resources have taken on steadily greater importance in
+					the field of Buddhist studies, with increasing numbers of digitized versions of
+					Buddhist canonical texts, representation of material culture, and other objects
+					of research becoming available on Web. However, despite the basic availability
+					of such resources, most of them are not set up in an optimal way for usage by
+					researchers; nor are they for the most part integrated with each other. For
+					example, there does not yet exist a system that can operate with equal efficacy
+					with philological data related to Sanskrit, Chinese, Tibetan language materials.
+					Therefore, a comprehensive and concrete framework is needed. Although a method
+					of text description is fairly well established in the form of TEI P5, neither
+					the interfaces, nor the methods of presentation of results for digitized works
+					are as yet satisfactory for the scholars of Buddhism. In this paper, we will
+					present our approach to the establishment of requirements for various kinds of
+					materials used in Buddhist studies and make some suggestions for the
+					implementation of more functional interfaces as a Web research environment for
+					such scholars.
+
+				
+ At first, it must be noted that it is very difficult to define adequate
+					requirements for the full range of the scholars of Buddhism, who come from a
+					broad array of language training and methodological approaches. Thus, this paper
+					will focus primarily on the fulfillment of the requirements for the scholars who
+					are dealing with authentic scholarly digitized texts. In the field of Buddhist
+					studies, where texts have been translated across a number of languages in
+					different regions at various points in history, we have no recourse but to deal
+					with several versions of a text, including transmitted, diffused, and translated
+					variations at the same time (Fig.1). 
+					
+					
+
+						
+(Fig. 1. An Example: “ मूलमध्यमककारिका (Madhyamakakārikā)" and some of the
+							related texts)
+
+						
+Full Size Image 
+
+					
+					
+					As discussed by Steinkellner (1988), it is
+					often difficult to "recover" the original form of any given text, as they have
+					been changed variously in their long tradition. In many cases, all that has come
+					down to us is a translation that was preserved in the Chinese tradition since
+					the 2nd century or in the Tibetan tradition since the 8th century. It is quite
+					often the case that various witnesses are extant in both traditions. In such
+					cases, various diplomatic texts in various languages must be compared in various
+					units such as at the level of text, chapter, fascicle, sentence, word, syllable,
+					or even character. Therefore, it is necessary for textual scholars to prepare an
+					environment that delivers integrated views of a given text views. On the other
+					hand, it is important to understand the background thought and beliefs reflected
+					in each stage of the textual development—not only in Sanskrit and Pāli which are
+					the closest to the original form—but also in Tibetan, Chinese. In this case,
+					each annotation must be recorded in the context of its diffusion into other
+					texts. In addition, modern translations of each text should be pointed to from
+					such texts. Therefore, it is crucial for Buddhist textual studies to provide
+					such information within a system of intertextual relationships. (See Fig. 1)
+				
+ In order to realize such relationship in digitized resources, it is necessary to
+					provide the data in a punctuation-neutral manner. This is because separation of
+					words or sentences is not always obvious; punctuating text itself amounts to an
+					independent and original scholarly contribution, especially in the cases of
+					Sanskrit and classical Chinese manuscripts. Therefore, the basic concepts are: 
+
+				
+					
+being based on a unit that is not restricted to the legacy media.
+
+					
+inheritance of the legacy studies on the paper media.
+
+					
+DB providers prepare the space for the sharing of data units.
+
+					
+the users act as recipients of the units and some of them act as
+						distributors of the units.
+
+					
+DB providers develop and distribute their own Web API so that users can
+						make arbitrary links to access each others' data. 
+
+					
+The above are realized as a collaborative research environment on the
+						Web.
+
+				
+				
+In addition, in order to preserve compatibility with past research results, all
+					units should be identifiable in legacy media through traditional referencing
+					methods such as T0001,01,0001a01 which means Taishō
+						Daizōkyō, vol.1, page 1, register a (among a, b, and c), line 1. Then,
+					they should be located by URI by implementation of Web API so that the other
+					persons or applications can freely refer to arbitrary units through Web.
+
+				
+ In order to realize such concepts, a collaborative editing system needs to be
+					developed. Initially, users should be registered according to their own roles
+					such as visitor, editor, or administrative editor. The role of the editor is
+					that of inputting and checking of the data; the role of administrative editor is
+					checking of the data and the determination of the distribution of the data. Both
+					editor and administrative editor should be able to efficiently select arbitrary
+					units with an easy method such as mouse click or drag on the text body without
+					any restriction posed by the textual structure. Then they can append any
+					necessary information to the units and link selected units to other ones (Fig.
+					2). 
+
+						
+(Fig. 2. The procedures of inputting relationship data on an
+							environment)
+
+						
+Full Size Image 
+
+					
+					In the final step, the administrative editor should check and determine
+					whether each unit is ready for release. The role of visitor is only to browse
+					the workspace to observe the progress of the work. On the other hand, anonymous
+					users can browse only released data. They can efficiently view various
+					information with various methods such as mouse click or drag on the text body
+					and select (or ignore) any data on the basis of various properties such as their
+					sources, contributors, and so on. In order to realize such a function on Web,
+					AJAX will be fully utilized.
+				
+ Finally, we will explain the Web Database function. The Web Database stores only
+					relational data that includes one or two locations in the original materials,
+					its annotation or relationship information, contributor's name, data composition
+					and other related information. The writing rule of the location allows the user
+					to use the information even without digitized textual material. However, if the
+					material is originally in digitized form, the data must refer to a logical
+					location such as the URI. Users don't need to be aware of separation between the
+					database and the materials presented to them because to the viewer of the
+					materials, they seem to be seamlessly integrated with the database. By this kind
+					of method, it will be easier to integrate the other materials which are released
+					on other Web sites into the environment. The database can provide arbitrary data
+					according to the user's preference through Web API, as well as retrieve and show
+					the data provided by other DBs. From here, the data can be published under
+					various formats such as RDF. However, in principle, this kind of system would
+					not be able to avoid the problem of overlap if there is an intent to publish its
+					data fully including the original materials. So we are trying to do so according
+					to TEI P5 by using a kind of stand-off markup. 
+					
+
+						
+(Fig. 3. The procedures of browsing the relational data on an
+							environment)
+
+						
+Full Size Image 
+
+					
+				
+				
+ Although we have just begun to develop this approach, it has already been tested
+					by some scholars and we have seen positive results. Actually, these early
+					testers say that it is very useful for them because their accessibility and
+					permissions are limited and explicitly shown. However, some enhancements have
+					been suggested, which mainly concern the function of browsing. We will work on
+					this until the time of DH2011, when we will able to present a much more matured
+					system.
+
+			
+
+		
+References:
+
+			
+				
+					
+
+						Burnard, L.  Bauman, S.
+						2007
+						P5: Guidelines for Electronic Text Encoding and
+							Interchange, 
+						
+         (
+link
+)
+   
+					
+
+					
+
+						Caton, P.
+						2007
+						 “Distributed Multivalent Encoding, ” 
+						Digital Humanities 2007, 
+						University of Illinois, Urbana-Champaign, 
+						2-8 June, 2007
+						33-34
+					
+
+					
+
+						DeRose, S.
+						2004
+						 “Overlap: A Review and a Horse, ” 
+						Extreme Markup Languages 2004, 
+						Montreal, 
+						2-6 Aug., 2004
+						
+         (
+link
+)
+   
+					
+
+					
+
+						Lavagnino, J.
+						2009
+						 “Access, ” 
+						Literary and Linguistic Computing, 
+						24 (1)
+						63-76
+					
+
+					
+
+						Nagasaki, K.
+						2008
+						 “A Collaboration System for the Philology of the Buddhist
+							Study , ” 
+						Digital Humanities 2008, 
+						Oulu, Finland, 
+						25-29 June, 2008
+						262-263
+					
+
+					
+
+						Rehm, G.  Witt, A.
+						2008
+						 “Aspects of Sustainability in Digital Humanities , ” 
+						Digital Humanities 2008, 
+						Oulu, Finland, 
+						25-29 June, 2008
+						21-29
+					
+
+					
+
+						Renear, A. H.
+						2004
+						 “Text Encoding, ” 
+						A Companion to Digital Humanities, 
+						Schreibman, S. Siemens, R. Unsworth, J.
+						Blackwell
+						Oxford
+						218-239
+					
+
+					
+
+						Steinkellner, E.
+						1988
+						 “Methodological Remarks On The Constitution Of Sanskrit
+							Texts From The Buddhist Pramāṇa-Tradition, ” 
+						Wiener Zeitschrift für die Kunde Südasiens, Band
+							XXXII, 
+						103-129
+					
+
+				
+			
+		

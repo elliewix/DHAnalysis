@@ -1,0 +1,130 @@
+Marrying the Benefits of Print and Digital: Algorithmically Selecting Context for a Key Word
+Category:
+Long Paper
+Session:
+5
+Date:
+2014-07-10
+Time:
+11:00:00
+Room:
+319 - Amphipôle
+Benner
+,
+									
+Drayton Callen
+University of Chicago, United States of America 
+1. Introduction
+Over the last few decades as more texts have been digitized, numerous software systems have arisen to display the texts and allow scholars to analyze them. These software systems have varied in their delivery (web-based, desktop software, mobile app, etc.) and their functionality, yet nearly all of them have included full-text search capabilities. Search is a central tool for scholars researching a corpus, and it is a task for which computers are perfectly suited. Despite the ubiquity of searching capabilities, there is no single method for displaying search results. When a user has requested to see a key word in its context, how much context should be presented to the user?
+In choosing the context to present, there is no single solution that will always be best. At times, users will want to see detailed context requiring several lines. At other times, users will want to see as many search results as possible in a small visual space. Thus, providing multiple ways of viewing search results is desirable. When each search result is contained in a single line, perhaps the most attractive presentation currently in common use contains the key word in the middle, showing whatever context that fits on each side, a presentation style also found in some print concordances (Clarke, 1984; The Computer Bible, 1970-).
+Fig. 1: . Results from a KWIC (Key Word in Context) search using Perseus under Philologic at perseus.uchicago.edu.
+However, there is another method of displaying search results on a single line that is found in some print concordances that antedate digital tools. In this tradition, the context surrounding the key word is chosen manually so as to provide the reader as much information as possible about the key word’s context.
+Fig. 2: The entry “strengthen” in (Strong, 1890).
+Unfortunately, this method requires a tremendous amount of manual effort; it has only been practical in concordances of the Bible and other heavily-studied texts. The following concordances that antedate the maturation of the digital age take this approach: 
+Bible
+: Cruden (1737); Young (1882); Strong (1890); Mandelkern (1896); Hazard (1922); Gant (1950); Lisowsky (1958); Even-Shoshan (1977); 
+Homer
+: Prendergast (1875: Iliad); Dunbar (1880: Odyssey); 
+Shakespeare
+: Clarke (1846). Since the full flowering of the digital age, it has been abandoned in most concordances and even in commercial Bible software, as shown in the following figures.
+Fig. 3: Search results from Logos Bible Software (logos.com) on a PC.
+Fig. 4: . Search results from BibleWorks (BibleWorks.com) on a PC.
+Fig. 5: Search results from Olive Tree Bible Software (OliveTree.com) on a Samsung Galaxy S3 smartphone. As a disclaimer, I wrote the search engine—but not the code to display the search results—for Olive Tree Bible Software as an independent contractor.
+There have been some print concordances in the digital age for which the single-line context has been produced algorithmically, at least in part (e.g. Ellison, 1957; Spevack, 1968-1975; Goodrick and Kohlenberger, 1990; Kohlenberger, 1991; Dixon and Dawson, 1992; Mounce, 2012). Where algorithmic details have been published in part (Soule, 1956; Dixon, 1974; Dawson, 1977; Burton, 1982), they have often been primarily dependent on punctuation and/or manual annotation as a pre-processing step. While pioneering in their day, computing resources are more plentiful today, and the field of natural language processing has advanced greatly.
+I propose an algorithm that seeks to mimic a human reader’s choice of context for a search term. The goal is to produce the most relevant context for a key word on a line that is of arbitrary width using an arbitrary font. This provides the benefits of traditional print concordances without the tens or hundreds of person-years required to produce them for even a single line width and font size.
+2. Algorithm
+2.1 Preprocessing
+The text must, of course, be available in electronic form, but a syntactic parsing is also necessary. There are some electronic texts that have been parsed syntactically by hand (e.g. Andersen and Forbes, 2012), but the recent development of general-purpose parsers has made this work possible on a broader scale. As these parsers are developed for more languages and dialects and as they improve, the approach outlined here will become more and more useful. For this work, I generated phrase structure trees and dependency trees using StanfordCoreNLP (version 1.3.5, 
+nlp.stanford.edu/software/index.shtml
+) on three texts (cf. Toutanova et al., 2003; de Marneffe et al., 2006). In keeping with the traditional use of concordances with Bible translations, I chose two Bible translations along with one novel: the King James Version (KJV) of the Bible (1769 text edition), the English Standard Version (ESV) of the Bible (2011 text edition, Old Testament/Hebrew Bible portion only), and Henry James’ novel What Maisie Knew (Maisie). A small amount of preprocessing was done before and after StanfordCoreNLP’s parsing, both to fix some repetitive errors in StanfordCoreNLP’s analysis and also to remove, and then reinstate, the main archaisms in the KJV.
+2.2 Algorithm
+In order to develop an algorithm for mimicking a human’s choice of context, I developed training data by randomly choosing key words from the ESV and line lengths, ranging from what might fit legibly on a typical smartphone to a line three times as long. I then displayed all possible contexts that fit on the line but make maximum use of the space on the line. That is, no more words could fit on either side. In addition, sensible rules concerning which types of punctuation were appropriate at the beginning or end were employed (e.g. a possible context could not begin with a comma or end with an open quotation mark), and possible contexts could not cross verse boundaries. In the rare case that there was only one option, that key word was discarded. A user selected his preferred context for 500 such key words, occasionally choosing two or three different contexts if they seemed equally desirable1. After analyzing his choices, I produced the following metric w(k,n) to give a value (weight) to each nearby word n for the key word k:
+Let ap be the nearest common ancestor of k and n in the phrase structure tree and ad be the nearest common ancestor of k and n in the dependency tree. Then dpk is the distance between ap and k in the phrase structure tree, dpn is the distance between ap and n in the phrase structure tree, ddk is the distance between ad and k in the dependency tree, and ddn is the distance between ad and n in the dependency tree.
+Each possible context is evaluated as the sum of w(k,n) for each n in the possible context; the context with the highest value is chosen. If multiple possible contexts have identical values, any can be chosen; I picked the one that had the most context before the key word.
+The constants were optimized to the following values using a Monte Carlo particle filter on the training data:
+
+					These constants reveal that the dependency tree was more important than the phrase structure tree.
+3. Results
+In addition to the above-mentioned training set, test sets were then generated from the ESV and Maisie with 100 key words each, and four human annotators made selections for each. The results are listed in Table 1. Since human annotators occasionally selected two or three contexts as equally good, a match for a given key word is calculated as:
+ 
+ESV training set
+ESV test set
+Maisie test set
+Algorithm matches user selection
+67.8%
+62.5%
+47.8%
+Expected algorithm matches if selections were random from a uniform distribution
+27.4%
+25.5%
+21.9%
+Inter-annotator agreement
+N/A
+65.8%
+53.0%
+Expected inter-annotator agreement if selections were random from a uniform distribution
+N/A
+27.0%
+23.5%
+These results indicate that on average, the algorithm matches a given human annotator slightly less often than another human annotator does. Assuming that human intuition presents the gold standard for this task, this means that the algorithm is doing only slightly worse than humans at picking the best context for the key word.
+Some screenshots of algorithmically-generated key words in context are shown below.
+Fig. 6: KWIC search for “Aaron” in ESV, KJV; “Maisie” in Maisie (from left to right).
+Fig. 7: Randomly Selected Key Words from ESV, KJV and Maisie (from left to right).
+4. Conclusion
+Searching for key words is one of the core functions of text analysis software. The work presented here holds promise as a way of improving the way in which search results are displayed by automating a time-consuming manual technique traditionally used in print concordances. In addition, future work could deal with more complex displays, including possibly not using all the space available, possibly using ellipses, and dealing with displaying results of searches involving multiple key words.
+I would like to thank James Covington for his annotation of the training set and both test sets, Rodelle Williams and D. Chris Benner for their annotation of both test sets, Humphrey H. Hardy for his annotation of the 
+ESV test set, and Samuel L. Boyd for his annotation of the 
+Maisie test set.
+References
+Andersen, F. I. & Forbes, A. D.
+ (2012). Biblical Hebrew Grammar Visualized. Winona Lake: Eisenbrauns.
+Burton, D. M.
+ (1982). Automated Concordances and Word-indexes: Machine Decisions and Editorial Revisions. Computers and the Humanities 16, 195-218.
+Clarke, E. G.
+ (1984). Targum Pseudo-Jonathan of the Pentateuch: Text and Concordance. Hoboken: Ktav.
+Clarke, M. C.
+ (1846). The Complete Concordance to Shakespeare: Being a Verbal Index to all the Passages in the Dramatic Works of the Poet. New York: Wiley and Putnam.
+Cruden, A.
+ (1737). A Complete Concordance to the Old and New Testament; or a Dictionary and Alphabetical Index to the Bible with a Concordance to the Apocrypha, and a Compendium of the Holy Scriptures. London: Frederick Warne & Co.
+Dawson, J. L.
+ (1977). Textual Bracketing. ALLC Bulletin 5, 148-157.
+de Marneffe, M.-C., MacCartney, B. & Manning, C. D.
+ (2006). Generating Typed Dependency Parses from Phrase Structure Parses. Language Resources and Evaluation Conference. Genoa, Italy.
+Dixon, J. E. G.
+ (1974). A Prose Concordance: Rabelais. ALLC Bulletin 2, 47-54.
+Dixon, J. E. G. & Dawson, J. L.
+ (1992). Concordance des Œuvres de François Rabelais. Genève: Droz.
+Dunbar, H.
+ (1880). A Complete Concordance to the Odyssey and Hymns of Homer. To which is added A Concordance to the Parallel Passages in the Iliad, Odyssey and Hymns. Oxford: Clarendon.
+Ellison, J. W.
+ (1957). Nelson's Complete Concordance of the Revised Standard Version of the Bible. New York: Nelson.
+Even-Shoshan, A.
+ (1977). Ḳonḳordantsyah ḥadashah le-Torah, Nevʼim, u-Khetuvim: botsar leshon ha-Miḳra - ʻIvrit ṿa-Aramit: shorashim, milim, shemot peratiyim, tserufim ṿe-nirdafim. Jerusalem: Ḳiryat sefer.
+Gant, W. J.
+ (1950). Concordance of the Bible in the Moffatt Translation. London: Hodder and Stoughton.
+Goodrick, E. W. & Kohlenberger, J. R., III
+ (1990). The NIV Exhaustive Concordance. Grand Rapids: Zondervan.
+Hazard, M. C.
+ (1922). A Complete Concordance to the American Standard Version of the Holy Bible. New York: Nelson.
+Kohlenberger, J. R., III
+ (1991). The NRSV Concordance Unabridged: Including the Apocryphal/Deuterocanonical Books. Grand Rapids: Zondervan.
+Lisowsky, G.
+ (1958). Konkordanz zum hebräischen Alten Testament, nach dem von Paul Kahle in der Biblia Hebraica edidit R. Kittel besorgten masoretischen Text. Stuttgart: Privileg. Württ. Bibelanstalt.
+Mandelkern, S.
+ (1896). Veteris Testamenti concordantiae hebraicae atque chaldaicae, quibus continentur cuncta quae in prioribus concordantiis reperiuntur vocabula, lacunis omnibus expletis, emendatis cuiusquemodi vitiis, locis ubique denuo excerptis atque in meliorem formam redactis, vocalibus interdum adscriptis, particulae omnes adhuc nondum collatae, pronomina omnia hic primum congesta atque enarrata, nomina propria omnia separatim commemorata. Lipsiae: Veit et comp.
+Mounce, W. D.
+ (2012). ESV Comprehensive Concordance of the Bible. Wheaton: Crossway.
+Prendergast, G. L.
+ (1875). A Complete Concordance to the Iliad of Homer. London: Longmans, Green & Co.
+Soule, G.
+ (1956). Machine that Indexed the Bible. Popular Science 169, 173-175, 242, 246.
+Spevack, M.
+ (1968-1975). A Complete and Systematic Concordance to the Works of Shakespeare. Hildesheim: Georg Olms.
+Strong, J.
+ (1890). The Exhaustive Concordance of the Bible: Showing every Word of the Text of the Common English Version of the Canonical Books, and every Occurrence of each Word in Regular Order: together with A Comparative Concordance of the Authorized and Revised Versions, Including the American Variations: Also Brief Dictionaries of the Hebrew and Greek Words of the Original, with References to the English Words. Cincinnati: Jennings & Graham.
+The Computer Bible
+. (1970-). Missoula: Scholars Press.
+Toutanova, K., Klein, D., Manning, C. D. & Singer, Y.
+ (2003). Feature-rich Part-of-speech Tagging with a Cyclic Dependency Network. Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology - Volume 1. Edmonton, Canada: Association for Computational Linguistics.
+Young, R.
+ (1882). Analytical Concordance to the Bible on an Entirely New Plan: Containing every word in Alphabetical Order, Arranged under its Hebrew or Greek Original, with the Literal Meaning of each, and its Pronunciation; Exhibiting about Three Hundred and Eleven Thousand References, Marking 30,000 Various Readings in the New Testament, with the Latest Information on Biblical Geography and Antiquities, etc. etc. etc. Philadelphia: Lippincott & Co.

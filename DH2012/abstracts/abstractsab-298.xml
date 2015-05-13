@@ -1,0 +1,350 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8; charset=UTF-8" /><title>The Theory and Design of PlotVis</title><link rel="stylesheet" href="css/default/results.css" type="text/css" /><script src="script/yui/yahoo-dom-event.js" type="text/javascript"></script><script src="script/yui/connection-min.js" type="text/javascript"></script></head><body class="home blog"><div id="wrapper" class="hfeed"><div id="header"><div id="masthead"><div id="branding" role="banner"><h1 id="site-title"><span><a href="https://dh2011.stanford.edu/" title="Digital Humanities 2011: June 19 – 22" rel="home">Digital Humanities
+                2011: June 19 – 22</a></span></h1><div id="site-description">Big Tent Digital Humanities</div><img src="https://www.stanford.edu/group/dh2011/cgi-bin/wordpress/wp-content/uploads/2010/09/tieDyeLarge.jpg" width="940" height="198" alt="" /></div><div id="access" role="navigation"><div class="menu"><ul><li><a href="https://dh2011.stanford.edu/" title="Home">Home</a></li><li><a href="https://dh2011.stanford.edu/?page_id=3" title="About">About</a></li><li><a href="https://dh2011.stanford.edu/?page_id=15" title="Accommodations &amp; Travel">Accommodations &amp; Travel</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=887" title="Accommodations">Accommodations</a></li><li><a href="https://dh2011.stanford.edu/?page_id=883" title="Travel">Travel</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=311" title="Registration">Registration</a></li><li><a href="https://dh2011.stanford.edu/?page_id=411" title="Schedule">Schedule</a></li><li><a href="https://dh2011.stanford.edu/?page_id=475" title="Workshops">Workshops</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=489" title="Tutorial 1: Introductory TEI ODD">Tutorial 1: Introductory TEI ODD</a></li><li><a href="https://dh2011.stanford.edu/?page_id=499" title="Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the Undergraduate Curriculum">Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the
+                      Undergraduate Curriculum</a></li><li><a href="https://dh2011.stanford.edu/?page_id=507" title="Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can Help Your Project">Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can
+                      Help Your Project</a></li><li><a href="https://dh2011.stanford.edu/?page_id=517" title="Tutorial 4: Introduction to Text Analysis With Voyeur Tools">Tutorial
+                      4: Introduction to Text Analysis With Voyeur Tools</a></li><li><a href="https://dh2011.stanford.edu/?page_id=521" title="Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation">Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation</a></li><li><a href="https://dh2011.stanford.edu/?page_id=525" title="Tutorial 6: Natural Language Processing Tools for the Digital Humanities">Tutorial 6: Natural Language Processing Tools for the Digital Humanities</a></li><li><a href="https://dh2011.stanford.edu/?page_id=529" title="Tutorial 7: Network and Topical Analysis for the Humanities using NWB and Sci2">Tutorial 7: Network and Topical Analysis for the Humanities using NWB and
+                      Sci2</a></li><li><a href="https://dh2011.stanford.edu/?page_id=493" title="Workshop: Visualization for Literary History">Workshop: Visualization
+                      for Literary History</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=471" title="Social Program">Social
+                  Program</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=541" title="Literary San Francisco (Full Day)">Literary San Francisco (Full
+                      Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=547" title="Silicon Valley History (Half-Day)">Silicon Valley History
+                      (Half-Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=537" title="Sonoma Wine Country (Full-Day)">Sonoma Wine Country (Full-Day)</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=181" title="CFPs">CFPs</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=97" title="General CFP">General
+                      CFP</a></li><li><a href="https://dh2011.stanford.edu/?page_id=175" title="CFP en Español">CFP en
+                      Español</a></li><li><a href="https://dh2011.stanford.edu/?page_id=287" title="CFP in German">CFP in
+                      German</a></li><li><a href="https://dh2011.stanford.edu/?page_id=207" title="CFP in Greek">CFP in
+                      Greek</a></li><li><a href="https://dh2011.stanford.edu/?page_id=229" title="CFP in Hungarian">CFP
+                      in Hungarian</a></li><li><a href="https://dh2011.stanford.edu/?page_id=257" title="CFP in Italiano">CFP
+                      in Italiano</a></li><li><a href="https://dh2011.stanford.edu/?page_id=157" title="Tutorial/Workshop CFP">Tutorial/Workshop CFP</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=19" title="Contacts">Contacts</a></li><li><a href="https://dh2011.stanford.edu/?page_id=801" title="Venue">Venue</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=829" title="Local Lunch Spots">Local Lunch Spots</a></li><li><a href="https://dh2011.stanford.edu/?page_id=845" title="Palo Alto Restaurants">Palo Alto Restaurants</a></li></ul></li></ul></div></div><br class="clear" /></div></div><div class="resultsHeader"><table><tr><td><a href="http://dh2011abstracts.stanford.edu/xtf/search" target="_top">New Search</a> | <span class="notActive">Return to Search Results</span> | <a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;doc.view=print;chunk.id=0" target="_top">Print View</a></td><td align="right"><form action="http://dh2011abstracts.stanford.edu/xtf/view" target="_top" method="get"><input name="query" type="text" size="15" /><input type="hidden" name="docId" value="tei/ab-298.xml" /><input type="hidden" name="chunk.id" value="0" /><input type="submit" value="Search this Book" /></form></td></tr></table></div><hr /><div class="results"><h2> Panel: The Theory and Design of PlotVis</h2><br /><h4>
+                    Dobson, Teresa M., 
+                    University of British Columbia, Canada, 
+                    <a href="mailto:teresa.dobson@ubc.ca">teresa.dobson@ubc.ca</a>
+                </h4><h4>
+                    Ruecker, Stan, 
+                    The University of Alberta, 
+                    <a href="mailto:sruecker@ualberta.ca">sruecker@ualberta.ca</a>
+                </h4><h4>
+                    Brown, Monica, 
+                    <a href="mailto:mm2brown@interchange.ubc.ca">mm2brown@interchange.ubc.ca</a>
+                    University of British Columbia, Canada, 
+                </h4><h4>
+                    Rodriguez, Omar, 
+                    <a href="mailto:omar.rodrigueza@gmail.com">omar.rodrigueza@gmail.com</a>
+                    The University of Alberta, 
+                </h4><h4>
+                    Michura, Piotr, 
+                    <a href="mailto:zemichur@cyf-kr.edu.pl">zemichur@cyf-kr.edu.pl</a>
+                    Academy of Fine Arts, Krakow, Poland, 
+                </h4><h4>
+                    Grue, Dustin, 
+                    <a href="mailto:dgrue@shaw.ca">dgrue@shaw.ca</a>
+                    University of British Columbia, Canada, 
+                </h4><br /><h2></h2>
+            
+                
+                    <p class="noindent">PlotVis is a 3D system for people interested in examining narrative action,
+                        or plot, from a variety of perspectives. The system was developed as one
+                        outcome of a funded study examining the teaching of complex narrative forms
+                        in secondary and undergraduate classrooms. Results of this study have
+                        revealed, inter alia, that conventional approaches to teaching fiction,
+                        particularly at the secondary level, fail to take account of the diversity
+                        of contemporary narrative (cf Dobson, 2006).</p>
+                    <p class="noindent">For example, instructors, particularly at the secondary level, still rely
+                        heavily on the five-stage plot mapping first described by Gustav Freytag
+                        (1863) in Die Technik des Dramas (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Figure
+                            1</a>), and the superimposition of this model on forms beyond those it
+                        was originally intended to describe can be misleading (Dobson, Michura,
+                        Ruecker, 2010). <p>
+                            <h2>Figure 1: Freytag’s Pyramid shows five basic components of plot,
+                                based on Greek and Shakespearean tragedy.</h2>
+                            <img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure1.png" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure1.png','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+                        </p> In addition, the reliance on the Cartesian graph to model
+                        narrative generally – and there are a number of examples of such graphing
+                        (e.g., Sterne, 1847; Vonnegut, 1973) – is restricting because it fails to
+                        take account of the multiple dimensions of story.</p>
+                    <p class="noindent">Considering the limitations of the Cartesian graph for modeling narrative
+                        along with conceptualizations of narrative as multidimensional (e.g.,
+                        Shields, 2000), our goal was to produce a three-dimensional digital
+                        environment that reifies different perspectives on plot, so that students
+                        and other scholars can quickly shift from one 3D object to another, or spend
+                        time exploring any of the visualizations in more detail. We currently
+                        support three perspectives and are beginning to experiment with the design
+                        of a fourth.</p>
+                    <p class="noindent">This panel will examine the results of the PlotVis project from several
+                        different perspectives, including an introduction to the project, schema
+                        design for narrative encoding, a reading practices study, and design and
+                        programming.</p>
+                
+                
+                    <h2>Introduction to PlotVis as a Form of Distant Reading</h2>
+                    <p class="noindent"><blockquote> … what we really need is a little pact with the devil: we know how to
+                            read texts, now let’s learn how not to read them. Distant reading: where
+                            distance, let me repeat it, is a condition of knowledge: it allows you
+                            to focus on units that are much smaller or much larger than the text:
+                            devices, themes, tropes—or genres and systems. (Moretti, 2000, p.
+                            57).</blockquote></p>
+                    <p class="noindent">Recently, literary theorists and digital humanists alike have taken up
+                        Moretti’s appeal, later developed in <i>Graphs, Maps,
+                            Trees</i> (2005), for the development of new methods of textual
+                        analysis. Clement (2008), for example, uses mapping techniques and
+                        visualizations to facilitate, quite literally, new perspectives on a
+                        canonical text, Gertrude Stein’s <i>The Making of
+                            Americans</i>. By premising knowledge on distance rather than
+                        closeness, Clement discerns significant patterns in the narrative’s
+                        structure, in so doing discovering a new logic to Stein’s text. Such new
+                        insights, made possible by adapting the scale and focus of textual analysis,
+                        are exactly what Moretti expects readers will earn by learning how not to
+                        read texts—and, by extension, by learning how to use different technologies
+                        to complement, and corroborate, our readings of texts.</p>
+                    <p class="noindent"> Experiments with distant reading challenge the truism that readers make
+                        sense of a story by seizing upon a narrative episode, using it as a key to
+                        gain entry into the deeper meaning inherent within the text, “as if meaning
+                        resided in a buried treasure chest or behind a lock door” (Clement, 2008, p.
+                        365). Clement proposes a different metaphor for understanding narrative
+                        structure, that of a map key, which instead implies that readers make sense
+                        of stories by using narrative structure as a guide. The metaphor of the map
+                        key offers a view of reading complex narrative as a process of orientation,
+                        through which readers manage their awareness of a text’s meanings by
+                        acquainting themselves with its structure.</p>
+                    <p class="noindent">Similar views of distant reading and complex narrative inform the project of
+                        developing XML schemas for encoding digitized versions of fictional
+                        narratives. Undertaken as part of a larger study based out of the University
+                        of British Columbia, this project investigates, and proposes, methods of
+                        reading adapted to contemporary print and digital fiction’s “shift away from
+                        conventional narrative logic toward indeterminacy, fragmentation, and
+                        open-endedness” (Dobson, 2008, p. 1). While the goal of our larger study is
+                        the development of new models for writing, reading, and teaching complex
+                        print and digital narrative, the focus here will be the use of XML to encode
+                        fictional narratives as, in itself, a form of textual analysis, involving
+                        both closeness and distance, and enabling even further alterations, of the
+                        kind Moretti proposes, to the scale and focus of scholarly reading
+                        practices. </p>
+
+                
+                
+                    <h2>Towards a Schema Design for Narrative Encoding </h2>
+                    <p class="noindent">This paper will discuss the iterative development and use of a set of
+                        Extensible Markup Language (XML) schemas for encoding digitized versions of
+                        fictional narratives. Although the Text Encoding Initiative (TEI) Guidelines
+                        for Electronic Text Encoding and Interchange define and document a thorough
+                        markup language for encoding humanities texts, including significant
+                        provisions for encoding scholarly editions of drama, poetry, and
+                        manuscripts, there presently exist only a handful of XML schemas designed
+                        specifically for marking up literary fiction (e.g., StoryML, FicML, PftML). </p>
+                    <p class="noindent">Drawing on principles and approaches from narratology, our literary encoding
+                        schemas combine TEI elements and attributes with tags that specifically mark
+                        up elements of narrative structure, such as actions, characters, dialogue,
+                        narration, objects, places, and time. Examples of encoded short stories,
+                        such as Alice Munro’s “The Love of a Good Woman” and Ernest Hemingway’s
+                        “Hills Like White Elephants,” will be used to demonstrate, and critique, the
+                        different possibilities we have explored for developing literary XML
+                        schemas. </p>
+
+                
+                
+                    <h2>From Envisaging to Visualization: Young People’s Narrative Reading
+                        Practices</h2>
+                    <p class="noindent">This paper will present findings of a study examining the reading practices
+                        of young adults. The study focused on the dialectic between how students of
+                        literature <i>envisage</i> narrative and how they actually
+                        visualize it in systematized approaches. Fifty participants in grades 11 and
+                        12 read Hemingway’s “Hills Like White Elephants” and O’Faolain’s “The
+                        Trout.” They then engaged in a series of activities: evaluating form by
+                        physically “cutting and pasting” a narrative’s text, sketching narrative
+                        diagrams, XML tagging of narratives, and an exit interview.</p>
+                    <p class="noindent">Participants indicated that narratives were enjoyable because their plots
+                        were “unexpected,” but also un-enjoyable because they were “hard to
+                        understand.” That is, comprehension of a narrative is a condition of
+                        enjoyment and disappointment: narratives ought to be original but not
+                        confusing. In XML tagging, grade 11 students were given a basic schema to
+                        tag a narrative but were also encouraged to modify this schema. The schemas
+                        were altered beyond a systematized approach, instead revealing critical
+                        activity across a range of “levels.” Globally, for example, subjects
+                        modified the schemas beyond a “systematic” approach in order to highlight
+                        salient features particular to a text. Subjects added the tags <i>setting</i> and <i>contradictory
+                            statements</i> to the XML schema for “Hills,” suggesting a
+                        post-critical (and almost juridical) attitude. More locally, there is
+                        evidence that tagging is dependent on “spheres of lexical activity,” where
+                        tagging of features depends on the immediate context in which they occur.
+                        Furthermore, tagging appears to be not only independent of syntax, but also
+                        independent of the tagged-narrative’s grammar – subjects prescribe
+                        systematic rules, but do not follow them.</p>
+
+                
+                
+                    <h2>PlotVis: Design and Implementation of Five Plot Models</h2>
+                    <p class="noindent">Our final panelists will discuss issues related to designing and programming
+                        four different views of narrative structure. In the first case, the user is
+                        able to see a Fibonacci series where one of the encoded plot elements is
+                        placed at the centre of the visualization, and other elements are arranged
+                        out from the centre, either sequentially as they appear in the text or else
+                        hierarchically as they are arranged in the XML tree (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Figure 2</a>). <p>
+                            <h2>Figure 2: This screenshot of Munro’s “Love of a Good Woman”
+                                demonstrates the complexity of the tagging, with each coloured
+                                cylinder representing one of roughly 7000 tagged pieces of
+                                text.</h2>
+                            <img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure2.png" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure2.png','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+                        </p> In this visualization, each piece of text appears as a coloured
+                        cylinder. The height of the cylinders can be associated with the length of
+                        the text they contain. The second visualization privileges sequence over
+                        centrality, with multiple pipelines representing the characters or narrator,
+                        and changes to the arrangement of the pipe showing where changes in time
+                        occur (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Figure 3</a>). <p>
+                            <h2>Figure 3: Our design sketch for a view that privileges sequence
+                                over centrality, with multiple pipelines representing the characters
+                                or narrator.</h2>
+                            <img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure3.png" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure3.png','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+                        </p> The third visualization is based on an architectural metaphor,
+                        where readers see the different kinds of encoded plot elements as floors of
+                        a building (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Figure 4</a>). <p>
+                            <h2>Figure 4: Our design sketch of the architectural concept of story
+                                visualization.</h2>
+                            <img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure4.png" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure4.png','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+                        </p> Text that occurs only within a single element tag fills a space on
+                        a single floor, while text that spans multiple elements appears as blocks
+                        that span the floors. Our fourth and most recent design resembles in some
+                        ways our sequential model, only in this case the text is represented by
+                        vertical walls of text that bend at locations where there are changes in
+                        time, while the other encoded plot elements appear as colours on the
+                        surfaces of the walls (<a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Figure
+                            5</a>).<p>
+                            <h2>Figure 5: This screenshot shows the wall display. Vertical
+                                coloured bands represent the encoded text elements that are shown as
+                                nodes in Figure 2.</h2>
+                            <img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure5.png" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-298.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei//298/figure5.png','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+                        </p> The visualization system was created using a popular game engine,
+                        called Unity3D, which provides us with a flexible platform for interaction
+                        with 3D objects, primarily through writing Javascript. The contents of the
+                        visualization, as indicated above, are produced from XML-encoded text
+                        files.</p>
+                
+
+            
+            <h2>References:</h2>
+                
+                    
+                        <p>
+                            Clement, T. E.
+                            2008
+                             “‘A thing not beginning and not ending’: using digital
+                                tools to distant-read gertrude stein’s the making of
+                                americans, ” 
+                            <i>Literary and Linguistic Computing</i>, 
+                            23(3)
+                            361-381
+                            Dobson, T.M.
+                            2008
+                            <i>Reading, Writing, and Teaching Complex
+                                Narrative</i>, 
+                            <i>Standard Research Grant Application submitted to the
+                                Social Sciences and Humanities Research Council of Canada.</i>, 
+                        </p>
+
+                        <p>
+                            Dobson, T. M.
+                            2006
+                             “For the love of a good narrative: Digitality and
+                                textuality, ” 
+                            <i>English Teaching: Practice and Critique</i>, 
+                            5(2)
+                            56-68
+                        </p>
+
+                        <p>
+                            Dobson, T. M.
+                            Michura, P.
+                            Ruecker, S.
+                            2010
+                             “Visualizing plot in 3D, ” 
+                            <i>Proceedings of the Fourth International Conference on
+                                Digital Society</i>, 
+                        </p>
+
+                        <p>
+                            Freytag, G.
+                            1863/1983
+                            <i>Die technik des dramas</i>, 
+                        </p>
+
+                        <p>
+                            Hemingway, E.
+                            1927
+                            <i>Men Without Women</i>, 
+                        </p>
+
+                        <p>
+                            Jessop, M.
+                            2008
+                             “Digital visualization as a scholarly activity, ” 
+                            <i>Literary and Linguistic Computing</i>, 
+                            23(3)
+                            281-293
+                        </p>
+
+                        <p>
+                            McCarty, W.
+                            2002
+                             “Humanities computing: essential problems, experimental
+                                practice, ” 
+                            <i>Literary and Linguistic Computing </i>, 
+                            17(1)
+                            103-125
+                        </p>
+
+                        <p>
+                            Moretti, F.
+                            2005
+                            <i>Graphs, maps, trees: Abstract models for a literary
+                                theory</i>, 
+                        </p>
+
+                        <p>
+                            Munro, A.
+                            1998
+                            <i>The love of a good woman</i>, 
+                        </p>
+
+                        <p>
+                            O'Faolain, S.
+                            1980
+                             “The trout, ” 
+                            <i>Collected stories. (Vol. I)</i>, 
+                            383-386
+                        </p>
+
+                        <p>
+                            Shields, C.
+                            2000
+                             ““Ilk”, ” 
+                            <i>Dressing up for the carnival</i>, 
+                            53-60
+                        </p>
+
+                        <p>
+                            Sterne, L.
+                            1847
+                            <i>The works of Laurence Sterne, containing the life and
+                                opinions of Tristram Shandy, gentleman</i>, 
+                        </p>
+
+                        <p>
+                            Van Peer, W.
+                            Chatman, S. B.
+                            2001
+                            <i>New perspectives on narrative perspective</i>, 
+                        </p>
+
+                        <p>
+                            Vonnegut, K.
+                            1973
+                            <i>Breakfast of champions</i>, 
+                        </p>
+
+
+                    
+
+                
+
+            
+        <hr /></div></div></body></html>

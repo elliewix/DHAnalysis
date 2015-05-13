@@ -1,0 +1,280 @@
+Paper: Supporting Scientific Discoveries to Answer Art Authorship Related Questions
+					Across Diverse Disciplines and Geographically Distributed Resources 
+
+					Bajcsy, Peter, 
+					National Center for Supercomputing Applications, 
+					
+pbajcsy@ncsa.uiuc.edu
+
+				
+
+					Kooper, Rob, National Center for Supercomputing
+						Applications, 
+kooper@ncsa.uiuc.edu
+
+				
+
+					Marini, Luigi, National Center for Supercomputing
+						Applications, 
+lmarini@ncsa.uiuc.edu
+
+				
+
+					Shaw, Tenzing, National Center for Supercomputing
+						Applications, 
+twshaw3@ncsa.uiuc.edu
+
+				
+
+					Hedeman, Anne D., University of
+						Illinois, 
+ahedeman@illinois.edu
+
+				
+
+					Markley, Robert, University of
+						Illinois, 
+rmarkley@illinois.edu
+
+				
+
+					Simeone, Michael, University of
+						Illinois, 
+mpsimeon@illinois.edu
+
+				
+
+					Hansen, Natalie, University of
+						Illinois, 
+nhansen2@illinois.edu
+
+				
+
+					Appleford, Simon, University of
+						Illinois, 
+sapplefo@illinois.edu
+
+				
+Rehberger, Dean, MATRIX: The Center for Humane Arts,
+						Letters, and Social Sciences Online, Michigan State
+						University, 
+dean.rehberger@matrix.msu.edu
+
+				
+Richardson, Justine, MATRIX: The Center for Humane
+						Arts, Letters, and Social Sciences Online, Michigan State
+						University, 
+justine.richardson@matrix.msu.edu
+
+				
+Geimer, Matthew, MATRIX: The Center for Humane Arts,
+						Letters, and Social Sciences Online, Michigan State
+						University, 
+matt.geimer@matrix.msu.edu
+
+				
+Cohen, Steve M., MATRIX: The Center for Humane Arts,
+						Letters, and Social Sciences Online, Michigan State
+						University, 
+steve.cohen@matrix.msu.edu
+
+				
+Ainsworth, Peter, University of
+						Sheffield, 
+p.f.ainsworth@sheffield.ac.uk
+
+				
+Meredith, Michael, University of
+						Sheffield, 
+M.Meredith@sheffield.ac.uk
+
+				
+Guiliano, Jennifer, University of South
+						Carolina, 
+jenguiliano@gmail.com
+
+				
+Overview
+
+				
+In the past, humanities scholars have primarily used text-based computational
+					approaches to engage questions of authorship. In the area of visual arts,
+					computational analysis of authorship is a growing field, but it is one that
+					features diverse questions and requires complex algorithms, significant
+					computational resources and a wide variety of experts from diverse disciplines
+					to combine the results of visual inspections with computer generated results.
+					Furthermore, when approaching the broad field of authorship-related questions in
+					visual works, the variety of digital images representing cultural artifacts
+					poses a formidable challenge on the robustness and accuracy of computer
+					algorithms. The motivation of our work is to explore technologies that
+					facilitate enquiry about authorship in visual art work and to address the
+					challenges related to algorithm development, computational scalability of
+					algorithms, distributed software development and data sharing, efficient
+					communication tools across diverse disciplines, and robustness and general
+					utility of algorithmic development when applied to a spectrum of authorship
+					questions from historical images. In other words, we wanted to develop specific
+					methods for new image-based research as well as build and model for future work
+					in image processing and humanities research. We approached these challenges by
+					selecting image subsets from the collections of 15th-century manuscripts, 17th
+					and 18th-century maps, and 19th through 21st-century quilts that often have
+					corporate and anonymous authors working in community groups, guilds, artisan
+					shops, and scriptoriums, and report technologies designed to support authorship
+					discoveries in these collections. Crucially, the questions our algorithms and
+					experts address are concerned with using authorship as a trope for analysis and
+					generating new data, not just verifying the heritage or identity of a given
+					artifact.
+
+			
+
+			
+				
+Methodology
+
+
+
+				
+The research being presented as part of this paper submission is derived from the
+					Digging into Data to Answer Authorship Related Questions Grant awarded as part
+					of the Digging into Data Challenge Competition (
+www.diggingintodata.org
+). An international, multi-disciplinary team
+					of researchers from the University of Illinois (US), the National Center for
+					Supercomputing Applications (US), Michigan State University (US), and the
+					University of Sheffield (UK), the DID team works to formulate and address the
+					problem of finding salient characteristics of artists from two-dimensional (2D)
+					images of historical artifacts. Given a set of 2D images of historical artifacts
+					with known authors, our project teams aim to discover what salient
+					characteristics make an artist different from others, and then to enable
+					statistical learning about individual and collective authorship. The objective
+					of this effort is to learn what is unique about the style of each artist, and to
+					provide the results at a much higher level of confidence than previously has
+					been feasible by exploring a large search space in the semantic gap of image
+					understanding. Team members are geographically distributed and have very
+					different backgrounds and expertise. While the discoveries require involvements
+					and interactions of experts in computer science and in humanities, we had to
+					design a methodology for communicating, coordinating web design and public
+					relationship interfaces, large size data sharing, collaborative software
+					development, software sharing and testing, and hardware sharing. We approached
+					this spectrum of collaborative project challenges by (a) establishing
+					communication and coordination channels (ooVoo videoconference, mailing lists,
+					legal point of contacts regarding licenses and intellectual properties), (b)
+					designing and deploying a content repository called Medici, (c) designing and
+					documenting a library of content based file comparisons with standard
+					application programming interfaces (API) for software development called Versus,
+					(d) deploying software source control and bug tracking systems accessible to all
+					team members (SVN and JIRA), (e) designing web-based workflow systems that could
+					give access to hardware resources at any site for execution of algorithms called
+					Cyberintegrator, and (f) providing additional tools and user interfaces for
+					humanity scholars to view large size images and contribute to the interpretation
+					of the computer generated results.
+
+			
+
+			
+				
+Technical Approach and Initial Results
+
+				
+Emphasizing the aspects of data-sharing, collaborative software development,
+					distributed hardware resources, and interactions of experts from diverse domains
+					in the Digging into Data project, we designed, developed and deployed
+					technologies supporting a wide spectrum of team activities. The data, software
+					and hardware sharing technologies include the Medici Content Management
+					Repository (see Fig. 1), 
+
+						
+Figure 1: User interface to the Medici management repository for data
+							sharing, annotations and visualization of large size images.
+
+						
+Full Size Image 
+
+					 the Im2Learn library of basic image processing and visualization
+					algorithms that can be applied to various image analyses (see Fig. 2), 
+
+						
+Figure 2: An example of a segmentation algorithm in Im2Learn library
+							that was applied to historical map analyses (top) and manuscript
+							illustration analyses (bottom).
+
+						
+Full Size Image 
+
+						
+Full Size Image 
+
+					 the Versus library for content-based image comparison (see Fig.3),
+						
+
+						
+Figure 3: Initial user interface to Versus in order to support image
+							comparison based analyses.
+
+						
+Full Size Image 
+
+					 and the Cyberintegrator workflow for managing computations on
+					distributed computational resources. The Medici Content Repository System is a
+					web and desktop-enabled content management system that allows users to upload,
+					collate, annotate, and run analytics on a variety of files types allowing for
+					portable and open representation of data with extensible analytical tools. The
+					analytical capabilities come from the Im2learn library that provides a
+					plug-and-play interface for adding new algorithms and tools. Due to the fact
+					that the authorship questions are frequently based on a comparison operation, we
+					have designed additional API called Versus which allows everyone to contribute
+					with comparison methods. Once the algorithms for image analyses and comparisons
+					have been developed, they can be integrated into workflows (a sequence of
+					algorithmic operations to reach the analytical goal) in Cyberintegrator workflow
+					environment. Cyberintegrator is a user friendly editor to several middleware
+					software components that: 
+						
+enable users to easily include tools and data sets into a
+							software/data unifying environment
+
+						
+annotate data, tools and workflows with metadata
+
+						
+visualize data and metadata
+
+						
+share data and tools using local and remote context repository
+
+						
+execute step-by-step workflows during scientific explorations
+
+						
+gather provenance information about tool executions and data
+							creations. 
+
+					 In order to support visual explorations of large size images and
+					contribute to the interpretation of the computer generated results by humanists
+					and computer scientists, we have also integrated Microsoft Live Lab’s Seadragon
+					library to build image pyramids and support fast zoom in and out operations.
+			
+			
+				
+Summary
+
+				
+Our paper addressed each logistical and computational facet of a distributed,
+					international collaboration. Based on our initial effort, all team members have
+					responded positively to the technologies introduced and also helped in defining
+					requirements for executing such complex projects involving collaborative
+					humanities research. Based on our current observations, the web technologies for
+					data, software and hardware sharing provided the foundation blocks for
+					addressing the authorship discovery challenges. We have also concluded that the
+					open nature of joint software development is necessary for overcoming
+					intellectual property right and other legal hurdles.
+
+			
+			
+				
+Acknowledgment
+
+				
+We would like to acknowledge the NSF ITS 09-10562 EAGER grant and the
+					NSF/NEH/JISC Digging into Data (NSF grant ID: 1039385).
+
+			
+		

@@ -1,0 +1,199 @@
+The MiCLUES system: Dynamic, rich contextual support for museum visits
+
+    
+Category:
+Poster
+
+      
+Session:
+2
+
+      
+Date:
+2014-07-10
+Time:
+16:00:00
+
+      
+Room:
+Amphipôle Common Area
+
+    
+
+        
+Gold
+,
+									
+Nicolas E.
+
+        
+
+          
+
+        
+University College London, United Kingdom
+
+      
+
+      
+
+        
+Rossi Rognoni
+,
+									
+Gabriele
+
+        
+
+          
+
+        
+Royal College of Music, United Kingdom 
+
+      
+
+    
+
+  
+Introduction
+
+  
+Attracting visitors and maintaining their interest can be difficult to achieve for smaller, specialist museums. Constraints on physical space can create high-density displays which, although good for exposing collections, can make coherent interpretation difficult. Audio or written guides can help but substantial effort is required to generate and maintain them. Their effectiveness is simultaneously hindered by the reduced capacity of concentration that visitors have while standing in a gallery, so the amount of information that can be transmitted through written labels, panels, and audio guides is very limited (Museums Association, 2013). Audio guides are also fairly rigid in the structures and routes they impose owing to the time needed for audio recording and the need to match this with the collection’s physical organization. In addition, they allow a solely linear approach to each object (a single story briefly illustrating the item).
+
+  
+Recent work has developed more flexible digital approaches. For example, the Musée de la Musique, Paris (Cité de la Musique, 2013) and the Grassi Museum für Musikinstrumente der Universität Leipzig (Universität Leipzig, 2013) have developed online access to their collection records, and the Museum of Fine Arts, Boston has a digital guide incorporating video, audio, and commentary with the ability to save “favourites” from an online catalogue (Museum of Fine Arts Boston, 2013). The QRator project (Gray et al., 2012) used QR codes to link exhibits to online discussions. Our work shares similar goals to QRator in enhancing the visitor experience. It differs in that our focus is on creating contextualised trajectories through the gallery rather than conversational engagement around the exhibits. 
+
+  
+The Museum of the Royal College of Music (RCM) (see Figure 1) was established in 1894 and holds over 1,000 musical instruments, including the earliest surviving keyboard stringed instrument, the earliest known baryton, and the earliest known guitar. It is regularly open to the public, and is visited every year by ca. 5,000 visitors including students and teachers. It is moving to digitise its collection to make it more widely available. This creates exciting opportunities to improve the experience of visitors to the museum itself, through bespoke applications running on smart devices (e.g. Android phones). The RCM galleries currently lack any kind of audio guide or support to the visitor, apart from textual printed labels. 
+
+  
+
+    
+Fig. 1: The RCM Museum (Photo: Chris Christodoulou © RCM)
+
+    
+
+  
+This poster presents work in progress to provide rich technologically-supported experiences for Museum visitors, offering more meaningful and informative access to the collection and encouragement to further visits. It will also allow the physical space to be used efficiently without harming the interpretive value of the objects on display.  The aim is to produce a method that is theoretically and experientially grounded and that can be applied in a wide range of contexts.
+
+  
+Theoretical Approach
+
+  
+Our solution is underpinned by Benford et al.’s conceptual framework of mixed-media performance trajectories (Benford et al., 2009) to design the pathways through the collection.  Among other things, the framework allows the formalization of roles, transitions, traversal between physical and virtual experiences, and an episodic structure in the formation of canonical (author-defined), participant (the actual route), and historic (reflective) trajectories (Benford et al. 2009; Fosh et al. 2013). Fosh et al. (2013) present the first proactive (rather than analytical) use of the framework, using it for sculpture garden design. In that instance there was a single canonical trajectory through the experience and low object density. We intend to support a number of canonical pathways (that we term “curated”) through higher density displays. Using this framework will enable us to soundly and explicitly address problems found previously in interactive exhibits e.g. multiple interactive features overwhelming visitors (Allen & Gutwill, 2004). Having a clearly defined trajectory will establish an appropriate prioritization and visiting sequence so that even densely populated galleries can be interpreted clearly.
+
+  
+Essentially the pathways offer a guided navigation through the “mesh” of museum resources, artefacts and information, grounded in the physical space of the museum itself, with the physical exhibits as landmarks on the journey.  Curated pathways appropriate to the RCM Museum might include musical curiosities, early music, the art of musical instruments (decoration), chronologies, occasions, military music, and unusual materials. By joining parts of the physical and virtual collections into a single tour, visitors benefit from being able to access parts of the collection not physically presented at the time of the visit, and museum staff can benefit from monitoring the demand for such exhibits through their occurrence in popular pathways, bringing them out for physical display in response. The museum’s display strategy can thus be informed by user activity at a fine-grained level.
+
+  
+Pathways may be curated by museum staff (canonical trajectories), planned by visitors in advance through a web interface (also canonical but defined by the user) and downloaded to a device, crowd-sourced (visitors could publish pathways for others to download; a kind of historic trajectory) or produced by context-aware recommender-systems. Museum activity can be fed back to visitors through the projection systems currently used to display a slideshow. Heatmap visualisations and pathways followed over a recent period of time could be displayed instead, offering a live “trajectory view” of the collection. 
+
+  
+Visitors may, of course, deviate from their planned pathway, e.g. in response to noticing a nearby interesting exhibit, and a guiding system should be capable of adapting to this (i.e. designing for human nature rather than in spite of it (Adams et al., 2004)). Our solution will offer options for returning to the original pathway, not just directly, but through small, thematically-coherent routes (e.g. historical, geographical, stylistic) to provide a richer, user-driven experience of the collection. Semantic metadata will be needed to do this and new algorithms will be developed to search this metadata and deliver the new pathway in real time. One key technical problem is thus the automated, dynamic, real-time design of “micro-trajectories”.
+
+  
+Evaluation of the technology will involve museum visitors trying the prototypes and being surveyed on their experiences. 
+
+  
+Technological Solutions
+
+  
+We are designing a smart-device app called
+MiCLUES (Musical instrument Collection articuLation for User-driven
+Exploration with Smart-devices)
+with two key features:
+
+  
+To guide visitors through thematic pathways in the collection, allowing serendipitous diversion and thematically-oriented return to the original path.
+
+    
+To give access to digitised forms of the collection elements (including those in storage), extending the context in which the physical and digital artefacts are presented through recorded performances (both historical and modern), documents, animations, and images to provide a rich, dynamic, portable context for a visit. 
+
+  
+Connections between artefacts (digital or otherwise) can be drawn at the time of the visit, allowing for the collection to be expanded without requiring costly re-provisioning of the guide itself. Text to speech systems may also alleviate the need to pre-record some or all of the text. Since the software can be made widely available through app stores, the volume (and thus cost) of devices to be maintained by the museum is reduced as visitors can use their own.
+
+  
+To determine where visitors are on their pathways, location tracking will be needed: initially, we plan to use QR codes by each artifact to provide landmarks. These are non-invasive and have been shown to work well in the museum context by the QRator project (Gray et al., 2012) and recent developments in the musical instrument department of the Galleria dell’Accademia in Florence. In the latter case, the codes refer to pages in the online database of text, images, and sound files connected with the object concerned.  Although quick to implement and inexpensive, QR codes are poor for accessibility since, for example, visually impaired visitors may not be able to see or scan them and thus may be prevented from using the app. Alternative approaches (e.g. RFID tags) more amenable to tactile interfaces will be explored after the initial prototype is complete to create more accessible ways of following a pathway through the collection. Content in the databases will be encoded to be amenable to screen readers and other assistive technology following appropriate guidance e.g. (Royal National Institute of Blind People, 2005). Other methods of visitor location tracking (e.g. human observation (Guy et al., 2010)) are less appropriate for reasons of practicality, complexity and cost.
+
+  
+Conclusion
+
+  
+This work is developing rich, interactive guides for a specialist museum collection, adopting recent theoretical advances in human-computer interaction to design appropriate trajectories and support these through software capable of redesigning them on the fly. The poster will present the underlying theoretical considerations, practical issues, the app design, and progress gained with early prototypes.
+
+  
+Acknowledgements
+
+  
+This work is primarily supported by Share Academy (an Arts Council England funded programme) and partially supported by the Engineering and Physical Sciences Research Council [grant number EP/G060525/2]. At this stage no data has been produced.
+
+  
+References
+
+  
+Adams, M., Luke, J. & Moussouri, T. 
+(2004). Interactivity: Moving beyond terminology. Curator:
+            The Museum Journal, pp. 155–170.
+
+  
+Allen, S. & Gutwill, J.
+ (2004). Designing with multiple interactives: Five common
+            pitfalls. Curator: The Museum Journal, pp. 199–212.
+
+  
+Benford, S., Ginnachi, G., Koleva, B., Rodden., T. 
+(2009). From
+            Interaction to Trajectories: Designing Coherent Journeys Through User
+            Experiences. Proceedings of the
+            SIGCHI Conference on Human Factors in Computing Systems (CHI 2009). Boston,
+            Massachusetts.
+
+  
+Cité de la Musique, Paris.
+ (2013). Mediatheque: Collections du Musee. Available
+            at:
+            http://mediatheque.cite-musique.fr/masc/?url=/clientbooklineCIMU/toolkit/p_requests/default-collection-musee.htm
+            [Accessed October 25, 2013].
+
+  
+Fosh, L., Benford, S. & Reeves, S.
+ (2013). See Me, Feel Me, Touch Me, Hear Me: Trajectories and
+            Interpretation in a Sculpture Garden. In Proceedings of the SIGCHI
+            Conference on Human Factors in Computing Systems (CHI 2013). pp. 149–158. 
+
+  
+Gray, S., Ross, C., Hudson-Smith, A., Terras., M., Warwick,
+            C.
+ (2012). Enhancing Museum Narratives with the QRator Project: a Tasmanian devil,
+              a Platypus and a Dead Man in a Box. Proceedings
+            of Museums and the Web 2012. San Diego, CA. Available at: http://www.museumsandtheweb.com/mw2012/papers/enhancing_museum_narratives_with_the_qrator_pr.
+
+  
+Guy, G., Dunn, S. & Gold, N.
+ (2010). Capturing
+            Visitor Experiences for Study and Preservation.Proceedings of Digital
+            Humanities 2010. London, UK. pp. 160-163. Available at: http://dh2010.cch.kcl.ac.uk/academic-programme/abstracts/papers/html/ab-716.html
+
+  
+Museums Association
+ (2013). Exhibition Labels. Available at:
+            http://www.museumsassociation.org/museum-practice/exhibition-labels [Accessed
+            October 25, 2013].
+
+  
+Museum of Fine Arts Boston
+ (2013). MFA Guide. Available at:
+            http://www.mfa.org/visit/mfa-guide [Accessed October 25, 2013].
+
+  
+Royal National Institute of Blind People
+ (2005). RNIB guidelines for producers and
+            commissioners of audio guides: making PDA guides accessible for blind and
+            partially sighted people, Available at:
+            www.rnib.org.uk/professionals/Documents/guidelines_audio_guides.doc.
+
+  
+Universität Leipzig
+ (2013). The Museum of Musical Instruments. Available at:
+            http://mfm.uni-leipzig.de/en/dasmuseum/Geschichte.php [Accessed October 25, 2013].
+

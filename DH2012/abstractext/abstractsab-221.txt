@@ -1,0 +1,309 @@
+Paper: Comparing the Similarities and Differences between Two Translations
+
+                    Lucic, Ana, 
+                    Graduate School of Library and Information Science, University of
+                        Illinois at Urbana-Champaign, 
+                    
+alucic2@illinois.edu
+
+                
+
+                    Blake, Catherine, 
+                    Graduate School of Library and Information Science, University of
+                        Illinois at Urbana-Champaign, 
+                    
+clblake@illinois.edu
+
+                
+Abstract
+
+                
+Burton Pike described Rainer Marie Rilke’s style in Rilke’s only prose novel, The Notebooks of Malte Laurids Brigge, as “… arresting,
+                    haunting, and beautiful, but it is not smooth. His style is explicit, direct,
+                    almost laconic, and it has an edge.” (2008, p. xvii) Pike argues that this
+                    “edge” was not sufficiently emphasized in previous English language translations
+                    and he thus wrote a new translation. The goal of this research is to explore the
+                    degree to which automated text analysis tools can capture the different styles
+                    used by Burton Pike and Stephen Mitchell in their respective translations. We
+                    are particularly interested in what kinds of similarities and differences can be
+                    captured between two renderings of Rilke’s novel and in the implications of
+                    these findings on the reviews, reader reception, and critical analysis of the
+                    original work in two translations.
+
+            
+            
+                
+Method
+
+                
+Two candidate analysis tools were used to identify similarities and differences
+                    between the Pike and Mitchell translations of Rilke’s novel The Notebooks of Malte Laurids Brigge. The first approach used a
+                    syntactic representation of the texts which was generated using the Stanford
+                    Lexical parser (
+         (
+link
+)
+   ). Before
+                    running the parser, each translation was tokenized into sentences using the
+                    Natural Language Toolkit tokenizer (
+         (
+link
+)
+   ). The
+                    generated lexical dependencies, which capture grammatical relations between
+                    words in a sentence, were then uploaded to the oracle database for subsequent
+                    analysis.
+
+                
+The second approach used a statistical approach–principal component analysis–to
+                    compare the manifestations of the novel. Our experiment reflects McKenna et
+                    al.’s study (1999) of similarities and differences between Samuel Beckett’s
+                    French and English translation of Molloy. Three matrixes were produced
+                    comprising the 99 most common words in each of Pike and Mitchell’s translation
+                    and the original text. The rows of the matrix reflect 8 text blocks of 7,500
+                    words. Principal component analysis, which measures the variance of 99 most
+                    frequent words in the 8 blocks, was then applied to each matrix and the top
+                    eigenvectors produced were mapped into a two dimensional space for visual
+                    analysis.
+
+
+            
+            
+                
+Results
+
+                
+Dependency grammar analysis
+
+                
+Table 1 provides the summary statistics of grammatical relations which showed the
+                    largest difference captured in the parser for each translation. Although the two
+                    translations show a remarkable degree of similarity in the frequency and type of
+                    grammatical relations they employ, the dependencies revealed several differences
+                    between the two renderings. The main areas of difference were found in the use
+                    of negation modifiers, prepositional modifiers, object of preposition,
+                    parataxis, and in the word choices for adjectival and adverbial modifiers.
+
+                
+The dependency grammar results show that Pike used many more negation modifiers
+                    than Mitchell, which is confirmed by word frequency analysis. Pike uses the
+                    non-contracted verb, which places more emphasis on negation and thus also stays
+                    closer to the original text whereas Mitchell rarely uses a non-contracted verb
+                    form. The word “not” is not the only word in Pike’s translation which indicates
+                    a negation that is used with higher frequency. Pike uses “no” with higher
+                    frequency than Mitchell, and also “nothing,” “never,” and “none.”
+
+                
+The frequencies of prepositional modifier and object of preposition relations in
+                    two texts indicate a difference in how the prepositions are used in the text.
+                    This result shows a higher overall frequency of prepositions in Mitchell’s
+                    translation (Table 1). The sentence level analysis of two texts, however,
+                    revealed that Pike is more likely to repeat and thus emphasize the same
+                    preposition throughout the sentence whereas Mitchell is more likely to leave out
+                    the preposition rather than repeat it. This finding suggests that in addition to
+                    the overall difference in the frequency of prepositions captured through the
+                    parser, there are indicators that the use of prepositions, their placement and
+                    distribution throughout the sentence, show differences in two texts.
+
+                
+The comparison of two translations revealed a higher frequency of sentences that
+                    use a semicolon to separate sub-clauses in Mitchell’s translation (parataxis).
+                    Mitchell frequently arranges independent sentences using semicolons and colons,
+                    and in this way follows closely the original text, while Pike occasionally
+                    intersperses “but” and “and” in place of semicolons and colons. This finding is
+                    supported by the frequency of conjunction “but” in two translations which is
+                    found at higher frequency in Pike’s translation, 559, than in Mitchell’s, 506.
+                    This difference in sentence structure may provide the “edge” which Pike claims
+                    was missing in previous translations.
+
+                
+An examination of the unique adverbs and adjectives used in each translation
+                    revealed that although Mitchell and Pike may use similar grammatical relations
+                    in their respective renderings, their word choices are frequently different.
+                    This suggests that a semantic rather than the syntactic analysis may reveal
+                    additional differences.
+
+                
+PCA analysis
+
+                
+Figure 1 shows the score plots of the translations and suggests that the
+                    distribution of frequent terms is very similar between the two translations.
+                    However, the grouping of the 7th block with 4th, 5th, and 6th rather than with
+                    8th block, in Mitchell’s translation, calls for a closer analysis of the 7th
+                    block of the novel and its comparison with the 7th block in Rilke’s original
+                    text and Pike’s translation. The last part of the novel, which corresponds to
+                    the 8th block of text, is visibly different in style and tone from the rest of
+                    the novel and this difference is indicated by the location of the 8th block in
+                    the far right corner of the plot in each version.
+
+
+            
+            
+                
+Conclusion
+
+                
+Our results thus far suggest that syntactic grammatical relations reveal
+                    differences between the two translations that are not captured when using a
+                    bag-of-word approach (word frequencies of function words and 1,000 most frequent
+                    words). In contrast, the PCA analysis using matrices of frequent terms in the 8
+                    blocks of text suggests that only small differences exist between the
+                    translations, with the exception of the 7th block of text, which warrants
+                    further investigation.
+
+                
+The similarity captured between translations using the PCA analysis brings to
+                    mind Jan Rybicki’s article “Burrowing into Translation: Character Idiolects in
+                    Henryk Sienkiewicz’s Trilogy and its Two English Translations” in which Rybicki
+                    analyzes the distinctiveness of character idiolects in Henryk Sienkiewicz’s
+                    trilogy and concludes that: “… the patterns of difference and similarity are
+                    almost mysteriously preserved in the translations—so well that the
+                    above-mentioned linguistic differences might be the sole reason for the small
+                    differences between the original and the translation. In the greater picture,
+                    characters differ one from another in the translations just as they do in the
+                    original.” (Rybicki, 2006, p.102)
+
+                
+The differences between two translations that were established will help create
+                    the linkages between these findings and the reader reception, reviews, and
+                    critical analysis of two translations. We also hope that they will help trace
+                    the contours along which the creation of the new variant and new literary
+                    rendering begins to emerge and the differences that speak directly to the
+                    explicit, direct, and laconic style of Pike’s translation.
+
+                
+We plan to extend this work to include M. D. Herter Norton’s translation (1949)
+                    of The Notebooks of Malte Laurids Brigge and to
+                    investigate how well this method generalizes to different translations of
+                    different genres.
+
+            
+            
+                
+
+                        
+Table 1 - Dependency distributions with the largest difference between
+                            the Pike and Mitchell translations of The Notebooks of
+                                Malte Laurids Brigge by Rainer Maria Rilke
+
+                    
+Full Size Image 
+
+                        
+
+                    
+                
+
+                        
+Figure 1 - Score plots
+
+                    
+Full Size Image 
+
+                        
+
+                    
+            
+        
+References:
+
+            
+                
+                    
+
+                        de Marneffe, M. & Manning, D. C.
+                        2008
+                        Stanford typed dependencies manual., 
+                        30 October 2010
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Lucic, A.
+                        2010
+                         “Measuring Similarities and Differences between Two
+                            Translations., ” 
+                        Research Showcase 2010 at the Graduate
+                            School of Library and Information Science, University of Illinois at
+                            Urbana-Champaign, 
+                        Champaign, IL, 
+                        2010
+                        
+                    
+
+                    
+
+                        McKenna, W., Burrows, J., Antonia, A.
+                        1999
+                         “Beckett’s Trilogy: Computational Stylistics and the Nature
+                            of Translation., ” 
+                        RISSH, 
+                        35
+                        151-71
+                    
+
+                    
+
+                        Rilke, R.M.
+                        2000
+                        Die Aufzeichnungen des Malte Laurids Brigge. [Plain Text
+                            UTF-8], 
+                        30 October 2010
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Rilke, R.M.
+                        1949
+                        The Notebooks of Malte Laurids Brigge (Translated by M. D.
+                            H. Norton)., 
+                        W.W. Norton & Company
+                        New York
+                    
+
+                    
+
+                        Rilke, R.M.
+                        1982
+                        The Notebooks of Malte Laurids Brigge (Translated by S.
+                            Mitchell)., 
+                        Random House
+                        New York
+                    
+
+                    
+
+                        Rilke, R.M.
+                        2008
+                        The Notebooks of Malte Laurids Brigge (Translated by B.
+                            Pike)., 
+                        Dalkey Archive Press
+                        Champaign
+                    
+
+                    
+
+                        Rybicki, J.
+                        2006
+                         “Burrowing into translation: Character Idiolects in Henryk
+                            Sienkiewicz’s Trilogy and its Two English Translations., ” 
+                        Literary & Linguistic Computing, 
+                        21(1)
+                        477-495
+                    
+
+
+                
+            
+        

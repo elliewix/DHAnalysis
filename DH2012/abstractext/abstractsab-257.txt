@@ -1,0 +1,305 @@
+Paper: Trends 21 Corpus: A Large Annotated Korean Newspaper Corpus for Linguistic and Cultural Studies
+
+          Kim, Heunggyu, 
+          Department of Korean Language and Literature, Korea University, 
+          
+gardener@korea.ac.kr
+
+        
+
+          Kang, Beom-mo, 
+          Department of Linguistics, Korea University, 
+          
+bmkang@korea.ac.kr
+
+        
+
+          Lee, Do-Gil, 
+          Research Institute of Korean Studies, Korea University, 
+          
+motdg@korea.ac.kr
+
+        
+
+          Chung, Eugene, 
+          Research Institute of Korean Studies, Korea University, 
+          
+echung2@korea.ac.kr
+
+        
+
+          Kim, Ilhwan, 
+          Research Institute of Korean Studies, Korea University, 
+          
+ilhwan52@gmail.com
+
+        
+Introduction
+
+        
+This study aims to introduce how a Korean newspaper corpus, Trends 21 has been constructed and to explore how social, cultural, and linguistic characteristics are portrayed in the Trends 21 corpus. Newspapers contain enormous quantities of language resources which mirror social and cultural characteristics as they undergo gradual as well as sudden changes. Newspapers are regularly published and contain stories of events, personalities, crimes, business, entertainment, society, sports and others. Editorials discuss current or recent news of either general interest or a specific topic. Journalists are trained to write objectively and to show all sides to an issue. In addition, the sources for the news story are identified and are reliable. Therefore, we have employed the newspaper corpus to identify social or culture trends.
+
+      
+      
+        
+
+        Trends 21Project
+
+        
+          
+Aims and Background
+
+          
+
+          Trends 21is the name of a project within the government-led humanities promotion program.
+          The Humanities Korea (HK) project is an initiative aiming to foster world-class research centers that carry out interdisciplinary studies in the areas of humanities.The Research Institute of Korean Studies at Korea University has developed the 
+          Trends 21corpus, a collection of four major Korean daily and national newspapers issued from the year 2000. The goal of the 
+          Trends 21project can be summarized with the following three points: first, to construct language resources of newspaper articles as a large general purpose database; second, to identify linguistic/social/cultural characteristics and to analyze their changes in Korea; finally, to measure and to estimate any linguistic/social/cultural trends from patterns of language use. One of the outcomes from this project is the 
+          Trends 21corpus. It is a collection of Korean newspaper texts covering most of the topics in print. In the next section, we present how the 
+          Trends 21corpus has been built.
+
+        
+        
+          
+Designing and Compiling the Corpus
+
+          
+In order to achieve the project goals, articles were culled from a number of newspaper companies. We collected newspaper articles from four major daily national newspapers issued in Korea for one decade, between 2000 and 2009.
+          A daily newspaper is issued every day with the exception of Sundays and some national holidays. A national newspaper, in contrast with a local newspaper that serves a city or region, circulates throughout the whole country.The candidate dailies are Chosun, Dong-a, Joongang, and Hankyoreh.
+
+          
+These daily newspaper companies have provided us with all the contents printed for ten years. In electronic form, the majority of newspaper services are provided in various Standard Generalized Markup Language (SGML) format, which is hard for us to unify the format by using NewsML. Due to this situation, we developed a ‘Trends 21 Markup Language (T21ML)’ in order to construct our raw corpus. With the availability of machine-readable texts, especially the collection of a large quantity of articles, it was possible to build a large-scale raw corpus. However, we did not upload all the contents from the newspapers into our corpus. Instead we eliminated irrelevant contents (like obituaries) in order to balance the contents.
+
+          
+For our research purposes we established twelve classes of content, namely ‘T21 Class’, to classify the contents of news articles, namely: politics, international news, economics, society, culture, sports, science, columns, opinions, special issues, regions, and people. It excludes lists of names, lists of stocks, obituaries, advertisements, and weather. Although some contents are removed by design, our corpus contains various contents or topics as a whole. Saturation (McEnery 
+          et al.2006) at the lexical level can be tested for representativeness of a corpus.
+
+          
+Once the raw corpus was constructed, we employed an automatic morphological analyzer and tagger for Korean, KMAT (Lee & Rim 2009), to annotate parts-of-speech and morpheme information. We applied two-stage tagging processes to our raw corpus, in which an available annotated corpus consisting of 15 million words is corrected by humans and then is employed as a training corpus for the tagger. Further, human annotators not only corrected the erroneous analyses produced by the tagging system, but also improved the tagging system by finding problematic fixed expressions, picking out homonyms, and classifying unseen types of borrowed words or proper nouns. During the first three-year phase of the 
+          Trends 21Project (2008-2010), this corpus has been fully annotated for parts-of-speech and morphological information. Figure 1 shows the processing architecture of building the 
+          Trends 21Corpus.
+
+          
+
+            
+Figure 1. An overview of the 
+            Trends 21corpus building process
+
+            
+Full Size Image 
+
+          
+          
+As of Oct 2010, the 
+          Trends 21corpus consists of about 400 million words, and it is by far the greatest morphologically annotated corpus of Korean. In Table 1, statistical information is provided.
+          This information is based on the compiled data between 2000 and 2008.
+
+        
+      
+      
+        
+Case Study: Co-occurrence Network Analysis
+
+        
+In a case study, we focus on only the nouns that are included in the 
+        Trends 21corpus. A network based approach is then introduced that can deal with visualizing related nouns. According to Stubbs (1996), frequently occurring patterns allow the observer to make deductions about what a group or society sees as valuable or important. Information about collocation means that new concepts and the range of associations of a word can be monitored. We select target words and extract their co-occurring words appearing nearby. Co-occurrence analysis assumes that two semantically related terms co-occur in the same text segments (Sinclair 1991). In contrast to most previous studies that observe co-occurrences within the same sentence, we propose as a search window size a paragraph (Kang 2010). A paragraph of news article is highly coherent in that its sentences are related to one another to describe one short story or an event.
+
+        
+The extraction of co-occurring words is based on the statistical information about the co-occurrences of words. The mutual information or z-score has mainly been used in various studies as a statistical measure; however, both of the measures give skewed results to infrequently used words. To reduce this difficulty, we adopt t-score as a measure of how strongly word pairs (a target word and co-occurring words) are related (Kang 2010).
+
+        
+Then the information is represented as a network, a formal graph based approach. We have employed 
+        Pajek(Nooy, Mrvar & Vladimir 2005) for analysis and visualization of co-occurrence networks. The network structure typically consists of nodes connected by weighted links. Given the current data set, target words and co-occurrences assign a term or a concept to each node and the values of the t-scores to link. This network provides a graphic visualization of potential relationships between nouns that portray social/cultural trends with respect to their language use patterns.
+
+        
+Figure 2 is the co-occurrence network of thirty Korean emotional nouns, such as: ‘love’, ‘hatred’, ‘hope’, ‘disappointment’, ‘happiness’, ‘unhappiness’ and so on. In Figure 2, ‘father’ (
+        abeciin Korean) co-occurs with ‘love’, ‘hope’, ‘happiness’, ‘hatred’, and ‘unhappiness’; on the other hand ‘daddy’ (
+        appain Korean) only co-occurs with ‘happiness’. 
+        
+
+          
+Figure 2. Network of thirty Korean emotional nouns with their fifty co-occurring words
+
+          
+Full Size Image 
+
+        The word ‘hatred’ co-exists with ‘terror’, ‘Islam’, ‘(human) race’, ‘religion’, and ‘media’. We notice that in the early twenty-first century there were many international conflicts. If we expand the number of co-occurrences, we may deduce different interpretations from the articles.
+      
+      
+        
+Conclusion
+
+        
+This paper has presented how the 
+        Trends 21corpus is built and how it is composed. We have proposed a visualization method to express co-occurrences of words in an overview network. The network approach to words in news articles represents contemporary Korean language use. Moreover, information about co-occurrences helps us understand social/cultural issues at a point of time.
+
+        
+The construction of the 
+        Trends 21corpus is not done yet. The same composition schema is going to be followed year by year in order for the corpus to be constantly updated. In that sense, the 
+        Trends 21corpus serves us as a monitor corpus (Sinclair 1991). This corpus can also reflect language changes in constant growth. In the future we would like to apply cluster analysis as well as keyword analysis. We further plan to enhance the network analysis by displaying concept hierarchy. Finally we also plan to investigate networks according to topics and co-occurrences within an article, not only with in a paragraph.
+
+      
+      
+        
+Table 1: Statistical Information of the 
+        Trends 21Corpus
+
+        
+Target 
+
+            
+Unit 
+
+            
+Size 
+
+           
+Trends 21 Corpus 
+
+            
+
+              ejels
+              An ejel refers to a chunk between spaces in Korean. The ejel may be one word itself or the morphosyntactic combination of either one word and particle(s) or one word and ending(s).
+             
+
+            
+348,261,978 
+
+           
+Trends 21 Corpus 
+
+            
+article 
+
+            
+1,763,581 
+
+           
+Trends 21 Corpus 
+
+            
+paragraph 
+
+            
+13,440,141 
+
+           
+Common Nouns in Trends 21 Corpus 
+
+            
+type 
+
+            
+487,385 
+
+           
+Common Nouns in Trends 21 Corpus 
+
+            
+token 
+
+            
+223,794,143 
+
+           
+References:
+
+      
+        
+          
+
+          Biber, D.
+          Conrad, S.
+          Reppen, R.
+          1998, 
+          Corpus Linguistics, 
+          Cambridge
+          Cambridge University Press
+
+          
+
+          Church, KW
+          Gale, W.
+          Hanks, P
+          Hindle, D
+          1991
+           “Using statistics in lexical analysis, ” In 
+          Lexical Acquisition: Using On-line Resources to Build a Lexicon, 
+          Lawrence Erlbaum, 
+          115-164
+
+          
+
+            Kang, B.
+            2010
+             “Constructing Networks of Related Concepts Based on Co-occurring Nouns, ” 
+            Korean Semantics, 
+            32
+            1-28
+          
+
+          
+
+            Kim, I.
+            Lee, D
+            Kang, B
+            2010
+             “A Study of Emotion Nouns Based on Co-occurrence Relation Networks, ” 
+            Korean Linguistics, 
+            49
+          
+
+          
+
+            Lee, D.
+            Rim, H.
+            2009
+             “Probabilistic Modeling of Korean Morphology’, ” 
+            IEEE Transactions on Audio, Speech, and Language Processing, 
+            17
+            5
+            945-955
+          
+
+          
+
+            McEnery, T
+            Xiao, R.
+            Tono, Y.
+            2006
+            Corpus-Based Language Studies, 
+            Abingdon
+            Routledge
+          
+
+          
+
+            Nooy, W.
+            Mrvar, A.
+            Vladimir, B.
+            2005
+            Exploratory Social Network Analysis with Pajek, 
+            Cambridge University Press
+          
+
+          
+
+            Sinclair, J.
+            1991
+            Corpus, Concordance, Collocation, 
+            Oxford
+            Oxford University Press
+          
+
+          
+
+            Stubbs, M.
+            1996
+            Text and Corpus Analysis, 
+            Oxford
+            Blackwell
+          
+
+        
+      
+    

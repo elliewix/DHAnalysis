@@ -1,0 +1,204 @@
+A Morphological Analysis of Classical Chinese Texts
+
+    
+Category:
+Long Paper
+
+      
+Session:
+6
+
+      
+Date:
+2014-07-11
+Time:
+09:00:00
+
+      
+Room:
+414 - Amphimax
+
+    
+
+        
+Yasuoka
+,
+									
+Koichi
+
+        
+
+          
+
+        
+Institute for Research in Humanities, Kyoto University, Japan
+
+      
+
+      
+
+        
+Yamazaki
+,
+									
+Naoki
+
+        
+
+          
+
+        
+Faculty of Foreign Language Studies, Kansai University, Japan
+
+      
+
+      
+
+        
+Wittern
+,
+									
+Christian
+
+        
+
+          
+
+        
+Institute for Research in Humanities, Kyoto University, Japan
+
+      
+
+      
+
+        
+Nikaido
+,
+									
+Yoshihiro
+
+        
+
+          
+
+        
+Faculty of Letters, Kansai University, Japan
+
+      
+
+      
+
+        
+Morioka
+,
+									
+Tomohiko
+
+        
+
+          
+
+        
+Institute for Research in Humanities, Kyoto University, Japan
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+
+  
+The most difficult point in the digital analysis of classical Chinese texts is that they don't have any spaces or punctuations between words or between sentences. They consist of continuous strings of Chinese characters from the start to the end of texts. Contrary to the analysis of modern Chinese texts, which have several punctuation marks and can be fragmented into phrases with these punctuation marks, the analysis of classical Chinese texts has to begin with finding out the ends of sentences.
+
+  
+Classical Chinese is an isolative language, which doesn't have any inflection or agglutination. Furthermore, we don't have any generally accepted word-class system for classical Chinese. We first ought to develop machine-supported word-class system for classical Chinese. However, in classical Chinese, many morphemes may be observed as nouns and verbs, etc. In this paper we propose a method to analyze classical Chinese texts. In our method, we use our original morphological analyzer based on MeCab 
+1
+. We propose a new four-level word-class system for classical Chinese on the MeCab-based analyzer. We design the top level of the word-class system to represent the predicate-object structure of classical Chinese. The second level is the ordinary word-class of classical Chinese. The third and fourth levels are word-subclasses to describe detailed behavior of the words in classical Chinese texts.
+
+  
+The development of our four-level word-class system for classical Chinese was not straightforward. At the early stage, we developed a prototype dictionary from IPA Japanese Dictionary 
+2
+ and defined a prototype word-class system for classical Chinese. We also developed a prototype corpus along the prototype word-class system. And then, at the later stage, we examined the prototype corpus and redefined our four-level word-class system to be more suitable and systematic for classical Chinese. Especially, we excluded “adjective” from the second level of our new word-class system, since, in classical Chinese, there exists no essential distinction between “verb” and “adjective” 
+3
+. We refactored the prototype dictionary into our new dictionary, and the prototype corpus into our new corpus.
+
+  
+
+    
+
+  
+
+    
+
+  
+Fig. 1: Our Four-Level Word-Class System for Classical Chinese
+
+  
+In our new word-class system (Fig.1), the top level, which we call “word-superclass,” is defined to represent the predicate-object structure of classical Chinese: “n” represents objectives, “v” represents predicates, and “p” represents others. The second level is the ordinary word-class of classical Chinese: noun, pronoun, numeral, verb, preposition, adverb, auxiliary verb, particle, and interjection. We first constructed the word-class from a famous classical-Chinese dictionary Zenyaku Kanjikai 
+4
+, and we reconstructed the word-class, especially excluding adjective. In our system, noun, pronoun, and numeral compose “n” word-superclass; verb, preposition, adverb, and auxiliary verb compose “v” word-superclass; particle and interjection compose “p” word-superclass.
+
+  
+The third and fourth levels are word-subclasses to describe detailed behavior of the words in classical Chinese texts. We first tried to construct these word-subclasses from Word List by Semantic Principles
+5
+. However, its levels were stratified too deep and its category was highly depended on Japanese. Therefore we constucted rather shallow word-subclasses, suitable for a morphological analysis of classical Chinese texts, from scratch (Fig.1). We have often revised the third and fourth levels of our word-class system. Whenever we revise our word-class system, we should modify our dictionary and corpus.
+
+  
+For the development of a large corpus, the collaboration of linguistic experts, scholars of classical Chinese, input operators, and data managers is required. We use a distributed version control system, Git, to support the collaboration for the development of our corpus. Git is a powerful but complicated system, so we restrict our use of Git to avoid conflicts between versions of our corpus. And we have developed our own “skin” to hide the complicatedness of Git. Our own “skin” mainly consists of Git-based corpus manager, our Mecab-corpus editor (mentioned below), a system updater of our dictionary and corpus, and a system updater of the framework.
+
+  
+In order to make corpus for classical Chinese on MeCab, we have constructed a MeCab-corpus editor based on XEmacs CHISE 
+6
+. We use the MeCab-corpus editor to compile our digital corpus and our digital dictionary based on our four-level word-class system for classical Chinese (Fig.2). In our MeCab-corpus editor we first input typical sentences from classical Chinese texts. Second we push the right-most button “classical Chinese” of the editor, then we obtain a morpheme sequence temporarily segmented by MeCab. Third we edit the sequence to categorize its words, looking up authoritative textbook refereneces of the sequences. And last we include the morpheme sequence in our corpus for classical Chinese.
+
+  
+Our corpus for classical Chinese on MeCab now includes about 20,000 sentences, written in our four-level word-class system. Our dictionary for classical Chinese on MeCab includes about 5,000 words, which we categoraized into our four-level word-class system. We keep increasing our corpus, and we also keep selecting new words from our corpus to add them into our dictionary.
+
+  
+In conclusion, we made a morphological analyzer for classical Chinese. The analyzer required a dictionary and a corpus based on a word-class system. We developed our four-level word-class system, suitable for analysis of classical Chinese, originally made from some other dictionaries, and then we reconstructed the word-class system. We also developed the Git-based framework including our Mecab-corpus editor, which allowed us to edit the corpus and dictionary effectively.
+
+  
+
+    
+
+  
+Fig. 2: Screenshot of an Authoritative Textbook and Our MeCab-Corpus Editor
+
+  
+References
+
+  
+1. 
+T. Kudo, K. Yamamoto and Y. Matsumoto
+ (2004): Applying Conditional Random Fields to Japanese Morphological Analysis, Conference on Empirical Methods in Natural Language Processing, pp.230-237.
+
+  
+2. mecab-ipadic, 
+code.google.com/p/mecab/downloads/detail?name=mecab-ipadic-2.7.0-20070801.tar.gz
+
+  
+3. 
+N. Yamazaki, T. Morioka and K. Yasuoka
+: Refactoring of Wordclasses for Morphological Analysis of Classical Chinese, The Computers and the Humanities Symposium 2012, pp.39-46.
+
+  
+4. 
+Y. Togawa, et al.
+ (2011): Zenyaku Kanjikai, 3rd Ed., Sanseido.
+
+  
+5. 
+National Institute for Japanese Language and Linguistics
+ (2004): Word List by Semantic Principles, Revised & Enlarged Ed., Dainippon Tosho.
+
+  
+6. 
+T. Morioka
+ (2008): CHISE: Character Processing Based on Character Ontology, 3rd International Conference on Large-Scale Knowledge Resources LKR, pp.148-162.
+

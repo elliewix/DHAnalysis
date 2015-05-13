@@ -1,0 +1,171 @@
+Poster: Between Close and Distant: Historical Editing Methods at Intermediate Scale
+
+          Knox, Douglas W., 
+          Newberry Library, 
+          
+knoxdw@gmail.com
+
+        
+Between mass digitization of millions of images and texts and intensive scholarly work on
+          close digital representation, in the humanities there are many collections of texts at
+          intermediate scales that require their own strategies for management, editing, and
+          analysis. The Text Encoding Initiative grew out of scholarly needs in working with digital
+          texts that were encoded manually with considerable editorial care. In recent years it has
+          become possible to begin to address the challenge of working with digital resources at
+          scales that had been difficult to imagine previously—a challenge captured in Gregory
+          Crane's memorable question, "What Do You Do with a Million Books?" (Crane,
+            2006).
+
+        
+More recently Crane seemed to reply to his own question with the demand, "Give us
+          editors!," recognizing the need for new kinds of editing and scholarship that will combine
+          the strengths of digital methods and domain-appropriate human judgment (Crane
+            2010). Between markup of single texts and mass digitization of millions of books,
+          increasing attention is called for at intermediate scale. The present project is a case
+          study of one modest example of this sort of work.
+
+        
+At the scale of tens of thousands of texts, manual editing methods are impractical or not
+          cost-effective, yet there is often still considerable value in structured markup to
+          support management, discovery, and scholarly use beyond what uncorrected OCR or plain text
+          can support. While this is not in itself a novel observation, thinking about interpretive
+          issues and scale in relation to digital editing has in general been much more developed
+          with respect to literary texts than it has been for nonliterary historical sources.
+
+        
+The poster will outline some of editing questions and processes that can arise in
+          applying digital methods to a large aggregation of related historical documents, drawing
+          on examples from the Chicago Foreign Language Press Survey, an NEH-funded project of the
+          Newberry Library that is creating an electronic publication and database using relatively
+          simple TEI structures to represent a collection of thousands of newspaper articles
+          prepared in the 1930s. The original Press Survey was a project of the U.S. Works Progress
+          Administration in the 1930s that selected, translated into English, edited, and organized
+          articles published in Chicago from 1861 to 1938 in newspapers in twenty-two linguistic and
+          ethnic groups. The project produced 120,000 half-sheets of typescript, recording what we
+          now know are more than 48,000 articles. 
+
+        
+The present-day Press Survey project worked with a vendor to produce a set of simple TEI
+          transcription files from images digitized from microfilm by the library at the University
+          of Illinois at Urbana-Champaign. The body of each article has been transcribed into
+          paragraphs and occasionally tables, without further markup below that level. Considerable
+          effort, however, went into making sure the files accurately capture the structure of
+          information that constitute metadata for each article: ethnic group, primary and secondary
+          subject code classifications, source, date, and title. At the publication end of the
+          process, web developers populate a database with metadata drawn from edited TEI files and
+          create a searchable, browseable interface for the collection.
+
+        
+Between the vendor's XML and the web presentation is an essential set of editing tasks.
+          Many editing steps, beginning with XML validation, apply to single documents, and scale up
+          through simple repetition, preferably automated repetition with manual exception handling
+          as required. Often this is a matter of imagining what might have gone wrong, and then
+          devising tests for it. Are any items, pages, or essential data structures missing? Are
+          there paragraphs that are suspiciously short? Are there any duplicate values one would not
+          expect, whether identifiers, file name references, or page numbers? Is there data
+          integrity in expected relations between file names and internal identifiers? Is there the
+          sequential continuity we would expect in any numbering or other patterns where the
+          sequence of the original material implies some kind of consistency or order in metadata
+          fields?
+
+        
+Some of the most interesting editing tasks, however, are those that relate to the
+          collection as a whole, and require an iterative exploratory process. The 1930s editors of
+          the Press Survey thought carefully about their choices and methods in organizing a large
+          body of material. They invented their own hierarchical subject code scheme, and the linear
+          arrangement of the typescript indicates how they prioritized ethnic groups and primary
+          subject codes over date of publication and secondary subject terms. They faced inevitable
+          limitations in trying to managing a textual database of tens of thousands of records with
+          nothing more than paper, procedural guidelines, and human attention. For seventy years, in
+          the absence of a digital representation of the editorial model of the WPA editors, it was
+          impossible to get a full picture of the choices they made. Now, with digital methods, we
+          can better enjoy the benefit of their work and yet also see the limitations of their
+          methods, even according to their own intentions, better than they themselves were able
+          to.
+
+        
+While scholars have made good use of typescript, microfilm, and digital images, until the
+          Press Survey was modeled as a database of articles its aggregate characteristics were
+          obscure. No index recorded the range and distribution of values in important metadata
+          fields, including dates and the names of newspapers and other sources. Creating a digital
+          representation now requires simultaneous analysis and editorial decision-making. How often
+          did the original editors depart from their own advertised controlled vocabularies? What
+          simple errors should now be corrected, what normalization of data would best serve the
+          current digital project? Do the data structures chosen in anticipation of full-scale
+          digitization fit what we can now know about the documents in the aggregate? With an eye to
+          both central tendencies and odd but perhaps telling exceptions, how can editing choices
+          mediate a digital collection for efficient use while also preserving some necessary kinds
+          of transparent resistance to user expectations, features that may be essential to its
+          character as a complex historical primary source? 
+
+        
+The poster will be organized around these kinds of questions and tasks, with a series of
+          illustrative case studies drawn from Foreign Language Press Survey documents and data.
+
+        
+Generalizing from this case, the primary point is that intermediate scale matters in its
+          own right. If a collection is interesting as such, it will likely require more than the
+          repeated application of the kind of editing applied to individual texts, and it may also
+          require decision-making beyond the methods and standards designed to provide access to
+          aggregations at much larger scale. We must be able to see both the forest and the
+          trees.
+
+      
+    
+References:
+
+      
+        
+          
+
+            Crane, G.
+            2010
+             “Give us editors! Re-inventing the edition and re-thinking the
+              humanities, ” 
+            Connexions, 
+            May 14, 2010
+            March 9, 2011
+            
+         (
+link
+)
+   
+          
+
+
+          
+
+            Crane, G.
+            2006
+             “What Do You Do with a Million Books?, ” 
+            D-Lib Magazine,, 
+            12
+            3
+            March 9, 2011
+            
+         (
+link
+)
+   
+          
+
+
+          
+
+            TEI Consortium
+            2007
+            TEI P5, 
+            Guidelines for Electronic Text Encoding and
+              Interchange, 
+            TEI Consortium
+            March 9, 2011
+            
+         (
+link
+)
+   
+          
+
+        
+      
+    

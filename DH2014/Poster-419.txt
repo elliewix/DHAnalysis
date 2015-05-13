@@ -1,0 +1,544 @@
+Exploring Qualitative Data for Secondary Analysis: Challenges, Methods, and Technologies
+
+    
+Category:
+Poster
+
+      
+Session:
+1
+
+      
+Date:
+2014-07-10
+Time:
+14:00:00
+
+      
+Room:
+Amphipôle Common Area
+
+    
+
+        
+Bischoff
+,
+									
+Kerstin
+
+        
+
+          
+
+        
+L3S Research Center
+
+      
+
+      
+
+        
+Niederée
+,
+									
+Claudia
+
+        
+
+          
+
+        
+L3S Research Center
+
+      
+
+      
+
+        
+Tran
+,
+									
+Nam Khanh
+
+        
+
+          
+
+        
+L3S Research Center
+
+      
+
+      
+
+        
+Zerr
+,
+									
+Sergej
+
+        
+
+          
+
+        
+L3S Research Center
+
+      
+
+      
+
+        
+Birke
+,
+									
+Peter
+
+        
+
+          
+
+        
+Soziologisches Forschungsinstitut Göttingen
+
+      
+
+      
+
+        
+Brückweh
+,
+									
+Kerstin
+
+        
+
+          
+
+        
+Universität Trier, Neuere und Neueste Geschichte
+
+      
+
+      
+
+        
+Wiede
+,
+									
+Wiebke
+
+        
+
+          
+
+        
+Universität Trier, Neuere und Neueste Geschichte
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Introduction
+
+  
+A remarkable
+body of data has been collected in the social sciences by interviewing people
+or observing peoples’ interaction in a variety of situations – qualitative data
+sources very valuable for contemporary research. Notable projects promoting the
+re-use of qualitative data are ESDS Qualidata 
+1
+ (now UK Data Service) or
+Bequali 
+2
+. Here, we discuss important challenges in re-using qualitative
+data for secondary analysis and present first ideas on how to overcome them.
+This includes exploiting state-of-the-art IT-methods from the fields of
+Information Retrieval and Data Mining – adapting and integrating them for the
+digital humanities – as well as methodological considerations based on
+interdisciplinary work, in our case between computer scientists, historians, and
+social scientists in the project “Gute Arbeit” 
+3
+.
+
+  
+Challenges
+in secondary analysis of qualitative data
+
+  
+We focus on challenges on three main levels: a)
+making qualitative data 
+accessible
+ for
+secondary analysis, b) making relevant material 
+findable
+, and c) making it 
+understandable
+,
+i.e., ensuring adequate interpretation. 
+
+  
+
+    
+Accessibility
+
+  
+
+  
+Efforts towards secondary analysis of qualitative data often have to
+struggle with researchers’ reluctance to make their data – their asset –
+(digitally) available. One crucial issue is warranting anonymity. The problem
+is exacerbated with qualitative data since answers are rather uncontrolled and
+unstructured, making it possible to combine information from various places in
+an interview, e.g., potentially giving information on an employee's (rather
+unique) background. There is an inherent conflict: While the data owners may
+tend to prefer protecting their clients, other researchers will argue for
+having complete information on interview content and context.
+
+  
+
+    
+Findability
+
+  
+
+  
+The ability to select the right primary material is an important
+precondition for re-analysis. For this, tools for exploring and searching
+relevant studies, cases/samples, and documents are needed that allow defining
+various criteria and notions of interesting or “similar” data. Furthermore,
+when reading and analysing the selected (long) interviews we envision enhanced
+analysis support, e.g. for re-using and sharing codes and annotations or for
+within document navigation to snippets of interest.
+
+  
+
+    
+Interpretability
+
+  
+
+  
+Understanding context is crucial to correctly
+interpret utterances of interviewees. Lack of context knowledge (“Not having
+been there”) is usually stated as one of the major
+concerns regarding the feasibility of secondary analysis 
+4
+. Furthermore, some qualitative approaches
+consider interactions between researchers and interviewees as essential for
+interpretation 
+5
+. While for some
+studies e.g., ethnological field studies, (contextual) data may not be sharable
+at all, for semi-structured interviews the process of data gathering can be
+made more transparent 
+6
+. Moreover,
+when working with data from earlier time periods questions of (the
+comparability of) socio-cultural macro-context are raised 
+7
+.
+
+  
+Technologies
+for digitally enhanced secondary analysis of qualitative data
+
+  
+In current practice, qualitative researchers mainly rely on qualitative
+data analysis tools like ATLAS.ti or MaxQDA or on (quantitative)
+dictionary-based content analysis tools, e.g., General Inquirer or Diction.
+Here, we discuss how secondary analysis of qualitative data can benefit
+from more sophisticated techniques from text mining and natural language
+processing – especially when systematically combining them to reveal novel
+usages.  
+
+  
+Named Entity Recognition
+
+  
+Automatically identifying persons,
+organizations, and locations, i.e., so called named entity recognition (NER),
+is a standard task in natural language processing with tools publicly available,
+e.g. Stanford Named Entity Recognizer 
+8
+.
+In secondary analysis, NER can be used for improving search (e.g., faceted
+search) and contextualization. While non-disclosure agreements and adequate access rights will be the
+cornerstone of an anonymization strategy, NER can also assist in the anonymization task
+by finding persons or organizations talked about or by highlighting location
+names, which possibly provide additional hints to who was interviewed. Identified
+named entities can be systematically substituted by pseudonyms – storing the
+mapping safely on a remote place. 
+
+  
+Sentiment Analysis
+
+  
+Opinion
+mining (sentiment analysis) techniques could support the secondary researcher
+in finding opinionated material, e.g., passages with positive or negative points
+of view on a particular subject. For example, our project “Gute Arbeit”
+is interested in how peoples' concepts of “good" work evolved over the
+last decades.  Besides, such techniques may support judging the
+sensitivity of material, e.g. insults. Direct application of – often
+vocabulary-based – state-of-the-art sentiment analysis tools (e.g. 
+9
+) to
+qualitative data is usually not feasible. There are peculiarities regarding the
+detection of subjective expressions and opinion targets, context dependency,
+indirect opinions, and ordering or omittance effects. For example, in
+face-to-face interviews subtle sentiment expressions are common. We are
+researching how to ‘train’ machine-learning approaches to better cope with
+qualitative data.
+
+  
+Topic Modeling
+
+  
+Topic modeling with its prominent
+representative Latent Dirichlet allocation (LDA) 
+10
+ is a statistical technique for identifying the topical structure
+of large textual corpora. Application to limited size qualitative corpora may
+require gathering additional training data (
+11
+, 
+12
+).Topic
+modeling techniques can highlight themes - possibly going beyond themes asked
+for - discussed in (long) qualitative documents. Concept Maps or co-occurrence
+matrixes are related ideas. For a quick overview, interview contents can be
+visualized by means of representative topics. For example, topics extracted
+from a collection of studies show commonalities while comparing topics of
+individual studies sheds light on specifics. Similarly, Janasik et al. 
+13
+ argue that such text mining procedures can aid
+both data-driven, inductive research by finding emergent concepts as well as
+theory-driven, deductive research by checking the adequacy and applicability of
+defined schemes.
+
+  
+Context Enrichment
+
+  
+There are different kinds and levels of context
+of the interview, e.g., conversational, situational, regarding the research
+project, or institutional/cultural 
+14
+.
+While most of these context variables need to be documented by the primary
+researcher, IT tools can substantially aid capturing the socio-cultural
+(macro-)context present at the time of data collection. Using external
+knowledge bases, e.g. Wikipedia or news corpora, primary data can be
+automatically annotated and linked with background information (e.g. 
+15
+, 
+16
+, 
+17
+). Changes in socio-cultural context may also be better traceable by
+topic or word clusters with their evolution tracked over time 
+18
+.
+
+  
+Intelligent Search and Visualization
+
+  
+For fast access to an archive of unknown qualitative studies, intelligent
+search procedures and advanced visualizations for supporting exploration are
+crucial: Term clouds, Topics maps, and timelines, e.g. for word (cluster)
+evolutions. Facetted search is a standard in many web applications allowing to
+browse data or to filter query results based on facets. For a qualitative data
+archive such facets can be classical metadata like project or study, year, or
+author, but also advanced information extracted automatically, like entities or
+topics talked about. All of these may help the secondary researcher to better
+define his notion of interesting or “similar” material.
+
+  
+While quite many projects make use of one of the aforementioned techniques,
+novel usage scenarios result from systematically chaining or plugging in the
+various components. Of course, to aid digital humanities researchers IT tools
+need to adhere to best practices in interface and interaction design (usability
+principles like learnability, robustness). More importantly, scepticism
+regarding the utility and validity of employing IT techniques in humanities
+research as well as potential misperceptions of ‘hostile takeover’ attempts
+have to be addressed. 
+
+  
+First experiences 
+
+  
+The technologies discussed hold a lot of promise for supporting secondary
+analysis, but it is important to carefully fit the way they are offered with
+the work practices and expectations for secondary analysis. Due to the close
+collaboration across disciplines as well as the work on concrete secondary
+analysis tasks, our project “Gute Arbeit” provides a good hands-on opportunity
+for such user-driven technology adaption. We conducted two group discussions
+where an early prototype realizing topic modelling via Mallet 
+19
+ was shown as a
+stimulus to each three humanities researchers. Despite some limitations in
+perceived quality, in sum our researchers stated an added value regarding data
+access and exploration – though considerably less for those very familiar with
+the data. In general, the need for iterative interaction, flexibility, and personalization
+were put forward by both groups. For example, instead of aiming at automatic
+topic labelling users want to maintain their own topic labels and as well define
+relationships between topics or group topics into clusters. Thresholds for
+probability-based techniques like topic modeling should be adjustable to allow
+trading off completeness versus specificity. By enabling ranking based on
+relative (cumulative) topic coverage one can easily focus on the most relevant
+subset of documents that cover most of the topic in the corpus. Contrasting
+different subsets of documents matching criteria like study, profession, or time period regarding prevalent topics was mentioned as an
+interesting further development. Especially for the historian, the time
+dimension was important. Language and topic evolution could be visualized.
+
+  
+Our experiments showed the need to select and adapt text mining tools
+carefully - here tailoring the technology to the needs of secondary analysis.
+The lessons learned through our interdisciplinary, collaborative, agile
+approach to tool development highlight the methodological strengths of the
+rapid prototyping process: researchers get to know and trust the techniques
+better as these early hands-on sessions demonstrate potentials as well as
+necessary refinements. While it is hard to know your requirements for novel
+digital research tools before seeing them in action, iteratively providing (imperfect)
+evolutionary prototypes seems a useful methodology for establishing a common
+ground for the Digital Humanities.
+
+  
+References
+
+  
+1. 
+            
+www.esds.ac.uk/qualidata/about/introduction.asp
+
+  
+2. 
+            
+www.bequali.fr/
+
+  
+3. 
+            
+www.sofi-goettingen.de/index.php?id=1086
+
+  
+4. 
+            
+Corti, L., Witzel, A., and Bishop, L.
+ (2005). On the Potentials and Problems of Secondary Analysis. An Introduction to the FQS Special Issue on Secondary Analysis of Qualitative Data. Forum Qualitative Sozialforschung / Forum: Qualitative Social Research, 6(1).
+          
+
+  
+5. 
+            
+Gillies, V. and Edwards, R.
+ (2005). Secondary Analysis in Exploring Family and Social Change: Addressing the Issue of Context. Forum Qualitative Sozialforschung / Forum: Qualitative Social Research, 6(1).
+          
+
+  
+6. 
+            
+Irwin, S.
+ (2013). Qualitative secondary data analysis: Ethics, epistomology and context. Progress in Development Studies, 13(4):295-306.
+
+  
+7. 
+            
+Gillies, V. and Edwards, R.
+ (2005). Secondary Analysis in Exploring Family and Social Change: Addressing the Issue of Context. Forum Qualitative Sozialforschung / Forum: Qualitative Social Research, 6(1).
+
+  
+8. 
+            
+Finkel, J. R., Grenager, T., and Manning, C.
+ (2005). Incorporating Non-local Information into Information Extraction Systems by Gibbs Sampling, Proceedings of the 43nd Annual Meeting of the Association for Computational Linguistics, ACL, University of Michigan, USA, June 2005.
+
+  
+9. 
+            
+Pang, B. and Lee, L.
+ (2008). Opinion Mining and Sentiment Analysis. Foundations and Trends in Information Retrieval, 2(1-2):1-135.
+
+  
+10. 
+            
+Blei, D. M., Ng, A. Y., and Jordan, M. I. 
+(2003). Latent dirichlet allocation. The Journal of Machine Learning Research, 3:993-1022.
+
+  
+11. 
+            
+Zhu, X., He, X., Munteanu, C., and Penn, G.
+ (2008). Using latent Dirichlet allocation to incorporate domain knowledge for topic transition detection. Proceedings of the 9th Annual Conference of the International Speech Communication Association, INTERSPEECH, Brisbane, Australia, September 2008:2443-2445.
+
+  
+12. 
+            
+Tran, N. K., Zerr, S., Bischoff, K., Niederée, C., and Krestel, R. 
+(2013). Topic Cropping: Leveraging Latent Topics for the Analysis of Small Corpora. Research and Advanced Technology for Digital Libraries - Proceedings of the International Conference on Theory and Practice of Digital Libraries, TPDL, Valetta, Malta, September 2013, Springer LNCS, pp. 297-308.
+          
+
+  
+13. 
+            
+Janasik, N., Honkela, T. and Bruun, H.
+ (2009). Text mining in qualitative research: Application of an unsupervised learning method. Organizational Research Methods, 12(3):436-460.
+          
+
+  
+14. 
+            
+Bishop, L.
+ (2006). A Proposal for Archiving Context for Secondary Analysis. Methodological Innovations Online, 1(2):10-20.
+          
+
+  
+15. 
+            
+Mihalcea, R. and Csomai, A. 
+(2007). Wikify!: linking documents to encyclopedic knowledge. Proceedings of the sixteenth ACM conference on Conference on information and knowledge management, CIKM, Lisbon, Portugal, 2007, ACM, pp. 233–242.
+          
+
+  
+16. 
+            
+Milne, D. and Witten, I. H.
+ (2008). Learning to link with Wikipedia. Proceedings of the 17th ACM conference on Information and knowledge management, CIKM, Napa Valley, CA, USA, October 2008, ACM, pp. 509–518.
+          
+
+  
+17. 
+            
+He, J., de Rijke, M., Sevenster, M., van Ommering, R., and Qian, Y.
+ (2011). Generating links to background knowledge: a case study using narrative radiology reports. Proceedings of the 20th ACM Conference on Information and Knowledge Management, CIKM, Glasgow, Scotland, UK, 2011, ACM, pp. 1867–1876.
+          
+
+  
+18. 
+            
+Wang, X. and McCallum, A.
+ (2006). Topics over time: a non-markov continuous-time model of topical trends. Proceedings of the 12th ACM SIGKDD international conference on Knowledge discovery and data mining, KDD, Philadelphia, PA, USA, August 2006, ACM, pp. 424-433.
+          
+
+  
+19. 
+            
+McCallum, A. K.
+  (2002). MALLET: A Machine Learning for Language Toolkit, 
+mallet.cs.umass.edu.
+

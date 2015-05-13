@@ -1,0 +1,355 @@
+Paper: Googling Ancient Places
+
+					Isaksen, Leif, 
+					Archaeology, University of Southamp, 
+					
+leifuss@googlemail.com
+
+				
+
+					Barker, Elton, 
+					Classical Studies, The Open University, 
+					
+e.t.e.barker@open.ac.uk
+
+				
+
+					Kansa, Eric C., 
+					School of Information, University of California,
+						Berkeley, 
+					
+ekansa@ischool.berkeley.edu
+
+				
+
+					Byrne, Kate, 
+					Informatics, University of Edinburgh, 
+					
+k.byrne@ed.ac.uk
+
+				
+Overview
+
+				
+Our presentation about the Google Ancient Places (GAP) project will demonstrate
+					new techniques to computationally identify places referenced in scholarly texts.
+					We will also discuss deployment of simple Web services that use resulting place
+					identifications to help bridge across online literary and material culture
+					collections.
+
+			
+			
+				
+Project History
+
+				
+Funded through the Google Digital Humanities Award program (July 2010-June 2011),
+					GAP <
+http://googleancientplaces.wordpress.com/
+> mines a portion of the
+					Google Books Corpus <
+http://books.google.com/intl/en/googlebooks/history.html
+> to find
+					books related to ancient locations identified by gazetteers of the Classical
+					Mediterranean world.
+
+
+				
+GAP builds upon the Herodotus Encoded Space-Time Imaging Archive (HESTIA)
+					project. HESTIA <
+http://www.open.ac.uk/arts/Hestia/
+> was a two-year
+					collaboration (2008-2010) between The Open University and the Universities of
+					Oxford and Birmingham, funded by the UK Arts and Humanities Research Council.
+					Its aim was to explore new methods for visualizing relationships in Herodotus’
+					Histories. The project explored multiple approaches, including: 
+						
+mapping the frequency of references to specific locations (both
+							spatially and in terms of linear narrative)
+
+						
+manually and automatically generating maps of the network connections
+							between places. 
+
+					 The project made use of Greek and English versions of the text from
+					the Perseus Digital Library <
+http://www.perseus.tufts.edu/
+> which are marked up
+					with the Text Encoding Initiative (TEI) XML schema, including geographical
+					locations based on automated string-matching with the Perseus internal gazetteer
+					and Getty Thesaurus of Geographic Names. Closer analysis revealed that many of
+					the locations were misidentifications, however, and a relatively labor-intensive
+					process was required to correct them. 
+
+				
+HESTIA’s use of Perseus Digital Library resources demonstrates the growing power
+					of open infrastructure already established in Classical studies. HESTIA also
+					helped to demonstrate the utility of visualizing locations within a narrative.
+					However, could the approach be automated so as to scale beyond manually
+					processing individual texts? GAP attempts to answer this question through more
+					sophisticated computational methods and by using additional open infrastructure,
+					especially new Semantic gazetteers (see below) such as GeoNames <
+http://www.geonames.org/
+>, and the Pleiades Project <
+http://pleaides.stoa.org/
+>. 
+
+
+				
+HESTIA’s focus lies in a seminal text, the Histories by
+					Herodotus. While primary and secondary literary sources represent key resources
+					for Classical Studies, Classics also draws upon diverse sources of material
+					evidence gathered from art history, architecture and archaeology (Mahony and
+					Bodard 2010:3-5). These different sources of evidence and their associated
+					scholarship are often highly “siloed”. Reference to Perseus or Pleiades
+					resources can improve their interoperability. To address this issue, GAP
+					demonstrates how open digital humanities infrastructure together with the Google
+					Books Corpus, can be used synergistically to bridge online literary and material
+					culture collections. GAP uses Open Context <
+http://opencontext.org/
+> to test such services. Open Context is an
+					open-access archaeological data publication system offering wide-ranging
+					documentation of architecture, archaeological contexts, and objects from
+					multiple contributors (Kansa and Kansa 2007). Open Context provides a map and
+					timeline on its splash page to enable both providers and users to quickly
+					identify related research. The ability to identify relevant scholarly literature
+					relating to Open Context’s material culture collections would be a
+					ground-breaking extension to this service. 
+
+			
+			
+				
+Approach
+
+				
+Prior experience with Herodotus’ Histories informs GAP’s
+					methodology. In developing the HESTIA Narrative Timeline, we learned that places
+					referenced in narrative texts generally cluster together to maintain narrative
+					coherency. Given a set of toponyms with multiple possible identifications, the
+					set of identifications with the shortest overall path between them is likely to
+					be correct. In addition, we can add weight to the importance of each toponym by
+					the number of possible locations it could refer to. Somewhat
+					counter-intuitively, this means that small, obscure places with unusual names
+					are much better guides to location than well-known places with many namesakes.
+					While a useful starting point, several additional factors complicate accurate
+					place identification: 
+						
+The approach does not work well for fragments or with arbitrary
+							higher-level structures such as the alphabetic organization of an
+							encyclopedia. 
+
+						
+The author may assume that the anticipated audience will be able to
+							contextualize by other narrative elements (such as well-known
+							individuals) and thus mention only a single location (or even none at
+							all). 
+
+						
+The author may contextualize by giving a territory in which the place
+							is located. These can confuse point-based algorithms as there is no
+							single ‘best’ point that represents them.
+
+						
+The author may have confused the place they are discussing with
+							another, especially if they are commenting on another work or reporting
+							independent sources.
+
+						
+Occasionally the pattern location clustering assumption simply does
+							not hold. This is especially the case for places that do not perform an
+							active function in the text such as personal names derived from places
+							of origin (e.g. ‘Herodotus of Halicarnassus’).
+
+					
+
+				
+Fortunately, new open infrastructure, especially Semantic Gazetteers such as
+					GeoNames and Pleiades, can improve the precision of place identification. Both
+					GeoNames and Pleiades offer open, machine-readable data curated by dedicated
+					communities. They provide unique HTTP URIs for each place to which multiple
+					names (toponyms), locations (such as spatial coordinates) and categories (like
+					‘settlement’ or ‘region’) can be assigned. These gazetteers make it much easier
+					to handle the problem of synonymy and allow us to assign non-ambiguous and
+					easily resolved public identifiers to places identified in the Google Books
+					Corpus.
+
+
+				
+Nevertheless, even with the aid of gazetteers, the difficulties outlined above
+					make place identifications highly probabilistic and uncertain, especially in
+					cases where we find either insufficient or conflicting evidence. Hard cases can
+					then be handled by a variety of methods, including more sophisticated but
+					computationally expensive procedures or by manual effort of a scholar.
+					Computationally, there are multiple levels at which we can look for clustering,
+					including the chapter, book, and corpus (of the author or even genre). Looking
+					at higher levels may provide us with broader contextual clues. A further
+					advantage of working with massive digital corpora is that they frequently
+					provide multiple translations and editions. In such cases we can use the linear
+					chain of places in one edition to inform the processing of another and vice
+					versa. Finally, as we process more books the system can record additional
+					metadata about the places as well as the books. In particular it may see that in
+					cases of homonymy, one location is much more frequently mentioned than all the
+					others (such as the Egyptian Alexandria, as opposed to the many other cities of
+					that name). This can help in cases where we have no other contextual clues to
+					draw on. Google Books metadata and comparison of multiple editions found Google
+					Books corpus may thus help resolve ambiguous place determinations in some
+					cases.
+
+
+				
+It is also important to remember that there are some hard limits imposed on the
+					process and some pragmatic aspects to our goals. First, we are only able to
+					identify those places for which we have an entry in a gazetteer. Natural
+					Language Processing available to us will not identify places previously unknown.
+					Secondly, we are not looking for a ‘perfect’ set of results for the simple
+					reason that natural language is ultimately indeterminate. Continued improvement
+					of computational methods, as well as more traditional forms of scholarship will
+					be required. 
+
+			
+			
+				
+Outcomes
+
+				
+Scaling and adapting text processing methods developed for HESTIA for the larger
+					Google Books Corpus represents one of the key challenges for GAP. To help
+					evaluate the effectiveness of our approach, we first reconciled local
+					identifiers used by the HESTIA project with Pleiades URIs. We will report on how
+					our algorithmic approach to place identifications compares with places manually
+					identified in HESTIA using the same raw text of the Histories as used by HESTIA.
+					We will then report on results of our algorithmic method on the 1828 translation
+					of the Histories provided by Google. Finally we will discuss application of our
+					algorithms for general use on the Google Books corpus, focusing on public domain
+					texts with Library of Congress Headings DE-DG (Greco-Roman World; Greece;
+					Italy).
+
+
+				
+GAP provides processing results in RDF-expressed annotations for each text. Such
+					annotations are extremely useful to software but generally less helpful for
+					humanities researchers who typically require a human interface. Thus, GAP also
+					provides Web mapping tools, like those on the HESTIA and Open Context websites.
+					These interfaces enable searches in both directions – from text to places, and
+					from a place to the texts which reference it. To lower adoption barriers, we
+					chose RESTful Web service (based on the Atom Syndication Format and GeoJSON)
+					design patterns (see Blanke et al. 2009; Kansa and Bissell 2010). Such services
+					enable other developers and digital humanists to incorporate our results into
+					other research environments and applications.
+
+
+				
+As discussed above, the GAP project makes extensive use of existing digital
+					humanities infrastructure, especially place gazetteers such as Pleiades. In
+					doing so, GAP helps to demonstrate the growing maturity of digital scholarship
+					in Classical studies. Rather than standing alone as isolated, one-off efforts,
+					digital projects increasingly complement one-another and enable future work. In
+					this light, we hope GAP will catalyze continued research (see Rosenzweig 2007)
+					in the text processing methods, systems design, and semantic standards required
+					to bridge gaps across literary and material culture collections. 
+
+
+
+
+
+			
+		
+References:
+
+			
+				
+					
+
+						Barker ETE, Bouzarovski S, Pelling CBR, Isaksen L.
+						2010
+						 “Mapping an ancient historian in a digital age: the
+							Herodotus Encoded Space-Text-Image Archive (HESTIA), ” 
+						Leeds International Classical Journal, 
+						9
+						1-24
+					
+
+
+					
+
+						Blanke, T., M. Hedges, and R. Palmer
+						2009
+						 “Restful services for the e-Humanities — web services that
+							work for the e-Humanities ecosystem, ” 
+						Digital Ecosystems and Technologies,
+							2009. DEST '09. 3rd IEEE International Conference on Digital Ecosystems
+							and Technologies., 
+						637-642
+					
+
+					
+
+						Cohen, Daniel J. and Roy Rosenzweig
+						2006
+						Digital History: A Guide to Gathering, Preserving, and
+							Presenting the Past on the Web, 
+						Philadelphia
+						University of Pennsylvania Press
+						
+         (
+link
+)
+   
+					
+
+					
+
+						Kansa, Eric C., and Ahrash N. Bissell
+						2010
+						 “Web Syndication Approaches for Sharing Primary Data in
+							"Small Science" Domains., ” 
+						Data Science Journal, 
+						9
+						42-53
+					
+
+					
+
+						Kansa, E., and S. Whitcher Kansa
+						2007
+						 “Open Context: Collaborative Data Publication to Bridge
+							Field Research and Museum Collections, ” 
+						International Cultural Heritage
+							Informatics Meeting (ICHIM07): Proceedings [J. Trant and D. Bearman
+							(eds)], 
+						Toronto: Archives & Museum Informatics, 
+						
+         (
+link
+)
+   
+					
+
+
+					
+
+						Mahony, Simon and Gabriel Bodard
+						2010
+						 “Introduction, ” 
+						Digital Research in the Study of Classical Antiquity [Simon
+							Mahony and Gabriel Bodard (eds.)], 
+						London
+						Ashgate
+						1-14
+					
+
+
+					
+
+						Rosenzweig, Roy
+						2007
+						 “Collaboration and the cyberinfrastructure: Academic
+							collaboration with museums and libraries in the digital era, ” 
+						First Monday, 
+						12(7)
+					
+
+
+				
+			
+		

@@ -1,0 +1,311 @@
+A top-down approach to the design of components for the philological domain
+
+    
+Category:
+Short Paper
+
+      
+Session:
+7
+
+      
+Date:
+2014-07-11
+Time:
+11:00:00
+
+      
+Room:
+315 - Amphipôle
+
+    
+
+        
+Boschetti
+,
+									
+Federico
+
+        
+
+          
+
+        
+ILC-CNR of Pisa (ITALY)
+
+      
+
+      
+
+        
+Del Grosso
+,
+									
+Angelo Mario
+
+        
+
+          
+
+        
+ILC-CNR of Pisa (ITALY)
+
+      
+
+      
+
+        
+Khan
+,
+									
+Anas Fahad
+
+        
+
+          
+
+        
+ILC-CNR of Pisa (ITALY)
+
+      
+
+      
+
+        
+Lamé
+,
+									
+Marion
+
+        
+
+          
+
+        
+ILC-CNR of Pisa (ITALY)
+
+      
+
+      
+
+        
+Nahli
+,
+									
+Ouafae
+
+        
+
+          
+
+        
+ILC-CNR of Pisa (ITALY)
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+
+  
+Introduction
+
+  
+This paper focuses on the methodology applied to the development of components in the domain of collaborative philology in the Memorata Poetis Project. This initiative, led by the University of Venice, coordinates eight units sharing the same cyber-infrastructure and is co-funded by the Italian Ministry of Instruction, University and Research (PRIN 2010/11).
+
+  
+The project aims to study the multilingual intertextuality between epigraphic texts and literary epigrams, the transmission of themes, motives, etc. between different communicative situations (epigraphic versus literary) and different civilisations (Greek, Latin and Italian). As a control group, we analyse a corpus of epigraphic and literary texts in Arabic which do not belong to the same tradition as the others. The study of intertextuality affects both the reconstruction of the text (constitutio textus), by providing variants from the indirect tradition, and its interpretation (interpretatio), by widening the contexts in which the text has been reused.
+
+  
+Methodology
+
+  
+By following a top-down approach the article will discuss the following three aspects of the general design of the components developed by the Institute for Computational Linguistics of the National Research Council (ILC-CNR) in Pisa, which will be integrated into the shared infrastructure managed by the Venetian working unit of the project. 
+
+  
+Firstly, we will introduce the ongoing modelling of the philological domain from a formal point of view. Secondly, we will discuss engineering methods for the analysis of the required components. Finally, we will describe the application of the aforementioned methodology to the specific part of the project developed in Pisa. 
+
+  
+Computational philology has so far focused on the formalisation of only some aspects of the philological domain, such as stemmatics, derived from the Lachmannian methodology 
+1
+, but it is necessary to take into account the formalisation of other aspects essential to understanding the history of the tradition 
+2
+ as well as the relation that a text has with its text bearing object (TBO), reusing non-textual annotation tools 
+3
+. Thus, any proposed formal models should reflect a representative range of philological methods and practices. 
+
+  
+Whereas stochastic theories and processes borrowed from computational linguistics have been successfully employed in computational philology, formal models based on selected logical axioms specific to the philological domain, have not been sufficiently developed 
+4
+.  In this aspect of our work, our attention is addressed to an overall class of problems rather than just a single project. The ultimate goal is to model how various kinds of philological data serve as evidence for the construction of dynamic critical editions and critical commentaries. As another outcome, these logical models might result in the development of an extensive domain ontology and subdomain ontologies. 
+
+  
+An example should illustrate the benefits that such a process of formalisation could have in the development of software tools for projects in the philological domain such as Memorata Poetis. An analyst designing software for a project that must deal with textual variance due to the existence of several diverging manuscripts of the same work, can afford to focus on creating tools to handle different chunks of text starting at the same textual position, as per his design specifications, while neglecting to deal with the issue of multiple syntactic interpretations in ambiguous sentences. A different project requiring such an extension to the original software in order to record concurrent syntactic analyses suggested by different scholars in commentaries will have to incorporate a comprehensive process of refactoring, instead of a simple development that extends the functionalities of the software developed in the previous project. 
+
+  
+Much work in computational philology in the last few decades has been driven by the idea that the design and development of a digital platform for text criticism can be carried out by simply transferring and customizing many of the tools that have been developed in the field of computational linguistics for studying modern languages 
+5
+; 
+6
+; 
+7
+. However we think that it is necessary to develop a different line of research in which the tradition of philological studies can advance into the digital era without relying on such a simplistic view of the relation of such work with computational linguistics.
+
+  
+The development of software components for the philological domain at ILC-CNR is based on the agile paradigm of software development: we mix a top-down with a bottom-up approach, which requires a continual improvement in design and implementation.
+
+  
+Ongoing Results
+
+  
+The library of core components under development is structured into the following packages:  philological content management, TBO management, editing, management of layers of analysis, relations (linked data) management, indexing, search, view.
+
+  
+
+    
+Fig. 1: Class Diagram of the Aligner Component
+
+    
+
+  
+Philological entities can be either represented as linear or non-linear structures; in the latter case we have the choice of representing textual variants as graphs 
+8
+ or in other ways (e.g. as a swarm of variants). The choice is determined on the basis of the best trade-off between fast access, representation of variable granularity, etc. The strategy for the actual representation of texts with variants will be implemented in the extended classes of the abstract PhilologicalEntity class, which provides methods to set and get the textual variants.
+
+  
+TBO components deal with information related to the epigraphic device, in our case a small subset of the epigraphs. These components manage the multidimensional models (e.g. 3D) and any other relevant information related to the
+epigraphic situation. Epigraphy, as a specific communication process of writtent text, gives complementary examples of the scientific and digital requirements for a global approach of the TBO. By focusing, among many other complex aspects, on writing and context, epigraphy concerns itself with entangled information from the process of communication that computational linguistic processes only partially take into account. This is necessary to the overall scientific interpretation and understanding of any text.
+
+  
+Editing components manage the creation, reading, updating and deletion of the data stored in the system, preserving the integrity of the data, tracking multiple versions of the information, etc. The following types of objects are affected by editing: texts with variants, automated analyses described below (in order to manually review them), data entries for free annotations (such as commentaries) and structured annotations (such as the tagging of themes and motives and semantic analyses, according to the SIMPLE methodology 
+9
+).
+
+  
+Components related to linguistic and stylistic automated analyses both implement cutting-edge algorithms for lemmatization and pos-tagging 
+10
+ as well as embedding tools developed in the Perseus project like Morpheus. Components for metrical analysis 
+11
+ and 
+12
+, individuation of named entities, etc. are pluggable extensions.
+
+  
+Here it is interesting to note that adapting computational models developed for Western languages could result in the loss of information regarding innate characteristics of different and more remote languages as pointed out in recent projects such as Sharing Ancient Wisdoms (SAWS-KCL). For instance the word analyses made by Buckwalter's morphological engine are not marked according to Arabic grammar but according to their translation in English 
+13
+. For example, the word biHaq~i is analysed as a preposition and this is incorrect. The words commonly used to translate biHaq~i in English, e.g., “against”, are indeed prepositions, but in Arabic grammar, biHaq~i is composed of the concatenation of  three parts: (1) bi=PREP + (2) Haq~=NOUN+ (3) i=CASE_DEF_GEN. For these reasons, we have brought about improvements to the current morphological analyzers which allow detailed analyses respecting the grammar and granularity of Arabic 
+14
+.Linked data components will be developed in order to handle the overall relations between the entities involved in the system through an identification scheme (e.g. RDF). The linking is done at different levels of granularity and between different types of objects. For example, a philological entity can be linked to another philological entity and a character can be linked to the related box in its three-dimensional model.Indexing components will create and handle data structures necessary to efficiently access stored resources.   Search components, devoted to information retrieval, will combine the data indexed in the persistence unit and exploit a large number of query techniques for accessing databases (xquery, sql, sparql, etc).View components will take into account the data structures that represent content combined with multiple levels of analysis. The interaction between the user and the system through the graphical interface (user experience) must be suitable for philologists and their specific needs, avoiding limitations due to the adaptation of the user experience of different domains.
+
+  
+
+    
+Fig. 2: Web Interface showing the text of an Arabic epigraph aligned with its Italian translation and related morphological analysis 
+
+    
+
+  
+Conclusion
+
+  
+In conclusion, our approach tries to model the principal entities, their relations and their behaviour in the domain of philology  at a high level of abstraction and, consequently, we derive a framework that is not based on the requirements of a specific project, but that derives from the logical modelling of the domain. Eventually, the actual software components developed according to the framework will be used for a collaborative project that combines multiple levels of analyses and annotations, in order to enrich the traditional methods applied by philologist to study intertextuality. Applications developed with the CoPhi components are made available here: <http://cophilab.eu>.
+
+  
+References
+
+  
+1. 
+Roos, T. and Heikkila, T.
+ (2009). Evaluating methods for computer-assisted stemmatology using artificial benchmark data sets, Literary and Linguistic Computing, 24: 471-433.
+          
+
+  
+2. 
+Bozzi, A.
+ (2004). Postfazione a Zampolli Antonio, Filologia e informatica: le origini della filologia computazionale, Euphrosyne, n.s. 32: 21-24.
+          
+
+  
+3. 
+Soler, F., Torres, J. C., León, A. J. and Luzón, M. V.
+ (2013). Design of Cultural Heritage Information Systems based on Information Layers, ACM Journal on Computing and Cultural Heritage. In press.
+          
+
+  
+4. 
+Endriss, U.
+ (2011). Logic and social choice theory. In Gupta, A. and van Benthem, J. (eds.), Logic and Philosophy Today.  London: College Publications. 
+staff.science.uva.nl/~ulle/pubs/files/EndrissLPT2011.pdf
+ (accessed 7 March 2014)
+          
+
+  
+5. 
+Bamman, D. and Crane, G.
+ (2009). Computational Linguistics and  Classical Lexicography, Digital Humanities Quarterly, 3. 
+www.digitalhumanities.org/dhq/vol/3/1/000033.html
+ (accessed 7 March 2014).
+          
+
+  
+6. 
+Robinson P.
+ (2004). Where We Are with Electronic Scholarly Editions, and Where We Want to Be, Jahrbuch für Computerphilologie 5: 123-143. 
+computerphilologie.uni-muenchen.de/ejournal.html
+ (accessed 7 March 2014).
+          
+
+  
+7. 
+Orlandi, T.
+ (2010). Informatica testuale - teoria e prassi, Roma: Laterza Editori.
+          
+
+  
+8. 
+Schmidt, D. and Colomb, R.
+ (2009). A data structure for representing multi-version texts online, International Journal of Human-Computer Studies, 67(6): 497-514.
+          
+
+  
+9. 
+Lenci, A., Calzolari, N. and Zampolli, A.
+ (2003). SIMPLE: Plurilingual Semantic Lexicons for Natural Language Processing, Linguistica Computazionale 16-17: 323-352.
+          
+
+  
+10. 
+Bamman, D. and Crane, G.
+, (2011). The Ancient Greek and Latin Dependency Treebanks. In Sporleder, C., van den Bosch, A. and Zervanou, K. (eds.), Language Technology for Cultural Heritage. Berlin: Springer Verlag, pp.79-98.
+          
+
+  
+11. 
+Pavese, C. O. and Boschetti, F.
+ (2004). A Complete Formular Analysis of the Homeric Poems, Amsterdam: Hakkert.
+          
+
+  
+12. 
+Fusi, D.
+ (2004). Fra metrica e linguistica: per la contestualizzazione di alcune leggi esametriche. In Di Lorenzo, E. (ed.), L'esametro greco e latino: analisi, problemi e prospettive - Atti del convegno di Fisciano 28-29 maggio 2002. Napoli: Guida Editore, pp.33-63.
+          
+
+  
+13. 
+Zemirli, Z. and Elhadj, Y. O. M.
+ (2012). Morphar+: an Arabic morphosyntactic analyzer, Proceedings of International Conference on Advances in Computing, Communications and Informatics (ICACCI), Chennai, India, 3-5 August 2012, pp. 816-823.
+          
+
+  
+14. 
+Hajder S. R.
+ (2011). Adapting Standard Open-Source Resources To Tagging A Morphologically Rich Language: A Case Study With Arabic, Proceedings of the Student Research Workshop associated with RANLP 2011. Hissar, Bulgaria, pp. 127–132.
+          
+

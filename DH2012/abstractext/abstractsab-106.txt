@@ -1,0 +1,478 @@
+Paper: Automatic Extraction of Hidden Keywords by Producing “Homophily” within
+                    Semantic Networks
+
+                    Akama, Hiroyuki, 
+                    
+akama@dp.hum.titech.ac.jp
+
+                    Tokyo Institute of Technology, 
+                    
+
+                
+
+                    Miyake, Maki, 
+                    
+mmiyake@lang.osaka-u.ac.jp
+
+                    University of Osaka, 
+                    
+
+                
+
+                    Jung, Jaeyoung, 
+                    
+catherina.rosset@gmail.com
+
+                    Tokyo Institute of Technology, 
+                    
+
+                
+A complex network is usually conceived of in the form of a graph consisting of
+                    nodes representing individual, or atomic, entities and edges linking them
+                    according to information about semantic attributes or some weighting value. This
+                    intellectual intuition can be applied to the world of language where a sign
+                    makes sense through the concurrent presence of other signs (Saussure, 1916). In
+                    particular, the semantic aspect of a document, as a group of more or less
+                    coherent sentences, depends on co-occurrence information about the words being
+                    bound together to form topics. When a content-bearing word is found within a
+                    neighborhood of other words, one may assume that they produce a constellation of
+                    meaning (Schütze, 1997; Takayama, 1999). Conceptual interrelatedness can be
+                    represented in a graph form called a semantic network. Similarly, in the field
+                    of digital humanities, the graph-based approach to document analysis is becoming
+                    a major research trend (Miyake, 2009).
+
+                
+In semantic networks, graph coefficients are useful for examining the features of
+                    language data, such as a document or corpus, from the perspective of meaning.
+                    Hubs with the highest degree values can be regarded as being as key words
+                    (excluding functional words), that are highly involved in producing the document
+                    context. In normal cases, the bias of degree distributions to follow a power law
+                    (or, more concretely, Zipf’s law) has been handled by the concept of scale-free
+                    (Barabási et al., 1999) for complex networks. However, one graph index that
+                    researchers are increasingly paying close attention to is the concept of
+                    ‘intrinsic weights’ that are not distributed to edges but to vertices
+                    (Caldarelli et al., 2002; Boguñá et al., 2003; Masuda et al, 2004). The
+                    emergence of this weighting within some network settings certainly leads a
+                    situation where vertex degree generates a phenomena known as the ‘Rich Club’
+                    (Zhou et al, 2004; Colizza et al., 2006), consisting of hubs with high intrinsic
+                    weights. However Masuda et al. (2006) have revealed a contrastive kind of
+                    subgraph area, which they figuratively refer to as a ‘VIP Club’, where vertices
+                    with similar weighting values are exclusively connected to form a confined
+                    circle of privileged elites. This “homophily” tendency (Axelrod, 1997; Barrat et
+                    al., 2004; Centola et al.2007) makes the average shortest path length
+                    significantly longer, so that the innermost graph area becomes harder to access,
+                    forming a preserve for the so-called ‘masterminds’ (Masuda et al., 2006).
+
+                
+These elite entities may be, in some sense, regarded as ‘hidden keywords’ within
+                    complex networks, where all the words are interconnected—at dense intervals—from
+                    a paradigmatic perspective (Jacobson, 1963). These mastermind words are
+                    unquestionably of moderately high frequency or degree, but they are tightly
+                    related to one another by ‘homophilous’ ties to form very important but discreet
+                    lexical patterns. The term homophilous here means a significantly high value of
+                    ‘degree correlation’ (Boguñá et al, 2003; Boccaletti et al., 2006), which serves
+                    as a marker for the VIP-Club phenomenon (See Figure I). These mastermind words,
+                    which are relatively difficult to retrieve during comprehension within the
+                    reading process, sometimes play a crucial role in producing well-calculated
+                    subliminal effects or hinting at authors’ obsessions with their long-cherished
+                    themes.
+
+                
+Be that as it may, the Incremental Advancing Window (IAW), a windowing method
+                    (Burges, 1998; Lemaire et al., 2005) that Akama et al (2008) have proposed in
+                    order to extract word association patterns from a whole document, clearly
+                    satisfies the requirements for creating a homophilous semantic network from
+                    lexical co-occurrence information. From such a graph, it is possible to extract
+                    hidden keywords with moderate frequencies as members of the clusters regarded as
+                    being VIP-Clubs. In this method, the window proceeds step by step through an
+                    entire document (after the removal of noise words) to collect all word pairs
+                    appearing at least once inside the frame. The list of all pair instances thus
+                    obtained with their frequencies makes it possible to generate a semantic
+                    network. However, two parameters are set to some specific values to adjust for
+                    recall and precision in the data gathering: namely, the window size (diameter)
+                    is changed from 1 to m and the threshold for word pair frequency (theta; θ) is
+                    changed from 1 to n (m and n are both natural numbers larger than 1). For
+                    example, if the theta value is 3, word pairs appearing less than 3 times in the
+                    window are ignored. Precisely, this means that, no matter how frequently a word
+                    appears in a text, keywords are rejected from the list of vertices for the
+                    semantic network representing the text, if the instances of paired words are
+                    extremely rare with recorded frequencies lower than θ. This is why a graph
+                    derived by IAW exhibits the homophily tendency, if we consider degree itself to
+                    be an intrinsic weighting for a vertex.
+
+                
+For instance, let us cite a study conducted by Akama et al (2008) which applied
+                    IAW to Saint-Exupéry’s novel "Le petit prince" (original French version). The
+                    sample consisted of 1,312 content-bearing words remaining after a stop list was
+                    applied. If window size (diameter) is at the smallest level and threshold is
+                    similarly maximally strict, then the words extracted by IAW are numerically low,
+                    but they form tightly cohesive aggregates, suggesting that the precision rate,
+                    P, and the recall rate, R, are always in a trade-off relationship. A severe
+                    windowing condition with a threshold value set to 6 allowed us to recall the 38
+                    most important words from the standpoint of co-occurrence patterns, but some of
+                    them were not included in the list of the 38 most frequent words. These hidden
+                    keywords, or mastermind words, were «apprivoiser», «boa», «cent un», «consigne»,
+                    «fermé», «manger», «monde», «posséder», «ramoner», «région», «unique», and
+                    «volcan», which could all be characterized as homophilous in terms of degree
+                    similarity.
+
+                
+In contrast, words that were among the top words but excluded from the most
+                    severe IAW computational conditions were «aimer», «ami», «baobab», «connaître»,
+                    «croire», «dessin», «jour», «nuit», «grande personne», «rose», «sérieux», and
+                    «venir», which are all ordinary keywords sharing the feature of heterophily in
+                    terms of degree-frequency—a tendency to be linked, or even collocated, with many
+                    different words (Figure II). In the smallest semantic network containing both
+                    groups of words (window size = 7, threshold for pair frequency = 6), the average
+                    shortest path lengths from all dangling nodes representing peripheral words to
+                    the vertices of these 12 masterminds (the first group) and to those of the
+                    purely general keywords (the second group) were 4.172 and 3.747, respectively,
+                    representing a highly significant difference according to a conducted t test
+                    (Figure III).
+
+                
+This result reveals much about the characteristic traits of mastermind words,
+                    which when coupled with graph clustering, permits us to understand how they
+                    shape communities that deserve the label of VIP-Clubs. To prove this, Markov
+                    Clustering (MCL) was applied to the smallest semantic network with IAW
+                    parameters of window size = 1 and threshold for pair frequency = 6 (thus
+                    screening out many weak co-occurrence patterns and focusing on the most frequent
+                    instances of bi-gram). MCL proposed by Van Dongen (2001) is well known as a
+                    scalable unsupervised cluster algorithm for graphs that decomposes a whole graph
+                    into small coherent groups by simulating the probability movements of a random
+                    walker across the graph. It is assumed that when MCL is applied to semantic
+                    networks, it yields clusters of words that share certain similarities in meaning
+                    or that appear to be related to common concepts (Dorow et al., 2005; Jung et al,
+                    2007). As a matter of fact, the present clustering results produced some
+                    clusters which consist almost exclusively of homophilous masterminds, such as
+                    {monde, unique}, {boa, fermé, serpent}, and {éteindre, volcan, ramoner}. These
+                    clusters suggest a series of subtopics that are not so dominating within the
+                    novel, but that convey a persistent and deep resonance to the readers.
+
+                
+As described, a text, when treated in the form of a graph, exhibits some hidden
+                    keywords that can be enumerated as mastermind entities through the analysis of a
+                    homophilous semantic network. Furthermore, if a graph clustering method, such as
+                    MCL, is applied to the network, the vertices with such features are categorized
+                    into sub-topic clusters, known as VIP-Clubs. Despite the moderate degrees
+                    (frequencies) of these vertices (words), they are inconspicuously combined to
+                    create lexical patterns which, although they are minor, or subsidiary, in
+                    nature, are yet effective.
+
+                
+
+                    
+
+                        
+Full Size Image 
+
+                    
+                
+                
+Figure I : A homophilous graph (left) and a heterophilous graph (right) : an
+                    agglomeration of ‘VIP-Club’ is recognizable in the homophilous graph, while
+                    homogeneity underlies the heterophilous graph. Both networks with the same
+                    number of nodes (50) and the same connectivity (38.5%) are produced by
+                    respectively applying different pruning functions--which
+                    consist of trimming edges with probabilities varying according to the weight
+                    correlation--to an identical random graph whose distribution of ‘intrinsic
+                    weights’ follows the degree distribution of the equal-sized BA model (scale-free
+                    graph). The two pruning functions are 
+
+                        
+Full Size Image 
+
+                     where abslogdiff stands
+                    for the absolute value of the logarithmically-transformed difference of
+                    ‘intrinsic weights’ between any two vertices.
+                
+
+                    
+
+                        
+Full Size Image 
+
+                    
+                
+                
+Figure II: Subgraph (extracted from the semantic network made under the condition
+                    of window size = 7, threshold for pair frequency = 6) around the homophilous
+                    words (masterminds: blue) and the heterophilous words (purely general keywords:
+                    red). The size of a vertex corresponds to the degree.
+
+                
+
+                    
+
+                        
+Full Size Image 
+
+                    
+                
+                
+Figure III : The average shortest path lengths from the words with degrees 1, 2
+                    and 3 respectively to the homophilous words (masterminds) and to the
+                    heterophilous words (purely general keywords)
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Akama, H., MiyakeM., Jung, H.
+                        2008
+                         “A New Evaluation Method for Graph Clustering of Semantic
+                            Networks Built from Lexical Co-occurrence Information, ” 
+                        Post-Conference Journal Paper of the
+                            18th International Congress of Linguistics (CDROM), 
+                    
+
+                    
+
+                        Axelrod, R.
+                        1997
+                         “The Dissemination of Culture: A Model with Local
+                            Convergence and Global Polarization, ” 
+                        Journal of Conflict Resolution, 
+                        2
+                        41
+                        203-226
+                    
+
+                    
+
+                        Barabási, A.-L.Albert, R.
+                        1999
+                         “Emergence of scaling in random net-works., ” 
+                        Science, 
+                        286
+                        509-512
+                    
+
+                    
+
+                        Barrat, A.Barthelemy
+                            M.Pastor-Satorras, R.Vespignani,
+                            A.
+                        2004
+                         “The architecture of complex weigthed networks., ” 
+                        Proc. Natl. Acad. Sci. USA., 
+                        101
+                        11
+                        3747-3752
+                    
+
+                    
+
+                        Boccaletti, S.Latora, V.
+                        Moreno, Y.Chavez, M.Hwang
+                            D.-U.
+                        2006
+                         “Complex networks: Structure and dynamics, ” 
+                        Physics Reports, 
+                        424
+                        4-5
+                        175-308
+                    
+
+                    
+
+                        Boguñá, M.Pastor-Satorras,
+                            R.Vespignani A.
+                        Jan 20, 2003
+                         “Epidemic spreading in complex networks with degree
+                            correlations, ” 
+                        cond-mat.stat-mech, 
+                        10
+                    
+
+                    
+
+                        Burgess, C.Livesay, K.Lund,
+                            K.
+                        1998
+                         “Explorations in context space: words sentences and
+                            discourse., ” 
+                        Discourse Process, 
+                        25
+                        211-257
+                    
+
+                    
+
+                        Caldarelli, G.Capocci, A.De Los
+                            Rios, P.Munoz, M.-A.
+                        2002
+                         “Scale-free networks from varying vertex intrinsic
+                            fitness, ” 
+                        Physical Review Letters, 
+                        89
+                        258702
+                    
+
+                    
+
+                        Centola D, González-Avella J.-C.Eguíluz
+                            V.-M.San Miguel, M.
+                        2007
+                         “Homophily, Cultural Drift, and the Co-Evolution of Cultural
+                            Groups., ” 
+                        Journal of Conflict Resolution, 
+                        51
+                        6
+                        905-929
+                    
+
+                    
+
+                        Colizza, V., Flammini, A.Serrano, M.-A., and
+                            Vespignani, A.
+                        2006
+                         “Detecting rich-club ordering in complex networks, ” 
+                        Nature Physics, 
+                        2
+                        110-115
+                    
+
+                    
+
+                        Dorow, B.Widdows, D.Ling,
+                            K.Eckmann, J.-P.Sergi, D.Moses, E.
+                        2005
+                         “Using Curvature and Markov Clustering in Graphs for
+                            Lexi-cal Acquisition and Word Sense Discrimination., ” 
+                        MEANING-2005, 2nd Workshop or-ganized by
+                            the MEANING Project, 
+                        February 3rd-4th, 2005.
+                    
+
+                    
+
+                        Jakobson, R.
+                        1963
+                        Linguistique et théorie de la communication: Essais de
+                            linguistique Générale., 
+                        Les Éditions de Minuit
+                        Paris
+                    
+
+                    
+
+                        Jung, J.Akama, H.
+                        2008
+                         “Employing Latent Adjacency for Appropriate Clustering of
+                            Semantic Networks, ” 
+                        New Trends in Psychometrics, 
+                        Universal Academy Press
+                        Tokyo
+                        131-140
+                    
+
+                    
+
+                        Lemaire, B.Denhière,G.
+                        2004
+                         “Incremental Construction of an associated Network from a
+                            Corpus., ” 
+                        Proceedings of the 26th Annual Meeting
+                            of the Cognitive Science Society, 
+                        825-830
+                    
+
+                    
+
+                        Masuda, N.Miwa, H.Konno, N.
+                        2004
+                         “Analysis of scale-free networks based on a threshold graph
+                            with intrinsic vertex weights, ” 
+                        Phys. Rev. E, 
+                        70
+                        036124
+                    
+
+                    
+
+                        Masuda, N.Konno, N.
+                        2006
+                         “VIP-club phenomenon: Emergence of elites and masterminds in
+                            social networks, ” 
+                        Social Networks, 
+                        Volume 28, Issue 4
+                        297-309
+                    
+
+                    
+
+                        Miyake, M.
+                        2008
+                         “Investigating word co-occurrence selection with extracted
+                            sub-networks of the Gospels Employing Clustering Coefficients, ” 
+                        Digital Humanities, 
+                        VENUE, 
+                        2008
+                        258-260
+                    
+
+                    
+
+                        Saint-Exupéry, A. de.
+                        1971
+                        Le Petit Prince, 
+                        Harcourt, Brace & World, Inc.
+                    
+
+                    
+
+                        Saussure, F. de.
+                        1916
+                        Cours de linguistique générale, 
+                        Payot
+                    
+
+                    
+
+                        Schütze H.Pederson, J.-O.
+                        1997
+                         “A coocurrence-based thesaurus and two applications to
+                            information retrieval, ” 
+                        Information Processing & management, 
+                        33(3)
+                        307-318
+                    
+
+                    
+
+                        Takayama Y. et al.
+                        1999
+                         “Information Retrieval Based on Domain-Specific Word
+                            Associations, ” 
+                        Proceedings of PACLING '99, 
+                        Waterloo, Ontario, Canada, 
+                        June 1999
+                    
+
+                    
+
+                        Van Dongen, S.
+                        2000
+                        Graph Clustering by Flow Simulation, 
+                        University of Utrecht PhD thesis
+                        Amsterdam
+                    
+
+                    
+
+                        Zhou, S.Mondragon, R.J.
+                        2004
+                         “The rich-club phenomenon in the Internet topology, ” 
+                        IEEE Communications Letters, 
+                        8
+                        180-182
+                    
+
+                
+            
+        

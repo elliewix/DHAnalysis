@@ -1,0 +1,446 @@
+Paper: Discovering Land Transaction Relations from Land Deeds of Taiwan
+
+                    Chen, Shih-Pei, 
+                    Department of Computer Science, National Taiwan
+                        University, 
+                    
+gail@turing.csie.ntu.edu.tw
+
+                
+
+                    Huang, Yu-Ming, 
+                    Department of Computer Science, National Taiwan
+                        University, 
+                    
+ming@turing.csie.ntu.edu.tw
+
+                
+
+                    Ho, Hou-Ieong, 
+                    Department of Computer Science, National Taiwan
+                        University, 
+                    
+brent@turing.csie.ntu.edu.tw
+
+                
+
+                    Chen, Ping-Yen, 
+                    Department of Computer Science, National Taiwan
+                        University, 
+                    
+champiyen@turing.csie.ntu.edu.tw
+
+                
+
+                    Hsiang, Jieh, 
+                    Department of Computer Science, National Taiwan University;
+                        Research Center for Digital Humanities, National Taiwan
+                        University, 
+                    
+jhsiang@ntu.edu.tw
+
+                
+Abstract
+
+                
+ Land deeds were the only proof of ownership in pre-1900 Taiwan. They are
+                    indispensable for the studies of Taiwan’s social, anthropological, and economic
+                    evolution. We have built a full-text digital library that contains more than
+                    30,000 land deeds. The deeds in our collection range over 250 years and are
+                    collected from over 100 sources. The unprecedented volume and diversity of the
+                    sources provide an exciting source of primary documents for historians. But they
+                    also pose an interesting challenge: how to tell if two land deeds are
+                    related.
+
+                
+ In this paper we describe an approach to discover one of the most important
+                    relations: successive transactions involving the same property. Our method
+                    enabled us to construct over 3,300 such transaction pairs. We also introduce a
+                    notion of land transitivity graph to capture the
+                    transitivity embedded in these transactions. We discovered 2,219 such graphs,
+                    the largest of which includes 103 deeds. Some of these graphs involve land
+                    behavior that had never been studied before. 
+
+            
+            
+                
+Introduction
+
+                
+Until the turn of the 20th century, hand-written land deeds were the only proof
+                    of transaction of lands in Taiwan. Such a deed may involve activities such as
+                    selling/buying, lending of land to smaller farmers, dividing the land among
+                    children or shareholders, and cultivation permits. The deeds usually follow,
+                    depending on their types, a typical but not standard format, and are drown up in
+                    ad hoc manner. Indeed, even the name of the location may be written in a local
+                    convention unfamiliar to the outsiders.
+
+                
+While each land deed may have significance only to its owner, a large collection
+                    of them provides a fascinating glimpse into the pre-modern Taiwanese grassroots
+                    society. Historians have studied them to investigate the economic activities,
+                    community development, and the relationship among the various ethnic groups
+                    (Chen, 1997; Ka, 2001; Shih, 2001; Hong, 2005).
+
+                
+In the past few years we have built a full-text digital library of primary
+                    historical documents of Taiwan called THDL (Taiwan History
+                        Digital Library). Among its corpuses is a collection of over 30,000
+                    land deeds, spanning from 1666 to the first decade of the 20th century, and
+                    collected from over 100 sources of origin (Hsiang, Chen, Tu, 2009). This
+                    collection is unprecedented in terms of volume, time span, geographic
+                    distribution, and variety. While THDL presents an exciting source of primary
+                    materials for historians, it also poses a challenge: how to find the
+                    relationship between two land deeds, or, how to find all the land deeds
+                    involving the same piece of land. Although it was customary to hand down earlier
+                    deeds to the new owner during the transaction of land, most of these links were
+                    broken when the Japanese, during their colonial rule of Taiwan between 1895 and
+                    1945, modernized the land management system (Li, 2004). That is because the
+                    officials only recorded the last deed as the proof of ownership but ignored the
+                    previous ones. Consequently many of the older deeds were either destroyed or
+                    (later) sold as collector’s items because they had lost their original value. 
+
+                
+In this paper we present a semi-automated method to discover the transaction
+                    relations among land deeds. We shall focus on two important relations: successive transaction pairs and allotment agreements. We further connect the transitive activities on
+                    the same piece of land into a concept called land transitivity
+                        graph, which captures the history of the land over time. The largest
+                    such graph that we found has led to a discovery of a new type of land use that
+                    had never been observed before.
+
+            
+            
+                
+Discovering Land Transaction Relations
+
+                
+We start by describing the two relations among land deeds that our method tries
+                    to capture.
+
+                
+Successive transaction pairs: A piece of land could be
+                    sold from A to B, then from B to C. In this case there should be two land deeds
+                    recording the two transactions. We call them a successive
+                        transaction pair. Note that the situation could be rather complicated.
+                    For instance it could have been B’s son who sold it to C. If B divided the land
+                    among his descendents, the first selling transaction and the ensuing allotment
+                    agreement (see below) also form a successive transaction pair.
+
+                
+Allotment agreements: An allotment agreement is a deed
+                    that records how a land is divided among the owner’s descendants or among the
+                    shareholders. In both cases the usual practice is to first divide the land into
+                    several parts, then to have each participant drawing from the lot. Once the
+                    decision is agreed upon, an agreement is written, and several copies are made
+                    and given to each person involved. In the case of division among shareholders,
+                    the allotment agreements should be preceded by a cultivation
+                        permit, a permission from the government to allow a group of people to
+                    cultivate the land. In this case, the cultivation permit and the ensuing
+                    allotment agreement also form a successive transaction pair.
+
+                
+
+                    
+
+                        
+Fig. 1 The process for discovering land transaction relations
+
+                        
+Full Size Image 
+
+                    
+                
+                
+To tackle this problem of finding successive transaction pairs, we developed a
+                    3-step semi-automatic process (Fig. 1). We first used text processing technology
+                    to extract features of each land deed from its metadata and full text. Such
+                    features include the transaction type, the general location of the land and the
+                        four reaches (boundaries identifying the land via
+                    some obscure way such as “bordering Lee’s house on the south,” “a large camphor
+                    tree on the west,” etc), the names of the people involved in the transaction and
+                    their roles (seller, buyer, scrivener), description of the source of the land
+                    (how and when the current owner obtained it), the size, the price, and the
+                    amount of taxes paid (Lu, 2008; Huang, 2009). Fig. 2 is an example of a typical
+                    land deed. We designed an XML format to hold this information (Fig. 3). Second,
+                    we defined rules to identify deeds that may be related. Fig. 4 shows the rules
+                    we used for identifying the successive transaction pairs.
+                    We then wrote a program to compare every pair of land deeds in THDL to see if
+                    any pair satisfied the rules. Finally, we give all the pairs produced to human
+                    expert to verify.
+
+                
+
+                    
+
+                        
+Fig. 2 An example of a typical land deed of Taiwan
+
+                        
+Full Size Image 
+
+                    
+                
+                
+                
+ 
+                    
+
+                        
+Fig. 3 The features of a “selling” type of land deed, stored in XML
+
+                        
+Full Size Image 
+
+                    
+                
+                
+                
+We further remark that a criterion that allows certain degree of fuzziness was
+                    used when performing matching. This is because the names used in different deeds
+                    may sometimes be slightly different even if they are the same place or person
+                    (Huang, 2009).
+
+                
+                
+
+                    
+
+                        
+Fig. 4 The rules for identifying successive transaction pairs
+
+                        
+Full Size Image 
+
+                    
+                
+                
+The precision rate of the algorithm for successive transaction pairs is 63.9% and
+                    that for allotment agreements is 94.4%. We have found 2,409 successive
+                    transaction pairs and 878 sets of allotment agreements among the 30,820 land
+                    deeds in THDL (Table 1). 
+                    
+
+                        
+Table 1 The result of reconstructing land transaction relations among the
+                            land deeds in THDL
+
+                        
+Full Size Image 
+
+                    
+                    Among the former, 358 are cross-generation (A sold to
+                    B, and B’s descendent sold to C). Some of the pairs/sets are from different
+                    sources (the “cross sources” column in Table 1), and are quite impossible to
+                    find manually. Some others are from the same source but are not adjacent to each
+                    other in their original order. These are also difficult to identify by hand.
+                
+            
+            
+                
+Land Transitivity Graphs
+
+                
+When further examining the transaction pairs, an interesting transitive
+                    phenomenon emerged. There may be a deed of A selling a piece of land to B, and
+                    some years later B divided the land among his sons, then one of them, C, rented
+                    it to D to farm. Such transitive activities on the same piece of land could last
+                    for decades. By connecting all these transactions into a graph, it may capture
+                    the evolution of a property over time. 
+
+                
+This is exactly what we did. We call these graphs land transitivity graphs. Using
+                    the relations we discovered early, we came up with 2,219 such graphs. The result
+                    is listed in Table 2. 
+
+                
+
+                    
+
+                        
+Table 2 The land transitivity graphs constructed among the land deeds in
+                            THDL
+
+                        
+Full Size Image 
+
+                    
+                    
+                
+Fig. 5, the third largest graph, contains 36 deeds, dating from 1850 to 1910. The
+                    head of the family, Liao Jiafu (廖佳福), was among the shareholders who received a
+                    cultivation permit from the Qing government, and obtained this piece of land
+                    through allotment in 1850 (the first deed). 
+                    
+
+                        
+Fig. 5 The 3rd large graph, containing 36 deeds
+
+                        
+Full Size Image 
+
+                    
+                    Liao farmed the land for 50 years
+                    and divided it among his descendents in 1901 (the second deed). The rest of the
+                    deeds described the various activities such as further divisions or selling in
+                    the next 10 years. By 1906, only 2 of the 8 divided pieces of land remained in
+                    the Liao family.
+                
+
+                    
+
+                        
+Fig. 6 The largest graph, containing 103 deeds 
+
+                        
+Full Size Image 
+
+                    
+                
+                
+Fig. 6 is the largest land transitivity graph with 103 deeds. Tu, a historian,
+                    studied this graph and discovered that the deeds involved demonstrated a unique
+                    case of land use that had never been studied before (Tu, 2010). It is unlikely
+                    for human to notice this possibility without the computer-generated transitivity
+                    graph.
+
+                
+To help historians take advantage of these graphs, we developed an integrated
+                    environment to analyze the information embedded in each graph (Fig. 7). In
+                    addition to the graph itself and its zoomable navigation facility, we also added
+                    tag cloud, chronological distribution, and a location map.
+
+                
+
+                    
+
+                        
+Fig. 7 The integration environment for land transitivity graphs
+
+                        
+Full Size Image 
+
+                    
+                
+            
+            
+                
+Concluding Remarks
+
+                
+Land deed research has been an important topic among historians of pre-1900
+                    Taiwan. In this paper, we presented a method to discover the transaction
+                    relations among the 30,820 land deeds in THDL, the largest existing full-text
+                    database of land deeds. Our method discovered 2,049 successive transaction pairs
+                    and 878 sets of allotment agreements. They, in turn, are transformed into 2,219
+                    land transitivity graphs, each of which describes the transaction evolution of a
+                    piece of land. One such graph has already led to the discovery of a unique
+                    pattern of land development that had not been studied before (Tu, 2010). We feel
+                    that our work demonstrates how IT tools can be used to help historians conduct
+                    research that could not be done otherwise.
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Chen, C. K.
+                        1997
+                        Taiwan’s aboriginal proprietary rights in the Ch’ing
+                            period: Bureaucracy, Han tenants and the transformation of property
+                            rights of the Anli Tribe, 1700-1895, 
+                        Academia Sinica
+                        Taipei
+                    
+
+                    
+
+                        Hong, L.W. 
+                        2005
+                        A study of aboriginal contractual behavior and the
+                            relationship between aborigines and Han immigrants in west-central
+                            Taiwan, 
+                        1
+                        Taichung County Cultural Center
+                        
+                    
+
+                    
+
+                        Hsiang, J., Chen, S. P., Tu, H. C. 
+                        2009
+                         “On building a full-text digital library of land deeds of
+                            Taiwan, ” 
+                        Digital Humanities 2009
+                            Conference, 
+                        Maryland, 
+                        June 22-25, 2009
+                        85-90
+                    
+
+                    
+
+                        Huang, Y. M. 
+                        2009
+                        On reconstructing relationships among Taiwanese land deeds.
+                            Master thesis, 
+                        National Taiwan University
+                        Taipei, Taiwan
+                    
+
+                    
+
+                        Ka, C. M.
+                        2001
+                        The aborigine landlord: Ethnic politics and aborigine land
+                            rights in Qing Taiwan, 
+                        Academia Sinica
+                        Taipei
+                    
+
+                    
+
+                        Li, W. L.
+                        2004
+                         “Land deeds and land administrative documents—Interpreting
+                            the Archives of the Japanese Taiwan Governor-Generals, ” 
+                        Taiwanese History Research, 
+                        11 (2)
+                        221-240
+                    
+
+                    
+
+                        Lu, C. C. 
+                        2008
+                        Automated Classification of Taiwanese Land Deeds. Master
+                            thesis, 
+                        Taiwan University
+                        Taipei, Taiwan
+                    
+
+                    
+
+                        Shih, T. F. 
+                        2001
+                        Local society in Qing Taiwan, 
+                        Cultural Affairs Bureau
+                        Hsinchu
+                    
+
+                    
+
+                        Tu, F. E. 
+                        2010
+                         “Environmental Change, Land development and Dispute over
+                            Property Rights in southern Taiwan (1890-1920), ” 
+                        The Sixth Conference of Taiwan Colonial
+                            Government Archives, 
+                        Taiwan Historica, 
+                    
+
+                
+            
+        

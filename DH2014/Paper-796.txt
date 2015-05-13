@@ -1,0 +1,138 @@
+The Scholarly 3D Toolkit: Annotation, Publication, and Analysis of 3D Scenes alongside Imported Humanities Data
+
+    
+Category:
+Long Paper
+
+      
+Session:
+8
+
+      
+Date:
+2014-07-11
+Time:
+14:00:00
+
+      
+Room:
+413 - Amphimax
+
+    
+
+        
+DataColtrain
+,
+									
+James Joel 
+
+        
+
+          
+
+        
+University of Nebraska, United States of America 
+
+      
+
+    
+
+  
+New advances in online game engines have made it possible to easily view 3D virtual environments from any web browser, but the full potential of 3D humanities research has gone unrealized because of the difficulty in connecting important 3D findings to the work of traditional scholars grounded in texts. This presentation will discuss the current development and show demonstrations of the Scholarly 3D Toolkit, (S3DT) a plug-in for the Unity game engine designed to help better interface 3D historical reconstructions with other data. The work of a team lead by James Coltrain, S3DT will provide simple interfaces that allow creators to link their 3D scenes to sources and documents, and to dynamically import and view traditionally indexed digital humanities data from databases, spreadsheets, or GIS programs. The result will allow users to view multiple layers of data plotted within a single online 3D environment, showing markers for events, personal connections, documents, images, and annotations from multiple users, all in time and space. S3TD will allow for greater and more sophisticated interdisciplinary analysis, helping scholars studying three dimensional spaces to contextualize models of architecture, urban structures, and natural topography using texts and other spatial data. By comparing existing digital humanities findings with 3D scenes that show scale, light, and texture, the platform will allow for more complex and nuanced investigations of past spaces. Along with a discussion of the project’s progress and the theoretical questions at play, this presentation will show early demos of a test case for the platform. These will include a richly annotated high quality 3D reconstruction of Fort Stanwix, an 18th-century historic site and National Monument, with an existing database constructed by Nebraska undergraduates of over 400 letters, maps, and plans.
+
+  
+S3DT will build upon the achievements of previous digital humanities projects by expanding the options scholars have for working in 3D spaces. Earlier platforms have allowed for the real-time display of annotated 3D models, but some could not stream live in a browser, and most allowed creators little in the way of customization.i Extremely important work has been done with diverse and creative applications of historical GIS, and S3DT will allow for those established types of analyses to be brought into the third dimension. ii More recently, some scholars have made use of online game engines like Unity to achieve some of the goals set forth in the S3DT project, including the use of advanced real time graphics in an online environment. iii However, these projects have not resulted in open, customizable platforms, and none allow for the importation of new 3D content. S3DT will build upon previous work in Unity by connecting 3D scenes from multiple creators to the layered viewing of all kinds of outside humanities data.
+
+  
+The practical tools in S3DT also make many previously difficult modes of spatial analysis quicker and more accessible. S3DT scenes can show spaces changing over time with numerous iterations and nuance, and also display multiple interpretations of the same structure side by side as competing arguments. With 3D objects linking to multimedia sources, users can now better understand the interpretive leaps creators made, and which pieces of fragmentary evidence scholars privileged in creating coherent 3D spaces, information that also facilities efficient peer review. The ability to display different types of data can also promote public outreach in addition to academic collaboration, letting universities, museums, archives, historic sites, and even individual visitors contribute to the same online 3D spaces. The design of the S3DT plug-in for Unity will allow for open analysis of 3D scenes, while protecting scholars’ data for future use. The plug-in does not interfere with the traditional workflows for 3D content creation, and also stores all textual and multimedia data in standard MySQL databases. As a result, neither scholars’ 3D models nor their annotations or data will become stuck in the S3DT if creators find better future platforms for presentation.
+
+  
+S3DT will consist of a two part plug-in for Unity. The first part, within the Unity Editor, will allow creators to add notes and metadata to imported 3D objects, and prepare them for publishing. The second, is a web template which will allow for the viewing and manipulation of published scenes, as well as the live importation and plotting of new data layers from outside sources. Below is a typical workflow for S3DT along with key features at each step. This presentation will conclude with early demonstrations of many features from both parts of the plug-in.
+
+  
+I. 3D Content Creation
+
+  
+Creators begin by modeling and texturing a 3D scene in their typical workflow in a 3D suite such as 3D Studio Max, Maya, or Blender. When they have finished, they export their 3D models to industry standard formats (ex. .obj or .fbx) . They then download and install the Unity Editor and the accompanying S3DT plug-in. Finally they load their 3D scene into the Unity Editor.
+
+  
+II. S3DT Plug-in for Unity Editor
+
+  
+
+    
+
+  
+With their models loaded into the Unity editor, creators will use the S3DT plug-in to prepare them for publication. This includes creating an object hierarchy, denoting nested neighborhoods, complexes, buildings, rooms, architectural features, and sub-features, each as defined by the creator. Once the objects are defined, creators can enter metadata for each scene object in any fields they like. In particular, creators will be able to enter time sensitive information, such as the dates for the object's creation, alteration, damage, and destruction. Creators will also be able to enter links to sources used in their interpretation of the reconstructed object, as well as notes about their specific decisions.
+
+  
+Next creators will publish their scene. In the process each published scene is exported as two parts, a Unity 3D file formatted for web display, and a matching MySQL database containing all metadata and links to sources and annotations.
+
+  
+III. S3DT Plug-in for Browsers
+
+  
+
+    
+
+  
+The S3DT web browser plug-in consists of a Javascript library and web template for loading and displaying published S3DT scenes on the web. Most projects will use a customized version of the web template, but the Javascript library is available for projects that are integrated into existing sites or for which creators desire a higher level of customization.
+
+  
+The S3DT browser plug-in has a simple user interface consists of the following:
+
+  
+The 
+Main Window
+ displays the published Unity scene in real-time 3D.
+
+    
+The 
+Timeline
+ consists of a scalable time line with a slider to control time position and markers corresponding to time sensitive events plotted in the scene.
+
+    
+The 
+Layers List
+ shows all the elements in the scene, organized by package. Each layer has a collapsible view that expands to show the entire object hierarchy as defined by scene creators in the S3DT Unity Editor plug-in. Any additional content or data loaded into the 3D scene will appear in the layers list as a new layer, including published S3DT packages, maps, images, collections of user annotations, collections of plotted events, GIS data, etc. Users will be able to toggle the visibility and opacity of any layer or any object within a layer hierarchy.
+
+    
+The 
+Tools
+ Window features a set of utilities users can use to manipulate or analyze the scene. These will include:
+					
+Advanced Search
+ - Allowing customizable complex searches bases on any metadata field or object attribute.
+Groups
+ - Allows users to group objects from any layer together into a new layer.
+Edit Object Metadata
+ - If enabled, allows users to add to or edit metadata for scene objects. 
+Annotate
+ -Allows users to leave comments live in the scene, either attached to scene objects or in freestanding 3D space.
+Camera Tools
+ - Allows users to place custom cameras, define camera paths and animate them, and to take and save camera snapshots.
+Import Data
+ - Allows users to import data with geographic information from outside sources including SQL, Excel, KML, and ARCGIS. Also allows users to choose and customize marker appearances based on imported data, or upload their own.
+Create Exhibits
+ - A set of sub-tools will allow users to connect camera views, and animations over time and space with HTML text for guided tours and other exhibits. Created exhibits will load into the layers view.
+Map and Image Import
+- Allows users to import maps and images into the live scene, and to
+						align maps to existing terrain or images to camera views. Imported maps and images can then
+						load into the layers view.
+
+  
+References
+
+  
+VSIM https://idre.ucla.edu/gis-visualization/vsim; Rome Reborn http://romereborn.frischerconsulting.com; CDI Second Life projects http://wt-dc19-prod.astate.edu/a/centers-programs-and-institutes/cdi/projects.dot .
+
+  
+Anne Kelly Knowles
+Past time, 
+past place: GIS for history;
+David J. Bodenhamer, John Corrigon, and Trevor M. Harris
+The Spatial Humanities; Spatial History Project http://www.stanford.edu/group/spatialhistory/cgi-bin/site/index.php; Hypercities http://hypercities.com/ ; Neatline http://neatline.org/about/ ; World Map Project http://worldmap.harvard.edu/.
+
+  
+lab, UCLA Experimental Technologies Center http://etc.ucla.edu/research/projects/romelab/ ; Hadrian's Villa Simulation http://idialab.org/nsf-funded-virtual-simulation-of-hadrians-villa/ ; Digital Pompeii http://classics.uark.edu/DigitalPompeii.html; Simulated Environment for Theater, http://humviz.org/set/index.html. 
+

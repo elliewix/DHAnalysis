@@ -1,0 +1,303 @@
+Paper: Topic Modeling Historical Sources: Analyzing the Diary of Martha Ballard
+
+          Blevins, Cameron, 
+          Stanford University, 
+          
+cblevins@stanford.edu
+
+        
+In 1991, historian Laurel Ulrich’s A Midwife’s Tale swept a little-known
+          18th-century midwife named Martha Ballard into the national historical consciousness.
+          Ulrich’s work centered on the analysis of nearly 10,000 diary entries penned by
+          Ballard between 1785 and 1812, leading to an exploration of issues such as shifting family
+          structures, the professionalization of obstetrics, and debtor patterns in a rural economy
+          (Ulrich 1991). My research examines the same diary, but instead of a traditional close
+          reading of the source, I use topic modeling to mine a digitized transcription, iterating
+          through hundreds of thousands of words in order to search for textual patterns.
+
+        
+One of the fundamental challenges to applying text processing techniques to historical
+          sources is one of data quality. Older, hand-written documents are often difficult to
+          transcribe into a digital format, while the shorthand style of diary writing is often
+          filled with abbreviations and misspellings. For instance, Ballard employs a vocabulary
+          peppered with variations: the word “daughter” is spelled fourteen different
+          ways: “daught,” “dagt,” “dat,” etc. One way to
+          overcome this challenge is to use topic modeling, a method of computational linguistics
+          that attempts to group words together based on their appearance in the text.
+
+        
+My short paper session focuses on an analysis of a historical source using topic modeling
+          (Blei and Lafferty 2009). As a form of linguistic analysis, topic modeling has been
+          employed over the past several years to examine large-scale, multi-author textual
+          databases, including historical newspapers (Block 2006), journal articles (Gerrish et al.
+          2010, Hall et. al. 2008), and social network data (Ramage et al. 2010). My application of
+          topic modeling differs from many of these investigations by focusing on multiple, short
+          texts by a single author: in this case, Ballard’s diary entries.
+
+        
+I employed the machine learning toolkit MALLET (McCallum 2002) in order to topic model
+          each of Ballard’s entries as separate pieces of text. MALLET, identified thirty
+          topics, which I then labeled for clarity. The following sample topics were some of the
+          most coherent (my own labels in bold and uppercase):
+
+      
+      
+        
+Topics
+
+          
+Topic Label 
+
+            
+Topic Words 
+
+           
+MIDWIFERY 
+
+            
+birth deld safe morn receivd calld left cleverly pm labour fine reward arivd
+              infant expected recd shee born patient 
+
+           
+CHURCH 
+
+            
+meeting attended afternoon reverend worship foren mr famely performd vers attend
+              public supper st service lecture discoarst administred supt DEATH: day yesterday
+              informd morn years death ye hear expired expird weak dead las past heard days drowned
+              departed evinn 
+
+           
+GARDENING 
+
+            
+gardin sett worked clear beens corn warm planted matters cucumbers gatherd
+              potatoes plants ou sowd door squash wed seeds 
+
+           
+SHOPPING 
+
+            
+lb made brot bot tea butter sugar carried oz chees pork candles wheat store pr
+              beef spirit churnd flower 
+
+           
+ILLNESS 
+
+            
+unwell mr sick gave dr rainy easier care head neighbor feet relief made throat
+              poorly takeing medisin ts stomach 
+
+           
+Although topic modeling was useful for overcoming some of the challenges of spelling
+          variations, its real value lies in its ability to quantitatively measure the relative
+          thematic content of each piece of text. In the case of Ballard’s diary, MALLET
+          assumes that each diary entry is compromised of some combination of thirty topics. An
+          entry in which Ballard attended a sermon and purchased supplies from the general store
+          might contain, for instance, scores of 50% for the CHURCH topic, 25% for the SHOPPING
+          topic, and minimal or zero scores for the remaining twenty-eight topics. Associated
+          temporal metadata (day, month, year, day of the week) allowed me to chart the behavior of
+          certain topics over time.
+
+        
+As a simple barometer of its effectiveness, I used one of the generated topics that I
+          labeled COLD WEATHER, which included words such as cold, windy, chilly, snowy, and air.
+          Aggregating its entry scores by month shows exactly what one would expect over the course
+          of a year ( 
+Figure 1
+).
+
+        
+
+          
+
+          
+Figure 1
+
+          
+Full Size Image 
+
+        
+        
+        
+This approach also can chart patterns over the course of the diary, which covers the
+          final twenty-seven years of Ballard’s life. Two topics tended to involve words
+          related to HOUSEWORK. Aggregated by year, they demonstrate a steady increase in the
+          frequency with which Ballard writes about daily chores ( 
+Figure 2
+).
+
+        
+        
+ 
+          
+
+            
+Figure 2
+
+            
+Full Size Image 
+
+          
+        
+        
+Both topics moved in tandem and steadily increased as she grew older (excepting a curious
+          divergence in the last several years of the diary). This is somewhat counter-intuitive, as
+          one would assume the household responsibilities for an aging grandmother with a large
+          family would decrease over time. Yet this pattern bolsters the argument made by Ulrich in
+          A Midwife’s Tale, in which she points out that the first half of the diary was
+          “written when her family’s productive power was at its height.” (Ulrich
+          1991, pp. 285) As her children married and moved into different households, and her own
+          husband experienced mounting legal and financial troubles, her daily burdens around the
+          house increased. Topic modeling quantifies and visualizes this pattern, one not
+          immediately visible to a human reader.
+
+        
+Topic modeling allows for patterns to crystallize that are imperceptible to a human
+          reader. One topic was particularly intriguing, and included the words: feel husband unwel
+          warm feeble felt god great fatagud fatagued thro life time year dear rose famely bu
+          good
+
+        
+These were words that seem to cover EMOTION and spiritual reflection – an abstract
+          topic that is difficult enough for a human reader to describe. Yet the computer did a
+          remarkable job in identifying a cohesive group of words. The topic follows a fascinating
+          trajectory in Ballard’s diary ( 
+Figure 3
+).
+
+        
+
+          
+
+            
+Figure 3
+
+            
+Full Size Image 
+
+          
+        
+        
+Not only did Ballard write about this topic more as she grew older, but there was a
+          dramatic leap from 1803 to 1804-1805. This corresponds quite well to the period of intense
+          family travail: Her husband was imprisoned for debt and her son was indicted by a grand
+          jury for fraud, causing a cascade effect in Martha’s own life. Topic modeling not
+          only reveals the trajectory of tangible themes (housework, births, gardening, etc.), but
+          also begins to quantify and visualize abstract themes by charting Ballard’s
+          emotional state of being.
+
+        
+My short paper session focuses on the results of my existing work on topic modeling
+          Ballard’s diary while outlining some of the future paths this research could take.
+          In particular, I am interested in pairing trends in topics with trends in Ballard’s
+          social network. What topics correlate with what kinds of people? Are women or men
+          described alongside particular themes? In what broad context do ministers, doctors,
+          neighbors, or family members appear? In conjunction with traditional research and
+          analysis, topic modeling presents a valuable methodology for examining historical
+          sources.
+
+      
+    
+References:
+
+      
+        
+          
+
+            Blei. D.
+            Lafferty, J.
+            2009
+             “Topic Models, ” 
+            Text Mining: Classification, Clustering, and Applications., 
+            Srivastava, A. and Sahami, M. (ed.)
+            Champan & Hall
+            Boca Raton
+            pp. 71-94
+          
+
+          
+
+            Block, Sharon
+            2006
+             “Doing More with Digitization: An Introduction to Topic Modeling
+              of Early American Sources, ” 
+            Common-Place, 
+            6.2
+            
+         (
+link
+)
+   
+          
+
+          
+
+            Gerrish, S.
+             Llewellyn, C.
+            2010
+             “JSTOR Discipline Browser, ” 
+            JSTOR, 
+            
+         (
+link
+)
+   
+          
+
+          
+
+            Hall, D.
+            Jurafsky, D.
+            Manning, C.
+            2008
+             “Studying the History of Ideas Using Topic Models, ” 
+            Proceedings of Empirical Methods of Natural Language
+              Processing., 
+            
+         (
+link
+)
+   
+          
+
+          
+
+            McCallum, Andrew
+            2002
+            MALLET: A Machine Learning for Language Toolkit, 
+            
+         (
+link
+)
+   
+          
+
+          
+
+            Ramage, D.
+            Dumais, S.
+            Liebling, D.
+            2010
+             ““Characterizing Microblogs with Topic Models.”, ” 
+            International Conference on Weblogs and Social Media., 
+            
+         (
+link
+)
+   
+          
+
+          
+
+            Ulrich, Laurel Thatcher
+            1991
+            A Midwife’s Tale: The Life of Martha Ballard and Her Diary,
+              1785-1812., 
+            Vintage
+            New York
+          
+
+        
+      
+    

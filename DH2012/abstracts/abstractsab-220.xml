@@ -1,0 +1,165 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8; charset=UTF-8" /><title>An Analysis of Recurrences in Harold Pinter’s Plays Using CATMA Concordancing
+					Software</title><link rel="stylesheet" href="css/default/results.css" type="text/css" /><script src="script/yui/yahoo-dom-event.js" type="text/javascript"></script><script src="script/yui/connection-min.js" type="text/javascript"></script></head><body class="home blog"><div id="wrapper" class="hfeed"><div id="header"><div id="masthead"><div id="branding" role="banner"><h1 id="site-title"><span><a href="https://dh2011.stanford.edu/" title="Digital Humanities 2011: June 19 – 22" rel="home">Digital Humanities
+                2011: June 19 – 22</a></span></h1><div id="site-description">Big Tent Digital Humanities</div><img src="https://www.stanford.edu/group/dh2011/cgi-bin/wordpress/wp-content/uploads/2010/09/tieDyeLarge.jpg" width="940" height="198" alt="" /></div><div id="access" role="navigation"><div class="menu"><ul><li><a href="https://dh2011.stanford.edu/" title="Home">Home</a></li><li><a href="https://dh2011.stanford.edu/?page_id=3" title="About">About</a></li><li><a href="https://dh2011.stanford.edu/?page_id=15" title="Accommodations &amp; Travel">Accommodations &amp; Travel</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=887" title="Accommodations">Accommodations</a></li><li><a href="https://dh2011.stanford.edu/?page_id=883" title="Travel">Travel</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=311" title="Registration">Registration</a></li><li><a href="https://dh2011.stanford.edu/?page_id=411" title="Schedule">Schedule</a></li><li><a href="https://dh2011.stanford.edu/?page_id=475" title="Workshops">Workshops</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=489" title="Tutorial 1: Introductory TEI ODD">Tutorial 1: Introductory TEI ODD</a></li><li><a href="https://dh2011.stanford.edu/?page_id=499" title="Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the Undergraduate Curriculum">Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the
+                      Undergraduate Curriculum</a></li><li><a href="https://dh2011.stanford.edu/?page_id=507" title="Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can Help Your Project">Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can
+                      Help Your Project</a></li><li><a href="https://dh2011.stanford.edu/?page_id=517" title="Tutorial 4: Introduction to Text Analysis With Voyeur Tools">Tutorial
+                      4: Introduction to Text Analysis With Voyeur Tools</a></li><li><a href="https://dh2011.stanford.edu/?page_id=521" title="Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation">Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation</a></li><li><a href="https://dh2011.stanford.edu/?page_id=525" title="Tutorial 6: Natural Language Processing Tools for the Digital Humanities">Tutorial 6: Natural Language Processing Tools for the Digital Humanities</a></li><li><a href="https://dh2011.stanford.edu/?page_id=529" title="Tutorial 7: Network and Topical Analysis for the Humanities using NWB and Sci2">Tutorial 7: Network and Topical Analysis for the Humanities using NWB and
+                      Sci2</a></li><li><a href="https://dh2011.stanford.edu/?page_id=493" title="Workshop: Visualization for Literary History">Workshop: Visualization
+                      for Literary History</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=471" title="Social Program">Social
+                  Program</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=541" title="Literary San Francisco (Full Day)">Literary San Francisco (Full
+                      Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=547" title="Silicon Valley History (Half-Day)">Silicon Valley History
+                      (Half-Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=537" title="Sonoma Wine Country (Full-Day)">Sonoma Wine Country (Full-Day)</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=181" title="CFPs">CFPs</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=97" title="General CFP">General
+                      CFP</a></li><li><a href="https://dh2011.stanford.edu/?page_id=175" title="CFP en Español">CFP en
+                      Español</a></li><li><a href="https://dh2011.stanford.edu/?page_id=287" title="CFP in German">CFP in
+                      German</a></li><li><a href="https://dh2011.stanford.edu/?page_id=207" title="CFP in Greek">CFP in
+                      Greek</a></li><li><a href="https://dh2011.stanford.edu/?page_id=229" title="CFP in Hungarian">CFP
+                      in Hungarian</a></li><li><a href="https://dh2011.stanford.edu/?page_id=257" title="CFP in Italiano">CFP
+                      in Italiano</a></li><li><a href="https://dh2011.stanford.edu/?page_id=157" title="Tutorial/Workshop CFP">Tutorial/Workshop CFP</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=19" title="Contacts">Contacts</a></li><li><a href="https://dh2011.stanford.edu/?page_id=801" title="Venue">Venue</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=829" title="Local Lunch Spots">Local Lunch Spots</a></li><li><a href="https://dh2011.stanford.edu/?page_id=845" title="Palo Alto Restaurants">Palo Alto Restaurants</a></li></ul></li></ul></div></div><br class="clear" /></div></div><div class="resultsHeader"><table><tr><td><a href="http://dh2011abstracts.stanford.edu/xtf/search" target="_top">New Search</a> | <span class="notActive">Return to Search Results</span> | <a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-220.xml&amp;doc.view=print;chunk.id=0" target="_top">Print View</a></td><td align="right"><form action="http://dh2011abstracts.stanford.edu/xtf/view" target="_top" method="get"><input name="query" type="text" size="15" /><input type="hidden" name="docId" value="tei/ab-220.xml" /><input type="hidden" name="chunk.id" value="0" /><input type="submit" value="Search this Book" /></form></td></tr></table></div><hr /><div class="results"><h2>Poster: An Analysis of Recurrences in Harold Pinter’s Plays Using CATMA Concordancing
+					Software</h2><h4>
+					Onic, Tomaz, 
+					Department of English and American Studies, University of Maribor,
+						Slovenia, 
+					<a href="mailto:tomaz.onic@uni-mb.si">tomaz.onic@uni-mb.si</a>
+				</h4><hr />
+			
+				<h2></h2>
+				<p class="noindent">Recurrence is a crucial feature contributing to a recognizable style of dramatic
+					characters in the plays by contemporary British playwright Harold Pinter. His
+					characters sometimes repeat whole phrases or sentences, sometimes with slight
+					changes, which almost always indicate a change in the speaker’s intention. The
+					repeated passage either follows its first appearance closely, or can be delayed
+					for a few lines – or sometimes pages. In general, the most noticeable
+					recurrences for the audience are those consisting of multiple repetitions,
+					containing unusual words or phrases attracting our attention, or consisting of
+					closely repeated passages. </p>
+
+				<p class="noindent">Beaugrande and Dressler (1988, 54) define <i>recurrence</i> as a
+					direct repetition of a textual element which has appeared earlier in the text.
+					They do not call it repetition because, according to Beaugrande (1991, 18), only
+					seldom is the repetition of part of text a real repetition. Such <i>absolute recurrence</i>, as he calls it, would have to carry
+					exactly the same meaning potential of the repeated phrase as did its first
+					appearance. In most cases, that does not happen, as it is usually the very
+					intention of the speaker that causes the recurrence: “Saying the same thing over
+					again normally carries a context-sensitive message, such as approval,
+					insistence, anxiety, doubt, surprise, or irony. /…/ thus, recurrence is
+					typically an instance of ‘incremental recursion’, where the repeated event adds
+					to the value of the original” (Beaugrande 1991,18).</p>
+
+				<p class="noindent">A less strict variation of recurrence is <i>partial
+						recurrence</i>, defined by Beaugrande and Dressler (1988, 54-55) as the
+					re-appearance of a certain word in the form of a different part of speech. As
+					such, it is similar to polyptoton, a figure of speech that is often defined as
+					repetition of the same word in various inflected forms. In a later article,
+					Beaugrande (1991) defines it as the repetition of a word cluster that does not
+					repeat as a whole; not even all the elements need to repeat. It suffices that
+					some elements of the original sentence repeat in the same or a sufficiently
+					similar form.</p>
+
+				<p class="noindent">Some partial recurrences (which can also originate in language system functions)
+					are random; others appear as a result of the writer’s or speaker’s intention.
+					Pinter’s characters can be classified into a combined category, since their
+					speech – together with recurrences – is carefully designed in order to sound
+					random. </p>
+
+				<p class="noindent">The role of recurrence in Pinter’s dramatic texts represents an important
+					translation issue. It is vital that this stylistic feature be preserved in the
+					target language as faithfully as possible, since it is not only an important
+					decorative device but represents one of the key Pinter’s stylistic trademarks.
+					Unfortunately, however, the existing research results have shown that this
+					stylistic element is often disregarded in translation. It often comes second to
+					meaning or other similar language elements, but usually its loss can be
+					attributed to the translator’s lack of awareness of the importance of
+					recurrence.</p>
+
+				<p class="noindent">A substantial potential danger of omitting recurrence from translation is the
+					fact that this is not a feature that disturbs the audience with its absence. For
+					this reason, it may seem a harmless translation shift; however, it is, in fact,
+					damaging to the audience’s perception of Pinter’s style, which is skewed owing
+					to the absence of such an important stylistic element.</p>
+
+				<p class="noindent">Having been involved in Pinter Studies for about ten years, I have conducted
+					several research activities concerning recurrence in Pinter’s plays – into
+					originals as well as translations – manually. Therefore, the natural next step
+					was to perform selected parts of this body of analysis again using digital
+					methods and thus confirm and broaden – possibly also correct – the existing
+					results.</p>
+
+				<p class="noindent">The first step in the project was to digitize and mark up the original texts and
+					their Slovene translations. These texts were then uploaded into the new CATMA
+					(Computer-Aided Textual Markup and Analysis) concordancing program. Since CATMA
+					allows for searching not only by word or phrase, but also by “grade of
+					similarity”, it is expected that this will be useful in attempting to identify
+					those phrases which are not exact repetitions, but which are similar enough to
+					be construed as a type of repetition in the reader’s mind. This will also lend
+					more weight to any confirmation of the existing idea that recurrences often are
+					not preserved in translation. <a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-220.xml&amp;chunk.id=&amp;toc.id=&amp;toc.depth=1&amp;brand=default&amp;anchor.id=#X" target="_top">Figure 1</a>
+					shows how CATMA allows searching with “grade of similarity” for phrases close to
+					“like a”; when the results are shown on the screen, you can then select an item
+					or not depending on whether it is similar enough to possible be what you are
+					looking for. In this case you would definitely not select the first two
+					examples, ie detail and Special. Since the similarity percentage requested here
+					is only 60%, it is understandable that such items will be deemed as similar;
+					should you raise the measure to 80%, they, and other items like them, will not
+					be included in the results.</p>
+
+				<p class="noindent">
+					<p>
+						<h2>Fig. 1 Screen shot of the similarity function in CATMA</h2>
+						<img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei//220/fig1.png" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-220.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei//220/fig1.png','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+					</p>
+				</p>
+
+				<p class="noindent">Hopefully, the results obtained through this research will strengthen the
+					awareness of how important it is to consider this element in translation, and
+					potentially contribute to a higher quality of the translation theory and
+					practice in the Slovene cultural space of translated foreign language
+					literature.</p>
+
+				<p class="noindent">I feel that participating at the DH2011 would offer a good opportunity to discuss
+					this undertaking and its practical implementation with other participants who
+					have experience with similar projects, particularly in the field of drama which
+					has its own specifics.</p>
+
+			
+		<h2>References:</h2>
+			
+				
+					<p>
+						Beaugrande, R. de
+						1991
+						 “Coincidence in Translation: Glory and Misery Again, ” 
+						<i>Target</i>, 
+						3
+						1
+						17-53
+					</p>
+					<p>
+						Beaugrande, R. de in W. U. Dressler
+						1988
+						<i>Introduction to Text Linguistics</i>, 
+						Harlow
+						Longman
+					</p>
+					<p>
+						<i>CATMA</i>, 
+						University of Hamburg, Germany
+						
+         (<a href="http://www.slm.uni-hamburg.de/catma/index.html" target="blank">link</a>)
+   
+					</p>
+					<p>
+						Pinter, H.
+						1977
+						<i>Complete Works: Two</i>, 
+						New York
+						Grove
+					</p>
+
+
+
+				
+			
+		</div></div></body></html>

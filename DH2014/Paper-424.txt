@@ -1,0 +1,256 @@
+A Network Analysis Approach of the Venetian Incanto System
+
+    
+Category:
+Long Paper
+
+      
+Session:
+5
+
+      
+Date:
+2014-07-10
+Time:
+11:00:00
+
+      
+Room:
+413 - Amphimax
+
+    
+
+        
+Rochat
+,
+									
+Yannick
+
+        
+
+          
+
+        
+EPFL
+
+      
+
+      
+
+        
+Fournier
+,
+									
+Melanie
+
+        
+
+          
+
+        
+EPFL
+
+      
+
+      
+
+        
+Mazzei
+,
+									
+Andrea
+
+        
+
+          
+
+        
+EPFL
+
+      
+
+      
+
+        
+Kaplan
+,
+									
+Frédéric
+
+        
+
+          
+
+        
+EPFL
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+The Venetian maritime empire is the subject of numerous works and monographs (e.g. Ercole 2006
+1
+, Lane 1973
+2
+, Luzzatto 1941
+3
+). This paper focuses on the period between the end of the 13th century and the fall of Constantinople in 1453. During that period the Venetian state set up seven regular shipping lanes, linking the Republic of Venice with the oriental and the occidental Mediterranean basins,  the Black Sea, England and Flanders. Special warships—called galleys—were readapted to perform commercial duties during peacetime on these shipping lanes. Every year, the Venetian Republic organized an auction system—the Incanto—to assign the commercial space on these ships. Subsequently the Senate was in charge of determining the mandatory stopovers, duration of the call, date of departure and date of return to Venice. All of this precise information was recorded in the Venetian official administrative documents. 
+
+  
+Several authors have tried to reconstruct the Incanto system from the highly detailed information contained in these administrative documents. In 1961, Tenenti and Vivanti produced a series of chronological maps showing the evolution of the lanes year by year. Unfortunately, their model of the archives is not available for further investigation. More recently, Doris Stöckly extracted from the Venetian state archives—and other sources—a detailed list of all the information related to the ships on a year by year basis. She published her analysis in a monography (Stöckly 1995
+4
+). The compiled tables appear as appendices to her Ph.D thesis; and are only available in printed form (see figure 1).
+
+  
+For this work, we take these printed tables, digitize, automatically transcribe and structure them. We perform new analyses of the structure and evolution of the Incanto system. Our ambition is to go beyond the textual narrative or even cartographic representation to perform a network analysis which potentially offers a new perspective on this maritime system.
+
+  
+Method
+
+  
+Step 1 : From Printed Tables to Structured Data
+
+  
+The first step of our project was the transformation of the appendices into structured data ready for analysis. We scanned these documents and processed each page using a specifically designed pre-processing pipeline, aimed at improving the quality and highlighting the structure of the scanned images. The pre-processing step included several computer vision-based procedures, serving two main purposes: the adjustment of moderate rotations introduced by the scanning process and the removal of noisy components that may disturb the recognition process. To explicit the structure of the table, we elaborated a method based on horizontal and vertical projection profile that automatically fit rows and columns of the document table. This grid was then used in conjunction with Optical Character Recognition Software (ABBYY Fine reader). We extracted 1480 lines of data. Each line matches a galley and includes the following information: name of the line, year, number of ships, stopovers, and optionally duration of stay.
+
+  
+
+    
+Fig. 1: Excerpt of the extracted data from Doris Stöckly Ph. D thesis appendix.
+
+    
+
+  
+ 
+
+  
+Step 2 : From Structured Data to Networks
+
+  
+We transformed the resulting table into a network. First, we applied a set of rules in order to clean the data. Then, we removed the stops marked as “facultative”. The stops mentioned without any temporal detail were considered as equal to one day—the shortest unit of time. Names of places and geolocations were standardised using a spatial database of Ancient Ports and Harbours based on Harvard’s DARMC
+5
+ and the Pleiades data
+6
+. We grouped the stopovers under two generic labels for Crete and for Cyprus.
+
+  
+
+    
+Fig. 2: The 170 years of the Incanto system visualised as a network.
+
+    
+
+  
+We decomposed—using an R script—the structured table into individual segments made of paired consecutive stopovers. By connecting these directed segments, we created a global directed network encoding 170 years of navigation (see figure 2). The vertices of this network represent all the ports and places mentioned for this period. The size of the nodes is proportional to the sum of in- and out-degree measures of the node. The arcs represent maritime traffic. Two attributes are associated to each arc: one for the year of the trip and another one reporting the number of ships in each convoy. 
+
+  
+From the global network, we produced separated subnetworks corresponding to each year of navigation. These subnetworks inherit their attributes from the main network: the number of ships and days. In figure 3, we illustrate evolution and dynamics of the Venetian maritime routes for the three years before and the three years after the Chioggia war (1351-1354) between Venice and Genoa. 
+
+  
+
+    
+Fig. 3: Network visualization of six years of maritime routes before and after Chioggia war (1377-1381)
+
+    
+
+  
+Network Analysis: Crete vs. Cyprus
+
+  
+We focused our investigation on two particular islands located in the oriental basin of the Mediterranean Sea: Crete and Cyprus. After its acquisition by the Venetian empire and for 460 years, Crete was a fundamental naval base in terms of localisation, logistics and safety (Dudan 2006, Major 1989). Cyprus had a similar strategic position; it was an intermediary stop and became part of the Venetian empire in 1489. 
+
+  
+Based on the network extracted from the Incanto dataset, we computed a measure of commercial betweenness of the islands of Crete and Cyprus. In figure 4, we show its time evolution in the period comprised between 1283 and 1453. We highlight three patterns emerging from the computation of this measure and interpret them using three events in the maritime history of Crete and Cyprus.
+
+  
+The first time histogram contains a blue box encapsulating that measure on Crete between 1344 and 1377. During that period, the maritime traffic density increased because of the reopening of the Alexandria lane, as Crete was the last stopover for all the convoys heading to Egypt. It is interesting to compare this change with the increase of commercial betweenness, as highlighted in the figure 4.
+
+  
+In the second time histogram, two red boxes highlight two historical events related to Cyprus maritime traffic. The first one reflects the betweenness of Cyprus as an important stopover on the way to Armenia (1283 - 1338) (Balard 1987). During this period the measure of betweenness naturally skyrockets, as the island had acquired a strategic position as a maritime hub. On the contrary, the second box shows very low measures of betweenness; corresponding to moderate maritime traffic. This was due to the fact that the Senate of Venice reorganised the commercial exchanges by opening a new lane towards Beirut. During this period (1375 - 1444), Cyprus lost its strategic position for maritime activity directed towards Syria and Egypt.
+
+  
+One can notice that the re-opening of Alexandria as destination for Venetian navigation (1344) had the opposite impact on the maritime traffic passing through Cyprus and Crete.
+
+  
+
+    
+Fig. 4: Betweenness of Crete and Cyprus with respect to the maritime traffic (1283 - 1453)
+
+    
+
+  
+Conclusions and Future Work
+
+  
+It sounds like a commonplace to describe the Mediterranean Sea, geographically and historically, as an area of intense exchanges and communications; however the fact is that any visualisations up to this point, when they exist, never went beyond the narration and failed to give a concrete idea of the pace imposed by Venetian navigation over a period of 170 years. 
+
+  
+With this work, we go beyond that common way of visualising maritime historical data. First, we have designed processing procedures to automatically digitise data present only on paper documents. Second, based on this digitised data, we modelled the Venetian maritime connections over 170 years as a network. Third, we magnified the network over Cyprus and Crete and extracted a measure of betweenness for these two islands.
+
+  
+From a qualitative analysis point of view, we showed the consequences of three historical events with respect to the Incanto system. We are confident that we can apply this methodology to better explain historical events and quantify their influence on the global maritime network.
+
+  
+References
+
+  
+1. 
+Ercole, G.
+ (2006). Duri i banchi!: le navi della Serenissima, 421-1797. Gruppo Modellistico Trentino di Studio e Ricerca Storica.
+          
+
+  
+2. 
+Lane, F.C.
+ (1973). Venice, A Maritime Republic. ACLS Humanities E-Book. Johns Hopkins University Press.
+          
+
+  
+3. 
+Luzzatto, G., Padovan G.
+ (1941). Navigazione Di Linea e Navigazione Libera, Nelle Grandi Città Marinare Del Medioevo. Popoli 1: 389–391.
+          
+
+  
+4. 
+Stöckly, D.
+ (1995). Le système de l’Incanto des galées du marché à Venise: fin XIIIe - milieu XVe siècle. BRILL.
+          
+
+  
+5. Digital Atlas of Roman and Medieval Civilization. 
+darmc.harvard.edu/icb/icb.do
+ (accessed on 30.10.2013)
+          
+
+  
+6. 
+Bagnall, R., Talbert R. J. A., Elliott T., Twele R., Becker. J., Gillies S., Horne R., McCormick M., Rabinowitz A., and Turner B..
+ (2006). Pleiades: A Community-built Gazetteer and Graph of Ancient Places. Collection. 
+pleiades.stoa.org
+
+  
+7. 
+Dudan, B.,
+ (1938), Il Dominio veneziano di Levante. Nicola Zanichelli.
+          
+
+  
+8. 
+Major A.
+ (1989), Les colonies continentales de Venise en Grece meridionale, XIV-XV siecle, Doctorat Nouveau Régime, Histoire, A.N.R.T..
+          
+
+  
+9. 
+Balard, Michel.
+ (1987), Les Vénitiens En Chypre Dans Les Années 1300. Byzantinische Forschungen 12: 580–606.
+          
+

@@ -1,0 +1,317 @@
+Paper: Do Birds of a Feather Really Flock Together, or How to Choose Test Samples for
+          Authorship Attribution
+
+          Eder, Maciej, 
+          Pedagogical University of Kraków, Poland, 
+          
+maciejeder@gmail.com
+
+        
+
+          Rybicki, Jan, 
+          Pedagogical University of Kraków, Poland, 
+          
+jkrybicki@gmail.com
+
+        
+In the house of non-traditional authorship attribution are many mansions, or methods,
+          based on statistical analysis of authorial style. They all compare text samples of
+          disputed or unknown authorship to texts written by known authors, or “candidates”. The
+          degree of similarity or dissimilarity between samples allows informed guesses on the
+          possible authorship of a given text. The so-called machine-learning methods are supposed
+          to be among the most effective; they include Support Vector Machines, Nearest Shrunken
+          Centroid classification, Burrows’ Delta and so on (for a comparison of their effectiveness
+          cf. Jockers and Witten 2010).
+
+        
+The general feature of the methods in question is a two-step supervised analysis. In the
+          first step, the traceable differences between samples constitute a set of rules, or a
+          classifier, for discriminating authorial “uniqueness” in style. The second step is of
+          predictive nature – using the trained classifier, one can assign other text samples to the
+          authorial classes established by the classifier; any disputed or anonymous sample will be
+          assigned to one of the classes as well.
+
+        
+The procedure described above relies on a pre-processed corpus of samples. Namely, the
+          clue is to divide all the available text samples into two groups: primary (training) set
+          and secondary (test) set. The first set, being a collection of texts written by known
+          authors (“candidates”), serves as a sub-corpus for finding the best classifier, while the
+          second set is a pool of texts of known authors, anonymous samples, disputed ones and so
+          on. The better the classifier, the more samples from the test set are attributed correctly
+          and the more reliable the attribution of the disputed samples.
+
+        
+Such procedures have been successful in social and medical studies; no wonder, then, that
+          it soon made its way into authorship attribution. Yet, contrary to the former applications
+          where the researcher usually enjoys a high number of test samples (e.g. patients),
+          authorship attribution has to struggle with a limited number of samples available to train
+          a convincing classifier. This makes the classifier sensitive to statistical error. What is
+          more, the generally-accepted division of data studied into a training set and a test set
+          further limits the texts that can be attributed.
+
+        
+This sensitivity of machine-learning classifiers to the choice of samples in the training
+          set has already been observed (Jockers and Witten 2010: 220). Intuition suggests composing
+          the training set from the most typical texts (whatever “typical” means) by the authors
+          studied (thus, for Goethe, Werther rather than Farbenlehre). In practice, this can be quite complicated: in a small corpus, to
+          change a single training set sample for another can upset the delicate mesh of
+          interrelationships between all other texts. This potentially heavy impact on the
+          effectiveness of attribution tests has not been lost on Hoover: “As a reminder of how much
+          depends upon the initial choice of primary and secondary texts, consider what happens if
+          the same 59 texts are analyzed again, but with different choices for primary and secondary
+          texts [...]. If the analyses that are the most successful with the initial set are
+          repeated, Delta successfully attributes only 16 of the 25 texts by members of the primary
+          set” (Hoover 2004a: 461).
+
+        
+Last but not least, any manual selection of texts to both sets must be highly arbitrary.
+          To further quote Hoover: “The primary novels for this test are intentionally chosen so as
+          to produce poor results, but one might often be faced with an analysis in which there is
+          no known basis upon which to choose the primary and secondary texts, and nothing prevents
+          an unfortunate set of texts like this from occurring by chance” (Hoover 2004a:
+          461-62).
+
+        
+Machine-learning methods routinely try to estimate the potential error due to incorrect
+          choice of the training set samples. This cross-validation consist in a few random changes
+          to the composition of both sets, followed by a comparison of the classifier’s success,
+          ten-folded cross-validation being the standard solution (Tibshirani et
+            al. 2003: 107; Baayen 2008: 162; Jockers and Witten 2009: 219). The question arises
+          whether ten trials are sufficient for a classifier which, based on but a few samples, can
+          be unstable.
+
+        
+Assuming that the training set contains 10 samples by 10 authors, and the test set
+          another 10 samples by these authors, there are 2
+10
+ = 1024 possible
+          combinations of members of the training set. For a corpus of 60 novels by 20 authors, this
+          number becomes so large that testing all possible permutations of both sets is
+          unrealistic. Instead, the impact of the composition of the training set on attribution
+          success can be assessed basing on several hundred random permutations; this can be done
+          with a variety of bootstrap procedures (Good 2006).
+
+        
+To test this problem, we have selected several corpora of similar size and similar number
+          of authors studied (with the obvious caveat that any comparison between different
+          languages can never be fully objective). For each of these corpora, we have performed 500
+          controlled attribution experiments, each with a random selection of the training and the
+          test sets. We have compared the number of correct authors guessed, with the hypothesis
+          that the more resistant a corpus is to changes in the choice of the two sets, the more
+          stable the results.
+
+        
+All tests featured the simplest, the most intuitive and the most frequently used of
+          machine-learning attribution methods: Burrows’s Delta (Burrows 2002; Hoover 2004b). Delta
+          was run for 100 MFWs, then for 200 and then, at increments of 100, all the way to 2000
+          MFWs. This was performed at five different culling settings (0-100% incrementing by 20),
+          giving a total of 1000 results, and a mean of these was recorded. The above procedure was
+          then repeated for 500 random permutations of the texts in the training set. The density
+          function was estimated for the final results thus obtained.
+
+        
+It can be assumed that the distribution of these 500 final results should be Gaussian
+          rather than anything else. The peak of the curve would indicate the real effectiveness of
+          the method, while its tails – the impact of random factors. A thin and tall peak would
+          thus imply stable results, i.e. those resistant to changes in the primary set.
+
+        
+The analysis of the results begins with the corpus of 63 English novels by 17 authors. As
+          expected, the density of the 500 bootstrap results follows a (skewed) bell curve (Figure
+          1). At the same time, its gentler left slope suggests that, depending on the choice of the
+          training set, the percentage of correct attributions can vary, with bad luck, to below
+          90%.
+
+        
+
+          
+
+            
+Figure 1. Density (vertical axis) of attributive success percentage rates
+              (horizontal axis) in the English novel corpus
+
+            
+Full Size Image 
+
+          
+        
+        
+It is quite natural that the stability of the results might also depend on the number of
+          authors and/or texts analyzed. The same Figure shows that, with fewer authors, a higher
+          number of texts has no significant impact on the stability of the results at any
+          permutation of both sets (the dashed line), as already observed by Hoover and Hess (2009:
+          474). With more authors (i.e. when guessing becomes more difficult), the curve widens and
+          a perfect match is even less frequent.
+
+        
+And this is still good accuracy and a fairly predictable model. However, it has to be
+          remembered that Delta has been shown to be somewhat less perfect in other languages
+          (Rybicki and Eder 2011).
+
+        
+
+          
+
+            
+Figure 2. Density of attributive success rates in the French novel corpus
+
+            
+Full Size Image 
+
+          
+          
+
+            
+Figure 3. Density of attributive success rates in the German novel corpus
+
+            
+Full Size Image 
+
+          
+        
+        
+
+          
+
+            
+Figure 4. Density of attributive success rates in the Italian novel corpus
+
+            
+Full Size Image 
+
+          
+          
+
+            
+Figure 5. Density of attributive success rates in the Polish novel corpus
+
+            
+Full Size Image 
+
+          
+        
+        
+Indeed, the discrepancies in Figures 2-5 seem to question the validity of attribution
+          tests based on arbitrary choice of training sets. Although peaks for some combinations of
+          numbers of texts and authors may be at acceptable levels, the left slopes of the curves
+          tend towards dangerously low values; and the wide tails of the curves show that a high
+          success rate outliers might be a stroke of luck rather than a consequence of the method,
+          the data and the statistical assumptions – the most ominous memento appearing here from
+          the inexplicable dispersion in the corpus of 39 Polish novels by 8 authors (Figure 5, grey
+          solid line). Therefore, the ideal authorship attribution situation is not only that of
+          many texts by many authors; it is equally important to assess the validity of the training
+          set with a very high number of trials. This seems to be the only way to escape the
+          quandary of arbitrarily naming each author’s “typical” text.
+
+      
+    
+References:
+
+      
+        
+          
+
+            Burrows, J. F.
+            2002
+             “‘Delta’: A Measure of Stylistic Difference and a Guide to Likely
+              Authorship, ” 
+            Literary and Linguistic Computing, 
+            17(3)
+            267-87
+          
+
+          
+
+            Good, P.
+            2006
+            Resampling Methods, 
+            Birkhäuser
+            Boston, Basel, Berlin 
+          
+
+          
+
+            Hoover, D. L.
+            2004a
+             “Testing Burrows’s Delta, ” 
+            Literary and Linguistic Computing, 
+            19(4)
+            453-75
+          
+
+          
+
+            Hoover, D. L.
+            2004b
+             “Delta Prime?, ” 
+            Literary and Linguistic Computing, 
+            19(4)
+            477-95
+          
+
+          
+
+            Hoover, D. L.
+            Hess, S.
+            2009
+             “An Exercise in Non-ideal Authorship Attribution: The Mysterious Maria
+              Ward, ” 
+            Literary and Linguistic Computing, 
+            24(4)
+            467-89
+          
+
+          
+
+            Jockers, M. L.
+            Witten, D. M.
+            Criddle, C. S.
+            2008
+             “Reassessing Authorship in the ‘Book of Mormon’ Using Delta and Nearest
+              Shrunken Centroid Classification, ” 
+            Literary and Linguistic Computing, 
+            23(4)
+            465-91
+          
+
+          
+
+            Jockers, M. L.
+            Witten, D. M.
+            2010
+             “A Comparative Study of Machine Learning Methods for Authorship
+              Attribution, ” 
+            Literary and Linguistic Computing, 
+            25(2)
+            215-23
+          
+
+          
+
+            Rybicki, J.
+            Eder, M.
+            2011
+             “Deeper Delta Across Genres and Languages: Do We Really Need the Most
+              Frequent Words?, ” 
+            Literary and Linguistic Computing, 
+            26
+            (forthcoming)
+          
+
+          
+
+            Tibshirani, R.
+            Hastie, T.
+            Narashimhan, B.
+            Chu, G.
+            2003
+             “Class Prediction by Nearest Shrunken Centroids, with Applications to
+              DNA Microarrays, ” 
+            Statistical Science, 
+            18
+            104-17
+          
+
+        
+      
+    

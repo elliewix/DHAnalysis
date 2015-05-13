@@ -1,0 +1,264 @@
+Paper: Names in Novels: an Experiment in Computational Stylistics
+
+					van Dalen-Oskam, Karina, 
+					Huygens Institute for the History of the Netherlands - KNAW, The
+						Hague, 
+					
+karina.van.dalen@huygensinstituut.knaw.nl
+
+				
+Introduction
+
+				
+The growing amount of digital texts and tools is slowly but definitely changing
+					the way literary scholars design their research. This paper will describe the
+					effects for one research topic: ‘literary onomastics’, the study of the usage
+					and functions of names in literary texts. Research in literary onomastics
+					usually is qualitative in nature and focuses on 'significant' names in literary
+					texts. No quantitative or comparative studies have been published yet. Several
+					researchers, however, have pointed out that names can only be called significant
+					if they are studied in the context of all the names - the so-called 'onymic
+					landscape' - in a text, oeuvre, genre etc. (e.g. Sobanski 1998). This question
+					is comparative by nature and implies the wish for a more quantitative,
+					computer-assisted approach.
+
+			
+			
+				
+Research questions
+
+				
+As to name usage, first we have to find out what is normal. We want to know how
+					many name forms usually occur in a novel, and how many of these are personal
+					names, place names, and other names. As to name functions, a useful disctinction
+					is between plot internal and plot external names. Plot internal names refer to
+					characters, places or other entitities which only ´exist´ in the fiction of the
+					story. Plot external names refer to persons, places or other entities which are
+					known to exist or to have existed in the real world. Most place names are plot
+					external, referring to real countries, cities, streets, etc. and thus have a
+					reality enhancing function. In fantasy novels, however, place names are usually
+					fictional and thus plot internal, enhancing the unreality, the fantasy of the
+					story. Plot external personal names seem to function as characterizations of the
+					fictional characters, describing e.g. their political or cultural preferences. 
+
+				
+It is expected that different authors, genres, time periods or even languages
+					apply these different types and functions in different ways, showing different
+					trends which we want to discover in what we like to call comparative literary
+					onomastics (Van Dalen-Oskam 2005, 2006). The ultimate aim of the research is to
+					develop a method to compare the name usage and functions on as large a scale as
+					possible, explicitly also across languages. So what is needed to do that?
+
+			
+			
+				
+Method and corpus
+
+				
+The amount of names in a text can be expressed in the percentage of the total
+					amount of tokens in the text. For that, we need digital texts of fair to good
+					quality. To tag all the names, we need named entity recognition and
+					classification (NERC) tools. Different forms of the same name (e.g. Patrick and Patrick's) need to be
+					grouped by a lemma (PATRICK in this case). Different
+					name forms for the same person or place need to get the same identification (e.g. the name Alfred and the name Issendorf both belong to
+					the character identified as ALFRED ISSENDORF). To find
+					out whether we can compare the resulting percentages across languages, we
+					focused on a corpus of modern Dutch and English novels and their translations
+					into the other language. We found we have to include two other levels of
+					aggregation: mentions and name
+						tokens. Mentions are occurrences of a name irrespective of the number
+					of tokens used. So several name tokens can be used in one mention. This
+					distinction is necessary because different languages have different tokenization
+					rules. The Dutch personal name Gerrit-Jan, e.g., with a
+					hyphen and therefore counted as one token, is translated in English as Gerrit Jan, resulting in two tokens. Our corpus consists
+					of 22 Dutch and 22 English novels, added with the translation into the other
+					language of ten in each group.
+
+			
+			
+				
+Theory and practice
+
+				
+Comparative research can only be done when many scholars collaborate. We will
+					have to make sure that all those scholars encode their texts in the same way,
+					considering the same tokens as names. This may sound easy, but it is not. Even
+					name theorists have different definitions of what a name is (Van Langendonck
+					2007). Guidelines had to be set. We decided to limit the tagging to the
+					'prototypical' names, so those names that are considered names by readers in
+					general. Something is a name if it refers to a unique person, place, or object.
+					So we excluded currencies, days of the week, months, etc. For cases leading to
+					discussion we defined additional rules.
+
+				
+We found that not many modern novels are digitally available yet. Furthermore,
+					NERC tools proved to be not good enough yet and are using partly different
+					categories than our research needs (Sekine and Ranchod 2009). This meant much
+					more manual work than we expected. The tagging and the statistics are now done
+					by means of several perl scripts written by André van Dalen and an ingenious
+					Excelsheet with macros designed by David Hoover. These tools can be seen as a
+					prototype for the webservices we need for this type of comparative stylistic
+					research.
+
+			
+			
+				
+Results (selection)
+
+				
+In Figure 1, the percentage of name tokens in a set of novels is shown. The
+					selection of novels in this graph consist of sixteen novels of which fifteen are
+					Dutch and one is (American-)English (Of the Farm), added
+					with the English translation of one of the Dutch novels (The
+						Twin, translation of Boven is het stil).
+
+				
+
+					
+Fig. 1
+
+					
+Full Size Image 
+
+				
+				
+The graph gives as a first impression that we can expect around 2-3 percent of
+					the tokens in a novel to be names. For this small selection, it is noteworthy
+					that the four novels with the highest percentages (around 5 percent) are all
+					books for children or young adults. Furthermore, the English novels do not show
+					up in extreme positions compared to the other ones.
+
+				
+ Figure 2 gives more insight in the role of plot internal versus plot external
+					names in the same set of novels. The novels are presented in the same order as
+					in Fig. 1. We can see that the four books for children/young adults are still
+					exeptional in the percentage of plot internal names. We also find that three of
+					them have a rather small amount of plot external name tokens. 
+
+				
+
+					
+Fig. 2
+
+					
+Full Size Image 
+
+				
+				
+The paper will present the case of names in Gerbrand Bakker’s novel Boven is het stil / The Twin. Dutch readers have the
+					impression that the novel does not contain many names, while readers of the
+					English translation have the opposite impression and point out that especially
+					geographical names abound. The comparative computational approach shows that
+					both reader groups are correct and wrong at the same
+					time. The novel has around 2% of name tokens, which is at the lower end of what
+					seems to be normal. But in the amount of different names
+					(lemmas), geographical names (place names) do have a special role when we look
+					at the ratio between personal names and place names (Figure 3). The trend here
+					is that a novel contains more different personal names than place names. In only
+					two cases (Boven is het stil and its translation The Twin, and Fenrir) a novel has
+					more different place names. This suggests that place names have an extra
+					stylistic function in these two novels. It will be shown in which ways place
+					names function in the Bakker novel and how this analysis enriches the
+					understanding of the novel and of the stylistic
+					possibilities of place names for an author.
+
+				
+
+					
+Fig. 3
+
+					
+Full Size Image 
+
+				
+				
+We could only show a small part of all interesting observations to be made about
+					the usage of names in a corpus of modern Dutch and English novels. But these
+					first results make us anxious for more, in the expectation that this approach
+					may lead to an acceptable method for a.o. across language comparison of
+					stylistic elements. 
+
+			
+			
+				
+Conclusion
+
+				
+We conclude that the preliminary results are sufficiently interesting to go into
+					the stylistic analysis of name usage and functions in novels more deeply. Names
+					also seem promising stylistic elements for a comparison across languages. The
+					currently available tools which could be expected to be helpful for this type of
+					research, proved to be insufficient. We therefore plan to develop a set of
+					interrelated webservices which will assist the scholar in the recognition,
+					categorization, further tagging, and statistical analysis of names in
+					novels.
+
+			
+		
+References:
+
+			
+				
+					
+
+						Sekine, S. and Ranchod, E.
+						2009
+						Named Entities. Recognition, classification and use, 
+						John Benjamins
+						Amsterdam/Philadelphia
+					
+
+					
+
+						Sobanski, I. 
+						1998
+						 “The Onymic Landscape of G.K. Chesterton’s Detective Stories, ” 
+						Proceedings of the XIXth International
+							Congress of Onomastic Sciences, 
+						Aberdeen , 
+						1996
+						373-378
+					
+
+					
+
+						Van Dalen-Oskam, K.
+						2005
+						 “Vergleichende literarische Onomastik, ” 
+						Namenforschung morgen: Ideen, Perspektiven, Visionen, 
+						Brendler, A. und S. Brendler
+						Baar
+						Hamburg
+						183-191
+						
+         (
+link
+)
+   
+					
+
+					
+
+						Van Dalen-Oskam, K.
+						2006
+						 “Mapping the Onymic Landscape, ” 
+						Il nome nel testo. Rivista
+							internazionale di onomastica letteraria VIII; Atti del XXII Congresso
+							Internatzionale di Scienze Onomastiche, 
+						Pisa, 
+						28 agosto – 4 settembre 2005
+						93-103
+					
+
+					
+
+						Van Langendonck, W.
+						2007
+						Theory and typology of proper names, 
+						Mouton de Gruyter
+						Berlin / New York 
+					
+
+				
+			
+		

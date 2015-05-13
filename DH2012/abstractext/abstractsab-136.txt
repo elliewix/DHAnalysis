@@ -1,0 +1,177 @@
+Poster: The Colonial Despatches of Vancouver Island and British Columbia: a Digital
+                    Edition of a Large-Scale Document Collection
+
+                    Holmes, Martin, 
+                    University of Victoria, 
+                    
+mholmes@uvic.ca
+
+                
+
+                    Shortreed-Webb, Kim, 
+                    University of Victoria, 
+                    
+ksw@uvic.ca
+
+                
+The modern Canadian province of British Columbia has been inhabited for at least
+                    12,000 years, but its colonial history begins with the visits of Spanish
+                    explorers, in the 18
+th
+ century, followed by voyages by Cook
+                    and Vancouver in the 1770s and 1790s. They were followed by other explorers, and
+                    by the Hudon's Bay Company, which established trading posts in the region, and
+                    became the de facto agents of British colonization until
+                    the formal establishment of the colony of Vancouver Island in 1849, and later
+                    the British Columbia colony in 1858. The corpus of historical texts in our
+                    collection The Colonial Despatches of Vancouver Island and
+                        British Columbia (
+         (
+link
+)
+   ) currently
+                    comprises over 7,000 documents, and covers the years between 1846, when
+                    negotiations began between the Colonial Office and the Hudson's Bay Company over
+                    the future of the territory, and 1871, when the young colony of British Columbia
+                    became a province in the Canadian federation.
+
+                
+Our documents have a somewhat troubled history. During the 1980s and 90s, a team
+                    led by James Hendrickson transcribed this huge collection into Waterloo Script,
+                    to produce a 28-volume print edition, which failed to find a publisher because
+                    of its scale. After Dr. Hendrickson retired, the markup files were largely
+                    forgotten, until they were rediscovered on an aging server which was scheduled
+                    to be shut down. At Digital Humanities 2008, we described how we retrieved the
+                    data and converted the Waterloo Script to TEI P5 (Holmes & Newton 2008).
+
+                
+Since then, the project has given birth to a full-scale digital edition. In
+                    addition to the original transcriptions, we now have over 18,000 page-images,
+                    with more being added every week; these are being linked into the transcriptions
+                    at every page-break. We have also generated several hundred biographies of
+                    people mentioned in the despatches, along with short articles on nearly 200
+                    places/locations and 100 ships which feature in the correspondence. In addition,
+                    we have acquired digital versions of more than 200 contemporary maps, many of
+                    which form part of the correspondence, and we will be adding many more in the
+                    coming months.
+
+                
+The documents themselves present significant difficulties for transcribers.
+
+                
+
+                    
+
+                        
+A simple despatch
+
+                        
+Full Size Image 
+
+                    
+                
+                
+This very short example shows some of the core features, and demonstrates the
+                    typical processes through which a despatch from Vancouver Island to London would
+                    go. Each despatch received in London would be logged in and assigned a number,
+                    then the Colonial Office staff would annotate it with a series of minutes
+                    recording their deliberations regarding the appropriate responses; often,
+                    letters would be written to other departments in the bureacracy requesting
+                    guidance or information, and finally a reply would be drafted (Hendrickson 2008
+                    describes this process in detail). At the end of the year, the despatches would
+                    be bound into one or more volumes for storage. The peripheral correspondence,
+                    including enclosures and attachments with the original despatch, are often bound
+                    up with the despatch itself, and the most significant have also been transcribed
+                    as part of our collection.
+
+                
+In our web application, we have attempted to reproduce all the pertinent features
+                    of the original text in a form which makes them more accessible to the reader,
+                    while providing easy access to our database of information on people, places,
+                    and ships:
+
+                
+
+                    
+
+                        
+A digitized despatch
+
+                        
+Full Size Image 
+
+                    
+                
+                
+The correspondence itself is rarely less than entertaining, and frequently
+                    exciting; it describes the difficulties encountered by a small, distant and
+                    relatively unsupported outpost of empire, struggling to deal with internal
+                    conflict, often-hostile First Nations groups, lawlessness, smuggling, and a
+                    somewhat threatening American population to the south. There are murders,
+                    shipwrecks, gold strikes and adventures of all kinds. However, the collection
+                    presents particular difficulties for readers, especially non-experts, arising
+                    out of the length of time required for a despatch to make its way between London
+                    and Victoria. Between the transmission of a despatch and the receipt of a
+                    response addressing its issues and questions, six months might elapse, and
+                    during that time, dozens or even hundreds more despatches would be sent. As a
+                    result, there is no apparent meaningful sequence in which to read the documents,
+                    as one might read an exchange of letters between two correspondents living
+                    closer to each other. A good search engine helps, of course, but we have also
+                    tried to provide other methods for users to navigate through the collection,
+                    through our markup of people, places and vessels. Each instance of one of these
+                    items in the text is linked to its "biography", and the biography can retrieve
+                    links to every mention of that person, place or ship anywhere in the
+                    correspondence, so it becomes possible to find paths through the documents based
+                    on these elements. We are also marking up some of the contemporary maps in the
+                    collection, using the Image Markup Tool, and integrating
+                    them with the place database, so that it is possible to jump from the mention of
+                    a place inside a document to a "biography" of the place, and thence to the
+                    specific location of that place on any contemporary maps on which it appears, as
+                    well as Google Maps.
+
+                
+The entire collection (including the maps) is marked up in TEI P5 XML, and the
+                    web application is constructed using Apache Cocoon and the eXist XML database.
+                    Our poster presentation will deal with our approaches to markup, the web
+                    application architecture, and how we have attempted to overcome some of the
+                    challenges inherent in the scale and complexity of the collection.
+
+            
+
+        
+References:
+
+            
+                
+                    
+
+                        Hendrickson, James E.
+                        2008
+                         “The Colonial Office in 1858, ” 
+                        The Despatches of British Columbia, 
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Holmes, M. and Newton, G.
+                        2008
+                         “Rescuing old data: Case studies, tools and
+                            techniques, ” 
+                        Digital Humanities 2008, 
+                        127-131
+                        
+         (
+link
+)
+   
+                    
+
+
+                
+            
+        

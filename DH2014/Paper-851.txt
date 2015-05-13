@@ -1,0 +1,363 @@
+Detection of Poetic Content in Historic Newspapers through Image Analysis
+
+    
+Category:
+Short Paper
+
+      
+Session:
+8
+
+      
+Date:
+2014-07-11
+Time:
+14:00:00
+
+      
+Room:
+415 - Amphimax
+
+    
+
+        
+Lorang
+,
+									
+Elizabeth M
+
+        
+
+          
+
+        
+University of Nebraska-Lincoln, United States of America 
+
+      
+
+      
+
+        
+Soh
+,
+									
+Leen-Kiat
+
+        
+
+          
+
+        
+University of Nebraska-Lincoln, United States of America 
+
+      
+
+      
+
+        
+Lunde
+,
+									
+Joseph
+
+        
+
+          
+
+        
+University of Nebraska-Lincoln, United States of America 
+
+      
+
+      
+
+        
+Thomas
+,
+									
+Grace
+
+        
+
+          
+
+        
+University of Nebraska-Lincoln, United States of America 
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+By conservative estimates, several hundred thousand poems appeared in early American and
+U.S. newspapers from the eighteenth through the early twentieth centuries. Counting snippets of
+verse that appeared in death notices, advertisements, and articles makes the presence of poetry in
+historic newspapers even more pervasive. Feminist scholars and others performing recovery
+work routinely resurrect authors and works from newspaper pages, but until recently this rich
+trove of newspaper verse as a corpus of its own has been outside the scope of literary study and a
+footnote in histories of American newspapers. In the last decade, however, scholars have made
+significant inroads in studying the importance of newspaper verse as a form and the public role
+of poetry in American culture. Underpinning this scholarship is a growing recognition that the
+evaluation and history of American poetry should not be based on less than one percent of the
+poetic record. In addition, this new scholarship values and explores the role of poetry in the daily
+lives of people, including making sense of what it means to be human and in processing national,
+social, and individual experiences. To the extent that these new histories depend on traditional
+methods of archival discovery and analysis, however, they will remain anecdotal—individual
+narratives extrapolated from a miniscule subset of the whole, with limited means of situating the
+anecdote as either representative or idiosyncratic. In short, the magnitude of the corpus requires
+new modes of discovery and analysis.
+
+
+  
+A fundamental problem in the reappraisal of newspaper verse has been finding and
+processing poetic content in an efficient manner, which is essential for developing new
+interpretations, analyses, and literary histories. The primary means of finding this content
+typically involves paging through original issues of newspapers, scrolling through reels of
+microfilm, and browsing digital images to scan, by human eye, each page for graphical features
+that resemble poetry. Dealing with only daily newspapers for a single year, 1860, would require
+visually scanning nearly half a million newspaper pages. Certainly no individual in a lifetime
+could complete a count—to say nothing of a comprehensive bibliography or macro-level
+analysis—of newspaper verse using this strategy.
+
+
+  
+While the digitization of historic newspapers has mitigated some issues of access, the
+main avenues for discovery in these collections are browsing and text-based searching. Browsing
+for poetic content in such collections follows the strategy outlined above: going image by image
+through digitized pages and visually scanning the images for features typical of printed poetry.
+Ironically, web interfaces and variations in Internet connection speeds can make digitally paging
+through a newspaper a slower process than either scrolling through microfilm or flipping
+physical pages.
+
+
+  
+How, then, might one discover poetic content in digitized historic newspapers? Our
+research shows that digital page images hold significant promise for scholarly inquiry with
+regard to poetic content. The basis for our approach is that the appearance of poetic content
+usually follows certain patterns that can be visually differentiated from other published texts in
+newspapers. Given a newspaper page, a person can survey the page and figure out quickly
+whether it contains a poem, to a certain degree of accuracy, without having to read or understand
+the text. Our project has the computer do the same visual processing as the human eye and brain
+when a person moves through a newspaper issue looking for poetic content. This image
+processing approach can also be used as a powerful filter, removing materials from further
+consideration that do not meet the specified criteria. That is, not only does the process work to
+identify pages that appear to include poetry, but it discards those that do not, weeding out much
+of the noise.
+
+
+  
+Methodology
+
+
+  
+The image processing component of the project consisted of two important phases: training and
+deployment. During the training phase, the goal was to produce a classifier able to categorize an
+image as either a poem or non-poem image. To produce the classifier, a training dataset was
+prepared and fed into a machine learning-based classifier. After the classifier was produced, we
+moved to the deployment phase. During this phase, the steps used to prepare the training sets
+were streamlined to automatically process and classify new images. In this paper, we focus on
+the four stages of the training phase: (1) pre-processing, (2) feature extraction, (2) neural
+networks learning, and (4) testing.
+
+
+  
+The first stage involved manual extraction of image snippets from digitized newspapers.
+For training, we developed three sets of snippets: (1) at least part of a poem appears in the
+snippet, (2) the snippet contains no poetic content, and (3) the snippet has visual cues that are
+similar to poetic content. Because each snippet is inherently noisy and could be of low quality,
+we performed 3x3, 5x5, and 7x7 averaging to smooth out noisy pixels, a step known as blurring.
+To convert the blurred snippet into a binary image—effectively identifying the object pixels
+from background pixels—we used a bi-Gaussian (or bi-normal) curve approximation
+(Haverkamp et al., 1995) to obtain the binary segmentation threshold. (See Figure 1 and Figure
+2.)
+
+  
+
+    
+Fig. 1: Binary non-poem image snippet; 5x5 blurring.
+
+    
+
+  
+
+    
+Fig. 2: Binary poem image snippet; 7x7 blurring.
+
+    
+
+  
+After obtaining binary images, the next task was representing and extracting visual cues
+as salient features. We evaluated three sets of attributes: (1) the left and right margins (number of
+columns without a dark pixel); (2) the vertical white spacing between adjacent lines of text
+(mean and standard deviation); (3) the jaggedness of the ends-of-lines for poetic content (mean
+and standard deviation).
+
+
+  
+Then, with this imagery data re-represented as numeric data, we used machine learning
+techniques to train a classifier. Specifically, we used the machine learning approach known as
+artificial neural networks (ANNs) (Hopfield, 1988; Yegnanarayana, 2009). An ANN learns a
+vector of weights on features in the dataset to choose labels for new data. Such a network
+consists of multiple nodes connected to threshold functions or additional layers of nodes. The
+network is updated iteratively until it correctly predicts labels for training data. We used a back-
+propagation ANN (Hecht-Nielsen, 1989) where weights connecting the nodes update iteratively
+based on how the network classifies known data points in the training dataset—whether its
+classification matches the labels of training data points.
+
+
+  
+Back-propagation ANNs have two phases. During phase 1, a training instance or data
+point is fed into the ANN’s multi-layer structure, generating activations in the nodes and
+resulting in a final output label. During phase 2, "rewards" are propagated back to the input layer
+from the output layer based on whether the final output label matches the ground-truth label of
+the instance. If the output label is correct, all the linkages within the structure contributing to the
+correct output are rewarded with an increased weight. If the output label is incorrect, all
+contributing linkages are penalized accordingly with a reduced weight. In this manner, the
+network learns incrementally to find a combination of weights for these links.
+
+
+  
+Finally, to validate the accuracy of the classifier, a ten-fold cross validation process was
+used. In this process, the total data set was broken into ten groups. The classifier was trained
+using nine of the groups and then tested on the single remaining set. This process of training and
+testing was repeated until each group had been used as the test set once. The results were then
+aggregated and the accuracy computed.
+
+
+  
+Findings
+
+
+  
+In addition to discussing the importance of newspapers and newspaper verse for American
+literary history and the need for new modes of discovery in digitized collections, this paper will
+report on three results of our research: (1) basic analysis, (2) training and classification analysis,
+and (3) a comparative study. The basic analysis will present the algorithms we used to extract
+visual features from the snippets, and the correlation analyses we did to ascertain the feasibility
+of our image-based approach. This will show the potential discrimination power of our visual
+features in distinguishing poem or non-poem snippets. The training and classification analysis
+will document our experimentation with different ANN configurations and report on our training
+processes. This will include the number of hidden nodes in our ANNs used, learning weights and
+momentum parameters investigated, convergence rates of the different configurations, and
+training and classification accuracies. Finally, we will report on our comparative study in terms
+of the usefulness of our blurring processes and how better to fuse them. In particular, we will
+show whether submitting each image as a single data point with three sets of attributes or
+submitting each blurred image with its set of attributes as a single data point leads to more
+effective training and higher classification accuracy.
+
+
+  
+References
+
+  
+See, for example, 
+Bennett
+ (2003); 
+McGill
+ (2003); 
+Barrett
+ (2012); 
+Barrett and Miller,
+(2005); 
+Gardner
+ (2009); 
+Cohen
+ (2010); 
+Garvey
+ (2012); 
+Chasar
+ (2012); 
+Rubin
+ (2007).
+
+  
+In his foundational history of American journalism,
+ Frank Luther Mott
+ estimated the number of
+            U.S. newspapers in existence in 1860 at 3,000, 11 percent of which were dailies. Most dailies in
+            this period were four pages long. 
+
+  
+Barrett, F. and Miller, C.
+ (2005). Words for the Hour: A New Anthology of American Civil War
+            Poetry. Amherst, University of Massachusetts Press.
+          
+
+  
+Bennett, P.B.
+ (2003). Poets in the Public Sphere: The Emancipatory Project of American
+            Women's Poetry, 1800-1900. Princeton, Princeton University Press.
+          
+
+  
+Chasar, M. 
+(2012). Everyday Reading: Poetry and Popular Culture in Modern America. New
+            York, Columbia University Press.
+          
+
+  
+Cohen, M.
+ (2010). Contraband Singing: Poems and Songs in Circulation During the Civil War,
+            American Literature, 82(2): 271-304.
+          
+
+  
+Gardner, E.
+ (2009). Unexpected Places: Relocating Nineteenth-Century African American
+            Literature. Jackson, University Press of Mississippi.
+          
+
+  
+Garvey, E. G.
+ (2012). Writing with Scissors: American Scrapbooks from the Civil War to the
+            Harlem Renaissance. Oxford, Oxford University Press.
+          
+
+  
+Haverkamp, D., L.-K. Soh, and C. Tsatsoulis. 
+(1995). A Comprehensive, Automated
+            Approach to Determining Sea Ice Thickness from SAR Data, IEEE Transactions on
+            Geoscience and Remote Sensing, 33(1): 46-57.
+          
+
+  
+Hecht-Nielsen, R.
+ (1989). Theory of the Backpropagation Neural Network, Proceedings of the
+            International Joint Conference on Neural Network (IJCANN’1989), Washington, DC, June
+            1989.
+          
+
+  
+Hopfield, J. J. 
+(1988). Artificial Neural Networks, IEEE Circuits and Devices Magazine, 4(5):
+            3-10.
+          
+
+  
+McGill, M. 
+(2003). American Literature and the Culture of Reprinting, 1834-1853. Philadelphia:
+            University of Pennsylvania Press.
+          
+
+  
+Mott, F. L. 
+(1942). American Journalism: A History of Newspapers in the United States through
+            250 Years, 1690 to 1840. New York, Macmillan.
+          
+
+  
+Rubin, J. S.
+ (2007). Songs of Ourselves: The Uses of Poetry in America. Cambridge, MA,
+            Belknap Press.
+          
+
+  
+Yegnanarayana, B. 
+(2006). Artificial Neural Networks. New Delhi, Prentice-Hall of India. 
+

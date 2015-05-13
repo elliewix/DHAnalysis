@@ -1,0 +1,426 @@
+Paper: Handling Glyph Variants: Issues and Developments
+
+                    Anderson, Deborah, 
+                    
+dwanders@sonic.net
+
+                    Department of Linguistics, UC Berkeley, 
+                
+Introduction
+
+                
+The challenge of how to handle glyph variants when encoding text has long been a
+                    dilemma for those working with historical text materials. How can a digital
+                    humanist specify a particular glyph of a Unicode character, even if the glyph
+                    might be known to be an error? Is it possible to search for the character, and
+                    find instances of the “error” glyphs? 
+
+                
+This short paper addresses issues involving glyph variants, in light of recent
+                    developments within the world of Unicode and W3C standardization, as well as
+                    OpenType specifications (also an ISO standard). The different options for
+                    handling glyph variants will also be explored in view of sustainability, and
+                    viewed from the general perspective of the Unicode character encoding standard,
+                    with particular discussion of Unicode variation sequences. 
+
+            
+            
+                
+Gaiji
+
+                
+One option available to text encoders is to use the “gaiji” module, a mark-up
+                    mechanism described in TEI P5 which offers a means to represent and distinguish
+                    specific characters and glyphs that the Unicode Standard considers as identical
+                    (TEI Consortium, 2010). 
+
+            
+            
+                
+Font-Based Option
+
+                
+Another possibility is to request users view the text with a particular font, one
+                    that contains the appropriate shape of the glyph(s). However, this is dependent
+                    upon the user having a particular font installed. 
+
+                
+Two recent developments affect this option:
+
+                
+                    
+ A working group of W3C is developing a specification for “WebFonts,”
+                        which will enable the automatic downloading and temporary installment of
+                        fonts over the Web, so users don’t need to install fonts on their operating
+                        systems. WebFonts is expected to be more widely deployed in the future; a
+                        public working draft was published in late July 2010 (W3C, 2010). This would
+                        apply to viewing text on Web browsers, and does not currently extend to word
+                        processing documents. (Note: W3C also is refining the CSS3 fonts
+                        module.)
+
+                    
+A second development is the OpenType (OT) specification, which permits
+                        alternate glyphs to be selected and displayed (Microsoft Typography, 2008a).
+                        One drawback is that the person viewing the document must be using an
+                        application that supports these OT features in order for the specific
+                        alternate glyphs to appear. If the application does not support this
+                        OpenType feature, the default glyph for the Unicode character will appear.
+                        For example, the original author may have selected the shape “β” for U+03B2
+                        GREEK SMALL LETTER BETA for his Greek text, but without the OpenType feature
+                        support, the recipient’s application may display a beta in the default
+                        shape, "ß".
+
+                
+                
+OpenType also includes a way to specify specific glyph shapes that are commonly
+                    used for certain language-specific letters. For example, there are specific
+                    forms of italic and cursive Serbian letters that differ from Russian, although
+                    they are the same Unicode characters. The OpenType “language system” table and
+                    “locl” (localized form) feature table are mechanisms that allow one to specify
+                    such variant glyphs. These features are activated by language tags (Microsoft
+                    Typography, 2008b). However, as noted above, OpenType support – while becoming
+                    more common - is still limited to certain applications, although it is an
+                    international standard (ISO/IEC 14496-22:2009 [OFF] [ISO, 2011]).
+
+            
+            
+                
+Encode a Separate Character
+
+                
+One option occasionally mentioned as a way to represent a particular variant in a
+                    standardized way is to propose the variant as a separate character in Unicode.
+                    Technically, this is not allowed, since one of the core design principles is:
+                    “Unicode encodes characters, not glyphs” (Unicode Consortium, 2011a). However,
+                    some variants have been included in Unicode if they were present in earlier
+                    standards. The character/glyph model in CJK is particularly murky, in part due
+                    to the sheer number of characters involved (approximately 75,616 characters or
+                    69% of all graphic characters in Unicode 6.0 are CJK). For the historic East
+                    Asian character sets, such as Classical Yi, the writing systems may be poorly
+                    understood and there is a tendency to encode glyphs. As a result, some character
+                    proposals have been based on glyphs (cf. the Classical Yi proposal, which
+                    proposed 88,613 “characters” [China, 2007]). Despite this, requesting the
+                    encoding of glyph variants into Unicode (as separate characters) is not
+                    generally advisable. 
+
+            
+            
+                
+Variation Sequence
+
+                
+A last option is to specify a Unicode variation sequence which is defined as a
+                    base character and a variation selector (Unicode Consortium, 2011b). This is a
+                    standardized means to indicate the glyphic variants of the base character. The
+                    advantage to this mechanism is that the variation is accessible in plain text,
+                    and does not rely on code points in the Private Use Area, which are not
+                    interoperable. 
+
+                
+This particular mechanism has not yet been widely publicized amongst in the world
+                    of digital humanities. It will likely become more widely supported in software,
+                    particularly as the Japanese government will be using variation sequences to
+                    handle rare ideographs used in proper names and place names, rather than
+                    proposing 2,621 new “compatibility” characters (Japan , 2009). In 2010, the
+                    Japan National Body put forward a large collection of ideographic variation
+                    sequences, which have been under review (Unicode Consortium, 2010a). 
+
+                
+Variation selectors have been mentioned as a way to handle variants for several
+                    historic scripts, namely Tangut and Manichaean. For Tangut, a historic script
+                    used in China until the 16c, the variation sequences were suggested as a way to
+                    handle cases where the lexical sources don’t agree (that is, there is
+                    disagreement whether a given glyph is a variant of a character or is a separate
+                    character), as a way to document when different scholarly opinions on
+                    unifications, and to address backwards compatibility issues (Cook and Lunde,
+                    2008). 
+
+                
+In Manichaean, the variation selectors are mentioned as a way to indicate
+                    alternate forms which are not predictable, either by their position in a word,
+                    or in a line. The use of the variation sequences maintains the basic character
+                    identity (Everson et al., 2009). 
+
+                
+Figure 1 is an example showing the proposed shape for the Manichaean HE glyph,
+                    and the HE with Variation Selector-1. (
+See
+                        Figure 1
+) 
+
+                
+One drawback is that the variation sequences need to be proposed and approved by
+                    the Unicode Consortium, much as new characters are (or, for ideographic
+                    sequences, are reviewed as part of the Unicode Public Review Process). However,
+                    this hurdle will ensure the characters are standardized, and are publicly
+                    accessible (Unicode Editorial Committee Members, 2011; Unicode Consortium,
+                    2010b). 
+
+                
+Another benefit is that search queries can ignore the variation selectors or the
+                    query can be written to only match a term with a specific variation selector.
+                    This mechanism could be useful as a way to display glyph errors, and be able to
+                    relate them to the base character. However, if a given application does not
+                    support variation sequences, the base character will display by default. 
+
+                
+Variation sequences provide a standards-based option, which has some advantages
+                    over font-based alternatives. However, to date, relatively few variation
+                    sequences have been defined, except for those used in mathematics, Mongolian,
+                    and the historic script Phags-Pa (Unicode Editorial Committee Members, 2011). 
+
+                
+At present, Ideographic Variation Sequences are only supported in the certain
+                    environments (Acrobat/Reader 9.0 and higher, Flash Player 10 and higher,
+                    InDesign CS4 and higher, Mac OS X 10.6 and higher, Windows 7 and higher, and
+                    Firefox 4 on all platforms [Lunde, 2011]). The dependency on limited
+                    implementations can pose a problem for digital humanists, however, if future
+                    software fails to support these variation sequences. 
+
+            
+            
+                
+Conclusion
+
+                
+In sum, several alternatives are available to text encoders to specify variant
+                    glyphs in text at present. This paper has provided new information on different
+                    options, which are still developing and may become more widely adopted,
+                    affecting choices available to text encoders. 
+
+                
+This author cautiously recommends the use of Variation Selectors if the glyph
+                    difference needs to be captured in plain-text, and the digital encoder is
+                    willing to go through the approval process to get the variation sequence
+                    approved by the standards committees. 
+
+                
+This work was supported by the National Endowment for the Humanities as part of
+                    the Universal Scripts Project [#PW-50441]. 
+
+            
+            
+                
+
+                    
+Figure 1: Manichaean HE glyph, and the HE with Variation Selector-1
+
+                    
+Full Size Image 
+
+                
+            
+        
+References:
+
+            
+                
+                    
+
+                        China [National Body].
+                        Preliminary Proposal to Encode Classical Yi Characters. 
+                        ISO/IEC JTC1/SC2/WG2 – ISO/IEC 10646 UCS
+                        2007
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Cook Richard
+                        Ken Lunde
+                        The UCS Tangut Repertory.
+                        2008
+                        ISO/IEC JTC1/SC2/WG2 – ISO/IEC 10646
+                            UCS.
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Everson, Michael
+                        Desmond Durkin-Meisterernst
+                        Roozbeh Pournader
+                        Revised proposal for encoding the Manichaean script in the SMP of the
+                            UCS.
+                        2009
+                        ISO/IEC JTC1/SC2/WG2 – ISO/IEC 10646
+                            UCS.
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        International Organization for Standardization [ISO]
+                        2009
+                        ISO/IEC 14496-22:2009
+                        
+         (
+link
+)
+   14 March 2011.
+                    
+
+                    
+Japan [National Body]
+                        2009
+                        Follow-up on N3530 (Compatibility Ideographs for Government
+                            Use)
+                        ISO/IEC JTC1/SC2/WG2 – ISO/IEC 10646 UCS
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Lunde, Ken
+                        2011
+                        E-mail to Deborah Anderson, 10 March.
+                    
+
+                    
+
+                        Microsoft Typography.
+                        2008a
+                        Developer Info, OpenType specification, OpenType Layout tag registry:
+                            Registered features: Tag: ‘cv01’ – ‘cv99’.
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Microsoft Typography.
+                        2008b
+                        Developer Info, OpenType specification, OpenType Layout tag registry:
+                            Registered features: Tag: ‘locl’.
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+TEI Consortium, eds. 
+                        2010
+                        ‘5. Representation of Non-standard Characters and Glyphs.’ In: TEI
+                            P5: Guidelines for Electronic Text Encoding and
+                        Interchange.Version 1.9.1. 
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Unicode Consortium
+                        2010a
+                        PRI 167: Combined registration of the Hanyo-Denshi collection and of
+                            sequences in that collection.
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Unicode Consortium
+                        2010b
+                        Ideographic Variation Database.
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Unicode Consortium
+                        2011a
+                         “‘Chapter 2: General Structure.’, ” 
+                        Allen, Julie D., et al. The Unicode Standard Version 6.0 –
+                            Core Specification., 
+                        Unicode Consortium
+                        Mountain View
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Unicode Consortium
+                        2011b
+                         “‘Chapter 16: Special Areas and Format Characters.’, ” 
+                        In: Allen, Julie D., et al. The Unicode Standard Version
+                            6.0 – Core Specification. Mountain View: Unicode Consortium, 
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+
+                        Unicode Editorial Committee Members.
+                        2011
+                        Standardized Variants. Revision 6.0.0. 
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                    
+W3C
+                        2010
+                        Fonts on the Web.
+                        
+         (
+link
+)
+   
+                        14 March 2011
+                    
+
+                
+            
+        

@@ -1,0 +1,394 @@
+Paper: Approaching the Coasts of Utopia: Visualization
+                    Strategies for Mapping Early Modern Paratexts
+
+                    Galey, Alan, 
+                    University of Toronto, Canada, 
+                    
+alan.galey@utoronto.ca
+
+                
+Introduction
+
+                
+No one reads or writes a book alone. Proof may be found in the paratextual
+                    letters and other prefatory material that often accompanies a book into the
+                    world to meet its readers. This is especially true of early modern books, whose
+                    prefatory letters stand as a threshold where the book’s material and symbolic
+                    production come together—sometimes as a well-executed plan (ex.: the 1518
+                    editions of More’s Utopia), and sometimes as a collision
+                    of intentions (ex.: the 1590 edition of Spenser’s Faerie
+                        Queene, or the 1623 Shakespeare First Folio). However, print-based
+                    methods of representing paratextual networks—especially in their temporal
+                    dimension, across multiple editions and translations—tend to emphasize the
+                    published book as product, at the expense of the book as a process. This paper
+                    takes the textual tradition of Thomas More’s Utopia, with
+                    its unfolding process of paratextual change between editions, as a test case for
+                    the design of an open-source interface component to help digital editors
+                    visualize networks of paratexts in early modern books.
+
+                
+The study of paratexts has been reinvigorated in recent years, crossing national
+                    and period boundaries in the tradition of Gerard Genette’s Paratexts, but more
+                    recently drawing energy from intersections between book history and digital
+                    humanities as interdisciplinary fields. Building on ongoing research on the
+                    digital modelling and visualization of paratexts and similar materials (Fekete
+                    & Dufournaud, 2000; Monella, 2008; Johnson), this paper argues that creating
+                    a digital visualization component for mapping has two benefits: first that a
+                    well-designed digital visualization can represent the structured fluidity and
+                    temporality of publication as a process that unfolds in time; and second, that
+                    the process of creating such a visualization affords a reciprocal opportunity to
+                    interrogate the digital tools and systems we use to represent the past.
+
+                
+This paper develops its argument in four sections: 
+                        
+Research context: archive and interface in digital textual
+                            studies
+
+                        
+Utopia as a modelling challenge
+
+                        
+Visualization strategies
+
+                        
+Conclusion: visualization prototypes as essays
+
+                    
+                
+            
+            
+                
+The small-scale project outlined in this paper is part of a larger project titled
+                    Archive and Interface in Digital Textual Studies: From Cultural History to
+                    Critical Design, funded by the Social Sciences and Humanities Research Council
+                    of Canada. This project is premised on two linked arguments. The first is that
+                    we need to understand how the figure of the archive operates in the cultural
+                    imagination, and how perceptions of digital archives are partly coded in advance
+                    by historical fears and desires about the continuity of knowledge. The second
+                    premise is that we need to develop traditions of digital interface design native
+                    to the humanities, and which reflect the humanities’ uniquely valuable
+                    understanding of the cultural histories and material complexities of texts
+                    (Kirschenbaum, 2004; Drucker, 2011). The Archive and Interface project therefore
+                    seeks to bridge between textual studies and the design of digital interface
+                    tools in the humanities. It does so first by investigating the cultural history
+                    of the humanities archive through case studies such as Utopia, and second by building an online library of interface
+                    components designed to be part of that cultural history.
+
+                
+The interface library will focus on critical design strategies in four key areas:
+                    textual variation (when sources diverge in significant ways); paratexts
+                    (documents such as prefatory letters, often published with literary works in
+                    complex configurations); materiality (the relation of physical documents to
+                    digital versions); and performance (the relation of written texts to reading or
+                    enactment in physical spaces). This project’s interface library focuses on
+                    putting humanities-designed interface components in the hands of electronic
+                    editors, and disseminating the methods by which those components may be created
+                    and modified by the larger community of computing humanists (the open-source
+                    model). 
+
+                
+Granting that large-scale editing systems like Anastasia and Edition Production
+                    & Presentation Technology have their place in the digital humanities, this
+                    paper will argue that small-scale and (relatively) rapidly prototyped interface
+                    components, built by individuals or small groups with inexpensive tools, can
+                    reflect the critical, experimental nature of humanities design in ways that
+                    large projects cannot. Such experimental capacity and structural flexibility is
+                    necessary in digital humanities projects if they are to learn from challenging
+                    materials like Utopia, and not simply take their
+                    representability for granted.
+
+            
+            
+                
+Utopia as a Modelling Challenge
+
+                
+The specific nature of Utopia’s challenge to a digital
+                    editor is that Utopia’s publication, as a collaborative
+                    project between early modern humanists, thematizes the very ideals and anxieties
+                    about the dissemination of knowledge that digital humanists have inherited. The
+                    book form—and by extension, the emergent network of humanist print culture—is
+                    not merely a delivery system for Utopia, but also one of
+                    its chief objects of scrutiny. In particular, Utopia
+                    simultaneously embodies and critiques the early modern archive with unusual
+                    perspicacity. This paper’s analysis follows Warren Wooden and John Wall by
+                    approaching Utopia “not as an object of knowledge but as
+                    an occasion for an act of perception, an instrument for ‘seeing’ designed to
+                    call attention to what is involved in perception” (1985, p. 233). In this light,
+                        Utopia itself serves as a kind of visualization of
+                    the early modern humanist archive of texts. 
+
+                
+We know from correspondence that More began writing Utopia
+                    with what is now the second book. From a reader’s perspective, the text was
+                    written in reverse, with book 1 (written second) placed before book 2 (written
+                    first), and various prefatory materials (written last) accumulating before book
+                    1. These prefatory materials—the letters, verses, diagrams, and maps that
+                    constitute the paratext of Utopia—increase and vary
+                    across the four editions published from 1516 to 1518, and change even more
+                    radically in subsequent early modern and modern editions. 
+
+                
+It is common for modern editions to completely remove or reconfigure Utopia’s carefully constructed paratexts (Allen, 1963).
+                    Yet, paradoxically, there may be no single ideal configuration of paratexts,
+                    making the interpretation of Utopia as a material text
+                    especially reliant on representational methods and tools (Jardine, 1993; Leslie,
+                    1998; Vallée, 2004; Kinney, 2005). Those tools have tended to take printed form,
+                    culminating in Terence Cave’s printed guide to Utopia’s
+                    paratextual tradition. However, Utopia can be taken as an
+                    early experiment itself in humanist print culture, no less than the digital
+                    experiments we discuss at digital humanities conferences, which makes Utopia anything but passive material for representation
+                    and editing.
+
+            
+            
+                
+Visualization Strategies
+
+                
+Given Utopia’s playful, experimental nature, this paper
+                    argues for the need for a visualization strategy based not on static
+                    representation, as in traditional forms of data visualization that represents
+                    the results of analysis, but based rather on the idea of modelling. Unlike a
+                    static representation, a digital model embodies the process-friendly dynamism we
+                    expect of digital visualizations, but also a certain “rough-and-ready” form and
+                    heuristic flexibility (McCarty, 2004). These latter qualities we associate not
+                    with commercial software but with the community-designed code libraries found at
+                    SourceForge and similar places, which serve as the dissemination model for the
+                    Archive and Interface project’s visualization components. (On humanities
+                    approaches to visualization, see Drucker, 2010, and other articles in the same
+                    special issue of Poetess Archive Journal on “Visualizing the Archive.”)
+
+                
+The design methodology for the interface library will be consistent with Ajax web
+                    applications, a type of architecture that distributes processing between a
+                    server and a user’s web browser, and which integrates well with XML databases
+                    and object-oriented design. HTML 5’s new capabilities on the client side permit
+                    animation and time-based interactivity to be incorporated into interfaces in
+                    ways that used to be exclusive to Flash. This paper will include a brief
+                    demonstration of a browser-based interface component that uses animation to
+                    model paratextual change over time. The prototype presented here will rely on
+                    the encoding structures proposed by Monella (2008), but will approach the topic
+                    from the browser and interface side instead of drawing conclusions about the
+                    encoding.
+
+            
+            
+                
+Conclusion: Visualization Prototypes as Essays
+
+                
+The two strategies proposed above, modelling and browser-based design, will serve
+                    to illustrate the paper’s broader conclusion that a digital humanities project
+                    organized around many small interface prototypes may yield more publishable
+                    components, respond more quickly to critical discourse about the material, and
+                    involve less risk than a single, large interface project. The nature of
+                    paratexts calls for an interpretive approach to digital representation,
+                    especially with material as complex as More’s Utopia.
+                    This paper concludes that the humanistic critical tradition, embodied by Utopia as a collaborative project in publishing
+                    technologies of its own time, calls digital humanists to think of their
+                    visualizations and interface prototypes not just as finished tools, which
+                    emphasize utility, but also as essays that put forward arguments and serve as
+                    pretexts for debate—like Utopia itself.
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Allen, P. R. 
+                        Utopia and European humanism: The function of
+                            the prefatory letters and verses, Studies in the Renaissance, 10:
+                            91–107.
+                        
+                        
+                        1963
+                        
+                    
+
+                    
+
+                        Anastasia
+                        31 October 2010
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Cave, T. 
+                        Thomas More's Utopia in Early Modern Europe: Paratexts and Contexts. 
+                        Manchester
+                        Manchester University Press
+                        2008
+                    
+
+                    
+
+                        Drucker, J.
+                         “Humanities approaches to interface theory, ” 
+                        Culture Machine, 
+                        2011
+                        12
+                        1–20
+                    
+
+                    
+
+                        Drucker, J.
+                         “Graphesis, ” 
+                        Poetess Archive Journal, 
+                        2010
+                        2.1
+                        1–50
+                    
+
+                    
+
+                        Edition Production & Presentation Technology.
+                        
+         (
+link
+)
+   
+                        accessed 31 October 2010
+                    
+
+                    
+
+                        Fekete, J.-D., and N. Dufournaud.
+                        2000
+                        Compus: Visualization and analysis of structured documents for
+                            understanding social life in the 16th century
+                        Proceedings of the Fifth ACM Conference on Digital Libraries
+                        47-55
+                    
+
+                    
+
+                        Genette, G.
+                        1997
+                        Paratexts: Thresholds of Interpretation, trans. J.E. Lewin.
+                        Cambridge
+                        Cambridge University Press
+                    
+
+                    
+
+                        Jardine, L.
+                        1993
+                        Erasmus, Man of Letters: The Construction of Charisma in
+                            Print
+                        Princeton, NJ
+                        Princeton University Press
+                    
+
+                    
+
+                        Johnson, J.P.
+                        Pale Tour
+                        
+         (
+link
+)
+   
+                        [accessed 31 October 2010]
+                    
+
+                    
+
+                        Kinney, A.F.
+                        2005
+                        Utopia's first readers.
+                        In Challenging Humanism: Essays in Honor of Dominic
+                            Baker-Smith
+                        T. Honselaars and A.F. Kinney
+                        Newark, NJ
+                        University of Delaware Press
+                        23-53
+                    
+
+                    
+
+                        Kirschenbaum, M.G.
+                        2004
+                        "So the colors cover the wires": Interface, aesthetics, and
+                            usability.
+                        A Companion to Digital Humanities
+                        S. Schreibman, R.G. Siemens, and J. Unsworth.
+                        Oxford
+                        Blackwell
+                        523-42
+                    
+
+                    
+
+                        Leslie, M.
+                        1998
+                        Renaissance Utopias and the Problem of History.
+                        Ithaca, NY
+                        Cornell University Press
+                    
+
+                    
+
+                        McCarty, W.
+                        2004
+                        Modeling: A study in words and meanings.
+                        A Companion to Digital Humanities
+                        S. Schreibman, R.G. Siemens, and J. Unsworth
+                        Oxford
+                        Blackwell
+                        254-70
+                    
+
+                    
+
+                        Monella, P.
+                        2008
+                        Towards a digital model to edit the different paratextuality levels
+                            within a Textual Tradition
+                        Digital Medievalist
+                        4
+                        
+         (
+link
+)
+   
+                        accessed 31 October 2010
+                    
+
+                    
+
+                        Vallée, J.-F.
+                        2004
+                        Printed voices and written friendships in More's Utopia
+                        Printed Voices: The Renaissance Culture of Dialogue
+                        D. Heitsch and J.-F. Vallée
+                        Toronto
+                        University of Toronto Press
+                        42-62
+                    
+
+                    
+
+                        Wooden, W.W., and J.N. Wall, Jr.
+                        1985
+                        Thomas More and the painter's eye: Visual perspective and artistic
+                            purpose in More's Utopia
+                        Journal of Medieval and Renaissance Studies
+                        15
+                        231-63
+                    
+
+
+                
+            
+        

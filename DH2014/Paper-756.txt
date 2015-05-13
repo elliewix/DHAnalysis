@@ -1,0 +1,244 @@
+Let DH Be Sociological! [Short Paper]
+Category:
+Short Paper
+Session:
+7
+Date:
+2014-07-11
+Time:
+11:00:00
+Room:
+415 - Amphimax
+Goldstone
+,
+									
+Andrew
+Rutgers University, US
+Diagnosis
+This paper is a diagnosis and a polemic. It takes as its occasion the startling recent popularity of topic modeling among practitioners of the digital humanities (Nelson, 2010; Weingart and Meeks, 2012; Jockers,
+2013; Tangherlini and Leonard, 2013; Laudun and Goodwin, 2013). As diagnosis, I propose that the significance of topic modeling can be contextualized within the rising predominance of social, political, and
+cultural themes as the major interests of literary scholarship in the last forty years. This predominance can,
+I show, itself be concretely grasped using topic modeling, as in the three figures below. 
+Fig. 1: Yearly proportions of recently-rising topics in a model of seven literary studies journals, labeled by most frequent words. Continued in figure 2.
+These figures visualize all the recently-rising topics in a 120-topic model of a corpus of literary-studies
+articles from seven generalist journals from the 1889–2013 period. Before looking at time series, I coded
+each topic as “social/political,” “formal,” “other themes,” or “non-thematic.” Of the 26 recently-rising topics
+shown in the figures, 14 are classifiable as “social/political”; of the remaining 94, only 4 are. (See “Methods”
+for details). I argue that the recent turn in the digital humanities to computational studies of literary an		
+	
+	
+		
+			
+				
+					d cultural texts in the aggregate, typified by the work of Franco Moretti and Matthew Jockers (Moretti,
+2013; Jockers, 2013), is best understood as an incomplete methodological response to an already-existing
+dominant thematic trend in literary studies. 
+
+				Polemic
+This historical diagnosis then leads to my polemic: let digital humanities be sociological! Instead of insisting on the distinctiveness of a “humanistic” interpretive approach—as, for example, Alan Liu has recently
+done in a sharp critique of “tabula rasa” digital interpretation—humanists should recognize the problem
+of interpreting cultural text in the aggregate as one they share with social science (Liu, 2013). This recognition can, in turn, help to clarify the controversy over whether the digital humanities deliberately neglect
+the social and political concerns central to literary and cultural studies in the last four decades (McPherson,
+2012). Recognizing the sociological in the digital humanities would help to see how quantitative methods
+could address the fundamental concerns that humanists share with social scientists. 
+Fig. 2: Continued from figure 1; continues in figure 3.
+In this short paper, I focus on the case of topic modeling: though this technique emerges from machine
+learning (Blei et al., 2003) and has been discussed as a form of distant reading, I argue that topic-modeling analyses of literary material (including my own in this paper) should be categorized as content analyses in
+the social-scientific sense. Although connections		
+	
+	
+		
+			
+				
+		between content analysis and humanities computing are
+of long standing (see Weber, 1985), the relevance of this methodology for topic modeling has not been
+widely remarked in the digital humanities. According to a standard book on the technique, “Content
+analysis is a research technique for making replicable and valid inferences from texts...to the contexts of
+their use” (Krippendorff, 2013, p. 24). The triple demands for validity, context-sensitivity, and replicability
+represent the fundamental social-scientific methodological contribution to this work. In work on topic
+modeling, these methodological problems have been addressed especially by political scientists (Quinn et
+al., 2010; Grimmer, 2010; Grimmer and Stewart, 2013) and sociologists of culture (DiMaggio et al., 2013;
+for a recent work on validation with literary topic models, see Mimno and Jockers, 2013).
+
+Topic modeling should not be valued as a tool for discovery alone but as offering evidence of systematic
+cultural variation. Emphasizing discovery (e.g., Blei, 2012), has led some to insist that the final task for humanistic topic modelers should be to return to “close reading” individual texts (Rhody, 2012; Tangherlini
+and Leonard, 2013). Yet this return to reading risks neglecting both the promise and the challenge of the
+topic model, which can reveal the workings of larger-scale cultural and social contexts by systematically
+and replicably classifying linguistic patterns, including thematic and rhetorical patterns. 
+Fig. 3: Continued from figure 2
+			
+		
+	
+	
+		
+			
+				
+					
+These patterns are of interest not in themselves alone but for their cultural, historical, and social contexts. 
+		
+	
+	
+		
+			
+				
+					
+In my own argument, the category of “recent decades,” which highlights the rise of “social” topics, is actually
+a proxy for historical causes, including the institutional change represented in the corpus by the inclusion
+of “theory” journals newly established in the 1970s, Critical Inquiry and New Literary History; it remains
+for future work to incorporate indicators of these historical forces into the analysis of topic models.
+Even this preliminary content analysis suggests that digital humanists who study texts in the aggregrate
+might reconsider the context in which their own work emerges. Current discussions of “distant reading,” “macroanalysis,” “surface reading,” and “quantitative formalism” converge with sociology in terms
+of method but not necessarily subject matter (Moretti, 2013; Jockers, 2013; Best and Marcus, 2009; Allison et al., 2010). At the same time, the aggregate of literary studies has been converging with sociology
+in terms of subject matter but not method, and even the most recent turns to the sociological in literary
+studies have largely shied away from the quantitative approaches that digital humanists have embraced
+(see English, 2010). My polemical goal is to advocate for a dual convergence—not only in the case of topic
+modeling but across the set of quantitative techniques for studying cultural texts that have become central
+to the digital humanities.
+Methods
+
+Latent Dirichlet Allocation has been applied to corpora of scholarly journals by others (Blei and Lafferty,
+2009; Mimno, 2012; McFarland et al., 2013); this work applies it to scholarship in literary studies, with
+the institutional history of the literary humanities as an interpretive frame. The modeled documents consisted of all the items classed as “full-length articles” by JSTOR that exceed 1000 words in length in seven
+journals chosen for chronological range and broad disciplinary scope: Critical Inquiry (1974–2013), ELH
+(1934–2013), Modern Language Review (1905–2013), Modern Philology (1903–2013), New Literary History (1969–2012), PMLA (1889–2007), and theReview of English Studies (1925–2012). Wordcounts and
+document metadata were supplied by JSTOR Data for Research ( JSTOR).
+Obvious item misclassifications were corrected. I excluded an extensive set of stop words, including common words, abbreviations, and first names, and retained only the 10000 most frequent word types. MALLET’s Latent Dirichlet Allocation implementation was used, specifying 120 topics and hyperparameter
+optimization feature (McCallum, 2002). The choice of documents to model and the construction of the
+stoplist emerged from work by Ted Underwood and me; Underwood should not be held accountable for
+this paper (Goldstone and Underwood, 2012; Goldstone and Underwood, forthcoming). Additional analysis relied on the R mallet package (Mimno, 2013) and my own R programs.
+The procedure for classifying the topics was as follows. I conducted a trial run by hand-classifying a 64-
+topic model of PMLA articles alone, developing an ad hoc scheme. Then, before visualizing any topics
+over time in my full seven-journal model, I examined the list of the twenty most frequent words in each
+topic and applied the categorization scheme to each topic:
+
+ 
+S: Social or political topics, including national, ethnic, sexual, or gender identities;
+ T: Other thematic material, including religion, moral philosophy, love, nature, etc.;
+ F: Formal topics, including form, language, style, and genre;
+ NT: Non-thematic topics, including other languages, proper names, organizational labels, topics classifying textual studies, and clearly methodological discourses.
+        
+ 
+I classed as “recently rising” topics any topic for which the total proportion of those topics in each of
+the four decades after 1970 was greater than the total proportions in each of the decades from the 1930s
+through the 1960s. This heuristic was again devised with respect to the smaller trial model, then applied
+to the larger model. In future work ahead of the Lausanne conference, I plan to systematically vary the “recency” cutoff in order to test the sensitivity of my claims to the choice of 1970 as a demarcation line.
+The breakdown of all topics was as follows: 
+ code
+ not recent
+ recent
+ F
+ 13
+ 3
+ NT
+ 56
+ 4
+ S
+ 4
+ 14
+ T
+ 21
+ 5
+By this effort to make interpretive assumptions explicit (and to highlight the involvement of the researcher
+in classifying topics), I seek to bring the humanistic analysis of topic models closer to the demands of
+sociological content analysis. 
+        
+        
+       
+References
+JSTOR
+. Data for Research. http://dfr.jstor.org.
+Allison, S.
+, et al. (2011). Quantitative Formalism: An Experiment. Stanford Literary Lab. http://litlab.stanford.edu/LiteraryLabPamphlet1.pdf.
+          
+Best, S., and S. Marcus
+ (2009). Surface Reading: An Introduction. Representations 108(1).
+          
+Blei, D. M.
+ (2012). Probabilistic Topic Models. Communications of the ACM 55(4).
+          
+Blei, D. M., A. Y. Ng, and M. I. Jordan
+ (2003). Latent Dirichlet Allocation. Journal of Machine Learning
+            Research 3.
+          
+Blei, D. M., and J. D. Lafferty
+ (2009). Topic Models. In Srivastava, A., and M. Sahami (eds.). Text Mining:
+            Classification, Clustering, and Applications. Boca Raton, FL: CRC.
+          
+DiMaggio, P., M. Nag, and D. Blei
+ (2013). Exploiting Affinities between Topic Modeling and the Sociological Perspective on Culture: Application to Newspaper Coverage of U.S. Government Arts Funding.
+            Poetics 41(6).
+          
+English, J. F.
+ (2010). Everywhere and Nowhere: The Sociology of Literature After “The Sociology of
+            Literature.” NLH 41(2).
+          
+Goldstone, A., and T. Underwood 
+(2012). What Can Topic Models of PMLA Teach Us About the History of Literary Scholarship? Journal of Digital Humanities 2(1).
+          
+Goldstone, A., and T. Underwood
+ (forthcoming). The Quiet Transformations of Literary Studies: What
+            Thirteen Thousand Scholars Could Tell Us. NLH.
+          
+Grimmer, J. 
+(2010). A Bayesian Hierarchical Topic Model for Political Texts: Measuring Expressed Agendas in Senate Press Releases. Political Analysis 18(1).
+          
+Grimmer, J., and B. M. Stewart
+ (2013). Text as Data: The Promise and Pitfalls of Automatic Content
+            Analysis Methods for Political Texts. Political Analysis 21(3).
+          
+Jockers, M. L. 
+(2013). Macroanalysis: Digital Methods and Literary History. Urbana: University of Illinois
+            Press.
+          
+Jockers, M. L., and Mimno, D.
+ (2013). Significant Themes in 19th-Century Literature. Poetics 41(6).
+          
+Krippendorff, K. 
+(2013). Content Analysis: An Introduction to Its Methodology. 3rd ed. Los Angeles:
+            SAGE. 
+Laudun, J., and J. Goodwin
+ (2013). Computing Folklore Studies: Mapping over a Century of Scholarly
+              Production through Topics. Journal of American Folklore 126(502).
+            
+Liu, A.
+ (2013). The Meaning of the Digital Humanities. PMLA 128(2).
+McCallum, A. K.
+ (2002). MALLET: A Machine Learning for Language Toolkit. http://mallet.cs.umass.
+              edu.
+            
+McFarland, D. A., et al.
+ (2013). Differentiating Language Usage through Topic Models. Poetics 41(6).
+            
+McPherson, T.
+ (2012). Why Are the Digital Humanities So White? or Thinking the Histories of Race
+              and Computation. In M. K. Gold (ed.), Debates in the Digital Humanities. Minneapolis: University of
+              Minnesota Press.
+            
+Mimno, D. 
+(2012). Computational Historiography: Data Mining in a Century of Classics Journals. ACM
+              Journal on Computing and Cultural Heritage 5(1).
+            
+Mimno, D.
+ (2013). mallet: A Wrapper around the Java Machine Learning Tool MALLET. http://cran.
+              r-project.org/web/packages/mallet/.
+            
+Moretti, F.
+ (2013). Distant Reading. London: Verso.
+Nelson, R.K.
+ (2010). Mining the Dispatch. http://dsl.richmond.edu/dispatch.
+            
+Quinn, K. M., et al.
+ (2010). How to Analyze Political Attention with Minimal Assumptions and Costs.
+              American Journal of Political Science 54(1).
+            
+Rhody, L. M.
+ (2012). Topic Modeling and Figurative Language. Journal of Digital Humanities 2(1).
+Tangherlini, T. R., and P. Leonard 
+(2013). Trawling in the Sea of the Great Unread: Sub-Corpus Topic
+              Modeling and Humanities Research. Poetics 41(6).
+Weber, R. P.
+ (1985). Basic Content Analysis. Beverly Hills, CA: SAGE.
+              
+Weingart, S., and E. Meeks
+ (eds.) (2012). Special Issue: Topic Modeling. Journal of Digital Humanities
+                2(1).

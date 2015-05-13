@@ -1,0 +1,150 @@
+Poster: The Story of TILE: Making Modular & Reusable Tools
+
+                    Porter, Dorothy (Dot), 
+                     Indiana University, United States of America, 
+                    
+dot.porter@gmail.com
+
+                
+
+                    Reside, Douglas, 
+                    University of Maryland, United States of America, 
+                    
+dougreside@gmail.com
+
+                
+
+                    Walsh, John A., 
+                     Indiana University, United States of America, 
+                    
+jawalsh@indiana.edu
+
+                
+The Text Image Linking Environment (TILE) is a collaborative project between the Maryland Institute for Technology in the Humanities (MITH), the Digital Library Program at Indiana University, and the School of Library and Information Science at Indiana University Bloomington. Since May 2009, the TILE project team has been developing through NEH Research & Development funding a web-based, modular, image markup tool for both semi-automated linking between encoded text and image of text, and image annotation. The software will be complete and ready for release in June 2011.
+
+            
+            
+                
+Concept of TILE
+
+                
+TILE was designed to change the way that people think about digital humanities tools. Many tools created for humanists are built within the context of a single project, focusing either on a single set of materials or on materials from a single time period, and this limits their ability to be adapted for use by other projects. The TILE project – not just the software, but the project itself – was designed to cut across subjects and materials. Because it is simple, with focused functionality, TILE will be usable by a wide variety of scholars from different areas and working with a variety of materials – illustrations and photographs as well as images of text. To help ensure this, we brought together several collaborators from different projects with different needs to provide advice and testing for our work: The Swinburne Project and Chymstry of Isaac Newton at Indiana University-Bloomington, the Homer Multitext Project at Harvard’s Center for Hellenic Studies, and the Mapas Project at the University of Oregon. In addition, we were very fortunate during the life of the project to have volunteers test the software on their own materials, or to provide materials for us for testing. We also received feedback from user testing performed at the Department of Information Studies, University College London, and the School of Library and Information Science, Indiana University Bloomington.
+
+            
+            
+                
+Functionality of TILE
+
+                
+The basic functionality of TILE is to create links between images and text that relates to that image – either annotations or transcriptions. We have paid particular attention to linking between image of text and transcription of text. These links may be made manually, but the project also includes an algorithm, written in JavaScript, for recognizing text within an image and automatically associating the coordinates with a Unicode transcription.  Additionally, the tool can import and export transcriptions and links from and to a variety of metadata formats (TEI, METS, OWL) and will provide an API for developers to write mappings for additional formats.  Of course, this functionality is immediately useful to a relatively limited set of editors of digital materials, but we have made modularity and extensibility primary goals of the project, and in our demonstration we hope to be able to show new recognition algorithms to, for instance, identify printer watermarks or panels in a graphic novel.
+
+                
+Many members of the TILE development team are also members of the Open Annotation Collaboration (OAC), and have therefore attempted to develop TILE’s annotation features to be OAC compliant.  Like OAC, TILE assumes that the text and the images to be linked may exist at separate and completely unconnected servers.  When a user starts the TILE tool for the first time, she is prompted to supply a URI to a TILE compliant JSON file [pictured in figure A].
+
+                
+
+                    
+FIGURE A:  Opening screen of TILE tool
+
+                    
+Full Size Image 
+
+                
+                
+TILE’s JSON is simple and thoroughly documented, and we provide several translators to map common existing metadata formats to the format.  We have already created a PHP script that will generate TILE JSON from a TEI P5 document and are currently working to do the same for the METS files used in the Indiana University’s METS navigator tool. We hope to have other translators to show in our demonstration, particularly one that will import TEI/XML conformant with the University of Victoria’s Image Markup Tool.
+
+                
+Additionally, TILE provides a modular exporting tool that allows users to run the work they’ve done in TILE through an external translator and then download the result to the client computer.  For example, a user may import a set of images and transcripts from a METS file at the Library of Congress, use TILE to link images and text, and then export the result as a TEI file.  The TEI file may then be reimported to TILE at a later data to further edit or convert the file.
+
+                
+At the poster session at DH2011, we will demonstrate the final functionality of TILE and to display a poster and provide handouts that describe the thinking behind TILE, how it is intended to be used, and details on how TILE is built and functions.
+
+            
+        
+References:
+
+            
+                
+                
+
+                        Chymstry of Isaac Newton, 
+                        
+         (
+link
+)
+   
+                
+
+                
+
+                        Homer Multitext Project, 
+                        
+         (
+link
+)
+   
+                
+
+                
+
+                        Image Markup Tool, 
+                        
+         (
+link
+)
+   
+                
+
+                
+
+                        Mapas Project, 
+                        
+         (
+link
+)
+   
+                
+
+                
+
+                        METS Navigator, 
+                        
+         (
+link
+)
+   
+                
+
+                
+
+                        Open Annotation Collaboration, 
+                        
+         (
+link
+)
+   
+                
+
+                
+
+                        Swinburne Project, 
+                        
+         (
+link
+)
+   
+                
+
+                
+
+                        Text Image Linking Environment, 
+                        
+         (
+link
+)
+   
+                
+
+                
+            
+        

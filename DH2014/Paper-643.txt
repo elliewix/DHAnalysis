@@ -1,0 +1,333 @@
+Mining the Cloud of Witness: Inferring the Prestige of Saints from Medieval Paintings
+
+    
+Category:
+Short Paper
+
+      
+Session:
+3
+
+      
+Date:
+2014-07-09
+Time:
+13:45:00
+
+      
+Room:
+415 - Amphimax
+
+    
+
+        
+Lombardi
+,
+									
+Thomas
+
+        
+
+          
+
+        
+Washington & Jefferson College
+
+      
+
+    
+
+  
+1. Introduction
+
+  
+1.1. Overview
+
+  
+Previous research has demonstrated the utility of constructing undirected, weighted networks from the co-occurrence of people in images.
+1
+  Researchers have repurposed the technique to analyze the evolution of iconography in medieval artwork.
+2
+  Using this technique, when two saints appear together in an image, the nodes representing these saints are linked.  Moreover, each time these saints appear together the weight on the link connecting them increases.  This technique captures the evolution of these co-occurrences in revealing ways (Fig. 1).
+3
+  For example, lines of high weight capture important motifs in the artwork such as the links between Christ and Mary based on the common Madonna and Child image.  In a corpus of early images of Saint Francis, the evolution of this network captured the development of a stable core of saints consistent with the historical and artistic record. 
+
+  
+
+    
+Fig. 1: Undirected weighted network of saints created in Cytoscape 
+
+    
+
+  
+Unfortunately, these networks do not capture the hierarchies in such iconography.  For example, the presence of Saint Anthony of Padua, a Franciscan saint, depends on the presence of Francis.  Historically, Francis was the head of the Franciscan order and therefore Anthony depended on the institution bearing Francis' name.  Artistically, Anthony does not appear without Francis in imagery at this time.
+4
+  In order to capture the development of this imagery, including the hierarchical aspects of the organization of these saints, the technique must capture the direction of links representing these dependencies.   This paper demonstrates that association rule mining allows for the creation of directed, weighted networks of saints.  The social prestige of the saints can then be inferred from the structural prestige observed in the network.
+
+  
+1.2. Methodology
+
+  
+The corpus includes 236 images of Saint Francis of Italian production from 1230 to circa 1320 and serves as an excellent case study for this technique.
+5
+ The catalog provides information about dating, provenance, authenticity, style and documentation.  The iconography of Francis provides a dramatic example of a transition from regionally-venerated to internationally-venerated saint.  Given this complex transition, the resulting network captures interesting shifts in the thematic content of the iconography.  The proposed technique along with previously developed network models provide powerful ways to explore iconographic trends.  
+
+  
+Constructing the directed network involves standard techniques in data mining 
+6
+ and network analysis 
+7
+.  Cook's corpus was converted into a matrix for rule mining in RapidMiner Studio.
+8
+     The denormalized data captures the presence or absence of a saint in each painting.  The resulting matrix includes 236 rows representing the paintings and 102 columns representing saints.  After preparing the data, support and confidence metrics for each pair of saints was calculated. The confidence metrics model the strength of the relationship between saints in each direction, providing a basis for inferring rank in the relationships (Fig. 2).  For example, the thick pink link from Anthony to Francis represents a confidence of 1.0, meaning that every time Anthony appears in an image Francis certainly appears as well.  The thin blue link from Francis to Anthony, on the other hand, has a confidence of 0.122, signifying that Francis appears without Anthony in many paintings. The difference between these confidence metrics determines the weight and direction of the link between the two saints.  In this example, we would replace the two links pictured with a single link from Anthony to Francis bearing a weight of 0.878.  With this directed network, we can calculate the structural prestige of the saints in Pajek. 
+9
+10
+
+  
+
+    
+Fig. 2: Directed weighted links between Anthony of Padua (left) and Francis
+
+    
+
+  
+For the purposes of demonstration, the calculations have been performed on a small set of data.  Table 1 shows the weight calculations based on the confidence measures derived from three images.  When these links are combined (Fig. 3), they produce a directed, weighted network well-suited to determining prestige.  Directed networks provide several straight-forward techniques for calculating structural prestige.
+11
+  The input degree is the number of links pointing to a node.  In the sample network, Francis has an input degree of 3 while Gregory IX has an input degree of 0. Although input degree is often illuminating, this measure of prestige only addresses direct connections.  The input proximity prestige, on the other hand, uses both direct and indirect links in its calculations of popularity.  Table 2 summarizes the calculations required to compute the input proximity prestige in a directed network.  Each of these metrics highlights Francis as the most prestigious saint in this simple network.
+
+  
+ Antecedent-->Consequent
+
+      
+ Confidence(A-->B)
+
+      
+ Confidence(B-->A)
+
+      
+ Link Weight
+
+    
+ Seraph-->Francis
+
+      
+ 1.0
+
+      
+ 0.3333
+
+      
+ 0.6667
+
+    
+ Gregory IX-->Francis
+
+      
+ 1.0
+
+      
+ 0.3333
+
+      
+ 0.6667
+
+    
+ Narni-->Francis
+
+      
+ 1.0
+
+      
+ 0.3333
+
+      
+ 0.6667
+
+    
+ Seraph<---->Narni
+
+      
+ 1.0
+
+      
+ 1.0
+
+      
+ 1.0
+
+    
+
+    
+Fig. 3: Directed weighted network of saints
+
+    
+
+  
+ Saint
+
+      
+ Influence Domain
+
+      
+ Proportional Distance
+
+      
+ Average Distance
+
+      
+ Proximity Prestige
+
+    
+ Francis
+
+      
+ 3
+
+      
+ 1.00
+
+      
+ 1.00
+
+      
+ 1.00
+
+    
+ Seraph
+
+      
+ 1
+
+      
+ 0.33
+
+      
+ 1.00
+
+      
+ 0.33
+
+    
+ Bartholomew of Narni
+
+      
+ 1
+
+      
+ 0.33
+
+      
+ 1.00
+
+      
+ 0.33
+
+    
+ Gregory IX
+
+      
+ 0
+
+      
+ 0.00
+
+      
+ Undefined
+
+      
+ 0.00
+
+    
+2. Results
+
+  
+With the additional interpretive power of directed networks, researchers can better understand changes in the popularity of saints.  Somewhat surprisingly, the painters and patrons of the earliest surviving images of Francis (1230-1249) did not seek to juxtapose Francis with Christ, Mary or other well-known saints.  Instead, the early promoters of Franciscan iconography chose to portray Francis by himself or with other prominent figures in Francis' hagiography such as the Seraph.  As the cult of Francis grew, however, the prestige of Christ and Mary jumped from nil in the 1240s to 0.97 and 0.79 respectively in the 1320s.  Moreover, by examining the correlation of prestige measures of different saints, researchers can identify trends in the artistic tastes of the patrons driving the demand for these images.  For example, the prestige of the Seraph is negatively correlated with the prestige of Clare (-0.82), Benedict (-0.5), and Dominic (-0.6) meaning that when the Seraph is popular in this imagery the monastic and mendicant leaders are not.  This negative correlation echoes Cook's observations regarding the presentation of Francis in non-Franciscan houses, particularly that Francis is often presented without stigmata in this context.
+12
+ Apparently, non-Franciscan houses and even the Clares did not wish to emphasize the unique aspects of Francis' hagiography in their commissions.  The prestige figures also register the effects of specific events such as the canonization of saints.  For example, Louis of Toulouse was canonized on April 7th, 1317; his prestige in the decade 1310 to 1319 rose from nil to 0.33.  During this same decade, the prestige of Anthony of Padua, another male Franciscan saint, plummeted to 0.0 from 0.45.  As a popular new saint, Louis displaced Anthony for about a decade as the preferred male Franciscan to balance compositions with Francis.  Finally, the prestige metrics indicate a growing popularity of female saints after 1300.  Excluding Christ, 4 of the 5 most popular saints in these images are female: Mary (0.79), Clare (0.49), Mary Magdalen (0.45) and Catherine of Alexandria (0.42). 
+
+  
+Given the results of this study, we aim to expand the research to include a wider range of images.  In particular, the inclusion of works of Dominican provenance will be helpful for comparing prestige metrics in both mendicant traditions.  Beyond this, we believe that applying the technique more broadly may shed light on some of the larger trends and issues in medieval art history.  For example, researchers have noted that new saints and new imagery related to saints appeared in medieval art in response to the Black Death.
+13
+  With this technique, we can gauge the relative prestige of saints before and after the Black Death to determine if the perception of these saints changed in the eyes of painters and their patrons.             
+
+  
+References
+
+  
+1. 
+Golder, S.
+ (2008). Measuring Social networks with digital photograph collections. In Proceedings of the 19th ACM Conference on Hypertext and Hypermedia, 43-48.
+          
+
+  
+2. 
+Lombardi, T.
+ (2013). The Communion of the Saints: Networks and the Study of Iconography. Presented as a contributed talk at Arts, Humanities, and Complex Networks – 4th Leonardo Satellite Symposium at NetSci2013. 
+artshumanities.netsci2013.net
+
+  
+3. 
+Smoot, M., Ono, K., Ruscheinski, J., Wang, P-L., & Ideker, T.
+ (2011). Cytoscape 2.8: new features for data integration and network visualization. Bioinformatics 27(3): 431-432. Homepage: 
+www.cytoscape.org/
+
+  
+4. 
+Cook, W. R.
+ (1999). Images of Saint Francis in Painting, Stone and Glass from the Earliest Images to ca. 1320 in Italy: A Catalogue. Italian Medieval and Renaissance Studies 7. Leo S. Olschki.
+          
+
+  
+5. 
+Cook, W. R.
+ (1999). Images of Saint Francis in Painting, Stone and Glass from the Earliest Images to ca. 1320 in Italy: A Catalogue. Italian Medieval and Renaissance Studies 7. Leo S. Olschki.
+          
+
+  
+6. 
+Agrawal, R., Imieliński, T. & Swami, A.
+ (1993). Mining association rules between sets of items in large databases. Proceedings of the 1993 ACM SIGMOD international conference on Management of data - SIGMOD '93. p. 207.
+          
+
+  
+7. 
+De Nooy, W., Mrvar, A. & Batagelj, V.
+ (2011). Exploratory Social Network Analysis with Pajek. 2nd Edition. Cambridge: Cambridge University Press.
+          
+
+  
+8. 
+RapidMiner Studio
+. Home page: 
+rapidminer.com/products-2/rapidminer-studio/
+
+  
+9. 
+Mrvar, A. & Batagelj, V. Pajek
+ - Program for Large Network Analysis. Home page: 
+pajek.imfm.si
+
+  
+10. 
+De Nooy, W., Mrvar, A. & Batagelj, V.
+ (2011). Exploratory Social Network Analysis with Pajek. 2nd Edition. Cambridge: Cambridge University Press.
+          
+
+  
+11. 
+De Nooy, W., Mrvar, A. & Batagelj, V.
+ (2011). Exploratory Social Network Analysis with Pajek. 2nd Edition. Cambridge: Cambridge University Press.
+          
+
+  
+12. 
+Cook, W. R.
+ (1999). Images of Saint Francis in Painting, Stone and Glass from the Earliest Images to ca. 1320 in Italy: A Catalogue. Italian Medieval and Renaissance Studies 7. Leo S. Olschki, p. 103.
+          
+
+  
+13. 
+Meiss, M.
+ (1951). Painting in Florence and Siena after the Black Death. Princeton: Princeton University Press.
+          
+

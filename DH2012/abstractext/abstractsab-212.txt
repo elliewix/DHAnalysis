@@ -1,0 +1,373 @@
+Paper: Religo: A Relationship System
+
+                    Rodríguez, Nuria, 
+                    University of Málaga (Spain), 
+                    
+nro@uma.es
+
+                
+
+                    Isolani, Alida, 
+                    Scuola Normale Superiore (Italy), 
+                    
+isolani@signum.sns.it
+
+                
+
+                    Lombardini, Dianella, 
+                    Scuola Normale Superiore (Italy), 
+                    
+dianella@signum.sns.it
+
+                
+
+                    Marotta, Daniele, 
+                    Scuola Normale Superiore (Italy), 
+                    
+marotta@signum.sns.it
+
+                
+Introduction
+
+                
+Over the years, digital libraries and textual archives have collected, described,
+                    and classified texts and multimedia objects. These kinds of repositories are
+                    effective in compiling, describing, and disseminating the cultural heritage such
+                    as the artistic and literary expressions. Also, many of them, following the
+                    developments of Computational Linguistics, have incorporated tools for textual
+                    analysis as part of their end-user services. Nevertheless, these systems are
+                    weak in terms of relationships. Of course, they are
+                    configured in such way that it is possible to relate the digital objects
+                    compiled; thus, for instance, it is easy to retrieve a set of visual artefacts
+                    sharing the same subject matter. However, these relationships are based on the
+                    traditional criteria of classification and description (metadata and keywords),
+                    without any intention of exploring the nature or specific characteristics of the
+                    relationships that the Art History discipline’s phenomena maintain among
+                    them.
+
+                
+We should not overlook the intrinsic relationship that exists among texts,
+                    concepts – or ideas –, words and visual artefacts in the construction of
+                    art-historical knowledge (Mitchell, 1994). As Heffernan (2006) argues for the
+                    case of words and images, this relationship should not taken as a simple
+                    reproduction of art works by a set of words, but rather the conjunction of
+                    visual artefacts and words generates new knowledge. This is one of the reasons
+                    for which we can contend that these relationships deserve to be treated as a
+                    research object in themselves.
+
+                
+Therefore, our intention is to explore the potential relationships that could be
+                    established among these entities: texts, concepts, words, and visual artefacts
+                    with the aim of investigating how these relationships are able to produce new
+                    significant knowledge or are able to open new understandings.
+
+            
+            
+                
+Religo
+
+                
+Religo is a system that enables the construction of
+                    interpretations based on relationships. According to the researcher’s needs and
+                    the art historian’s research habits and procedures, the question of text and image induces us to design a system to establish
+                    relations between various kinds of objects (texts, images, videos, etc.), to
+                    provide new possibilities for analysis and research, which are offered only
+                    partly by the state of the art.
+
+                
+Currently, in the most significant projectsImage Markup Tool 
+         (
+link
+)
+   . Pinakes 
+         (
+link
+)
+   . VLMA 
+         (
+link
+)
+   . EPPT 
+         (
+link
+)
+   . Flickr 
+         (
+link
+)
+   . TextGrid 
+         (
+link
+)
+   . Talia 
+         (
+link
+)
+   . working on texts and images – although with interesting and
+                    useful features – some limitations can be found in terms of:
+
+                
+                    
+functionalities: only tagging or object manipulation;
+
+                    
+usability: complex and without a user-friendly interface;
+
+                    
+purpose: oriented to social participation (this feature often does not
+                        reach the entire scholarly community).
+
+                
+                
+Taking into account this state of the art, Religo does not reduce the
+                    relationship to the concept of pure tagging or to the idea of simple connection
+                    between entities, but treats it as basic element for interpretation and
+                    analysis, making itself the subject of research in order to create new
+                    knowledge.
+
+                
+Religo relates the domain entities creating two logical levels: the expression
+                    one, consisting of digital objects on which the
+                    interpretation can be developed; and the semantic one, consisting of digital concepts (the relationships between digital
+                    objects and the predications on themselves) that allow the interpretation to be
+                    built (Buzzetti, 2004)This theoretical model has been used by Signum to
+                        develop a system for facilitating semantic research and text reading in Text
+                        and Semantics 
+         (
+link
+)
+   ..
+
+                
+This means that, when a digital concept is the subject of interpretation, it is
+                    placed on the expression level, becoming a digital object itself.
+
+                
+An example is the Michelangelo’s masterpiece The Last
+                        Judgement, analysed and interpreted by the Spanish author Francisco
+                    Pacheco in his 17
+th
+ treatise The Art of
+                        Painting (1649). In this case, The Last
+                        Judgement would be the digital object, and the interpretation given by
+                    Pacheco, the digital concept. However, insofar as the Pacheco’s interpretation
+                    is also subject of interpretation and analysis by the modern historiography, it
+                    in turn becomes a digital object.
+
+                
+The entities of the domain can be submitted to a number of general operations
+                    (such as selection of parts, links, free tagging or metadata encoding, etc.) and
+                    others more specific according to their particular features (specific operations
+                    on texts and image).
+
+                
+In every operation the centrality of the relationship is clear: from its
+                    creation, made easily by a simple drag and drop of
+                    selected portions of objects, up to reach the composition of documents as result
+                    of the different entities relationship that themselves constitute the new
+                    knowledge of the study process.
+
+                
+A more evident utility of this new use of relationships can be seen in the search
+                    and navigation functions, for example to improve the search capability because
+                    it ensures a higher degree of precision and recallPrecision can be seen
+                        as a measure of exactness or fidelity, whereas recall
+                        is a measure of completeness..
+
+                
+As an example, searching for the word emblema, Religo
+                    returns both entities containing emblema as textual
+                    occurrence (W) and those where emblema does not appear
+                    (NW) but which are related to W (Figure 1). Thus, the relationship gives
+                    relevance and importance to the entity NW, which otherwise, from a purely
+                    textual standpoint, would go unnoticed or simply would not exist.
+
+                
+
+                        
+Figure 1C. Ripa, Iconologia, overo
+                                    Descrittione dell’Imagini universali […], Roma 1593, p. 96.
+                                G. Vasari, Ragionamenti di Giorgio Vasari pittore
+                                    ed architetto aretino […], Firenze 1832-38, p.
+                            1404.
+
+                        
+Full Size Image 
+
+                    
+                
+Relationship also affects the display of the entities: that is, in addition to
+                    the classical view as list, Religo provides a view as graph, creating a network between the various domain
+                    entities which on one hand allows the reconstruction of interpretive reading by
+                    simply moving the focus between digital objects, on the other hand enables a
+                    contextualized vision of every digital object. These features, typically used
+                    during the work process, are also useful in order to share and exploit the
+                    research results.
+
+                
+As a more concrete example, let us consider the following domain:
+
+                
+The Art of Painting by Pacheco discusses Michelangelo and
+                    his works, including The Last Judgement. It also treats
+                    other painters such as Velázquez or Tiziano, other works such as The Final Judgement painted by Pacheco himself, the
+                    portrait of King Phillip II painted byTiziano, and other artists such as Dolce,
+                    Paleotti, Lomazzo, or Céspedes.
+
+                
+Religo allows relationships to be created between these objects:
+
+                
+[Pacheco] author of [The Art of Painting]
+
+                
+[Michelangelo] painter of [The Last Judgment]
+
+                
+[The Last Judgement by Michelangelo], [The Last Judgement by Pacheco] described in [The Art of Painting]
+
+                
+[Phillip II by Tiziano] mentioned in
+                        [The Art of Painting]Notice the difference
+                        between describe, which implies a detailed
+                        explanation of the painting; and mention, which only
+                        means that the painting has been cited.
+
+                
+[The Last Judgement of Michelangelo] influences on [The Last Judgement of
+                    Pacheco]
+
+                
+[The Last Judgement of Michelangelo] used
+                        as example by [Dolce, Pacheco, Lomazzo,
+                    Céspedes]
+
+                
+[Dolce, Paleotti, Lomazzo, Céspedes] cited
+                        in [The Art of Painting]
+
+                
+[The Last Judgement of Michelangelo] illustrates concepts of [deviations of decoro,
+                        terribilità, movements and affetti]
+
+                
+[The Last Judgement of Michelangelo] described with terms [artificioso, espantoso,
+                        terrible, horribilidad, feroz]
+
+                
+These relationships themselves become new entities of the domain, forming an
+                    interconnected network and producing the following new knowledge level:
+
+                
+[Lomazzo] [Céspedes] cited by [Pacheco] to define the concept of [painting]
+
+                
+At this level, we can see how the result specifies the connection among the
+                    different theorists cited by Pacheco and the concepts that he defines in The Art of Painting until creating another richer
+                    level:
+
+                
+[The Last Judgement] used as example
+                        by [Pacheco, Dolce] to
+                        illustrate idea of [deviations of decoro]
+
+                
+[The Last Judgement of Michelangelo] used
+                        as example by [Pacheco, Lomazzo] to illustrate the idea of [movements and
+                        affetti]
+
+                
+[The Last Judgement of Michelangelo] used
+                        as example by [Pacheco, Céspedes] to illustrate the idea of [terribilità]
+
+                
+What we can deduce from this result is that, from the second half of 16
+th
+ century, The Last Judgement by
+                    Michelangelo plays the role of universal reference to illustrate or exemplify a
+                    wide range of aspects concerning the visual arts, being used by each author in a
+                    different way. The Art of Painting, as an encyclopaedic
+                    treatise, brings together many of these interpretations, which Pacheco unifies
+                    into a single point of view.
+
+                
+The most interesting results arise when we use a complete repository of works,
+                    images, and texts. For example, if we consider a repository of Spanish 17
+th
+ treatises, as ATENEA Project
+         (
+link
+)
+   , we might find the
+                    following types of relationships:
+
+                
+[The Last Judgement of Michelangelo] described by [Pacheco, 1649] and [Carducho, 1634] only mentioned by
+                        [Martínez, ca. 1675]
+
+                
+[The Last Judgement of Michelangelo] described by [Pacheco] and [Carducho] with coinciding terms [confusión, temor, horribilidad, terrible].
+
+
+            
+            
+                
+Conclusions and Future Developments
+
+                
+As an initial task, Religo is provided with all the typical features to operate
+                    on texts and images in terms of combination of interacting tools for example to
+                    describe and catalogue visual artefacts, to analyse images, to manipulate
+                    images, or to annotate images (whole or partly).
+
+                
+Together with the standalone version, an online should be allowed in order to
+                    ensure content sharing and social tagging in expert contexts of usage.
+
+                
+Moreover, the system would be generalized for use in other different domains and
+                    would have the capacity to handle other types of entities such as audio and
+                    video.
+
+            
+        
+References:
+
+            
+                
+                    
+
+                        Buzzetti, D.
+                        2004
+                         “Diacritical Ambiguity and Markup, ” 
+                        Augmenting Comprehension: Digital Tools and the History of
+                            Ideas, 
+                        D. Buzzetti, G. Pancaldi, and H. Short (eds.)
+                        Office for Humanities Communication
+                        London-Oxford
+                    
+
+                    
+
+                        Heffernan, J.
+                        2006
+                        Cultivating picturacy: visual art and verbal
+                            interventions, 
+                        Baylor University Press
+                        Waco, TX
+                    
+
+                    
+
+                        Mitchell, W.J.T.
+                        1994
+                        Picture Theory: Essays on Verbal and Visual
+                            Representation, 
+                        Chicago University Press
+                        Chicago
+                    
+
+
+                
+            
+        

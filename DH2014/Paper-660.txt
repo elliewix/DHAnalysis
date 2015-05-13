@@ -1,0 +1,271 @@
+Visualizing Computational, Transversal Narratives from the World Trade Towers
+
+    
+Category:
+Long Paper
+
+      
+Session:
+4
+
+      
+Date:
+2014-07-10
+Time:
+09:00:00
+
+      
+Room:
+414 - Amphimax
+
+    
+
+        
+Miller
+,
+									
+Ben
+
+        
+
+          
+
+        
+Departments of English and Communication, Georgia State University
+
+      
+
+      
+
+        
+Shrestha
+,
+									
+Ayush
+
+        
+
+          
+
+        
+Department of Computer Science, Georgia State University
+
+      
+
+      
+
+        
+Olive
+,
+									
+Jennifer
+
+        
+
+          
+
+        
+Department of English, Georgia State University
+
+      
+
+    
+
+  
+
+  
+
+  
+I. Introduction
+
+  
+Following the attacks of September 11, 2001, interviews were conducted with first responders to the World Trade Towers. Each of those 503 interviews describes one witness account of the event – skyscrapers collapsing, choking dust, chaotic communications, fatal desperation. Although focused on individual narratives, each interview corresponds to a larger sequence of events: two massive violations of the right to life that took place in New York City. Given this larger frame, a documentation source dense relative to the event's spatiotemporality, and the evocative, idiosyncratic nature of testimony, we developed a method to computationally elicit and visualize the narratives running across the corpus. This paper describes the work's narratological theory, the visualization developed to facilitate the identification and exploration of transversal narratives, and our analysis of the World Trade Center (WTC) Task Force Interviews.
+
+  
+II. Fabula and witness testimony
+
+  
+As testimony, for 
+1
+, is centered on the body, and the body is contingent with the witness, our analyses focused on the fabular, raw events of the narrative as a foundation for crossdocument coreference. Narrative testimonies like these are, to 
+2
+, speech acts in the public sphere that serve to solidify a collective memory. Witnessing, consequently, is historiography dependent upon comprehensible dramatic unity as put forward in 
+3
+. Narratology indicates that the four primary elements of fabula are events, actors, time, and location 
+4
+. This corresponds to the events model proposed by 
+5
+ for human rights violations reporting. Accordingly, we extracted information from the WTC corpus corresponding to these elements, enalbling the decontextualization of information from existing narration, the identification of conflicting, factually questionable accounts, and the visualization of transversal narratives.
+
+  
+III. Applied narratology
+
+  
+The semi-automated information extraction pipeline described in  necessitated a method for spatio-temporal interpolation based on keyframing. Events appearing in many narratives, such as the collision of Flight 175 into Tower 2, become key moments for emploting fabula. Given a sufficient number of these events, and of geocodable locations, absolute referents for intermediary material can be interpolated with an accuracy sufficient for correlation. Lookups to gazetteers provided absolute keyframe data. 
+
+  
+For extracted Storygrams (computed fabula) of person-place-time without absolute reference, a dramaturgical sequence numbering system was used to emplot all events in the order in which they occurred. These sequence numbers were used to provide interpolated time for events between keytimes. Quotations were used for the named and unnamed entities. Gazetteers were developed to provide absolute values for key times and locations; the global timing list contained 11 events, of which 8 were used. The location list comprised 2,151 names indicating 1,399 unique locations. Many locations lacked a geocodable referent. In those cases, we interpolated the data to suggest a likely location. Recognition of Storygram elements enabled cross-document coreference of implicit entities. Correlation of personal and global data, when visualized, revealed narratives running transversely throughout the corpus.
+
+  
+IV. Narrative visualization
+
+  
+Many tools can visualize temporal aspects of events, notably timeviz.net 
+7
+, and Google charts. Spatial visualization is dominated by mapping tools like Google Maps and Earth, Open Street Maps, ArcGIS, and MapBox. Tools like Google Earth visually animate changes over time. Animations are cognitively demanding, requiring viewers to track changes frame-by-frame. Irregular intervals make this task more problematic.
+
+  
+Multiple interactive 2D synchronous views for time and location are an alternative to animations; operations like zooming, panning, and filtering in one view automatically updates the remaining views. Color and shape are other ways to represent event information. Jern et al. use color coding to link temporal data with spatial data 
+8
+. Color meaning is culturally dependent, so it is not reliably intuitive. In addition, color palettes have to be constrained to allow for visual disambiguation, thereby forcing the system to artificially bin events to a number of discrete color values. Event type diversity should dictate design, not the number of recognizable color options. Shapes present their own challenges 
+9
+. Events can also be shown using a 3D space like Kachina Cube 
+10
+.The cube base on the X-Y plane contains a map and the Z-axis represents time. Though 'details-on-demand' techniques can be applied to the visualization, this approach suffers from generic 3D problems like glyph cluttering and scalability. Also, it is often hard in 3D UIs to compare data points in two dimensions (X-Y and Z).
+
+  
+V. Storygraph and narrative
+
+  
+To visualize the narratives and address the issues above, we developed a 2D integrated spatiotemporal visualization called Storygraph 
+11
+. Storygraph, an extension of parallel coordinates 
+12
+, has two parallel vertical axes and an orthogonal horizontal axis. Our novel application adapts this information-rich visualization technique for the presentation of explicit and implicit narrative. The vertical axes represent latitude and longitude and the orthogonal axis represents time. A map location, such as a city or street corner, is represented as a line segment linking the parallel axes. Events occurring at a location are represented by a point on the location line as shown in Figure 1. This technique shows, in 2D, the scope of a corpus, the relative frequency of documentation at all locations in the corpus, and patterns like co-occurrence in time, co-occurrence at location, or co-occurrence in time and location – one of the unique properties of Storygraph.
+
+  
+Storygraph also facilitates Storylines: linear connections emphasizing the movement of people through the spatiotemporal context of the corpus. Storylines are polyline segments chronologically connecting entities at location. In our implementation, we use dotted lines for storylines to mark the uncertain space between observations.
+
+  
+VI. Visualizations of transversal narratives of 9/11
+
+  
+We applied our visualization to the WTC corpus comprising 17,000 question and answer pairs aimed to elicit first-person narratives of the event. To feed the data into the Storygraph, named and unnamed entities were extracted. This semi-automated process involved much manual verification due to the ambiguity in the natural language.
+
+  
+Gray lines in Storygraph in Figure 1 indicate locations. Each red point shows one Storygram. Black vertical bars indicate global events: the collapse of Tower 1 and Tower 2, the period when people were seen leaping from the towers. The horizontal funnel layout of the points, with the mouth to the left axis, indicates that documentation shows people converging from a wider geographic area to the narrow area around Ground Zero. In essence, Figure 1 shows first responders converging on the scene of two terrorist attacks.
+
+  
+
+    
+Fig. 1: Storygraph showing all the events extracted from the narratives of the firefighters.
+
+    
+
+  
+Figure 2 uses the same data to show Storylines of four emergency personnel as they move throughout the spatio-temporal corpus domain. Four features in Figure 2 are of particular importance. First, the geographic domain is highly constrained and covers an area from Staten Island to Central Park. Second, with just 10-20 extracted fabula, a sense of the path of these individuals through the event emerges. The chaotic jumble of points in the period from 8:39 AM to 9:30 AM corresponds to the event's most chaotic moments. Third, the lines of Firefighters Loutsky and Smith stabilize at two locations as they move from emergent crisis to emergency care. And finally, there is the blue storyline of Chief Ganci, which ends at 10 : 12 at 40.71, −74.01, approximately 16 minutes prior to the collapse of WTC Tower 1. Chief Ganci, the highest ranking uniformed fire officer in FDNY, died in that collapse. What Storygraph enables is the identification and organization of fragments from others' statements to reveal the story of what happened to Ganci that day.
+
+  
+
+    
+Fig. 2: Storylines of three firefighters and one EMT.
+
+    
+
+  
+VII. Next steps: violations taxonomy and the South Africa truth and reconciliation corpus 
+
+  
+Extensions of this work will begin with analysis of South Africas Truth and Reconciliation Proceedings. Over a two-year period, the TRC collected 7,000 amnesty applications and 22,000 witness statements describing 34 years of abuses occurring nationwide. This material will expand our techniques to larger geographic contexts, more diverse time frames, elements of a second-language, and a much wider range of rights violations. As each mass violation event has a particular violations ecology 
+13
+, one challenge for violations researchers is to identify the emblematic subset of violations. Currently, we are working on methods for the automatic correlation of a violation description to a taxonomy of violations 
+14
+. This method will help classify the narrative events in the context of particular violations within each narrative and further our work in entity resolution. It will also expand our methods into what Salway and Herman refer to as top-down, hypothesis-driven, and bottom-up, data-driven, methods 
+15
+. Additional visualization elements currently under development include UI tweaks to automatically generate a colorspace, and analytic affordances allowing for the drilling down from Storygrams to the original source document fragments.
+
+  
+References
+
+  
+1. 
+Felman, S.
+ (1995) Education and crisis, or the vicissitudes of teaching. In Trauma: Explorations in memory, C. Caruth, Ed. JHU Press, pp. 13 – 60.
+          
+
+  
+2. 
+Torchin, L.
+ (2012) University of Minnesota Press.
+          
+
+  
+3. 
+White, H. 
+The structure of historical narrative (2010). In The fiction of narrative: Essays on history, literature, and theory, 1957–2007. JHU Press.
+          
+
+  
+4. 
+Bal, M.
+ (1997) Narratology: Introduction to the theory of narrative. University of Toronto Press.
+          
+
+  
+5. 
+Ball, P.D.
+ (1996) In Who did what to whom?: planning and implementing a large scale human rights data project, American Association for the Advancement of Science Washington, DC.
+          
+
+  
+6. 
+Miller, B., Shresta, A., Derby, J., Olive, J., Umpathy, K., Li, F., and Zhao, Y. Z.
+ (2013) Digging into human rights violations: Data modelling and collective memory. In IEEE Big Data 2013 (10 2013).
+          
+
+  
+7. 
+Aigner, W., Miksch, S., Müller, W., Sschumann, H., and Tominski, C.
+ (2007) Visualizing time-oriented data systematic view. Computers & Graphics 31, 3, 401–409.
+          
+
+  
+8. 
+Jern, M., and Franzen, J.
+ (2006) ”geoanalytics” - exploring spatio-temporal and multivariate data. In Proceedings of Tenth International Conference on Information Visualization (july 2006), pp. 25 –31.
+          
+
+  
+9. 
+Fry, B.
+ (2000) Organic information design. Master’s thesis, Massachusetts Institute of Technology, Cambridge, MA.
+          
+
+  
+10. 
+Ohno, S., Saito, S., and Inaba, M.
+ (2010) A platform for mining and visualizing regional collective culture. In Culture and computing. Springer, pp. 188–199.
+          
+
+  
+11. 
+Shresta, A., Miller, B., Zhu, Y., and Zhao, Y.
+ (2013) Storygraph: extracting patterns from spatio-temporal data. In Proceedings of the ACM SIGKDD Workshop on Interactive Data Exploration and Analytics (New York, NY, USA), IDEA ’13, ACM, pp. 95–103.
+          
+
+  
+12. 
+Inselberg, A.
+ (1985) The plane with parallel coordinates. The Visual Computer 1, 2, 69–91.
+          
+
+  
+13. 
+Cross, N., and Jarvis, H.
+ (1999) CGDB: Cambodian Genocide Data Bases. Input Manual for CBIB: CGP Bibliographic Database. Documentation Center of Cambodia, Phnom Penh, Cambodia.
+          
+
+  
+14. 
+Dueck, J., Guzman, M., Verstappen, B., and Huridocs.
+ (2001) Micro-thesauri: a tool for documenting human rights violations, vol. 12. and distributed by Huridocs Advice and Support Unit/Secretariat 48 chemin du Grand-Montfleury CH-1290 Versoix Switzerland Tel. 41.22. 755 5252, fax 41.22. 755 5260 Electronic mail: huridocs@ comlink. org Website: 
+www.
+ huridocs. org.
+          
+
+  
+15. 
+Salway, A., And Herman, D.
+ (2011) Digitized corpora as theory-building resource: New methods for narrative inquiry. In New Narratives: Stories and Storytelling in the Digital Age, R. Page and B. Thomas, Eds. U of Nebraska Press.
+          
+

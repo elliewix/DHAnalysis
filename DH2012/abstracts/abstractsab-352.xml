@@ -1,0 +1,384 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8; charset=UTF-8" /><title>Integration of Distributed Text Resources by Using Schema Matching Techniques</title><link rel="stylesheet" href="css/default/results.css" type="text/css" /><script src="script/yui/yahoo-dom-event.js" type="text/javascript"></script><script src="script/yui/connection-min.js" type="text/javascript"></script></head><body class="home blog"><div id="wrapper" class="hfeed"><div id="header"><div id="masthead"><div id="branding" role="banner"><h1 id="site-title"><span><a href="https://dh2011.stanford.edu/" title="Digital Humanities 2011: June 19 – 22" rel="home">Digital Humanities
+                2011: June 19 – 22</a></span></h1><div id="site-description">Big Tent Digital Humanities</div><img src="https://www.stanford.edu/group/dh2011/cgi-bin/wordpress/wp-content/uploads/2010/09/tieDyeLarge.jpg" width="940" height="198" alt="" /></div><div id="access" role="navigation"><div class="menu"><ul><li><a href="https://dh2011.stanford.edu/" title="Home">Home</a></li><li><a href="https://dh2011.stanford.edu/?page_id=3" title="About">About</a></li><li><a href="https://dh2011.stanford.edu/?page_id=15" title="Accommodations &amp; Travel">Accommodations &amp; Travel</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=887" title="Accommodations">Accommodations</a></li><li><a href="https://dh2011.stanford.edu/?page_id=883" title="Travel">Travel</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=311" title="Registration">Registration</a></li><li><a href="https://dh2011.stanford.edu/?page_id=411" title="Schedule">Schedule</a></li><li><a href="https://dh2011.stanford.edu/?page_id=475" title="Workshops">Workshops</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=489" title="Tutorial 1: Introductory TEI ODD">Tutorial 1: Introductory TEI ODD</a></li><li><a href="https://dh2011.stanford.edu/?page_id=499" title="Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the Undergraduate Curriculum">Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the
+                      Undergraduate Curriculum</a></li><li><a href="https://dh2011.stanford.edu/?page_id=507" title="Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can Help Your Project">Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can
+                      Help Your Project</a></li><li><a href="https://dh2011.stanford.edu/?page_id=517" title="Tutorial 4: Introduction to Text Analysis With Voyeur Tools">Tutorial
+                      4: Introduction to Text Analysis With Voyeur Tools</a></li><li><a href="https://dh2011.stanford.edu/?page_id=521" title="Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation">Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation</a></li><li><a href="https://dh2011.stanford.edu/?page_id=525" title="Tutorial 6: Natural Language Processing Tools for the Digital Humanities">Tutorial 6: Natural Language Processing Tools for the Digital Humanities</a></li><li><a href="https://dh2011.stanford.edu/?page_id=529" title="Tutorial 7: Network and Topical Analysis for the Humanities using NWB and Sci2">Tutorial 7: Network and Topical Analysis for the Humanities using NWB and
+                      Sci2</a></li><li><a href="https://dh2011.stanford.edu/?page_id=493" title="Workshop: Visualization for Literary History">Workshop: Visualization
+                      for Literary History</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=471" title="Social Program">Social
+                  Program</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=541" title="Literary San Francisco (Full Day)">Literary San Francisco (Full
+                      Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=547" title="Silicon Valley History (Half-Day)">Silicon Valley History
+                      (Half-Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=537" title="Sonoma Wine Country (Full-Day)">Sonoma Wine Country (Full-Day)</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=181" title="CFPs">CFPs</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=97" title="General CFP">General
+                      CFP</a></li><li><a href="https://dh2011.stanford.edu/?page_id=175" title="CFP en Español">CFP en
+                      Español</a></li><li><a href="https://dh2011.stanford.edu/?page_id=287" title="CFP in German">CFP in
+                      German</a></li><li><a href="https://dh2011.stanford.edu/?page_id=207" title="CFP in Greek">CFP in
+                      Greek</a></li><li><a href="https://dh2011.stanford.edu/?page_id=229" title="CFP in Hungarian">CFP
+                      in Hungarian</a></li><li><a href="https://dh2011.stanford.edu/?page_id=257" title="CFP in Italiano">CFP
+                      in Italiano</a></li><li><a href="https://dh2011.stanford.edu/?page_id=157" title="Tutorial/Workshop CFP">Tutorial/Workshop CFP</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=19" title="Contacts">Contacts</a></li><li><a href="https://dh2011.stanford.edu/?page_id=801" title="Venue">Venue</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=829" title="Local Lunch Spots">Local Lunch Spots</a></li><li><a href="https://dh2011.stanford.edu/?page_id=845" title="Palo Alto Restaurants">Palo Alto Restaurants</a></li></ul></li></ul></div></div><br class="clear" /></div></div><div class="resultsHeader"><table><tr><td><a href="http://dh2011abstracts.stanford.edu/xtf/search" target="_top">New Search</a> | <span class="notActive">Return to Search Results</span> | <a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-352.xml&amp;doc.view=print;chunk.id=0" target="_top">Print View</a></td><td align="right"><form action="http://dh2011abstracts.stanford.edu/xtf/view" target="_top" method="get"><input name="query" type="text" size="15" /><input type="hidden" name="docId" value="tei/ab-352.xml" /><input type="hidden" name="chunk.id" value="0" /><input type="submit" value="Search this Book" /></form></td></tr></table></div><hr /><div class="results"><h2>Paper: Integration of Distributed Text Resources by Using Schema Matching Techniques</h2><h4>
+          Eckart, Thomas, 
+          Natural Language Processing Group, Institute of Computer Science,
+              University of Leipzig, Germany, 
+          <a href="mailto:teckart@e-humanities.net">teckart@e-humanities.net</a>
+        </h4><h4>
+          Pansch, David, 
+          Natural Language Processing Group, Institute of Computer Science,
+              University of Leipzig, Germany, 
+          <a href="mailto:dpansch@eaqua.net">dpansch@eaqua.net</a>
+        </h4><h4>
+          Büchler, Marco, 
+          Natural Language Processing Group, Institute of Computer Science,
+              University of Leipzig, Germany, 
+          <a href="mailto:mbuechler@e-humanities.net">mbuechler@e-humanities.net</a>
+        </h4><hr />
+      
+        <h2>Scattered Landscapes</h2>
+        <p class="noindent">The world of humanities has seen an enormous growth in available digital text resources
+          in the last decade. This development was driven by many factors like advancements in
+          relevant technologies like OCR, increasing competence in the field of digital encoding and
+          publication, and the spreading of widely accepted encoding formats. It is by now widely
+          understood (among both researchers and funders) that publications and created resources
+          have to be standardized to ensure their relevance for future work and their (re-)use in a
+          linked data environment.</p>
+        <p class="noindent">More and more projects with partially very specific research questions are working on the
+          encoding of their results in various (mostly XML based) formats. Encoding standards and
+          formats were established that are widely used and supported by various tools and a helping
+          community. In the field of encoding textual resources the standards of the Text Encoding
+          Initiative (TEI) and their various dialects are well represented. To cover a wide range of
+          data it is common to create a specific dialect that fits the own data best without losing
+          all compatibility with other projects. As a consequence, various encoding variants exist
+          that cope with similar data but create different schemata to represent them. A drawback of
+          this specialism are problems with aggregating existing data stocks to one global resource:
+          Even combining solely meta data of editions of the same work becomes an expensive (since
+          labor intensive) task. Creating true hypertextuality in digital libraries (Berti et al.,
+          2009) that will massively connect resources in a distributed infrastructure will intensify
+          this problem. Hence data integration will gain relevance in the field of distributed
+          resources.</p>
+        <p class="noindent">Since data storage solutions like relational database management systems are often used
+          (for example when fast access to or complicated requests on the data is necessary) this
+          issue does not only apply on the XML data model. These systems often use ETL-procedures
+          (Extract, Transform, Load) to gain uniform and comparable data. The key problem remains
+          the same: A lot of time is spent to gain a clean stock of data and consistent meta data.
+          Experiences show that especially at projects using quantitative approaches, with a demand
+          for large (and as homogeneous as possible) data sets, up to one third of all human
+          resources are needed to overcome different kinds of heterogeneity.</p>
+        <p class="noindent">This paper concentrates on the question how existing schema matching techniques that are
+          established in data warehousing and information integration can be used to identify
+          identical structures of different editions of the same source material. Therefore a high
+          similarity of the content can be assumed, whereas structural and semantic heterogeneity
+          prevents fast integration. As all modern storage solutions rely on schema definitions, it
+          was not the task to identify corresponding element instances of two documents but to
+          identify correspondences between collections of documents. For this reason in the
+          following the term 'element' will be used for the set of all elements having the same
+          position in one schema (for example all <i>TEI/teiHeader/fileDesc/titleStmt/title</i>elements in a set of XML files or all values
+          for one column <i>work-name</i>in a relational database table).</p>
+        <p class="noindent">This approach has two advantages: generic profiles for every schema element can be
+          created (thus minimizing the effects of outliers) and computational time is reduced by
+          minimizing the number of comparisons that have to be made to find useful schema
+          mappings.</p>
+        <p class="noindent">To illustrate the procedure different versions of the Duke Databank of Documentary Papyri
+          (DDbDP) were used. These include the Perseus version of the DDbDP, its EpiDoc encoded
+          equivalent (Epiduke) and an extraction from the latter, stored in a flat relational
+          schema. These data are only to be seen as a first testing environment. Further evaluation
+          on other text types is in progress.</p>
+      
+      
+        <h2>General Approach</h2>
+        <p class="noindent">The whole process of finding corresponding elements or larger element structures can be
+          separated into three major working steps: 
+            <li>Fingerprinting: By using various features a fingerprint is created for every
+              element, taking different element properties into account.</li>
+            <li>Linking: Elements of both schemata are chosen pairwise that are likely matching
+              candidates.</li>
+            <li>Scoring: Every linked pair is scored by a similarity measure.</li>
+          </p>
+        <p class="noindent">To identify corresponding elements of two schemata, for every addressable element various
+          features are used. These features address different types of similarity like structural
+          similarity (with the focus on schema information) or semantic similarity (with the focus
+          on elements' content). Most of the used features do not depend on specific structures or
+          access methods, hence every addressable element can be used and compared. As a consequence
+          XML or SGML documents, columns in a relational database or every other (semi-)structured
+          input schema can be used. Existing works have shown that using only a single feature is
+          not sufficient to identify similarity (Algergawy et al., 2009). For this reason all
+          measures are combined and normalized by a weighted sum.</p>
+        <p class="noindent">As there is a wide range of syntactic and semantic ambiguities it is unlikely to achieve
+          a full automated matching. Hence it is the goal to establish an integration procedure that
+          allows a more efficient handling of new data resources to minimize the effort of
+          integrating these resources into an existing data stock.</p>
+      
+      
+        <h2>Methodology</h2>
+        
+          <h2>Used Features</h2>
+          <p class="noindent">A wide range of different features are known in the field of data integration. Some of
+            these make use of structural schema information (schema based) while others use the
+            elements' content (instance based). A constraint based approach checks the type and
+            limitations of data, e.g. the domain of numbers or the differences in cardinality or
+            uniqueness of elements. These features work on different levels: some concentrate on the
+            combination of elements, their hierarchy or their number of child nodes (structure
+            level), while others focus on individual elements and their attributes (element
+            level).</p>
+          <p class="noindent">The following features were tested on their usefulness for the described problem. Table
+            1 gives a short overview of used approaches and their classification (based on Rahm et
+            al., 2009). 
+              <li>
+                <i>Name similarity</i>uses the Levenshtein distance to compute
+                string similarity of database column names, respectively XML element names. For
+                example an element name <i>authors</i>has a distance of 1 from an
+                element named <i>author</i>, but a distance of 5 from the string <i>work</i>.</li>
+              <li>
+                <i>Path similarity</i>compares the structural depth of elements,
+                under the assumption that similar elements have similar positions (and therefore
+                similar distances to the root element) in their respective schema.</li>
+              <li>
+                <i>Cosine similarity</i>uses the Vector Space Model by representing
+                the content (i.e. the occurring terms) of every element as a vector in a high
+                dimensional vector space. To reflect different importance of terms (for example stop
+                words versus domain-specific keywords) all terms are weighted by using the <i>tf.idf</i>measure (Salton et al., 1988). The result vectors are
+                compared using the cosine similarity: $sim_{cos}(p_1, p_2) =
+                  \frac{v_{p1} \cdot v_{p2}}{|v_{p1}| \cdot |v_{p2}|}$.</li>
+              <li>
+                <i>Dice coefficient</i>calculates the ratio of words, that appear in
+                both compared elements to all occurring words: $sim_{dice}(p_1,p_2) = \frac{2 |W_{p1} \cap W_{p2}|}{|W_{p1}| +
+                  |W_{p2}|}$. For example an element that contains the words {bank, money,
+                account, credit} is similar to an element containing the words {bank, money,
+                account, financial} (Dice coefficient = 0.75), but less similar to an element
+                containing the words {bank, river, water} (Dice coefficient ~ 0.29)</li>
+              <li>
+                <i>Frequency similarity</i>uses the assumption that similar content
+                is encoded by a similar number of elements. Therefore this measure produces a high
+                value if the number of occurrences of the compared elements are similar.</li>
+              <li>
+                <i>Content type</i>compares the ratio of numbers to letters. Hence
+                an element with mostly numbers becomes dissimilar to an element containing mostly
+                textual data.</li>
+            All results were normalized to the interval [0,1] (where necessary), `0'
+            corresponding to no similarity and `1' to identity.</p>
+          <p class="noindent">Features that address the element's content use all available data: For example the
+            union of all text addressable with the same XPath expression in a collection of XML
+            files or all data in a column of a relational schema.</p>
+          <table border="1">
+            <h2>Overview of used measures and their classification</h2>
+            <tr>
+              <td role="label">Similarity measure </td>
+              <td role="label">Schema-based </td>
+              <td role="label">Instance-based </td>
+              <td role="label">Constraint-based </td>
+              <td role="label">Structure level </td>
+              <td role="label">Element level </td>
+             </tr>
+            <tr>
+              <td>Name </td>
+              <td>x </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>x </td>
+             </tr>
+            <tr>
+              <td>Path </td>
+              <td>x </td>
+              <td></td>
+              <td></td>
+              <td>x </td>
+              <td></td>
+             </tr>
+            <tr>
+              <td>Cosine </td>
+              <td></td>
+              <td>x </td>
+              <td></td>
+              <td></td>
+              <td>x </td>
+             </tr>
+            <tr>
+              <td>Dice </td>
+              <td></td>
+              <td>x </td>
+              <td></td>
+              <td></td>
+              <td>x </td>
+             </tr>
+            <tr>
+              <td>Frequency </td>
+              <td>x </td>
+              <td></td>
+              <td>x </td>
+              <td>x </td>
+              <td>x </td>
+             </tr>
+            <tr>
+              <td>Content type </td>
+              <td></td>
+              <td>x </td>
+              <td>x </td>
+              <td></td>
+              <td>x </td>
+             </tr>
+           </table>
+        
+        
+          <h2>Linking</h2>
+          <p class="noindent">Experiments have shown that many elements in the chosen XML collections occur very
+            rarely. Therefore only elements were considered that occur in at least 50 percent of all
+            documents of the respective collection to reduce the computation time. All other
+            elements of both compared data sets were linked with each other.</p>
+          <p class="noindent">In general a more sophisticated approach would be useful to minimize the number of
+            comparisons. This holds especially true in a distributed environment where network
+            response and transmission time is a limiting factor. This was not considered in this
+            work as the focus was on identifying useful features and all resources were locally
+            available.</p>
+        
+        
+          <h2>Scoring and Results</h2>
+          <p class="noindent">The values of all similarity measures are combined by a weighted sum, yielding a
+            similarity value between `0' (no similarity) and `1' (identity). Starting by identical
+            weights for all measures the weights were iteratively adjusted to enhance the matching
+            precision.</p>
+          <p class="noindent">The results show that especially the instance-based approaches (Dice and Cosine) were
+            successful for identifying matching elements. These measures worked well on both XML-XML
+            and relational database-XML comparisons. All other measures turned out to be strongly
+            dependent on the compared formats.</p>
+          <p class="noindent">Especially structural differences between optimized (and redundancy-free) relational
+            schemata and XML documents prevent good results when relying solely on schema
+            information: in these cases matching precision drops significantly. Only instance-based
+            measures (Dice, Cosine, and content type similarity) achieved good results, whereas all
+            other measures could be ignored (hence weighted with 0).</p>
+          <p class="noindent">A more balanced result shows in the XML-XML analysis: as both document collections are
+            based on subsets of TEI formats many relevant elements are similar regarding their name
+            and position in the XML structure tree. Therefore especially name similarity turned out
+            to be a useful indicator for matching elements. Nonetheless again instance based
+            measures performed best on these comparisons.</p>
+        
+        
+          <h2>Visualization</h2>
+          <p class="noindent">A graphical user interface was created to visualize the pairwise similarity of
+            elements. In a matrix (c.f. Figure 1) every row stands for an element of the document
+            collection 1 and every column for an element of document collection 2 (or database
+            columns in case of a relational schema). Each cell contains the weighted sum of
+            similarity values for the two respective elements. High certainty values are emphasized
+            with a strong green color. A tooltip on each cell gives additional information about the
+            comparison results (used features and similarity values).</p>
+          <p class="noindent">Figure 1 shows an excerpt of a result matrix where a relational database is compared to
+            a collection of XML files. Every column represents a database column of the extracted
+            version of the Epiduke, every row represents a path in Perseus' DDbDP XML files. As an
+            example the element <i>placeName</i>from the collection of XML files has
+            a strong similarity to the <i>geography</i>column in the database, even
+            though different element names were used. By analyzing their content it becomes obvious
+            that there is a strong extensional overlap between these elements' content. On the other
+            hand there are no similar XML elements for the database column <i>female</i>(information about the author's gender) and <i>work_id</i>(a database-specific identifier for every work). This is due to the fact
+            that both elements were created during the extraction process (or the following
+            post-processing) and therefore have no corresponding elements in the original
+            material.</p>
+          <p class="noindent">
+            <p>
+              <h2>Figure 1: Graphical output for comparison of epigraphic data
+                  hold in Perseus' DDbDP XML and an extracted version of the Epiduke.</h2>
+              <img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei/352/figure1.jpg" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-352.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei/352/figure1.jpg','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+            </p>
+          </p>
+        
+      
+      
+        <h2>Conclusions and Further Work</h2>
+        <p class="noindent">Various comparisons have shown that especially semantic approaches are promising for
+          identifying similar elements. Apparently these measures' results will degrade when data is
+          compared with a very small semantic overlap (like editions of different domains or
+          languages). As a consequence structural information could be taken into account. For the
+          analyzed data these measures proved useful where complex structures exist, but failed on
+          flat relational schemata.</p>
+        <p class="noindent">The existing system is only to be seen as a prototype that will be extended in the
+          future. The further focus will be set on adding new features and analysis of an extended
+          set of input. It is expected that more efficient and domain-specific profiles can be
+          created that will be basis for useful weights and combinations of features. Additionally
+          it is expected that the results can be improved by using a more in-deep view on the data
+          (like identification of key words) or further exploitation of structural information (by
+          including schema definitions into the classification process).</p>
+      
+    <h2>References:</h2>
+      
+        
+          <p>
+            Algergawy, A.
+            Nayak, R.
+            Saake, G.
+            2009
+             “XML Schema Element Similarity Measures: A Schema Matching
+              Context, ” 
+            <i>Confederated International Conferences, CoopIS, DOA,
+              IS, and ODBASE 2009 on On the Move to Meaningful Internet Systems OTM</i>, 
+            Vilamoura, Portugal, 
+            2009
+            1246-1253
+          </p>
+          <p>
+            Berti, M.
+            Romanello, M.
+            Babeu, A.
+            Crane, G.
+            2009
+             “Collecting fragmentary authors in a digital library, ” 
+            <i>9th ACM/IEEE-CS joint conference on Digital
+              libraries</i>, 
+            Austin, TX, USA, 
+            2009
+            259-262
+          </p>
+          <p>
+            Bizer, C.
+            Heath, T.
+            Berners-Lee, T.
+            2009
+             “Linked Data - The Story So Far, ” 
+            <i>International Journal on Semantic Web and Information Systems</i>, 
+            1-22
+          </p>
+          <p>
+            <i>Epiduke Online publication</i>, 
+            1 November 2010
+            
+         (<a href="http://epiduke.cch.kcl.ac.uk" target="blank">link</a>)
+   
+          </p>
+          <p>
+            <i>LaQuAT: Linking and Querying Ancient Texts</i>, 
+            28 November 2010
+            
+         (<a href="http://www.kcl.ac.uk/iss/cerch/projects/completed/laquat" target="blank">link</a>)
+   
+          </p>
+          <p>
+            Pansch, D.
+            2010
+            <i>Data Integration Methods for Structural Heterogeneous Data in an
+              eHumanity Context</i>, 
+            Leipzig
+          </p>
+          <p>
+            Rahm, E.
+            Bernstein, P.A.
+            2001
+             “A survey of approaches to automatic schema matching, ” 
+            <i>VLDB Journal</i>, 
+            10
+          </p>
+          <p>
+            Salton, G.
+            Buckley, C.
+            1988
+             “Term-weighting approaches in automatic text retrieval, ” 
+            <i>Information Processing and Management</i>, 
+            5
+            513--523
+          </p>
+          <p>
+            <i>TEI: Text Encoding Initiative</i>, 
+            23 November 2010
+            
+         (<a href="http://www.tei-c.org/index.xml" target="blank">link</a>)
+   
+          </p>
+        
+      
+    </div></div></body></html>

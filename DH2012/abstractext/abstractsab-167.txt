@@ -1,0 +1,329 @@
+Poster: The Wellcome Arabic Manuscripts Project
+
+                    Brey, Gerhard, 
+                    Centre for Computing in the Humanities, King's College
+                            London, UK, 
+                    
+gerhard.brey@kcl.ac.uk
+
+                
+This poster and software demonstration will present the Wellcome Arabic
+                    Manuscripts project. The aim of this project was to create a freely available
+                    online catalogue of ca. 500 mainly medical manuscripts written in Arabic that
+                    are preserved in the Wellcome Library (London, UK). Apart from the actual
+                    manuscript catalogue the outcomes of this project that are of particular
+                    relevance to the Digital Humanities are: 
+                        
+a TEI/ENRICH based XML schema adapted to meet the requirements of
+                            cataloguing Arabic manuscripts and in particular to accommodate detailed
+                            codicological and textual descriptions
+
+                        
+an open source, web-based, customizable cataloguing tool
+
+                        
+an online research tool that gives users free access to a wealth of
+                            metadata and digitized page images of the manuscripts in this
+                            collection
+
+                        
+high-quality digital images of each manuscript page linked to rich
+                            descriptive metadata.
+
+                    
+                
+                
+The project was partly funded by the Wellcome Trust and partly by a grant from
+                    the UK's JISC Islamic Studies Programme [
+Henshaw, 2009
+]. It is a collaboration between three institutions: 
+                        
+Wellcome Library, London, UK
+http://library.wellcome.ac.uk/
+
+                        
+Bibliotheca Alexandrina, Alexandria, Egypt
+http://bibalex.org/
+
+                        
+King's College London, London, UK
+http://www.kcl.ac.uk/cch/
+
+                    
+                
+                
+The Wellcome Library provided the cataloguing expertise and methodology, the
+                    digital images, and overall project management, while the web based tools were
+                    developed and are hosted by the Bibliotheca Alexandria. King's College London
+                    (Centre for Computing in the Humanities) managed the technical requirements
+                    specifications for the cataloguing tool, and adapted the TEI/ENRICH XML
+                            model
+http://library.wellcome.ac.uk/arabicproject.html
+. 
+
+                
+The cataloguing methodology and the approach to this project was guided by
+                    Wellcome's tripartite approach to cataloguing Oriental manuscripts. This
+                    approach suggests that a manuscript should be considered as a product of
+                    craftsmen, authors and readers and therefore its production, intellectual
+                    content and subsequent use. The description of a manuscript is carried out
+                    having these three aspects in mind, viewing the manuscript: 
+                        
+as a museum object (palaeography, codicology)
+
+                        
+as an intellectual creation (texts)
+
+                        
+under historical user aspect (provenance, owners, editors,
+                            etc.)
+
+                    
+                
+                
+As a reflection of this approach the manuscripts were catalogued in much more
+                    detail than a typical library manuscript catalogue, particularly in the areas of
+                    the materiality of the manuscript and the description of the textual content. In
+                    practical terms this approach -- together with the newly created tool described
+                    below -- allowed the cataloguing tasks to be allocated according to competence
+                    and practicality. The detailed codicological description, best done on the
+                    actual physical object, was carried out by conservators at the Wellcome Library,
+                    whereas the detailed description of the textual content (down to the
+                    transcription of chapter headings) was undertaken by cataloguers at the
+                    Bibliotheca Alexandrina. 
+
+                
+A key objective of the project was that the encoding model should follow
+                    established standards to ensure interoperability of the manuscript catalogue and
+                    to make it extendable and as flexible as possible. A model based on
+                            TEI
+http://www.tei-c.org/
+ and the format used
+                    by ENRICH
+http://enrich.manuscriptorium.com/
+ (a
+                    European manuscript cataloguing project) was chosen [
+Pierazzo, 2010
+]. The basic TEI/ENRICH model had to
+                    be adapted and customized to accommodate the needs of the tripartite approach.
+                    It had to be ensured, for example, that the model is compatible with standards
+                    such as Ligatus
+http://www.ligatus.org.uk/
+, an emerging
+                    standard for the detailed description of book binding features. Other extensions
+                    to the model were needed to enable the description of the very detailed physical
+                    features from a conservator's point of view, such as flaps, endbands, or covers.
+                    From a more palaeographical perspective various features relating to the scribe
+                    had to be added, for example an element to describe the Mistara, an impression
+                    on the paper achieved by applying a kind of stamp that indicated the lines a
+                    scribe would then write on. Other important palaeographical features that had to
+                    be represented were the coefficients calculated by using the "Pace" method, a
+                    system devised by Nikolaj Serikoff [
+Serikoff, 2001
+] to measure certain features of an Arabic script, such
+                    as angles of letters, or the ratio of connected and unconnected letters on a
+                    line. These features taken together are quite unique for a scribe or scribal
+                    school and help to situate a manuscript chronologically and geographically. In
+                    order to adequately represent the intellectual content of the manuscript,
+                    further adaptations were made. In order to fully represent compound Muslim
+                    names, for example, fields for their constituent parts (e. g. patronymic,
+                    honorific) were introduced. Additional incipit-like elements were also needed to
+                    hold those formulaic passages at the beginning of Arabic manuscript texts (the
+                    Basmallah, or Tahmid that superficially look like invocations, but that also
+                    tell about the subject area of the text to follow, or the origin of the author. 
+
+                
+In addition to the cataloguing effort by the cataloguers at the Bibliotheca
+                    Alexandrina, all of the technical development was undertaken by the Egyptian
+                    partners. The two outcomes of this substantial development effort are the web
+                    based cataloguing tool for data input and administration by Wellcome and
+                    Bibliotheca Alexandrina cataloguers and the online research tool that enables
+                    scholars and the wider public access to the rich material via browsing and
+                    searching. 
+
+                
+The web-based tool was designed to allow the cataloguing of manuscripts into
+                    valid TEI XML files without prior specialist XML knowledge. This was achieved
+                    via the development of a Schema driven editor (SDXE) together with a
+                    "configuration grammar", the XML Skeleton Annotations (XSA) [
+Aboulnaga, 2010
+]. 
+
+                
+The XSA system automatically builds JSF (JavaServer Faces) based XML editors.
+                    These editors in turn produce schema compliant XML files that follow a certain
+                    XML skeleton. To enable users to author such XML files, the system generates web
+                    forms with fields for each data holding XML element in the skeleton. It does
+                    this by reading an XML Skeleton Annotations file (XSA.xml) that
+                    contains definitions for each location in the XML skeleton including a label, a
+                    help text, authority lists, user access rights, and various other information
+                    used by the system to generate the web forms. The XSA system uses the Schema
+                    Driven XML Editor to generate schema compliant XML files. The steps necessary to
+                    generate a website using XSA are as follows: 
+                        
+authoring of an XSA.xml configuration file
+
+                        
+optional creation of facelet templates for look and feel
+
+                        
+creation of a blank XML record template
+
+                    
+                
+                
+The central component of the cataloguing tool is the XSA configuration file. By
+                    changing this file it is possible to adapt the cataloguing tool for any other
+                    similar manuscript cataloguing tasks. 
+
+                
+The web based research tool, i.e. the online manuscript catalogue is directed
+                    towards both specialist and non-specialist use. This means that it has to
+                    provide functionalities that address scholarly users, palaeographers,
+                    conservators, but also a wider audience whose specialist fields lie in other
+                    areas. The research tool therefore offers entry points into the repository via
+                    multiple levels and access routes, such as browsing (alphabetic or faceted) or
+                    searching (simple or advanced) for a wide ranging set of criteria. The advanced
+                    browsing and searching mechanisms take into account features peculiar to
+                    manuscripts in Arabic, for example search by stem or search by root,
+                    differentiated again by normalized character forms or defective (i. e. dotless)
+                    character forms. 
+
+                
+ During the poster session we will give a live demonstration of the web based
+                    cataloguing tool and the online research tool. This will showcase the key
+                    features of both applications and highlight the problems that were encountered
+                    and how they were overcome 
+
+            
+            
+                
+Contributors to the Project
+
+                
+                    
+Wellcome Library
+
+                    
+
+                        
+                            
+Dr. Richard Aspin
+
+                            
+Dr. Christy Henshaw
+
+                            
+Dr. Nikolaj Serikoff
+
+                        
+                    
+                
+                
+                    
+Bibliotheca Alexandrina
+
+                    
+
+                        
+                            
+Prof. Magdy Nagi
+
+                            
+Dr. Noha Adly
+
+                            
+Younos Aboulnaga
+
+                        
+                    
+                
+                
+                    
+King's College London
+
+                    
+
+                        
+                            
+Simon Tanner
+
+                            
+Dr. Elena Pierazzo
+
+                            
+Gerhard Brey
+
+                        
+                    
+                
+            
+        
+References:
+
+            
+                
+                    
+
+                        Aboulnaga, Y.
+                        2010
+                         “XSA - XSD to configurable JSF UI, ” 
+                        software package, 
+         (
+link
+)
+   
+                        documentation wiki, 
+         (
+link
+)
+   
+                        October 2010
+                    
+
+                    
+
+                        Henshaw, C.
+                        2009
+                         “JISC funding for the Wellcome Arabic Manuscript Cataloguing
+                            Project, ” 
+                        Wellcome Library Blog, 
+                        14 August 2009
+                        
+         (
+link
+)
+   
+                        October 2010
+                    
+
+                    
+
+                        Pierazzo, E.
+                        2010
+                         “On the Arabic ENRICH schema, ” 
+                        Wellcome Library Blog, 
+                        27 August 2010
+                        
+         (
+link
+)
+   
+                        October 2010
+                    
+
+                    
+
+                        Serikoff, N.
+                        2001
+                         “Image and Letter: "Pace" in Arabic Script (a Thumbnail
+                            Index as a Tool for a Catalogue of Arabic Manuscripts. Principles and
+                            Criteria for its Construction), ” 
+                        Manuscripta Orientalia, 
+                        7
+                        56-66
+                    
+
+                
+            
+        

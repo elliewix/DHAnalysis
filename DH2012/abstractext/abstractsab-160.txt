@@ -1,0 +1,264 @@
+Poster: Modelling a Web Based Editing Environment for Critical Editions
+
+                    Litta Modignani Picozzi, Eleonora, 
+                    Department of Digital Humanities, King’s College
+                        London, 
+                    
+eleonora.litta@kcl.ac.uk
+
+                
+
+                    Noël, Geoffroy, 
+                    Department of Digital Humanities, King’s College
+                        London, 
+                    
+geoffroy.noel@kcl.ac.uk
+
+                
+
+                    Pierazzo, Elena, 
+                    Department of Digital Humanities, King’s College
+                        London, 
+                    
+elena.pierazzo@kcl.ac.uk
+
+                
+Critical editions can be complex objects to digitise both in the
+                    output/publication process and in the production.
+
+                
+In most cases, for the output, there is the need to manage facsimiles, a main
+                    text (with lots of diacritics, deletions, suppressions, supplied text), an
+                    apparatus (with a very dense, conventional notation), footnotes (with cross
+                    references and bibliographic references), and conventional markings for page
+                    breaks from previous editions and/or manuscripts, in the form of other digitised
+                    text or images. 
+
+                
+On the production side we have witnesses of the text, forming the direct
+                    tradition, in some cases followed by re-elaborations, contemporary or later
+                    translations, quotations that form the indirect tradition. This picture is
+                    usually completed by previous critical editions, commentaries, and a possibly
+                    large set of secondary references from other texts, dictionaries, biographies
+                    and prosopographical data. 
+
+                
+The present paper will outline an attempt made at the Department for Digital
+                    Humanities, King’s College LondonFormerly Centre for Computing in the
+                        Humanities. The name has been changed in spring 2011. to produce a
+                    model for new editions and translations of all English legal codes, edicts, and
+                    treatises produced up to the time of Magna Carta, 1215. 
+
+                
+This particular project, called Early English LawsEarly English Laws is
+                        currently in the early development stage and the first release of the
+                        resource can be found at 
+http://www.earlyenglishlaws.ac.uk
+, where a list of
+                        texts to be encoded has been made available. Funding for the project will be
+                        available only for an initial period of three years, during which an
+                        interface for the functioning of the whole repository will need to be made
+                        available together with a full image database and a number of recently
+                        published and new editions. Completion is expected to take ten years, during
+                        which several scholars from around the world will volunteer to edit a list
+                        of available laws and input their work directly into a web-based interface.
+                        This should ideally allow for a minimal amount of reworking by one or two
+                        people volunteering to review submissions., presents a situation
+                    which is even more complex with respect to what has been outlined above. This is
+                    because of two characteristics typical of legal texts: 
+
+                
+                    
+All the witnesses of a tradition were effective binding laws in a specific
+                        place and time, including the mistakes added in the production of the
+                        manuscript copy.
+
+                    
+Laws were constantly re-elaborated to become new laws and each of these
+                        stages of elaboration represents a fully effective law.
+
+                
+                
+This means that the legal text is regularly transmitted in a number of versions,
+                    witnesses of both the direct and the indirect tradition.
+
+                
+As a result, each law can be represented as a universe of texts and images that
+                    relate to each other: this universe can be exemplified in the figure below, a
+                    diagrammatic representation of the so-called Treaty of Edward and Guthrum and
+                    its relations, one of which includes an Old English translation which has its
+                    own universe of relations (
+see figure
+                    1
+)
+                    
+
+                        
+Figure 1
+
+                        
+Full Size Image 
+
+                    
+                
+            
+            
+                
+The development of the project presents a series of problems, for which a series
+                    of solutions are being tested and implemented. The Early English Laws project
+                    represents a case study of a more general issue, namely how to model critical
+                    edition from a conceptual point of view.
+
+            
+            
+                
+The main concern until now has been the need to create a conceptual model for the
+                    editions in order to identify the best structure to support the variety of
+                    content offered by the project. The difficulty here lies in trying to apply the
+                    philological terminology and needs to the level of conceptual discrimination
+                    required by the normalisation process involved in the design of a relational
+                    database schema that can be able to connect related law codes. For instance the
+                    term 'text' is extremely ambiguous as it actually implicitly conveys different
+                    concepts such as a work, an edition, a version, a transcription or a translation
+                    (Carlyle, 2006). 
+
+                
+Failing to identify and address this issue would inevitably lead to a poor
+                    organisation of data. This, in turn, would confuse the editorial work and also
+                    generate inconsistencies, which will cause problems when developing the
+                    editorial environment and web site.
+
+                
+The solution to this problem is identifying each component of the text/image
+                    universe as entities, their properties and interrelationships can help to
+                    disambiguate concepts through the systematic analysis of the sample material.
+                    Borrowing elements from the FRBR model is also proving to be very useful in our
+                    attempt to discover and separate off hidden conceptual layers in our first
+                    version of the data model. The Entity-Relationship representation of the overall
+                    data model and the formal and careful definition of problematic concepts
+                    provides a shared vocabulary which helps the members of the project team to
+                    communicate with precision about the subject domain, whether they are from a
+                    programming or indeed from a solely humanistic background (Pierazzo, 2010).
+                    Moreover this conceptual data model serves as a basis for the transformation
+                    into a database schema, which will support the entire set of resources.
+
+            
+            
+                
+Given the variety of content involved in this project, this transformation into a
+                    database will be challenging as well. Indeed, the information captured by this
+                    project can be divided in two categories depending the format of its
+                    representation (
+see figure 2
+).
+                    
+
+                        
+Figure 2
+
+                        
+Full Size Image 
+
+                    
+                
+                
+                    
+The entities identified during the modelling process, their properties and
+                        the relationships among those entities. These are ideally stored in a
+                        relational database. The relational database is also very advantageous for
+                        the storage, editing, indexing and referencing of authority lists.
+
+                    
+All the information found in the text of the manuscript transcriptions or
+                        the peripheral textual information such as the critical apparatus, the
+                        introduction text for the manuscript, the comments. The best format for this
+                        type of information is XML with conformance to the TEI guidelines.
+
+                
+                
+The main challenge here is how can we harmoniously combine the two very different
+                    types of information within the same database management system, especially when
+                    we consider how deeply interrelated they are (e.g. an inline reference from one
+                    text to another or to an authority list will consist in inserting a primary key
+                    of relational tuples within an attribute of a TEI element).
+
+                
+To solve this, we are intending to exploit the XML-oriented facilities offered by
+                    recent relational database management systems to keep all the information
+                    centralised and linked up despite being hybrid in nature. Substantial custom
+                    development to the editing framework (possibly Django) is also expected in order
+                    to allow the user interface to acknowledge and seamlessly integrate the two
+                    types of data.
+
+            
+
+        
+References:
+
+            
+                
+                    
+
+                        
+                            TEI Consortium
+                        
+                        TEI P5:, 
+                        Guidelines for Electronic Text Encoding and
+                            Interchange, 
+                        1.7.0
+                        
+                        
+         (
+link
+)
+   
+                        
+                    
+
+                    
+
+                        Carlyle, Allyson
+                        2006
+                         “Understanding FRBR as a conceptual model: FRBR and the
+                            bibliographic universe, ” 
+                        Library Resources & Technical Services, 
+                        50 (4)
+                        264-273
+                    
+
+                    
+
+                        Danskin, Alan & Chapman, Ann
+                        2003
+                         “Bibliographic records in the computer age, ” 
+                        Library & Information Update, 
+                        2 (9)
+                        42-43
+                    
+
+                    
+
+                        1903–1916
+                         “Peace of Edward and Guthrum, ” 
+                        Die Gesetze der Angelsachsen, 
+                        Liebermann, Felix
+                        128–134
+                    
+
+                    
+
+                        Pierazzo, Elena 
+                        2010
+                         “Editorial Teamwork in a Digital Environment, ” 
+                        Jahrbuch für Computerphilologie, 
+                        10
+                        
+         (
+link
+)
+   
+                    
+
+                
+            
+        

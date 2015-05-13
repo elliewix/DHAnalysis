@@ -1,0 +1,365 @@
+A Collaborative, Indeterministic and partly Automatized Approach to Text Annotation
+
+    
+Category:
+Workshops
+
+      
+Session:
+
+      
+Date:
+2014-07-08
+Time:
+13:00:00
+
+      
+Room:
+3A - SwissTech
+
+    
+
+        
+Bögel
+,
+									
+Thomas
+
+        
+
+          
+
+        
+University of Heidelberg, Germany 
+
+      
+
+      
+
+        
+Gius
+,
+									
+Evelyn
+
+        
+
+          
+
+        
+University of Hamburg, Germany
+
+      
+
+      
+
+        
+Petris
+,
+									
+Marco
+
+        
+
+          
+
+        
+University of Hamburg, Germany
+
+      
+
+      
+
+        
+Strötgen
+,
+									
+Jannik
+
+        
+
+          
+
+        
+University of Heidelberg, Germany 
+
+      
+
+    
+
+  
+
+  
+
+  
+
+  
+1. Description
+
+
+  
+The web­based system CATMA (Computer Aided Text Markup and Analysis) was designed to
+address the interest essentially motivating human encounters with literature: hermeneutic, i.e.,
+“meaning” oriented high­order interpretation. In the scholarly interpretation of literature we are not
+looking for the right answer, but for new, plausible and relevant answers. This requires a true
+hermeneutic markup as defined by Pietz (2010: paragraph 1):
+
+
+  
+By "hermeneutic" markup I mean markup that is deliberately interpretive. It is not
+limited to describing aspects or features of a text that can be formally defined and
+objectively verified. Instead, it is devoted to recording a scholar's or analyst's
+observations and conjectures in an open­ended way. As markup, it is capable of
+automated and semi­automated processing, so that it can be processed at scale
+and transformed into different representations. By means of a markup regimen
+perhaps peculiar to itself, a text will be exposed to further processing such as text
+analysis, visualization or rendition. Texts subjected to consistent interpretive
+methodologies, or different interpretive methodologies applied to the same text,
+can be compared. Rather than being devoted primarily to supporting data
+interchange and reuse – although these benefits would not be excluded –
+hermeneutic markup is focused on the presentation and explication of the
+interpretation it expresses.
+
+  
+CATMA has been developed to support McGann’s (2004) open­ended, discontinuous, and
+
+non­hierarchical model of text­processing. Its non­deterministic approach to markup allows the
+user to express many different readings directly in markup. The system not only enables
+collaborative research but it is based on an approach to markup that transcends the limitations
+of low­level text description, too. CATMA supports high­level semantic annotation through
+TEI­compliant, non­deterministic stand­off markup and acknowledges the standard practice in
+literary studies, i.e., a constant revision of interpretation (including one’s own) that does not
+necessarily amount to falsification. Moreover, it enables users to switch ad hoc between text
+annotation and text analysis in either direction as well as recursively.
+
+
+  
+In 2013 in a joint project, heureCLÉA , two research teams (one computer scientists, the second
+narratologists) started to focus on an exemplary hermeneutic "use case": the decoding of
+temporal information in narratives, namely the automatic detection of temporal phenomena in
+literary narratives.
+
+
+  
+For this purpose, we developed an approach based on both manual annotation of narratological
+phenomena andtherule­basedextractionandnormalizationoftemporalexpressionswhichare
+used as a starting point for machine learning. This project is still ongoing, but the automated
+annotation of temporal expressions and other linguistic features like POS (part­of­speech)
+tagging and sentence detection, as well as tense annotations based on morphological analysis,
+have already been implemented in CATMA and can be used for a combined automatic and
+manual annotation of texts.
+
+
+  
+In our tutorial, we will introduce the core annotation and analysis functionalities of CATMA and
+show how they can be combined with the annotations provided automatically by HeidelTime and
+other components. Participants will have the opportunity of testing the tool in a hands­on session
+where they can annotate their own texts or annotate collaboratively a text we will provide. We
+would like to engage participants in a design critique of CATMA and its components and a
+general discussion about requirements for text analysis tools in their fields of interest, too.
+
+
+  
+2. Tutorial Instructors
+
+
+  
+All tutorial instructors come from the developing team of the heureCLÉA project. We have been
+presenting and teaching CATMA, HeidelTime and heureCLÉA on various national and
+international occasions in the last years. Two of us have included crucial aspects from
+heureCLÉA in their PhD research projects, too.
+
+
+  
+Thomas Bögel
+, Institute of Computer Science, Heidelberg University
+
+
+  
+Thomas studied computational linguistics and is currently working as a researcher and pursuing
+his PhD at the Institute of Computer Science at Heidelberg University. His research focuses on
+event extraction and timeline generation, as well as the development of machine learning­based
+systems for temporal relation extraction from narrative texts.
+
+
+  
+Evelyn Gius
+, Department of Languages, Literature and Media, Faculty of the Humanities,
+University of Hamburg
+
+
+  
+Evelyn has been trained as a computational linguist and is now working in the field of literary
+computing as a researcher and lecturer. For her PhD project she has explored with CATMA the
+benefits of applying narratological categories from literary studies to the analysis of narrations of
+real­life labor conflicts.
+
+
+  
+Marco Petris
+, Department of Languages, Literature and Media, Faculty of the Humanities,
+University of Hamburg
+
+
+  
+Marco is a computer scientist with a strong affinity for the humanities and has been engaged in
+the creation of CATMA from the very beginning. As a research developer he is involved in all
+aspects of the design and implementation of tools for the Digital Humanities.
+
+
+  
+Jannik Strötgen
+. Institute of Computer Science, Heidelberg University
+
+
+  
+Jannik studied computational linguistics and economics at Heidelberg University before he joined
+the Institute of Computer Science as researcher and PhD student. His research focuses on
+temporal and geographic information extraction and retrieval, and he is the main developer of the
+widely­used, multilingual, cross­domain temporal tagger HeidelTime, which achieved the best
+results for the task of temporal tagging at TempEval­2010 (English) and TempEval­2013
+
+
+  
+
+    
+Contact address
+
+  
+
+  
+Evelyn Gius
+
+  
+
+Universität Hamburg
+
+  
+
+Department of Languages, Literature and Media
+Institut für Germanistik
+
+  
+
+Von­Melle­Park 6
+
+  
+
+20146 Hamburg
+
+  
+
+Tel + 49 40 42838 6942
+
+  
+
+Fax + 49 40 42838 3553
+evelyn.gius@uni­hamburg.de
+
+
+  
+3. Target audiences and number of participants
+
+
+  
+The primary users of CATMA are literary scholars, and graduate and undergraduate students of
+Literary Studies. Nevertheless, this tutorial is likely to be of interest also to:
+
+
+  
+humanities scholars of ALL fields concerned with text analysis (with and without
+experience in digital text analysis)
+
+
+    
+software developers in the humanities interested in non­deterministic text analysis and
+automated annotation
+
+
+  
+Expected number of participants: We can accommodate up to 25 participants.
+
+
+  
+4. Special requirements
+
+
+  
+Participants will be asked to bring their own laptops. We will need internet access for all
+participants and a screen projector.
+
+
+  
+5. Outline of the tutorial
+
+
+  
+The tutorial is designed as a 3,5 hours tutorial, including a break of approx. 30 minutes.
+Provisional format:
+
+
+  
+introduction to CATMA (10 min)
+
+
+    
+the CATMA approach to markup: indeterministic and collaborative markup functionalities
+(20 min)
+
+
+    
+automated tagging of temporal expressions provided by HeidelTime and other linguistic
+annotations by the UIMA­pipeline (30 min.)
+
+
+    
+hands­on session: annotating texts (30 min)
+(break: 30 min)
+
+
+    
+hands­on session: annotating texts (60 min)
+
+
+    
+the heureCLÉA approach to narratological phenomena of time (15 min)
+
+
+    
+wrap up discussion (15 min) 
+
+  
+
+					References
+
+  
+www.catma.de (last seen 2014­02­17)
+
+  
+Piez, Wendell
+ (2010), Towards Hermeneutic Markup: An architectural outline, King's College, DH 2010,
+London. Available from:
+http://dh2010.cch.kcl.ac.uk/academic­programme/abstracts/papers/html/ab­743.html (last seen
+2014­02­17). 
+
+  
+We define this distinction as follows: description cannot tolerate ambiguity, whereas an interpretation is an
+interpretation if and only if at least one alternative to it exists. Note that alternative interpretations are not
+subject to formal restrictions of binary logic: they can affirm, complement or contradict one another. In short,
+interpretations are of a probabilistic nature and highly context dependent.
+
+
+  
+heureCLÉA is a BMBF­funded eHumanities project run jointly by the University of Hamburg and Heidelberg
+University since the beginning of 2013 (cf. www.heureclea.de, last seen 2014­02­17).
+
+
+  
+cf. the accepted paper by 
+Janina Jacke and Jan Christoph Meister
+: Pushing Back the Boundary of
+Interpretation: Concept, Practice and Relevance of a Digital Heuristic 
+
+  
+References
+

@@ -1,0 +1,527 @@
+Poster: A Labanotation Editing Tool for Description and Reproduction of Stylized
+               Traditional Dance Body Motion
+
+               Choensawat, Worawat, 
+               School of Science and Engineering, Ritsumeikan University , 
+               
+gr0011es@ed.ritsumei.ac.jp
+
+            
+
+               Takahashi, Sachie, 
+               School of Letters, Ritsumeikan University , 
+               
+nr013082@ed.ritsumei.ac.jp,
+
+            
+
+               Nakamura, Minako, 
+               Graduate School of Humanities and Sciences, Ochanomizu University , 
+               
+nakamuraminako@gmail.com
+
+            
+
+               Hachimura, Kozaburo, 
+               School of Science and Engineering, Ritsumeikan University , 
+               
+hachimura@media.ritsumei.ac.jp
+
+            
+Introduction 
+
+
+            
+A stylized traditional dance has uniqueness in itself which reflects history,
+               culture, emotion expression, etc. When recording and representing this traditional
+               dance body motions, it is important to have capabilities for handling these very
+               characteristic body movements, which can probably be handled with the full-set of
+               Labanotation (Hutchinson, 1997). However, notation score becomes extremely
+               complicated, and we will not be able to comprehend what is that movement. 
+
+
+            
+We are facing a problem how to realize a method of describing detailed features and
+               nuance of artistic, traditional dance movements while suppressing the complexity in
+               notation score. 
+
+
+            
+Several graphics applications has been developed for preparing Labanotation scores
+               (Brown and Smoliar, 1976; Fox, 2000) and generating body movement (Calvert, 2007;
+               Coyle et al. 2005; Coyle et al. 2002;
+               Wilke et al. 2005). However none of them solved the
+               abovementioned problem yet. 
+
+
+            
+We have been working on a system named LabanEditor (Kojima et
+                  al. 2002; Nakamura and Hachimura, 2006). It includes functionalities of both
+               inputting/editing Labanotation score and displaying character animation so that
+               beginners who are not familiar with Labanotation can study about its description by a
+               trial-and-error approach. 
+
+
+            
+In this paper, we aim at description and reproduction of the body motion of stylized
+               traditional dances by using fundamental elements of Labanotation while keeping the
+               quality of body movement of CG character animation. We propose and implement a
+               dynamic template technique enabling users to notate stylized traditional dances and
+               reproducing it in 3D CG animation from a Labanotation score. 
+
+         
+         
+            
+Labanotation 
+
+
+            
+Labanotation is a graphical notation system for recording human body movements.
+               Figure 1 (a) is an example of Labanotation scores corresponding to dance motion. A
+               Labanotation score is drawn in a form of vertical staff where each column corresponds
+               to a body part. Figure 1 (b) shows the basic arrangement of columns in the staff. The
+               horizontal dimension of the staff represents the parts of the body, and the vertical
+               dimension represents time. 
+
+            
+
+                  
+Figure 1. Labanotation scores; (a) Example of Labanotation scores and (b)
+                     Columns of Labanotation representing body parts. 
+
+                  
+Full Size Image 
+
+               
+            
+         
+         
+            
+LabanEditor 
+
+
+            
+LabanEditor (Kojima et al. 2002) is an interactive graphical
+               editor for editing Labanotation scores and displaying the 3D CG character animation
+               associated with scores. 
+
+
+            
+We added the new features to LabanEditor as follow: 
+
+
+            
+
+               
+Dynamic template technique enabling users to notate movements and reproducing
+                  it in 3D CG animation using fundamental description of Labnotation. 
+
+
+               
+Motion control module for manipulate the motion expression among key-frames in
+                  order to make the animation more natural. 
+
+
+            
+
+            
+               
+User Interface 
+
+
+               
+With LabanEditor, users are able to input and edit the score and then display the
+                  CG animation immediately, which makes possible to interactively confirm the
+                  movements. Users can zoom in/out and change the viewpoint of the 3D scene on all
+                  three axes. 
+
+
+               
+While replaying the Labanotation score, users can observe the animation as well as
+                  the red horizontal line cursor, moving upward corresponding to the animation
+                  progresses, as shown in Figure 2. 
+
+
+               
+
+                  
+
+                     
+Figure 2. CG animation display window. 
+
+                     
+Full Size Image 
+
+                  
+               
+            
+            
+               
+Generating the CG Animation 
+
+
+               
+Labanotation scores can be represented as a simple format called LND (Kojima et al. 2002), which uses alphanumeric characters to
+                  represent basic symbols. To create 3D character animation, we have to convert LND
+                  into animation data. The format of LND representation is shown in Figure 3. The
+                  lines that begin with “#” indicate the fundamental parameters of Labanotation. The
+                  movement of a body part is specified by the line followed by a command
+                  “direction”, which corresponds to the Labanotation direction symbols. 
+
+               
+
+                  
+
+                     
+Figure 3. Example of LND. 
+
+                     
+Full Size Image 
+
+                  
+               
+               
+LND describes a pose just like key-frame body postures for animation, so that we
+                  can produce motion of the body part by simply applying interpolation between start
+                  and end key-frame poses. A key-frame pose of a body part at a timing corresponding
+                  to an end of the symbol is defined by a Labanotation symbol. 
+
+
+               
+Our system converts direction symbols into animation key-frames by using a
+                  template file for a mapping between the symbol and its corresponding pose of the
+                  body part. 
+
+
+               
+The template file describes the relationship between a direction symbol at the
+                  particular column and the rotation and the translation of the corresponding joint.
+                  Figure 4 shows a notation and description in a template file, and the resulting
+                  pose. 
+
+               
+
+                  
+
+                     
+Figure 4. Relationship between user input symbols and a template file;
+                        (a) User input symbol, (b) Part of a template file, and (c) Snapshot of the
+                        CG animation corresponding to the template in (b). 
+
+                     
+Full Size Image 
+
+                  
+               
+            
+            
+               
+Dynamic Template Technique 
+
+
+               
+Due to the rough resolution of fundamental elements of Labanotation, similar but
+                  distinct poses are sometimes defined with the same symbol in a Labanotation score. 
+
+
+               
+To solve this problem, we invented the method of dynamic templates in order to
+                  represent very specific movements using the fundamental subset of Labanotation
+                  symbols only. With the dynamic template technique, we can represent these
+                  characteristic motions by changing the template files dynamically during a display
+                  process, while using very fundamental symbols. 
+
+
+               
+Figure 5 (a) shows the interface of editing template file. Users can activate the
+                  editing window by double clicking on a Labanotation symbol. For example, suppose
+                  the symbol in the Labanotation score, indicated by a red color in Figure 5 (a),
+                  was selected by a user, then, the user can directly edit the joint angles on an
+                  editable template panel as shown in Figure 5(a). 
+
+
+               
+Alternatively, the graphically editable template, which is activated by clicking
+                  the „Animate‟ button in Figure 5 (a), enables the user to edit the template by
+                  adjusting the slide bars and observe the resulting pose as shown in Figure 5 (b). 
+
+
+               
+
+                  
+
+                     
+Figure 5. Interface for editing a template; (a) Template editing panel
+                        and (b) Graphical template editing panel. 
+
+                     
+Full Size Image 
+
+
+                     
+Full Size Image 
+
+                  
+
+               
+The information of template files is inserted into a LND file corresponding to the
+                  start time as shown in Figure 6. The command “#include” determines the template
+                  file used at a particular timing. As a result, in this case, the Labanotation
+                  score shown in Figure 5(a) will be interpreted as the LND file shown in Figure 6. 
+
+               
+
+                     
+Figure 6. Example of LND file using dynamic templates. 
+
+                     
+Full Size Image 
+
+                  
+
+               
+During the animation process, the Labanotation symbols, in format of LND, are
+                  mapped to the key-frame pose indicated by the current template. 
+
+            
+            
+               
+Motion Expression Control 
+
+
+               
+The motion expression control module controls the animation of character model
+                  from one key-frame to the next key-frame. We implemented a module for controlling
+                  the motion by applying a non-linear interpolation, cubic Bezier curve, in order to
+                  create natural movement. 
+
+
+               
+ EQUATION (1) 
+
+
+               
+Where f(t) is an interpolated position or joint angle at
+                  time t and a normalized time scaled from 0.0 to 1.0, respectively. P
+0
+(0,0) and P
+3
+(1,1) is the start and end points,
+                  respectively, while P
+1
+ and P
+2
+ are the
+                  control points which can be moved freely as shown in Figure 7. 
+
+               
+
+                     
+Figure 7. Motion expression controller user interface. 
+
+                     
+Full Size Image 
+
+                  
+
+
+               
+Figure 8 shows two snapshots of the CG animation corresponding to the motion
+                  expression graphs on the left. 
+
+               
+
+                     
+Figure 8. CG animation snapshots corresponding to the motion expression
+                        graphs. 
+
+                     
+Full Size Image 
+
+                  
+            
+         
+         
+            
+Use of LabanEditor for Noh Plays 
+
+
+            
+Noh is the most famous and characteristic Japanese traditional performing arts in the
+               stylized form of a musical dance-drama that has been performed since the 14th
+               century. There are about 240 plays in the repertoire from five Noh schools (Ortolani,
+               1995). 
+
+
+            
+Noh body movement is Japanese highly stylized and is not the same as ordinary human
+               movement. Therefore, the direction symbols used in Labanotation must be interpreted
+               differently when we handle Noh plays and generate body motion from it. This has been
+               realized by preparing motion template files which are editable to represent specific
+               motions in that particular performance. 
+
+
+            
+Snapshots of Noh motion are shown in Figure 9. Figure 9 (a) and (b) show the
+               reproduced animation of Noh body motion from Labanotation score using the Noh
+               templates and standard templates, respectively. 
+
+            
+
+               
+
+                  
+Figure 9. CG character animation of Noh Kata (Shitai) (a) CG character
+                     animation corresponding to the Labanotation score on the left using Noh
+                     (Shitai) template (b) CG character animation corresponding to the Labanotation
+                     score on the left using standard template. 
+
+                  
+Full Size Image 
+
+               
+         
+         
+            
+Conclusions 
+
+
+            
+In this paper we proposed an approach of description and reproduction of stylized
+               traditional dances such as Noh plays with Labanotation. A new version of LabanEditor,
+               LabanEditor3, successfully describes and reproduces Noh motions by using the dynamic
+               template method. 
+
+
+            
+We have obtained a major achievement. Our approach shows that we can describe and
+               reproduce Noh plays with the fundamental description of Labanotation, with a limited
+               number of symbols by using the dynamic template method. 
+
+         
+      
+References:
+
+         
+
+            
+               
+
+                  Hutchinson, A
+                  1977
+                   “Labanotation, ” 
+                  Theatre Arts Books
+               
+
+
+               
+
+                  Brown, M. D.
+                  Smoliar, S.W.
+                  1976
+                   “A Graphics Editor for Labanotation, ” 
+                  Proceedings of the 3rd Annual Conference on Computer Graphics,
+                     Interactive Techniques and Image Processing, ACM Computer Graphics, 
+                  10 (2)
+                  60-65
+               
+
+
+               
+
+                  Fox, I
+                  2000
+                   “Documentation Technology for the 21st Century, ” 
+                  World Dance 2000 Academic Conference, Papers and
+                     Abstracts, 
+                  137–142
+               
+
+
+               
+
+                  Calvert, T
+                  2007
+                   “Animating Dance, ” 
+                  Proceedings of Graphics Interface, 
+                  1-2
+               
+
+
+               
+
+                  Calvert, T
+                  Wilke , L
+                  Ryman, R and Fox, I
+                  2005
+                   “Applications of Computers to Dance, ” 
+                  IEEE Computer Graphics Application, 
+                  25
+                  2
+                  6-12
+               
+
+
+               
+
+                  Coyle, M
+                  Maranan, D and Calvert, T
+                  2002
+                   “A Tool for Translating Dance Notation to Animation, ” 
+                  Proceedings of Western Computer Graphics Symposium, 
+               
+
+
+               
+
+                  Wilke, L
+                  Calvert, T
+                  Ryman, R & Fox, I
+                  2005
+                   “From dance notation to human animation, The LabanDancer Project,
+                     Motion Capture and Retrieval, ” 
+                  Computer Animation and Virtual Worlds, 
+                  16
+                  3-4
+                  201-211
+               
+
+
+               
+
+                  Kojima, K
+                  Hachimura, K & Nakamura, M
+                  2002
+                   “LabanEditor: Graphical Editor for Dance Notation, ” 
+                  Proceedings of IEEE 2002 International, Workshop on Robot and
+                     Human Interactive Communication, 
+                  59-64
+               
+
+
+               
+
+                  Nakamura, M and Hachimura, K
+                  2006
+                   “An XML Representation of Labanotation, LabanXML, and Its
+                     Implementation on the Notation Editor LabanEditor2, ” . Review of the National Center for Digitization (Online Journal), 
+                  9
+                  47-51
+               
+
+
+               
+
+                  Ortolani, B
+                  1995
+                  The Japanese Theatre: From Shamanistic Ritual to Contemporary
+                     Pluralism, 
+                  Princeton University Press
+               
+
+
+            
+
+         
+
+      

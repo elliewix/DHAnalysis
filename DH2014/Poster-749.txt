@@ -1,0 +1,240 @@
+Orthography and Biblical Criticism
+
+    
+Category:
+Poster
+
+      
+Session:
+1
+
+      
+Date:
+2014-07-10
+Time:
+14:00:00
+
+      
+Room:
+Amphipôle Common Area
+
+    
+
+        
+Dershowitz
+,
+									
+Idan
+
+        
+
+          
+
+        
+Tel Aviv University, IL
+
+      
+
+      
+
+        
+Dershowitz
+,
+									
+Nachum
+
+        
+
+          
+
+        
+Tel Aviv University, IL
+
+      
+
+      
+
+        
+Hasid
+,
+									
+Tomer
+
+        
+
+          
+
+        
+Tel Aviv University, IL
+
+      
+
+      
+
+        
+Ta-Shma
+,
+									
+Amnon
+
+        
+
+          
+
+        
+Tel Aviv University, IL
+
+      
+
+    
+
+  
+Abstract
+
+  
+Biblical Hebrew exhibits considerable orthographic variability. A single word may be spelled in multiple ways—often within the same book. In this study, we set out to determine if these differences in spelling correspond in any way to scholarly theories regarding the authorship of the Pentateuch. We use a statistical test that is designed for use when there are many features to take into account, each of which occurs only sparsely. Our results indicate that despite the tortuous editing processes and countless generations of hand-copied manuscripts, certain statistically significant correlations between orthography and the hypothesized sources remain.
+
+  
+1 Introduction
+
+  
+The Pentateuch has been attributed to several major sources. We investigate here whether there exists a statistically significant correlation between these postulated sources and variations in spelling in the received Masoretic text.
+
+  
+We consider the source units about which there is broad agreement among Bible scholars, namely, the classic four-source division of the text into J, E, P, and D
+1
+, plus the consensual source H. We only considered words occurring in paragraphs for which there is relative agreement among scholars. We also compared genres—narrative and legal—since different genres might employ different conventions. (We ignored poetry with its distinctive language register.)
+
+  
+Regarding orthography, we examined the use of consonants to represent vowels, a practice that has changed over time. The Canaanite languages—Hebrew among them—were generally recorded in alphabetic writing sans vowels. With time, certain characters began to serve double duty, representing vowels, as well as consonants. These letters are known as matres lectionis (“mothers of reading”). The written representation of vowels increased from one century to the next, but it appears there was variation even within a single period.
+
+  
+While matres lectionis proliferated, another process complicated matters. When a word’s pronunciation evolved so that a particular consonant stopped being pronounced, the letter representing that consonant was not always written. For this reason, we classify spellings as either “neological” (reflecting innovative orthography) or “paleological” (conforming to earlier norms). 
+
+  
+We have, then, two labelings to work with: 
+
+  
+By source and genre: J, E, E-law, P, P-law, D, D-law, H, or H-law. For simplicity, we will refer to these nine categories as “sources.” 
+
+    
+By orthography: paleological or neological. 
+
+  
+We apply a statistical test, Cochran-Mantel-Haenszel (CMH)
+2
+, to check whether there is a correlation between the two labelings, that is, whether any particular source is more paleological than others.
+
+  
+2 Possible Approaches to the Statistical Problem
+
+  
+Assume we have two sources, A and B, plus an orthographic classification, and would like to check whether the classifications are correlated.
+
+  
+2.1 The Naïve Approach
+
+  
+A naïve approach is to count the total frequencies of neological and paleological syllables for each one of the sources and then run a χ2 test for the resulting 2×2 table. We believe this approach is not good. If A has a different word distribution than B, it is possible that even when the sources have identical spelling the naïve test would declare the two classifications strongly correlated, simply because one tends to use certain words that are spelled as neological more often. Working with aggregated data is therefore most likely to catch word distribution differences between sources, rather than spelling differences. 
+
+  
+2.2 Filtering
+
+  
+Andersen and Forbes
+3
+ conducted an extensive automated study of spelling in the Bible. They created 65 classes, based on grammatical form, vocalization and stress. Within each, they used the naïve approach, aggregating all words in a class and checking the χ2 score of the A/B and plene/defective classifications. As they use aggregated data (within each class), they still face the word distribution problem, and in particular their method is vulnerable to words like ððð (lo ̄) that appear frequently and mostly in one form. They tackled this problem with several ad-hoc filters and rules, such as filtering out words that almost always appear only in one form (see, e.g., [1, Chap. 10]). However, on a conceptual level, it seems that whatever set of filters is used, there is still the problem that differences in word distribution between different sources is interpreted as spelling differences. It appears they could not exhibit a conclusive relationship between stress and spelling (see [1, Epilog]), which seems to undermine the rationale behind dividing words into those classes.
+
+  
+2.3 New Approach
+
+  
+Our goal is to identify spelling differences even when each source may have a different distribution of words (e.g., legal texts tend to use legal terminology). The appropriate statistical technique is CMH. The idea is to bypass the language distribution problem by having a 2 × 2 contingency table for each word in the language, describing the number of neological/paleological occurrences of the word in each source. The test combines the data from all the 2 × 2 tables in a way that gives weight to the statistical significance of the data in each table, ignoring the frequencies of the word in each source.
+
+  
+We enumerate events at the finest possible granularity, classifying each syllable of each occurrence of a particular word in the text. For each syllable, we have one stratum (in the statistical sense of stratified data) containing a 2×2 contingency table describing the number of neological/paleological occurrences of that syllable of the word in each source.
+
+  
+This observation, as simple as it is, is conceptually important and is crucial for getting sound statistical data on the problem. As a side effect of using CMH, we avoid ad-hoc filters and rules. 
+
+  
+3 Experimental Design and Results
+
+  
+We have a stratum for each syllable and use the tagging of the biblical text into word senses (Strong number). We consider two sources at a time, computing the following statistics: 
+
+  
+the χ2 and p-value of the CMH test;
+
+    
+the validity of the χ2 test with the Rule of 5;
+
+    
+the common odds ratio;
+
+    
+the p=1−α confidence intervals for the logarithm of the common odds ratio, taking α = 0.05.
+
+  
+The p-values and the ln(odds) values for the pairs of sources are tabulated as follows:
+
+  
+
+    
+
+  
+The cells with tildes are those that failed to pass the Rule of 5 [3].
+
+  
+In the following table, the number in cell (i, j) tells us how much source i is more likely to be paleological than source j. Roughly speaking, if the cell (i, j) = 0.44, then i uses the paleological form 20.44 ≥ 1 more often then j. If it is zero they have the same frequencies, 20 = 1; if it is negative, source i is less paleological, 2−0.44 ≤ 1.
+
+  
+
+    
+
+  
+Thus, D-law appears to be the most neological.
+
+  
+4 Discussion
+
+  
+Our results appear to be of potential interest for several reasons.
+
+  
+
+							For Bible scholars, they suggest that the countless scribes who edited, expanded, and copied the text(s) that eventually crystallized into the Masoretic text did not change enough to obscure the characteristic spelling of individual units. Our findings open the door to new approaches in the critical analysis of biblical texts, as the value of orthography in such contexts has thus far been underestimated.
+						
+
+    
+
+							The simple statistical test we use cannot disentangle the many authors of the Bible. However, it does produce some interesting results, that we hope would be combined with other data to shed light on the fascinating question of how the Bible, as we know it today, evolved. In particular, the observation that Deuteronomic narrative is more neological in spelling than Priestly law may be of some value in the ongoing debate regarding the relative dating of P and D. It is possible that that there is some hidden random variable that strongly affects spelling, which might better explain the results. However, in spite of much effort (e.g., see [1]), such a hidden random variable has not been identified.
+						
+
+    
+
+							Outliers in the analysis may suggest alternate classifications for some linguistic phenomena. The most prominent example for that is the holam syllable פֹּה (po) in the word ציפור (tzi-por). The experts labeled ציפור as paleological and ציפר as neological, while our data seems to indicate the opposite (in D-law there are 2 occurrences of ציפור and none of ציפר, in P-law 2 occurrences of ציפור and 9 of ציפר, though D-law is overall more neological than P-law).
+
+    
+
+								For textual analysis,more generally, this work suggests that the Cochran-Mantel-Haenszel is an appropriate statistical measure, when features are sparse. 
+							
+
+  
+References
+
+  
+1. 
+S. R. Driver
+ (1913). An Introduction to the Literature of the Old Testament. Edin- burgh.
+
+  
+2. 
+N. Mantel and J. L. Fleiss
+ (1980). Minimum expected cell size requirements for the Mantel-Haenszel one-degree-of-freedom chi-square test and a related rapid procedure. American Journal of Epidemiology, 112(1):129–134.
+
+  
+3. 
+F. I. Andersen and A. D. Forbes
+ (1986). Spelling in the Hebrew Bible. Biblical Institute Press.
+

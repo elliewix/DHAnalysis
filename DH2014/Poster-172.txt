@@ -1,0 +1,155 @@
+Taco: A Metadata System for Hierarchical Structured Data Collections
+
+    
+Category:
+Poster
+
+      
+Session:
+2
+
+      
+Date:
+2014-07-10
+Time:
+16:00:00
+
+      
+Room:
+Amphipôle Common Area
+
+    
+
+        
+Zastrow
+,
+									
+Thomas
+
+        
+
+          
+
+        
+RZG
+
+      
+
+      
+
+        
+Gross
+,
+									
+Karin
+
+        
+
+          
+
+        
+RZG
+
+      
+
+    
+
+  
+
+  
+1. Introduction
+
+  
+Today, any modern file system offers the possibility to create hierarchical nested folder structures with an arbitrary depth. This leads often to large accumulations of data, where the only regulative element is the hierarchy of folders. Such a directory structure represents meta information about the data it contains, but because this information is not bound to specific datastreams of bits, it is often not included into traditional metadata formats which are used to describe data stored in files 
+1
+.
+Taco (short for „Tags & Components“) is a metadata system which allows to assign metadata directly to the folders of a file system. 
+
+  
+1.1. Overview
+
+  
+Tags are community-specific, predefined attribute-value pairs of a specific data type, while a component is a collection of tags, contextually affiliated with each other. Such a component can then be assigned to a folder, describing the content of the folder as a whole. It doesn't matter how deep or where exactly in the file system hierarchy the folder is located. The metadata is stored as key-value pairs in plain text files. These files can be converted to any other metadata format or exported via OAI-PMH
+2
+. After the creation of the Taco components, a harvester parses the whole hierarchy recursively and indexes all assigned metadata components. The assignment of components to folders is optional, with one exception: At the root level of the projects file system hierarchy, a „header“ component is mandatory. It represents the top-most entry point for a specific project. It contains general information like owner, contact information and a description about the whole project. It is used as an anchor for all other components: all non-header components can be seen in relation to the header.
+
+  
+The Taco System does not prohibit the use of common metadata formats like CMDI  for describing individual file(s) – optionally, these file-based metadata formats can be included into the Taco system.
+
+  
+The Taco system consists of three parts (Figure 1): (I) TacoEdit, a desktop application for assigning components to folders, (II) TacoHarvest, a harvesting application which collects the components inside a folder hierarchy and stores them in a (relational) database and (III) TacoBrowse, a web application that provides simple access to that database. All three parts are built around predefined and community-specific tags and components.
+
+  
+
+    
+Fig. 1: The three parts of the Taco System
+
+    
+
+  
+2. The Taco System
+
+  
+2.1. The Editor
+
+  
+TacoEdit is a user-friendly desktop application. It loads the predefined tags and components and offers an overview of the project's data set, starting with the current project's root folder. From here, the user can create new and edit existing components underneath the root directory. 
+
+  
+
+    
+Fig. 2: The TaCo Editor Application
+
+    
+
+  
+2.2. Harvesting & Indexing
+
+  
+After the user has created metadata components, the second part of the tool chain can be applied to the folder hierarchy. It scans the folder recursively and extracts the metadata, compiling a tree of metadata components which typifies the whole metadata of a project. This tree of metadata can be exported to a number of XML based metadata formats like CMDI or odML 
+4
+ . In addition, TacoHarvest can automatically generate a relational database schema from the predefined list of components and insert the specific metadata via SQL commands. This database is the basis for the third part of the tool chain, TacoBrowse.
+
+  
+2.3. Browsing & Exploring
+
+  
+TacoBrowse is a web application. It can be used to access the database which was created by TacoHarvest. It offers convenient „wizards“ to perform semi-automated search requests to the database. The result of such a request is always one or several folders, represented by the assigned metadata components and its content in form of files and other folders. The user has the choice to either display the metadata component or the files, stored in the result folder(s).
+
+  
+3. Use Cases
+
+  
+The Taco System was originally designed for the Max Planck Institute for Ornithology. Here, it will be used to assign metadata to a very large collection of projects and files (ca. 70 millions files), stored in a migrating file system. The Taco System is designed to be independent of a specific research discipline and can be used wherever data is stored in a hierarchical way. This applies not only in natural sciences, but also to many humanity disciplines which are dealing with large collections of texts, images, videos or other digital content.
+
+  
+4. Conclusion
+
+  
+The Taco System is a complete software solution for assigning, editing and querying metadata assigned to folders in a file system hierarchy. With the current implementation, it is possible to search for tags or components in relation to a project's root directory, represented by the metadata header. In upcoming versions, it will be possible to define explicitly relations between the components and include these into the queries.
+
+  
+References
+
+  
+1. 
+Schmidt, Ingrid
+ (2004). Modellierung von Metadaten. In: Henning Lobin; Lothar Lemnitzer: Texttechnologie. Perspektiven und Anwendungen. Stauffenburg, Tübingen, ISBN 3-86057-287-3, S. 143–164.
+          
+
+  
+2. Open Archives Initiative Protocol for Metadata Harvesting: 
+www.openarchives.org/pmh/
+
+  
+3. 
+Broeder, D., Schonefeld, O., Trippel, T., Van Uytvanck, D., and Witt, A.
+ (2011). A pragmatic approach to XML interoperability the component metadata infrastructure (CMDI). In Balisage: The Markup Conference 2011, volume 7.
+          
+
+  
+4. 
+Grewe J., Wachtler T. and Benda J.
+ (2011). A bottom-up approach to data annotation in neurophysiology. Front. Neuroinform. 5:16. doi: 10.3389/fninf.2011.00016
+          
+

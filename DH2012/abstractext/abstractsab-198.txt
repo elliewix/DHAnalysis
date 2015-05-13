@@ -1,0 +1,216 @@
+Paper: gMan: Creating General-Purpose Virtual Environments for (Digital) Archival
+                    Research
+
+                    Blanke, Tobias, 
+                    Centre for e-Research, King’s College London, 
+                    
+tobias.blanke@kcl.ac.uk
+
+                
+
+                    Connor, Richard, 
+                    University of Strathclyde, 
+                    
+richard.connor@cis.strath.ac.uk
+
+                
+
+                    Hedges, Mark, 
+                    Centre for e-Research, King’s College London, 
+                    
+mark.hedges@kcl.ac.uk
+
+                
+
+                    Kristel, Conny, 
+                    Netherlands Institute for War Documentation (NIOD), 
+                    
+c.kristel@niod.knaw.nl
+
+                
+
+                    Priddy, Mike, 
+                    Centre for e-Research, King’s College London, 
+                    
+priddy@mac.com
+
+                
+
+                    Simenoni, Fabio, 
+                    University of Strathclyde, 
+                    
+fabio.simeoni@cis.strath.ac.uk
+
+                
+This paper will present a critical analysis of our attempts to build Virtual
+                    Research Environments (VREs) for everyday Humanities research tasks using
+                    digital archives. Numerous specialised VREs have been developed for addressing
+                    particular tasks in various humanities disciplines. The Silchester VREs
+                    addressed data integration in archaeological excavations, the SDM VRE developed
+                    services for sharing and annotating manuscripts, while TEXTvre is concerned with
+                    TEI-based resource creation. Building on these experiences, gMan addressed the
+                    issue of moving beyond support for specific, focused tasks, and instead building
+                    services to enable more general-purpose humanities research activities, such as
+                    integrating and organising the heterogeneous and often unstructured digital
+                    resources, and support for ‘active reading’ processesBrockman et al.
+                        2001. Scholarly work in the humanities and the evolving information
+                        environment. Washington, DC. through advanced discovery facilities.
+                    Such services regularly top the list of humanities user
+                        requirementsBenardou et al. 2009. Understanding the Information
+                        Requirements of Arts and Humanities Scholarship. International Journal of
+                        Digital Curation.. This paper describes work to this end, firstly by
+                    the DARIAH project, and subsequently consolidated by the gMan project, funded by
+                    JISC’s VRE Rapid Innovation programme.
+
+                
+These experiments were based on use cases identified by the earlier LaQuAT
+                    (Linking and Querying Ancient Texts) projectJackson et al. 2009. Building
+                        bridges between islands of data—an investigation into distributed data
+                        management in the humanities. Proceedings of the Fifth IEEE International
+                        Conference on e-Science. Washington, DC., which investigated how to
+                    integrate scattered, heterogeneous and autonomous data resources relating to
+                    ancient texts, mainly databases but also XML corpora. LaQuAT attempted to solve
+                    these issues by offering an integration framework based on the OGSA-DAI grid
+                    middleware, which provided an integrated interface to the various data resources
+                    that followed a relational database model. However, this approach had certain
+                    limitations for our purposes, as such models are optimised for dealing with
+                    datacentric resources - that is, resources consisting primarily of structured
+                    data such as numbers, dates or very short text fields - rather than text-centric
+                    resources containing significant quantities of unstructured text. The approach
+                    worked well where the structural context of the information was clear and the
+                    query aimed at exact matches. More commonly, however, humanities researchers
+                    work with text-centric resources, perhaps enhanced with XML mark-up to capture
+                    document structure and additional metadataNentwich, M. 2003.
+                        Cyberscience. research in the age of the internet. Vienna., and they
+                    look for resources for further investigation based on looser criteria of
+                    relevance, e.g. by searching for all Roman legal texts in one resource
+                    containing information on punishments that are also mentioned in papyri from
+                    another resource.
+
+                
+These conclusions were further elaborated in the use cases that were developed
+                    from them, which are the main drivers for the work described here. Complementing
+                    this is a body of methodological investigation concerning scholars and their use
+                    of sources, particularly their use of data and archives. Before describing our
+                    current work, we will survey briefly these investigations.
+
+                
+The difference in scholarly practices between the sciences and the mainstream
+                    humanities is highlighted in a studyPalmer et al. 2009. Scholarly
+                        information practices in the online environment. that investigated
+                    the types of information sources used in different humanities disciplines, based
+                    on results from the US Research Libraries Group reports. Structured data is
+                    relatively little used, except in some areas of historical research, and data as
+                    it is traditionally understood in the sciences, e.g. the results of
+                    measurements, even less so. It is true that the study is partly outdated, and
+                    that data in the traditional sense is increasingly important in the humanities,
+                    particularly in linguistics and archaeology where scientific techniques have
+                    been widely adopted. Nevertheless, it is clear that in general humanities
+                    research relies not on measurements as a source of authority, but rather on the
+                    provenance of sources and peer-assessment, and that what data repositories are
+                    for the sciences, archives are for the humanitiesDuff et al. 2004
+                        Historians’ use of archival sources: Promises and pitfalls of the digital
+                        age. The Public Historian.. Archival records are primary sources
+                    about the past and may take many forms, including government papers, financial
+                    documents, photographs, sound recordings, etc. All this information is
+                    unstructured in nature.
+
+                
+Thus, our work is driven partly by the requirements fromDuff et al. 2004
+                        Historians’ use of archival sources: Promises and pitfalls of the digital
+                        age. The Public Historian., interpreted so as to relate to methods of
+                    research in archives. Retrieval is to happen in real time, and traditional
+                    finding aids are to be complemented by more sophisticated retrieval mechanisms,
+                    including the ability to create relevance indexes on unstructured resources, as
+                    well as the ability to combine resources in new ways. In particular, we aimed to
+                    implement the personal copy of a finding aid that is often quoted as an
+                    important prerequisite for specialised research in archives.
+
+                
+Our work investigated how (digital) archival content can be delivered to
+                    humanities researchers more effectively, independently of the location and
+                    implementation of that content, and with special facilities provided for
+                    customising the retrieval, management and manipulation of the content. We
+                    investigated how the UK and European research infrastructure (RI) can be
+                    exploited to support data-driven, collaborative research in the humanities by
+                    using the gCube environmentCandela et al. 2009. On-demand Virtual
+                        Research Environments and the Changing Roles of Librarians. Library Hi
+                        Tech., which was developed by the EU-funded D4Science project. gCube
+                    allows virtual research communities to deploy VREs on demand by making use of
+                    the shared resources of the European RI, and provides services that match
+                    closely the sort of information organisation and retrieval activities that we
+                    identified as being typical in humanities research.
+
+                
+D4Science provides an easy way of scavenging online data resources. It has a
+                    consistent mechanism to import data for rich user interaction within the
+                    deployed VREs. Its data resource staging framework, based on a well-defined
+                    workflow of data analysis, data modelling and data generation, is one of the key
+                    innovations of D4Science. The analysis and modelling phases define how data
+                    collections are loaded into gCube compound objects using its simple but powerful
+                    data model. In the data generation phase, descriptive metadata and provenance
+                    information are added.
+
+                
+Using the gCube data staging framework, the following datasets were brought
+                    together in our experiments:
+
+                
+
+                        
+The Heidelberger Gesamtverzeichnis (HGV) der griechischen
+                            Papyrusurkunden Aegyptens, a collection of metadata records for 65,000
+                            Greek papyri from Egypt.
+
+                        
+Projet Volterra, a database of Roman legal texts, currently in the low
+                            tens of thousands but very much in progress, stored in a series of
+                            themed tables in Microsoft Access.
+
+                        
+The Inscriptions of Aphrodisias, a corpus of about 2,000 ancient
+                            Greek
+
+                    
+                
+                
+These datasets were the same as those used in the LaQuAT project and thus and
+                    allow a critical comparison of results. They overlap in terms of time, places
+                    and people – specifically looking at the first five centuries or so of the Roman
+                    Empire – although their contents are otherwise quite different. The provision of
+                    an environment for working with this data in an integrated form would be highly
+                    fruitful for the researcher.
+
+                
+The presentation will describe the use cases that we used for evaluating gCube.
+                    Our approach was to break down the scenarios identified in interviews at KCL and
+                    within DARIAH into a number of common, atomic actions. Specific instances of
+                    these actions can be combined to model a variety of "real" research scenarios,
+                    for example the ability to assemble heterogeneous resources (or parts of
+                    resources) into a virtual collection, to share this virtual collection within a
+                    specific community and to search across a virtual collection, where specific
+                    search parameters (such as the importance of specific locations) can be set
+                    according to preference. Specific communities also require specific search
+                    services such as geo-referenced and date-range searches. Finally, the researcher
+                    wants to share links between research objects and annotations (including related
+                    documents publications) in her community.
+
+                
+In our experiments, we confirmed that most of these use cases could be supported
+                    by the features already provided by the core D4Science systems. For the Digital
+                    Humanities 2011 presentation, we will address our subsequent activities: the
+                    analysis that we carried out to identify gaps in the existing service provision;
+                    some results that demonstrate a clear distinction between the viewpoints of
+                    humanities and science research, in respect of such features as image search;
+                    our move to develop gMan as a production service for humanities researchers; and
+                    the recently-funded European Holocaust Research Infrastructure project, which
+                    aims to integrate Holocaust research material from archives across Europe. The
+                    main aim of the project will be to make accessible existing Holocaust research
+                    collections but the second priority will be to deploy virtual research
+                    environments to make use of these resources. D4Science services were seen to
+                    support initial requirements well.
+
+            
+
+        
+References:

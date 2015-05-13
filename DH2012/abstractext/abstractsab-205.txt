@@ -1,0 +1,299 @@
+Poster: Adapting EATS for Crowdsourcing: Register Medicorum Medii Aevi
+
+                    Viglianti, Raffaele, 
+                    King's College London, United Kingdom, 
+                    
+raffaele.viglianti@kcl.ac.uk
+
+                
+The Register Medicorum Medii Aevi (RMMA) is an active pilot project at King's
+                    College London that seeks to lay the foundations for an interdisciplinary online
+                    register of doctors in the middle ages. It is common for similar kinds of
+                    historical online resources to prepare a database out of a large collection of
+                    scholarly findings. RMMA, instead, aims to create a growing database which is
+                    populated over time by various scholars and students to make their findings
+                    accessible on the web. In order to pursue this task, the prototype for this
+                    pilot must allow data insertion from a wider group than the project partners
+                    alone; therefore several crowdsourcing principles are applied and extensive user
+                    testing is being undertaken. This poster will show solutions to the main
+                    challenges encountered in the design of the database and in adapting EATS, a
+                    Django application for authority records, for wider online use.
+
+            
+            
+                
+Overview
+
+                
+Researchers from different areas of medieval studies are likely to encounter
+                    information in primary sources about medici, the
+                    physicians of the time. Information about medici and
+                    their practices was recorded in a variety of documents; they would often travel
+                    across cultures, which can serve as indication of their high value. This has
+                    produced many sources from different cultures and in different languages.
+                    Because different areas of study often gravitate around geographical, cultural
+                    and linguistic divisions, it is challenging to investigate the movements of
+                    people and knowledge across these barriers. RMMA explores how digital
+                    publication can help in exchanging reliable information between researchers in
+                    such areas and currently involves experts on Anglo-Saxon, Arabic, Armenian,
+                    Greek, Jewish, Latin materials that provide information about doctors, and
+                    medical knowledge in the medieval period.
+
+
+                
+To address this issue, the project is developing a web application that will
+                    allow to (1) insert information about medici from primary and secondary sources;
+                    (2) handle different opinions about the same individuals; and (3) connect to
+                    prosopographical projects that deal with a similar historical time-frame and
+                    with historical geographical resources. RMMA is looking in particular at
+                        prosopographical projects developed at the Centre for Computing in the
+                        Humanities at King’s College London, including the Prosopography of the
+                        Byzantine Empire and Prosopography of the Byzantine World 
+<http://www.pbw.kcl.ac.uk/>
+. For historical locations, we
+                        are working towards integrating a query system to Pleiades when entering new
+                        locations 
+<http://pleiades.stoa.org/>.
+
+
+            
+            
+                
+Technologies Involved
+
+
+                
+The application is built using Django,
+http://www.djangoproject.com/
+ a Python open source web
+                    application framework aimed at simplifying development through a reusable set of
+                    common libraries and components. Developers can code their own application to be
+                    re-used within other Django frameworks, which is a factor that contributes
+                    towards the web framework's success. EATS (Entity Authority Tool Set) is a
+                    Django application developed by Jamie Norrish at the New Zealand Electronic Text
+                    Centre (NZETC) and "is now used to manage the 30,000+ entities represented in
+                    the NZETC online collection of significant New Zealand and Pacific Island texts"
+                    (Norrish 2007). The application targets issues usually faced by libraries, such
+                    as ambiguous identifiers based on names and titles. By improving on traditional
+                    authority systems where one identifier groups different entries describing the
+                    same entity, EATS allows the linking together of different collections and
+                    authorities, introduces user management and provides greater scope for
+                    disambiguation. RMMA found that EATS's approach could greatly contribute to the
+                    objectives of the project's web application, specifically in handling
+                    information about the same entities coming from multiple sources.
+
+
+                
+Most EATS top-level components have been adapted for RMMA's purposes: Entities
+                    are database tables that must be associated to one or more Authorities.
+                    Authorities may then make Property Assertions that associate Entities to
+                    specific default or user-defined properties. In RMMA, Entities are medici,
+                    patients, employers, locations, institutions, etc., while Authorities are the
+                    contributors of the data, such as authors of narrative secondary sources or
+                    contributors inserting information anew from a primary source (note that in this
+                    case the authority remains the contributor and not the primary source; in
+                    theory, different contributors can enter different information from the same
+                    primary source, intentionally leaving room for debate). Property Assertions in
+                    RMMA reflect statements such as: Authority contributor
+                    states that Entity medicus has name name, or similar. Finally, users of the system are able to insert data
+                    for one or more authorities, which is particularly useful if one user is
+                    entering information from a number of secondary sources. When users enter data
+                    discovered by themselves, however, they are acting like authorities. Even in
+                    this case, for the purpose of the system, the dichotomy between user and
+                    authority must be maintained: the scholar will insert data as a certain user
+                    controlling the authority that represents him or herself.
+
+
+                
+
+                    
+
+                        
+Fig 1. This graph shows the role of users in controlling authorities
+                            and different authorities declaring statements (property assertions)
+                            about the same entity.
+
+                        
+Full Size Image 
+
+                    
+                
+
+            
+
+
+            
+                
+Adapting EATS Interface for a Wider Audience
+
+                
+The default EATS interface for data entry is designed for completeness and may
+                    require some training for the inexperienced users. After all, this interface is
+                    likely to be used by personnel for populating the database and most of the
+                    design effort is better spent on the querying interface that end users will see.
+                    In the case of RMMA the project is vastly adapting the interface, as data entry
+                    will be an essential part of the end user experience. The project has been
+                    looking at other initiatives in the Digital Humanities and Digital Library
+                    fields that are adopting crowdsourcing for collecting data.See in
+                        particular: Transcribe Bentham, a crowsourcing project hosted at the Centre
+                        for Digital Humanities, University College London 
+<http://www.ucl.ac.uk/transcribe-bentham>
+; the image
+                        collection of the Victoria & Albert Museum 
+<http://collections.vam.ac.uk/crowdsourcing>
+; and other
+                        projects discussed in Holley 2010. Crowdsourcing consists of
+                    outsourcing specific tasks to be performed by volunteers via a web application.
+                    The term is a neologism coined in 2006 in an article on Wired, in which the
+                    author claims that the current pervasiveness of technology has reduced the gap
+                    between professionals and amateurs. Rose Holley (2010) argues that crowdsourcing
+                    could be of great value for Digital Libraries, especially for accomplishing
+                    goals that would require a large number of staff, time and resources. In order
+                    to attract contributions from volunteers it is necessary to follow certain
+                    principles when designing the web application that they will use. Holley
+                    outlines some "tips for crowdsourcing" out of her personal experience and by
+                    analysing successful projects.
+
+
+                
+RMMA is not strictly a crowdsourcing project, as submissions will be reviewed by
+                    a board before being published. The reason for this is twofold: on one hand it
+                    is desirable to control what gets into the database, though successful
+                    crowdsourcing initiatives usually found volunteers good at policing each other
+                    and keeping away malicious users; on the other hand, RMMA attempts to promote
+                    the use of the database as a publishing environment for scholars. The presence
+                    of a board, therefore, offers a model closer to peer-reviewed publishing, which
+                    is not a novel approach, as some academic projects have already been
+                    experimenting along similar lines.An exemplary project is Suda on Line:
+                        Byzantine Lexicography (SOL) 
+<http://www.stoa.org/sol>
+, which involves
+                        more than a hundred scholars for the translation and editing of the Suda, a 10th century CE Byzantine encyclopedia. The
+                        large size of Suda (30,000+ entries) has encouraged
+                        the involvement of a large number of collaborators to work online.
+                        Submissions to the database are made immediately available to the public,
+                        but SOL implements a colour code that differentiate just submitted entries
+                        and entries that have been reviewed and approved by a the editors overtime.
+                        This mixed system simplifies submission whilst allowing a control of the
+                        quality of the publication.
+
+
+                
+Despite these plans, which move RMMA away from the definition of crowdsourcing,
+                    many of the principles outlined by Holley are of great importance. Specifically,
+                    she suggests having a clear and ambitious goal, acknowledging contributors,
+                    reporting on the progress of the resource and making the application easy,
+                    reliable, quick and intuitive. Current efforts focus on improving the
+                    application by simplifying the interface and making clear paths for data entry
+                    depending on the nature of information that the users intend to store. To insure
+                    that the interface design is effective, several stages of user testing are
+                        planned.As recommended by many studies on User Centred Design, after
+                        Norman 1988. RMMA is organising a number of workshops in Europe and
+                    in the United States as part of the pilot project. This is intended to reach the
+                    desired audience and at the same time have the user test the resource and
+                    collect feedback during the following few weeks.
+
+            
+            
+                
+The Future
+
+                
+RMMA hopes to use its web application to involve middle ages medical researchers
+                    from different fields separated by specific geographical and linguistic studies.
+                    The database aims to be both a growing collection compiled by interested
+                    participants and a reliable publication of information about relevant
+                    individuals from the middle age worlds. It is therefore necessary to include
+                    crowdsourcing principles in the design of the web application to achieve the
+                    proposed goals. While not a stated aim of the project, the possibility of
+                    tracing of the movement across cultures of individuals conveying and acquiring
+                    medical knowledge would be a desirable and likely outcome of far-reaching
+                    historical interest.
+
+            
+
+
+
+
+
+
+
+
+
+
+
+        
+References:
+
+            
+                
+                    
+
+                        Finkel, R. et al.
+                        2007
+                        The Suda On Line, 
+                        31 November 2010
+                        
+         (
+link
+)
+   
+                    
+
+                    
+
+                        Holley, R.
+                        2010
+                         “Crowdsourcing: How and Why Should Libraries Do It?, ” 
+                        D-Lib Magazine, 
+                        16
+                        3/4
+                    
+
+                    
+
+                        Norman, Donald A.
+                        1988
+                        The design of everyday things, 
+                        MIT Press
+                        Cambridge (MA, USA)
+                    
+
+                    
+
+                        Norrish, J.
+                        2007
+                         “EATS: an Entity Authority Tool Set, ” 
+                        Australia New Zealand Digital
+                            Encyclopedias Group Meeting, 
+                        Sydney, Australia, 
+                        7-8 December
+                    
+
+                    
+
+                        Norrish, J. and Stevenson, A.
+                        2008
+                         “Topic Maps and Entity Authority Records: an Effective Cyber
+                            Infrastructure for Digital Humanities, ” 
+                        Digital Humanities 2008, 
+                        Oulu Finland, 
+                        25-29 June
+                    
+
+                    
+
+                        Terras, M.
+                        2010
+                         “Crowdsourcing Cultural Heritage: UCL’s Transcribe Bentham
+                            Project, ” 
+                        Seeing Is Believing: New Technologies
+                            For Cultural Heritage, 
+                        International Society for Knowledge Organization.
+                            University College London, London, 
+                        9 June 2010
+                    
+
+                
+            
+        

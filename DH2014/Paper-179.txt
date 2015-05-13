@@ -1,0 +1,541 @@
+Beyond Style: Literary Capitalism and the Publishing Industry
+
+    
+Category:
+Long Paper
+
+      
+Session:
+4
+
+      
+Date:
+2014-07-10
+Time:
+09:00:00
+
+      
+Room:
+413 - Amphimax
+
+    
+
+        
+Fuller
+,
+									
+Simon
+
+        
+
+          
+
+        
+National University of Ireland, Maynooth
+
+      
+
+      
+
+        
+O'Sullivan
+,
+									
+James
+
+        
+
+          
+
+        
+Pennsylvania State University / University College Cork
+
+      
+
+    
+
+  
+
+  
+1. Reinvention of the Publishing Industry
+
+  
+Having developed his commercial expertise as an advertising executive, James Patterson went on to forge a publishing empire that, according Forbes, earns him in the region of $91 million each year.
+1
+ Leaving his position as an adman to become a full-time writer in 1996,
+2
+ a decade later his work had already grossed $1 billion.
+3
+ To date, his name has appeared on over 100 books that have sold a combined 300 million copies.
+4
+
+Patterson is the driving force behind the approach to marketing that has allowed him to overtake his competitors at the top of the bestseller lists, from dictating the advertising campaigns for his titles, to the manner by which they are distributed.
+5
+
+Patterson’s method is described as “a literary assembly line”,
+6
+ an observation which he seemingly embraces: “I look at it the way Henry Ford would look at it,” is his response to criticisms of his approach.
+7
+ His vision is such that Little, Brown, Patterson’s publisher, has restructured its organisation in an effort to meet the author’s requirements. In a lengthy piece for The New York Times, Jonathan Mahler quotes former Little, Brown publisher, Sarah Crichton: “To have one writer really start needing, and even demanding, the lion’s share of energy and attention was difficult. There were times when some of us resented that. When Jim felt that resentment, he roared back. And he was too powerful to ignore.”
+8
+ In his case study of Patterson’s marketing methods, John Deighton outlines how the author commissioned his own studies in an effort to identify what potential readers want from a novel, so that he could deliver his titles to the widest possible audience: “The Little, Brown publishing group recognized that Patterson was a most unusual author, one who could teach them a lot about selling.”
+9
+
+Patterson is, according to Time-Warner Publishing’s Larry Kirshbaum, “the first real brand-managed author”.
+10
+ 
+
+  
+As a reader himself, critically acclaimed writers such as James Joyce and Gabriel García Márquez are amongst Patterson’s preferred authors.
+11
+
+Patterson admits that there is a distinction between the aforementioned literary works and his novels: "These books are entertainments. It's a very different process than if you're trying to write Moby-Dick, or The Corrections. That's painful. That's different from very simple, plot-oriented storytelling."
+12
+
+Patterson is frequently criticised for his approach, but writing in the fashion of Joyce or Marquez, is a task which he suggests is beyond his ability as an author: “After reading Ulysses, I knew I couldn’t write anything that great. I don’t have it in me.”
+13
+
+Thus, producing a high volume of entertaining novels has been his objective.
+
+  
+2. Patterson's Collaborative Process
+
+  
+To achieve the prolific output that we see today, Patterson enlists the support of numerous collaborators: “It was Patterson who first showed that television advertising could work for books. More radically, he has demonstrated that working with co‑writers can dramatically multiply sales.”
+14
+
+Patterson sees little difference between his approach to collaborative writing and those practices that have long been central to other sectors within the culture industry: “It isn’t terribly groundbreaking … The newspaper business, the movie business—they’re full of teams. A lot of art was done by teams …”
+15
+ “My short answer to the question as to why work with other people is Gilbert and Sullivan, Rodgers and Hammerstein, Woodward and Bernstein, Lennon and McCartney and it goes on,” he offered in The Guardian.
+
+  
+Patterson is quite forthright when detailing his collaborative process: “I’ll write an elaborate outline, maybe 70 pages, very detailed, clear, and focused. The co-author will write the first draft, and I’ll see the work every few weeks. I’ll do two to seven more drafts.”
+16
+
+Described as “a natural born writer”, many of Patterson’s collaborators have used the opportunity as a platform from which to launch their solo careers.
+17
+ Gaby Wood comments in The Guardian that the sentences in Patterson’s novel “are not designed to be lingered over”, “[t]hey are more or less all plot”.
+18
+ But, while it seems that Patterson revises each chapter as they are drafted, as well as making all of the final revisions alone,
+19
+ the extent to which he contributes authorial material directly, in terms of writing, remains unclear. Patterson has stated that his “name on the cover is the assurance of a good read”
+20
+ – using computational methods central to Digital Humanities scholarship, this paper seeks to determine the volume of writing that Patterson contributes before offering such an assurance.
+
+  
+3. Methodology & Results
+
+  
+We evaluated the relative contributions of Patterson and his collaborators using versions of Burrow’s Delta, a widely-used lexical measure for English texts.
+21
+ We selected the collaborators Peter de Jonge and Andrew Gross for this investigation. Patterson, by his own account, allocates most of the actual writing to his junior partners. It was in such a respect that we formed the working hypothesis that the collaborative works would be stylometrically more similar to texts written primarily by Patterson’s co-authors, than to any of the novels attributed to Patterson alone. We expected the lexical features that we employed to pick out the primary writer. This would correlate with much of the field's existing research, for instance by Patrick Juola,
+22
+ who suggests that, in attempted forgeries, the lexical signature of the forger overrides the semantic content which might associate it with the impersonated party. However, this is not a foregone conclusion. Jan Rybicki has demonstrated that in literary translations, the original authorial signals dominate that of the translator when using Burrow’s Delta cluster analysis. In other words, the semantic imprint survives the translation process although all of the lexical features examined are written by the translator.
+23
+ Our second hypothesis was that, given the former, Patterson’s contribution would be strongest at critical moments in the text. Given the plot-driven genre, we believed that these would typically be present at the beginning and end of the novels.
+
+  
+To test our first hypothesis, we employ a "bootstrap consensus tree" cluster analysis over maximum frequency words ranging from 100 to 1000, in intervals of 100, with the Burrow’s Delta metric, using the "stylo" package for R.
+24
+ 
+25
+
+We avail of a consensus strength of 0.5, meaning that we formed a tree showing proximity wherever this occurred in 50% or more of the 10 maximum frequency clusterings described.
+26
+ 
+27
+ For our second hypothesis, we use the Rolling Delta technique.
+28
+ 
+29
+30
+ 
+31
+ To provide a general intuitive description of this method, Burrow’s Delta distances are measured between the collaborative text and single-author texts for each participating author. However, distances are measured to "windows" of the collaborative text, allowing for estimation as to which sections carry the stylistic fingerprint of one contributor over another. Sample single-author tests are then plotted over the baseline of the collaborative text, where greater proximity to the baseline indicates greater stylistic similarity, as defined by the delta distance metric.
+
+  
+In this paper, we examine the following collaborative texts:
+
+  
+
+  
+Patterson & De Jonge:
+
+  
+Beach House (2003)
+
+    
+Beach Road (2006)
+
+  
+Patterson & Gross:
+
+  
+2nd Chance (2002)
+
+    
+3rd Degree (2004)
+
+    
+Judge and Jury (2006)
+
+  
+Our solo texts, by author, are as follows:
+
+  
+
+  
+DeJonge: 
+
+  
+Shadows Still Remain (2009)
+
+    
+Buried On Avenue B (2012)
+
+  
+Gross: 
+
+  
+The Dark Tide (2008)
+
+    
+Don't Look Twice (2009)
+
+    
+Killing Hour (2011)
+
+    
+15 Seconds (2012)
+
+    
+No Way Back (2013)
+
+  
+For Patterson, we used this fixed set of nine solo works:
+
+  
+First to Die (2001)
+
+    
+Four Blind Mice (2002)
+
+    
+The Lake House (2003)
+
+    
+London Bridges (2004)
+
+    
+Maximum Ride: The Angel Experiment (2005)
+
+    
+Maximum Ride: Saving The World And Other Extreme Sports (2007)
+
+    
+I, Alex Cross (2009)
+
+    
+Fang (2010)
+
+    
+Nevermore (2012)
+
+  
+The following visualisation displays our bootstrap consensus tree over the entire dataset:
+
+  
+
+    
+Fig. 1: Boostrap consensus tree
+
+    
+
+  
+As predicted, the collaborative works all cluster with the respective junior writer. Within both the De Jonge and Gross clusters, the collaborative works form a distinct sub-cluster. Within the Patterson cluster, the Maximum Ride series of novels are separated from another cluster consisting of Alex Cross novels and the Patterson novel, The Lake House. One surprise result is that First to Die, a solo Patterson text, is clustered with the subsequent works in the Women’s Murder Clubseries, which he wrote with Andrew Gross. This could simply represent a limitation of the delta metric over these texts, or alternatively, it could indicate that Gross was so influenced by the particular style that Patterson manifested in this work that he imitated it more exactly than Patterson managed in any of the other works under examination. We discount a third possibility, that the new collaborative series, Women’s Murder Club, opened with a solo Patterson work to kick-start sales. While such an interpretation would align with the marketing ingenuity of both Patterson and Gross, it is without sufficient empirical foundation.
+
+  
+Our full study comprised rolling deltas for all collaborative texts, under a number of different setting. For the purpose of this abstract we include just two rolling delta studies, First to Die and its sequel in the series, Second Chance, respectively, both with pronouns deleted from an initial most frequent word count of 1,000:
+
+  
+
+    
+Fig. 2: Rolling Delta analysis
+
+    
+
+  
+
+    
+Fig. 3: Rolling Delta analysis
+
+    
+
+  
+For Second Chance, Gross’ texts are closest throughout, apart from First to Die, which, as we have already discussed, is attributed solely to Patterson. The model in First to Die is more interesting as the work appears like a true collaboration in which the authors have shared the task of writing passages or sentences with Patterson intervening at critical junctures.
+
+  
+4. Conclusions
+
+  
+The quantitative data suggests that Patterson’s collaborators perform the vast majority of the actual writing. Therefore it seems that, unlike translation, the semantic signal from Patterson is dominated by the lexical signal of the other writer. We think the explanation for this difference is the density of the semantic message in each case – when implementing the outline of a general plot, there is more freedom for sentence and passage construction.
+
+  
+A full stylometric study of Patterson would also need to measure his contribution to the abstract entity called the plot  in the works under examination. As Patterson says: “above all my brand stands for story. I became successful when I stopped writing sentences and started writing stories. Editors think it's about style. It's not. It's all story”.
+32
+ On the one hand, we note that for Patterson, this is just as well, since our analysis shows that his stylometric fingerprint is sometimes weak, even in his solo works. On the other hand, we recall Aristotle also believed, in his analysis of tragedy, that plot (μῦθος) - the “arrangement of the incidents (ἡτῶνπραγμάτωνσύστασις)” is the most important element of the work.
+33
+
+  
+In the Arcades Project, Walter Benjamin collects several references to writers who brought industrial methods of production to bear upon the process of literary creation in 19th Century France. While the 19th Century “witnessed an institutionalization of the split between technology and art to a degree previously unknown in history”.
+34
+ Benjamin pays particular attention to those who found new ways of conjoining the two, such as Eugene Scribe, popularizer of the “well made play (piece bien faite)”, and Alexandre Dumas, who both industrialised the writing process. Dumas was contemporaneously described as running a “factory of novels,”
+35
+ and, like Patterson, simultaneously worked on multiple novels, with an output of 400 novels and 35 dramas in 20 years.
+36
+ Lucas-Dubreton recounts how accusations of plagiary by one De Mirecourt’s eventually led to Dumas publicly recognising his co-authors, and arranging better terms of payment for them.
+37
+  In language which foreshadows the descriptions of Patterson as a “brand-managed” author, Lucas-Dubreton caricatures the allegations against Dumas thus: “Dumas did not exist at all, he was only a myth, a trademark invented by a syndicate of editors to dupe the public”.
+38
+
+  
+Patterson and Dumas employ modes of authorial production which echo the economic advancements of their times. Unlike Dumas, Patterson has never been questioned in relation to his collaborative process, and such anomalies as we have detected probably indicate most of all the immaturity of stylometry as a method. Regardless, it seems Patterson, an epitome of benign capitalism, has offered sufficient accreditation, tutelage and financial reward for those who work for him.
+
+  
+In this paper, we will discuss our analysis in the context of these publishing practices, both new and old, and how literary collaborations might be approached from a stylometric perspective, using Patterson and his reinvention of the industry as a useful test case.
+
+  
+References
+
+  
+1. 
+Bercovici, Jeff.
+The World’s Top-Earning Authors: With ‘50 Shades,’ E.L. James Debuts At No. 1. Forbes. Web. 6 Oct. 2013.
+					
+
+  
+2. 
+Mahler, Jonathan.
+ (2010) James Patterson Inc. The New York Times 24 Jan 2010. NYTimes.com. Web. 14 Aug. 2013.
+					
+
+  
+3. 
+Wroe, Nicholas.
+ (2013) James Patterson: a Life in Writing. The Guardian. 11 May 2013. Web. 19 Aug. 2013
+					
+
+  
+4. 
+Wroe, Nicholas.
+ (2013)James Patterson: a Life in Writing. The Guardian. 11 May 2013. Web. 19 Aug. 2013
+					
+
+  
+5. 
+Mahler, Jonathan.
+ (2013) James Patterson Inc. The New York Times 24 Jan. 2010. NYTimes.com. Web. 14 Aug. 2013
+					
+
+  
+6. 
+Deighton, John.
+ (2006) Marketing James Patterson. Case Study. Boston. Harvard Business Publishing. Web. 24 August 2013. pp 4.
+					
+
+  
+7. 
+Deighton, John.
+ (2006) Marketing James Patterson. Case Study. Boston. Harvard Business Publishing. Web. 24 August 2013. pp 1.
+					
+
+  
+8. 
+Mahler, Jonathan.
+ (2010) James Patterson Inc. The New York Times 24 Jan. 2010. NYTimes.com. Web. 14 Aug. 2013
+					
+
+  
+9. 
+Deighton, John.
+ (2006) Marketing James Patterson. Case Study. Boston. Harvard Business Publishing. Web. 24 August 2013. pp 5.
+					
+
+  
+10. 
+Deighton, John.
+ (2006) Marketing James Patterson. Case Study. Boston. Harvard Business Publishing. Web. 24 August 2013. pp 5.
+					
+
+  
+11. 
+Mahler, Jonathan.
+ (2010) James Patterson Inc. The New York Times 24 Jan 2010. NYTimes.com. Web. 14 Aug. 2013.
+					
+
+  
+12. 
+Flood, Alison.
+ (2010) James Patterson Brings in $70m to Become World’s Highest-earning Author. The Guardian, 20 august 2010. Web. 17 Aug. 2013.
+					
+
+  
+13. 
+Patterson, James.
+ (2012) Life’s Work: James Patterson. Harvard Business Review. Web.
+					
+
+  
+14. 
+Wroe, Nicholas.
+ (2013) James Patterson: a Life in Writing. The Guardian. 11 May 2013. Web. 19 Aug.
+					
+
+  
+15. 
+Patterson, James.
+ (2012) Life’s Work: James Patterson. Harvard Business Review. Web.
+					
+
+  
+16. 
+Patterson, James.
+ (2012) Life’s Work: James Patterson. Harvard Business Review. Web.
+					
+
+  
+17. 
+Belena, Ruth.
+ (2013) How James Patterson Has Launched the Careers of His Co-authors. Helium. 5 June 2013. Web. 16 Aug. 2013.
+					
+
+  
+18. 
+Wood, Gaby.
+ (2009) The World’s No 1 Bestseller. The Guardian. 5 Apr. 2009. Web. 17 Aug. 2013.
+					
+
+  
+19. 
+Belena, Ruth.
+  (2013) How James Patterson Has Launched the Careers of His Co-authors. Helium. 5 June 2013. Web. 16 Aug. 2013.
+					
+
+  
+20. 
+Deighton, John.
+Marketing James Patterson. Case Study. Boston. Harvard Business Publishing, 2006. Web. 24 August 2013. pp 2.
+					
+
+  
+21. 
+Burrows, J. F.
+ (2002) Delta: A Measure of Stylistic Difference and a Guide to Likely Authorship. Literary and Linguistic Computing 17: 267-87
+					
+
+  
+22. 
+see e.g. Juola, Patrick.
+  (2013) Stylometric Report Heartland Institute Memo, retrieved from 
+wattsupwiththat.files.wordpress.com/2012/03/memoreport.pdf
+ 18th October 2013.
+					
+
+  
+23. 
+Rybicki J
+ (2012) The great mystery of the (almost) invisible translator: stylometry in translation. In: Oakes M, Ji M, editors. Quantitative Methods in Corpus-Based Translation Studies. Amsterdam: John Benjamin.
+					
+
+  
+24. 
+Eder, M., and J. Rybicki.
+ (2011) Do Birds of a Feather Really Flock Together, or How to Choose Test Samples for Authorship Attribution. Stanford: Digital Humanities.
+					
+
+  
+25. 
+Eder, Maciej, Mike Kestemont and Jan Rybicki.
+ (2013) Stylometry with R: a suite of tools. Digital Humanities 2013: Conference Abstracts. University of Nebraska-Lincoln, Lincoln. pp. 487-89.
+					
+
+  
+26. 
+Wilkinson
+ (1996), M. Majority-rule reduced consensus trees and their use in bootstrapping. Molecular Biology and Evolution 13(3):437-44.
+					
+
+  
+27. 
+Paradis, E.  and Claude, J. and Strimmer K
+ (2004)  APE: analyses of phylogenetics and evolution in R Bioinformatics  20 (2): 289-290.
+					
+
+  
+28. 
+Rybicki, Jan, Mike Kestemont and David Hoover.
+ (2013) Collaborative authorship: Conrad, Ford and rolling Delta. Digital Humanities 2013: Conference Abstracts. University of Nebraska-Lincoln, Lincoln. pp 368-71.
+					
+
+  
+29. 
+Rybicki, J., Kestemont, M. and Hoover D.
+ (2013). Collaborative authorship: Conrad, Ford and rolling delta. In: "Digital Humanities 2013: Conference Abstracts. University of Nebraska-Lincoln, Lincoln, NE, pp. 368-71.
+					
+
+  
+30. 
+Hoover, D.
+ (2011). The Tutor's Story: a case study of mixed authorship.  In: "Digital Humanities 2011: Conference Abstracts". Stanford University, Stanford, CA, pp. 149-51.
+					
+
+  
+31. 
+Dalen-Oskam, K. van and Zundert, J. van
+ (2007). Delta for Middle Dutch: author and copyist distinction in Walewein. Literary and Linguistic Computing", 22(3): 345-62.
+					
+
+  
+32. 
+Deighton, John.
+ (2006) Marketing James Patterson. Case Study. Boston. Harvard Business Publishing. Web. 24 August 2013. pp 5.
+					
+
+  
+33. 
+Aristotle
+ (1932). Poetics 1450a. Trans. W.H. Fyfe. Cambridge, MA, Harvard University Press; London, William Heinemann Ltd. From www.perseus.tufts.edu. Web 16 October 2013.
+					
+
+  
+34. 
+Buck-Morss, Susan.
+ (1993) The Dialectics of Seeing. Baskerville VA: MIT Press. pp. 126.
+					
+
+  
+35. 
+de Mirecourt, Eugene.
+Alexandre Dumas (1845) & Co. Factory of Novels. Cited in Benjamin, Walter. The Arcades Project. Trans. Eiland and McLaughlin. (2003) Harvard University Press [d3a,8] p. 749.
+					
+
+  
+36. 
+Benjamin, Walter.
+The Arcades Project. Trans. Eiland and McLaughlin. Harvard University Press (2003): [d4,2] p. 751-752. See also 
+Buck-Morss, Susan.
+The Dialectics of Seeing. Baskerville VA: MIT Press (1993) especially pp. 136-142.
+					
+
+  
+37. 
+Lucas-Dubreton, Jean.
+ The Fourth Musketeer: The Life of Alexander Dumas. Trans. Maida Castelhun Darnton. N. p. Web. 24 Oct. 2013
+					
+
+  
+38. 
+Lucas-Dubreton, Jean.
+The Fourth Musketeer: The Life of Alexander Dumas. Trans. Maida Castelhun Darnton. N. p. Web. 24 Oct. 2013. See also Benjamin, Walter. The Arcades Project. Trans. Eiland and McLaughlin. (2003) Harvard University Press: [P3a,3] p. 523.
+					
+

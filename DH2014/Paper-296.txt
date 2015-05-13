@@ -1,0 +1,194 @@
+Digital Humanists Are Motivated Annotators
+
+    
+Category:
+Short Paper
+
+      
+Session:
+1
+
+      
+Date:
+2014-07-09
+Time:
+09:00:00
+
+      
+Room:
+415 - Amphimax
+
+    
+
+        
+Walkowski
+,
+									
+Niels-Oliver
+
+        
+
+          
+
+        
+Berlin-Brandenburgische Akademie der Wissenschafte
+
+      
+
+      
+
+        
+Barker
+,
+									
+Elton T. E.
+
+        
+
+          
+
+        
+Open University
+
+      
+
+    
+
+  
+
+  
+Background
+
+  
+
+          One core practice that has traditionally supported humanist research process has been the practice to annotate the object of interest in some way. The handwritten additions to books in dustry shelves of libraries are documenting this very well. Although in digital humanities the concept of object is more problematic, annotations are still a fundamental and even increasingly important principle. For example annotations are used for data enrichment and harmonisation of massive digital collections, to model overlapping semantics and structures in presentation systems, and as the key means of connecting online material in Linked Open Data projects. Annotations are one of the core scholarly primitives of humanities research independent of discipline or media.
+        
+
+  
+
+          The more tools with annotation capabilities that are developed and the more annotations that are published, the more interoperability will be critical. The W3C Open Annotation Community Group and the definition of the Open Annotation (OA) Ontology are important steps to ensure interoperability among digital annotations. Nevertheless some important aspects remain to be done. The OA model describes a comprehensive way of rendering the structure of digital annotations; but its goal is not to reflect the methodological or hermeneutical context of digital annotations beyond what is needed to make the model generic. Moreover, the model claims that every situation where a web-resource can be linked to another web-resource can be modelled as an annotation. 
+        
+
+  
+Problem
+
+  
+
+          The more annotations are published in a consistent way as web resources - a process that is promoted by the Semantic Web framework of the OA model - the more the question of interoperability shifts from the representation of structure to context. The problem here is not the use of a predicate to refer to the annotation target rather than to the annotation body; that can be easily resolved by the inclusion of any concept which is dereferenceable between oa:hasBody and oa:hasTarget. The problem is more that annotations which refer to the same object and which use the same concept may have meanings depending on the research context different from those for which the annotation were originally created. Consider the following examples:
+        
+
+  
+For humanities researchers an algorithm represents an object of interest as much as any other cultural object. That is to say, annotations created in a context where the algorithm is investigated should not be used as expressions about the objects on which this algorithm was tested. As a result, modifications that are made during the investigation ought to reveal something about the algorithm not about the object.
+
+    
+Annotations about the authorship of Shakespeare that are made in a stylometric analysis proving which works should be attributed to Shakespeare ought to be processed and interpreted differently from authorship annotations that create a catalogue of texts in a project.
+
+    
+An annotation created in a crowdsourcing context without the use of a formal ontology is suitable for other research questions than the same annotation created by a disciplinary expert who applies a related ontology.
+
+  
+
+          These cases demonstrate that the efficient reuse of published annotations needs a formalized representation of the research purpose for which the annotation was created in the first place. On the other hand such metadata would also provide a valuable information source in the digital environment for traditional humanities research questions. As Claudine Mouline has put it, contextual data about annotations ought to be an invaluable resource for investigating the social or cultural structures out of which these annotations were made. In one of her examples she gets insights about missionary work in Anglo-Saxonia as well as insights about the social structure of monasteries not only from the content of annotations but also from the context. Annotations made by high-priests can be compared with annotations written by monks if these can be distinguished at the first place. Moulin describes how this knowledge is derived from knowing in which monastery a book was annotated and which tool was used for the annotation because some tools were only used by high-priests. Different purposes for annotations were revealed giving the annotation a specific meaning.
+        
+
+  
+
+          It is true that the first draft of the Open Annotation Ontology attempts to address this issue by introducing the predicate ‘oa:motivatedBy’, in order to describe the motivation or intention associated with the annotation apart from its content. Nevertheless, the exact use of this predicate is still an open question, especially its relation to the type of annotation (Highlighting, Sticky Note, etc.) . Indeed, the community group emphasizes the importance of a general approach for using this predicate and encourages the definition of vocabularies in communities so that proliferation of terms can be avoided. Yet, it is still unsure if the oa:motivatedBy predicate will be kept in the final version of the Open Annotation model as was expressed by Timothy Cole at the DH2013 in Nebraska.
+        
+
+  
+Approaches
+
+  
+
+          The value of maintaining the concept of an oa:motivatedBy predicate may be seen by considering large European infrastructure projects like DARIAH and EUDAT which are developing annotation tools as generic components of their infrastructure. The generic structures and models adopted by these projects strongly demand that digital annotation practices and purposes ought to be systematized. At the same time the massive scale of these projects, resulting from their integrated services, offers a variety of possibilities of defining a vocabulary that can be used for oa:motivatedBy in the Digital Humanities. Specifically we suggest three sources:
+        
+
+  
+The results of the DARIAH-DE experts workshop on interoperable annotations for the arts and humanities
+
+    
+The efforts around the definition of the Scholarly Methods Ontology in DARIAH-EU
+
+    
+The Scholarly Domain Model presented by Stefan Gradmann at the DH2013
+
+  
+
+          Each of these sources represents a different approach to how the motivation of an ontology can be formalized. The methodological part of the June 2013 "DARIAH-DE Experts Workshop on interoperable annotations" built a classification upon the evaluation of practices in which digital annotations are used (to collaborate, to review, to enrich, etc.): a DH motivation vocabulary ought to be grounded in general practice and from the annotation point of view. The Scholarly Methods Ontology tries to classify digital research activities according to a methodological framework. Therefore it represents the best possibility of creating a more abstract vocabulary grounded upon theoretical reflections about how the field of DH is organized. The Scholarly Domain Model differs from the former approach because it does not focus on any research activity but on the areas in which humanities research activities take place: these areas are Input, Output, Metadata and Social Context and Research. 
+        
+
+  
+
+          To put it more simply: the first classification model relates to the annotation object itself, the second tries to reflect fields of research, while the third introduces an abstract view on knowledge production itself. It would be misleading to select any one of these perspectives as the annotation model, since all of them have advantages and disadvantages. For example, the Scholarly Domain Model is currently too general in terms of semantics to help overcome interoperability issues for annotations. Besides, these models do not pertain to mutually exclusive ideas: enrichment by annotation in the first model is also suitable to describe the metadata class of the Scholarly Domain Model, while reviewing is located along the input/output axis. Thus, rather than prioritizing one perspective over another, we suggest an ontology concept for oa:motivatedBy that integrates these three models through their overlaps and interconnections, which in turn respects the idea that any ontology should relate annotation patterns to specific research fields.
+        
+
+  
+Perspectives
+
+  
+
+          The problems and approaches presented in the context of annotations and the Open Annotation Ontology address more complex ongoing discussions, such as the need to have a sustainable and expressive concept of provenance for digital research objects. This task is especially difficult in the case of humanities since the frequently non-processural and non-linear elements of humanities research do not sit well with the purely event- and agent-based provenance models created in the e-Science realm. The case of annotation is a good example. The meaning of a result for a humanities-related research question is not made totally transparent by the process or the broader lineage in which it ‘happened’. The Open Annotation Ontology suggests the use of the Provenance Ontology which is modeled along these concepts therefore not offering additional help. Our contribution, then, aims not only to show the importance of the oa:motivatedBy predicate and make the first steps towards developing a concept for a related ontology; we also hope to encourage the development of a discriminating idea of provenance in the humanities that is rarely developed at present time.
+        
+
+  
+References
+
+  
+Simon, R., & Jung, J.
+ (2011). The YUMA Media Annotation Framework. Research and Advanced Technology for, 434–437.
+          
+
+  
+Sanderson, R., Albritton, B., Schwemmer, R., & Van de Sompel, H.
+ (2011). SharedCanvas: A Collaborative Model for Medieval Manuscript Layout Dissemination. arXiv.org, 1104(2925). Retrieved from 
+arxiv.org/abs/1104.2925
+
+  
+Simon, R., Barker, E.T.E. and Isaksen, L.
+ (2012): Exploring Pelagios: a visual browser for geo-tagged datasets. E. Agirre, K. Fernie, A. Otegi and M. Stevenson (eds.), International Workshop on Supporting Users' Exploration of Digital Libraries. Cyprus, 29-34.
+          
+
+  
+Unsworth, J.
+ (2000). Scholarly Primitives: what methods do humanities researchers have in common, and how might our tools reflect this. In Humanities Computing: formal methods, experimental practice symposium, King’s College, London.
+          
+
+  
+
+    
+www.w3.org/community/openannotation/
+
+  
+
+  
+Sanderson, R., & Van de Sompel, H.
+ (2013). Designing the W3C Open Annotation Data Model.
+          
+
+  
+Moulin, C.
+ (2010). Vom mittelalterlichen Griffel zum Computer-Tagging. Zur sprach- und kulturgeschichtlichen Bedeutung der Annotation. In Akademien der Wissenschaften und der Literatur Mainz. Jahrbuch 2012 (pp. 84–99). Mainz.
+          
+
+  
+
+    
+www.w3.org/community/openannotation/wiki/Open_Issues
+
+  
+
+  
+
+    
+de.slideshare.net/gradmans/20130719-dh2013-beyondinfrastructure
+
+  
+
+  
+
+    
+www.w3.org/TR/prov-o
+
+  
+

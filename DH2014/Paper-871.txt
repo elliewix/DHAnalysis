@@ -1,0 +1,243 @@
+A glimpse of the change of worldview between 7th and 10th century China through two leishu
+
+    
+Category:
+Long Paper
+
+      
+Session:
+6
+
+      
+Date:
+2014-07-11
+Time:
+09:00:00
+
+      
+Room:
+414 - Amphimax
+
+    
+
+        
+Hsiang
+,
+									
+Jieh
+
+        
+
+          
+
+        
+National Taiwan University
+
+      
+
+      
+
+        
+Chen
+,
+									
+lihua
+
+        
+
+          
+
+        
+National Taiwan University 
+
+      
+
+      
+
+        
+Chung
+,
+									
+Chia-Hsuan
+
+        
+
+          
+
+        
+National Taiwan University 
+
+      
+
+    
+
+  
+What is leishu
+
+  
+Leishu (類書) is a unique form of Chinese source book for quick references and quotations.  The editor of a leishu would collect a large number of books, develop a knowledge structure of the intended knowledge domain (usually with a number of categories that cover the domain, each with a list of subjects), then extract texts, that the editor deemed relevant to each subject, from the content in the books.   Thus each subject has a list of entries which are texts taken from existing books.  Because the purpose was for quotation, the meanings of the subjects were not explained and the texts were quoted verbatim, usually with the source indicated.  (The lack of explanation of the subjects differentiates a leishu from an encyclopedia.)  The earliest leishu, Huanglan (皇覽), dates back to 220AD.
+
+  
+During the past 300 years leishu had been looked down upon by many Chinese scholars.  Its compilation nature was regarded as a lack of originality.  The ease of use as quick reference was criticized as providing a short cut and thus encouraged shallowness in scholarship.  Its value in the scholarly circle had largely been limited to being a vessel from which fragments of lost books were collected.
+
+  
+The advance of information technology allows us to look at leishu from a very different angle. The categories and subjects, together with the selections of entries, reflect how the world was perceived at the time when the leishu was compiled. Comparing two leishu from different era, thus, provides a way to observe how the world view had changed during the years between the two tomes.  This was not possible until now, when the availability of leishu in searchable full-text form finally provides a way to study and compare the books in their entirety.  
+
+  
+In this paper we present such a study.  The leishu we have chosen are yiwenleiju – YL (藝文類聚), completed in 624AD (early Tang dynasty) by Ouyang Xun, and taipingyulan – TY (太平御覽), completed in 984AD (early Song dynasty) by Li Fang.  Both were commissioned by the emperors and were about the general knowledge of the world.  YL divides its view of the world into 46 categories, further into 734 subjects. TY has 55 categories and 5,597 subjects.
+
+  
+It was stated in the preface of TY that YL, written 350 years earlier, was among the three main leishu consulted.  (The two other no longer exist.) With the full texts available through digitization, we can finally check effectively the inheritance relation between TY and YL. It also provide a way to observe the change of the world view between the two books, which is reflected not only by the numbers and titles of the categories, but also by the subjects that each category covers, and the entries that are listed under the subjects.   New subjects indicate the emerging importance of new concepts; the increase of entries under the same subject means more knowledge (or interest) about the subject; and the assignment of the same entry to a different subject signals the change of a viewpoint.  We will give some preliminary findings in this paper.
+
+  
+Processing the texts and building a system for comparison
+
+  
+The full texts in our study are obtained through Guoxuewang (www.guoxue.com). Treating an entry as a basic unit, we parsed each entry into the content and its source (the book from which the text is taken).  The source is further analyzed to identify the title of the book (sometimes with the chapter and the section), the author (if known), and the era (dynasty). An XML format is designed to associate an entry with its category, subject, source, and content. Further analysis was conducted to resolve name and author conflicts.  According to our results, YL has 14,572 entries, extracted from 5,628 sources, of which 787 are books and the rest (4,841) are individual articles such as poems, letters, and memorials.  TY, on the other hand, has 65,633 entries, extracted from 2,327 books and 1,832 other sources. Among the books 629 are cited by both. Of the remaining 1,698 books that are cited by TY but not YL, 498 are from pre-Tang era (which could have been included in YL) and 980 from era unknown (although the majority should be pre-Tang). The number of books that are certain to have been written after YL was completed is only 220.  The total numbers of words in the two books are about 900,000 and 4,000,000, respectively.
+
+  
+We then designed an algorithm based on the longest common sequence method to check if an entry appears in both books. Modifications to LCS are necessary to deal with different styles or errors in the quoted texts. Since the entries of YL are classified into affairs (事) and literature (文) while TY is primarily about affairs, we focused initially on comparing the entries in YL about affairs. We found that among the 9,701 such entries in YL, 7,249, or 75%, appear in TY.  That means TY did indeed heavily reference the earlier book. Those entries appeared 11,022 times in TY, since an entry may appear more than once.
+
+  
+We built a visualization system to compare the two books. An important feature is to show how many entries of a category/subject of one book are also cited in the other book and how they are distributed. We present here an example using the category fuming (divine signs, 符命) in YL. Figure 1 shows that of the 41 entries of the affairs part of fuming in YL, 27 also appeared in TY (left-most column). The middle-left column shows that these 27 entries appeared 51 times in TY.  The third column indicates that these 51 appearances belong to 40 subjects, and the right-most column further indicates that they belong to 16 categories. 
+
+  
+
+    
+Fig. 1: Correspondence of entries of fuming in YL and TY
+
+    
+
+  
+Figure 2 is the list of categories with the number of entries that match those in fuming of YL.   Each category can be expanded to show the subjects that contain some of the related entries.
+
+  
+
+    
+Fig. 2: Categories and subjects of TY that contain entries of fuming from YL
+
+    
+
+  
+Figure 3 lists the entries of fuming in YL and the corresponding (similar) entries in TY.
+
+  
+
+    
+Fig. 3: Comparisons of entries
+
+    
+
+  
+Evolution of worldview
+
+  
+Comparing the two leishu reveals a number of striking changes in worldview between 7th and 10th century China.  We briefly describe three of them.
+
+  
+ 
+
+  
+
+    
+(1) The disappearance of fuming – divine justification
+
+  
+
+  
+Fuming, a sign that provides divine justification to overthrow a dynasty (and to establish a new one), was an extremely important concept during Han Dynasty (206BC – 220AD).  Indeed, Fuming was included in YL as a category.  However, although the number of categories increased from 46 to 55, fuming conspicuously disappeared from TY (it did not even appear as a subject). Although many of the entries are still included in the latter book, they are listed in subjects such as an emperor or his mother and are scattered over 16 categories.  This means that the very concept of fuming became irrelevant politically at early Song.  Other subjects such as auspicious signs (祥瑞) met similar fate. Song Confusionism went through a dramatic development in mid 11th century.  The disappearance of fuming from TY seems to hint that the tide of ridding mysticism may have started a lot earlier, since TY was completed in 984AD.
+
+  
+ 
+
+  
+
+    
+(2) The rise and fall of Daoism and Buddhism
+
+  
+
+  
+In YL, entries about Buddhism were listed in the category inner canon (內典), a Buddhist-centric term; non-Buddhist religious books are outer canons.  Entries about Daoism appeared under the subject immortals (仙道) in the category supernatural (靈異).  In TY, Buddhism and Daoism are both categories, with 10 and 53 subjects each.   While the number of entries about Buddhism increased from 169 to 197, those about Daoism went from 137 to 1402.  The 53 subjects include detailed classification of garments and buildings for different religious purposes.
+
+  
+Buddhism was introduced to China during the 1st century, and became the national religion during the 5th century.  Buddhism was the mainstream religion in early Tang, when YL was compiled.  After mid Tang, the indigenous Daoism started a revival and became an organized religion.   This trend, coupled with the anti-Buddhist attitude of the royal house and many intellectuals, weakened the dominance of Buddhism in China. This phenomenon is vividly demonstrated in our comparison.
+
+  
+ 
+
+  
+
+    
+(3) The emergence of foreign peoples
+
+  
+
+  
+Although the concept of foreign peoples (四夷) in China is as old as 1000BC, there was no category nor subject about any foreign peoples in YL.  For instance, Wuo (倭), a country probably located in modern day Kyoshu Japan, started paying tribute to China as early as late Han dynasty (around 100AD).   However, Wuo was not mentioned as a subject in YL, although appeared (3 times) in subjects describing produce such as mulberry.  TY, on the other hand, has under the category foreign peoples 388 different countries and peoples with 920 entries, which include countries as far as the Roman Empire (大秦) and as near as various indigenous (yet alien) ethnic groups within China proper.   The entries are from books spanning across 1,500 years and are mostly about foreign tributes, trades, and mythologies.   Tang was a melting pot and its capital, Changan, was a great cosmopolitan city.   The intimate and frequent interactions with foreign people apparently also contributed to the establishment of China as an individual and separate identity.
+
+  
+Discussion
+
+  
+The intellectual progress of China between 7th and 10th century had been described as “mediocrity in an era of prosperity”.   In this paper we showed that the Song Confusionism revival of the 11th century might have had its way paved during this period.   Our observations are mainly through comparing two leishu, yiwenleiju completed in 624AD and taipingyulan in 984AD.  Such a study, however, would not have been possible without a systematic way to compare the knowledge structures and the contents of the two tomes.  This paper presents such a method to tackle this prohibitive task.
+
+  
+References
+
+  
+Thomas H. Cormen, Charles E. Leiserson, Ronald L 
+(2001). Rivest and Clifford Stein.  Introduction to Algorithms (2nd ed.). MIT Press and McGraw-Hill. pp. 350–355. ISBN 0-262-53196-8.
+
+  
+Chung, Chia-Hsuan
+ (2013), A study On the Evolution of Classifications in Leishu Yiwenleiju and Taipingyulan through Textual Analysis, MS Thesis, National Taiwan University.
+
+  
+Fu, Daiwie 
+(2007), “The Flourishing of Biji or Pen-Notes Texts and its Relations to History of Knowledge in Song China (960-1279), in Qu’etait-ce qu’ecrire une encyclopedie en Chine, pp 103-130, Presses Universitaires de Vincennes, Saint-Denis.
+
+  
+Ge, Zhaoguang 
+(1998), Chinese World of Knowledge, Thoughts, and Believes Before 7th Century, Fudan University Press, Shanghai.
+
+  
+Gernet, Jacques 
+(1996), A History of Chinese Civilization, Cambridge University Press.
+
+  
+Hu, Daojing 
+(1981), Zhongguo gudai leishu, Zhonghua Books.
+
+  
+Nakatsuhama, Wataru
+ (1974), Yiwenleiju Yinshu Suoyin, Wenguang Publishing, Taipei.
+
+  
+Nie, Chongqi 
+(1934), Taipingyulan Yinde, publisher unkown.
+
+  
+Wen, I-duo
+ (1956), Tangshi zalun, Shanghai Guji Publisher.
+
+  
+Zhou, Shengjie
+ (1998), Taipingyulai yanjiu, Sichuan Bashu Books.
+
+  
+Zurcher, Erich 
+(2007), The Duddhist Conquest of China, Leiensia Sinica, Vol 11.
+
+  
+Many subjects of TY contain sub-subjects. This figure counts all sub-subjects. If the sub-subjects are not included, then the number becomes 4,066.
+
+  
+As can be seen, both leishu utilized many sources that were not books. This is consistent with previous works, in particular the two important indexes: on YL by 
+Nakatsuhama
+, which listed 1025 books and 4600 other sources, and on TY by Nie, which listed 5005 sources (without separating books from others). Both indexes contain mistakes, which explains why our numbers are different.
+
+  
+Li Fang
+, the main editor of TY, also compiled two other great leishu, taipingguangji (太平廣記) and wenyuanyinghua (文苑英華)。Guangji consists of mainly stories and folklores and the latter literature. Since both tomes contain large quantities of material on both Buddhism and Daoism, one might get a different impression if comparing YL with these two leishu. However, as Fu pointed out, TY and guangji were derived from different biji (筆記) traditions and that TY “has an imperial center allied with literati”while guangji “lacks that political center and seems to have an other-worldly, spiritual orientation”.  Since TY  “places a greater emphasis on dynastic orthodoxies”, it is better suited for the comparison than the other two leishu.
+

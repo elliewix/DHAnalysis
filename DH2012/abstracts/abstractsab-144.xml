@@ -1,0 +1,154 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8; charset=UTF-8" /><title>Building a Tool for the Analysis of Translations: The Case of Epistemic
+                    Modality in Edgar Allan Poe’s Stories </title><link rel="stylesheet" href="css/default/results.css" type="text/css" /><script src="script/yui/yahoo-dom-event.js" type="text/javascript"></script><script src="script/yui/connection-min.js" type="text/javascript"></script></head><body class="home blog"><div id="wrapper" class="hfeed"><div id="header"><div id="masthead"><div id="branding" role="banner"><h1 id="site-title"><span><a href="https://dh2011.stanford.edu/" title="Digital Humanities 2011: June 19 – 22" rel="home">Digital Humanities
+                2011: June 19 – 22</a></span></h1><div id="site-description">Big Tent Digital Humanities</div><img src="https://www.stanford.edu/group/dh2011/cgi-bin/wordpress/wp-content/uploads/2010/09/tieDyeLarge.jpg" width="940" height="198" alt="" /></div><div id="access" role="navigation"><div class="menu"><ul><li><a href="https://dh2011.stanford.edu/" title="Home">Home</a></li><li><a href="https://dh2011.stanford.edu/?page_id=3" title="About">About</a></li><li><a href="https://dh2011.stanford.edu/?page_id=15" title="Accommodations &amp; Travel">Accommodations &amp; Travel</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=887" title="Accommodations">Accommodations</a></li><li><a href="https://dh2011.stanford.edu/?page_id=883" title="Travel">Travel</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=311" title="Registration">Registration</a></li><li><a href="https://dh2011.stanford.edu/?page_id=411" title="Schedule">Schedule</a></li><li><a href="https://dh2011.stanford.edu/?page_id=475" title="Workshops">Workshops</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=489" title="Tutorial 1: Introductory TEI ODD">Tutorial 1: Introductory TEI ODD</a></li><li><a href="https://dh2011.stanford.edu/?page_id=499" title="Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the Undergraduate Curriculum">Tutorial 2 / Workshop: Integrating Digital Humanities Projects into the
+                      Undergraduate Curriculum</a></li><li><a href="https://dh2011.stanford.edu/?page_id=507" title="Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can Help Your Project">Tutorial 3: An Introduction to XForms for Digital Humanists: How XForms Can
+                      Help Your Project</a></li><li><a href="https://dh2011.stanford.edu/?page_id=517" title="Tutorial 4: Introduction to Text Analysis With Voyeur Tools">Tutorial
+                      4: Introduction to Text Analysis With Voyeur Tools</a></li><li><a href="https://dh2011.stanford.edu/?page_id=521" title="Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation">Tutorial 5: Gabmap: A Web Application for Analyzing Linguistic Variation</a></li><li><a href="https://dh2011.stanford.edu/?page_id=525" title="Tutorial 6: Natural Language Processing Tools for the Digital Humanities">Tutorial 6: Natural Language Processing Tools for the Digital Humanities</a></li><li><a href="https://dh2011.stanford.edu/?page_id=529" title="Tutorial 7: Network and Topical Analysis for the Humanities using NWB and Sci2">Tutorial 7: Network and Topical Analysis for the Humanities using NWB and
+                      Sci2</a></li><li><a href="https://dh2011.stanford.edu/?page_id=493" title="Workshop: Visualization for Literary History">Workshop: Visualization
+                      for Literary History</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=471" title="Social Program">Social
+                  Program</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=541" title="Literary San Francisco (Full Day)">Literary San Francisco (Full
+                      Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=547" title="Silicon Valley History (Half-Day)">Silicon Valley History
+                      (Half-Day)</a></li><li><a href="https://dh2011.stanford.edu/?page_id=537" title="Sonoma Wine Country (Full-Day)">Sonoma Wine Country (Full-Day)</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=181" title="CFPs">CFPs</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=97" title="General CFP">General
+                      CFP</a></li><li><a href="https://dh2011.stanford.edu/?page_id=175" title="CFP en Español">CFP en
+                      Español</a></li><li><a href="https://dh2011.stanford.edu/?page_id=287" title="CFP in German">CFP in
+                      German</a></li><li><a href="https://dh2011.stanford.edu/?page_id=207" title="CFP in Greek">CFP in
+                      Greek</a></li><li><a href="https://dh2011.stanford.edu/?page_id=229" title="CFP in Hungarian">CFP
+                      in Hungarian</a></li><li><a href="https://dh2011.stanford.edu/?page_id=257" title="CFP in Italiano">CFP
+                      in Italiano</a></li><li><a href="https://dh2011.stanford.edu/?page_id=157" title="Tutorial/Workshop CFP">Tutorial/Workshop CFP</a></li></ul></li><li><a href="https://dh2011.stanford.edu/?page_id=19" title="Contacts">Contacts</a></li><li><a href="https://dh2011.stanford.edu/?page_id=801" title="Venue">Venue</a><ul class="children"><li><a href="https://dh2011.stanford.edu/?page_id=829" title="Local Lunch Spots">Local Lunch Spots</a></li><li><a href="https://dh2011.stanford.edu/?page_id=845" title="Palo Alto Restaurants">Palo Alto Restaurants</a></li></ul></li></ul></div></div><br class="clear" /></div></div><div class="resultsHeader"><table><tr><td><a href="http://dh2011abstracts.stanford.edu/xtf/search" target="_top">New Search</a> | <span class="notActive">Return to Search Results</span> | <a href="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-144.xml&amp;doc.view=print;chunk.id=0" target="_top">Print View</a></td><td align="right"><form action="http://dh2011abstracts.stanford.edu/xtf/view" target="_top" method="get"><input name="query" type="text" size="15" /><input type="hidden" name="docId" value="tei/ab-144.xml" /><input type="hidden" name="chunk.id" value="0" /><input type="submit" value="Search this Book" /></form></td></tr></table></div><hr /><div class="results"><h2>Poster: Building a Tool for the Analysis of Translations: The Case of Epistemic
+                    Modality in Edgar Allan Poe’s Stories </h2><h4>
+                    Zupan, Simon, 
+                    University of Maribor, Slovenia, 
+                    <a href="mailto:simon.zupan@uni-mb.si">simon.zupan@uni-mb.si</a>
+                </h4><h4>
+                    Juuso, Ilkka, 
+                    University of Oulu, Finland, 
+                    <a href="mailto:ilkka.juuso@ee.oulu.fi">ilkka.juuso@ee.oulu.fi</a>
+                </h4><h4>
+                    Opas-Hänninen, Lisa Lena, 
+                    University of Oulu, Finland, 
+                    <a href="mailto:lisa.lena.opas-hanninen@oulu.fi">lisa.lena.opas-hanninen@oulu.fi</a>
+                </h4><hr />
+            
+                <p class="noindent">This paper investigates epistemic modality in Edgar Allan Poe’s Gothic stories
+                    and their translations into Slovenian and Finnish. To facilitate this we have
+                    built a tool that allows the researcher to align the translations, search for
+                    the instances of epistemic stance and compare the original text with the
+                    translations. From the point of view of translation studies, epistemic modality
+                    is interesting in the context of Gothic stories, because it helps to create the
+                    mood of the story and any major shifts in the translation may cause a loss of
+                    the essence of the Gothic. On the other hand, the tool we have built is
+                    applicable to any investigation into a text and its translations and will, we
+                    hope, significantly aid those working in the field.</p>
+                <p class="noindent">Epistemic modality has traditionally been regarded as the “manner in which the
+                    meaning of a clause is qualified so as to reflect the speaker’s judgement of the
+                    likelihood of the proposition it expresses being true” (Quirk et. al. 1992:
+                    219). In other words, it shows the position that speakers adopt with respect to
+                    the truth value of what they are saying (hence it is also referred to as
+                    epistemic stance). As Halliday (Halliday and Matthiesen 2004) has pointed out,
+                    speakers can adopt two extreme positions; they either qualify their proposition
+                    as true (e.g. “Translation scholars are in need of efficient electronic
+                    text-analysis tools.”) or, alternatively, as not true (“Translation scholars are
+                    not in need of efficient electronic text-analysis tools.”). These two positions
+                    are referred to as positive and negative polarity, respectively. More
+                    importantly, speakers can also adopt various positions in between the two poles.
+                    They can thus claim something to be “more” true (“Translation scholars are
+                    definitely in need of efficient text-analysis tools.”) or “less” true
+                    (“Translation scholars are probably not in need of efficient text-analysis
+                    tools.”). It is precisely these intermediate positions that are strictly
+                    referred to as epistemic modality because they indicate the speaker’s (apparent)
+                    inability to ascertain the truth of the proposition they are making and
+                    consequently qualify it as polar.</p>
+                <p class="noindent">This has important implications for the Gothic stories, in particular from the
+                    point of view of their translation into other languages. As Simpson (2004) has
+                    pointed out, authors of Gothic stories often employ epistemic modality to add
+                    uncertainty to them. These narratives thus abound in expressions such as
+                    “possibly”, “perhaps”, “undoubtedly”, “it might have been”, “I believe” and the
+                    like, which all indicate the protagonists’ (apparent) inability to be able to
+                    tell what was behind a particular event or experience. In turn, this makes that
+                    same event or experience appear mysterious. It also lays ground for evoking in
+                    the reader the prototypical Gothic effects such as that of discomfort,
+                    uncanniness or eeriness. Consequently, these linguistic features of the original
+                    text need to be preserved in the translation. As our preliminary research has
+                    shown, however, this is not always the case. Comparison of one of the Slovenian
+                    translations with the original has shown that the translator failed to preserve
+                    epistemic modality in some of the examples by turning them into polar sentences.
+                    As a result, those passages in the target text lost some of their potential to
+                    evoke the same Gothic effects as their corresponding passages in the
+                    original.</p>
+                <p class="noindent">In order to further investigate the extent of this phenomenon, we analyse several
+                    of Edgar Allan Poe’s stories. These include <i>The Fall of the
+                        House of Usher, Berenice, The Masque of the Red Death, Metzengerstein</i>,
+                    and <i>Ligeia</i>, all of which can be seen as Gothic stories or
+                    stories with Gothic elements.</p>
+                <p class="noindent">To facilitate the comparison of the source text and the target text(s), we have
+                    built ParallelTexts, a tool that allows the researcher to view two or three
+                    texts simultaneously in a synchronized manner. It makes use of XML markup, using
+                    pages and paragraphs, or other user-defined elements, for the purposes of
+                    synchronization of texts. There is support for marking up additions, deletions
+                    and other shifts in the text. The user interface shows a table-like view of the
+                    texts and allows for simultaneous scrolling of the texts. Figure 1 below shows
+                    the basic principle of the use interface, where the text in red on the left-hand
+                    side is highlighted to indicate that it is not found in the text on the
+                    right-hand side, ie the comparison version or the target text. Equally, the text
+                    in green on the right-hand side indicates that this text has been added into the
+                    target text and has no equivalent in the original text.</p>
+                <p>
+                    <h2>Fig. 1 A first version of ParallelTexts, with some basic instructions for
+                        using it</h2>
+                    <img class="inline" src="http://dh2011abstracts.stanford.edu/xtf/data/tei//144/figure1.png" /><p><a href="javascript://" onclick="javascript:window.open('http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-144.xml&amp;doc.view=popup&amp;fig.ent=http://dh2011abstracts.stanford.edu/xtf/data/tei//144/figure1.png','popup','width=800,height=600,resizable=yes,scrollbars=yes')">Full Size Image </a></p>
+                </p>
+                <p class="noindent">With appropriate input data, ParallelTexts allows us to examine various aspects
+                    of both the original text and its translation(s). First, it helps us identify
+                    most instances of epistemic modality in the original text and allows easy access
+                    to their corresponding sentences in the translation(s). Second, the tool allows
+                    us to statistically examine the texts and determine various quantitative
+                    features, among them the number of occurrences of epistemic modality and their
+                    distribution in both the original and the translation. Finally, the quantitative
+                    data collected with ParallelTexts will also allow us to qualitatively examine
+                    individual instances of epistemic modality in both texts and determine the
+                    cumulative effect of epistemic modality translation shifts on the translation as
+                    a whole. We also expect that the tool will prove to be useful for other similar
+                    translation studies text analyses. We believe that with some modification and
+                    appropriate input data, ParallelTexts could be used to compare any type of
+                    linguistic features in the original text and its translation. We wish to
+                    demonstrate the tool at DH2011 and all feedback and suggestions for further
+                    improvement of the tool will be most welcome.</p>
+            
+
+        <h2>References:</h2>
+            
+                
+                    <p>
+                        Halliday, M.A.K. and Matthiessen
+                        2004
+                        <i>An Introduction to Functional Grammar</i>, 
+                        Arnold
+                        London
+                    </p>
+                    <p>
+                        Poe, E. A.
+                        1982
+                        <i>The Complete Tales and Poems of Edgar Allan Poe</i>, 
+                        Penguin Books
+                        London
+                    </p>
+                    <p>
+                        Quirk, R., Greenbaum, S., Leech, G. N., and Svartvik, J.
+                        1992
+                        <i>A Comprehensive Grammar of the English Language</i>, 
+                        Longman
+                        London and New York
+                    </p>
+                    <p>
+                        Simpson, P.
+                        2004
+                        <i>Stylistics: a resource book for students</i>, 
+                        Routledge
+                        London and New York
+                    </p>
+                
+            
+        </div></div></body></html>

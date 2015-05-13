@@ -1,0 +1,283 @@
+Poster: Computational Discovery and Visualization of the Underlying Semantic
+                    Structure of Complicated Historical and Literary Corpora
+
+                    Walsh, John A., 
+                    Indiana University, 
+                    
+jawalsh@indiana.edu
+
+                
+
+                    Hooper, Wally, 
+                    Indiana University, 
+                    
+whooper@indiana.edu
+
+                
+This admirable invention [computation by logarithms] added to the ingenious
+                    algorithm of the Indians, by reducing to a few days the labour of several
+                    months, doubles—if we may so speak—the life of astronomers, and spares them the
+                    errors and disgust inseparable from long calculations . . . 
+
+                
+–Pierre Simon de LaPlace (1749-1827) Système du Monde, liv. iv, chap. iv
+
+            
+        
+            
+                
+In addition to offering the possibility of new forms of scholarship beyond the
+                    traditional article or monograph, digital humanities and the computational tools
+                    developed as part of many digital humanities projects allow scholars to practice
+                    an accelerated hermeneutics and analysis on ever larger collections of texts and
+                    other cultural artifacts. Most projects that create scholarly digital editions
+                    of important corpora are consciously addressing a range of research issues in
+                    their respective fields and disciplines. Many of these projects are now also
+                    developing components and applying computational tools to exploit their new
+                    resources with the goal of solving those problems in an efficient and effective
+                    way.
+
+                
+Napier’s logarithms (1614) eased the efforts of early modern astronomers. Today,
+                    computational tools promise to accomplish lengthy mechanical tasks of review and
+                    notation that generations of scholars have done by hand. Effective methods now
+                    exist that will aid trained professionals to see into the heart and structure of
+                    digital corpora.
+
+                
+Our project is associated with two major digital editions based at Indiana
+                    University: the Chymistry of Isaac Newton Project (http://www.chymistry.org),
+                    led by William R. Newman, general editor and co-investigator, which is
+                    publishing a digital edition of one hundred nineteen alchemical manuscripts
+                    written by Isaac Newton, thirty-two of which are now online; and the Swinburne
+                    Project (http://www.swinburneproject.org/), edited by Walsh, which is publishing
+                    the works of Victorian poet and critic Algernon Charles Swinburne.
+
+                
+The National Science Foundation has funded a three-year project (2009–12,
+                    #0620868) to develop computational tools for the analysis of the alchemical
+                    language in Newton alchemical corpus. We are investigating the usefulness of
+                    methods from computational linguistics, information retrieval, and network
+                    sciences for the analysis of the contents of the Newton corpus and the
+                    visualization of its structures. We have been running experiments on IU’s
+                    Teragrid supercomputer system and at the Computational Linguistics Lab for the
+                    last two years.
+
+                
+We have developed a working suite of analytical tools that support effective
+                    real-time investigation of the semantics and structure of the corpus. Data from
+                    our analytical tools is fed into another suite of tools, the Network Workbench
+                    (http://nwb.slis.indiana.edu/), to produce meaningful visualizations that help
+                    the user to comprehend the breadth of the materials and their
+                    interconnections.
+
+                
+Newman has already used the tools to demonstrate the order of composition of
+                    significant parts of Portsmouth MSS. 3973 and 3975, two of Newton’s most
+                    important notebooks recording his alchemical experiments performed at
+                    Cambridge.
+
+                
+While the tools are being designed primarily for the analysis of alchemical
+                    language in Newton's alchemical corpus, we of course hope the tools will be
+                    useful in analyzing documents from other disciplines, and so we are also
+                    applying these tools to a significant corpus of literary documents by
+                    Swinburne.
+
+                
+Among Swinburne's works are six volumes of collected poems, five volumes of
+                    collected tragedies, and a number of volumes of prose literary criticism. The
+                    style, vocabulary and structures of Swinburne's 19th-century literary works are
+                    obviously quite different from Newton's 17th-century scientific texts.
+                    Furthermore, Swinburne's prose criticism is very distinct—in style, vocabulary,
+                    and structure—from his poetry. An earlier effort from The Swinburne Project,
+                    reported on at last year's conference, focused on thematic networks in
+                    Swinburne's 1880 volume Songs of the Springtides. Many instances of networked
+                    themes were found by simple keyword searching. More elusive instances were
+                    identified by traditional methods of close reading, study, and analysis. We are
+                    exploring whether our computational tools are successful at locating some of
+                    these more elusive instances of previously identified themes and whether the
+                    tools can identify clusters that suggest additional themes and streams of
+                    meaning.
+
+                
+Our poster and real-time demonstration of the tools will present our results thus
+                    far with the Newton and Swinburne projects.
+
+            
+            
+                
+Methods and Results
+
+                
+We have found that Latent Semantic Analysis (LSA) is very effective for
+                    discovering the semantic structure and organization of Newton’s alchemical
+                    corpus. LSA methods use singular-value decomposition (SVD) to uncover hidden
+                    layers of structure in a body of information and make it possible to capture and
+                    expose similarities and dissimilarities across an entire corpus with a single
+                    set of operations.
+
+                
+LSA technologies were discussed in the literature in the early 1990s primarily in
+                    the context of information retrieval. That was a problem because LSA methods for
+                    formulating and executing freeform user queries over growing datasets are less
+                    effective than other methods based on Bayesian modeling like Latent Dirichlet
+                    Allocation (LDA), Topic Analysis, and Latent Profile Analysis, which superseded
+                    LSA after 2003. Many who follow the current literature regard LSA as an old and
+                    limited technology. But the goals of close study and analysis are often distinct
+                    from the goals of information retrieval, and there is little useful literature
+                    on the use of SVD and LSA for actual text analysis beyond a report produced by a
+                    team at Sandia National Laboratories in September 2010.
+
+                
+For our purposes, methods like LDA and LPA, which are based on identifying k-dimensional patterns from one set of document to the next and strategically
+                    neglecting what is not pertinent to those dimensions, are less useful for text
+                    analysis than methods that explicitly capture and model all relations between
+                    all words and document chunks in corpora. SVD and LSA do that very well.
+
+                
+Our research plan includes collocational analysis of the Newton manuscripts
+                    (almost a millions word of English, Latin, and French), and we are collaborating
+                    with IU computational linguist Sandra Kübler to do part-of-speech markup,
+                    lemmatization, and sentence parsing. As part of that effort, we have been
+                    varying the size of our LSA document chunks downward from 1000 words to 250 and
+                    100, approaching the sentence level where the distinction between “bag-of-
+                    words” approaches and syntax-based methods tends to vanish for practical
+                    purposes and the two can be welded in combined operations.
+
+                
+We have created web-based components that generate comprehensive lists of
+                    correlated results based upon user-selected documents, document fragments, or
+                    word. In the case of document-fragment queries, the user can select any pair of
+                    correlated fragments and view them side by side. (
+See Figure 1
+) 
+
+                        
+Figure 1: Screen capture of user component showing a side-by-side view
+                            of two brief fragments from Portsmouth Add. MS. 3973, f. 19r, and Add.
+                            MS. 3975, f.77r: The yellow color and red dots indicate shared
+                            vocabulary and passages.
+
+                        
+Full Size Image 
+
+                    
+                
+Strongly correlated fragments (those correlating at 0.7 and above on a scale
+                    ranging between -1.0 and 1.0) almost always share long phrases and sentences.
+                    The method is robust enough to detect paraphrases too. One SVD calculation
+                    detects and maps all the passages in that large, arcane corpus which share
+                    vocabulary, phrases, and ideas, saving investigators considerable time in
+                    working through those texts and revealing correlations that might otherwise
+                    escape notice.
+
+                
+A useful way to present SVD results for interpretation is to graph them as
+                    networks—the document chunks or the terms are graphed as nodes and the cosine
+                    similarities or correlations between them as edges. Our tools make network graph
+                    files for use in the Network Workbench (NWB) tool developed by our colleague
+                    Katy Börner’s team at Indiana University. (
+See
+                        Figure 2
+) 
+
+                        
+Figure 2: Sample network graph of relations between a small number of
+                            correlated fragments in Keynes MS. 41, Dibner MS. 1070A, Yahuda MS. 259,
+                            Babson MS. 417, and Royal Society M/M/6/5.
+
+                        
+Full Size Image 
+
+                     NWB is designed to be a “large-scale network analysis, modeling and
+                    visualization toolkit for biomedical, social science and physics research.”
+                    Another of our contributions is testing this tool in humanities research
+                    contexts for which it was not initially designed.
+                
+Figure 2 shows that two passages on Keynes 41, ff. 12r and 13r, are better
+                    correlated with four fragments in other manuscripts than they are with each
+                    other (their correlation is 0.46). Newton worked back and forth between sets of
+                    reading notes as he attempted to make sense of the alchemical literature. The
+                    algorithms and graphs make all the connections visible at a glance.
+
+                
+We expect that the combination of LSA-based tools and network graphs derived from
+                    them will provide invaluable means of problem solving and discovery for the
+                    experienced researcher who is working with large, complicated corpora.
+
+            
+
+        
+References:
+
+            
+                
+                    
+Börner, K.
+                        2007
+                         “Making Sense of Mankind's Scholarly Knowledge and
+                            Expertise: Collecting, Interlinking, and Organizing What We Know and
+                            Different Approaches to Mapping (Network) Science, ” 
+                        Environment and Planning B: Planning and Design, 
+                        34
+                        5
+                        808-825
+                        Pion
+                    
+
+                    
+
+                        Deerwester, S. C.
+                        Dumais, S. T.
+                        Landauer, T.K.
+                        Furnas, G. W.
+                        Harshman, R. A
+                        1990
+                         ““Indexing by latent semantic analysis.”, ” 
+                         Journal of the American Society for Information
+                            Science, 41
+                        6
+                        391–407
+                    
+
+                    
+
+                        Dunlavy, D.
+                        Shead, T.M.
+                        Crossno, P.J.
+                        Stanton, E.T.
+                        September 2010
+                         ““ParaText - Scalable Solutions for Processing and Searching
+                            Very Large Document Collections: Final LDRD Report.”, ” 
+                         “Technical Report SAND2010-6269, ” 
+                        Sandia National Laboratories
+                        Albuquerque, NM and Livermore, CA
+                    
+
+                    
+
+                        Skillicorn, D.
+                        2007
+                        Understanding Complex Datasets. Data Mining with Matrix
+                            Decompositions, 
+                        Boca Raton, FL
+                        Chapman and Hall
+
+                    
+
+                        Walsh, J.
+                        2010
+                         “"Quivering web of living thought:" Conceptual networks in
+                            Swinburne's Songs of the Springtides., ” 
+                        Y. Levin
+                        A. C. Swinburne and the singing word: New perspectives on
+                            the mature work, 
+                        Farnham, England
+                        Ashgate
+                        29-53
+                    
+
+                
+            
+        
