@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-413">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>A Humanist Perspective on Building Ontologies in Theory and Practice</title>
+<author>
+<name><surname>Simpson</surname>, <forename>John Edward</forename></name>
+<affiliation>University of Alberta, Canada</affiliation>
+<email>john.simpson@ualberta.ca</email>
+</author>
+<author>
+<name><surname>Brown</surname>, <forename>Susan</forename></name>
+<affiliation>University of Alberta, Canada;
+University of Guelph, Canada</affiliation>
+<email>susanirenebrown@gmail.com </email>
+</author>
+<author>
+<name><surname>Goddard</surname>, <forename>Lisa</forename></name>
+<affiliation>Memorial University, Canada</affiliation>
+<email>lgoddard@mun.ca</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Bowker and Star (1999) warn of the shaping force of classification systems, of the power of their apparent naturalization as part of infrastructures and the consequences thereof. The rise of the semantic web and its grounding in the use of ontologies threatens to explode the scale of this issue. This paper explores the practical implications and theoretical limits of using ontologies, offering a survey of best practices and ongoing areas of active research. The survey shows that the process of ontology construction and integration in the semantic web does have the potential to restrict human thought. It is then argued that certain features of the semantic web make it possible to avoid this detrimental outcome but only if a critical mass of people---the community of humanists might be enough---actively use these features to keep the web a place of flexible ontologies and humane classification.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP12</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>ontologies</term>
+<term>theory &amp; practice</term>
+<term>naturalization</term>
+<term>integration</term>
+<term>commensurability</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>databases &amp; dbms</term>
+<term>digital humanities - nature and significance</term>
+<term>ontologies</term>
+<term>philosophy</term>
+<term>knowledge representation</term>
+<term>internet / world wide web</term>
+<term>semantic web</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-14"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div><p>150 Word Summary: Bowker and Star (1999) warn of the shaping force of classification
+systems, the power of their apparent naturalization as part of infrastructures, and the
+consequences thereof. The rise of the semantic web and its grounding in the use of ontologies
+threatens to explode the scale of this issue. This paper explores the practical implications and
+theoretical limits of using ontologies, offering a survey of best practices and ongoing areas of
+active research. The survey shows that the process of ontology construction and integration in
+the semantic web does have the potential to restrict human thought. It is then argued that certain
+features of the semantic web make it possible to avoid this detrimental outcome but only if a
+critical mass of people—the community of humanists might be enough—actively use these
+features to keep the web a place of flexible ontologies and humane classification.</p></div>
+
+<div>
+<head>Introduction</head>
+<p>Creating an ontology amounts to creating a classification system and asserting a system of logic
+with it. There are inherent consequences to doing this that are both “real world” and potentially
+serious. Bowker and Star make an assessment of these, arguing that, “it is politically and
+ethically crucial to recognize the vital role of infrastructure in the ‘built moral environment.’
+Seemingly technical issues like how to name things and how to store data in fact constitute much
+of human interaction and much of what we come to know as natural” (Bowker and Star 1999,
+326). The semantic web promises to explode this observation as the interplay of ontology
+proliferation and convergence begins to create the largest classification system in human history.
+Insofar as using an ontology tends to establish certain actions, things, and dispositions as natural,
+this same tendency leads to problems of commensurability that intersect with seminal work by
+prominent philosophers such as Quine, Wittgenstein, Foucault, Kuhn, and the poststructural
+movement as a whole (cf. Cope, Kalantzis, and Magee 2011). Bowker and Star advocate the use
+of flexible or “living” classifications as the approach to solving these deep issues (Star 2010;
+Bowker and Star 2011), but this is only a prescription and it is left open how the medicine should
+be delivered.</p>
+
+<p>In the semantic web, ontologies provide the vocabularies and the schemas that tell the machines
+used to crawl the web just what to do with data when it is found, a view that is supported by the
+number of introductions to the semantic web that treat it in a purely mechanical way. From such
+perspectives ontologies bring the promise of inferential reasoning on content and an open
+environment where information is more easily exchanged (W3C). Along with these benefits
+come potential problems, including the rise of near silent normalizations around how we think
+about the world that we live in and the very real possibility of incommensurability among
+ontologies. Clearly there is a large divide between benefits and concerns, one that is extended
+through the contrasts between practice and theory, stability and flexibility, mechanical and
+human(e).</p>
+
+<p>This paper explores possibilities for traversing this divide and considers the extent to which it
+can be narrowed by considering both the practical implications and theoretical limits of using
+ontologies, offering a survey of best practices and ongoing areas of active research. From this
+basis, it argues that the process of ontology construction and integration currently taking place
+around the semantic web amounts to a massive act of world construction with the potential to
+severely impact human life through rigidly framing human thought. Certain features of the
+semantic web make it possible to avoid this, but only if a critical mass of people---the
+community of humanists might be enough---actively use these features to keep the web a place
+of flexible ontologies.<ref type="note" target="n01">1</ref></p>
+
+<p>
+This argument and the accompanying assessments of the state of the semantic web today emerge
+from work that we have done around building a web-based editor to allow scholars with limited
+technical expertise in either XML or RDF to contribute or enhance online scholarly materials in
+these data formats.<ref type="note" target="n02">2</ref> Enabling scholars to use these tools to connect with the open web through a
+system of references and annotations has meant that the various research groups we are involved
+with (CWRC, INKE, and the Text Mining &amp; Visualization for Literary History Project) are
+grappling with ontology construction and integration. Continuing from preliminary work
+presented at the NeDiMAH workshop at DH2012 (Brown et. al. 2012), this paper will cover the
+following:
+
+<list type="ordered">
+<item>1 Review of practical approaches to ontology integration</item>
+<item>2 Current ontology use: summary and analysis</item>
+<item>3 Philosophical issues at the core of ontology creation, selection, integration, and use</item></list>
+</p></div>
+
+<div>
+<head>Review of practical approaches to ontology creation and integration</head>
+
+<p>The challenge of creating ontologies goes back at least to Aristotle’s <hi>Categoriae</hi>. Problems
+surrounding such classification systems were given life in the digital world with the creation of
+the first databases in the 1960s and issues of structuring and integrating data have been of
+interest to the computer science and business communities since then. The emphasis from these
+communities has mostly been on the pragmatics of making the related systems work. Particular
+attention has been given to the challenge of combining ontologies (for extensive examples of this
+see Noy et. al. 2005 and Klein 2001), a particularly complicated problem that has roots reaching
+into problems of normalization and commensurability. In the interest of expanding the repertoire
+
+of both conceptual and practical tools available to humanists working with ontologies, we share
+the results of a survey of these approaches to ontology integration, highlighting those from which
+humanists stand to benefit most particularly. The survey covers:</p>
+<list type="unordered">
+<item>ontology conformity, as seen in projects like Pelagios and NINES;</item>
+<item>mediating ontologies/schemas;</item>
+<item>super ontologies such as SUMO (Suggested Upper Merged Ontology);</item>
+<item>simple ontology joins such as those allowed by owl:import;</item>
+<item>	&#949;-Connections (Cuenca Grau et al. 2011);</item>
+<item>ontology design patterns (Presutti and Gangemi, 2008).</item></list></div>
+
+<div>
+<head>Summary and analysis of current ontology use</head>
+<p>Some general statistics are available for ontology use (semanticweb.org 2012; UMBC). These
+reveal that the Dublin Core (DC) namespace is referenced by 82% of semantic websites, with
+Friend of a Friend (FOAF) a distant second at 38%. While such figures suggest convergence
+around particular ontologies, they are also clearly influenced by the nature of existing semantic
+web sites, in which archival institutions such as a libraries have exposed large quantities of
+material. Fully understanding the implications of such figures requires further inquiry, such as
+what elements of the DC namespace are in use, what elements of the schemas these sites are
+leveraging from each namespace, and what semantic web elements sites have created
+themselves. This information is not readily obtained, so we have built a web crawler to collect it.
+By the time of DH2013 we aim to have a representative sample from which to report on the state
+of the semantic web in terms of ontology use at a more granular level.</p>
+
+<p>We will combine the results of this web-crawling endeavour with the results of an analysis and
+assessment of the leading namespace options available. We will highlight probable points of
+failure when using ontologies in combination, including type propagation and the misuse of
+symmetric predicates such as subPropertyOf. Our focus, in terms of capturing relations,
+properties, and spatial-temporal locations, will be on the following ontologies:</p>
+
+<figure>
+<graphic url="ab-413.t01"/>
+<figDesc>Document &amp;
+Metadata
+Space &amp; Time Relationships General
+● Functional
+Requirements for
+Bibliographic Records
+(FRBR)
+● Metadata Object
+Description Schema
+(MODS)
+● Dublin Core (DC)
+● Eprints Type
+● Open Annotation
+(OA)
+● Event Ontology
+● OWL Time
+● Place
+● Geonames
+● WGS84 Geo
+Positioning
+● FAO Country
+Profiles
+● City/Country Lists
+● Linking Open
+Descriptions of Events
+(LODE)
+● Friend of a Friend
+(FOAF)
+● Encoded Archival
+Context for Corporate
+Bodies, Persons, and
+Families (EAC-CPF)
+● BIO
+● Relationship
+● RDF/S
+● XML Schema
+Definition (XSD)
+● Web Ontology
+Language (OWL)
+● CIDOC
+● SKOS</figDesc></figure>
+
+</div>
+
+<div>
+<head>Philosophical issues raised by ontology creation, selection, integration, and use</head>
+
+<p>Building an ontology might start out as a simple matter of enabling certain features or capacities
+but doing so raises philosophical issues that humanists are experienced at recognizing and
+considering. The most significant of these is the social construction of reality, with the predicted
+increase in the prevalence of ADHD via the introduction of new criteria for diagnosis in the
+DSM-5 (Ghanizadeh 2012; Whitely 2010) standing as a tangible example. Closer to home for
+digital humanists, the DSM-5 also recommends that a new condition known as “Internet Use
+Disorder” be the subject of further study so that it may be determined whether to fully include in
+the future (Walton 2012).</p>
+
+<p>The semantic web was in its fetal stages when Bowker and Star worried that, “In the past 100
+years, people in all lines of work have jointly constructed an incredible, interlocking set of
+categories, standards, and means for interoperating infrastructural technologies. We hardly know
+what we have built. No one is in control of infrastructure; no one has the power centrally to
+change it” (Bowker and Star 1999, 319). Now that the semantic web is more established it is
+possible to see that there are opportunities to leverage its features to address such concerns and to
+hope that a spillover effect might occur. The particular features that we have in mind are the
+tolerance of the semantic web to ontologies that are incomplete, contradictory, or otherwise
+‘imperfect’, the various levels of granularity that are possible using tools like RDF and OWL,
+and the transparency that linked online ontologies necessarily provide. We consider these
+features in light of the insights of the previous sections and conclude that while there is still
+reason for concern, mindfulness, and caution in constructing ontologies for the semantic web, it
+still holds promise for cultivating humane practices of classification.</p></div>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Bowker, G. C., and S. L. Star</hi> (1999). <hi>Sorting Things Out: Classification and Its
+Consequences</hi>. Cambridge: MIT Press.</bibl>
+
+<bibl><hi rend="bold">Brown, S., L. Goddard, and M. Paredes-Olea</hi> (2012). <hi>RDF for a Dynamic Literary
+Studies Collaboratory: A Pragmatic and Incrementalist Approach, Proceedings of
+NeDiMAH workshop on Ontology-based annotation</hi>, DH2012, Hamburg, July 2012.</bibl>
+
+<bibl><hi rend="bold">Cope, B., M. Kalantzis, and L. Magee, (eds.)</hi> (2011). <hi>Towards a Semantic Web:
+Connecting Knowledge in Academic Research</hi>. Oxford: Chandos Publishing.</bibl>
+
+<bibl><hi rend="bold">Cuenca Grau, B., B. Parsia, and E. Sirin</hi> (2011). Combining OWL Ontologies Using Econnections.
+<hi rend="italic">Web Semantics: Science, Services and Agents on the World Wide Web</hi> 4(1).
+<ref type="url" target="http://mail.websemanticsjournal.org/index.php/ps/article/view/83">http://mail.websemanticsjournal.org/index.php/ps/article/view/83</ref> (accessed March 11,
+2013).</bibl>
+
+<bibl><hi rend="bold">Ghanizadeh, A.</hi> (2012). Agreement Between Diagnostic and Statistical Manual of Mental
+Disorders, Fourth Edition, and the Proposed DSM-V Attention Deficit Hyperactivity
+Disorder Diagnostic Criteria: An Exploratory Study, <hi rend="italic">Comprehensive Psychiatry</hi>.
+<ref type="url" target="http://linkinghub.elsevier.com/retrieve/pii/S0010440X12001137">http://linkinghub.elsevier.com/retrieve/pii/S0010440X12001137</ref> (accessed March 11, 2013)</bibl>
+
+<bibl><hi rend="bold">Klein, M.</hi> (2001). Combining and Relating Ontologies: An Analysis of Problems and Solutions,
+<hi rend="italic">Workshop on Ontologies and Information Sharing</hi>, IJCAI, 1:4-5.</bibl>
+
+<bibl><hi rend="bold">Liu, A.</hi> (2012). The State of the Digital Humanities A Report and a Critique, <hi rend="italic">Arts and
+Humanities in Higher Education</hi>, 11(1-2): 8-41.</bibl>
+
+<bibl><hi rend="bold">Noy, N. F., A. Doan, and A. Y. Halevy</hi> (2005). Semantic Integration. <hi rend="italic">AI
+Magazine</hi>, 26(1). <ref type="url" target="http://www.aaai.org/ojs/index.php/aimagazine/article/view/1794">http://www.aaai.org/ojs/index.php/aimagazine/article/view/1794</ref> (accessed
+March 11, 2013)</bibl>
+
+<bibl><hi rend="bold">Presutti, V., and A. Gangemi</hi> (2008). Content Ontology Design Patterns as Practical Building
+Blocks for Web Ontologies, <hi rend="italic">Conceptual Modeling-ER 2008</hi>: 128-141.</bibl>
+
+<bibl><hi rend="bold">S. L. Star</hi> (2010). This Is Not a Boundary Object: Reflections on the Origin of a Concept,
+<hi rend="italic">Science, Technology &amp; Human Values</hi> 35(5): 601-617.
+semanticweb.org. “Ontology”, June 13, 2012. <ref type="url" target="http://semanticweb.org/wiki/Ontology">http://semanticweb.org/wiki/Ontology</ref>.</bibl>
+
+<bibl><hi rend="bold">UMBC Ebiquity Research Group</hi> (n.d.). <hi rend="italic">100 Most Common RDF Namespaces</hi>.
+<ref type="url" target="http://ebiquity.umbc.edu/blogger/2006/08/23/100-most-common-rdf-namespaces/">http://ebiquity.umbc.edu/blogger/2006/08/23/100-most-common-rdf-namespaces/</ref> (accessed
+March 11, 2013).</bibl>
+
+<bibl><hi rend="bold">W3C</hi> (n.d.). <hi rend="italic">W3C Semantic Web Frequently Asked Questions</hi>. <ref type="url" target="http://www.w3.org/RDF/FAQ">http://www.w3.org/RDF/FAQ</ref>
+(accessed March 11, 2013).</bibl>
+
+<bibl><hi rend="bold">Walton, A.</hi> (2012). Internet Addiction: The New Mental Health Disorder?.
+<ref type="url" target="http://www.forbes.com/sites/alicegwalton/2012/10/02/the-new-mental-health-disorder-internet-addiction/">http://www.forbes.com/sites/alicegwalton/2012/10/02/the-new-mental-health-disorder-internet-addiction/</ref> (accessed March 15, 2013)</bibl>
+
+<bibl><hi rend="bold">Whitely, M.</hi> (2010). Speed up &amp; sit still : the controversies of ADHD diagnosis and
+treatment. Crawley, W.A.: UWA Publishing.</bibl>
+
+</listBibl>
+</div>
+<div type="Notes">
+<note xml:id="n01" n="1">While this critical mass might be drawn from any discipline, humanists most regularly make a practice of
+attempting to understand the relationships between humans, cultures, representations and artifacts, all of which are
+deeply intertwined with the semantic web. This understanding is born from a practice of critical reflection that is
+importantly stretched between the practical and the theoretical, two poles which must be reconciled for the web to
+avoid the potential problems raised here.</note>
+<note xml:id="n02" n="2">The tool we are developing is the CWRC-Writer. More information about it may be found at
+<ref type="url" target="http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/cwrc-writer-an-in-browser-xml-editor/">http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/cwrc-writer-an-in-browser-xml-editor/</ref> .</note>
+</div>
+
+</back>
+</text>
+</TEI>
+

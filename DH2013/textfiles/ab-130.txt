@@ -1,0 +1,100 @@
+
+
+
+Summary
+
+The rapid development of computer graphics and imaging provides the modern archeologist with several tools to realistically model and visualize archeological sites in 3D. This creates a bridge between humanities and computer science. This project, integrating interdisciplinary  research methods, will explore an effective way to reconstruct tangible cultural heritage.  In particular, our research will focus on the structure and mechanisms and art values of the astronomical clock towers both in China and Europe, employing modeling tools such as 3DSMAX and SOLIDWORKS to model the astronomical clock-towers, and making use of JavaScript and VRML technology to control the display. Then, we will use the ADAMS software to analyse the kinetic parameters and rotation periods. After extensive consultation of the literature, we will contrast the different astronomical clock towers in terms of mechanics, astronomy, aesthetics, etc.   Understanding each other’s culture will be one of the main challenges of the next generation of world's citizens. Such a study will not only bring us fancy digital exhibits related to astronomical clock towers from different cultures, but also stimulate cross-fertilization between humanities and technology, raising citizens’ awareness towards cultural heritage. Europe has quite a long tradition of building astronomical clock towers, and the candidate’s recent research focused on their Chinese ancient counterparts (the water-powered armillary sphere and celestial globe).  He invested much effort in modeling and reconstructing the instrument and designing a Virtual exhibition about it. The candidate is now looking forward to get inspired further by scholars from other nations or civilizations. So far, the modeling of mechanisms, which is highly relevant in industrial archaeology in general, has been missing from these projects. The proposal would help to add this aspect to the work that is ongoing in their realm.
+
+
+
+
+
+Background
+
+In recent years, multidisciplinary approaches combining Virtual Reality, Archaeology, and Cultural Heritage have become increasingly important. The rapid development of 3D capturing technology  provides modern archeologists and other scholars with tools to realistically model and visualize archeological sites in 3D. In the same way as the general public is getting used to more and more realistic visualizations of virtual worlds through games, movies and TV, the demand for such 3D models of archeological sites is growing. These models are not only used for edutainment and site marketing, they also provide a basis for dissemination and scientific discussion about reconstruction hypotheses. In Europe, many research projects were sponsored to support such interdisciplinary research, like EPOCH, 3D-COFORM, ViHAP3D, 3D-Murale, and so on. 
+
+
+
+This project related to astronomical clocks is an application research integrating computer graphics and 3D acquisition, mechanics, archaeology,arts and history. An astronomical clock is a clock with special mechanisms and dials to display astronomical information, such as the relative positions of the sun, moon, zodiacal constellations, and sometimes major planets. Europe has quite a long tradition of making astronomical clocks and many of them are located in the main cities of Europe, such as Strasbourg, Prague, Copenhagen, but also Olomouc or Lier, and are mostly operating properly.
+
+  
+
+Similarly, China also has a long tradition of making astronomical clocks. The water-powered armillary sphere and celestial globe were built around the year 1088 AD (Chinese ancient Astronomical Clock-tower built by Su Song and his collaborators in the Northern Song Dynasty). It was undoubtedly one of the pinnacles of this craft and art.  In the past two years, the candidate’s major research focused on reconstructing the water-powered armillary sphere and celestial globe and on putting forward a novel reconstruction design different from other designs found in historical archives. 
+
+
+
+In 1964, J.H. Combridge published an article in Nature, the Chinese water-balance escapement, where he defined the Great wheel as an escapement mechanism and made a 1:6 scale model of the escapement. Beside, the book written by Dr. Joseph Needham- the Heavenly Clockwork, also introduced the Chinese ancient Astronomical Clock-tower according to the statement of J.H Combridge. The water-driven astronomical clock tower was a wooden building 12meters in height. On the top platform was an armillary placed in a chamber with a removable roof which resembled the dome of a modern observatory. The armillary was connected through gears with the driving machinery of the whole installation, which enabled it to follow the diurnal motion of the natural celestial sphere. When the observer aimed the sighting tube at the sun, the mechanical motion of the armillary would keep the sun in the visual field for a fairly long time. This device was working based on a water-powered mechanical clock with an escapement regulator. Literary records are available for this invention, but unfortunately surviving hardware is lacking. However, several reconstruction designs were put forward in the past century. 
+
+
+
+
+
+
+Objectives
+
+This project, through its interdisciplinary research method, will explore an effective way for the reconstruction of tangible cultural heritage. In particular, our research will focus on the structure and mechanisms of the astronomical clock towers in China and Europe. We will employ modeling tools such as 3DSMAX and SOLIDWORKS to model astronomical clock towers, and we will make use of JavaScript and VRML technology to control the display. Then, we will use the ADAMS software to analyze the kinetic parameters and rotation periods. Through the study of the related literature, a report will be produced that highlights the differences and similarities with other astronomical clock towers.
+ 
+
+
+In general, this project has three main purposes: 
+(1) Exploring a practical and efficient method for the reconstruction of Cultural Heritage where the objects consist of mechanical parts with relative motions
+(2) Comparing the difference of Astronomical Clock towers between Europe and China in terms of mechanics, astronomy, arts,and history 
+(3) Building a virtual imaging space showing the main Astronomical Clock towers from China and Europe, also explaining their structures and operating principles 
+
+
+
+Research method
+
+The main methods and resources planned for use in this project could be summarized as follows:                  
+
+1. Historical Archives,
+2. Design specifications, 
+3. Generalized kinematic chains,
+4. Specialized chains, 
+5. 3D detailed Modeling,
+6.  Comparative study,
+7.  Programming
+
+
+
+Fig 1. research method
+
+
+
+
+Illustration about Dynamic and Mechanical Analysis
+
+
+There are a lot of technologies and commercial tools available today to create realistic 3D models of cultural heritage. When producing a dynamics and kinematics model of an Astronomical Clock, the needs go beyond capturing static 3D shapes. We have to produce a geometric model of the parts and to also formulate the possible relative motions, as well as their restrictions. We have already started to make a model with the computer software SOLIDWORKS, including all the main parts. The consistency of the parts will be checked via their assembly into virtual mechanisms, e.g. checking the number of teeth of gears, the diameters of ratchet-wheels, etc. Then, we can also get experimental results by amending the parameters of the simulating model. After we get our 3D model, we can input it to the platform of ADAMS by a kind of Para solid format. Then we can suppose some properties of parts for which the real, original data are lacking, like their masses, original positions, velocities, moving directions and reestablished loads. This will be done through simulations with ADAMS, which can link up the components into complete mechanical systems. This software is also capable of limiting the relative motions between different components by a series of restrictions. Fortunately, a number of parameters for the original parts can still be deduced today.  The most important contribution in this however, is that we will endeavor to embed the above analysis within the framework of procedural modeling, which we explain in a bit more detail further below. The aforementioned tools will be used to generate the 3D models of individual parts. Also in a procedural modeling context, several ready-made 3D models (the so-called leaf nodes or `assets’) are included directly from libraries, possibly parameterized so that a number of properties can still be modified. The above tools will be used to generate the necessary assets (i.e. some of the solid components of which the entire structure has been composed). 
+
+
+
+After we get all useful parameters of the gear system, we will perform experiments to calculate several other parameters like moments of inertia, transmitting power, etc. And then we can deduce its motion and effect on the Astronomical Clock design. At last, we will be able to explain the full 3D model. 'Full model’ is relative here, as we will discard non-essential parts, such as sculptures, puppets for reporting time, etc. And we predigested some complicated parts as a simple rigid body.
+
+
+
+The next pages show some examples of parts that have already been modeled, and also of manual compositions into assemblies. This type of tedious, manual composition should be largely replaced by procedural modeling. As can be seen, some of the parts are quite ornamental. Such pieces definitely have to be modeled separately, as the assets that the procedural models are based upon. The procedural modeling aspect will mainly focus on the underlying mechanisms of these clock towers. 
+
+
+
+*Several pictures of my recent research: (unpublished)
+
+
+
+Fig. 1:
+research method
+Fig. 2:
+internal model of the water-powered armillary sphere and celestial globe
+Fig. 3:
+outside model of the water-powered armillary sphere and celestial globe
+Fig. 4:
+internal structure of the water-powered armillary sphere and celestial globe
+Fig. 5:
+model of the Great wheel 
+Fig. 6:
+Dynamic simulation of the Great wheel based on ADAMS
+
+
+                
+
+

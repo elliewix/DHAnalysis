@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0" xml:id="workshops-005">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title><hi>Collating Texts with Juxta WS in Ruby</hi></title>
+<author>
+<name>
+<surname>Laiacona</surname>, <forename>Nick</forename>
+</name>
+<affiliation>President of Performant Software Solutions LLC</affiliation>
+<email>nick@performantsoftware.com</email>
+</author>
+<author>
+<name>
+<surname>Middell</surname>, <forename>Gregor</forename>
+</name>
+<affiliation>Literary Scholar &amp; Software Developer</affiliation>
+<email>gregor@middell.net</email>
+</author>
+</titleStmt>
+
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130715"></date>
+<time when="13:00:00"></time>
+</p>
+<p n="session">Workshop</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Workshops</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-28"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<head>Full Description</head>
+    <p>In this workshop, participants will learn how to develop a customized collation pipeline in Ruby using Juxta WS. Juxta WS is a web service that can collate variant texts and visualize the differences between them. It is free, open-source software comprising a pipeline of “micro-services” that may be valuable to any project that deals with digital texts, especially texts encoded in XML. Juxta WS can take in a variety of source file types including plain text, HTML, and XML, with special handling for texts encoded in TEI. Results can be output at any point along the Juxta WS pipeline, so it can be used, for example, to convert XML to plain text or HTML and output an XSLT style sheet; isolate text from an HTML file; tokenize a text stream; annotate the differences between texts; align fragments of text between sources; visualize the collation of texts encoded in TEI parallel segmentation; or generate a single TEI parallel segmented output from multiple input files</p>
+    <p>Juxta WS can serve any project where the differences between variant texts are of interest. The Carolingian Canon Law Project at the University of Kentucky was an early adopter of Juxta WS, establishing a private collation workspace where registered users can collate variant texts from a Latin corpus. The Melville Electronic Library at Hofstra University is using Juxta WS to compare variants of Melville’s writings, including the new manuscript transcriptions being created with the TextLab fluid-text editing tool. At Texas A&amp;M University, the Early Modern OCR Project is collating the output of OCR engines with hand-typed versions of the same texts, using the change index calculated by Juxta WS as a metric of OCR performance. Juxta WS also powers Juxta Commons, a site sponsored by NINES where anyone may create a free account, upload source files for collation, and share the resulting visualizations. We think Juxta could be used creatively by diverse projects and we are looking forward to learning about projects participants bring to the workshop.</p>
+    <p>In the first half of the workshop, participants will follow along on their laptops as we introduce Juxta WS and the constituent parts of the collation pipeline. In the second half of the workshop, we will begin by showing participants how to obtain texts for experimentation from online sources. We will then have a hacking session where participants will work in small groups to leverage Juxta WS on texts from their own projects or obtained online.  </p>
+    <p>During the hacking session, Gregor and Nick will float and answer questions. Participants will be able to access a Juxta WS server for use during this class and throughout DH 2013. Documentation for the Juxta WS API is available online and we will add information about the Ruby bindings there. There will also be a public Github repo where participants can push their work. We will help anyone not familiar with Git with a quick review of the necessary commands.</p>
+    <p>At the end of the workshop there will be a brief show and tell period. Each group will be invited to show what they worked on, either as working code or as the sketch of an idea.</p>
+</div>
+
+<div>
+<head>Workshop Outline (3 hours, not including the break)</head>
+
+<list type="ordered">
+
+    <item>1. Introduction of Speakers and Topic (5 min.)</item>
+    <item>2. Demonstration of Juxta (10 min.)</item>
+    <item>3. Working with Juxta WS in Ruby (75 min.):
+<list type="ordered">
+    <item>a. Sources</item>
+    <item>b. Tokenization</item>
+    <item>c. Filtering XML Tags</item>
+    <item>d. Collating</item>
+    <item>e. Presenting Visualizations</item></list></item>
+
+    <item>4. Break </item>
+    <item>5. Finding Interesting Data (10 min.)
+        <list type="ordered">
+    <item>a. online sources of humanities texts for collation</item></list></item>
+    <item>6. Break into small groups (5 min.)</item>
+    <item>7. Hacking (60 min.)</item>
+    <item>8. Show and Tell (15 min.)</item></list>
+</div>
+
+<div>
+    <head>Workshop Leaders</head>
+<head type="sub">Nick Laiacona</head>
+
+    <p>Nick Laiacona is the President of Performant Software Solutions LLC. Under his leadership, Performant has cultivated a specialty in building custom software and websites for digital humanities projects. In recent years, Laiacona and the Performant team have worked on Juxta, a program for visualizing textual collations; TypeWright, a tool for crowd-sourcing the correction of “dirty OCR” in databases of early modern books; and TextLab, an NEH-funded web application for fluid text editing. Performant Software also provides ongoing development support to the scholarly websites NINES and 18thConnect, and to their forthcoming peer site, MESA. With more than fifteen years of professional experience, Laiacona has acted as technical lead on digital projects funded by the National Endowment for the Humanities, the Andrew W. Mellon Foundation, and the National Institutes of Health.</p>
+</div>
+
+<div>
+<head type="sub">Gregor Middell</head>
+
+    <p>Gregor is a scholar in the field of humanities computing currently contributing to a genetic digital edition of Goethe’s Faust. Before joining the Faust project, he earned a Master’s degree in Berlin, majoring in both Modern German Literature and Computer Science. Gregor's main research interests are firstly computer-supported collation with the aim to semi-automatically correlate electronic texts, analyze textual variance and determine intertextual relationships; secondly he is interested in markup theory/practice. To this end he participates in the development of two open-source projects, Juxta and the CollateX. As a lecturer in the Digital Humanities Program at Julius-Maximilans-Universität Würzburg, he also gained experience in teaching DH skills like text encoding, data modeling and programming.</p>
+</div>
+
+<div>
+    <head>Target Audience and Expected Number of Participants</head>
+
+    <p>This workshop is intended for software developers with a basic working knowledge of XML and Ruby. Knowledge of TEI is optional. It will be of interest to developers working on any text-based project, but especially editorial projects, projects handling variant texts, and projects dealing with XML encoded texts, including TEI.</p>
+    <p>This workshop is designed for between 5 and 20 participants.</p>
+</div>
+
+<div>
+    <head>Prerequisites</head>
+
+    <p>Workshop participants should bring:</p>
+
+<list type="unordered">
+
+    <item>A working knowledge of Ruby. Suggested reading: (<ref type="url" target="http://www.ruby-doc.org/docs/ProgrammingRuby/">http://www.ruby-doc.org/docs/ProgrammingRuby/</ref>)</item>
+
+    <item>A working knowledge of XML. Suggested reading: (<ref type="url" target="http://www.w3schools.com/xml/default.asp">http://www.w3schools.com/xml/default.asp</ref>)</item>
+
+    <item>A laptop with Ruby installed, a working Internet connection, and a favorite code editor.</item></list>
+</div>
+
+
+</body>
+</text>
+</TEI>
+

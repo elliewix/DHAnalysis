@@ -1,0 +1,98 @@
+
+
+Full Description
+    
+In this workshop, participants will learn how to develop a customized collation pipeline in Ruby using Juxta WS. Juxta WS is a web service that can collate variant texts and visualize the differences between them. It is free, open-source software comprising a pipeline of “micro-services” that may be valuable to any project that deals with digital texts, especially texts encoded in XML. Juxta WS can take in a variety of source file types including plain text, HTML, and XML, with special handling for texts encoded in TEI. Results can be output at any point along the Juxta WS pipeline, so it can be used, for example, to convert XML to plain text or HTML and output an XSLT style sheet; isolate text from an HTML file; tokenize a text stream; annotate the differences between texts; align fragments of text between sources; visualize the collation of texts encoded in TEI parallel segmentation; or generate a single TEI parallel segmented output from multiple input files
+
+    
+Juxta WS can serve any project where the differences between variant texts are of interest. The Carolingian Canon Law Project at the University of Kentucky was an early adopter of Juxta WS, establishing a private collation workspace where registered users can collate variant texts from a Latin corpus. The Melville Electronic Library at Hofstra University is using Juxta WS to compare variants of Melville’s writings, including the new manuscript transcriptions being created with the TextLab fluid-text editing tool. At Texas A&M University, the Early Modern OCR Project is collating the output of OCR engines with hand-typed versions of the same texts, using the change index calculated by Juxta WS as a metric of OCR performance. Juxta WS also powers Juxta Commons, a site sponsored by NINES where anyone may create a free account, upload source files for collation, and share the resulting visualizations. We think Juxta could be used creatively by diverse projects and we are looking forward to learning about projects participants bring to the workshop.
+
+    
+In the first half of the workshop, participants will follow along on their laptops as we introduce Juxta WS and the constituent parts of the collation pipeline. In the second half of the workshop, we will begin by showing participants how to obtain texts for experimentation from online sources. We will then have a hacking session where participants will work in small groups to leverage Juxta WS on texts from their own projects or obtained online.  
+
+    
+During the hacking session, Gregor and Nick will float and answer questions. Participants will be able to access a Juxta WS server for use during this class and throughout DH 2013. Documentation for the Juxta WS API is available online and we will add information about the Ruby bindings there. There will also be a public Github repo where participants can push their work. We will help anyone not familiar with Git with a quick review of the necessary commands.
+
+    
+At the end of the workshop there will be a brief show and tell period. Each group will be invited to show what they worked on, either as working code or as the sketch of an idea.
+
+
+
+
+
+
+Workshop Outline (3 hours, not including the break)
+
+
+1. Introduction of Speakers and Topic (5 min.)
+2. Demonstration of Juxta (10 min.)
+3. Working with Juxta WS in Ruby (75 min.):
+
+a. Sources
+b. Tokenization
+c. Filtering XML Tags
+d. Collating
+e. Presenting Visualizations
+4. Break 
+5. Finding Interesting Data (10 min.)
+        
+a. online sources of humanities texts for collation
+6. Break into small groups (5 min.)
+7. Hacking (60 min.)
+8. Show and Tell (15 min.)
+
+
+
+
+    Workshop Leaders
+Nick Laiacona
+
+    
+Nick Laiacona is the President of Performant Software Solutions LLC. Under his leadership, Performant has cultivated a specialty in building custom software and websites for digital humanities projects. In recent years, Laiacona and the Performant team have worked on Juxta, a program for visualizing textual collations; TypeWright, a tool for crowd-sourcing the correction of “dirty OCR” in databases of early modern books; and TextLab, an NEH-funded web application for fluid text editing. Performant Software also provides ongoing development support to the scholarly websites NINES and 18thConnect, and to their forthcoming peer site, MESA. With more than fifteen years of professional experience, Laiacona has acted as technical lead on digital projects funded by the National Endowment for the Humanities, the Andrew W. Mellon Foundation, and the National Institutes of Health.
+
+
+
+
+
+
+Gregor Middell
+
+    
+Gregor is a scholar in the field of humanities computing currently contributing to a genetic digital edition of Goethe’s Faust. Before joining the Faust project, he earned a Master’s degree in Berlin, majoring in both Modern German Literature and Computer Science. Gregor's main research interests are firstly computer-supported collation with the aim to semi-automatically correlate electronic texts, analyze textual variance and determine intertextual relationships; secondly he is interested in markup theory/practice. To this end he participates in the development of two open-source projects, Juxta and the CollateX. As a lecturer in the Digital Humanities Program at Julius-Maximilans-Universität Würzburg, he also gained experience in teaching DH skills like text encoding, data modeling and programming.
+
+
+
+
+
+
+    Target Audience and Expected Number of Participants
+
+    
+This workshop is intended for software developers with a basic working knowledge of XML and Ruby. Knowledge of TEI is optional. It will be of interest to developers working on any text-based project, but especially editorial projects, projects handling variant texts, and projects dealing with XML encoded texts, including TEI.
+
+    
+This workshop is designed for between 5 and 20 participants.
+
+
+
+
+
+
+    Prerequisites
+
+    
+Workshop participants should bring:
+
+
+
+A working knowledge of Ruby. Suggested reading: (
+http://www.ruby-doc.org/docs/ProgrammingRuby/
+)
+A working knowledge of XML. Suggested reading: (
+http://www.w3schools.com/xml/default.asp
+)
+A laptop with Ruby installed, a working Internet connection, and a favorite code editor.
+
+
+
+

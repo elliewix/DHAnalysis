@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-177">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Modelling the Interpretation of Literary Allusion with Machine Learning Techniques</title>
+
+
+<author>
+<name>
+<surname>Coffee</surname>, <forename>Neil</forename>
+</name>
+<affiliation>Dept. of Classics, State Univ. of New York at Buffalo</affiliation>
+<email>ncoffee@buffalo.edu</email>
+</author>
+
+<author>
+<name>
+<surname>Gawley</surname>, <forename>James</forename>
+</name>
+<affiliation>Dept. of Classics, State Univ. of New York at Buffalo</affiliation>
+<email>james.gawley@gmail.com</email>
+</author>
+
+<author>
+<name>
+<surname>Forstall</surname>, <forename>Christopher</forename>
+</name>
+<affiliation>Dept. of Classics, State Univ. of New York at Buffalo</affiliation>
+<email>forstall@buffalo.edu</email>
+</author>
+
+<author>
+<name>
+<surname>Scheirer</surname>, <forename>Walter</forename>
+</name>
+<affiliation>Harvard University, United States of America</affiliation>
+<email>wscheirer@fas.harvard.edu</email>
+</author>
+
+<author>
+<name>
+<surname>Johnson</surname>, <forename>David</forename>
+</name>
+<affiliation>Dept. of Computer Science and Engineering, State Univ. of New York at
+Buffalo</affiliation>
+<email>davidjoh@buffalo.edu</email>
+</author>
+
+<author>
+<name>
+<surname>Corso</surname>, <forename>Jason</forename>
+</name>
+<affiliation>Dept. of Computer Science and Engineering, State Univ. of New York at
+Buffalo</affiliation>
+<email>jcorso@buffalo.edu</email>
+</author>
+
+<author>
+<name>
+<surname>Parks</surname>, <forename>Brian</forename>
+</name>
+<affiliation>Dept. of Computer Science, Univ. of Colorado, Colorado Springs</affiliation>
+<email>bparks@synapsesoftware.com</email>
+</author>
+
+</titleStmt>
+<publicationStmt>
+<authority/>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace>
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p/>
+</availability>
+</publicationStmt>
+
+<notesStmt>
+<note type="abstract">Most literary allusion, the deliberate evocation by one text of a passage in
+another, is based upon text reuse. Yet most instances of textual similarity are not meaningful
+literary allusions. The goal of the Tesserae project is to automatically detect allusion in a corpus
+of literary texts, primarily Classical Latin poetry. While initial attempts with a few basic textual
+features have proven surprisingly effective, here we employ a more complex feature set and machine
+learning techniques drawn from the field of computer vision in an attempt to improve the results. An
+interactive software demonstration will accompany the poster.</note>
+</notesStmt>
+
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Allusion</term>
+<term>Classics</term>
+<term>Poetry</term>
+<term>Machine Learning</term>
+<term>Web Tools</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>classical studies</term>
+<term>information retrieval</term>
+<term>literary studies</term>
+<term>stylistics and stylometry</term>
+<term>text analysis</term>
+<term>linguistics</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-09"/>
+<name>Matthew Lavin</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="poster">
+<body>
+<div>
+<div>
+<head>A Computational Perspective on Allusion </head>
+<p>Most literary allusion, the deliberate evocation by one text of a passage in another, is based
+upon text reuse. Yet most instances of textual similarity are not meaningful literary allusions. The
+goal of the Tesserae project (<ref type="url" target="http://tesserae.caset.buffalo.edu"
+>http://tesserae.caset.buffalo.edu</ref>) is to automatically detect allusion in a corpus of
+literary texts, primarily Classical Latin poetry. We begin with a large set of textual parallels,
+and then attempt to model which of these instances of text reuse are meaningful literary allusions
+and which are not, according to a group of human readers. While initial attempts with a few basic
+textual features have proven surprisingly effective, here we employ a more complex feature set and
+machine learning techniques drawn from the field of computer vision in an attempt to improve the
+results. Novel applications of machine learning, beyond the well known but constrained textual
+classification tasks of attribution and categorization, have the potential to be transformative for
+complex analysis tasks in the Digital Humanities.</p>
+</div>
+<div>
+<head>Benchmark Data</head>
+<p>As an illustration, we consider textual parallels between Book 1 of Lucan’s <hi rend="italic">Bellum
+Civile</hi> and the entirety of Vergil’s <hi rend="italic">Aeneid</hi>
+(Coffee et al. 2012). Our benchmark dataset comprises a list of 3,400 pairs of
+sentences that share at least two different words. Each of these pairs has been read and graded for
+its literary significance by a group of students and faculty working in small teams. These annotator
+rankings range from 1 (no literary significance) to 5 (pointed literary allusion). </p>
+</div>
+<div>
+<head>Learning Relevant Features</head>
+<p>Earlier work showed that high-ranked parallels could be distinguished from the others with modest
+accuracy using only word frequency, distance between words, and the presence of exact form matching
+versus differently-inflected forms of the same word (Gawley et al. 2012).
+Nevertheless, others have recommended more sophisticated approaches to this problem (Bamman and Crane 2008). Here we consider an expanded feature set including bi-gram frequency, frequency of individual words, character-level n-grams and edit distances. Our goal is to learn
+relevant combinations of features in the presence of often incomplete data.</p>
+<p>Recent work by members of our team has developed new methods for tuning machine-learning using
+support vector machines (Scheirer et al. 2012) and random forests (Xiong et al. 2012). Random forest is of particular interest, providing robust feature selection that shows promise for literary analysis (Tabata 2012). The problem of
+missing data is prevalent in all areas of literary study, but is not well addressed by existing
+algorithms in common use by digital humanists. This is especially true for ancient texts, where we
+often find a significant gap in the manuscript tradition. Using principled strategies for imputation
+and marginalization, we reduce the impact on the results. </p>
+</div>
+<div>
+<head>Results and Implications</head>
+<p>Our ability to learn the difference between high-ranked parallels (ranks 4 &amp; 5) and
+low-ranked parallels (ranks 1 &amp; 2) for <hi rend="italic">Bellum Civile</hi> and the <hi rend="italic">Aeneid</hi> is strong:
+random forest achieves an average AUC score between 82% and 83%, while linear SVMs yield an average
+score of 81.5%. This suggests that quantifiable patterns do exist across allusions, which can be
+captured algorithmically. In this ongoing research we seek a more successful model of literary
+significance that will allow our software to put interesting allusions at the top of the list; at
+the same time, we hope it will also cast new light on the underlying structures of our experience of
+literature.</p>
+<p><hi rend="bold">An interactive demonstration of the Tesserae allusion detection tool accompanies this
+poster.</hi></p>
+</div>
+</div>
+</body>
+
+<back>
+
+<div type="note">
+<head>Notes</head>
+
+<note xml:id="n01" n="1"><hi rend="bold">Bamman, D., and G. Crane</hi> (2008). The Logic and Discovery of Textual Allusion. LaTeCH</note>
+
+<note xml:id="n02" n="2"><hi rend="bold">Coffee, N., J.-P. Koenig, S. Poorima, C. W. Forstall,  R. Ossewaarde, and S. Jacobson</hi> (2012). Intertextuality in the digital age. <hi rend="italic">Transactions of the American Philological
+Association</hi>, 142(2).</note>
+
+<note xml:id="n03" n="3"><hi rend="bold">Gawley, J., C. W. Forstall, and N. Coffee</hi> (2012). Evaluating the literary significance of text re-use in Latin poetry. <hi rend="italic">DHCS</hi> </note>
+
+<note xml:id="n04" n="4"><hi rend="bold">Scheirer, W. J.,  A. Rocha, J.Parris, and T. E. Boult</hi> (2012). Learning for meta-recognition. IEEE T-IFS 7.</note>
+
+<note xml:id="n05" n="5"><hi rend="bold">Tabata, T.</hi> (2012). Approaching Dickens’ style through random forests. <hi rend="italic">DH</hi>.</note>
+
+<note xml:id="n06" n="6"><hi rend="bold">Xiong, C., D. Johnson, R. Xu, and J. J. Corso</hi> (2012). Random forests for metric
+learning with implicit pairwise position dependence. <hi rend="italic">ACM SIGKDD</hi>.</note>
+
+<note>&#160;<lb/>*Work supported by NEH Start-Up Grant Award No. HD-51570-12 </note>
+</div>
+</back>
+</text>
+</TEI>

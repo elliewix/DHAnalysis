@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-279">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Prosopography in the time of Open data: Towards an Ontology for Historical Persons</title>
+<author>
+<name><surname>Bradley</surname>, <forename>John</forename></name>
+<affiliation>Department of Digital Humanities, King&#039;s College London, United Kingdom</affiliation>
+<email>john.bradley@kcl.ac.uk</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+            
+<notesStmt><note type="abstract">Along with online data about historical sources and places, Structured prosopography provides a powerful impetus for open and linked data for historians. However, for various good reasons, different teams doing prosopographical work have taken different approaches to the creation of their data. In the same way that CIDOC-CRM has been developed to allow connections between different cultural heritage data collections to be made, an Ontology for Historical Persons would allow prosopographical information from different projects to connect more effectively. In this presentation, I would present our current thoughts on the subject, and start a conversation with other projects with an interest in shared, structured, prosopographical data.</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">SP07</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Text analysis</term>
+<term>Sensemaking</term>
+<term>User Studies</term>
+</keywords>
+    
+<keywords scheme="original" n="topic">
+<term>information retrieval</term>
+<term>interface and user experience design</term>
+<term>literary studies</term>
+<term>software design and development</term>  
+<term>text analysis</term>
+<term>user studies/user needs</term>
+                    
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+   
+<text type="paper">
+<body>
+<div>
+                
+    <p>Along with open data about sources and places, open data about historical people provides one of
+the three legs for an open framework for historical information, since it is one of the three most
+obvious "entry points" into a potentially shared world of historical data.</p>
+    <p>DDH has been involved in a number of prosopographical projects (PBE, PBW, PASE, CCEd, PoMS,
+BoB<ref type="note" target="n01" n="1">1</ref> and most recently the <hi rend="italic">Making Charlemagne's Europe</hi> project), and we have become convinced that prosopography is particularly well suited to the world of open and linked data, since its purpose
+is to establish unique digital identities for people that could be used by other researchers.
+Furthermore, although we here at DDH have done quite a bit of work on structured prosopography
+we have found that "one size does not fit all" when it comes to structuring the prosopographical
+materials. Several of our projects have, at their core, a common approach we are calling "factoid
+prosopography". However, several of them (Clergy Church of England, Early Modern London
+Theatres) <ref type="note" target="n02" n="2">2</ref> do not. Finally, of course, many other people take on prosopographical work in their
+research without taking up a model of their data like ours: one thinks of the "personography" model
+work within the TEI, for example, and we know of other colleagues with prosopographical
+components that have developed a different model for their data.</p>
+    <p>The issue of prosopography as a open, shared resource goes beyond the provision merely of an
+identity for historical persons. In the same way that CIDOC-CRM (CIDOC-CRM 2011) was developed
+to record information about cultural heritage objects and therefore not only help uniquely to
+identify them but also to allow different systems to share a much broader range of data <hi rend="italic">about</hi> these
+objects, a prosopography for historical persons would work to find common ground among the
+different ways in which different projects collect data about historical persons so that semantic links
+between them could more effectively be exploited. Indeed, it would seem that much of such a
+prosopographical ontology would usefully be based on CIDOC-CRM, since there is often significant
+overlap between the two domains: prosopography often comes into the work of people working
+with heritage objects, and there are thus substantial elements of prosopography in CIDOC-CRM. We
+have done some exploring of this idea in a recently created paper by Michele Pasin and myself (Pasin
+and Bradley, 2012) that takes the "factoid" in our prosopographical model and explores how it might
+be represented primarily in CIDOC-CRM terms.</p>
+    <p>We propose calling this shared ontological model for prosopography an <hi rend="italic">Ontology for Historical
+ Persons.</hi> By the very nature of such a thing, it would need to be developed out of as broad a shared
+perspective on the different ways that prosopographical data is being collected as possible. As an
+early step in thinking about this ontology, we have already been in touch with not only our project
+partners for the prosopographies we have already done, but also with a range of colleagues who
+have worked on the question of structured prosopography outside of our own projects, and with
+colleagues who have worked on the development of CIDOC-CRM. In our talk we would also describe
+the current state of our ontology, and explain how we think it would link with CIDOC-CRM. However,
+we'd be most interested in hearing of other people who are working on structured prosopography, and who would be 
+interested in working with us towards enabling the open data potential that an ontology for historical persons might provide. </p>
+</div>
+    
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+<bibl><hi rend="bold">CIDOC-CRM</hi> (2011). <hi rend="italic">The CIDOC Conceptual Reference Model website.</hi> At <ref type="url" target="http://www.cidoc-crm.org/">http://www.cidoc-crm.org/</ref></bibl>
+    
+<bibl><hi rend="bold">Pasin, M., and J. Bradley.</hi> (2012). <hi rend="italic">Factoid-based Prosopography and Computer Ontologies:
+towards an integrated approach.</hi> Submitted for possible publication. Draft available at
+<ref type="url" target="http://www.michelepasin.org/papers/43/">http://www.michelepasin.org/papers/43/</ref></bibl>
+    
+    
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">PBE: Prosopography of the Byzantine Empire, PBW: Prosopography of the Byzantine World
+(<ref type="url" target="http://www.pbw.kcl.ac.uk">http://www.pbw.kcl.ac.uk</ref>), PASE: Prosopography of Anglo-Saxon England (<ref type="url" target="http://www.pase.ac.uk">http://www.pase.ac.uk</ref>), CCEd:
+Clergy of the Church of England Database (<ref type="url" target="http://www.theclergydatabase.org.uk/index.html">http://www.theclergydatabase.org.uk/index.html</ref>), PoMS: People of
+Medieval Scotland (<ref type="url" target="http://www.poms.ac.uk">http://www.poms.ac.uk</ref>), BoB: Breaking of Britain (<ref type="url" target="http://www.breakingofbritain.ac.uk/">http://www.breakingofbritain.ac.uk/</ref>).
+</note>
+<note xml:id="n02" n="2"><ref type="url" target="http://www.emlot.kcl.ac.uk">http://www.emlot.kcl.ac.uk</ref></note>
+</div>
+
+</back>
+</text>
+</TEI>

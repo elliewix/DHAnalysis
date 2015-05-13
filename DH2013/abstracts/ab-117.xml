@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-117">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Programming with Arduino for Digital Humanities</title>
+<author>
+<name><surname>Ohya</surname>, <forename>Kazushi</forename></name>
+<affiliation>Tsurumi University, Japan</affiliation>
+<email>ohyakazushi@gmail.com</email>
+</author>
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">In this poster we show the course materials used in an introductoryprogramming course using Arduino for Digital Humanities.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>introductory programming course</term>
+<term>embedded system</term>
+<term>Arduino</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>introductory programming course</term>
+<term>embedded system</term>
+<term>Arduino</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+
+
+<head>Background</head>
+
+    <p>The department of library, archive and information studies at Tsurumi University provides courses on computer science for humanities students. The courses include one introductory and two intermediate programming courses. There are project-based courses on Digital Humanities instead of an advanced programming course. In the introductory course, <ref type="link" target="http://scratch.mit.edu">Scratch</ref> was used, and in the intermediate courses, Java has been adopted.</p>
+    <p>Difficulties in teaching programming in an introductory course to humanities students have been to let students find interest or enjoyment in (1) symbol manipulation and (2) grouping tasks with functions or other similar units.</p>
+    <p>Humanities students tend to expect big results in programming. They are disappointed at small results from source codes in exercises. It is usually difficult to expect them to find interest in a small result from symbol manipulation in introductory programming.</p>
+    <p>As far as our experience goes, humanities students seem to struggle to envision the existence of a computational world in their minds. The formats and abstract behaviors of typical programming patterns appearing in structured programming such as assignment, iteration, condition and flow control themselves are not difficult for humanities students to understand. The grammar is easy to comprehend. The problem they face is to understand the ways to use them as substantial components making up the whole code in actual programming (Winslow 1996).</p>
+</div>
+
+<div>
+<head>Embedded System: Arduino</head>    
+    
+    <p>In order to respond to aforementioned difficulties or problems, we set two requirements to the programming environment:
+    <list type="ordered">
+        
+        <item>(1) letting students be interested in something moving, and</item>
+        
+        <item>(2) letting students be satisfied with small results.</item>
+    </list>
+    Then, we decided to introduce embedded systems to an introductory programming course. We expected embedded systems to bring the real world into a scene of learning programming.</p>
+    <p>Current students have been immersed in digital or virtual environment from an early age. They are not easily satisfied with computational results on screens. On the other hand, interestingly, they show their interest to physical phenomena even if it is slight (Ishii  2006). They are very sensitive to physical stimuli. Embedded systems can be expected to let students be interested in something moving that may be small. And, it can contribute to facilitate students to envision a computational world in their minds.</p>
+    <p>As an embedded system, we adopted <ref type="link" target="http://www.arduino.cc/">Arduino</ref> which provides a good developing environment:
+        
+        <list type="ordered">
+        
+        <item>(1) there is no need to prepare a device to install native codes to ICs,</item>
+        <item>(2) there is an easy IDE based on <ref type="url" target="http://processing.org/">Processing</ref>, and</item>
+        <item>(3) the price of Arduino is affordable.</item></list>
+        
+        A concern we noticed about introducing Arduino was that students have to learn about electricity to some extent. It is an unfamiliar subject to humanities students.</p>
+    <p>The IDE for Arduino on Processing provides simple descriptive rules reminiscent of BASIC, and easy to view and write grouping tasks in methods. We expected this feature would make it easy for students to concentrate on finding categories of processes and making groups with functions.</p>
+</div>
+    
+    <div>
+        <head>Course Design</head>
+        
+        <p>One semester consists of 15 classes, which are lectures on and practices of programming. The practices consist of four themes: LED handling, variable registor, sound handling, and binary display.</p>
+        <p>In all practices, we used only three circuit patterns based on a voltage divider. The typical four programming patterns in procedural languages were learned  with eight source codes using one circuit pattern of an LED. We used a variable resistor as an  input device and a game controller in learning structural programming. An array is not a difficult topic in programming, but it is not easy for students to understand the usefulness of the array. Arrays working as music scores to handle sound seemed to be a good example. We think that even though a topic of binary digit could not be useful in Digital Humanities, students should learn it to feel the philosophy behind symbol manipulation. We used bit operation to control LEDs of a binary digit display, and provided a chance to learn binary digit.</p>
+    </div>
+    
+    <div>
+        <head>Observation and Future</head>
+        
+        <p>Fortunately, many students seemed to find enjoyment from a small result in physical programming and grouping tasks. However, as we expected before this experiment, learning electricity seemed to be difficult for students. For example, Ohm's law was difficult for students who had learned it in junior high school. It might be possible to teach electronic circuit like LEGO Block without any explanation about a theory or background knowledge. However, learning theories in nature is inevitable in science education. We are planning to devise course materials to reduce the offset of learning electricity for next year.</p>
+    </div>
+    
+</body>
+    
+    <back>
+        <div type="References">
+            <listBibl>
+       
+        
+    
+                <bibl><hi rend="bold">Banzi, M.</hi> (2011). <hi rend="italic">Getting Started with Arduino.</hi> 2nd edn. O'Reilly Media.</bibl>
+                
+                <bibl><hi rend="bold">Gibbs, N. E. and A. B. Tucker</hi> (1986). A Model Curriculum for A Liberal Arts Degree in Computer Science. <hi rend="italic">Communications of the ACM</hi> 29(3), ACM.</bibl>
+                
+                <bibl><hi rend="bold">Ishii, H.</hi>  (2006). <hi rend="italic">Tangible User Interfaces.</hi> CHI 2006 Workshop Proceedings.</bibl>
+                
+                <bibl><hi rend="bold">Kobayashi, S.</hi>  (2010). <hi rend="italic">Prototyping Lab in Japanese.</hi> O'Reilly Japan.</bibl>
+                
+                <bibl><hi rend="bold">Liberal Arts Computer Science Consortium (LACS)</hi> (2007). A 2007 Model Curriculum for a Liberal Arts Degree in Computer Science. <hi rend="italic">ACM Journal on Educational Resources in Computing</hi> 7(2). ACM.</bibl>
+                
+                <bibl><hi rend="bold">Marshall, P.</hi> (2007). <hi rend="italic">Do tangible interfaces enhance learning?</hi> TEI'07. ACM.</bibl>
+                
+                <bibl><hi rend="bold">Monk, S.</hi> (2012). <hi rend="italic">Programming Arduino</hi>. McGraw-Hill Companies.</bibl> 
+                
+                <bibl><hi rend="bold">Schmidt, M.</hi> (2011). <hi rend="italic">Arduino, The Pragmatic Programmers</hi>.</bibl> 
+                
+                <bibl><hi rend="bold">Winslow, L. E.</hi> (1996). Programming Pedagogy &#8212; A Psychological Overview. <hi rend="italic">SIGCSE Bulletin</hi> 28(3). ACM.</bibl> 
+                
+                <bibl><hi rend="bold">Arduino</hi>, <ref type="url" target="http://www.arduino.cc/">http://www.arduino.cc/</ref></bibl> 
+                
+                <bibl><hi rend="bold">Processing</hi>, <ref type="url" target="http://processing.org/">http://processing.org/</ref></bibl> 
+                
+                <bibl><hi rend="bold">Scratch</hi>, <ref type="url" target="http://scratch.mit.edu">http://scratch.mit.edu</ref></bibl> 
+            </listBibl>
+</div>
+
+    </back>
+</text>
+</TEI>

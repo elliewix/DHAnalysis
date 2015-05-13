@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-353">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Citation studies in the humanities</title>
+<author>
+<name><surname>Sula</surname>, <forename>Chris Alen</forename></name>
+<affiliation>Pratt Institute, United States of America</affiliation>
+<email>csula@pratt.edu</email>
+</author>
+<author>
+<name><surname>Miller</surname>, <forename>Matt</forename></name>
+<affiliation>Pratt Institute, United States of America</affiliation>
+<email>mmille18@pratt.edu </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper examines prospects and limitations of citation studies in the humanities. We begin by presenting an overview of bibliometric analysis, noting several barriers to applying this method in the humanities. Following that, we present a novel online tool for extracting and classifying citations in the humanities. This tool uses both document layout recognition and natural language processing techniques to classify citations in three ways: frequency, location-in-document, and polarity (each described below). We compare these results with previous studies of humanities citations, as well as our own qualitative analysis of the documents, and explore further directions for this tool.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP04</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>bibliometrics</term>
+<term>citation analysis</term>
+<term>sentiment classification</term>
+<term>scholarly communication</term>
+<term>influence</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>natural language processing</term>
+<term>bibliographic methods / textual studies</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-24"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<div>
+<head>Abstract</head>
+<p>This paper examines prospects and limitations of citation studies in the humanities. We begin by presenting an overview of bibliometric analysis, noting several barriers to applying this method in the humanities. Following that, we present a novel online tool for extracting and classifying citations in the humanities. This tool uses both document layout recognition and natural language processing techniques to classify citations in three ways: frequency, location-in-document, and polarity.</p>
+</div>
+
+<div>
+<head>Background</head>
+<p>Since the 1970s, bibliometrics has been an important method of analysis in studies of scholarly communication and the structure of academic networks that emerge from it. Bibliometricians typically focus on formal citation behavior in the printed scholarly record, occasionally supplemented with additional information. In the humanities, bibliometrics may also hold promise for tracing intellectual influence, especially when supplemented with social data (Sula 2012).</p>
+
+<p>Bibliometric studies have typically focused on scientific and technical corpora, despite the fact that much intellectual history is located in the humanities (H&#233;rubel and Buchanan 1994; Lamont 2000). This lack of attention may be explained by several factors. First, citation data in the humanities has been less available than in the sciences (Linmans, 2010), especially for monographs (Hammarfelt, 2011), which still form the backbone of humanities scholarship (Larivi&#232;re, et. al. 2006), and for older sources, which humanists cite with greater frequency (Heinzkill 1980). As humanities citation data becomes more prevalent, digital humanists are likely to engage more fully with bibliometrics, and Smith’s recent article on citation in classical studies is a notable example of this crossover (2009).</p>
+
+<p>A second and more persistent barrier to applying bibliometrics to the humanities involves special features of humanities discourse. Studies show that humanists do engage in patterns of cocitation (Leydesdorff, Hammarfelt, and Salah 2011), but they credit each other less frequently than scientists credit each other (Heinzkill 1980; Swales 1990; Hellqvist 2010), and they rarely publish multi-authored articles (Price 1966; Pao 1981, 1982; Sievert and Sievert 1989; Wiberly 1989). Linmans (2010), for example, reports that journal publications in the humanities between 1980 and 2007 averaged a flat 1.06 authors per article. More importantly, the mere fact that one humanist references another says little about the <hi rend="italic">type</hi> or <hi rend="italic">significance</hi> of the relationship between the two. Several studies have shown that humanists are more likely than scientists to use integral references, which tend to associate their own views with those they references (Swales 1990; Hyland 1999; Harwood 2008), as well as negative references, which object to other authors’ claims (Meadows 1974; Brooks 1985; Cano 1989). Even studies that disambiguate acknowledgments into different types, such as conceptual, editorial, financial, instrumental/technical, etc. (Cronin, Shaw, and Le Barre 2003), fail to capture qualitative elements of author ties, such as agreement, disagreement, intellectual indebtedness, and so on. These different reference contexts cannot be ignored, since intellectual disputes are the bread and butter of humanists.</p>
+
+<p>Given how these nuances affect intellectual history and scholarly influence, reference contexts must be given greater attention in bibliometric studies of the humanities. Several classification schemes for references have been offered (see Table 1). Though there is some convergence in terms of positive, negative, and neutral/mixed contexts, few schemes are based on empirical research and even fewer lend themselves to practical application; many require subject domain expertise and human classification—a task that is far beyond current resources. In addition, several schemes also attempt to use citation context to sort references according to their importance within a work their prominence within the field as a whole (e.g., “historical,” “classic,” “homage”). In our view, this unnecessarily complicates classification schema. We argue that overall prominence is best estimated by extracontextual measures (e.g., pure or normalized citation counts), and we follow Mari&#269;i&#263;, et. al. (1998) in taking the frequency of each citation and its location-in-document to be important clues to a citation’s role. For example, a reference cited throughout a work is quite different from one cited frequently at the beginning of that work, which usually helps to establish field background.</p>
+
+<table n="text_smaller"><head>Table 1. Proposed Reference Classification Schemes</head>
+<row>
+<cell></cell>
+<cell>Positive</cell>
+<cell>Neutral/Mixed</cell>
+<cell>Negative</cell>
+</row>
+<row>
+<cell>Garfield (1965)</cell>
+<cell>homage<lb/>
+-pioneers<lb/>
+-peers<lb/>
+<lb/>
+methodology<lb/>
+<lb/>
+substantiating claims<lb/>
+<lb/>
+authenticating<lb/>
+data/facts<lb/>
+</cell>
+<cell>background<lb/>
+<lb/>
+alerting forthcoming work<lb/>
+<lb/>
+original publications<lb/>
+-discussion<lb/>
+-eponymic concepts<lb/>
+<lb/>
+priority claims<lb/>
+</cell>
+<cell>correction<lb/>
+-self<lb/>
+-other<lb/>
+criticism<lb/>
+<lb/>
+negative homage<lb/>
+-ideas<lb/>
+</cell>
+</row>
+<row>
+<cell>Chubin &amp; Moitra<lb/>
+(1975)</cell>
+<cell>affirmative<lb/>
+-essential<lb/>
+--basic (1)<lb/>
+--subsidiary (2)<lb/>
+</cell>
+<cell>-supplementary<lb/>
+--add info (3)<lb/>
+--perfunctory (4)<lb/>
+</cell>
+<cell>negational<lb/>
+-partial (5)<lb/>
+-total (6)<lb/>
+</cell>
+</row>
+<row>
+<cell>Moravcsik &amp;<lb/>
+Murugesan<lb/>
+(1975)</cell>
+<cell>evolutionary<lb/>
+<lb/>
+confirmative<lb/>
+</cell>
+<cell><lb/>
+<lb/>
+conceptual–operational<lb/>
+<lb/>
+organic–perfunctory<lb/>
+</cell>
+<cell>negational<lb/>
+<lb/>
+negational<lb/>
+</cell>
+</row>
+<row>
+<cell>Frost (1979)</cell>
+<cell>(primary texts)<lb/>
+-support opinion/fact<lb/>
+--about specific<lb/>
+author(s)/work(s)<lb/>
+discussed<lb/>
+--outside of central<lb/>
+topic<lb/>
+<lb/>
+(secondary texts)<lb/>
+-approval<lb/>
+--support opinion/fact<lb/>
+--take a step further<lb/>
+--acknowledge indebtedness<lb/>
+</cell>
+<cell>(secondary texts)<lb/>
+-independent<lb/>
+--meaning of term<lb/>
+--acknowledgement<lb/>
+--state of the field<lb/>
+<lb/>
+(neither primary nor secondary text)<lb/>
+-further reading<lb/>
+-bibliographic information about an<lb/>
+edition<lb/>
+</cell>
+<cell>(secondary texts)<lb/>
+-disapproval<lb/>
+--disagree with<lb/>
+fact/opinion<lb/>
+--express mixed<lb/>
+opinion<lb/>
+</cell>
+</row>
+<row>
+<cell>Smith (1981)</cell>
+<cell>organic-positive</cell>
+<cell>perfunctory-positive<lb/>
+perfunctory-negative<lb/>
+</cell>
+<cell>organic-negative</cell>
+</row>
+<row>
+<cell>Small (1982)</cell>
+<cell>applied (used)<lb/>
+<lb/>
+supported by citing<lb/>
+work (substantive)<lb/>
+</cell>
+<cell>noted only (perfunctory)<lb/>
+<lb/>
+reviewed (compared)<lb/>
+</cell>
+<cell>refuted<lb/>
+(negative)<lb/></cell>
+</row>
+<row>
+<cell>Peritz (1983)</cell>
+<cell></cell>
+<cell>setting the stage<lb/>
+<lb/>
+background<lb/>
+<lb/>
+methodological<lb/>
+-design<lb/>
+-method of analysis<lb/>
+<lb/>
+comparative<lb/>
+<lb/>
+argumental/speculative/hypothetical<lb/>
+<lb/>
+documentary<lb/>
+<lb/>
+historical<lb/>
+<lb/>
+casual<lb/>
+</cell>
+<cell></cell>
+</row>
+<row>
+<cell>Cullars (1990)</cell>
+<cell>positive</cell>
+<cell>mixed<lb/>
+<lb/>
+neutral<lb/>
+-springboard for discussion<lb/>
+-establish background<lb/>
+-support interpretation<lb/>
+-supplementary readings<lb/>
+</cell>
+<cell>negative</cell>
+</row>
+<row>
+<cell>Cullars (1992)</cell>
+<cell>positive</cell>
+<cell>value-free<lb/>
+-historical background<lb/>
+-cultural background<lb/>
+-recommended readings<lb/>
+-biographical data<lb/>
+-support interpretation<lb/>
+-scientific background<lb/>
+</cell>
+<cell>negative</cell>
+</row>
+<row>
+<cell>Shadish, et. al.<lb/>
+(1995)</cell>
+<cell>supportive</cell>
+<cell>personal<lb/>
+creative<lb/>
+classical<lb/>
+social<lb/>
+</cell>
+<cell>negative</cell>
+</row>
+<row>
+<cell>Camacho-Miñal &amp;<lb/>
+M&#250;&#241;ez-Nickel<lb/>
+(2009)</cell>
+<cell>evolutionary<lb/>
+confirmative<lb/>
+</cell>
+<cell>conceptual<lb/>
+operational<lb/>
+organic<lb/>
+perfunctory<lb/>
+other<lb/>
+</cell>
+<cell>negational<lb/>
+juxtapositional<lb/>
+(?)<lb/>
+</cell>
+</row>
+</table>
+
+</div>
+
+<div>
+<head>Method</head>
+<p>Based on this background literature, we propose an online citation extraction tool that examines PDF documents for citations and reports the frequency of a given reference as well as its location-in-document (relative to the length of the document). In addition, we propose a sentiment classifier that assigns a “polarity” value to each citation on a positive–negative scale (e.g., “I associate with…” and “I disassociate with…”). Sentiment classifiers attempt to determine whether particular sentences or documents express positive or negative opinions about a given topic (Jurafsky and Martin, 2008). This classification is found in nearly all of the other systems surveyed in Table 1, and we hypothesize that it is especially important in the humanities, since it predicts patterns of agreement and disagreement among scholars.</p>
+
+<p>The sample set for this study is 159 articles from four humanities journals (see Table 2). Our choice of journals follows Knievel and Kellsey’s (2005) use of eight humanities journals from 2002 and allows for comparison with their citation frequency results. These journals also reflect a range of citation layout formats, which helps to ensure the usefulness of the tool in other contexts. </p>
+
+<table>
+<head>Table 2. Journals used in this study</head>
+<row>
+<cell><hi rend="bold">Journal</hi></cell>
+<cell><hi rend="bold">Year</hi></cell>
+<cell><hi rend="bold">Discipline</hi></cell>
+<cell><hi rend="bold">Format</hi></cell>
+<cell><hi rend="bold">Number of articles</hi></cell>
+</row>
+<row>
+<cell><hi rend="italic">Art Bulletin</hi></cell>
+<cell>2009<ref target="n01">1</ref></cell>
+<cell>art history</cell>
+<cell>endnote</cell>
+<cell>37</cell>
+</row>
+<row>
+<cell><hi rend="italic">Journal of Philosophy</hi></cell>
+<cell>2011</cell>
+<cell>philosophy</cell>
+<cell>footnote</cell>
+<cell>30</cell>
+</row>
+<row>
+<cell><hi rend="italic">Language</hi></cell>
+<cell>2011</cell>
+<cell>linguistics</cell>
+<cell>inline, bibliography</cell>
+<cell>18</cell>
+</row>
+<row>
+<cell><hi rend="italic">PMLA</hi></cell>
+<cell>2011</cell>
+<cell>language and literature</cell>
+<cell>endnote, bibliography</cell>
+<cell>74</cell>
+</row>
+</table>
+
+<p>The tool uses document layout patterns to extract each citation and the context of its occurrence—usually a sentence or two. Our website presents this text to users and allows them to select <hi rend="italic">n</hi>-gram phrases from context that demonstrate positive or negative polarity. These phrases are compiled into a naive Bayes classifier training set which can predict polarity in novel contexts. The classifier reports polarity scores as probability assignments on two separate scales (positive and negative) each ranging from 0 to 1. Thus, a perfectly positive context would have a score of 1 on the positive scale and 0 on the negative scale. These scores may be combined into a single scale with -1 being purely negative, 0 being neutral, and 1 being purely positive.</p></div>
+
+<div>
+<head>Results</head>
+<p>Aggregate results for frequency, location-in-document, and polarity in the sample set are reported in Table 3. Raw figures are visualized in three scatterplots comparing frequency and location-in-document (Fig. 1), location-in-document and polarity (Fig. 2), and frequency and polarity (Fig. 3).</p>
+
+<table>
+<head>Table 3. Aggregate results of citation extraction tool on sample set</head>
+<row>
+<cell><hi rend="bold">Journal</hi></cell>
+<cell><hi rend="bold">Citations<lb/>detected</hi></cell>
+<cell><hi rend="bold">Frequency per<lb/>citation (avg. ± stdev)</hi></cell>
+<cell><hi rend="bold">Relative location-in-<lb/>document (avg. ± stdev)</hi></cell>
+<cell><hi rend="bold">Polarity (avg. ±<lb/>
+stdev)</hi></cell>
+</row>
+<row>
+<cell><hi rend="italic">Art Bulletin</hi></cell>
+<cell>1681</cell>
+<cell>2.38 ± 2.36</cell>
+<cell>43.81% ± 27.69</cell>
+<cell>0.68 ± 0.37</cell>
+</row>
+<row>
+<cell><hi rend="italic">Journal of Philosophy</hi></cell>
+<cell>713</cell>
+<cell>1.78 ± 1.38</cell>
+<cell>37.74% ± 29.09</cell>
+<cell>0.52 ± 0.49</cell>
+</row>
+<row>
+<cell><hi rend="italic">Language</hi></cell>
+<cell>2374</cell>
+<cell>4.24 ± 4.58</cell>
+<cell>38.77% ± 30.44</cell>
+<cell>0.75 ± 0.31</cell>
+</row>
+<row>
+<cell><hi rend="italic">PMLA<ref target="n02">2</ref></hi></cell>
+<cell>604</cell>
+<cell>1.83 ± 1.28</cell>
+<cell>44.95% ± 27.96</cell>
+<cell>0.57 ± 0.33</cell>
+</row>
+</table>
+
+<figure>
+<graphic url="ab-353.001" />
+<head>Figure 1.</head> <p>Citation frequency and location-in-document</p></figure>
+
+<figure>
+<graphic url="ab-353.002" />
+<head>Figure 2.</head> <p>Citation frequency and polarity</p>
+</figure>
+
+<figure>
+<graphic url="ab-353.003" />
+<head>Figure 3.</head> <p>Citation location-in-document and polarity</p>
+</figure>
+
+<p>Disciplinary differences in frequency and polarity are especially evident, as is clustering near the beginning of articles.</p></div>
+
+<div>
+<head>Future directions</head>
+<p>Though automated results were checked informally in the context of manual polarity classification, each article should be manually inspected to determine the reliability of the extraction tool. Patterns of error here may help to improve the citation extraction techniques. In addition, further training of the sentiment classifier would help to clarify the resolution of polarity scores, especially at the positive end. In particular, we are interested in examining the power of crowdsourced classifications for improving the results of classifier and for providing new document layouts that will increase the flexibility of the tool.</p>
+</div>
+
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Bavelas, J. B. </hi>(1978). The social psychology of citations. <hi rend="italic">Canadian Psychological Review</hi> 19(3): 158–163.</bibl>
+
+<bibl><hi rend="bold">Brooks, T. A. </hi>(1985). Private acts and public objects: An investigation of citer motivations. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi>, 36(4): 223–229.</bibl>
+
+<bibl><hi rend="bold">Camacho-Mi&#241;ano, M. and M. Nú&#241;ez-Nickel.</hi> (2009). The multilayered nature of reference selection. <hi rend="italic">Journal of the American Society for Information Science</hi> 60(4): 754–777.</bibl>
+
+<bibl><hi rend="bold">Cano, V. </hi>(1989). Citation behavior: Classification, utility, and locating. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi>, 40(4): 284–290.</bibl>
+
+<bibl><hi rend="bold">Chubin, D. E., and S.D. Moitra. </hi>(1975) Content analysis of references: Adjunct or alternative to citation counting? <hi rend="italic">Social Studies of Science</hi> 5(4): 423–441.</bibl>
+
+<bibl><hi rend="bold">Cronin, B., D. Shaw, and K. La Barre.</hi> (2003). A cast of thousands: Coauthorship and subauthorship collaboration in the 20th century as manifested in the scholarly journal literature of psychology and philosophy. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi>, 54(9): 855–871.</bibl>
+
+<bibl><hi rend="bold">Cullars, J.</hi> (1990). Citation characteristics of Italian and Spanish literary monographs. <hi rend="italic">The Library Quarterly</hi> 60(4): 337–356.</bibl>
+
+<bibl><hi rend="bold">Cullars, J.</hi> (1992). Citation characteristics of monographs in the fine arts. <hi rend="italic">The Library Quarterly</hi> 62(3): 325–342.</bibl>
+
+<bibl><hi rend="bold">Frost, C. O.</hi> (1979). The use of citations in literary research: A preliminary classification of citation functions. <hi rend="italic">The Library Quarterly</hi> 49(4): 399–414.</bibl>
+
+<bibl><hi rend="bold">Garfield, E.</hi> (1965). Can citation indexing be automated? In Stevens, M., et al. (eds.) <hi rend="italic">Statistical Association Methods for Mechanized Documentation. Symposium Proceedings, Washington, 1964</hi>. (National Bureau of Standards Miscellaneous. Publication. 269, 189–192).</bibl>
+
+<bibl><hi rend="bold">Hammarfelt, B. </hi>(2011). Interdisciplinarity and the intellectual base of literature studies: Citation analysis of highly cited monographs. <hi rend="italic">Scientometrics</hi>, 86, 705–725.</bibl>
+
+<bibl><hi rend="bold">Harwood, N.</hi> (2008). Citers’ use of citees’ names: Findings from a qualitative interview-based study. Journal of the American Society for Information Science and Technology, 59(6): 1007–1011.</bibl>
+
+<bibl><hi rend="bold">Heinzkill, R. </hi>(1980). Characteristics of references selected in scholarly English literary journals. <hi rend="italic">Library Quarterly</hi> 50, 352–364.</bibl>
+
+<bibl><hi rend="bold">Hellqvist, B. </hi>(2010). Referencing in the humanities and its implications for citation analysis. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi>, 61(2): 310–318.</bibl>
+
+<bibl><hi rend="bold">H&#233;rubel, J.-P., and A. L. Buchanan.</hi> (1994). Citation studies in the humanities and social sciences: A selective and annotated bibliography. <hi rend="italic">Collection Management</hi>, 18(3/4): 89–136.</bibl>
+
+<bibl><hi rend="bold">Hyland, K.</hi> (1999). Academic attribution: Citation and the construction of disciplinary knowledge. <hi rend="italic">Applied Linguistics</hi>, 20(3): 341–367.</bibl>
+
+<bibl><hi rend="bold">Jurafsky, K., and J. Martin.</hi>(2008). <hi rend="italic">Speech and Language Processing</hi>, 2nd Edition. Pearson Prentice Hall.</bibl>
+
+<bibl><hi rend="bold">Knievel, J., and C. Kellsey.</hi> (2005). Citation analysis for collection development: a comparative study of eight humanities fields. <hi rend="italic">The Library Quarterly</hi> 75(2): 142–168.</bibl>
+
+<bibl><hi rend="bold">Lamont, M. </hi> (2000). Meaning-making in cultural sociology: Broadening our agenda. <hi rend="italic">Contemporary Sociology</hi>, 29(4): 602–607.</bibl>
+
+<bibl><hi rend="bold">Larivi&#232;re, V., &#201;. Archambault, Y. Gingras, and &#201; Vignola-Gagn&#233;.</hi> (2006). The place of serials in referencing practices: Comparing natural sciences and engineering with social sciences and humanities. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi>, 57(8): 997–1004.</bibl>
+
+<bibl><hi rend="bold">Leydesdorff, L., B. Hammarfelt, and A. Salah. </hi> (2011). The structure of the Arts &amp; Humanities Citation Index: A mapping on the basis of aggregated citations among 1,157 journals. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi> 62(12): 2414–2426.</bibl>
+
+<bibl><hi rend="bold">Linmans, A. J. M.</hi> (2010). Why with bibliometrics the Humanities does not need to be the weakest link: Indicators for research evaluation based on citations, library holdings, and productivity measures. <hi rend="italic">Scientometrics</hi>, 83, 337–354.</bibl>
+
+<bibl><hi rend="bold">Lis&#233;e, C., V. Larivi&#232;re, and Archambault, &#201;. </hi>(2008). Conference proceedings as a source of scientific information: A bibliometric analysis. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi> 59(11): 1776–1784.</bibl>
+
+<bibl><hi rend="bold">Mari&#269;i&#263;, S., J. Spaventi, L. Pavi&#269;i&#263;, and G. Pifat-Mrzljak</hi> (1998). Citation context versus frequency counts of citation histories. <hi rend="italic">Journal of the American Society for Information Science</hi> 49(6): 530–540.</bibl>
+
+<bibl><hi rend="bold">Meadows, A. J.</hi> (1974). <hi rend="italic">Communication in science</hi>. London: Butterworths.</bibl>
+
+<bibl><hi rend="bold">Moravcsik, M. J., and P. Murugesan</hi> (1975). Some results on the function and quality of citations. <hi rend="italic">Social Studies of Science</hi> 5(1): 86–92.</bibl>
+
+<bibl><hi rend="bold">Pao, M. L.</hi> (1981). Co-authorship as communication measure. <hi rend="italic">Library Research</hi>, 2, 327–338.</bibl>
+
+<bibl><hi rend="bold">Pao, M. L.</hi> (1982). Collaboration in computational musicology. <hi rend="italic">Journal of the American Society for Information Science</hi>, 33, 38–43.</bibl>
+
+<bibl><hi rend="bold">Peritz, B. C.</hi> (1983). A classification of citation roles for the social sciences and related fields. <hi rend="italic">Scientometrics</hi> 5: 303–312.</bibl>
+
+<bibl><hi rend="bold">Price, D. J., and D. B. Beaver</hi> (1966). Collaboration in an invisible college. <hi rend="italic">American Psychologist</hi>, 21: 1011–1018.</bibl>
+
+<bibl><hi rend="bold">Shelton, R. D., and L. Leydesdorff</hi> (2011). Publish or patent: Bibliometric evidence for empirical trade-offs in national funding strategies. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi>.</bibl>
+
+<bibl><hi rend="bold">Sievert, D. E., and M. E. Sievert</hi> (1989). Philosophical research: Report from the field. In <hi rend="italic">Humanists at work: Disciplinary perspectives and personal reflections</hi>. Chicago: University Library, University of Illinois.</bibl>
+
+<bibl><hi rend="bold">Shadish, W. R., D. Tolliver, M. Gray, and S. K. Sen Gupta.</hi> (1995). Author judgements about works they cite: Three studies from psychology journals. <hi rend="italic">Social Studies of Science</hi> 25(3): 477–498.</bibl>
+
+<bibl><hi rend="bold">Small, H. G.</hi> (1982). Cited documents as concept symbols. <hi rend="italic">Social Studies of Science</hi> 8(3): 327–340. </bibl>
+
+<bibl><hi rend="bold">Smith, A. G.</hi> (2004). Web links as analogues of citations. <hi rend="italic">Information Research</hi>, 9(4) paper 188 [Available at <ref type="url" target="http://InformationR.net/ir/9-4/paper188.html">http://InformationR.net/ir/9-4/paper188.html</ref>].</bibl>
+
+<bibl><hi rend="bold">Smith, L. C.</hi> (1981). Citation analysis. <hi rend="italic">Library Trends</hi> 30(1): 83–106.</bibl>
+
+<bibl><hi rend="bold">Smith, N.</hi> (2009). Citation in classical studies. <hi rend="italic">Digital Humanities Quarterly</hi> 3(1).</bibl>
+
+<bibl><hi rend="bold">Sula, C. A.</hi> (2012). Visualizing social connections in the humanities: Beyond bibliometrics. <hi rend="italic">Bulletin of the American Society for Information Science &amp; Technology</hi> 38(4): 31–35.</bibl>
+
+<bibl><hi rend="bold">Swales, J. M.</hi> (1990). <hi rend="italic">Genre analysis: English in academic and research settings</hi>. Cambridge, UK: Cambridge University Press.</bibl>
+
+<bibl><hi rend="bold">Wiberly, S. E., and W. G. Jones</hi> (1989). Patterns of information seeking in the humanities. <hi rend="italic">College and Research Libraries</hi> 50, 638–645.</bibl>
+
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">  The 2009 issues of Art Bulletin were used because of their high OCR quality as compared to available 2011 editions.</note>
+<note xml:id="n02" n="2">  Citation detection in PLMA exhibited several weaknesses at the time these proceedings were due. We believe these errors are due to OCR abnormalities, particularly errant spaces within words, as well as a varied mixture of parenthetical and in-text citation styles by authors. We continue work on refining the tool for these documents.</note>
+
+
+</div>
+
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-250">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Bibliopedia, Linked Open Data, and the Web of Scholarly Citations</title>
+<author>
+<name><surname>Cenkl</surname>, <forename>Pavel Thomas</forename></name>
+<affiliation>Sterling College, United States of America</affiliation>
+<email>pcenkl@sterlingcollege.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Bibliopedia, which recently completed an NEH Digital Humanities Start-Up Grant, performs data-mining and cross-referencing of scholarly literature to create a humanities-centered collaboratory. It uses semantic web technology to enable automated textual analysis, data extraction, cross-referencing, and visualizations of the relationships among texts and authors. Using existing open source software, it extracts citation data from existing plain text resources and transforms them into linked open data. This process makes the information easily accessible to the wider scholarly and linked data communities, enables network visualizations of the scholarly landscape. This short paper uses the lessons learned from Bibliopedia to argue for the necessity and usefulness of adopting semantic web technologies in digital humanities research projects. This paper also argues for the benefit of deploying open source technologies whenever possible, a method that has enabled a small team to construct a working prototype of a complex system in a short time.</note></notesStmt>          
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">SP05</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>drupal</term>
+<term>linked open data</term>
+<term>semantic web</term>
+<term>citation networks</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>databases &amp; dbms</term>
+<term>information retrieval</term>
+<term>metadata</term>
+<term>ontologies</term>
+<term>publishing and delivery systems</term>
+<term>knowledge representation</term>
+<term>crowdsourcing</term>
+<term>semantic web</term>
+<term>linking and annotation</term>
+<term>data mining/ text mining</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc><change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>  
+    
+<head>Overview</head> 
+    
+<p>Bibliopedia, which recently completed an NEH Digital Humanities Start-Up Grant, performs data-mining and cross-referencing of scholarly literature to create a humanities-centered collaboratory. Currently a working prototype, Bibliopedia can search resources including JSTOR and Library of Congress for metadata about scholarly articles and books, examine the articles and books for citations, then present the results in a publicly accessible database. Bibliopedia is designed to work with all humanities scholarship. It will also allow users to create browsable and customizable bibliographies of all the works cited by each article and book. Most importantly, it uses semantic web technology to enable automated textual analysis, data extraction, cross-referencing, and visualizations of the relationships among texts and authors. Using existing open source software, it extracts citation data from existing plain text resources and transforms them into linked open data. This process makes the information easily accessible to the wider scholarly and linked data communities, enables network visualizations of the scholarly landscape. This presentation will cover the details of the Bibliopedia system to show others how they can replicate it. We will also offer to all interested academic parties our existing installation and hosting platform for their experimentation. In particular, we will present our Drupal-based semantic wiki, which features a full web services API, and our custom citation crawler.</p>
+    <p>Linked open data, one of the core technologies of the semantic web, promotes open sharing of digital scholarly research while it encourages further, potentially unexpected uses. Bibliopedia's method for incorporating linked open data (via RDFa) requires only minimal technical expertise to reproduce. One of the central components of Bibliopedia is the Drupal content management sytem (CMS), which as of version 7 exposes data via RDF/RDFa as part of its core functionality.  This functionality, moreover, is not limited to Drupal. For example, Omeka, another CMS developed at the Roy Rosenzweig Center for History and New Media, George Mason University, has some limited support for linked data through its DublinCoreExtended plugin. Bibliopedia demonstrates the power and flexibility of Drupal's approach to linked data while providing more general lessons for digital humanists who seek to incorporate this technology into their projects.</p>
+</div>
+
+<div>
+<head>Project Details</head>    
+    
+<p>Bibliopedia will aid humanities researchers of all levels of expertise by making simple the currently difficult tasks of discovering new scholarly works and the relationships among them. It will create an a scholarly community to verify and elaborate cross-referenced, linked bibliographic data through easy-to-use wiki pages. Scholarly literature will become browsable not only backwards in time, but also forwards, something that is currently impossible.</p>
+    <p>The semantic web is transforming the Internet from a collection of pages and data readable only by humans to one that machines can understand and process. Semantic web technology promises the ability automatically to determine meaning and then infer connections among different elements, thereby vastly improving search capabilities, discovery of new information, and the overall usefulness of the Internet. Just as information accessible only to humans comprises the great majority of the general Internet, so too is data about scholarly literature locked away in text that computers cannot process without great difficulty. At best, search engines for repositories such as JSTOR permit researchers to query author name, journal titles, and keywords, but once a work is found, the search stops. No connections among works are found precisely because machines cannot currently read that data. Although Google Scholar attempts to show citations of articles, its usefulness is highly limited because it does not make clear the relationships among articles, present very limited metadata about each article (if any), fails to provide for community elaboration or correction, and includes only works that are publicly available. Yet despite its limitations, Google Scholar stands as a significant technological advance beyond keyword-based search engines such as those provided by JSTOR and Project Muse.</p>
+    <p>Bibliopedia will, by aggregating data from as many sources as possible, converting citations into semantic web format, and then cross-referencing an ever-growing database of scholarly works, be able not only to overcome many of the limitations of Google Scholar and become a powerful research tool in its own right, but also to make a valuable contribution to the growing semantic web. Introducing high quality metadata about humanities scholarship to the semantic web will enable others in the semantic web/linked data world to process that data in new, unexpected ways that will accrue further benefits to the scholarly community. For example, the standards underlying the semantic web make data visualization and automated inferences about relationships trivially easy rather than the complex problems such tasks currently present. Bibliopedia will, then, through the innovation of placing metadata about scholarly literature into a linked data format, open up a vast range of possible future innovations and analyses based on that data, which is currently locked away and readable only by select humans.</p>
+    <p>Another virtue of a linked data format is that it will help resolve many of the challenges inherent in metadata, some will inevitably remain. Rather than attempt to solve this incredibly complex problem through automation alone, then, Bibliopedia will, in the process of displaying its results for human consumption, also provide for human feedback in the form of correction and elaboration. A common disadvantage of fully automated text analysis and data extraction tools such as Google Books, Google Scholar, and other digital research tools is that their automatic parsers have errors in their metadata that they do not allow subject matter experts to repair. Bibliopedia will pursue the goal of unifying that information into an environment that not only displays the information efficiently, but actively encourages crowd-sourcing metadata on books, articles, and publications of all kinds. In thus opening data up to revision by the scholarly community, Bibliopedia can build on the strong work of mature data silos, improve overall data quality, and provide the academic community at large a continuously evolving research tool.</p>
+    <p>There currently exists a multitude of projects and tools designed to work with book metadata, cross-reference scholarly articles (localized to the sciences), or create user communities around a chosen interest. Further, some of the most important trends currently revising the ways we use technology are social media, collaboration, and data aggregation. By incorporating the benefits realizable from each of these trends, Bibliopedia will create a powerful tool for scholarly research at all levels. None of the existing tools, however, focus on scholarship for the humanities, nor do they present the information in the linked data format necessary to the semantic web.</p>
+</div>
+
+</body>
+</text>
+</TEI>    
+    
+                

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+ <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-135">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Bootstrapping Delta: a safety net in open-set authorship attribution</title>
+<author>
+<name><surname>Eder</surname>, <forename>Maciej</forename></name>
+<affiliation>Pedagogical University, Krakow, Poland</affiliation>
+<email>maciejeder@gmail.com</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">The aim of the proposal is to introduce a new method of authorship attribution that would be suitable in open-set attribution. The technique technique presented in this proposal is based on Delta and extended with the general concept of bootstrap. The method relies on the author’s empirical observation that the distance between samples similar to each other is quite stable despite different features tested, while the distance between heterogeneous samples usually displays some unsteadiness. The core of the procedure is to perform a series of attribution tests in 1,000 iterations, where the number of features to be analyzed is chosen randomly; in each iteration, the nearest neighbor classification is performed. The presented procedure displays an accuracy comparable to the state-of-the-art methods used in stylometry, but it is far more sensitive to fake candidates.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP11</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>authorship attribution</term>
+<term>open-set problem</term>
+<term>reliabiblity</term>
+<term>Delta</term>
+<term>bootstrap</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>literary studies</term>
+<term>stylistics and stylometry</term>
+<term>authorship attribution / authority</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-02"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>Introduction</head>
+<p>In non-traditional authorship attribution, the general goal is to link a disputed/anonymous sample with the most probable ‘candidate’. This is what state-of-the-art attribution methods do with ever-growing precision. However, it is similarly important to <hi rend="italic">validate</hi> the obtained results, especially when one deals with a faultily-collected or incomplete reference corpus. This is a typical situation of an ‘open’ attribution problem: when the investigated anonymous text might have been written by <hi rend="italic">any</hi> contemporary writer, and the attributor has no prior knowledge whether a sample written by a possible candidate is included in the reference corpus. Then the attributor faces the question whether, supposing that all the contemporary writers were represented in the corpus, the results in fact suggest a different person as the most likely author. A vast majority of methods used in stylometry establish a classification of samples and strive to find the <hi rend="italic">nearest neighbors</hi> among them. Unfortunately, these techniques of classification are not resistant to a common mis-classification error: any two nearest samples are claimed to be similar, no matter how distant they are.</p>
+
+<p>Given (1) a text of uncertain or anonymous authorship and (2) a comparison corpus of texts by known authors, one can perform a series of similarity tests between each sample and the disputed text. This allows us to establish a ranking list of possible authors, assuming that the sample nearest to the disputed text is stylistically similar, and thus probably written by the same author. However, the calculated distance is usually not followed by an estimation of its reliability. While testing the novel <hi rend="italic">Agnes Gray</hi> against a corpus of English novels, one will probably have Anne Bront&#235; as the most likely author. However, testing Emily Bront&#235;’s only novel <hi rend="italic">Wuthering Heights</hi>, one is guaranteed to obtain wrong results (because no comparison sample is available), but the ranking of candidates will suggest a most likely author anyway, perhaps another Bront&#235; sister. In a controlled authorship experiment, identifying such a fake candidate is easy, but how can we decide the degree of certainty in a real-life authorship attribution case? Although this problem has been discussed (Burrows, 2002, 2003; Hoover, 2004a; Koppel et al., 2009; Schaalje et al., 2011), we still have no widely-accepted solution. The method introduced below provides a new approach to this problem.</p>
+
+</div>
+
+<div>
+<head>Mater semper certa: Burrows’s Delta</head>
+<p>Among a number of machine-learning methods used in stylometry, a special place is occupied by Burrows’s Delta, a rare example of a made-to-measure technique designed particularly for authorship attribution (Burrows, 2002, 2003). Delta is one of the simplest and, at the same time, one of the most effective methods (as evidenced in a benchmark presented by Jockers and Witten, 2008); described in detail, tested, and improved (Hoover, 2004a, 2004b; Argamon, 2008; Smith and Aldridge, 2011; Rybicki and Eder, 2011).</p> 
+
+<p>However, despite obvious Delta’s advantages, there are also some drawbacks, shared with a vast majority of state-of-the-art attribution methods. Particularly, Delta relies on an arbitrarily specified number of features to be analyzed. Even if most scholars agree that the best style-markers are the counted frequencies of the most frequent words (MFWs), there still remains the nasty question of the number of words that should be taken into analysis. While some practitioners claim that a small number of function words provide the best results (Mosteller and Wallace, 1964), others prefer longer vectors of MFWs: 100 words (Burrows, 2002), 300 (Smith and Aldrigde, 2011), 500 (Craig and Kinney, 2009), up to even 1,000 or more (Hoover, 2004a). However, a multi-corpus and multi-language study (Rybicki and Eder, 2011) shows that there is no universal vector of MFWs and that the results are strongly dependent on the corpus analyzed.</p>
+
+<figure>
+<graphic url="ab-135.001"/>
+<head>Figure 1.</head>
+<p>Who wrote <hi rend="italic">The Europeans</hi>? Rankings of 5,000 Delta tests performed on increasing MFW vectors. If the number of MFWs analyzed is lower than 2,700, then Dickens (black thin line) is ranked as the most likely candidate; to get the real author (thick line), one needs to choose a very long vector of words.</p></figure>
+
+<p>What is worse, most attribution techniques, including Delta, allow to measure one vocabulary range (i.e. one vector of MFWs) at once to obtain a ranking of candidates. As shown in Fig. 1, the distances between James’s <hi rend="italic">The Europeans</hi> and the members of the training set are unstable and strongly depend on the number of MFWs tested: e.g. one needs to analyze at least 2,700 words to see James ranked as the most likely author of <hi rend="italic">The Europeans</hi> instead of Dickens. The danger of cherry-picking is more than obvious here. Although an attributor can perform a series of independent tests with different MFW vectors, a final comparison of thus obtained results is not straightforward at all.</p>
+</div>
+
+<div>
+<head>Pater familiae: Bootstrap</head>
+<p>In Rudolf Erich Raspe’s collection <hi rend="italic">The Surprising Adventures of Baron M&#252;nchhausen</hi>, there is a scene where the main character, trapped in a swamp, pulls himself out by his own bootstraps. Although it is still disputed if M&#252;nchhausen was pulling by his boots or by his hair, the bootstrapping became a metaphor for statistical methods that make up for absence or unreliability of parameters with intensive resampling of the original population. The bootstrapping procedures are widely used in biometrics and social sciences, and their idea is quite simple: in a large number of trials, samples from the original population are chosen randomly (with replacement), and this chosen subset is analyzed in substitution of the original population (Good, 2006).</p>
+</div>
+
+<div>
+<head>When Delta meets Bootstrap</head>
+<p>The aim of the technique presented below is to overcome the disadvantages of the existing nearest neighbor classifications. It has been based on Delta and extended with the concept of bootstrap. The method relies on the author’s empirical observation that the distance between samples similar to each other is quite stable <hi rend="italic">despite</hi> different vectors of MFWs tested, while the distance between heterogeneous samples often displays some unsteadiness depending on the number of MFWs analyzed. </p>
+
+<p>The core of the procedure is to perform a series of attribution tests in 1,000 iterations, where the number of MFWs to be analyzed is chosen randomly (e.g., 334, 638, 72, 201, 904, 145, 134, 762, …); in each iteration, the nearest neighbor classification is performed. It could be compared to taking 1,000 photos from different points of view. Thus, instead of dealing with one table of calculated distances &#8212; as in classic Delta &#8212; one obtains 1,000 distance tables. Next, the tables are arranged in a large three-dimensional table-of-tables, as visualized in Fig. 2.</p>
+
+<figure>
+<graphic url="ab-135.002"/>
+<head>Figure 2.</head>
+<p>Results of 1,000 bootstrap iterations (tables of distances between texts samples) arranged in a three-dimensional table.</p>
+</figure>
+
+<p>The next stage is to estimate the mean and standard deviation of each cell across 1,000 layers of the composite table. This is a crucial point of the whole procedure. While classical nearest neighbor classifications rely on <hi rend="italic">point estimation</hi> (i.e. the distance between two samples is always represented by a single numeric value), the new technique introduces the concept of <hi rend="italic">confidence interval</hi>. Namely, the distance between two samples is a <hi rend="italic">range of values</hi> represented by the mean of 1,000 bootstrap trials plus 1.64&#963;<hi rend="subscript">ij</hi> below and 1.64&#963;<hi rend="subscript">ij</hi> above the arithmetic mean. </p>
+
+
+<figure>
+<graphic url="ab-135.003"/>
+<head>Figure 3.</head>
+<p>Who wrote <hi rend="italic">Phineas Finn</hi>? Ranking of candidates using confidence intervals.</p>
+</figure>
+
+<p>An exemplary ranking of candidates is shown in Fig. 3. The most likely author of <hi rend="italic">Phineas Finn</hi> is Trollope (as expected), and the calculated confidence interval does not overlap with any other range of uncertainty. This means that Trollope will be ranked first with a 100% probability.</p>
+
+<p>The real strength of the method, however, is evidenced in Fig. 4 and 5, where <hi rend="italic">The Portrait of Dorian Gray</hi> is tested against a training set which <hi rend="italic">does not contain</hi> samples of Wilde. Classic Delta simply ranks the candidates, Hardy being the first (Fig. 4), while in the new technique, confidence intervals of the first three candidates partially overlap with each other. In consequence, the assumed probability of authorship of <hi rend="italic">Dorian Gray</hi> is shared between Galsworthy (54.2%), Hardy (34.8%) and Charlotte Bront&#235; (11%). The ambiguous probabilities strongly indicate fake candidates in an open-set attribution case.</p>
+
+<figure><graphic url="ab-135.004"/><head>Figure 4.</head>
+<p>Who wrote <hi rend="italic">The Portrait of Dorian Gray</hi>? Ranking of candidates using classic Delta procedure (500 MFWs tested).</p>
+</figure>
+
+<figure>
+<graphic url="ab-135.005"/>
+<head>Figure 5.</head>
+<p>Who wrote <hi rend="italic">The Portrait of Dorian Gray</hi>? Ranking of candidates using confidence intervals.</p></figure>
+</div>
+
+<div>
+<head>First benchmark</head>
+<p>The first exemplary results of two attribution experiments are shown in Table 1. In both approaches, Jane Austen’s <hi rend="italic">Sense and Sensibility</hi> was assumed to be an ‘anonymous’ sample to be attributed, and the comparison corpus consisted of 17 texts by known authors. In the first experiment, the behavior of 1,000 single bootstrap trials led to the final ranking with Jane Austen as the only probable candidate (as expected). In the second experiment, Austen’s sample was excluded from the comparison corpus, so that the real author could not be guessed. However, the method refused to point out a most likely candidate with a high probability. As one can see, there is uncertainty about the first three candidates.</p>
+
+<figure>
+<graphic url="ab-135.t01" />
+<figDesc>rank	candidate	probability		rank	Candidate	Probability
+1.	Austen	100%		1.	Trollope	31.8%
+2.	Trollope	0%		2.	A. Bront&#235;	31.2%
+3.	A. Bront&#235;	0%		3.	Fielding	29.7%
+4.	Fielding	0%		4.	Dickens	7.2%
+5.	Dickens	0%		5.	Eliot	0.1%
+…	…	…		…	…	…</figDesc>
+
+<head>Table 1.</head><p>Who wrote <hi rend="italic">Sense and Sensibility</hi>? A ranking of candidates: (1) where the real author (Jane Austen) is available in the comparison corpus (left); and (2) where the comparison corpus does not contain samples by the real author (right).</p></figure>
+
+<p>The procedure presented above, displays an accuracy comparable to the state-of-the-art methods used in stylometry, but it is far more sensitive to fake candidates. While the existing methods provide two possible answers to the problem of attribution: <hi rend="italic">X is the author</hi> or <hi rend="italic">X is not the author</hi>, the procedure proposed introduces a third answer: <hi rend="italic">unclear results</hi>, an important safety net against false attribution.</p>
+</div>
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Argamon, S.</hi> (2008). Interpreting Burrows’s Delta: geometric and probabilistic foundations. <hi rend="italic">Literary and Linguistic Computing</hi>, 23(2). 131-47.</bibl>
+
+<bibl><hi rend="bold">Burrows, J. F.</hi> (2002). ‘Delta’: a measure of stylistic difference and a guide to likely authorship. <hi rend="italic">Literary and Linguistic Computing</hi>, 17(3). 267-87.</bibl>
+
+<bibl><hi rend="bold">Burrows, J.</hi> (2003). Questions of authorship: attribution and beyond. <hi rend="italic">Computers and the Humanities</hi>, 37 5-32.</bibl>
+
+<bibl><hi rend="bold">Craig, H. and  A. F. Kinney</hi> (2009). <hi rend="italic">Shakespeare, Computers, and the Mystery of Authorship</hi>. Cambridge &amp; New York: Cambridge University Press.</bibl>
+
+<bibl><hi rend="bold">Good, P.</hi> (2006). <hi rend="italic">Resampling Methods</hi>. Boston: Birkh&#228;user.</bibl>
+
+<bibl><hi rend="bold">Hoover, D. L.</hi> (2004a). Testing Burrows’s Delta. <hi rend="italic">Literary and Linguistic Computing</hi>, 19(4). 453-71.</bibl>
+
+<bibl><hi rend="bold">Hoover, D. L.</hi> (2004b). Delta prime? <hi rend="italic">Literary and Linguistic Computing</hi>, 19(4). 477-95.</bibl>
+
+<bibl><hi rend="bold">Jockers, M. L., and D. M. Witten</hi> (2010). A comparative study of machine learning methods for authorship attribution. <hi rend="italic">Literary and Linguistic Computing</hi>, 25(2). 215-23.</bibl>
+
+<bibl><hi rend="bold">Koppel, M., J. Schler, and S. Argamon</hi> (2009). Computational methods in authorship attribution. <hi rend="italic">Journal of the American Society for Information Science and Technology</hi>, 60(1).  9-26.</bibl>
+
+<bibl><hi rend="bold">Mosteller, F. and D. Wallace</hi> (1964). <hi rend="italic">Inference and Disputed Authorship: The Federalist Papers</hi>. Stanford: CSLI.</bibl>
+
+<bibl><hi rend="bold">Rybicki, J., and M. Eder</hi> (2011). Deeper Delta across genres and languages: do we really need the most frequent words? <hi rend="italic">Literary and Linguistic Computing</hi>, 26(3). 315-21.</bibl>
+
+<bibl><hi rend="bold">Schaalje, G. B., P. Fields, M. Roper, and G. L. Snow</hi> (2011). Extended nearest shrunken centroid classification: a new method for open-set authorship attribution of texts of varying sizes. <hi rend="italic">Literary and Linguistic Computing</hi>, 26(91). 71-88.</bibl>
+
+<bibl><hi rend="bold">Smith, P. W., and W. Aldridge</hi> (2011). Improving authorship attribution: optimizing Burrow’s Delta method. <hi rend="italic">Journal of Quantitative Linguistics</hi>, 18(1). 63-88.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

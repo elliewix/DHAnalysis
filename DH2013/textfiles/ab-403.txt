@@ -1,0 +1,99 @@
+
+
+    
+A premise of the Digital Humanities 2013 conference theme, “Freedom to Explore,” is that users of the languages of the world should be able to express themselves and search for documents in their own language (or one of their heritage), using the script employed to write that language. For many widely used languages, this is generally possible today, because its script (and characters) can be represented by the international character encoding standard Unicode  (Unicode Consortium, 2012) and its ISO mate, ISO/IEC 10646 (ISO/IEC, 2012), and because these scripts are supported on today’s computers and electronic devices.
+
+    
+But those scripts used for lesser-used languages — both modern and historic — that are 
+not
+ in Unicode are subject to problems in representation and searching, since they are not part of the standard. One consequence is that this will leave gaps in the world’s cultural, linguistic, and historical legacy. Even after the scripts are accepted and published in the Unicode Standard (and ISO standard), the languages and their scripts must then be supported in fonts and rendering engines, and locale data information is needed to implement a modern script on cell phones or computer devices. Because of these factors, the goal of making electronic text communication truly global and multilingual remains a high bar, but one that the digital humanities should continue to strive to achieve.
+
+    
+This short paper will report on recent developments in the effort to make the text of lesser-used languages accessible electronically, focusing primarily on issues involved in getting characters into Unicode but also touching on the social aspects of character encoding.
+
+    
+In the past few years, Unicode (and ISO/IEC 10646) has become more widely accepted and better understood, even by laypeople. Indeed, forty-two modern and historic scripts have been added in the various releases over the past six years
+1
+, most through the UC Berkeley Script Encoding Initiative (Script Encoding Initiative, 2012). In the past, it was often challenging to explain to language communities the importance of getting a script into Unicode. However, today user communities are themselves approaching the Unicode Consortium (or others involved in character encoding) in order to get their script included in the standard. The Script Encoding Initiative at UC Berkeley has, for example, been approached to help in encoding the ADLaM alphabet in Guinea and the Mandombe script in the Democratic Republic of Congo, two recently devised scripts intended for modern use. Historic script users — who may be heritage language users, “hobbyists”  or come from academia or a liturgical setting — have also been active in getting scripts encoded. For example, experts of the Hatran script of the Middle East recently sought help in getting their script encoded.
+
+    
+While it is useful to have the user communities directly involved in the proposal process, proposals written by new authors often require extensive assistance. Typically, the approval process takes much longer for proposals written by new authors in order for all the required technical information to be included in the proposal. A more effective approach, adopted by the Script Encoding Initiative (SEI), has been to encourage user communities to work with a veteran Unicode proposal author, who is familiar with the standards committees’ requirements. However, relying on an outsider to help on a proposal may be looked on with suspicion. One way to allay this fear, an approach also advocated by the SEI project, is to try to encourage collaborative work between an expert in the encoding process and the users, making it clear the ownership of the script clearly belongs to the user community, but the encoding expert (and the standards committees) will help make sure the script will be implementable on today’s computers and fonts. Currently, work on the Nepaalalipi/Newar proposal is following this approach and a report on its success (or failure) will be relayed.
+
+    
+One issue in the encoding process that has repeatedly been an issue for user communities of modern scripts is what name to assign the script. A script name in Unicode is meant to be as an identifier (such as in programming), and typically one that is commonly found in English.2 The English requirement has been problematic, since the English name is often not that of the user communities. Also, the name for a script can vary across languages (and countries), so there can be a tug-of-war between groups as to which name to use. One way to deal with the name has been to encourage user communities to translate character names in the code charts into their own language. Likewise, once the script is approved, fonts can use their preferred name for the glyphs. In dealing with competing names in different languages, one solution has been to get the groups to try to agree on a name that is acceptable to all. This approach was successful for Tai Tham (“Lanna” in Thailand), but has not worked out well for Old Hungarian/Szekely-Hungarian Rovas. (Typically, names for historic scripts are not controversial or contentious, though disagreements have arisen 
+within
+ in the standards committees on a particular name or character.)
+
+    
+The current process of script encoding involves approval by the Unicode Technical Committee (UTC) and the subcommittee on coded character sets in the International Organization for Standardization (ISO). Because ISO represents character encoding in the governmental arena, the subcommittee chair on Coded Character Sets in the past three years has tried to encourage countries of lesser-used scripts to participate in ISO, particularly those in West Africa. However, many countries have not been able to participate due to lack of funding. As a way to involve the user communities, the SEI project has worked with user communities, without direct support or involvement of the government.
+
+    
+Once a script is approved and published in a version of the Unicode Standard (and ISO/IEC 10646), a text in that script is not necessarily ready for interchange: fonts with the correct codepoints must be created as well as an input method, the rendering engine must be updated to support the script  (particularly if the script is complex and has special processing for display), and locale data is needed for implementations, including electronic devices. In these areas, one of the more promising areas of assistance for modern lesser-used languages and scripts is the ScriptSource project sponsored by SIL International (SIL International, n.d.), The talk will include a discussion of the Cherokee script as it progressed from initial Unicode proposal to iPad and iPhone implementations, as a model for other lesser-used scripts. 
+        The paper will close with thoughts from the speaker on how to improve the current process and possible next steps, such as:
+
+    
+engage users and relevant national body standards bodies early in the process of encoding a script (so as to prevent a situation that arose with Khmer3)
+support funding for projects in which a dedicated person can work with the user communities and instruct them on the encoding process
+encourage users to vote (via their national standards body) on relevant ISO script encoding ballots.
+
+
+
+
+
+
+
+
+Bauhahn, M., and M. Everson
+ (2001). Response to Cambodian official objection to Khmer block (N2380).(=ISO/IEC JTC1/SC2/WG2 N2385). 
+http://std.dkuug.dk/JTC1/SC2/WG2/docs/n2385.pdf
+ (accessed February 2013).
+Committee for Standardization of Khmer Characters in Computers
+ (2001). Cambodian official objection to the existing Khmer block in UCS. (=ISO/IEC JTC1/SC2/WG2 N2380). (2001). Web. 
+http://std.dkuug.dk/JTC1/SC2/WG2/docs/n2380.pdf
+ (accessed 19 February 2013).
+International Organization for Standardization/International Electrotechnical Commission
+ (2012). ISO/IEC 10646:2012(E). Information technology — Universal Coded Character Set (UCS). Third ed. 
+http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html
+
+(accessed: 12 February 2013).
+Script Encoding Initiative.
+ (2012). List of SEI-Supported Proposals Completed and Published in Unicode and ISO/IEC 10646. UC Berkeley. 
+http://www.linguistics.berkeley.edu/sei/alpha-script-completed.html
+. (accessed 19 February 2013).
+SIL International
+ Writing systems, computers and people. Scriptsource. 
+http://scriptsource.org.
+ (accessed 19 February 2013).
+Unicode Consortium
+ (2012). Character Properties, Case Mappings and Names FAQ. 
+http://www.unicode.org/versions/Unicode6.2.0/
+. (accessed 3 November 2012).
+Unicode Consortium
+ (2012). Unicode 6.2.0. 
+http://www.unicode.org/versions/Unicode6.2.0/
+. (accessed 3 November 2012).
+
+
+
+
+
+See the charts for the various editions of the Unicode Standard, such as:
+
+http://www.unicode.org/charts/PDF/Unicode-6.1/
+,
+
+http://www.unicode.org/charts/PDF/Unicode-6.0/
+,
+
+http://www.unicode.org/charts/PDF/Unicode-5.2/
+,
+
+http://www.unicode.org/charts/PDF/Unicode-5.1/
+,
+
+http://www.unicode.org/charts/PDF/Unicode-5.0/
+.
+See the Unicode Consortium’s Frequently Asked Question on this topic, Unicode Consortium 2012b. 
+The encoding of the Khmer script in 1999-2000 resulted in the Khmer community feeling acutely left out of the process, (cf. their objections in Committee for Standardization of Khmer Characters in Computers, 2001), although the situation was probably somewhat more complex (cf. Bauhahn and Everson, 2001)
+
+

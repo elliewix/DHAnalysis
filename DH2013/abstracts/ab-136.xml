@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-136">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Stylometry with R: a suite of tools</title>
+
+<author>
+<name><surname>Eder</surname>, <forename>Maciej</forename></name>
+<affiliation>Pedagogical University, Krakow, Poland</affiliation>
+<email>maciejeder@gmail.com</email>
+</author>
+
+<author>
+<name><surname>Kestemont</surname>, <forename>Mike</forename></name>
+<affiliation>University of Antwerp, Belgium</affiliation>
+<email>mike.kestemont@gmail.com</email>
+</author>
+
+<author>
+<name><surname>Rybicki</surname>, <forename>Jan</forename></name>
+<affiliation>Jagiellonian University, Krakow, Poland</affiliation>
+<email>jkrybicki@gmail.com</email>
+</author>
+
+</titleStmt>
+<publicationStmt>
+<authority/>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace>
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p/>
+</availability>
+</publicationStmt>
+
+<notesStmt>
+<note type="abstract">Stylometry today uses either stand-alone dedicated programs, custom-made by
+stylometrists, or applies existing software, often one for each stage of the analysis. The
+Stylometry with R suite of scripts can be placed somewhere in-between, as the powerful open-source
+statistical programming environment provides, on the one hand, the opportunity of building
+statistical applications from the scratch, and, on the other, allows less advanced researchers to
+use ready-made scripts and libraries. The poster will present five out-of-the-box scripts that cover
+a wide range of methods used in stylometry. The scripts are available on
+https://sites.google.com/site/computationalstylistics/</note>
+</notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>classical studies</term>
+<term>literary studies</term>
+<term>medieval studies</term>
+<term>software design and development</term>
+<term>stylistics and stylometry</term>
+<term>authorship attribution / authority</term>
+<term>english studies</term>
+<term>visualisation</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>stylometry</term>
+<term>R</term>
+<term>authorship attribution</term>
+<term>multidimensional methods</term>
+<term>software</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-05"></date>
+<name>Matthew Lavin</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="poster">
+<body>
+<div>
+<p> Stylometry today uses either stand-alone dedicated programs, custom-made by stylometrists, or
+applies existing software, often one for each stage of the analysis. Stylometry with R can be placed
+somewhere in-between, as the powerful open-source statistical programming environment provides, on
+the one hand, the opportunity of building statistical applications from scratch, and, on the other,
+allows less advanced researchers to use ready-made scripts and libraries. In our own stylometric
+adventure with R, one of the aims was to build a tool (or a set of tools) that would combine
+sophisticated state-of-the-art algorithms of classification and/or clustering with a user-friendly
+interface. In particular, we wanted to implement a number of multidimensional methods that could be
+used by scholars without programming skills. And more: it soon became evident that once our R
+scripts are made, provided with a graphic user interface and more or less documented, they are
+highly usable in class; experience shows that this is an excellent way to work around R’s normally
+steep learning curve without losing anything of the environment’s considerable computing power and
+speed. </p>
+<p>The crucial point in building the interface was to keep all the stages of the entire analysis –
+from loading texts to final results in numeric and graphic form &#8212; in a single script. To exemplify,
+our Stylo script does all the work: it processes electronic texts to create a list of all the words
+used in all texts studied, with their frequencies in the individual texts; normalizes the
+frequencies with z-scores (if applicable); selects words from stated frequency ranges for analysis;
+performs additional procedures that (usually) improve attribution, such as Hoover’s (2004a, 2004b)
+automatic deletion of personal pronouns and culling (automatic removal of words too characteristic
+for individual texts); compares the results for individual texts; performs a variety of multivariate
+analyses; presents the similarities/distances obtained in tree diagrams; finally, produces a
+bootstrap consensus tree &#8212; a new graph that combines many tree diagrams for a variety of parameter
+values. It was our aim to develop a general platform for multi-iteration attribution tests; for
+instance, an alternate script produced heatmaps to show the degree of Delta’s success in attribution
+at various intervals of the word frequency ranking list (Rybicki and Eder 2011). The last stage of
+the interface design was to add a GUI, since some humanists might be allergic to the raw
+command-line mode provided by R &#8212; an observation shared by all three authors &#8212; and a host of various
+small improvements, like saving (and loading) the parameters for the most recent analysis, a wide
+choice of graphic output formats, etc. </p>
+<figure>
+<graphic url="ab-136.001"/>
+<head>Fig. 1 The Stylo script with a bootstrap consensus plot.</head>
+</figure>
+<p>The authors believe that at some point the suite of out-of-the-box scripts will cover a wide
+range of methods used in stylometry. So far, we offer the following tools: 
+<list type="ordered">
+<item>(1) the <hi rend="bold">Stylo</hi> script, now in version 0.4.8. This is the main tool, thoroughly tested
+and (partially) documented. It performs Principal Components Analysis, Cluster Analysis,
+Multidimensional Scaling, and Bootstrap Consensus Trees. The script reads plain text files, XML, or
+HTML; it supports explicitly nine languages, and implicitly many more (e.g. preliminary tests with a
+Chinese corpus were quite promising). Publication-quality plots can be exported in PDF, JPEG, PNG,
+or EMF formats. Additionally-generated files, such as a wordlist used and a table of word
+frequencies, can be re-used in other scripts or other statistical tools.</item>
+
+<item>(2) the <hi rend="bold">Classify</hi> script. It performs Delta (Burrows 2002), k-Nearest Neighbors
+classification, Support Vectors Machines, Naive Bayes, and Nearest Shrunken Centroids (Jockers, et
+al. 2008). Most of the options are derived from the above-mentioned Stylo script.</item>
+
+<item>(3) the <hi rend="bold">Rolling Delta</hi> script. It analyses collaborative works and tries to identify
+the authorship of their fragments. The first step involves a “windowing” procedure (Van Dalen-Oskam and
+Van Zundert 2007) in which each reference text is segmented into consecutive, equal-sized samples or
+windows. After “rolling” through the test text we can plot the resulting series of Deltas for each
+reference text in a graph. <figure>
+<graphic url="ab-136.002"/>
+<head>Fig. 2 Sample plot generated by the Rolling Delta script.</head>
+</figure>
+<figure>
+<graphic url="ab-136.003"/>
+<head>Fig. 3 Sample plot generated by the Oppose Test script.</head>
+</figure>
+</item>
+<item>(4) the <hi rend="bold">Oppose Test</hi> script. It performs a contrastive analysis between two given sets
+of texts, using Burrows’s Zeta (2006) in its different flavours, including Craig’s extensions (Craig
+and Kinney, 2009). The script generates a list of words significantly preferred by a tested author,
+and another list containing the words significantly avoided. </item>
+<item>(5) the <hi rend="bold">Keywords</hi> script. This considerably simple tool is an implementation of the
+concept of “keywords”, i.e. words appearing with a statistically significantly higher frequency in
+one text or collection of texts in comparison to another text or collection. </item>
+</list>
+</p>
+<p> The scripts are available on <ref type="url"
+target="https://sites.google.com/site/computationalstylistics/"
+>https://sites.google.com/site/computationalstylistics/</ref>
+</p>
+</div>
+</body>
+
+<back>
+<div type="References">
+
+<listBibl>
+<bibl><hi rend="bold">Burrows, J. F.</hi> (2002). ‘Delta’: a measure of stylistic difference and a guide to likely
+authorship. <hi rend="italic">Literary and Linguistic Computing</hi>, 17(3): 267–87. </bibl>
+
+<bibl><hi rend="bold">Burrows, J. F.</hi> (2006). All the Way Through: Testing for Authorship in Different Frequency
+Strata. <hi rend="italic">Literary and Linguistic Computing</hi>, 22(1):  27–48.</bibl>
+
+<bibl><hi rend="bold">Craig, H., and A. F. Kinney (eds.)</hi> (2009). <hi rend="italic">Shakespeare, Computers, and the Mystery of
+Authorship</hi>. Cambridge: Cambridge University Press.</bibl>
+
+<bibl><hi rend="bold">Van Dalen-Oskam, K., and J. Van Zundert</hi> (2007). Delta for Middle Dutch – Author and Copyist
+Distinction in ‘Walewein’. <hi rend="italic">Literary and Linguistic Computing</hi>, 22(4): 345–62. </bibl>
+
+<bibl><hi rend="bold">Hoover, D. L.</hi> (2004a). Testing Burrows’s Delta. <hi rend="italic">Literary and Linguistic Computing</hi>, 19(4): 453–75. </bibl>
+
+<bibl><hi rend="bold">Hoover, D. L.</hi> (2004b) Delta Prime? <hi rend="italic">Literary and Linguistic Computing</hi>, 19(4):
+477–95.</bibl>
+
+<bibl><hi rend="bold">Jockers, M. L., D. M. Witten, and  C. S. Criddle</hi> (2008). Reassessing authorship of the ‘Book of Mormon’ using delta and nearest shrunken centroid classification. 
+<hi rend="italic">Literary and Linguistic Computing</hi>, 23(4):  465–91.</bibl>
+
+<bibl><hi rend="bold">Rybicki, J., and  M. Eder</hi> (2011). Deeper delta across genres and languages: do we really need the most frequent words? 
+<hi rend="italic">Literary and Linguistic Computing</hi>, 26(3): 315–21.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>

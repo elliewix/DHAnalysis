@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-458">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Visualizing Centuries: Data Visualization and the Comédie-Française Registers Project</title>
+<author>
+<name><surname>Lipshin</surname>, <forename>Jason</forename></name>
+<affiliation>Massachusetts Institute of Technology, United States of America</affiliation>
+<email>lipshin@mit.edu</email>
+</author>
+<author>
+<name><surname>Fendt</surname>, <forename>Kurt</forename></name>
+<affiliation>Massachusetts Institute of Technology, United States of America</affiliation>
+<email>fendt@mit.edu</email>
+</author>
+<author>
+<name><surname>Ravel</surname>, <forename>Jeffrey</forename></name>
+<affiliation>Massachusetts Institute of Technology, United States of America</affiliation><email>ravel@mit.edu</email>
+</author>
+<author>
+<name><surname>Zhang</surname>, <forename>Jia</forename></name>
+<affiliation>Massachusetts Institute of Technology, United States of America</affiliation>
+<email>zhangjia@mit.edu</email>
+</author>
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This project details various data visualization and digitization initiatives associated with the Comedie-Francaise archives located in Paris, France. It is a project of MIT&#039;s Hyperstudio Digital Humanities Lab.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">SP16</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>digital history</term>
+<term>visualization</term>
+<term>France</term>
+<term>archives</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>visualisation</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+
+<body>
+<div>
+<div>
+
+<head>I. Overview</head>
+
+    <p>From 1680 to the present day, the Com&#233;die-Fran&#231;aise (CF), France’s national theater troupe, has kept daily records of its repertory, box office receipts, and expenses, as well as additional information on set and costume design, actors’ roles, and other matters. This wealth of information is a vital resource for theater scholars, literary historians, and those interested in the political, social, and cultural history of France more generally. Students of French theater and literature have long been interested in the performance practices and institutional functioning of the troupe that held a monopoly on the public performance of works by Molière, Racine, Corneille, and Voltaire in Paris before 1789. Historians have come to realize that the public theaters of Paris, especially the CF, vividly reflected the mounting social and political tensions of the time. Because the CF combined the rituals and concerns of the court, the ideas of the <hi rend="italic">philosophes</hi>, and the everyday actions of working class Parisians in the same space, some have argued that the troupe played a central role in the negotiation of French national culture. And yet, the workings of the CF have been difficult to analyze. Access to the CF’s archives in Paris has historically been extremely limited and the sheer volume of information quickly overwhelms traditional humanities research methods.</p>
+    <p>As an international collaboration between Hyperstudio &#8212; MIT’s digital humanities research lab, MIT’s department of history, and the Bibliotheque-Musee de la Comédie-Française, the Com&#233;die-Fran&#231;aise Registers Project (CFRP) seeks to provide access to and new ways to analyze such culturally significant data. In addition to creating an online database containing each daily receipt register of the Comédie-Française from 1680 to 1793, the CFRP also features a suite of interactive search and data visualizations tools, which allow for both filtering and complex analysis of information according to a set of parameters. Being able to apply different parameters, filter data, and see the results dynamically generated within a set of visualizations allows scholars to discover patterns and ask new kinds of research questions not possible without the tool. In this short paper, we will discuss the relationship between original sources, tool creation, and new research questions arising from visualization, in order to ask how quantitative analysis at unprecedented “levels of abstraction” (Witmore, 2012) might contribute to existing methodologies for historical research.</p>
+</div>
+
+<div>
+<head>II. Current Implementation and Research Questions</head>
+
+    <p>Funded by grants from the Office of the Dean of MIT’s School of Humanities, Arts, and Social Sciences and a number of other internal MIT sources, the CFRP has already made substantial progress on a number of levels. We have created a database of high quality digital copies of thirteen seasons of the daily registers (1780-1793) and created a number of search and interactive visualization tools based on this initial data set. Our custom faceted browser allows users to filter and view archival documents according to a number of parameters, including play title, author, genre, year, number of tickets sold, ticket price, location of seats within the theater, and whether a particular showing was a premiere, a first run, revival, or revue. This search tool is also directly integrated with a range of data visualization tools, which are manipulated either by changing parameters in the faceted browser or the visualization tools directly. These visualizations encompass layered histograms, heat maps, parallel axis graphs, and flexibly scaled timelines.</p>
+    <p>In experimenting with potential combinations of such parameters through the faceted browser, our team has already generated a number of initial research questions which we believe could reveal telling patterns through data visualization. Rather than simply using data visualization to demonstrate pre-existing conclusions, our methodology emphasizes the process of discovery in research, allowing interesting questions and patterns to emerge from the scholar’s dynamic interaction with the faceted browser tool:
+
+<list type="unordered">
+<item>Like most theatrical spaces of the time, the physical structure of the theater where the CF performed was highly stratified according to class, with tickets in the <hi rend="italic">loges</hi> costing significantly more than those in the <hi rend="italic">parterre.</hi> Each register contains information on the kinds of tickets sold for each performance, along with a diagram of the theatrical space. Thus, pairing the number of tickets sold in each seating section with the title of the play performed could reveal the popularity of certain titles or genres with particular demographics. We are also currently developing an interactive version of the theater diagram which would allow the user to toggle between different titles or individual performances, and see the relative socioeconomic makeup of specific audiences through a map of the physical space.</item>
+
+<item>Given that the CF registers range from 1680 to 1793, researchers can use the CFRP tools to study the effect of important political and cultural events like the French Revolution or the death of a king on the popularity of certain genres and authors, as well as general ticket sales. In terms of the latter question, experiments with our parallel axis graph have revealed large gaps in ticket sales in mid 1774, reflecting the death of King Louis XV.</item>
+
+<item>Researchers could also use this data to track how the popularity of emerging plays interacted with more established works. Thus, visualizations of the data could begin to ask such questions as: Were the great seventeenth-century tragedians Racine and Corneille diminished by the success of Voltaire’s tragedies in the eighteenth century? Did the success of Voltairean themes indicate a new public sensibility in the Age of Enlightenment? Did audiences in the decades leading up to the Revolution prefer comic playwrights or tragic ones, and what might this tell us about pre-Revolutionary political culture?</item></list></p>
+
+    <p>According to the French theater historian Christian Biet, simply having the ability to answer such macro-level questions about the Com&#233;die-Fran&#231;aise could have a “transformational impact on the study of eighteenth-century French theatre.” But we also believe that our project will be of interest to those outside this specialized field. Because CFRP’s approach emphasizes dynamic interaction with visualization tools as a means to generate new research questions, we believe that our project could provide new insights and approaches to any scholar interested in the use of data analysis for historical research.</p>
+</div>
+
+<div>
+<head><hi>III. Conclusion and Future Directions</hi></head>
+
+    <p>These major questions will receive new and more precise answers as we continue to create visualization tools for the analysis of CFRP data. As more scholars begin to explore this rich database, we believe that other interesting lines of inquiry will emerge, prompting us to tweak existing tools and create entirely new ones which support the needs of these domain experts. However, while we believe that simply having the technical ability to search through large amounts of documents at different levels of granularity, compare parameters, and control scales of analysis in data visualization is important in generating new scholarly insights, we also believe that such large-scale data crunching must be put into conversation with historians’ existing practices of close reading. Following Dan Cohen’s call in a recent essay on Google’s n-grams to not fetishize the macroscopic in data visualization, the CFRP toolset is meant to facilitate a scholarly process of <hi rend="italic">toggling</hi> between macro- and micro- scales: moving seamlessly “from distant reading to close reading, from the bird’s eye view to the actual texts” (Cohen, 2010). By allowing scholars the ability to control the levels and parameters with which they engage with archival documents, the CFRP helps generate new questions for historians, while also relying on their expert knowledge to discern patterns and anomalies in the data. The principal justification for the CFRP, therefore, is that it will not only make data contained in the registers immediately accessible to anyone without access to the original sources in Paris, but also permit users to interpret data in ways which merge quantitative and qualitative approaches.</p>
+</div>
+
+
+</div>
+
+</body>
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Witmore, M.</hi> (2012). Text: A Massively Addressable Object. In Gold, M. K. (ed.), <hi rend="italic">Debates 
+in the Digital Humanities.</hi> Minneapolis: University of Minnesota Press. 324-327.</bibl>
+
+<bibl><hi rend="bold">Cohen, D.</hi> (2010). Initial Thoughts on the Google Books Ngram Viewer and Datasets.  
+Dan Cohen’s <hi rend="italic">Digital Humanities Blog.</hi> <ref type="url" target="http://www.dancohen.org/2010/12/19/initial-thoughts-on-the-google-books-ngram-viewer-and-datasets">http://www.dancohen.org/2010/12/19/initial-thoughts-on-the-google-books-ngram-viewer-and-datasets/</ref> (accessed 11 November 2012).</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+
+    
+
+
+

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-321">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>User ethnographies: informing requirements specifications for Ireland’s, national, trusted digital repository.</title>
+<author>
+<name><surname>Webb</surname>, <forename>Sharon</forename></name>
+<affiliation>An Foras Feasa, Ireland</affiliation>
+<email>sharon.webb@nuim.ie</email>
+</author>
+<author>
+  <name><surname>Keating</surname>, <forename>John</forename></name>
+  <affiliation>An Foras Feasa, Ireland</affiliation>
+  <email>John.Keating@nuim.ie</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper discuss the development and use of user ethnographies to inform requirements specification for Ireland&#039;s, national, trusted digital repository - the Digital Repository of Ireland (DRI). It discusses requirements specifications in light of our requirements interviews and our national report, which forms a crucial part of the information gathering phase of requirements engineering, and consider and critique how user ethnographies can enhance our understanding of the user and their software needs. It will also consider the specification of requirements both as natural language statements and executable requirements which support user testing and the development of live documentation.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP09</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>User ethnography</term>
+<term>use cases</term>
+<term>requirements engineering</term>
+<term>trusted digital repository</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>user studies / user needs</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-23"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>1 Introduction</head>
+<p>The Digital Repository of Ireland (DRI) is an interactive national trusted
+digital repository for contemporary and historical, social and cultural data
+held by Irish institutions; providing a central internet access point and
+interactive multimedia tools, for use by the public, students and scholars.
+DRI is a four-year exchequer funded project, comprising six Irish academic
+partners, and is supported by the National Library of Ireland, the National
+Archives of Ireland (NAI) and the Irish national broadcaster, RT&#201;.<ref type="note" target="n01">1</ref></p>
+
+
+<p>DRI is in its second year and has completed a number of project
+deliverables, including initial requirements statements, a lean prototype with
+core functionality and a national practice report, <hi rend="italic">Digital archiving in Ireland:
+National survey of the humanities and social sciences</hi> (O'Carroll et al. 2012). This report is
+based on the findings from our requirements interviews which represent the
+first phase of engagement between DRI and its stakeholders and can be
+described as a ‘descriptive ethnographic contribution’ (Wynne et al. 2012). The principle aim
+of the interviews was to inform the system’s business, functional and nonfunctional
+requirements as well as to drive policy decisions and inform
+guidelines on issues such as metadata, file formats and access rights. Since
+DRI’s remit extends to the humanities as well as the social sciences the
+interviews revealed a diverse problem domain (Hull et al. 2011). However, even within this
+diverse space the interviews uncovered many similarities, shared problems
+and challenges among the community of users.</p>
+
+<p>The diversity of DRI’s community, that is national cultural institutions,
+university libraries and other higher education institutions, as well as their
+respective research institutes, national broadcasters and various independent
+and state bodies, requires reconciliation between their various perspectives.
+This paper will discuss requirements specifications in light of these
+stakeholder interviews and the national report, which form a crucial part of
+the information gathering phase of requirements engineering, and consider
+how user ethnographies can enhance our understanding of the user and their
+software needs.</p>
+</div>
+
+<div><head>2 Methodology - requirements gathering and qualitative
+interviews.</head>
+<p>The generation of use cases and use case scenarios are paramount to the
+successful development, and completion, of digital humanities projects,
+resources and artifacts and is crucial in the first phase of requirements
+engineering, that is requirements elicitation and information gathering. Use
+cases inform the system that will be and advance the development teams’
+knowledge of their end user, focusing attention on authentic users and their
+needs. These use cases, and the actors involved, must be linked to some, but
+perhaps augmented, reality. Analysis of the various actors is required to
+develop use case scenarios that consider the context in which the future
+system, that is the Digital Repository of Ireland (DRI), will be used.</p>
+
+<p>To achieve this we used a qualitative approach to requirements elicitation
+and carried out extensive stakeholder interviews (we completed 40 separate
+interviews between Nov. 2011 - Aug. 2012). While alternative approaches to
+requirements elicitation exist, and include quantitative methods such as
+online voting and user questionnaires, as well as traditional JAD (Joint
+Application Development) methods, (Maciaszek et. al. 2001) we elected the use of semi-formal
+and topic driven requirements interviews because they enhanced our user
+engagement and helped to develop important ties and relationships with our
+community (O'Carroll et al. 2012). This approach allowed us to incorporate our requirements
+interviews with policy management and ensured that we addressed the key
+concerns of the community and developed strategies for digital rights
+management, digital preservation, access control, digital standards, among
+others. The interviews were ‘an inquiry’ rather than ‘an inquisition’, (Weigers et al. 2006) and
+as such required close analysis to extract requirements, as they were not
+explicitly stated or expressed. The result of this analysis is requirements
+statement as well as descriptive user ethnographies linked to specific
+activities, namely preservation, interaction and access.</p>
+
+<p>Ethnographic research, as a core feature of anthropology and sociology,
+encourages us to observe social and cultural norms and can help us interpret
+individual, as well as group, behaviour, activities and practices. As a research
+methodology it is concerned with ‘why’ we perform and engage in certain
+cultural and social norms and as such can help us understand technological
+practices and workflows associated with particular software systems.
+R&#246;nkk&#246; et al. (2002), describe ethnographic research as a means to
+emphasise ‘the members’ point of view’ and as a method which can help us
+‘understand the organisation of social, cultural and technical setting[s]’.
+From a software engineering view point user ethnographies can provide an
+‘inside perspective’ (R&#246;nkk&#246; et al. 2002) and help reveal the different methods, practices, and
+indeed agendas, of the community. Some of these ‘inside perspectives’ are
+captured in our national report which considers key topics such as digital
+preservation, user tools, file formats and metadata standards (O'Carroll et al. 2012).</p>
+
+<p>A user ethnography, in this context, is essentially a composite analysis of the
+methods and practices identified as the salient features of the system to be,
+which we considered as part of the social, cultural and institutional norms of
+particular methods, behaviors and user activity linked to digital archiving. It
+is a term borrowed from the anthropological practice which may involve
+participant observation or immersion in a particular group or society.
+However, this was not possible given resource limitations and the scope of
+this project. Instead, we chose requirements interviews, focus groups with a
+subset of users, feature development through executable requirements
+specification and online surveys to develop the user ethnography, the
+extended use case scenario, to provide a holistic view of the problem domain
+in order to inform the solution.</p></div>
+
+<div><head>3 Reconciling ‘the members’ point of view’ -
+requirements engineering and user ethnographies</head>
+
+<p>Requirements engineering is a key aspect of the software development cycle
+and is a necessary activity for any small or large scale project. The methods
+developed within DRI to capture the requirements were informed by the
+need to capture a ‘panoramic view’ of DRI’s community (Passos et al. 2012). A high level
+consideration of requirements was necessitated given the broad range of
+users and their needs. The ethnographic approach, that is considering the
+setting, the field or indeed the culture of our designated community, allowed
+us to ‘focus on the participants and their interactions in [the] system rather
+than the data, its structure and its processing’ (Sommerville et al. 1993).</p>
+
+<p>From this analysis we developed our requirements statements which were
+expressed as structured, natural language statements as well as executable
+specifications, developed as Cucumber tests or features which support user
+testing and the development of live documentation (Wynne et al. 2012). Cucumber features
+are also key to the ethnographic approach as they are specified
+collaboratively with the software development team and key stakeholders in
+DRI. This allows us to observe and analyse particular activities related to
+core functionality and provides essential feedback, validation and
+verification of the requirements specification.</p>
+
+<p>Feature development is key to the reconciliation process as it allows us to
+test particular high level requirements in terms of specific user goals. For
+example, feature development with an audio archive highlighted a missing
+requirement in terms of time coding audio content in comparison to
+“tagging” associated with images based content. Through this process we try
+to reiterate the importance of the informants point of view (the problem
+rather than just the solution) and in this sense we view feature development
+as part of “participant observation” techniques.</p></div>
+
+<div>
+<head>4 Conclusion</head>
+<p>To develop our requirements specifications, we used a qualitative
+methodology to drive requirements gathering and have similarly applied a
+qualitative method, that is user ethnographies, to reconcile the various
+perspectives of the community. Our national practice report represents the
+first analysis of DRI’s requirements but reconciling the various perspectives
+requires further, more thorough analysis of each domain, that is humanities
+and social sciences, within the context of three separate activities,
+preservation, access and interaction. This paper will consider the
+development of these user ethnographies, a method which is an important
+aspect of software engineering and requirements engineering and how they
+inform the final stages of requirements specification.</p></div>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">O’Carroll, A., and S. Webb</hi> (2012).  Digital archiving in Ireland.
+National survey of the humanities and social sciences. National University
+of Ireland Maynooth available at <ref type="url" target="http://www.dri.ie/publications">www.dri.ie/publications</ref></bibl>
+
+<bibl><hi rend="bold">Wynne, M., and A. Helles&#248;y</hi> (2012). The Cucumber book, behaviour-driven
+development for testers and developers. <hi rend="italic">Pragmatic Programmers.</hi></bibl>
+
+<bibl><hi rend="bold">Hull, E., K. Jackson, and D. Jeremy.</hi> (2011). Requirements
+engineering. <hi rend="italic">Springer.</hi></bibl>
+
+<bibl><hi rend="bold">Maciaszek, L. A.</hi> (2001). Requirements analysis and system design,
+developing information systems with UML. Addison-Wesley.</bibl>
+
+<bibl><hi rend="bold">Weigers, K. E.</hi> (2006). More about software requirements, thorny issues and
+practical advice. Microsoft Press.</bibl>
+
+<bibl><hi rend="bold">R&#246;nkk&#246;, K., O. Lindeberg, and Y. Dittrich.</hi> (2002). ‘Bad practice’ or
+‘bad methods’. Are software engineering and ethnographic discourses
+incompatible? <hi rend="italic">Proceedings of the International Symposium on Empirical
+Software Engineering</hi>, Nara, Japan 204-10.</bibl>
+
+<bibl><hi rend="bold">Passos, C., D. S. Cruzes, and T. Dyb&#229;</hi> (2012). Challenges of applying
+ethnography to study software practices. <hi rend="italic">Proceedings of the ACM-IEEE
+international symposium on Empirical software engineering and
+measurement</hi> 9-18.</bibl>
+
+<bibl><hi rend="bold">Sommerville, I., T. Rodden, P. Sawyer, R. Bentley, and
+M. Twidale</hi> (1993). Integrating ethnography into the requirements
+engineering process. <hi rend="italic">Proceedings of the IEEE International Symposium
+onRequirements Engineering</hi> 165-73.</bibl>
+
+<bibl><hi rend="bold">Sharp, H.</hi> (2012). Keynote: Using ethnography in empirical software
+engineering. 16th International Conference on Evaluation &amp; Assessment
+in Software Engineering.</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">See <ref type="url" target="http://www.dri.ie">www.dri.ie</ref></note>
+
+</div>
+
+</back>
+</text>
+</TEI>
+

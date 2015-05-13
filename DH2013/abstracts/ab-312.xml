@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-312">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Opening Aladdin’s cave or Pandora’s box? The challenges of crowdsourcing the Medici Archives</title>
+<author>
+<name><surname>Allori</surname>, <forename>Lorenzo</forename></name>
+<affiliation>The Medici Archive Project, Italy</affiliation>
+<email>lorenzo.allori@gmail.com</email>
+</author>
+<author>
+<name><surname>Kaborycha</surname>, <forename>Lisa</forename></name>
+<affiliation>The Medici Archive Project, Italy</affiliation>
+<email>lkaborycha@medici.org </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This year the Medici Archive Project (MAP), based in the State Archive in Florence, launches BIA, an interactive on-line digital platform, thanks to the generous funding from the Andrew W. Mellon Foundation. This ambitious project is in the process of digitizing around four million handwritten letters dating from the sixteenth to eighteenth centuries which are part of the Medici Granducal Archive, 1537-1743. Eventually MAP will publish digital images of these historical documents on BIA, which were formerly accessible only onsite in Florence. Along with each image, BIA will also provide a transcription of each document in its original language, accompanied by an English-language synopsis, which places the document within a historical context. The completion of this vast undertaking has become a real possibility by using crowdsourcing and digital editing techniques.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP02</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>crowdsourcing</term>
+<term>community-sourcing</term>
+<term>online research</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>art history</term>
+<term>historical studies</term>
+<term>information retrieval</term>
+<term>interface and user experience design</term>
+<term>digitisation</term>
+<term>resource creation, and discovery</term>
+<term>italian studies</term>
+<term>renaissance studies</term>
+<term>crowdsourcing</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-19"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<div>
+<head>Introduction</head>
+<p>This year the Medici Archive Project (MAP), based in the State Archive in Florence, launches BIA, an interactive on-line digital platform, thanks to the generous funding from the Andrew W. Mellon Foundation. This ambitious project is in the process of digitizing around four million handwritten letters dating from the sixteenth to eighteenth centuries which are part of the Medici Granducal Archive, 1537-1743. Eventually MAP will publish digital images of these historical documents on BIA, which were formerly accessible only onsite in Florence. Along with each image, BIA will also provide a transcription of each document in its original language, accompanied by an English-language synopsis, which places the document within a historical context. BIA has been developed using Java following the J2EE standards, utilizing the Spring Framework. It is based on a relational database and uses Apache Lucene for indexing the data for full-text searching.</p>
+</div>
+
+<div>
+<head>Existing models</head>
+<p>The completion of this vast undertaking has become a real possibility by using crowdsourcing and digital editing techniques. Projects such as the University College London’s award-winning <hi rend="italic">Transcribe Bentham</hi><ref target="n01">1</ref>  and the <hi rend="italic">The Civil War Diaries &amp; Letters Transcription Project</hi> at the University of Iowa<ref target="n02">2</ref>  have demonstrated how successful crowdsourcing can be, having accomplished a large proportion of their transcriptions in a relatively small amount of time. However, these projects encompass relatively small collections: <hi rend="italic">Transcribe Bentham</hi> is part of a collection that contains around 60,000 folios, arranged into 174 boxes; the <hi rend="italic">Civil War Diaries</hi> project has 172 documents, with a total of 18,270 scanned pages. Like these, the Center for History &amp; New Media at George Mason University’s The Papers of the War Department Project 1784-1800<ref target="n03">3</ref>, the National Archives’ <hi rend="italic">You Can Transcribe It!</hi><ref target="n04">4</ref>, and the New York Public Library’s <hi rend="italic">What’s On The Menu?</hi><ref target="n05">5</ref>, among others, also invite members of the general public to volunteer to transcribe documents.</p></div>
+
+<div>
+<head>Challenges</head>
+<p>Unlike the above projects, however, the Medici Archive Project faces specific challenges based on the following:</p>
+
+<list type="unordered">
+<item>Size of collection: ca. four million handwritten letters</item>
+<item>High level of technical expertise: paleography, language, historical training</item>
+<item>Varying languages, nationalities, and cultural backgrounds of community</item>
+</list>
+
+<p>Comparably large digitized projects, which make use of crowdsourcing, such as the Australian Newspapers Digitisation Program<ref target="n06">6</ref>, can take advantage of OCR technologies to expedite the data entry phase. However, because the documents in the Medici Granducal Archive are handwritten, each document needs to be manually transcribed. Moreover, the technical expertise in paleography required to read these documents excludes the feasibility of broad-based crowdsourcing of data entry. Among the challenges we face, is that of finding the broadest possible group of community contributors with sufficient expertise to transcribe and provide historical context. Thus, MAP’s user base tends to be high-level academic researchers, professors and graduate students, who are specialists in early modern history and art history, who are at least bilingual in English and Italian. There are other languages used in the granducal documents as well&#8212;Spanish, German, Latin, French, etc.&#8212;because the Medici court had connections throughout all of Europe. Thus the BIA community will involve scholars from around the globe; each scholar bringing not only varying levels of linguistic ability, but also different cultural approaches to collaborative work.  </p>
+
+<p>There were two main cruxes that our IT Team had to resolve, while building BIA: firstly create a stable platform suitable for proper data-entry and transcription of digitized manuscripts; and secondly coming up with a forum-like tool which could be employed by the scholars to communicate while working on BIA.</p>
+</div>
+
+<div>
+<head>The community-sourcing model</head>
+<p>Thus, rather than crowdsourcing, MAP’s approach is one of community-sourcing, creating a hierarchy of levels of contributors to the BIA system, where issues of gatekeeping are foremost. Furthermore, unlike many opensourced projects, where a user’s anonymity or pseudonymity is the standard, the academics who make use of BIA require the assurance of the authority behind transcriptions and contextualizations. They need to be assured that fact-checking procedures have been rigorously followed, that disambiguation with regard to people and places have been correctly ascertained, and these can only be guaranteed by providing the name of the scholar beside his or her work. In addition to these accountability mechanisms, the scholarly community presents further challenges to a project of this kind. There is often resistance to sharing documents, especially if they have not yet been published. In order to encourage trust in sharing raw, early-stage data before publication, MAP must create a spirit of open collaboration between peers, with mutual accountability, as well as enforce scholarly citation norms and occasionally issuing warnings when abuses are reported. The system was first tested by a restricted group of off-site scholars (30) a few months before the official launch. The results of this testing phase have been very successful. BIA has now been made available for the entire scholarly community: by July 2013, we shall have a clearer picture of the evolution of this DH project.</p>
+</div>
+
+
+<div>
+<head>Conclusion</head>
+<p>This paper describes the challenges faced within the first nine months of this innovative project, examining the successful strategies implemented, as well as improvements that have been introduced. There will be discussion of the future not only of the Medici Archive Project BIA system, but of the long-term prognosis of community-sourced digital humanities projects as a whole.</p>
+</div>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Causer, Tim, and V. Wallace </hi> (2012). Building A Volunteer Community: Results and Findings from Transcribe Bentham <hi>DHQ</hi>, 6(2).
+<ref type="url" target="http://www.digitalhumanities.org/dhq/vol/6/2/000125/000125.html">http://www.digitalhumanities.org/dhq/vol/6/2/000125/000125.html</ref></bibl>
+
+<bibl><hi rend="bold">Deegan, M., and W. McCarty</hi> (2012). <hi rend="italic">Collaborative Research in the Digital Humanities</hi>. London: Ashgate.  </bibl>
+
+<bibl><hi rend="bold">Dormans, S., and J. Kok </hi>(2010). An Alternative Approach to Large Historical Databases: Exploring Best Practices with Collaboratories. <hi rend="italic">Historical Methods</hi>, 43:3. 97-107.</bibl>
+
+<bibl><hi rend="bold">Organisciak, P.</hi> (2010). <hi rend="italic">Why Bother? Examining the Motivations of Users in Large-Scale Crowd-Powered Online Initiatives</hi>. MA Thesis, University of Alberta.</bibl>
+
+<bibl><hi rend="bold">Parry, M.</hi> (2012). Historians Ask the Public to Help Organize the Past. But is the crowd up to it? <hi rend="italic">The Chronicle of Higher Education</hi>, 3 September 2012.</bibl>
+
+<bibl><hi rend="bold">Ridge, M.</hi> (2012). On the Internet, nobody knows you’re a historian: exploring resistance to crowdsourced resources among historians <hi rend="italic">Digital Humanities Conference</hi>, Hamburg, 20 July 2012.
+<ref type="url" target="http://lecture2go.uni-hamburg.de/konferenzen/-/k/14007">http://lecture2go.uni-hamburg.de/konferenzen/-/k/14007</ref></bibl>
+
+<bibl><hi rend="bold">Sample Ward, A.</hi> (2011). Crowdsourcing vs Community-sourcing: What’s the difference and the opportunity? <hi rend="italic">Amy Sample Ward’s Blog</hi>, 18 May 2011. <ref type="url" target="http://amysampleward.org/2011/05/18/crowdsourcing-vs-community-sourcing-whats-the-difference-and-the-opportunity/">http://amysampleward.org/2011/05/18/crowdsourcing-vs-community-sourcing-whats-the-difference-and-the-opportunity/</ref></bibl>
+
+<bibl><hi rend="bold">Siemens, L., R. Cunningham, W. Duff, and C. Warwick</hi> (2011). More minds are brought to bear on a problem: Methods of Interaction and Collaboration within Digital Humanities Research Teams <hi rend="italic">DS/CN</hi>, 2(2).</bibl>
+
+<bibl><hi rend="bold">Terras, M.</hi> (2010). DH2010 Plenary: Present, Not Voting: Digital Humanities in the Panopticon. Digital Humanities 2010 plenary talk manuscript. <hi rend="italic">Melissa Terras' Blog</hi>, 10 July, 2010. 
+<ref type="url" target="http://melissaterras.blogspot.com/2010/07/dh2010-plenary-present-not-voting.html">http://melissaterras.blogspot.com/2010/07/dh2010-plenary-present-not-voting.html</ref>.</bibl>
+
+<bibl><hi rend="bold">Winters, J.</hi> (2011). Digital editions and crowdsourcing <hi rend="italic">Blog  ReScript, the Institute of Historical Research</hi>, 9 June 2011.
+ <ref type="url" target="http://rescriptihr.blogspot.it/2011/06/digital-editions-and-crowdsourcing.html">http://rescriptihr.blogspot.it/2011/06/digital-editions-and-crowdsourcing.html</ref></bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">  <ref type="url" target="http://www.ucl.ac.uk/Bentham-Project/transcribe_bentham">http://www.ucl.ac.uk/Bentham-Project/transcribe_bentham</ref></note>
+<note xml:id="n02" n="2">  <ref type="url" target="http://diyhistory.lib.uiowa.edu/transcribe/">http://diyhistory.lib.uiowa.edu/transcribe/</ref></note>
+<note xml:id="n03" n="3">  <ref type="url" target="http://wardepartmentpapers.org/index.php">http://wardepartmentpapers.org/index.php</ref></note>
+<note xml:id="n04" n="4">  <ref type="url" target="http://www.archives.gov/citizen-archivist/">http://www.archives.gov/citizen-archivist/</ref></note>
+<note xml:id="n05" n="5">  <ref type="url" target="http://menus.nypl.org/">http://menus.nypl.org/</ref></note>
+<note xml:id="n06" n="6">  <ref type="url" target="http://www.nla.gov.au/content/newspaper-digitisation-program">http://www.nla.gov.au/content/newspaper-digitisation-program</ref></note>
+
+</div>
+
+</back>
+</text>
+</TEI>
+

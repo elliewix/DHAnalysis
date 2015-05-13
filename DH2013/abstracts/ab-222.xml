@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-222">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>A national virtual laboratory for the humanities in Australia: the HuNI (Humanities Networked Infrastructure) project</title>
+<author>
+<name><surname>Burrows</surname>, <forename>Toby Nicolas</forename></name>
+<affiliation>University of Western Australia, Australia</affiliation>
+<email>toby.burrows@uwa.edu.au</email>
+</author>
+<author>
+<name><surname>Verhoeven</surname>, <forename>Deb</forename></name>
+<affiliation>Deakin University, Australia</affiliation>
+<email>deb.verhoeven@deakin.edu.au </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">The Humanities Networked Infrastructure (HuNI) is a national “Virtual Laboratory” which is being developed as part of the Australian government’s NeCTAR (National e-Research Collaboration Tools and Resources) programme. HuNI is using Linked Data to combine a range of different Australian datasets and deploying a suite of software tools to enable researchers to work with the data in various ways.
+
+The HuNI project began in May 2012 and is scheduled to be completed at the end of 2013. It is being developed through a partnership between thirteen public institutions, led by Deakin University in Melbourne. At the Digital Humanities 2012 conference we presented a short paper on the overall design and proposed architecture for HuNI. We now propose a long paper reporting on HuNI’s progress in its first twelve months and demonstrating the initial version of the Virtual Laboratory.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP12</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Linked Data</term>
+<term>virtual laboratories</term>
+<term>cyberinfrastructure</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>databases &amp; dbms</term>
+<term>metadata</term>
+<term>project design</term>
+<term>organization</term>
+<term>management</term>
+<term>digitisation</term>
+<term>resource creation, and discovery</term>
+<term>information architecture</term>
+<term>GLAM: galleries, libraries, archives, museums</term>
+<term>interdisciplinary collaboration</term>
+<term>cultural infrastructure</term>
+<term>semantic web</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-30"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<div>
+<head>Summary</head>
+
+<p>The Humanities Networked Infrastructure (HuNI) is a national “Virtual Laboratory” which is being developed as part of the Australian government’s NeCTAR (National e-Research Collaboration Tools and Resources) programme. HuNI is using Linked Data to combine a range of different Australian datasets and deploying a suite of software tools to enable researchers to work with the data in various ways.</p>
+
+<p>The HuNI project began in May 2012 and is scheduled to be completed at the end of 2013. It is being developed through a partnership between thirteen public institutions, led by Deakin University in Melbourne. At the Digital Humanities 2012 conference we presented a short paper on the overall design and proposed architecture for HuNI. We now propose a long paper reporting on HuNI’s progress in its first twelve months and demonstrating the initial version of the Virtual Laboratory.</p></div>
+ 
+<div>
+<head>A national virtual laboratory for the humanities in Australia: the HuNI (Humanities Networked Infrastructure) project</head>
+
+<p>The Humanities Networked Infrastructure (HuNI) is a national “Virtual Laboratory” which is being developed as part of the Australian government’s NeCTAR (National e-Research Collaboration Tools and Resources) programme. The aims of NecTAR’s Virtual Laboratories are to integrate existing capabilities (tools, data and resources), support data-centred research workflows, and build virtual research communities to address existing well-defined research problems. HuNI is addressing these aims across the whole of the humanities and creative arts, using Linked Data to combine a range of different Australian datasets and deploying a suite of software tools to enable researchers to work with the data in various ways.</p>
+
+<p>The HuNI project began in May 2012 and is scheduled to be completed at the end of 2013. It is being developed through a partnership between thirteen public institutions, led by Deakin University in Melbourne. At the Digital Humanities 2012 conference we presented a short paper on the overall design and proposed architecture for HuNI (Burrows 2012). We now propose a long paper reporting on HuNI’s progress in its first twelve months and demonstrating the initial version of the Virtual Laboratory. We plan to address the following issues.</p>
+</div>
+
+<div>
+<head>Data harvesting from heterogeneous sources</head>
+
+<p>The datasets being combined into HuNI come from a range of disciplines, including literature, performing arts, film and media, history, art and design. Some originate from an academic community, others from the curatorial sector. Various standard and customized metadata schemas are used, and software environments vary considerably. HuNI has tested and deployed several methods for harvesting data directly. Harvesting data indirectly through a third-party pre-aggregator has also been employed, though the use of the National Library of Australia’s Trove service and especially its PeopleAustralia component (Dewhurst 2008).</p>
+</div>
+
+<div>
+<head>Transformation to Linked Data </head>
+
+<p>Transforming the harvested data into RDF triples is an essential first step in building HuNI’s Linked Data store. This process has raised a variety of issues around data quality and validation, including spelling, misnaming, semantic ambiguities, incorrect coding and so on. Various methods have been used to address these issues, accompanied by considerable discussion around the respective roles of dataset custodians and HuNI itself in this process. We will also report on the use of tools like Google Refine for this kind of data cleaning (Van Hooland 2012).</p>
+</div>
+
+<div>
+<head>Mapping and aligning vocabularies and ontologies </head>
+
+<p>One of the key elements of HuNI is its semantic mapping and alignment service, which connects similar semantic entities in the different datasets &#8212; at the level of both classes and instances. A range of ontologies are being used in this mapping and alignment process, with CIDOC-CRM serving as the key ontology (Doerr, Hunter, Lagoze 2003; Gill 2004). Aspects of the Europeana Data Model have also been evaluated and incorporated (Isaac, Clayphan, Haslhofer 2012). User needs and requirements have been fed into the design of this process, in order to identify how extensive the mapping and alignment need to be before they start adding measurable value for researchers.</p>
+</div>
+
+<div>
+<head>Strategies for software tools  </head>
+
+<p>The Australian datasets which have been combined into HuNI also offer a range of software tools for working with their data. These tools have mostly been developed in-house, and are written in a variety of languages. They include LORE, AusStage, Heurist and OCCAMS (Bollen et al. 2009; Gerber, Hyland, Hunter 2010). HuNI has been assisting the enhancement of these tools to work with Linked Data, enabling users of these datasets to incorporate HuNI’s data into their working environment.</p>
+
+<p>HuNI also incorporates generic tools for working with Linked Data within the Virtual Laboratory itself, grouped around three main stages in the research workflow: 
+
+<list type="unordered">
+<item>Discovery (search and browse services);</item>
+<item>Analysis (annotation, collecting, visualization and mapping);</item>
+<item>Sharing (collaborating, publishing, citing and referencing).</item>
+</list>
+</p>
+
+</div>
+<div>
+<head>Engaging and involving the research community</head>
+
+<p>HuNI aims to reach and involve researchers from disciplines across the whole of the humanities and creative arts. It is critical that this broad research community is engaged effectively in the governance of the project as well as in the identification and implementation of user requirements and in order to address these aspirations a formal stakeholder management plan has been adopted. External validation is being provided through an international Expert Advisory Group. A range of communication channels have been established and used, ranging from “user story” requirements workshops to social media dissemination. An Agile software development framework has been adopted, enabling detailed and frequent user input. Considerable time was devoted to establishing these processes in the first stage of the project.</p>
+</div>
+
+<div>
+<head>Project Governance</head>
+
+<p>One of the key challenges for large-scale data interoperability projects such as HuNI is achieving common goals, problem definition and processes amongst participating organisations (Pagano 2010). HuNI involves 13 partner institutions including universities, development agencies and cultural institutions. Acknowledging that collaboration and data sharing involve various organisational complexities, a steering committee and several advisory groups have been set up as part of the formal governance structure for HuNI.</p>
+</div>
+<div>
+<head>Summary</head>
+<p>The paper will discuss HuNI’s approach to these issues and examine the lessons learnt from the project to date. We will compare HuNI’s approach with that taken by other digital environments for the humanities, particularly those involving the aggregation of digital resources and the creation of collaborative environments (Svensson 2010). We will assess HuNI’s significance as a new model for integrating and sharing knowledge and enabling research in the humanities and creative arts in the future. Particular focus will be given to the way in which HuNI embodies a theoretical framework in which semantic entities and assertions about their relationships, expressed as Linked Data, serve as the fundamental building-blocks. Instead of digital objects, primary sources or metadata records, these semantic assertions form the “data” on which a service like HuNI is built (Borgman 2007:215-217; Burrows 2011). </p>
+
+<p>HuNI will be undertaking a formal evaluation process as part of the last stage of the project, during the last quarter of 2013. In this paper, we will be able to present informal feedback to date from researchers and other users on the pilot version of the service.</p>
+</div>
+
+</div>
+
+                
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Bollen, J., N. Harvey, J. Holledge, and G. McGillivray.</hi> (2009) AusStage: e-Research in the performing arts, <hi rend="italic">Australasian Drama Studies</hi>. <hi>54</hi>: 178-194.</bibl>
+
+<bibl><hi rend="bold">Borgman, C. L. </hi> (2007). <hi rend="italic">Scholarship in the Digital Age: Information, Infrastructure, and the Internet</hi>. Cambridge, MA: MIT Press.</bibl>
+
+<bibl><hi rend="bold">Burrows, T.</hi> (2012). Designing a national 'Virtual Laboratory' for the humanities: the Australian HuNI project. In Meyer, J. C. (ed), <hi rend="italic">Digital Humanities 2012: Conference Abstracts</hi>. held July 16-22 at University of Hamburg. 139-141</bibl>
+
+<bibl><hi rend="bold">Burrows, T. </hi> (2011). Sharing humanities data for e-research: conceptual and technical issues. In Thieberger, N. et al. (eds), <hi rend="italic">Sustainable Data from Digital Research</hi>. Melbourne: PARADISEC, 177-192. <ref type="url" target="http://hdl.handle.net/2123/7938">http://hdl.handle.net/2123/7938</ref></bibl>
+
+<bibl><hi rend="bold">Dewhurst, B.</hi> (2008). People Australia: a Topic-Based Approach to Resource Discovery. <hi rend="italic">VALA2008 Conference proceedings</hi>. held in Melbourne: VALA.
+[<ref type="url" target="http://www.valaconf.org.au/vala2008/papers2008/116_Dewhurst_Final.pdf">http://www.valaconf.org.au/vala2008/papers2008/116_Dewhurst_Final.pdf</ref>]</bibl>
+
+<bibl><hi rend="bold">Doerr, M., J. Hunter, and C. Lagoze</hi> (2003). Towards a Core Ontology for Information Integration, <hi rend="italic">Journal of Digital information</hi> 4.1
+<ref type="url" target="http://jodi.ecs.soton.ac.uk/Articles/v04/i01/Doerr/">http://jodi.ecs.soton.ac.uk/Articles/v04/i01/Doerr/</ref></bibl>
+
+<bibl><hi rend="bold">Gerber, A., A. Hyland, and J.  Hunter</hi> (2010). A collaborative scholarly annotation system for dynamic Web documents &#8212; a literary case study. In <hi rend="italic">The Role of Digital Libraries in a Time of Global Change</hi> (Lecture Notes in Computer Science 6102). Berlin: Springer-Verlag. 29-39.</bibl>
+
+<bibl><hi rend="bold">Gill, T.</hi> (2004) Building semantic bridges between museums, libraries and archives: The CIDOC Conceptual Reference Model, <hi rend="italic">First Monday</hi> 9 (5).
+<ref type="url" target="http://www.firstmonday.org/htbin/cgiwrap/bin/ojs/index.php/fm/article/viewArticle/1145/1065">http://www.firstmonday.org/htbin/cgiwrap/bin/ojs/index.php/fm/article/viewArticle/1145/1065</ref></bibl>
+
+<bibl><hi rend="bold">Isaac, A., R. Clayphan, and B. Haslhofer</hi> (2012). Europeana: moving to Linked Open Data, Information Standards Quarterly. 24.2-3. 34-40.</bibl>
+
+<bibl><hi rend="bold">Pagano, P.</hi> (2010). Data interoperability. In: <hi rend="bold">GRDI2020 Consortium.</hi> <hi rend="italic">Technological and Organisational Aspects of a Global Research Data Infrastructure: a View from the Experts.</hi> 25-33. <ref type="url" target="http://www.grdi2020.eu/Repository/FileScaricati/9a85ca56-c548-47e4-8b0e-86c3534ad21d.pdf">http://www.grdi2020.eu/Repository/FileScaricati/9a85ca56-c548-47e4-8b0e-86c3534ad21d.pdf</ref></bibl>
+
+<bibl><hi rend="bold">Svensson, P.</hi> (2010). The Landscape of Digital Humanities, <hi rend="italic">DHQ: Digital Humanities Quarterly</hi> <hi>4.1</hi> <ref type="url" target="http://digitalhumanities.org/dhq/vol/4/1/000080/000080.html">http://digitalhumanities.org/dhq/vol/4/1/000080/000080.html</ref></bibl>
+
+<bibl><hi rend="bold">Van Hooland, S.,  R. Verborgh, and R. Van de Walle</hi> (2012). Joining the Linked Data Cloud in a cost-effective manner. <hi rend="italic">Information Standards Quarterly</hi>. 24.2-3. 24-28.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

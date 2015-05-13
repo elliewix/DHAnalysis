@@ -1,0 +1,213 @@
+ 
+
+
+1. Introduction
+    
+    
+Supported by the National Endowment for the Humanities (NEH) and the Deutsche Forschungsgemeinschaft (DFG), the University of Illinois at Urbana-Champaign (Illinois) and the Herzog August Bibliothek, Wolfenbüttel (HAB), have digitized 728 Renaissance emblem books, thereby substantially expanding the digitized corpus (Wade et al., 2012; Daly, 2002). Each book contains tens, even hundreds, of individual emblems. All together Illinois and HAB have digitized approximately 70,000 individual emblems, creating detailed descriptions(emblem-level metadata)for more than 17,000 of these. Each emblem is identified with a globally unique URI (Uniform Resource Identifier) maintained in a shared emblem registry. The 
+OpenEmblem Portal
+ prototype
+1
+  was collaboratively designed and built to provide access to these materials and to demonstrate the feasibility of international repository interoperability.
+
+    
+Experimentation with Linked Open Data (LOD) services and RDF-based annotation tools, described below, is now underway to demonstrate how Semantic Web technologies can facilitate both discovery and the use of digitized emblem resources. While the 
+OpenEmblem Portal
+ focuses currently on emblems digitized from print, emblematic modes of expression permeate the fine and applied arts as well. Through adherence to LOD best practices and emerging annotation standards, the 
+OpenEmblem Portal
+ eventually will allow scholars to link an emblem design found in a Bavarian church or a Swedish manor house to a printed emblem.  This paper reports on our progress with LOD technologies and describes planned next steps to leverage LOD to facilitate emblem research and pedagogy.
+
+    
+
+Figure 1:
+An early modern emblem (Murer 1622)
+
+
+
+
+2. Motivation    
+    
+    
+Emblems are hybrid, integrating texts and graphics(see Figure 1). Emblem texts were written in European vernacular languages and Latin. As a  genre of adaptation, emblem components — 
+picturae
+, mottos and other associated texts — were constantly (re)used in new constellations to create new meaning, and circulated widely in many different interpretive contexts. For example, Classical and Biblical themes regularly appear across the genre, in emblem images and texts. Emblem-based scholarly inquiry focuses on tracing themes and motifs across authors, over time, through many languages, and in specific religious, political, and social contexts. The purview of emblems includes all areas of Renaissance knowledge from natural history and technology, to secular and divine love.
+
+    
+Discoverability by theme and topic, preferably through a hierarchical, multi-lingual thesaurus, is critical to emblem research and pedagogy. The ready availability of contextual information concerning emblems facilitates both emblem discovery and author-based scholarly investigations and suggests good potential for LOD approaches. The use of annotation to enrich emblem metadata with newly discovered relationships has the potential to stimulate scholarly discourse. The hypothesis motivating the current study postulates that the use of LOD approaches and data sets will allow us to better leverage existing ontologies(e.g. Iconclass
+2
+), name authority resources(e.g. the Virtual International Authority File [VIAF]
+3
+), and compatible annotation models (e.g. Open Annotation
+4
+). Though LOD technologies are now well understood generically, their practical application to emblem studies is novel and represents an opportunity to apply LOD approaches to a mixed text-image corpus of interest to a well-established international community.
+
+
+
+    
+
+
+3. Enhancing Discoverability through Linked Open Data 
+    
+    
+Iconclass, a multilingual classification system for cultural heritage resources, is a hierarchical thesaurus consisting of more than 28,000 controlled vocabulary terms describing objects, people, events and abstract ideas (e.g. Figure 2).Iconclass has proven well-matched to emblem literature. In populating our emblem-level metadata records, we utilize more than 15% of Iconclass headings. Iconclass has been published as a LOD data set, and iconclass.org provides LOD services. In our Portal these services enable multi-lingual browsing of digital emblematica. Users browse the Iconclass hierarchy in their preferred language to discover emblem content. Because we employ Iconclass LOD services, this functionality is enabled without a local copy of the thesaurus. Figure 2 shows the Iconclass Notation "25F33(EAGLE)" in Resource Description Framework(RDF)
+5
+XML as retrieved dynamically from iconclass.org.
+
+    
+
+Figure 2:
+Iconclass notation in RDF XML
+This RDF XML is used in our Portal to support Iconclass browsing for emblem discovery. In the scenario illustrated in Figure 3, a user has found an emblem from Johann Vogel’s 
+Meditationes Emblematicae de Restaurata Pace Germaniae.
+ One of the Iconclass headings assigned to this emblem is 25F33(EAGLE)(+5245), "predatory birds: eagle (+ animal(s) holding something).” The user can move from the display of emblem metadata to a view of the Iconclass hierarchy, entering at this heading, and then browse up or down the hierarchy in English, French, German, or Italian, to retrieve other emblem 
+picturae
+ having related Iconclass headings.
+
+    
+    
+Figure 3:
+From an emblem metadata display,scholars can browse the Iconclass hierarchy to find other emblems with related headings
+We are now linking to name authority services to facilitate emblem discovery by name. Many national libraries have released author name data sets as LOD. These records include variant name forms and links to Websites having contextual information about individual authors. By using LOD services and associating name strings in our indices with canonical identifiers — e.g.  
+http://viaf.org/viaf/54384883/
+, the 
+OpenEmblem Portal
+ can offer expanded discovery capabilities. VIAF RDF records(e.g. Figure 4)integrate links to and summaries of information about authors maintained by multiple national libraries, including by the 
+Deutsche Nationalbibliothek
+ (DNB).
+6
+ So far, we have been able to automate the linking of 90% of our emblem book metadata records to VIAF name entries.
+
+    
+
+Figure 4:
+Fragment of VIAF RDF record for Johann Vogel
+Many records in VIAF list alternate name forms, i.e., name variants by which authors also are known.  Name variants are indexed and made searchable through the VIAF OpenSearch service
+7
+.  Scholars often know an author by one name and search for resources accordingly. Thus, though not in the Portal's own indexes, a search for "Joannes Vogelius" using the VIAF service returns a list of author identifiers, including one for “Johann Vogel (1589-1663),” who is the author of two volumes available through the 
+OpenEmblem Portal.
+ Rather than independently maintaining all name variants in our local indices, the Portal in its next stage of development will leverage canonical URIs and remote LOD services to enhance discoverability.
+
+    
+
+   
+        4. Providing Context through Linked Open Data
+        
+    
+VIAF LOD services also can provide users contextual information about emblem book authors. Enriching metadata with canonical URIs for named entities can enable users to link to contextual information pertaining to an author. Currently, VIAF identifiers can be used to link to OCLC's 
+WorldCat Identities
+8
+, Wikipedia
+ entries
+9
+, and multiple national library authority entries. As illustrated in Figures 5 and 6, users can see author gender and nationality, names of co-authors, lists of other publications, and descriptions of the individual's religion and life history.(We are also investigating linking to work-level bibliographic authorities such as VD17
+10
+  and VD18
+11
+.)
+
+    
+
+Figure 5:
+Information distilled from VIAF records tells users more about authors
+Figure 6:
+Links from the pop-up window also connect users to rich contextual information
+    
+ 
+
+
+5. Support for Annotation & Scholarly Discourse    
+    
+    
+Annotation is a pervasive element of scholarly practice, employed both to organize knowledge and to facilitate the creation and sharing of new knowledge. As a tool of scholarly discourse, Web-based annotation of digital resources has the potential to facilitate research, collaboration, and pedagogy. The W3C Open Annotation Community Group
+12
+ has proposed a data model for scholarly annotation that aligns well with the principles of LOD. According to this view, a student's annotation of 
+picturae
+ from two possibly related emblems might be represented graphically in Figure 7.
+
+    
+
+Figure 7:
+Graphical representation of an annotation involving two 
+picturae
+Persistent emblem and annotation identifiers are essential to expressing this annotation as a RDF graph aligned with LOD best practice. The Open Annotation model is extensible and recursive. For example, an instructor might add a subsequent annotation referencing the first student’s original annotation and including additional analysis (Figure 8).
+
+    
+
+Figure 8:
+Start of a chain of annotations (i. e. a 
+netchain
+ [Sukovic, 2008; 2011])
+ 
+    
+
+
+
+6. Conclusion
+    
+    
+Initial experimentation using LOD techniques in conjunction with the metadata describing resources indexed in the 
+OpenEmblem Portal
+ suggests a potential to enhance the discoverability and usability of digitized emblem resources. Faster discovery of and linking to context about authors, places, and other attributes of emblematica has significant potential to propel emblem scholarship and pedagogy. Contextualization that formerly required multiple library visits can now be made available instantly. In tension with this is the risk of information overload and the hazard of diminishing performance as the network of services involved in any transaction grows; connections to LOD data sets must be implemented carefully and used judiciously to realize maximum benefit. LOD technologies also have potential to enable more robust scholarly annotation tools, thereby facilitating asynchronous scholarly discourse. Just as the emblem-level indexing of Henkel and Schöne (1967) spurred new emblem studies research then, early experimentation suggests the potential of LOD technologies to facilitate new emblem studies research initiatives today.
+
+
+
+
+
+
+    
+
+
+
+Daly, P.  M.
+ (2002). 
+Digitizing the European Emblem: Issues and Prospects.
+ New York: AMS Press.
+Gueroult, G.
+ (1550). 
+Premier livre des emblemes. Composé par Guillaume Gueroult.
+ Lyons: Balthazar Arnoullet.
+Henkel, A., and A. Schöne
+ (1967). 
+Emblemata.
+ Stuttgart: Metzler.
+Murer, C.
+ (1622). 
+XL [i.e. Quadraginta] emblemata miscella nova: Das ist: XL. underschiedliche Auszerlesene newradierte Kunststuck.
+ Zurich: Wolf.
+Sukovic, S.
+ (2008). Convergent Flows: Humanities Scholars and Their Interactions with Electronic Texts. 
+The Library Quarterly
+ 78(3): 263-284.
+Sukovic, S.
+( 2011). E-Texts in Research Projects in the Humanities. 
+Advances in Librarianship
+ 33: 131-202.
+Wade, M., T. Stäcker, R. Stein, D. Graham, and H. Brandhorst
+ (2012). Digital Emblematics — Enabling Humanities Research of a Popular Early Modern Genre. 
+Poster Session, Digital Humanities Annual Conference
+ held July 2012 in Hamburg, Germany.
+
+    
+
+
+    Notes
+    
+    
+http://emblematica.grainger.illinois.edu/OEBP/UI/SearchForm
+http://iconclass.org/
+http://viaf.org/
+http://www.openannotation.org/spec/beta/
+http://www.w3.org/RDF/
+http://www.dnb.de/DE/Home/home_node.html
+http://www.oclc.org/developer/documentation/virtual-international-authority-file-viaf/request-types#opensearch
+http://www.oclc.org/developer/documentation/worldcat-identities/using-api
+http://en.wikipedia.org
+, 
+http://de.wikipedia.org
+, 
+http://fr.wikipedia.org
+, etc.
+http://www.vd17.de
+http://www.vd18.de
+http://www.w3.org/community/openannotation/
+

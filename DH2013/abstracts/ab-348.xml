@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-348">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>The DARIAH Approach to Interdisciplinary Interoperability</title>
+<author>
+<name><surname>Romanello</surname>, <forename>Matteo</forename></name>
+<affiliation>Deutsches Archaeologisches Institut; King&#039;s College London, United Kingdom</affiliation>
+<email>matteo.romanello@gmail.com</email>
+</author>
+<author>
+<name><surname>Beer</surname>, <forename>Nikolaos</forename></name>
+<affiliation>Musikwissenschaftliches Seminar Detmold/Paderborn</affiliation>
+<email>nikolaos.beer@uni-paderborn.de</email>
+</author>
+<author>
+<name><surname>Herold</surname>, <forename>Kristin</forename></name>
+<affiliation>Musikwissenschaftliches Seminar Detmold/Paderborn</affiliation>
+<email>kristin.herold@uni-paderborn.de</email>
+</author>
+<author>
+<name><surname>Kolbmann</surname>, <forename>Wibke</forename></name>
+<affiliation>Deutsches Archaeologisches Institut</affiliation>
+<email>wk@dainst.de</email>
+</author>
+<author>
+<name><surname>Kollatz</surname>, <forename>Thomas</forename></name>
+<affiliation>Salomon Ludwig Steinheim-Institut für deutsch-jüdische Geschichte</affiliation>
+<email>kol@steinheim-institut.org</email>
+</author>
+<author>
+<name><surname>Rose</surname>, <forename>Sebastian</forename></name>
+<affiliation>Universität Köln - Historisch-Kulturwissenschaftliche Informationsverarbeitung Universität zu Köln</affiliation>
+<email>sebastian.rose@uni-koeln.de</email>
+</author>
+<author>
+<name><surname>Walkowski</surname>, <forename>Niels</forename></name>
+<affiliation>Berlin-Brandenburgische Akademie der Wissenschaften</affiliation>
+<email>walkowski@bbaw.de</email>
+</author>    
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+<notesStmt><note type="abstract">Our research will explore problems related to the individual in crowdsourced interpretation projects. Agreeing that prototypes can have arguments, we will elaborate on a number of approaches to crowdsourcing interpretation through the development of several working prototypes for use in the Prism web service. The poster will demonstrate ways in which the user interface for Prism influences and is influenced by the roles individuals might play within the crowd.</note></notesStmt>          
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">SP04</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>crowdsourcing interpretation</term>
+<term>interface design</term>
+<term>visualization</term>
+           
+</keywords>
+<keywords scheme="original" n="topic">
+<term>information retrieval</term>
+<term>interface and user experience design</term>
+<term>software design and development</term>
+<term>user studies / user needs</term>
+<term>knowledge representation</term>
+<term>information architecture</term>
+<term>authorship attribution / authority</term>
+<term>interdisciplinary collaboration</term>
+<term>crowdsourcing</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div> 
+   <div> 
+<head><hi>Introduction</hi></head>   
+    
+    <p>In this paper we present the preliminary results of the work that is being carried out in the framework of the <hi rend="caps">DARIAH-DE</hi><ref type="note" target="n01">1</ref> project on the topic of interdisciplinary interoperability. <hi rend="caps">DARIAH-DE</hi> is the German branch of the EU-funded Digital Research Infrastructure for the Arts and Humanities <hi rend="caps">(DARIAH)</hi> project with 17 institutions belonging to a wide range of disciplines as project partners. This fortunate circumstance compelled us to tackle the problem of how to achieve greater interoperability between the digital collections of institutions coming from different disciplines.</p>
+    <p>We first present our pragmatic approach to interoperability and then discuss some use cases that were developed to complement a set of recommendations on interdisciplinary interoperability. These recommendations are meant, on the one hand, to help Humanities institutions to integrate their collections into the <hi rend="caps">DARIAH</hi> data federation and, on the other hand, to let them benefit fully of the services provided by the infrastructure.</p>
+    <p>The importance of interoperability when building a research infrastructure becomes evident as soon as one considers, for example, even a basic search mechanism over several collections, also known as federated search. Building such a federated search requires institutions to expose, at least, an end-point that can be harvested using a given protocol (Aschenbrenner, et al. 2010). The Collection Interoperability group in Bamboo &#8212; an analogous infrastructure project in the United States &#8212; was faced with the same problem of making collections interoperable and decided for developing adapters to make collections compliant with the <hi rend="caps">OASIS</hi> Content Management Interoperability Services <hi rend="caps">(CMIS)</hi> standard. Let us see now what has been <hi rend="caps">DARIAH's</hi> approach to interoperability.</p>
+</div>
+
+<div>
+<head><hi>Methodology</hi></head>    
+    
+    <p>If interoperability is difficult, true interoperability across disciplines is perhaps even more so as &#8212; particularly when talking about semantic interoperability &#8212; the narrower is the application domain the higher are the chances of achieving some results. This is the case, for example, when using ontologies for this purpose as shown by (Marshall and Shipman 2003).</p>
+    <p>Therefore, given the number of domains and disciplines that <hi rend="caps">DARIAH</hi> is trying to cater for, the solution of mapping the meaning of content in different collections onto the same ontology or conceptual model appeared soon to be not a viable one. As Bauman makes clear while discussing the topic of interoperability in relation to the goal and mission of <hi rend="caps">TEI</hi> (Bauman 2011), the drawback of adhering to standards for the sake of interoperability is the consequent loss in terms of expressiveness.</p>
+    <p>Instead,<hi rend="caps">DARIAH</hi> position on this respect is of allowing for crosswalks between different schemas: a sort of “crosswalk on demand”. Infrastructure users will be able to use the Schema Registry &#8212; a tool which is being developed in <hi rend="caps">DARIAH-DE</hi> &#8212; to create crosswalks between different metadata schemas so that they are made interoperable.</p>
+    <p>Our main goal was to devise a set of guidelines that is realistically applicable by partner institutions as part of their policies. Therefore, the first preliminary step was to gather and analyze information about the digital collections of the partners with regard to interoperability. We identified the following key aspects to guide our analysis:
+    
+    <list type="ordered">
+        <item>1	<hi rend="bold">Identifiers:</hi> two aspects of identifiers were considered: on the hand, their persistence over time, which is a crucial aspect for any infrastructure project, and on the other hand the use of common, shared identifiers(e.g. controlled vocabulary <hi rend="caps">URIs</hi>)to express references to the same “things”, that is one of the core ideas of Linked Data.</item>
+        
+        <item>2	<hi rend="bold"><hi rend="caps">APIs</hi> and Protocols:</hi> <hi rend="caps">APIs</hi> and protocols are essential as they allow for workflows of data access and exchange not necessarily dependent on human agents. This idea is implied in the notion of “blind interchange” discussed by Bauman with the only difference being that, in our own vision, as little human intervention as possible should be required.</item>
+        
+        <item>3	<hi rend="bold">Standards:</hi> using the same standard is in some, if not many cases, not enough to achieve real semantic, not only syntactic, interoperability. Therefore we discuss further aspects of standards in relation to interoperability such as multiple serializations of the same scheme, and the problem of adoption and adaption of schemes to different contexts.</item>
+        
+        <item>4	<hi rend="bold">Licences:</hi> licences, and specifically their machine-readability, play &#8212; perhaps not surprisingly &#8212; a crucial role within an interoperability scenario: not only should a licence be attached to any collection as soon as it is published online, but such licence should also be readable and understandable, for example, to an automated agent harvesting that collection.</item></list>
+        
+These four aspects define the context for the use cases that are described in the next section and also define the core aspects that will be covered in the recommendations.</p>        
+</div>
+    
+<div>
+<head><hi rend="bold">Use Cases</hi></head>    
+    
+    <p>The main aim of the use cases was to show how basic, minimal standards, such as the <hi rend="caps">OAI-PMH</hi> protocol, can be exploited together with already existing and re-usable tools in order to devise more advanced interoperability scenarios. The requirements of such use cases were that they could be implemented in a limited amount of time, without requiring much programming effort and using openly available tools and data coming from partner institutions.</p>
+</div>    
+
+<div>
+<head type="sub"><hi>Static OAI-PMH</hi></head>
+
+    <p>The first use case focussed on tools that can be used to create an <hi rend="caps">OAI-PMH</hi> end-point for collections without having to set up an own repository as this could be a problem particularly for small institutions or poorly funded disciplines. Since <hi rend="caps">OAI-PMH</hi> will be part of the recommendations as the minimal protocol for accessing collections, we wanted to explore ways so to overcome the barriers to adopting it. We used as data collection a sample of <hi rend="italic">Kalonymos</hi><ref type="note" target="n02">2</ref>, a journal published by the Steinheim-Institut <hi rend="caps">(STI)</hi>, as it does not provide yet such an interface. The Dublin Core metadata for the articles in <hi rend="italic">Kalonymos</hi>, stored in a static file, were then served by an <hi rend="caps">OAI-PMH</hi> end-point created out of such static file by using the <hi rend="caps">OAI-PMH</hi> Static Repository Gateway<ref type="note" target="n03">3</ref>, a piece of software written in C and openly available.</p>
+    
+<figure><graphic url="ab-348.001"/><head>Fig. 1</head><p>Sample output of RDFizer.</p></figure>    
+</div>
+    
+<div>
+<head type="sub"><hi>OAI to LOD</hi></head>    
+    
+    <p>The <hi rend="caps">OAI-PMH</hi> protocol is central also in the second use case, which seeks to show how the metadata served by an <hi rend="caps">OAI-PMH</hi> end-point can be harvested and programmatically transformed into an RDF representation, more suitable for example in a Linked Data scenario.</p>
+    <p>The data we used come from a document repository of the Berlin-Brandenburg Academy of Science<ref type="note" target="n04">4</ref> containing Open Access publications by the academy members. We were able to transform into <hi rend="caps">RDF</hi> the Dublin Core metadata served via the <hi rend="caps">OAI-PMH</hi> interface of the repository by running the open source <hi rend="caps">OAI-PMH</hi> RDFizer<ref type="note" target="n05">5</ref>.</p>
+    <p>The so obtained output, see fig. 1, could be enriched by adding links for example to the subject headings contained in the Gemeinsame Normdatei <hi rend="caps">(GND)</hi> catalogue of the German National Library <hi rend="caps">(DNB)</hi> <ref type="note" target="n06">6</ref> that are already available as <hi rend="caps">RDF</hi>. However possible, this enrichment was not implemented for this use case as it required some extra work to overcome the lack of a lookup <hi rend="caps">API</hi> or <hi rend="caps">SPARQL</hi> end-point on the <hi rend="caps">DNB</hi> side.</p>
+</div>    
+    
+<div>
+<head type="sub"><hi>Marc21 to SKOS/RDF</hi></head>   
+    
+    <p>The third use case consisted in transforming the thesaurus of the German Archeological Institute, currently encoded in Marc21XML and accessible via an <hi rend="caps">OAI-PMH</hi> end-point, into an <hi rend="caps">RDF</hi> representation of the same data encoded in <hi rend="caps">SKOS</hi> &#8212; the W3C standard to publish Knowledge Organization Systems in the Semantic Web<ref type="note" target="n07">7</ref>.</p>
+    <p>Such transformation was made possible by the Stellar Console, an open source tool developed by Ceri Binding and Doug Tudhope(Keith et al. 2012) in the framework of the <hi rend="caps">AHRC</hi>-funded project “Semantic Technologies Enhancing Links and Linked Data for Archaeological Resources”<hi rend="caps">(STELLAR)</hi><ref type="note" target="n08">8</ref>. The 80,00 Marc21 records of the thesaurus, after being harvested via the <hi rend="caps">OAI-PMH</hi> interface, were transformed into an intermediate <hi rend="caps">CSV</hi> file, which is in turn fed into the Stellar Console in order to produce a <hi rend="caps">SKOS/RDF</hi> output consisting of slightly less than 1 million triples (Romanello 2012).</p>
+</div> 
+    
+<div>
+<head type="sub"><hi>TEI to CIDOC-CRM</hi></head>  
+    
+    <p>The last use case is another example of extracting more deeply structured semantic information from legacy data, in this case some letters, encoded in <hi rend="caps">TEI</hi>, that are part of the project Carl Maria von Weber &#8212; Collected Works (WeGA)<ref type="note" target="n09">9</ref>.</p>
+    <p>We ran the <hi rend="caps">TEI</hi> documents through an <hi rend="caps">XSLT</hi> transformation written by Sebastian Rahtz<ref type="note" target="n10">10</ref> and included as part of OxGarage<ref type="note" target="n11">11</ref>, an online toolkit for the conversion of <hi rend="caps">TEI</hi>-compliant documents into other formats. What this transformation does is to look for elements of specific types and to transform them into equivalent statements expressed by means of the <hi rend="caps">CIDOC-CRM</hi> ontology and encoded in <hi rend="caps">RDF/XML</hi>.</p>
+    <p>Straight out of the box, the tool created the corresponding semantic statements for the elements <code>&lt;date&gt;</code>, <code>&lt;persName&gt;</code> and <code>&lt;placeName&gt;</code>. As we observed also for use case 3, it is technically possible to enrich the <hi rend="caps">RDF</hi> output by adding the <hi rend="caps">URIs</hi> of the person or place that is being referred to in the document. This could be realized by leveraging the links to authority lists that are often included directly into the <hi rend="caps">TEI</hi> elements, but the required effort goes beyond the scope of our current work.</p>
+    
+<figure><graphic url="ab-348.002"/><head>Fig. 2</head><p>Sample output of OxGarage</p></figure>    
+</div>
+<div>
+<head>Conclusions</head>
+    
+    <p>We hope that the use cases above have shown how the use of open standards and protocols combined with open source, thus adaptable and reusable, tools can allow us to achieve some greater interoperability in a cost- and time-effective way.</p>
+</div>
+</div>   
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+    <bibl><hi rend="bold">Aschenbrenner, A., W. P. Andreas, T. Blanke, and M. W. K&#252;ster</hi> Towards an Open Repository Environment. <hi rend="italic">Journal of Digital Information</hi> <hi rend="bold">11:1</hi>. <ref type="url" target="http://journals.tdl.org/jodi/article/viewArticle/758.">http://journals.tdl.org/jodi/article/viewArticle/758.</ref> (accessed 22 März 2010).</bibl>
+    
+    <bibl><hi rend="bold">Bauman, S.</hi> (2011). 'Interchange vs. Interoperability'. In <hi rend="italic">Proceedings of Balisage: The Markup Conference. Balisage Series on Markup Technologies.</hi> held 2011 in Montréal, Canada. <ref type="url" target="http://www.balisage.net/Proceedings/vol7/html/Bauman01/BalisageVol7-Bauman01.html.">http://www.balisage.net/Proceedings/vol7/html/Bauman01/BalisageVol7-Bauman01.html.</ref></bibl>
+    
+    <bibl><hi rend="bold">Marshall, C. C., and F. M. Shipman</hi> ‘Which Semantic Web?’ In <hi rend="italic">Proceedings of the Fourteenth ACM Conference on Hypertext and Hypermedia.</hi> held 2003 in Nottingham, UK. Nottingham, UK: ACM, 57–66. <ref type="url" target="http://portal.acm.org/citation.cfm?id=900063.">http://portal.acm.org/citation.cfm?id=900063.</ref></bibl>
+    
+    <bibl><hi rend="bold">May, K., C. Binding, D. Tudhope, and S. Jeffrey</hi> ‘Semantic Technologies Enhancing Links and Linked Data for Archaeological Resources’. In <hi>Zhou, M., I. Romanowska,  W. Zhongke, X. Pengfei, and P. Verhagen</hi> (eds.), <hi rend="italic">CAA Proceedings 2012.</hi>  Amsterdam: Amsterdam University Press, 261–272.<ref type="url" target="http://dare.uva.nl/aup/nl/record/412958">http://dare.uva.nl/aup/nl/record/412958</ref>.</bibl>
+    
+    <bibl><hi rend="bold">Romanello, M.</hi> Skosifying an Archaeological Thesaurus. <hi rend="italic">Computers for the Classics</hi>. <ref type="url" target="http://c4tc.wordpress.com/2012/10/08/skosifying-an-archaeological-thesaurus/.">http://c4tc.wordpress.com/2012/10/08/skosifying-an-archaeological-thesaurus/.</ref> (accessed 8 October 2012).</bibl>
+
+</listBibl>
+</div>
+<div type="Notes">
+<note xml:id="n01" n="1"><ref type="url" target="http://de.dariah.eu/">http://de.dariah.eu/</ref></note>
+<note xml:id="n02" n="2"> <ref type="url" target="http://sourceforge.net/projects/srepod/">http://sourceforge.net/projects/srepod/</ref></note>
+<note xml:id="n03" n="3"><ref type="url" target="http://d-nb.info/025276212">http://d-nb.info/025276212</ref></note>
+ <note xml:id="n04" n="4"><ref type="url" target="http://edoc.bbaw.de/oai2/oai2.php">http://edoc.bbaw.de/oai2/oai2.php</ref></note>
+<note xml:id="n05" n="5"><ref type="url" target="http://simile.mit.edu/repository/RDFizers/oai2rdf/README.txt">http://simile.mit.edu/repository/RDFizers/oai2rdf/README.txt</ref></note>
+ <note xml:id="n06" n="6"><ref type="url" target="http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node">http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node</ref></note>
+<note xml:id="n07" n="7"><ref type="url" target="http://www.w3.org/TR/skos-reference/"> http://www.w3.org/TR/skos-reference/</ref></note>
+ <note xml:id="n08" n="8"><ref type="url" target="http://hypermedia.research.glam.ac.uk/resources/STELLAR-applications/">http://hypermedia.research.glam.ac.uk/resources/STELLAR-applications/</ref></note>
+ <note xml:id="n09" n="9"><ref type="url" target="http://www.weber-gesamtausgabe.de/en/">http://www.weber-gesamtausgabe.de/en/</ref></note>
+ <note xml:id="n10" n="10"><ref type="url" target="http://www.zde.uni-wuerzburg.de/tei_mm_2011/abstracts/abstracts_papers#c249172">http://www.zde.uni-wuerzburg.de/tei_mm_2011/abstracts/abstracts_papers#c249172</ref></note>
+ <note xml:id="n11" n="11"><ref type="url" target="http://www.tei-c.org/oxgarage/">http://www.tei-c.org/oxgarage/</ref></note>
+
+
+</div>
+
+</back>
+</text>
+</TEI>
+    
+    
+    
+    
+            

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-354">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Contemporary solutions to retrieve and publish information in ancient documents using RDF and Islandora</title>
+<author>
+<name><surname>Tupman</surname>, <forename>Charlotte</forename></name>
+<affiliation>King&#039;s College London, United Kingdom</affiliation>
+<email>charlotte.tupman@kcl.ac.uk</email>
+</author>
+<author>
+<name><surname>Jordanous</surname>, <forename>Anna</forename></name>
+<affiliation>King&#039;s College London, United Kingdom</affiliation>
+<email>anna.jordanous@kcl.ac.uk </email>
+</author>
+<author>
+<name><surname>Stanley</surname>, <forename>Alan</forename></name>
+<affiliation>University of Prince Edward Island, Canada</affiliation>
+<email>astanley@upei.ca</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper discusses enhancement of TEI-encoded texts with RDF and OAC annotations and transforming to other representations, and how to facilitate their production, editing and storage. Our case study is SAWS (Sharing Ancient Wisdoms project). SAWS produces TEI editions with semantic annotations in RDF to investigate links as Linked Data. This has the potential to be used widely to link and describe related texts. Links can be extracted and transformed for manipulation and searching using alternative methods, illustrated by our TEI-to-RDF XSLT. The TEI-editing process may present barriers for non-technical users. Islandora repository management software helps create and manage documents through intuitive, GUI-driven interactions with Fedora repositories. Within Islandora, the Digital Humanities Solution Pack provides a WYSIWIG interface to create, edit and annotate TEI documents. We demonstrate how TEI can be developed using Linked Data and RDF, and how Linked-Data-enhanced TEI documents can be facilitated using the DH Solution Pack.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP03</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>linked data</term>
+<term>semantic web</term>
+<term>TEI</term>
+<term>RDF</term>
+<term>Islandora</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>interface and user experience design</term>
+<term>medieval studies</term>
+<term>ontologies</term>
+<term>philosophy</term>
+<term>scholarly editing</term>
+<term>text analysis</term>
+<term>xml</term>
+<term>cultural studies</term>
+<term>semantic web</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-24"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div><head>Introduction</head>
+<p>This paper considers what can be gained from enhancing TEIencoded texts with RDF and OAC
+annotations and transforming to other representations, and how to facilitate their production,
+editing and storage. Our case study is the Sharing Ancient Wisdoms (SAWS)<ref type="note" target="n01">1</ref> project, which
+analyses the tradition of wisdom literatures. Scholarly interest is focused on semantic links
+within and between specific sections of these texts. SAWS produces TEIbased
+digital editions with semantic annotations in RDF to allow investigation of these links as Linked Data. This
+approach has the potential to be used widely to link and describe related sections of a variety of
+texts. Links can be extracted and transformed for manipulation and searching using alternative
+methods, illustrated by our TEItoRDF XSLT. In producing, storing and annotating such
+documents, the TEIediting process may present barriers to information enrichment for
+nontechnical users. The Islandora repository management software assists in creating and
+managing collections of documents through more intuitive, GUIdriven interactions with Fedora
+repositories. Within Islandora, the Digital Humanities Solution Pack provides a WYSIWIG online
+interface to help create, edit and annotate TEI documents, and simplifies the addition of
+semantic links. We demonstrate how TEI documents can be developed in diverse directions
+using Linked Data and RDF, and show how production of LinkedDataenhanced
+TEI documents can be facilitated using the Digital Humanities Solution Pack within Islandora.<ref type="note" target="n02">2</ref> RDF triples
+generated through the Islandora interface are exposed as standalone relationships which may be
+applicable in other contexts.</p></div>
+
+<div>
+<head>The Sharing Ancient Wisdoms (SAWS) use case</head>
+
+<p>SAWS<ref type="note" target="n03">3</ref><ref type="note" target="n04">4</ref><ref type="note" target="n05">5</ref> is a key use case for this work, requiring an approach encapsulating various types of
+information including structural markup and semantic annotation. SAWS enables linking and
+comparisons within and between anthologies, their source texts, and their recipient texts, acting
+as a framework through which others can link their own materials via the Semantic Web.</p>
+
+<p>SAWS focuses on <hi rend="italic">gnomologia</hi><ref type="note" target="n06">6</ref>, collections of sayings that transmitted moral or philosophical ideas.<ref type="note" target="n07">7</ref> These sayings were selected from earlier manuscripts, reorganised or reordered, and
+often modified or reattributed. The texts crossed linguistic barriers in the mediaeval period, and in
+later centuries were translated into western European languages. They form a complex network
+of interrelated texts, which when analysed can reveal much about the dynamics of the cultures
+that created and used them.</p>
+
+<p>SAWS enables investigation of the relationships between specific sayings, tracing the links
+through different textual variants and languages. This has been achieved by enhancing our TEI
+with RDF: each saying can be linked to other relevant sections of text via a
+subject-predicate-object relationship defined as part of an ontology. The <code>&lt;relation&gt;</code> element,
+which has recently been updated with new attributes, allows us to enter RDF directly into the TEI
+document and combine this with information about scholarly responsibility.<ref type="note" target="n08">8</ref></p>
+</div>
+
+<div>
+<head>Combining TEI and RDF</head>
+
+<p>TEI allows for extremely granular expression within a context; RDF is often meaningful in the
+absence of context. The strength of RDF lies in its apparent simplicity and its interoperability: its
+data is discoverable and reusable. Combining subject-predicate-object
+assertions can convey considerable metadata and tell complex stories. RDF can also be expressed as OAC
+annotations, which may have any number of targets of differing types. A target may indicate a
+section which overlaps another (via spatial or indexing coordinates)
+without breaking XML validation. SAWS implements the CITE/CTS citation scheme,<ref type="note" target="n09">9</ref> allowing overlapping sections to be described fully and referenced using anchor points in the TEI structure.</p>
+
+<p>SAWS accommodates TEI and RDFcompatible markup within the same document and
+workflow, using established RDF syntax for marking up information of semantic interest. For
+SAWS, it is preferable to keep structural, syntactic and semantic markup in the same
+documents where possible, and to access the semantic information using standard tools such
+as XSLT.<ref type="note" target="n10">10</ref><ref type="note" target="n11">11</ref><ref type="note" target="n12">12</ref></p>
+
+<p>Previous approaches to the recording of semantic links within TEI documents have had
+limitations. The EARMARK ontology<ref type="note" target="n13">13</ref> provides an RDF model for XML information, but only for
+structure, so structural information is separated from text, and we cannot add semantic
+information while editing. RDFTEF<ref type="note" target="n14">14</ref> <ref type="note" target="n15">15</ref> requires documents to be edited in a separate environment within which standard XML tools cannot be used.<ref type="note" target="n16">16</ref> Approaches to incorporating
+RDF within XML documents do not transfer easily to a TEI representation: RDFa encodes RDF
+directly within specific XML attributes, but key attributes for RDFa<ref type="note" target="n17">17</ref> are not included in standard
+TEI schemas.<ref type="note" target="n18">18</ref></p>
+
+<p>While it would not technically be difficult to use RDFa by extending the TEI schema, this would
+introduce extra work which may not be necessary, and it would mean ignoring suitable
+alternatives proposed and accepted by the TEI community (discussed below) which require no
+extra schema work; if considered suitable, adopting such an alternative would enable SAWS to
+contribute towards establishing conventions within the TEI community for working with RDF
+within TEI.</p>
+
+<p>Recognising the importance of combining RDF and TEI, a TEI Special Interest Group (SIG) in
+the use of ontologies<ref type="note" target="n19">19</ref> is developing XSLTs to transform TEI documents into RDF, using the
+CIDOC-CRM<ref type="note" target="n20">20</ref> as a basis.<ref type="note" target="n21">21</ref> <ref type="note" target="n22">22</ref> <ref type="note" target="n23">23</ref> <ref type="note" target="n24">24</ref> The SIG maps only a subset of elements to CIDOC-CRM,
+focusing on those that represent very particular entities.<ref type="note" target="n25">25</ref> SAWS would therefore not be able to
+retrieve many triples of scholarly interest such as manuscript structure and metadata.</p>
+
+<p>To represent a wider range of data, a recent TEI recommendation<ref  target="n26">26</ref> has been adopted by
+SAWS, using the <code>&lt;relation&gt;</code> element to represent links from one object <ref type="note" target="n27">27</ref> (@active) to another
+(@passive), using link types (@ref) which can incorporate a domain ontology.<ref type="note" target="n28">28</ref> <ref type="note" target="n29">29</ref> This
+increases the expressiveness of the markup without requiring changes within TEI. <code>&lt;relation&gt;</code> is
+an established element; the more recent addition of @ref has enabled <code>&lt;relation&gt;</code> to be used for
+RDF triples, along with the assertion of responsibility using @resp.</p></div>
+
+
+<div>
+<head>An XSLT stylesheet for extracting information from TEI to RDF</head>
+
+<p>Semantic information can be accessed in limited ways via a TEI document, but when extracted,
+it can be placed in a triple store for access, querying and reasoning.<ref type="note" target="n30">30</ref> New knowledge can be
+derived by traversing internal links, and following links to related external Linked Data sources.<ref type="note" target="n31">31</ref></p>
+
+<p>We offer an XSLT stylesheet that transforms TEI, rerepresenting
+the structural, semantic and
+metadata information as RDF/XML triples.<ref  target="n32">32</ref> Acknowledging practical difficulties concerning the
+size of the TEI tagset, we take the minimal required version of TEI, TEIBare. This forms a base for future extension, e.g. to TEILite.
+<ref type="note" target="n33">33</ref> <ref type="note" target="n34">34</ref> Using Dublin Core terms<ref  target="n35">35</ref> such as dct:creator and
+dct:title, statements in the TEI header are transformed into corresponding RDF triples, and structural ordering of blocks within the TEI document are encoded using dct:isPartOf and
+dct:hasPart triples. We have extended the XSLT to include transformation of triples encoded
+through the <code>&lt;relation&gt;</code> element into RDF syntax, and further extensions can be added.</p>
+</div>
+
+
+<div>
+<head>Transformations from TEI to RDF for the SAWS use case</head>
+<p>The SAWS TEI version of the Kit&#257;b alḤaraka
+(“Book of Happiness”), held at Ankara &#220;niversitesi,
+contains various metadata in its header. Applying the XSLT generates the following triples:</p>
+
+<!--<code>
+&lt;rdf:Description
+rdf:resource="http://www.ancientwisdoms.ac.uk/mss/urn:cite:saws:HacıMahmud5683"&gt;36
+&lt;dct:title>Hacı Mahmud Efendi 5683&lt;/dct:title&gt;
+&lt;dct:creator&gt;(Pseudo)
+Aristotle&lt;/dct:creator&gt;
+&lt;dct:type>TEI/XML&lt;/dct:type&gt;
+&lt;dct:conformsTo&gt;http://www.teic.
+org/ns/1.0&lt;/dct:conformsTo&gt;37
+&lt;/rdf:Description&gt;
+</code></p> -->
+
+<figure><graphic url="ab-354.001"/></figure>
+
+<p>The SAWS TEI version of the Corpus Parisinum manuscript, held in the Digby collection in
+Oxford’s Bodleian library, contains a section <code>&lt;div xml:id="Aristippus01"&gt;</code> which is contained by
+its parent, <code>&lt;div xml:id="Part01"&gt;</code>. From this we can derive the following structural triples:</p>
+
+
+<!-- <code>
+&lt;rdf:Description
+rdf:about="http://www.ancientwisdoms.ac.uk/mss/urn:cite:saws:CPIV.D:Aris
+tippus01"&gt;
+&lt;dct:isPartOf
+rdf:resource="http://www.ancientwisdoms.ac.uk/mss/urn:cite:saws:CPIV.D:P
+art01"/&gt;
+&lt;/rdf:Description&gt;
+&lt;rdf:Description
+rdf:about="http://www.ancientwisdoms.ac.uk/mss/urn:cite:saws:CPIV.D:Part
+01"&gt;
+&lt;dct:hasPart
+rdf:resource="http://www.ancientwisdoms.ac.uk/mss/urn:cite:saws:CPIV.D:A
+ristippus01"/&gt;
+&lt;/rdf:Description&gt;</code> -->
+
+<figure><graphic url="ab-354.002"/></figure>
+</div>
+
+<div>
+<head>Feedback on the editing and linking process</head>
+<p>SAWS scholars studying documents in ‘right-to-left’
+(RTL) languages noted the difficulties in
+working with standard XML editing software, and also requested more intuitive interfaces for
+editing documents and adding <code>&lt;relation&gt;</code> links.</p>
+
+<p>Islandora is an open source project allowing users to manage a Fedora repository through PHP
+using a Drupal front end. Fedora repositories are adept at maintaining and versioning metadata
+accompanying scholarly objects. Islandora provides an intuitive way to use Fedora to create,
+access and manage document collections, and is currently being used across a varied number
+of use cases.<ref type="note" target="n038">38</ref></p>
+
+<p>Various “solution packs” within Islandora are available for different types of projects. The Digital
+Humanities Solution Pack is specifically designed for text editing and annotation, based on
+Shared Canvas and CWRC (for editing TEI and adding links). These tools are used to access,
+edit, and retrieve information held in repositories, including TEI transcriptions of texts, OCR tools
+related images, annotations and metadata. This Digital Humanities project within Islandora is
+sponsored by EMiC to develop a suite of applications for managing and critically analysing
+Canadian modernism. As one of the authors of this paper is the lead programmer of both these
+projects, he can incorporate these transformations into the workflow to expose the data publicly.
+Of particular interest is the ability to extract data from TEI to build and maintain authority lists.</p>
+
+<p>The Islandora Critical Editions module exposes a GUI allowing the addition and viewing of RDF
+entities and TEI tags. No knowledge of XML is required. Entities tie textual offsets to objects
+from authority lists, userentered notes, external links, or date ranges through RDF. Image
+annotations are OAC RDF annotations.</p>
+
+<figure><graphic url="ab-354.003"/></figure>
+<figure><graphic url="ab-354.004"/></figure>
+<figure><graphic url="ab-354.005"/></figure>
+<figure><graphic url="ab-354.006"/></figure>
+
+
+</div>
+
+<div>
+<head>Concluding remarks</head>
+<p>We offer a functional XSLT for converting TEI to RDF, incorporating the recent application of
+<code>&lt;relation&gt;</code> for encoding RDF within TEI and extracting TEI <code>&lt;relation&gt;</code> elements and selected
+structural markup as RDF files.</p>
+
+<p>Future SAWS/Islandora collaboration will investigate the enhancement of TEIencoded
+documents and a more user-friendly
+environment for editing, managing and linking texts. The DH
+Solution Pack by Islandora is available by request but has not yet been released in beta version.
+It is intended that SAWS will have implemented and tested a working version of the DH Solution
+Pack by June 2013. Any DH project that wants to link TEI files with other sources of information
+will, we argue, benefit from investigating the DH Solution Pack. It has wide implementation
+possibilities and will be particularly useful for projects using right-to-left
+languages.</p>
+
+<p>The outcomes of this SAWS/Islandora collaboration should apply across a wide variety of texts.
+It is hoped that this paper will stimulate further interest in RDF and Linked Data within TEI,
+particularly amongst Digital Humanists wishing to work with a broader range of Humanities
+scholars.</p></div>
+                
+</div>
+
+</body>
+
+<back>
+
+
+<div type="Notes">
+
+<note xml:id="n01" n="1"><ref type="url" target="http://www.ancientwisdoms.ac.uk">http://www.ancientwisdoms.ac.uk</ref>. Last accessed October 2012.</note>
+
+<note xml:id="n02" n="2"><hi rend="bold">John Unsworth.</hi> (2003). Tool-Time, or 'Haven't We Been Here Already?' Ten Years in Humanities Computing. Delivered as part of "<hi rend="italic">Transforming Disciplines: The Humanities and Computer Science</hi>," Washington, DC. Available at: <ref type="url" target="http://people.lis.illinois.edu/~unsworth/carnegieninch.03.html">http://people.lis.illinois.edu/~unsworth/carnegieninch.03.html</ref> (last accessed 20th July 2012).</note>
+
+<note xml:id="n03" n="3"><hi rend="bold">Anna Jordanous, K. Faith Lawrence, Mark Hedges, and Charlotte Tupman.</hi> (2012). Exploring manuscripts: sharing
+ancient wisdoms across the semantic web. <hi rend="italic">In Proceedings of the 2nd International Conference on Web
+Intelligence, Mining and Semantics</hi> (WIMS '12), Craiova, Romania.</note>
+
+<note xml:id="n04" n="4"><hi rend="bold">Tupman, Charlotte; Hedges, Mark; Jordanous, Anna; Lawrence, Faith; Roueche, Charlotte; Wakelnig,
+Elvira; Dunn, Stuart.</hi> (2012). Sharing Ancient Wisdoms: developing structures for tracking cultural dynamics by
+linking moral and philosophical anthologies with their source and recipient texts. In <hi rend="italic">Proceedings of Digital
+Humanities</hi> (DH2012), Hamburg, Germany.</note>
+
+<note xml:id="n05" n="5"><hi rend="bold">Hedges, Mark; Jordanous, Anna; Dunn, Stuart; Roueche, Charlotte; Kuster, Marc W.; Selig, Thomas;
+Bittorf, Michael; Artes, Waldemar;</hi>(2012). "New models for collaborative textual scholarship,", <hi rend="italic">Proceedings of the
+6th IEEE International Conference on Digital Ecosystems Technologies (DEST)</hi>, Campione d’Italia, Italy.</note>
+
+<note xml:id="n06" n="6"><hi rend="bold">F. Rodríguez Adrados,</hi> (1981). <hi rend="italic">Greek wisdom literature and the Middle Ages: the lost Greek models and their
+Arabic and Castilian Translations</hi> (2001), English translation by Joyce Greer (2009), pp. 9197
+on Greek models; D. Gutas, “Classical Arabic Wisdom Literature: Nature and Scope”, <hi rend="italic">Journal of the American
+Oriental Society</hi>, Vol. 101, No. 1, Oriental Wisdom (Jan. Mar.,
+1981), pp. 4986</note>
+
+<note xml:id="n07" n="7"><hi rend="bold"> M. Richard, </hi> (1962). “Floril&#232;ges grecs”, <hi rend="italic">Dictionnaire de Spiritualit&#233;</hi> V, cols. 475512</note>
+
+<note xml:id="n08" n="8">A full discussion of our TEI markup and use of the <code>&lt;relation&gt;</code> element can be found here: Tupman,
+Charlotte; Hedges, Mark; Jordanous, Anna; Lawrence, Faith; Roueche, Charlotte; Wakelnig, Elvira; Dunn,
+Stuart. Sharing Ancient Wisdoms: developing structures for tracking cultural dynamics by linking moral and
+philosophical anthologies with their source and recipient texts. In <hi rend="italic">Proceedings of Digital Humanities</hi>
+(DH2012), Hamburg, Germany. 2012.</note>
+
+<note xml:id="n09" n="9">(<ref type="url" target="http://www.homermultitext.org/hmtdoc/cite/">http://www.homermultitext.org/hmtdoc/cite/</ref>)</note>
+
+<note xml:id="n10" n="10"><hi rend="bold">M. O. Jewell.</hi> (2010). Semantic Screenplays: Preparing TEI for Linked Data. In Proceedings of Digital Humanities,
+London, UK.</note>
+
+<note xml:id="n11" n="11">11 <hi rend="bold">K. F. Lawrence.</hi> (2011). Wherefore Art Thou? Crowdsourcing
+Linked Data from Shakespeare to Dr Who. In
+Proceedings of Web Science, Koblenz, Germany.</note>
+
+<note xml:id="n12" n="12"><hi rend="bold">Blanke, Tobias; Bodard, Gabriel; Bryant, Michael; Dunn, Stuart; Hedges, Mark; Jackson, Michael; Scott,
+David; </hi>(2012). "Linked data for humanities research — The SPQR experiment," <hi rend="italic"> 6th IEEE International
+Conference on Digital Ecosystems Technologies (DEST)</hi>, Campione d’Italia, Italy</note>
+
+<note xml:id="n13" n="13"><hi rend="bold">S. Peroni and F. Vitali.</hi> (2009). Annotations with EARMARK for arbitrary, overlapping and outof
+order markup. In Proceedings of the 9th ACM symposium on Document engineering, pages 171180,
+Munich, Germany.</note>
+
+<note xml:id="n14" n="14"><hi rend="bold">G. Tummarello, C. Morbidoni, and E. Pierazzo.</hi> (2005). Toward textual encoding based on RDF. In Proceeding of
+the 9th International Conference on Electronic Publishing (ELPUB 2005), Kath. Univ. Leuven, June, pages
+5763.</note>
+
+<note xml:id="n15" n="15">RDFTEF sourcecode: <ref type="url" target="http://rdftef.sourceforge.net/">http://rdftef.sourceforge.net/</ref> Last maintained 2007.</note>
+
+<note xml:id="n16" n="16"><hi rend="bold">P. Portier, N. Chatti, S. Calabretto, E. Egyed-Zsigmond, and J. Pinon.</hi> Modeling, encoding and querying
+multistructured documents. Information Processing &amp; Management. Forthcoming.</note>
+
+<note xml:id="n17" n="17">e.g. @rel, @rev, @href, @resource, @property, @vocab</note>
+
+<note xml:id="n18" n="18">A more detailed discussion of existing methods for encoding RDF within TEI markup can be found in: A.
+Jordanous, A. Stanley and C. Tupman. Contemporary transformation of ancient documents for recording and
+retrieving maximum information: when one form of markup is not enough. In <hi rend="italic">Proceedings of Balisage: The
+Markup Conference 2012</hi>. Balisage Series on Markup Technologies, vol. 8 (2012), Montréal, Canada,
+August 2012.</note>
+
+<note xml:id="n19" n="19">TEIOntologies
+Special Interest Group <ref type="url" target="http://www.tei-c.org/SIG/Ontologies/">http://www.tei-c.org/SIG/Ontologies/</ref></note>
+
+<note xml:id="n20" n="20"><hi rend="bold">ChristianEmil Ore and Øyvind Eide. </hi>(2009). TEI and cultural heritage ontologies: Exchange of information?
+<hi rend="italic">Literary and Linguistic Computing </hi>24(2): 161172</note>
+
+<note xml:id="n21" n="21"><ref type="url" target="http://www.edd.uio.no/artiklar/tekstkoding/tei_crm_mapping.html">http://www.edd.uio.no/artiklar/tekstkoding/tei_crm_mapping.html</ref>,
+<ref type="url" target="http://www.edd.uio.no/tei/teiontsig/test_crm_model.graphml">http://www.edd.uio.no/tei/teiontsig/test_crm_model.graphml</ref></note>
+
+<note xml:id="n22" n="22"><ref type="url" target="http://www.tei-c.org/release/xml/tei/stylesheet/rdf/">http://www.tei-c.org/release/xml/tei/stylesheet/rdf/</ref></note>
+
+<note xml:id="n23" n="23"><ref type="url" target="http://www.teic.org/SIG/Ontologies/guidelines/guidelinesTeiMappableCrm.xml">http://www.teic.org/SIG/Ontologies/guidelines/guidelinesTeiMappableCrm.xml</ref></note>
+
+<note xml:id="n24" n="24">CIDOCCRM
+only direct represents textual material through one class (E33 Linguistic Object) and its two
+subclasses (E34 Inscription, E35 Title), but its selection as a base model is partially influenced by research
+aims of the SIG members in enhancing cultural heritage and museum documentation
+(<ref type="url"  target="http://www.teic.org/SIG/Ontologies/guidelines/guidelinesTeiMappableCrm.xml">http://www.teic.org/SIG/Ontologies/guidelines/guidelinesTeiMappableCrm.xml</ref>). Dicussions (see
+<ref type="url" target="http://wiki.teic.org/index.php/SIG:Ontologies">http://wiki.teic.org/index.php/SIG:Ontologies</ref> ) about the use of FRBRoo, a bibliographical records model
+harmonised with CIDOCCRM
+(<ref type="url" target="http://www.cidoccrm.org/frbr_inro.html">http://www.cidoccrm.org/frbr_inro.html</ref>) have not been acted upon, to date.
+Some mappings from TEI to Dublin Core (a model of metadata information: http://www.dublincore.org) are
+occasionally present in stylesheets created by the SIG
+(<ref type="url" target="http://www.teic.org/release/xml/tei/stylesheet/rdf/dc.xsl">http://www.teic.org/release/xml/tei/stylesheet/rdf/dc.xsl</ref>) but this output has not been highlighted, despite
+Dublin Core also being a realistic option for more detailed mappings of document metadata, especially from
+the TEI header.</note>
+
+<note xml:id="n25" n="25"><ref type="url" target="http://wiki.teic.org/index.php/SIG:Ontologies">http://wiki.teic.org/index.php/SIG:Ontologies</ref></note>
+
+<note xml:id="n26" n="26">Sourceforge.net discussion: Encoding RDF relationships in TEI ID:
+3309894, at <ref type="url" target="http://tinyurl.com/lrbz53b">http://tinyurl.com/lrbz53b</ref></note>
+
+<note xml:id="n27" n="27">The application of <code>&lt;relation&gt;</code> to express RDF triples has been documented by TEI at
+<ref type="url" target="http://www.teic.org/release/doc/teip5doc/en/html/refrelation.html">http://www.teic.org/release/doc/teip5doc/en/html/refrelation.html</ref> with supporting examples.</note>
+
+<note xml:id="n28" n="28">The SAWS ontology (an extension of FRBRoo for representing relations of interest for study of wisdom
+manuscripts) is available at <ref type="url" target="http://purl.org/saws/ontology">http://purl.org/saws/ontology</ref>.</note>
+
+<note xml:id="n29" n="29">S. Dunn, M. Hedges, A. Jordanous, K. F. Lawrence, C. Rouech&#233;, C. Tupman, and E. Wakelnig, Sharing
+Ancient Wisdoms: developing structures for tracking cultural dynamics by linking moral and philosophical
+anthologies with their source and recipient texts, <hi rend="italic">Digital Humanities 2012</hi>, Hamburg, Germany.</note>
+
+<note xml:id="n30" n="30">For the SAWS use case, a SPARQL endpoint to access the RDF data is available (
+<ref type="url" target="http://www.ancientwisdoms.ac.uk/sparql">http://www.ancientwisdoms.ac.uk/sparql</ref> )</note>
+
+<note xml:id="n31" n="31">To date, SAWS links to various collections of ancient data interlinked through Pelagios
+(<ref type="url" target="http://pelagios.blogspot.com">http://pelagios.blogspot.com</ref> ) references to the Pleiades historical gazetteer (<ref type="url" target="http://pleiades.stoa.org/">http://pleiades.stoa.org/</ref> ).
+We are also in the process of linking to existing relevant documents such as in the Perseus Digital Library
+(<ref type="url" target="http://www.perseus.tufts.edu">http://www.perseus.tufts.edu</ref>/ ) and would like to link to information on people mentioned in the texts, such
+as through the Prosopography of the Byzantine World resource (<ref type="url" target="http://www.perseus.tufts.edu/">http://www.perseus.tufts.edu/</ref> ). The facility
+to traverse links between sets of data and discover related information serendipitously is a major benefit of
+Linked Data for the SAWS project.</note>
+
+<note xml:id="n32" n="32">XSLT available at <ref type="url" target="http://www.ancientwisdoms.ac.uk/media/ontology/tei_to_rdf.xsl">http://www.ancientwisdoms.ac.uk/media/ontology/tei_to_rdf.xsl</ref> , with working versions
+available through <ref type="url" target="https://github.com/ajstanley/TEI_to_RDF">https://github.com/ajstanley/TEI_to_RDF</ref>.</note>
+
+<note xml:id="n33" n="33">The Dublin Core Metadata Initiative is the main source model for structural and metadata mappings from
+TEIBare to RDF: <ref type="url" target="http://dublincore.org/documents/dcmiterms/">http://dublincore.org/documents/dcmiterms/</ref></note>
+
+<note xml:id="n34" n="34"><ref type="url" target="http://www.teic.org/Guidelines/Customization/">http://www.teic.org/Guidelines/Customization/</ref></note>
+
+<note xml:id="n35" n="35">The namespace ‘dct’ represents <ref type="url" target="http://dublincore.org/documents/dcmiterms/">http://dublincore.org/documents/dcmiterms/</ref></note>
+
+<note xml:id="n36" n="36">The manuscript ID is in CITE/CTS format for document citation (see
+<ref type="url" target="http://www.homermultitext.org/hmtdoc/cite/">http://www.homermultitext.org/hmtdoc/cite/</ref> )</note>
+
+<note xml:id="n37" n="37">The dct:conformsTo relationship requires the object of the triple to be a string, rather than a resource</note>
+
+<note xml:id="n38" n="38">List of current Islandora installations: <ref type="url" target="http://islandora.ca/current_installations">http://islandora.ca/current_installations</ref></note>
+
+
+</div>
+
+</back>
+</text>
+</TEI>
+

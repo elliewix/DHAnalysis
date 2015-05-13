@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-358">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>WordSeer: An Integrated Environment for Literary Text Analysis</title>
+<author>
+<name><surname>Muralidharan</surname>, <forename>Aditi</forename></name>
+<affiliation>UC Berkeley, United States of America</affiliation>
+<email>aditi@cs.berkeley.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+
+<notesStmt><note type="abstract">I will present WordSeer, an environment for literary text analysis. Literature study is a form of sensemaking: a cycle of reading, interpretation, exploration, and understanding. While there is abundant technological support for reading text in new ways through visualizations and algorithms, the other parts of the cycle &#8212; exploration and understanding &#8212; have been relatively neglected. The system integrates tools for algorithmic text processing with interaction techniques that support the interpretive, exploratory, note-taking aspects of scholarship. Its design has been shaped by individual case studies with literature scholars as well as a semester-long field trial with a class of undergraduate Shakespeare students.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Text analysis</term>
+<term>Sensemaking</term>
+<term>User Studies</term>
+</keywords>
+
+<keywords scheme="original" n="topic">
+<term>information retrieval</term>
+<term>interface and user experience design</term>
+<term>literary studies</term>
+<term>software design and development</term>  
+<term>text analysis</term>
+<term>user studies/user needs</term>
+
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<head><hi>Summary</hi></head>
+
+    <p>I will present WordSeer, an environment for literary text analysis. Literature study is a form of sensemaking: a cycle of reading, interpretation, exploration, and understanding. While there is abundant technological support for reading text in new ways through visualizations and algorithms, the other parts of the cycle &#8212; exploration and understanding &#8212; have been relatively neglected. WordSeer integrates tools for algorithmic text processing with interaction techniques that support the interpretive, exploratory and note-taking aspects of scholarship. Its design has been shaped by individual case studies with literature scholars as well as a semester-long field trial with a class of undergraduate Shakespeare students.</p> 
+</div>
+
+<div>
+<head><hi>Proposal</hi></head>
+
+<p>To date, text analysis systems for humanities scholars have focused on aiding interpretation (Clement 2008; Fekete, et al. 2000; J. Guldi, et al. 2012; X. Llorà, et al. 2008; C. Plaisant, et al. 2006; G. Rockwell, et al. 2010;  R. Vuillemot, et al. 2009). First, they apply some form of natural language processing to extract aggregate statistics about word usage, topics, named entities, and parts of speech. Second, they display the extracted information with visualizations like word clouds, node-and-link diagrams, and lists of word contexts. Such systems make patterns of style, form, and theme visible, and interpretable by people.</p>
+
+<p>However, literature study is a form of sensemaking (P. Pirolli, et al. 2005): a cycle of reading, interpretation, exploration and understanding. As useful as they are, current digital humanities text analysis systems leave the exploration and understanding part of the cycle unsupported.</p>
+
+<p>The WordSeer project (A. Muralidhara, et al. 2011) is an effort to create a <hi rend="italic">sensemaking</hi> environment for literature and language study. Like other systems for the humanities, it has search and visualization capabilities, but it also supports sensemaking activities like collecting and reorganizing information, exploring related words, finding frequent phrases and similar passages of text, and annotating, collecting and tagging items. The system has been under development since 2010. Recently, it was used to produce successful analyses of Shakespeare’s plays (A. Muralidharan, et al. 2012) and North American slave narratives (A. Muralidharan 2012).</p>
+
+<p>To uncover areas for improvement, WordSeer was field-tested at the University of Calgary in the Spring 2012 semester. Students in the undergraduate Shakespeare class ‘Hamlet in the Humanities Lab’ ( M. Ullyot, et al. 2012) spent a few weeks becoming familiar with WordSeer along with four other computational text analysis tools. Then, during the rest of the semester, they used the tools to analyze a topic of their choice within an act of Hamlet. The students recorded their experiences through weekly posts on the class blog (<ref type="url" target="http://engl203.ucalgaryblogs.ca/">http://engl203.ucalgaryblogs.ca/</ref>).</p>
+
+   <p>An analysis of their posts revealed four common ways of using digital tools that were not supported well:
+   
+   <list type="ordered">
+   <item>1. Comparing two or more visualizations side-by-side or referring to multiple tools simultaneously</item>
+   <item>2. Narrowing down analyses by metadata, such as (in Shakespeare) a particular speaker, act, or scene.</item>
+   <item>3. Investigating a group of words together.</item>
+   <item>4. Getting ideas for a new search or analysis based on the results of a previous one.</item></list></p>
+
+   <p>WordSeer had limited, roundabout support for these activities. For example, Activity
+1, comparisons: it was technically possible to compare two visualizations &#8212; but only by opening a separate browser window, navigating to the WordSeer Shakespeare website, and re-typing the search parameters for the second visualization. Activities
+3 and 4: investigating groups of words, or performing new searches based on previous ones, required manually typing in long search queries, and Activity 2 was entirely impossible.</p>
+
+<p>At this conference I will demonstrate a new WordSeer, completely redesigned with the above activities in mind. Instead of a separate web page per visualization, the application now mimics a desktop environment, with different visualizations opening up in “windows”. In the following figures (<hi>Figure 1-Figure 4</hi>), I briefly explain how the new tool supports the above activities.</p>
+
+<figure><graphic url="ab-358.001"/><head>Figure 1</head><p>This figure shows WordSeer's new desktop environment, featuring a top bar for queries, a sidebar for collections, and multiple windows. Activity 1, comparison and reference, is much easier because the top bar preserves search parameters. For example, comparing the word tree for “face” with that of “eyes” above only requires changing a single word between queries.</p></figure>  
+
+<figure><graphic url="ab-358.002"/><head>Figure 2</head><p>Metadata filters can be used to restrict analyses to relevant subsets, directly supporting Activity 2. For example, this figure shows how, to find all words described as "true" within Antony and Cleopatra, or to further restrict the search to individual speakers, users simply have to select the relevant categories from the browsing menu.</p></figure>  
+
+<figure><graphic url="ab-358.003"/><head>Figure 3</head><p>For activity 3 (investigating groups of words together), WordSeer has a new word sets feature for creating groups of words. These sets can be used as search queries, and updating the set with new words automatically reflects itself in the new query. For example, this figure shows how word set called “body parts” containing “head, eye, hand, cheek, face, lip” can be used as a grammatical search query (for “body parts” described as ___).</p></figure>  
+</div>
+
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Clement, T. E.</hi> (2008). ‘A thing not beginning and not ending’: using digital tools to distant-read Gertrude Stein’s The Making of Americans, <hi rend="italic">Literary and linguistic computing,</hi> 23(3): 361.</bibl>
+
+<bibl><hi rend="bold">Fekete J.-D.,  and N. Dufournaud</hi> (2000). Compus: visualization and analysis of
+structured documents for understanding social life in the 16th century, in
+<hi rend="italic">Proceedings of the fifth ACM conference on Digital libraries,</hi> New York, NY, USA,
+ 47–55.</bibl>
+
+<bibl><hi rend="bold">Guldi, J.,  and C. Johnson-Roberson</hi> (2012). Paper Machines: A Tool for Analyzing Large-Scale Digital Corpora, College Park, MD, 03-Nov-2012.</bibl>
+
+<bibl><hi rend="bold"> Llorà, X.,  B. Ács, L. S. Auvil, B. Capitanu, M. E. Welge, and D. E. Goldberg</hi> (2008). Meandre: Semantic-driven data-intensive flows in the clouds, in <hi rend="italic">Fourth IEEE International Conference on eScience,</hi> 238–245.</bibl>
+
+<bibl><hi rend="bold">Plaisant, C., J. Rose, B. Yu, L. Auvil, M. G. Kirschenbaum, M. N. Smith, T. Clement, and G. Lord</hi> (2006). Exploring erotics in Emily Dickinson’s correspondence with text mining and visual interfaces, in <hi rend="italic">Proceedings of the 6th ACM/IEEE-CS joint conference on Digital libraries,</hi> Chapel Hill, NC, USA, 141–150.</bibl>
+
+<bibl><hi rend="bold">Rockwell, G., S. G. Sinclair, S. Ruecker, and P. Organisciak</hi> (2010). Ubiquitous Text
+Analysis, <hi rend="italic">Poetess Archive Journal,</hi> 2(1).</bibl>
+
+<bibl><hi rend="bold">Vuillemot, R., T. Clement, C. Plaisant, and A. Kumar</hi> (2009). What’s being said near
+‘Martha’? Exploring name entities in literary text collections, in <hi rend="italic">Visual 
+Analytics Science and Technology</hi> 107–114.</bibl>
+
+<bibl><hi rend="bold">Pirolli, P. and S. Card</hi> (2005). The sensemaking process and leverage points for analyst technology as identified through cognitive task analysis, in <hi rend="italic">Proceedings of International Conference on Intelligence Analysis,</hi> vol. 2005, 2–4.</bibl>
+
+<bibl><hi rend="bold">Muralidharan, A., and M. A. Hearst</hi> (2011). Supporting Exploratory Text Analysis Literature Study, <hi rend="italic">Literary and linguistic computing,</hi> Digital Humanities Conference Issue (forthcoming), Submitted Dec. 2011.</bibl>
+
+<bibl><hi rend="bold">Muralidharan, A., and M. A. Hearst</hi> (2012). A sensemaking environment for literature study, in <hi rend="italic">CHI ’12 Extended Abstracts on Human Factors in Computing Systems,</hi> New York, NY, USA, 1955–1960.</bibl>
+
+<bibl><hi rend="bold">Muralidharan, A.</hi> (2012). Using Digital Tools to Explore Narrative Conventions in the
+North American Antebellum Slave Narratives, Seattle, WA, USA, 07-Jan-2012.</bibl>
+
+<bibl><hi rend="bold">Ullyot, M.</hi> (2012). Hamlet in the Humanities Lab | English 203, Winter 2012 | Michael Ullyot, <hi rend="italic">Hamlet in the Humanities Lab English 203, Winter 2012,</hi> 13-Jan-2012.  <ref type="url" target="http://ullyot.ucalgaryblogs.ca/teaching/hamlet/">http://ullyot.ucalgaryblogs.ca/teaching/hamlet/</ref>. Accessed: 13-Jan-2012.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

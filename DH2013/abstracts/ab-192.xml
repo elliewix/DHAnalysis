@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-192">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Scientific Visualization for the Digital Humanities as CLARIN-D Web Applications</title>
+<author>
+<name><surname>Zastrow</surname>, <forename>Thomas</forename></name>
+<affiliation>Universit&#228;t T&#252;bingen, Germany</affiliation>
+<email>thomas.zastrow@uni-tuebingen.de</email>
+</author>
+<author>
+<name><surname>Hinrichs</surname>, <forename>Erhard</forename></name>
+<affiliation>Universit&#228;t T&#252;bingen, Germany</affiliation>
+<email>erhard.hinrichs@uni-tuebingen.de </email>
+</author>
+<author>
+<name><surname>Hinrichs</surname>, <forename>Marie</forename></name>
+<affiliation>Universit&#228;t T&#252;bingen, Germany</affiliation>
+<email>marie.hinrichs@uni-tuebingen.de</email>
+</author>
+<author>
+<name><surname>Beck</surname>, <forename>Kathrin</forename></name>
+<affiliation>Universit&#228;t T&#252;bingen, Germany</affiliation>
+<email>kathrin.beck@uni-tuebingen.de</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">The importance of scientific visualization for basic and applied research has been recognized as an importance aspect of scientific practise in many disciplines. Recent research trends in the Humanities in general and in Digital Humanities in particular are no exception in this respect. The goal of the present paper is threefold: (i) to survey different types of scientific visualizations needed for language data, (ii) to describe a set of web applications that have been implemented in the context of the CLARIN-D project , and (iii) to demonstrate the added value of visualization.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP08</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>visualization</term>
+<term>web services</term>
+<term>web application</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>corpora and corpus activities</term>
+<term>information architecture</term>
+<term>linguistics</term>
+<term>visualisation</term>
+<term>maps and mapping</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-08"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<div>
+<p>The importance of scientific visualization for basic and applied research has been recognized as an importance aspect of scientific practise in many disciplines.   Recent research trends in the Humanities  in general and in Digital Humanities  in particular  are no exception  in this respect (Culy and Lyding, 2010).  The goal of the present paper is threefold: (i) to survey different types of scientific  visualizations  needed  for language  data, (ii) to describe  a set of web applications that have been implemented  in the context of the CLARIN&#8211;D  project<ref type="note" target="n01">1</ref>, and (iii) to demonstrate the added value of visualization. </p>
+ 
+<p>CLARIN offers language resources on a large scale, with text corpora often exceeding 100 million words, with spoken and multi&#8211;modal data recorded and annotated at different tiers, and with structured   language   resources   of  high  complexity.   In  all  instances,   the  querying   of  such resources will result in new data sets of considerable quantity and complexity. These results are typically rendered in raw data formats that are not conducive to direct inspection by the user. This  lack  of  readability   provides   a  major  obstacle   for  Humanities   scholars   who  are  not accustomed  to perusing  large  amounts  of data in such  a raw,  digital  form.  To overcome  this impasse, it is crucial to render data sets in a form that is cognitively  more accessible  and that highlights the central characteristics of the data in an intuitive fashion.</p> 
+
+<p>One  area  of  language&#8211;related  research  where  visualization  is  particularly  useful  concerns  the domain of language variation and language diachrony.  The web application  CiNaViz (short for <hi rend="italic">City  Name  Visualization</hi>) <ref type="note" target="n02">2</ref>  has  access  to  names  and  geographical   coordinates   of  1.162.040 geographical  locations  all  over  Europe.  With  its  query  interface,  researchers  can  search  for specific distributions of city names and visualize them on a map. As an example of language variation, Figure 1 shows on the left the distribution of city names ending with <hi rend="italic">bach</hi> (red), <hi rend="italic">beck</hi> (blue) and <hi rend="italic">bek</hi> (green) in Central Europe. One can see that there are clear separators  between the three variations, where the separator between bach and beck follows the so called <hi rend="italic">Benrath Line</hi> which divides  the nothern  from the southern  dialects  in Germany.  The map on the right hand side of Figure 1 shows locations containing the substring <hi rend="italic">schwab</hi>. It is evident that these locations are not located in the region called <hi rend="italic">Schwaben</hi> (Swabia) today (the region around Stuttgart/T&#252;bingen/Ulm,  marked  on the map by a blue ellipse).  This  is because  the Swabian people were relocated during the Middle Ages from their original places of residence. </p>
+
+<figure>
+<graphic url="ab-192.001"/>
+<head>Figure 1:</head> <p>Visualization  of language variation and diachrony</p>
+</figure>
+
+<p>The use of language data is, of course, not only relevant for linguistic and philological research. The  social  sciences  also  draw  on language  data  for  empirical  investigations  of various  kinds. One  area  where  visualization  can  help  is  in  tracking  the  dynamics  of  culture  as  reflected  in language use. Michel et al. 2010  have coined the term <hi rend="italic">culturomics</hi> for this new terrain of digital humanities at the interface of humanities and social sciences. One area discussed by Michel et al. concerns the tracking of celebrity names over time by frequency of mention in the Google Books corpus. Such data are, of course, of immediate relevance for historians, sociologists, as well as researchers in media and cultural studies. While Michel et al. based their visualizations on a very large, closed data set, we have applied the same type of techniques to a much smaller and dynamically  updated  corpus  of news  articles  harvested  from  the  online  news  feeds  of major German newspapers and magazines.</p>
+
+<p>Our   <hi rend="italic">WhoIsInTheNews</hi><ref type="note" target="n03">3</ref>  web   application   consists   of   two   parts:   (i)   a   web   crawler,   which downloads  German  news  feeds  everyday  and  extracts  the  contained  named  entities  with  the help of a chain of WebLicht  web services<ref type="note" target="n04">4</ref>.  (ii) A graphical  user interface  to the stored named entities which allows the user to analyze and visualize the appearances  of named entities over time and geographical diffusion. For a morphologically rich language like German, linguistic&#8211; preprocessing  of the raw data is necessary  and is performed  by a WebLicht  workflow  which consists  of the following  automatic  annotation  steps: tokenization,  part of speech  tagging and named entity recognition.</p>
+
+<p>Figure 2 shows the occurrences of the names <hi rend="italic">Romney</hi> (red) and <hi rend="italic">Santorum</hi> (blue) in German newsfeeds   over   a   12   month   timeframe,   from   November   2011   until   October   2012.   The visualization captures in a concise way the dynamics of the German news coverage of the two leading candidates  in the Republican  primaries  for the 2012 U.S. presidential  election.  Despite the  sometimes   unexpected   victories  by  Santorum  in  several  primaries  such  as  Minnesota, Missouri and Colorado, Romney had a consistently higher coverage in the German media, with Santorum dropping out of the German news alltogether shortly after abandoning his campaign on April 10. The WhoIsInTheNews  application shows that visualization  techniques can be used not just to plot unrelated career paths of celebrieties  as in the case of Michel et al., but also to track the interdependence  of such paths in textual materials harvested from online sources in a continuous and incremental fashion.</p>
+
+<figure>
+<graphic url="ab-192.002" />
+<head>Figure 2:</head> <p>Tracking of celebrity names over time</p>
+</figure>
+
+<p>The  WhoIsInTheNews  web  application  also  supports  the  visualization  of  named  entities  that refer to geographical locations. Figure 3 shows the distribution of the 1000 most frequent city names,  referenced  in the German  news  feeds  harvested  over  the November  2011  to October 2012 timeframe. Not surprisingly, the density of locations is highest among European cities, followed by the Middle East, the east coast of the United States and the Pacific Rim. Equally noteworthy  are  the  omissions:  much  of  the  Midwestern  states  of  the  United  States,  the  vast Russian  territory  outside  St.  Petersburg  and  Moscow,  as  well  as  much  of  Africa  and  South America.</p>
+
+<figure>
+<graphic url="ab-192.003"/>
+<head>Figure 3:</head> <p>Tracking the 1000 most frequent city names</p>
+</figure>
+</div>
+
+<div>
+<head>Technical realization in CLARIN&#8211;D </head>
+
+<p>All visualizations described in this abstract are embedded in the CLARIN&#8211;D infrastructure. More specifically, they are implemented as Web 2.0 Ajax driven web applications which make use of annotation web services included in WebLicht<ref type="note" target="n05">5</ref>, a Servic Oriented Architecture for the orchestration of RESTstyle web services (Hinrichs et al. 2010 and Dima et al. 2012).</p>
+
+<figure>
+
+ <graphic url="ab-192.004" />
+<figDesc>
+Web Service
+Annotated Data
+Visualization
+Visualization web applications
+Raw Data	Annotated Dat
+Customized annotation workflows
+with chains of web services</figDesc>
+<head>Figure 4:</head> <p>Embedding  web services into web applications</p></figure>
+</div>
+
+
+<div>
+<head>Conclusion and Outlook</head>
+
+<p>Space limitations do not allow us to present the full range of visualization web applications and their  significance  for  Digital  Humanities  research  that  are  offered  in  the  CLARIN&#8211;D infrastructure.  For an overview  of the visualization  tools offered  in the CLARIN&#8211;D  project,  we refer interested readers to the WebLicht tools suite (<ref type="url" target="http://weblicht.sfs.uni-tuebingen.de">http://weblicht.sfs.uni-tuebingen.de</ref>). Therefore, we concentrated on those visualizations that are of relevance to disciplines beyond Linguistics.</p>
+
+<p>The easy web availability of the WebLicht tools is a crucial advantage over existing visualization
+tools, which typically require expertise in software installation and customization beyond the competence of ordinary digital humanities users. We therefore view web availability as a crucial advantage over existing solutions based on geographical information systems.</p>
+
+
+</div>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Culy, C., and V. Lyding</hi> (2010). Visualizations for exploratory corpus and text analysis, in
+<hi rend="italic">Proceedings of the 2nd International Conference on Corpus Linguistics CILC&#8211;10</hi>, May 13&#8211;15,
+2010, A Coruña, Spain, pp. 257&#8211;268.</bibl>
+
+<bibl><hi rend="bold">Dima, E., E. Hinrichs, M. Hinrichs, A. Kislev, T. Trippel, and T. Zastrow</hi> (2012). Integration of WebLicht into the CLARIN Infrastructure. <hi rend="italic">Proceedings of the joint CLARIN&#8211;D/DARIAH Workshop</hi>  "Service&#8211;oriented Architectures (SOAs) for the Humanities: Solutions and Impacts" at Digital Humanities Conference 2012. Hamburg. 17&#8211;23.</bibl>
+
+<bibl><hi rend="bold">Hinrichs, E., M. Hinrichs, and T. Zastrow</hi> (2010). WebLicht: Web&#8211;Based LRT Services for German. In: <hi rend="italic">Proceedings of the Systems Demonstrations at the 48th Annual Meeting of the Association for Computational Linguistics</hi> (ACL&#8211;2010). Uppsala, Schweden. 25&#8211;29.</bibl>
+
+<bibl><hi rend="bold">Michel, J. B. et al. and The Google Books Team</hi> (2010). Quantitative analysis of culture using millions of digitized books. <hi rend="italic">Science</hi> 331, 176 – 82. (doi:10.1126/science.  1199644)</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1"><ref type="url" target="http://www.clarin-d.de">http://www.clarin-d.de</ref> </note>
+<note xml:id="n02" n="2">CiNaViz is freely available as a web application (see <ref type="url" target="http://weblicht.sfs.uni-tuebingen.de/CityViz/">http://weblicht.sfs.uni-tuebingen.de/CityViz/</ref>).  The Java code of CiNaViz is available under the GPL v. 3 generally used within CLARIN&#8211;D </note>
+
+<note xml:id="n03" n="3">WhoIsInTheNews can be accessed at  <ref type="url" target="http://weblicht.sfs.uni-tuebingen.de/CityViz/">http://weblicht.sfs.uni-tuebingen.de/ne/</ref>. The source code of WhoIsInTheNews is free available under GPL 3. The only IPR restriction concerns the particular data set of news articles, harvested from the news feeds of German newspapers and further processed by the WhoIsInTheNews application. Scholars who want to utilize WhoIsInTheNews for their own data sets and offer this web application on their own server, are free to do so under GPL.</note>
+<note xml:id="n04" n="4"><ref type="url" target="https://weblicht.sfs.uni-tuebingen.de">https://weblicht.sfs.uni-tuebingen.de</ref></note>
+
+<note xml:id="n05" n="5">The WebLicht acronym stands for <hi rend="italic">Web based Linguistic Chaining Tool</hi>
+(<ref type="url" target="https://weblicht.sfs.uni-tuebingen.de">https://weblicht.sfs.uni-tuebingen.de</ref>)</note>
+
+</div>
+
+</back>
+</text>
+</TEI>
+

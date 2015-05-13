@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-366">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Normalisation in Historical Text Collections</title>
+<author>
+<name>
+<surname>Lawless</surname>, 
+<forename>S&#233;amus</forename>
+</name>
+<affiliation>Trinity College Dublin, Ireland</affiliation>
+<email>seamus.lawless@scss.tcd.ie</email>
+</author>
+<author>
+<name>
+<surname>Hampson</surname>, 
+<forename>Cormac</forename>
+</name>
+<affiliation>Trinity College Dublin, Ireland</affiliation>
+<email>cormac.hampson@scss.tcd.ie</email>
+</author>
+<author>
+<name>
+<surname>Mitankin</surname>, 
+<forename>Petar</forename>
+</name>
+<affiliation>Sofia University, Bulgaria</affiliation>
+<email>pmitankin@fmi.uni-sofia.bg</email>
+</author>
+<author>
+<name>
+<surname>Gerdjikov</surname>, 
+<forename>Stefan</forename>
+</name>
+<affiliation>Sofia University, Bulgaria</affiliation>
+<email>st_gerdjikov@abv.bg</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>corpora and corpus activities</term>
+<term>information retrieval</term>
+<term>data modeling and architecture including hypothesis-driven modeling</term>
+<term>natural language processing</term>
+<term>text analysis</term>
+<term>content analysis</term>
+<term>linguistics</term>
+<term>data mining/ text mining</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Normalisation</term>
+<term>Text Analytics</term>
+<term>Entity Extraction</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date> when="2013-06-19</date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="poster">
+<body>
+<div>
+
+
+<p>Improved full-text search, named-entity recognition and relationship extraction are all key research topics across many areas of technology, with emerging applications in the intelligence, healthcare and financial fields amongst many others<ref type="note" target="n01">1</ref>. In Digital Humanities, there is a growing interest in the application of such Natural Language Processing (NLP) approaches to historical texts<ref type="note" target="n02">2</ref> with a view to improving how a user can explore and analyse these collections<ref type="note" target="n03">3</ref><ref type="note" target="n04">4</ref><ref type="note" target="n05">5</ref><ref type="note" target="n06">6</ref>. However, the text contained in handwritten historical manuscript collections can often be ‘noisy’ in nature &#8212; with variation in spelling, punctuation, word form, sentence structure and terminology. This is particularly the case with collections written in archaic language forms, such as Early-Modern English. Multiple studies have concluded that the applicability of modern NLP tooling to such historical texts has been very limited due to this inherent noisiness in the texts. This historical language barrier hinders the accessibility and thus the potential exploration and analysis of many significant historical text collections. This paper will discuss the normalisation of historical texts as a solution to this problem and examine how normalisation can improve the analysis, interpretation and exploration of these collections.</p>
+
+<p>Normalisation is the process of transforming text into a single canonical form, in this case, the modern equivalent of the language. Once this has been completed, the texts can be processed using current NLP techniques and technologies. However, the normalisation of historical texts presents a difficult challenge in itself. </p>
+
+<p>Much research has been undertaken in an attempt to cope with the correction and normalisation of text produced by Optical Character Recognition (OCR), speech recognition, instant messaging etc. which show similar characteristics to those of historical texts. One technique which has been applied is the use of a historical lexicon, supplemented by computational tools and linguistic models of variation. However, because of the absence of language standards, multiple orthographic variations of a given word or expression can be found in a collection of material, even in the same document. As a result, the quality of the results achieved, even after normalisation, has not been satisfactory. Researchers have also noted a general lack of tools and resources specialised to this domain.</p>
+
+<p>This paper will present the normalisation research conducted as part of the CULTURA project, which has developed techniques for the normalisation of a 17th century manuscript collection written in Early Modern English, The 1641 Depositions<ref type="note" target="n07">7</ref>. CULTURA analyses the artefacts and through the application of novel linguistic models of variation, enables normalisation techniques to remove issues of inconsistency in spelling, grammar and punctuation. The technologies developed and applied have had to solve issues arising from the need to contend with noisy inputs, the impact noise can have on downstream applications, and the demands that noisy information places on document analysis. The normalisation of texts in Early Modern English can be interpreted as a special (restricted) case of translation. Using this intuition, a methodology was developed based upon statistical machine translation models. The key ingredient of this approach is a new translation module that further develops known OCR correction techniques.</p>
+
+<p>Once the content has been normalised, further analysis is conducted to perform named entity and relationship extraction. This identifies the individuals, events, dates etc. within the collection and the relationships between these entities. It encodes this data in a manner which promotes interoperability with other collections of related cultural heritage material.</p>
+
+<p>The normalisation process allows CULTURA to perform disambiguation on the text. For example, one of the main players mentioned many times in the 1641 Depositions collection is Sir Phelim O’Neill. In addition to huge variations in the spelling of his name (Phelin, felim, ffelim, O’Neill, Neil, Onell etc.), he is also referred to in a number of different ways throughout the depositions (The O’Neill, Phelim MacTurlough MacAodh, ‘The rebel leader’ etc.). Normalisation is used to address this variation and also identify the context in which he is mentioned – for example, is he accused of being directly involved in an incident or merely mentioned as a known rebel figure? A combination of NLP and SNA techniques are then used to identify relationships between this individual and other people in the community. He can also be associated with specific events and locations over time, all of which would be impossible without the collection having been normalised.</p>
+
+<p>While the normalisation of the collection has facilitated this application of further NLP techniques, it has also supported improved interaction with the collection for novice researchers and members of the general public. People without a deep scholarly knowledge of such collections can find it easier to interact with, and gain an understanding of, the normalised versions of the transcribed text rather than the originals.</p>
+
+<p>The un-normalised text of the collection is still available to “professional” scholars who use the CULTURA portal and every effort is made during normalisation to ensure that changes that implicitly involve interpretation of the text, or that go beyond normalisation, are avoided. The normalisation process should never impact upon the semantic content of the collections. </p>
+
+<p>A number of important advancements have been achieved by CULTURA, including the development of:
+
+<list type="unordered">
+<item>A normalisation algorithm<ref type="note" target="n08">8</ref> called Regularities Based Embedding of Language Structures (REBELS). </item>
+<item>An integrated REST based web service for the implemented normalisation module. </item>
+<item>A tool for manual annotation which makes the normalisation process as simple as possible, and helps to verify consistency of annotations and to help the resolution of detected conflicts.</item></list>
+</p>
+
+<p>These developments all support a more effective text normalisation process and improve the effectiveness of the entity and relationship extraction procedures which follow. Experimental results have demonstrated that the normalisation averages 98% accuracy in the translation of regular words (tokens) in the 1641 Depositions collection. </p>
+
+<p>In order to show the general applicability of the approach, the methodology was applied to another Early Modern English text collection, the Innsbruck Letters Corpus, part of the Innsbruck Computer-Archive of Machine-Readable English Texts (ICAMET) corpus. The results were compared to two state of the art systems, Moses<ref type="note" target="n09">9</ref> and VARD2<ref type="note" target="n10">10</ref>. The CULTURA approach achieved an accuracy of 83% with minimal training, when compared with 77% and 65% for Moses and VARD2 respectively. </p>
+
+<p>In summary, this paper will discuss the normalisation of historical texts, and the analysis and feature identification that normalisation facilitates. These are increasingly important processes for “noisy” cultural heritage resources, and provide significant benefits to the analysis, interpretation and exploration of these collections. Together, they can:
+
+<list type="unordered">
+<item>Improve the quality and re-usability of artefacts by normalising spelling, punctuation and nomenclature. </item>
+<item>Facilitate deeper interrogation of the material.</item>
+<item>Identify features of the collection &#8212; individuals, locations, dates etc.</item>
+<item>Enable social network analysis on these features, identifying those with the greatest influence. </item>
+<item>Open new pathways for the exploration and interrogation of the resources for both novices and experts.</item>
+<item>Add structure and logic to otherwise featureless material, enabling new forms of engagement, use and enjoyment of the content. </item>
+</list>
+</p>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="Notes">
+
+<note xml:id="n01" n="1">  Sunita Sarawagi. <ref type="link" target="http://www.it.iitb.ac.in/~sunita/papers/ieSurvey.pdf">Information extraction</ref>. FnT Databases, 1(3), 2008.</note>
+<note xml:id="n02" n="2">  The CHLT Project, funded under EU FP5, aimed to create an infrastructure for pioneering International Digital Library Technology (IDLT), and a range of IT applications for use within digital collections (with special emphasis on early modern Latin, classical Greek, and Old Norse texts), including generic tools for multi-lingual information retrieval; concept identification and visualisation; vocabulary analysis and syntactic parsing. </note>
+<note xml:id="n03" n="3">3 The IMPACT project <ref type="url" target="http://www.impact-project.eu">http://www.impact-project.eu</ref></note>
+<note xml:id="n04" n="4">  Annette Gotscharek, Andreas Neumann, Ulrich Reffle, Christoph Ringlstetter, and Klaus U. Schulz. 2009. Enabling information retrieval on historical document collections: the role of matching procedures and special lexica. In <hi rend="italic">Proceedings of The Third Workshop on Analytics for Noisy Unstructured Text Data</hi> (AND '09). ACM, New York, NY, USA, 69-76. </note>
+<note xml:id="n05" n="5">  A. Gotscharek, U. Reffle, C. Ringlstetter, and K. U. Schulz. On lexical resources for digitization of historical documents. In DocEng '09: Proceedings of the 9th ACM symposium on Document engineering, pages 193--200, New York, NY, USA, 2009. </note>
+<note xml:id="n06" n="6">  A. Ernst-Gerlach and N. Fuhr. Retrieval in text collections with historic spelling using linguistic and spelling variants. In JCDL ’07: Proceedings of the 7th ACM/IEEE-CS joint conference on Digital libraries, pages 333–341, New York, NY, USA, 2007. ACM.</note>
+<note xml:id="n07" n="7">  The 1641 Depositions – <ref type="url" target="http://1641.tcd.ie">http://1641.tcd.ie</ref></note>
+<note xml:id="n08" n="8">  Gerdjikov, S. “Some algebraic properties of alignments of words.” In Comptes rendus de l’académie bulgare des science. 2012.</note>
+<note xml:id="n09" n="9">  Moses is a statistical machine translation system - <ref type="url" target="http://www.statmt.org/moses/">http://www.statmt.org/moses/</ref> </note>
+<note xml:id="n10" n="10">  A. Baron and P. Rayson. Automatic standardisation of texts containing spelling variation: How much training data do you need? In: Proceedings of the Corpus Linguistics Conference. Lancaster University, Lancaster, 2009.</note>
+
+
+</div>
+</back>
+</text>
+</TEI>
+

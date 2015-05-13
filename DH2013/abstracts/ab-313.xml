@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-313">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>A concept of data modeling for the humanities</title>
+<author>
+<name><surname>Jannidis</surname>, <forename>Fotis</forename></name>
+<affiliation>Institut für Deutsche Philologie, University of Würzburg, Germany</affiliation>
+<email>fotis.jannidis@uni-wuerzburg.de</email>
+</author>
+<author>
+<name><surname>Flanders</surname>, <forename>Julia</forename></name>
+<affiliation>Women Writers Project, Brown University, United States of America</affiliation>
+<email>Julia_Flanders@brown.edu </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Data modeling is one of the main tasks of digital humanists. They engage in it creating databases, corpora, digital editions, geographical information systems, research collections, digital libraries, project-specific markup and also crosswalks for heterogenous data collections. In light of this variety of activities it is interesting to note that there is no general theory of data modeling in the digital humanities. This paper seeks to ask, in a very preliminary way, what ideas could be part of a first outline of a general theory of data modeling in the humanities.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP25</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>data modeling</term>
+<term>information modeling</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>encoding - theory and practice</term>
+<term>digital humanities - nature and significance</term>
+<term>data modeling and architecture including hypothesis-driven modeling</term>
+<term>knowledge representation</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-01"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<p>Data modeling is one of the main tasks of digital humanists. They engage in it in creating databases, corpora, digital editions, geographical information systems, research collections, digital libraries, project-specific markup and also crosswalks for heterogenous data collections. In light of this variety of activities, however, it is interesting to note that there is no general theory of data modeling in the digital humanities. Looking at the important works that have defined digital humanities in the recent years, this discrepancy becomes even more noteworthy. On the one hand McCarty 2005 regards modeling as the very basic of humanities computing; on the other hand there is almost no general literature on data modeling in the digital humanities. An explanation for this could be the general feeling that there is no need for research on data modeling because the field of computer science has a vast amount of literature on it. But a closer look soon reveals that in that context the term 'data modeling' refers almost exclusively to database design (for an overview, see Simsion 2007). This discussion carried on by computer scientists and practitioners is detailed and elaborate, but it cannot be a substitute for research on data modeling in the humanities. The relational database – as important as it is – has not become the sole and prototypical data modeling activity in the humanities, in the way that text encoding has. On the principles of text encoding there is an important research literature (for example DeRose et al. 1990, Maler/Andaloussi 1995, or Hockey 2000) and even more literature on specific problems of the intellectual tools used by most digital humanists nowadays, such as the problem of overlapping hierarchies (Schmidt 2010). But it is not our goal to replace one main data modeling activity with another one, but to combine the insights of those different activities and to ask, in a very preliminary way, what ideas could be part of a first outline of  a general theory of data modeling in the humanities.</p> 
+
+<p>One interesting lesson to learn from the computer science literature on data modeling is the difference between a conceptual and a logical data model. The conceptual data model identifies and describes the entities and their relationship in the ‘universe of discourse’ and displays its result in a graphical notation such as an entity-relationship-diagram. The logical data model defines the tables of a database according to the underlying relational model. In data modeling related to textual material, people usually describe their results in prose and map them to a schema, but there is no graphical notation, or at least no system that is generally agreed upon in the manner of Chen's ER-diagram or the crow foot notation. This is probably less due to the lack of graphical notation than to the lack of a generally accepted  conceptual model for XML (for a comprehensive overview of conceptual models for XML see Haitao Chen / Husheng Liao 2010). Besides the technical challenges for establishing such a model it is interesting to note that in the digital humanities there seems to be no real need for it. Even the tree notation proposed by Maler/Andaloussi never caught on. So a deeper understanding is needed why we can find this two very different practices in data modeling. </p>
+
+<p>It is a common feature of literature on data modeling that in order to create and evaluate a model one has to have a clear understanding of the user requirements for the data model. We note an interesting duality in this respect: on the one hand, data models serve as an interchange format for some types of users and user communities where data is typically being created and modeled with someone else’s needs in mind (archives, libraries, others whom we might characterize as “altruistic modelers”). On the other hand, data models also exist whose function is to express specific research ideas in cases where data is being created to support the creator’s own research needs (particularly for individual scholars and projects, whom we might characterize as “egoistic modelers”). Altruistic modelers also make assumptions what features of the digital objects are of interest for most users and in most use cases, while egoistic modelers can and will concentrate on their own needs. Thus, we have in practice very different ways of modeling: one that tries to include very different views on digital objects and aiming to establish standards (and this involves very specific processes to decide on these user needs and to connect these new models with existing traditions of modeling, for example in library science), and another that is interested mainly in expressing as exactly as possible the theoretical assumptions and research interests of one or more scholars. Often the data model for research purposes is evolving during the research process and many functions of schemas are not that important in such a context. </p>
+
+<p>To conclude our discussion we want to propose a generic definition of data modeling: It refers to the activity to design a model of some real (or fictional) world segment to fulfill a specific set of user requirements using one or more of the meta models available in order to make some aspects of the data computable, to enable consistency constraints and to establish a common field of perception. Two typical forms of user requirements can be found: one which aims to define a data model for a domain in order to support data exchange and long-term use; and alternatively, one that is interested above all in modeling specific research assumptions and is often only used for a short time in a specific research context. In general a data model consists of a conceptual part which defines the data semantics, the relevant entities, their features and their relations, and a logical part which expresses a subset of the conceptual model in such a way that it is an abstract, self-contained, logical definition of the data, data operators, and so forth that together make up an abstract machine which makes the data computable.  </p>
+
+<p>Thus far we have been considering the general aspects of data modeling but in the final section of the paper we turn to the question of whether there is something specific to all of the data modeling activities in the humanities, something which sets them apart. Although we do not assume that this is a clear cut line, we argue that two features are of particular importance for data modeling in the humanities: first, that the objects of the data modeling activities are artifacts and many of their properties are not only man-made but intentionally created. And second, that (in contrast for example to business applications) not only do the objects of humanities research possess a long history which humanist usually respect and want to handle adequately, but in addition the research on these objects has a comparatively long history as well, and our models have to convey the complexities of this research. The implications of these features for a theory of data modeling in the humanities will have to be the topic of further research in the future.</p>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Chen, H., and H. Liao.</hi> (2010). A Survey to Conceptual Modeling for XML.  <hi rend="italic">In proceedings of: Computer Science and Information Technology (ICCSIT)</hi>, 3rd IEEE International Conference on, Volume: 8. </bibl>
+
+<bibl><hi rend="bold">Hockey, S.</hi> (2001). <hi rend="italic">Electronic Texts in the Humanities: Principles and Practice</hi>. Oxford: Oxford University Press.</bibl>
+
+<bibl><hi rend="bold">Maler, E., and J. El Andaloussi</hi> (1995). <hi>Developing SGML Dtds: From Text to Model to Markup</hi>. Prentice Hall.</bibl> 
+
+<bibl><hi rend="bold">McCarty, W.</hi> (2005). <hi rend="italic">Humanities Computing</hi>. Houndsmill: Palgrave.</bibl>
+
+<bibl><hi rend="bold">DeRose, S. J., D. G. Durand, E. Mylonas, and A. H. Renear</hi> (1990). “What is Text, Really?” <hi rend="italic">Journal of Computing in Higher Education</hi> 2:1 3-26.</bibl>
+
+<bibl><hi rend="bold">Schmidt, D.</hi> (2010). <hi rend="italic">The inadequacy of embedded markup for cultural heritage texts</hi>. In Literary and Linguistic Computing 25(3): 337-356. </bibl>
+
+<bibl><hi rend="bold">Simsion, G.</hi> (2007). <hi rend="italic">Data Modeling: Theory and Practice</hi>. Bradley Beach: Technics Publications.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

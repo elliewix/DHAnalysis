@@ -1,0 +1,101 @@
+
+
+
+ 
+Introduction
+
+
+This paper explores the application of computer simulation techniques to the fields of literary studies and narratology by developing a model for plot structure and characterization. Using a corpus of 19th Century British novels as a case study, this author begins with a descriptive quantitative analysis of character names, developing a set of stylized facts about the way narratives allocate attention to their characters. I show that narrative attention in many novels appears to follow a “long tail” distribution. I then construct an explanatory model instantiated in a JAVA-based simulation, demonstrating that basic assumptions about plot structure are sufficient to generate output consistent with the real novels in the corpus.
+
+
+
+This study differs from prior computational work in literary criticism in two crucial respects. First, rather than style, this paper is concerned with plot and characterization. As critic Franco Moretti has argued, plot is the crucial element that must be quantified if computational methods are to gain traction in mainstream literary criticism. Second, the overwhelming majority of prior computational studies in literary criticism have been 
+descriptive
+—counting and classifying the surface features of a text. This study, however, is focused on 
+generative models
+. Although I make use of descriptive analysis, the main intent is to motivate a computer simulation that I will show is sufficient to reproduce several key stylized facts about actual narratives.
+ 
+
+
+
+
+
+Part 1: Descriptive Analysis
+
+
+In 
+The One vs. The Many
+ (2003), literary critic Alex Woloch repositions the questions of plot and characterization with which narratologists and formalists have traditionally been concerned in terms of the concept of “narrative attention.” Woloch argues that “narrative attention” is a scarce resource that authors must choose how to allocate amongst the characters populating their stories.
+ 
+
+
+Taking a cue from 
+The One vs. The Many
+, this paper begins by applying quantitative rigor to the concepts of “distribution” and “apportioning of narrative attention,” terms that Woloch uses qualitatively. By way of example, Figure 1 depicts the statistical distribution of character name mentions in Charles Dickens’ 
+The Pickwick Papers
+. The distribution of name mentions (an observable metric) can be used as an instrumental variable for the distribution of narrative attention (a latent, unobservable variable). The result is striking—109 characters organized into what one might term “the long tail”: a small set of central characters represented by the spike on the left followed by a steep drop off to a long but shallow tail consisting of dozens of characters who are mentioned fewer than 10 times.
+ 
+
+
+A wide range of phenomena are also known to follow a long tail: wealth distribution, website hits, and online books sales, for example, all obey a power law. The data for the novels sampled suggests that character name mentions and, by extension, narrative attention, are similarly distributed. That the distribution of attention within a novel should closely resemble the distribution of wealth within a nation is a provocative fact that calls for explanation. Do narratives exhibit power-law behavior because of rich-get-richer effects such as preferential attachment or are character names merely a special case of Zipf’s law regarding word frequency?
+
+
+
+
+
+
+
+Part 2: Generative Models
+
+
+Computer simulation techniques can play a valuable role in elucidating the dynamics driving narrative attention. This paper takes a structuralist approach that envisions narrative as composed of sub-structures with combinatorial rules. I assume that a plot structure is composed of a set of interwoven “plot strands” each with an internal hierarchy of characters. A JAVA-based simulation is used to implement this model. The user specifies the number of characters, plot strands, and scenes. The model then progresses sequentially through the plot, instantiating each strand as a scene in the predetermined order.
+ 
+
+
+
+Although simplistic in its assumptions, this simulation is sufficient to reproduce a number of the salient features of narrative attention in the novels sampled. If the number of plot strands and main characters are set low—corresponding to a narrative that is tightly focused around one or a few characters in a single story line—the results closely resemble those observed for a 
+Bildungsroman
+ such as 
+Pride and Prejudice
+. If the number of plot strands and main characters are set high—corresponding to a narrative focused around a large ensemble of characters across many subplots or parallel plots—the results closely resemble those observed for a sweeping social problem novel such as 
+Bleak House
+.
+
+
+
+
+Figure 2 shows a sweep of the model’s output in parameter space. The z-axis is the average goodness of fit of a power-law distribution. The x-axis represents the number of main characters (from x = 1 to x = 20) and the y-axis the number of plot strands (from y = 1 to y = 20). The number of characters is held constant at 50 and the number of scenes is held constant at 30. The model is run 40 times for each (x,y) pair, for a total of 16,000 runs. As the graph shows, the distribution of narrative attention fits a power law well for a low number of plot strands. As the number of plot strands increases, the fit erodes, particularly if the number of characters is increased along with the strands. 
+
+
+
+
+The simulation developed is intentionally simplistic: I have modeled plot structure and characterization only in terms of combinatorial rules for plot strands. Nevertheless, this simple model of plot structure is sufficient to generate results consistent with the way narrative attention is allocated in actual novels. This suggests the explanatory power of the “strand”—an historically under-theorized narrative unit that is worthy is further investigation.
+
+
+
+         
+
+
+
+
+
+
+
+
+Anderson, C.
+ (2008). 
+The Long Tail
+. New York: Hyperion.
+Easley, D., and J. Kleinberg
+ (2010). Power Laws and Rich Get Richer Phenomena. 
+Networks, Crowds, and Markets
+. Cambridge UP.
+Moretti, F.
+ (2010). Network Theory, Plot Analysis. 
+New Left Review
+.
+Woloch, A.
+ (2003). 
+The One vs. the Many
+. Princeton, NJ: Princeton University Press.
+

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-391">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>TXM Platform for analysis of TEI encoded textual sources</title>
+<author>
+<name><surname>Heiden</surname>, <forename>Serge</forename></name>
+<affiliation>ICAR Laboratory, ENS de Lyon - CNRS, France</affiliation>
+<email>slh@ens-lyon.fr</email>
+</author>
+<author>
+<name><surname>Lavrentiev</surname>, <forename>Alexei</forename></name>
+<affiliation>ICAR Laboratory, ENS de Lyon - CNRS, France</affiliation>
+<email>alexei.lavrentev@ens-lyon.fr </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Textometry is a methodology of text corpora analysis combining qualitative and quantitative techniques (kwic concordances, word frequency lists, collocations, factorial analysis, etc.).
+
+A new generation of textometric open-source software called TXM is currently developped since 2007. This article presents the design of the import environment being developed to allow the platform to analyze various kind of TEI encoded sources.
+
+The TXM platform “translates” the TEI source document structure into the terms relevant for textometric analysis: “text units”, “text metadata”, “lexical units”, “word properties”, “text divisions”, primary and secondary “text surface”, “out-of-text”, “pagination”, etc.
+
+We will describe how that approach has been validated on a comprehensive set of completely unrelated TEI encoded corpora: “Bibliothèques Virtuelles Humanistes” corpus (16th century books), Flaubert’s “Bouvard et P&#233;cuchet” 19th century novel, corpus of the “DISCOURS” linguistic journal and the TEI version of the Brown 1 million words corpus from the NLTK project.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP23</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>tei</term>
+<term>corpus</term>
+<term>import</term>
+<term>txm</term>
+<term>analysis</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>corpora and corpus activities</term>
+<term>encoding - theory and practice</term>
+<term>data modeling and architecture including hypothesis-driven modeling</term>
+<term>software design and development</term>
+<term>xml</term>
+<term>concording and indexing</term>
+<term>standards and interoperability</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-01"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<p>Textometry is a methodology of text corpora analysis combining qualitative and quantitative techniques (kwic concordances, word frequency lists, collocations, factorial analysis, etc.) and producing valuable results for various fields of the humanities (linguistics, literary studies, history, geography, etc.).</p>
+
+<p>The first generation of textometric software operated mainly on “raw text” with limited metadata and structural markup. In the recent years, a great number of digital resources with complex markup have been created. These can include multiple languages, various readings and other forms of critical apparatus, annotations like word lemmas or part of speech, syntactic structures, etc. As a general markup environment, the TEI guidelines provide a common framework for encoding all kinds of textual resources, although this framework allows a great flexibility and sometimes the same information can be encoded in many different ways. It is a challenge for the software and for the researcher to interpret these data correctly out of the context of their original project but it is also an opportunity to make the textometric analysis deeper and more precise.</p>
+
+<p>A new generation of textometric open-source software called TXM was initiated by the Textom&#233;trie research project<ref type="note" target="n01" n="1">1</ref> funded by the French ANR agency (2007-2010) bringing together previous textometric techniques and state-of-the-art text encoding and corpus-building technologies: Unicode, XML, TEI, NLP (Heiden, 2010; Heiden et al., 2010). The TXM platform can be downloaded for free at <ref type="url" target="http://sf.net/projects/txm">http://sf.net/projects/txm</ref> with its sources. This article presents the design and the current state of the import environment being developed since to allow the platform to analyze various kind of TEI encoded sources.</p>
+
+<p>The TXM platform addresses the challenge of importing TEI encoded corpora by “translating” the source document structure into the terms (or objects) relevant for textometric analysis. The main objects are: “text units” (define text limits in a corpus), “text metadata” (associate texts with their properties), “lexical units” (the way the word forms are separated), “word properties” (how to get their lemma or morpho-syntactic description if available), “text divisions” (book parts, sections, paragraphs...), primary and secondary “text surface” (what is the main language of the text to run NLP tools on the right tokens and possible secondary languages: foreign quotations or section titles provided by the editor of a historical source text), “out-of-text”: parts not to be considered as part of the source text (critical apparatus, encoding comments, etc.), “pagination” (to build an edition of the texts), etc.</p>
+
+<p>For each type of source corpus, one has to precisely define how the textometric objects are encoded in the TEI sources and how to extract them to express the corresponding objects in a specially designed XML-TXM pivotal format before being instantiated inside the platform. The XML-TXM format is specialized in analytic data categories, in a way similar to the “TEI Analytics” format of the MONK project (Brian L. Pytlik Zillig, 2009), but is richer in data categories and is a formal TEI extension.</p>
+
+<p>The extraction process is implemented by a combination of specific XSLT stylesheets, XPATH expressions and Groovy script parameters<ref type="note" target="n02" n="2">2</ref>.</p>
+
+<p>We will describe how that approach has been validated on a comprehensive set of completely unrelated TEI encoded corpora: “Biblioth&#232;ques Virtuelles Humanistes” corpus (BVH collection of 16th century books: <ref type="url" target="http://www.bvh.univ-tours.fr">http://www.bvh.univ-tours.fr</ref>), Flaubert’s “Bouvard et P&#233;cuchet” 19th century novel corpus: <ref type="url" target="http://dossiers-flaubert.ish-lyon.cnrs.fr"> http://dossiers-flaubert.ish-lyon.cnrs.fr,</ref> corpus of 5 years issues of the “DISCOURS” linguistic journal: <ref type="url" target="http://discours.revues.org/?lang=en">http://discours.revues.org/?lang=en</ref>) and the TEI version of the Brown 1 million words corpus from the NLTK project: <ref type="url" target="http://nltk.org">http://nltk.org</ref>.</p>
+
+<p>TXM TEI import environment and its XML-TXM pivotal format have proven to be flexible enough to process various data sources efficiently. In further developments, we will define a complete ODD description of the XML-TXM format to document it better for the TEI community and to contribute to the discussion on the ability of software tools to analyze TEI encoded data.</p>
+
+
+
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Heiden, S.</hi> (2010). The TXM Platform: Building Open-Source Textual Analysis Software Compatible with the TEI Encoding Scheme. <hi rend="italic">24th Pacific Asia Conference on Language, Information and Computation.</hi> &#201;d. Kiyoshi Ishikawa Ryo Otoguro. Institute for Digital Enhancement of Cognitive Development, Waseda University, 4-7 November 2010. 389-398.</bibl>
+
+<bibl><hi rend="bold">Heiden, S., J.-P. Magu&#233;,  and B. Pincemin</hi> (2010). TXM : Une plateforme logicielle open-source pour la textom&#233;trie – conception et d&#233;veloppement, in Bolasco, S., et al. (eds.), <hi rend="italic">Statistical Analysis of Textual Data -Proceedings of 10th International Conference </hi>JADT.</bibl>
+
+<bibl><hi rend="bold">Pytlik Zillig, B. L.</hi> (2009) TEI Analytics: converting documents into a TEI format for cross-collection text analysis. <hi rend="italic">Literary and Linguistic Computing</hi> 24(2):187-192; doi:10.1093/llc/fqp005.</bibl>
+
+</listBibl>
+</div>
+<div type="Notes">
+<note xml:id="n01" n="1"><ref type="url" target="http://textometrie.ens-lyon.fr/?lang=en">http://textometrie.ens-lyon.fr/?lang=en</ref></note>
+<note xml:id="n02" n="2">The TXM import environment is implemented by several dynamic scripts written in the Groovy progamming language. All that software environment is directly accessible to the user to be modified and adapted: platform sources, import scripts, XSLT stylesheets, etc.</note>
+</div>
+</back>
+</text>
+</TEI>
+

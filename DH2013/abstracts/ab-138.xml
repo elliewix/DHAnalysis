@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+ <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-138">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Automatic Detection of Reuses and Citations in Literary Texts</title>
+<author>
+<name><surname>Ganascia</surname>, <forename>Jean-Gabriel</forename></name>
+<affiliation>LIP6, University Pierre and Marie Curie, Paris, France;
+Labex OBVIL, PRES Sorbonne Universit&#233;s, Paris, France</affiliation>
+<email>jean-gabriel.ganascia@lip6.fr</email>
+</author>
+<author>
+<name><surname>Glaudes</surname>, <forename>Pierre</forename></name>
+<affiliation>Litt&#233;rature Fran&#231;aise, XIXe-XXIe, University Paris-Sorbonne, France;
+Labex OBVIL, PRES Sorbonne Universit&#233;s, Paris, France</affiliation>
+<email>pierre.glaudes@wanadoo.fr </email>
+</author>
+<author>
+<name><surname>DelLungo</surname>, <forename>Andrea</forename></name>
+<affiliation>ALITHILA, University Charles de Gaulle, Lille, France</affiliation>
+<email>adellungo@free.fr</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP04</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term></term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-03"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>1 Introduction</head>
+
+<p>For more than forty years now, modern theories of literature insist on the role of paraphrases, rewritings, citations, reciprocal borrowings and mutual contributions of any kinds. The notion of <hi rend="italic">intertextuality</hi> was introduced in the sixties to approach these phenomena. <hi rend="italic">PHOEBUS</hi> is collaborative project that makes computer scientists from the University Pierre and Marie Curie (LIP6-UPMC) collaborate with the literary teams of Paris-Sorbonne University with the aim to develop efficient tools for literary studies that take advantage of modern computer science techniques. </p>
+
+<p>In this context, we have developed a piece of software that automatically detects and explores networks of textual reuses in classical literature. Written in PROLOG this program has been extensively tested on Isidore Ducasse texts (Lautr&#233;amont, 2009) that are known to contain many reuses and on “La com&#233;die humaine” (Balzac, 1976-1981) from Honor&#233; de Balzac, which, according to (Duclos, 2012), reuses some texts of his friend Th&#233;ophile Gautier (Gautier, 2002). We claim that our approach is more efficient than comparable ones, e.g. (Roe, 2012) (B&#252;chler, Crane, Mueller, Burns, &amp; Heyer, 2011). This abstract describes the principles on which is based this program, the significant results that have already been obtained and the perspectives for the near future.</p>
+</div>
+
+<div>
+<head>2 Distinctions between Plagiarism, Pastiches, Citations and Textual Reuses</head>
+
+<p>Before going into the detail of the description of the techniques that are used, let us note that the notions of literary textual reuse and citation, which we aim to automatically detect, have to be distinguished from two similar notions: the <hi rend="italic">plagiarism</hi> and the <hi rend="italic">pastiche</hi>.</p>
+
+<p>The plagiarism consists in robbing the work of another, i.e. in fraudulently appropriating his/her texts, without mentioning explicitly their origin. As such, the plagiarism is considered as an unethical practice that has to be tracked and prosecuted. Many techniques have been developed to detect plagiarism that is considered as some plague, because intellectual work is stolen. By contrast, the pastiche is an artistic practice that imitates an artist, a style or a period. There is nothing wrong with it, except that it mocks well-known authors. Many great writers, for instance Marcel Proust, began by pastiches for the fun and to improve their style. Their detection is close to the identification of literary style (Dinu, Niculae, &amp; Sulea, 2012), which requires capturing the essence of an artist’s style or of a period. Halfway from detection of plagiarisms and identification of pastiches, the recognition of textual reuses and citations helps to track the literary influences and the spirit of the epoch. Some of the textual reuses and citations are conscious, other not. They may correspond to explicit &#8212; or implicit &#8212; and more or less distorted quotations. Usually, textual reuses proceed by transforming a piece of text, while citations are verbatim, but it’s not always the case. When a sufficient part of the original text is kept, the fragments can be recognized. This is exactly what we attempt to do automatically here. Reuses and approximate citations are far more difficult to detect than plagiarisms, because the original fragments of text may be distorted, but far less than pastiches. Anyway, their detection could be of great interest for scholars interested in intertextuality.</p>
+</div>
+
+<div>
+<head>3 Criteria</head>
+
+<p>As previously said, text reuse and citation discovery is inspired from plagiarism detection, but it has to take into account all the alterations that may have transformed the initial text. To precise the type of distortions that affect a text, we started from a hand made study realized by Tania Duclos who shows in (Duclos, 2013) [cf. <hi rend="italic">figure 1</hi>] how some parts of the <hi rend="italic">Human Comedy</hi> (Balzac, 1976-1981) reuse fragments of texts from Th&#233;ophile Gautier.</p>
+
+<p>For instance, some of the passages highlighted in <hi rend="italic">figure 1</hi> are identical, while others are somehow different. For instance “<hi rend="italic">en brocatelle &#224; plis soutenus et puissants, s’entouraient de fraises godronn&#233;es</hi>” becomes “<hi rend="italic">de brocatelle aux plis soutenus et puissants, les hautes fraises godronn&#233;es</hi>” and “<hi rend="italic">des manches &#224; crev&#233;s et &#224; sabots de dentelles d’o&#249; la main sortait comme une fleur de sa capsule</hi>” becomes “<hi rend="italic">les manches &#224; crev&#233;s et &#224; sabots de dentelles, dont la main sort comme le pistil du calice d’une fleur</hi>”. Lastly, some fragments look far more difficult to identify, because they are composed of isolated words or even different words (e.g. “<hi rend="italic">diamants</hi>” and “<hi rend="italic">pierreries</hi>” or “<hi rend="italic">tableau</hi>” and “<hi rend="italic">gravures</hi>”) of which meanings are closed. Here, we try to detect string homologies where some words may be missing, especially stop words, i.e. articles, pronouns or prepositions. It may also happen that the number and the genre of nouns, adjectives or verbs change as when “<hi rend="italic">d’une main mignonne frapp&#233;e de fossettes</hi>” is transformed in “<hi rend="italic">des mains mignonnes frapp&#233;es de fossettes</hi>”.</p>
+
+<figure>
+<graphic url="ab-138.001"/>
+<head>Figure 1: </head><p><hi rend="italic">example of hand coded comparison (Duclos, 2013) between a fragment of B&#233;atrix (Balzac, 1976-1981) on the left and a fragment of Th&#233;ophile Gautier </hi>(Gautier, Portraits contemporains, 1874) on the right.</p></figure>
+</div>
+
+<div>
+<head>4 Detection of Fragments with Holes</head>
+
+<p>Among the more efficient existing plagiarism detection techniques, many are based on fingerprints built with the hash coding of character strings (Potthast, Eiselt, Barron-Cede&#241;o, Stein, &amp; Rosso, 2011), (Potthast, Stein, Barron-Cede&#241;o, &amp; Rosso, 2010), (Burrows, Tahaghoghi, &amp; Zobel, 2006). Other techniques evaluate the statistical distribution of vocabulary with a vector space model of the texts and a cosine similarity measure that evaluate their closeness, however they don’t seem to be appropriate to our purpose, even if we use the distribution of words.</p>
+
+<p>We have implemented and adapted the fingerprint method and we have evaluated it on the reuses isolated by Tania Duclos. It helped us to optimize the values of the different parameters. To do this, we have first eliminated the “stop words”, i.e. article, preposition, pronoun, auxiliary verbs, etc. We have also used the Snowball (Porter, 2001) (Tomlinson, 2004) stemmer to reduce the words to their root, which allows being independent from the inflected forms used in the text. For instance, the words  “fishing”, “fished”, “fish”, “fishes” and “fisher” are reduced to the same root word “fish”.</p>
+
+<p> The second part consists in extracting sequences of words characterized by their minimal size, i.e. by the minimal number of consecutive non-“stop words” they contain, which we call the window size. In addition, because we want to allow missing words, we also introduce possible holes. This means that a window of size 4 does not necessarily correspond to 4 consecutive words.</p>
+
+<p>Once the similar fragments are discovered, they are adjoined end to end, which build blocs. Lastly, we have manually defined what we call “weak words”, which are not very significant, and we filter the blocs of similar words of which number of non-“weak words” is bigger than a minimal threshold, for instance 4. This allows eliminating noise, without loosing a lot of information.</p> 
+</div>
+
+<div>
+<head>5 Obtained Results</head>
+
+<p>The program has been implemented in SWI-Prolog (cf. (SWI-Prolog's home)) using an external table to store hash-coded texts. It is quite efficient, for instance it took less than 10 minutes to index all the Balzac’s <hi rend="italic">Human Comedy</hi> (Balzac, 1976-1981) that contains more than 25 millions of characters on a 2GHz MacPro. Then, it takes a couple of minutes to discover text reuses on entire novels.</p>
+
+<p>Using this program, we were able to retrieve all the handed coded reuses of (Duclos, 2013), except the “yellow” one (see <hi rend="italic">figure 1</hi>). We have also detected many interesting citations and reuses, for instance a reuse of the Gautier’s Novel entitled “Mademoiselle de Maupin” (Gautier, Romans, contes et nouvelles, 2002) in the Balzac’s Novel “Modeste Mignon” (Balzac, 1976-1981), which has not been mentioned before, or a citation of Lyttleton both in “Delphine” (de Sta&#235;l, 1869) and in “Ursule Mirou&#235;t” (Balzac, 1976-1981). We also tested the system between Lautr&#233;amont’s work (Lautr&#233;amont, 2009) and Buffon one the one hand and the French moralists like Pascal, La Rochefoucauld or La Bruy&#232;re on the other. We have retrieved many text reuses among which some interesting distortions like, for instance the Pascal aphorism “<hi rend="italic">Nous naissons injustes; car chacun tend &#224; soi: cela est contre tout ordre</hi>.” that has been rewritten in “<hi rend="italic">Nous naissons justes. Chacun tend &#224; soi. C'est envers l'ordre</hi>.”</p></div>
+
+<div>
+<head>6 Perspectives</head>
+
+<p>For the near future, we plan to extensively use our system in many fields of literature, especially on the 19th century French literature, with Balzac’s work, which is the aim of the PHOEBUS project funded by the CNRS. More precisely, PHOEBUS is intended to investigate the textual reuses between the Balzac’s youth novels and the <hi rend="italic">Human Comedy</hi>, and between Balzac’s work and his contemporaries’ work like Th&#233;ophile Gautier, Benjamin Constant, George Sand etc. We also plan to digitalize the journals where many authors published either under their own names, or anonymously and to compare them with the <hi rend="italic">Human Comedy</hi>. Lastly, we will conduct a thorough comparison with similar approaches.</p></div>
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">B&#252;chler, M., G. Crane, M. Mueller, P. Burns, and G. Heyer </hi> (2011). One Step Closer To Paraphrase Detection On Historical Texts: About The Quality of Text Re-use Techniques and the Ability to Learn Paradigmatic Relations. in  Thiruvathukal, G. K. &amp; Jones, S. E., (&#201;ds). <hi rend="italic">Journal of the Chicago Colloquium on Digital Humanities and Computer Science</hi>.</bibl>
+
+<bibl><hi rend="bold">Balzac, H. </hi> (1976-1981). <hi rend="italic">La com&#233;die humaine</hi> (Vol. I-XII). (C. L. Pl&#233;iade, &#201;d.) Paris: Gallimard.</bibl>
+
+<bibl><hi rend="bold">Burrows, S., S. Tahaghoghi, and J. Zobel</hi>(2006). Efficient Plagiarism Detection for Large Code Repositories. <hi rend="italic">Software &#8212; Practice and Experience</hi>. 37. 151-175.</bibl>
+
+<bibl><hi rend="bold">de Sta&#235;l, G.</hi> (1869). <hi rend="italic">Delphine</hi>. Paris: Garnier fr&#232;res.</bibl>
+
+<bibl><hi rend="bold">Dinu, L. P., V. Niculae, and O. M. Sulea</hi> (2012). Pastiche detection based on stopword rankings. Exposing impersonators of a Romanian writer. EACL 2012 &#8212; <hi rend="italic">Workshop on Computational Approaches to Deception Detection</hi>. Avignon: Association for Computational Linguistics. 72-77.</bibl>
+
+<bibl><hi rend="bold">Duclos, T.</hi> (2013). <hi rend="italic">L'intertextualit&#233; dans une Fille d’Eve et B&#233;atrix d'Honor&#233; de Balzac</hi>. Paris: Sorbonne University.</bibl>
+
+<bibl><hi rend="bold">Gautier, T.</hi> (1874). <hi rend="italic">Portraits contemporains</hi>. Paris: Charpentier et Cie.</bibl>
+
+<bibl><hi rend="bold">Gautier, T.</hi> (2002). <hi rend="italic">Romans, contes et nouvelles</hi>. Pl&#233;iade, C. D. (ed.) Paris: Gallimard.</bibl>
+
+<bibl><hi rend="bold">Lautr&#233;amont.</hi> (2009). <hi rend="italic">&#338;uvres compl&#232;tes</hi>. Pl&#233;iade, C. D. (ed.) Paris: Gallimard.</bibl>
+
+<bibl><hi rend="bold">Porter, M.</hi> (2001). <hi rend="italic">Snowball: A language for stemming algorithms</hi>. http://snowball.tartarus.org/texts/introduction.html (consult&#233; le October 22, 2012).</bibl>
+
+<bibl><hi rend="bold">Potthast, M., A. Eiselt, A. Barron-Cede&#241;o, B. Stein, and P. Rosso </hi>(2011). Overview of the 3rd International Competition on Plagiarism Detection. Petras D. V. , P. Forner, and P. D. Clough (eds.), <hi rend="italic">Notebook Papers of CLEF 11 Labs and Workshops</hi>. </bibl>
+
+<bibl><hi rend="bold">Potthast, M., B. Stein, A. Barron-Cede&#241;o, and P. Rosso</hi> (2010). An Evaluation Framework for Plagiarism Detection. Dans Huang, C.-R. and D. Jurafsky (eds.), <hi rend="italic">23rd International Conference on Computational Linguistics (COLING 10)</hi>. Stroudsburg, Pennsylvania. 997-1005.</bibl>
+
+<bibl><hi rend="bold">Roe, G. R.</hi> (2012). Intertextuality and Influence in the Age of Enlightenment: Sequence Alignment Applications for Humanities Research. <hi rend="italic">Digital Humanities</hi>. Hamburg.</bibl>
+
+<bibl><hi rend="italic">SWI-Prolog's home</hi>. SWI-Prolog: <ref type="url" target="http://www.swi-prolog.org/">http://www.swi-prolog.org/</ref> (consult&#233; le Octobre 22, 2012).</bibl>
+
+<bibl><hi rend="bold">Tomlinson, S.</hi> (2004). Lexical and Algorithmic Stemming Compared for 9 European Languages with Hummingbird SearchServer TM at CLEF 2003. Dans Peters, C. (ed.), <hi rend="italic">Working Notes for the CLEF 2003 Workshop</hi>. Springer.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

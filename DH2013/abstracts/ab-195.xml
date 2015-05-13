@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-195"
+ xmlns:m="http://www.w3.org/1998/Math/MathML"
+ >
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>XML-Print: Addressing Challenges for Scholarly Typesetting</title>
+<author>
+<name><surname>K&#252;ster</surname>, <forename>Marc Wilhem</forename></name>
+<affiliation>Worms University of Applied Sciences, Germany</affiliation>
+<email>kuester@fh-worms.de</email>
+</author>
+<author>
+<name><surname>Selig</surname>, <forename>Thomas</forename></name>
+<affiliation>Worms University of Applied Sciences, Germany</affiliation>
+<email>selig@fh-worms.de</email>
+</author>
+<author>
+<name><surname>Georgieff</surname>, <forename>Lukas</forename></name>
+<affiliation>Worms University of Applied Sciences, Germany</affiliation>
+<email>lukas.georgieff@hotmail.com</email>
+</author>
+<author>
+<name><surname>Sievers</surname>, <forename>Martin</forename></name>
+<affiliation>Trier Center for Digital Humanities (Kompetenzzentrum), Germany</affiliation>
+<email>sievers@uni-trier.de</email>
+</author>
+<author>
+<name><surname>Bittorf</surname>, <forename>Michael</forename></name>
+<affiliation>Worms University of Applied Sciences, Germany</affiliation>
+<email>bittorf@fh-worms.de</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">XML-Print is a typesetting engine for complex XML data and sophisticated requirements, e.g. for critical editions, interfaced via an ergonomic user interface. Its version 1.0 release is already a viable option for simple typesetting needs. In DH 2012 we have presented the project’s infrastructure and general concepts. This paper concentrates on four areas of realized or planned developments, often driven by the requirements of pilot project’s testing the system:
+
+<list type="simple">
+<item>&#8212; Handling an arbitrary number of critical apparatuses, each possibly long, with flexibly referencing systems</item>
+<item>&#8212; Parallelizing the typesetting engine, leveraging the capabilities of the chosen implementation language F#</item>
+<item>&#8212; Handling bidirectional texts, in particular for Hebrew and Arabic, in compliance to the Unicode Bidirectional Algorithm</item>
+<item>&#8212; Test concepts for a heavily visual project, enhancing the testing framework Sikuli to automatically compare reference images against the generated output to create test reports</item></list></note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">SP06</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>uncertainty</term>
+<term>geocritique</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>medieval studies</term>
+<term>french studies</term>
+<term>interdisciplinary collaboration</term>
+<term>visualisation</term>  
+<term>spatio-temporal modeling</term>
+<term>analysis and visualisation</term>
+
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div><head>1 Introduction</head>
+
+<p>At last year’s DH conference, we presented our Open Source project <hi rend="italic">XML-Print live</hi>(Sievers, et al., 2012). The audience’s responses gave a strong impulse for the second project stage to extend and fine-tune the software and improved its technical architecture. The latest build is available for download from <ref type="url" target="http://www.xmlprint.eu/">http://www.xmlprint.eu/.</ref></p>
+ <p>While the former talk focused on the infrastructure and general ideas of XML-Print, this paper delivers insight into the challenges of the project’s development process, which are paradigmatic for the dual nature of the challenges faced by many DH development projects. This includes issues already solved as well as concepts for open ones. The following aspects will be discussed:
+ <list type="ordered"><item>1. Typesetting critical editions is one of the major use cases for<hi rend="italic"> XML-Print</hi>. Apart from “standard” typesetting features we have implemented support for manging an arbitrary number of apparatuses (cf. Section 2.1).</item>
+<item>2. The typesetting engine is written in the functional programming language F#, which &#8212; among other advantages &#8212; offers powerful parallelization techniques. However, we must use appropriate programming routines for that. The ideas behind parallelizing the typesetting are described in section 2.2.</item>
+ <item>3. Today’s typesetting world is global, meaning support for many writing systems including bidirectional scripts. Section 2.3 reports about the concepts for bidirectional typesetting within <hi rend="italic">XML-Print.</hi></item>
+<item>4. Last, but not least software development needs sophisticated test concepts to recognize problems before new versions are published. This is important not only for obvious build or compilation errors, but especially for typesetting problems. The image-based test approach is presented in Section 2.4.</item></list></p>
+ </div>
+<div>
+<head>2	Challenges</head>
+<div>
+<head type="sub"><hi rend="italic">2.1 Critical Apparatus</hi></head>
+
+
+ <p>Typesetting a single footnote apparatus is not sufficient for scholarly purposes. We need a robust and generic algorithm to place any number of apparatuses to be grouped together on a page.</p>
+<p>The user manages this grouping process by creating an appropriate mapping between a layout format and XML elements. The output position of the footnote apparat-uses on a page is determined by the order given in the footnote dialogue (cf. Figure 1). This information is coded into the XSL-FO+ <ref type="note" target="n01">1</ref> file as an XML attribute to the footnote element, e.g.<code>&lt;footnote place="0" fn-type="footnote"&gt;. </code><ref type="note" target="n02">2</ref>.</p>
+<p>The typesetting engine sorts the footnotes corresponding to their place attribute and calculates the space needed on a concrete output page, including spacing between apparatuses. All this can already be done using <hi rend="italic">XML-Print</hi>. An example is illustrated in Figure 2.</p>
+<p>However, when typesetting critical editions, footnote apparatuses alone are not sufficient. There has to be a possibility to refer to the line number of a lemma or to use a user-defined reference schema as well. That reference is used instead of the common footnote sign. The typesetting engine must furnish the necessary references, which is only available at runtime and calculated in the output routines.</p>
+ 
+<figure><graphic url="ab-195.001"/><head>Figure 1:</head><p>The grouping and sorting of footnote apparatuses is done with the footnote dialog from the graphical user interface.</p></figure>
+
+<figure><graphic url="ab-195.002"/><head>Figure 2:</head><p>Example of two footnote apparatuses of a letter from the “Kurt-Schwitters-Briefe” (Wie Kritik zur Kunst wird). For a real critical apparatus references to line numbers of lemmata have to be implemented.</p></figure>
+</div>
+
+<div>
+<head type="sub"><hi rend="italic">2.2	Parallelizing the Typesetting</hi></head>
+
+
+  <p>Implementing a typesetting system with all its characteristics and subtleties is a chal-lenge concerning two technical aspects: efficiency and memory consumption. Both aspects can be satisfied by the data structures and algorithms used in the implementation.
+  We need to parallelize the <hi rend="italic">XML-Print</hi> typesetting engine as the rendering process is resource intensive. In particular, when pre-rendered pages have to be adapted to changes and need final rendering, the process is very time-consuming. This is the case if <hi rend="italic">XML-Print</hi> typesets remaining footnotes from previous pages. The content of the current typeset page must be balanced with the contents of the remaining and the current footnotes. The described problem can be solved in mainly two ways: directly improving the typesetting of footnotes or/and improving the overall rendering process.</p>
+ <p>Improving the typesetting of footnotes can directly be achieved by a more sophisticated algorithm. That means not by balancing the contents line by line but by using binary cuts instead, i.e. starting with <hi rend="math"><hi rend="fraction"><hi rend="over">lines</hi><hi rend="under">1</hi></hi></hi>, <hi rend="math"><hi rend="fraction"><hi rend="over">lines</hi><hi rend="under">2</hi></hi></hi>, <hi rend="math"><hi rend="fraction"><hi rend="over">lines</hi><hi rend="under">4</hi></hi></hi>, …, <hi rend="math"><hi rend="fraction"><hi rend="over">lines</hi><hi rend="under">lines</hi></hi></hi> until the footnote and the current page’s contents are in balance. Unfortunately, this solution covers only one of several performance problems.</p>
+  <p>Therefore, improving the overall rendering process must be the final goal. The parallelization efforts are based on the dynamic programming idea by Bellman (1954). Thus, the rendering process is separated in typesetting single sequences, i.e. single XML fragments. For that the input XML file is read and then split into fragments representing such sequences. These are the basic elements in the XSL-FO (Anders 2006) structure that can be processed independently from other data. Afterwards, these sequences are typeset in parallel, are then concatenated and finally written into a single document.</p>
+ <p>Implementing the introduced parallelization mechanism requires the following characteristics:
+<list type="unordered">
+<item> Resource-efficient XML processing, especially when reading the file and dividing it into fragments</item>
+<item> Isolated, side-effect free and generic rendering algorithms for separated sequences.</item></list>
+Indeed, F# as a functional programming language offers the possibilities to address these requirements.
+</p>
+</div>
+<div>
+<head type="sub"><hi rend="italic">2.3	Bidirectional Text</hi></head>
+
+
+<p>Like many other typeset editors (e.g. Texmaker, TeXstudio and TeXShop for LaTeX), <hi rend="italic">XML-Print </hi>must support bidirectional (BiDi) texts. The implementation of this feature is part of the actual project phase, because we got many requests from scholars and projects to support BiDi. One of those projects is “RIR &#8212; Relationen im Raum” (<ref type="url" target="https://dev2.dariah.eu/wiki/display/RIRPUB/RiR">https://dev2.dariah.eu/wiki/display/RIRPUB/RiR</ref>), which uses XML as an exchange format with “epidat”, a database of Jewish epigraphy (epidat &#8212; epigraphische Datenbank). The typesetting engine of <hi rend="italic">XML-Print</hi> shall be used to automatically generate PDF documents with mixed Hebrew and German inscriptions and synoptically typeset German translations.</p>
+ <p>The Unicode standard provides the Unicode Bidirectional Algorithm (UBA) (Davis) to display BiDi texts correctly making it the industry standard for displaying such texts. The algorithm is well known and extensively tested. XML-Print therefore will base its support for Hebrew and Arabic texts on the UBA.</p>
+</div>
+
+<div>
+<head type="sub"><hi rend="italic">2.4	Testing and Quality Assurance</hi></head>
+
+
+<p>Testing is undoubtedly an important factor for any software project, but assuring the quality of a typesetting engine provides some additional challenges. As pointed out earlier, algorithms addressing different functions such as footnotes or bidirectional text are already very complex. Orchestrating multiple algorithms to produce a single document reaches a level of complexity, for which no developer can ultimately consider all side-effects and interoperability problems. Moreover, problems caused by errors in the source code often have minimal visual effects to the result so that a human tester cannot easily assess errors.</p>
+ <p>Therefore we have developed an automated system for functional testing. These functional tests are based on reference documents of varying complexity. For each test run, these documents are generated anew using the current version of the typesetting engine. In the next step each page of each document is split into regions. All regions are compared to the corresponding regions of the reference document pixel by pixel. This pixel comparison is performed using the Sikuli engine (Sikuli Script), which, in addition to comparing screen images, can be easily extended to display the proper documents and to simultaneously flip the pages of these documents. If any mismatch is detected between the generated and the reference document, a difference-image is created containing the differing section. Further, this image is enhanced with fragments of both documents to make it easier for a developer to recognize the problem (cf. Figure 3).</p>
+
+<figure><graphic url="ab-195.003"/><head>Figure 3:</head><p>Example of a pixel comparison of two documents.</p></figure>
+</div>
+</div>
+<div>
+<head>3	Summary and Outlook</head>
+
+
+ <p><hi rend="italic">XML-Print</hi> tackles challenges on a number of levels:
+ <list type="simple">
+<item>Handling the requirements of advanced scholarly typesetting, notably the handling of multiple apparatuses and bidirectional texts</item>
+ <item>Responding to opportunities offered by heavily parallel hardware</item>
+ <item>Guaranteeing consistent quality and absence of regressions in a very much visual domain</item>
+ </list></p>
+<p>
+As we have seen, the project responds to these challenges by
+<list type="simple">
+ <item>Creating a user interface that guides users through the complexity of advanced requirements</item>
+ <item>Opting based on F# for a functional design of the typesetting engine that can easily be parallelized</item>
+ <item>Developing testing techniques to automatically compare typesetting results in PDF to manually validated example documents</item></list>
+
+<hi rend="italic">XML-Print’s</hi> version 1.0 release is already a viable option for simple typesetting needs. However, much remains to be done during the remaining project duration. In addition to fine-tuning the existing implementation for scholarly apparatuses and bidirectional texts, <hi rend="italic">XML-Print</hi> still has to support multiple columns, synoptic typesetting, running headers and footers, interactive corrections and manual overrides to the automatic results, e.g. to manually set line breaks or hyphenation. New requirements and changes in the overall of features also result from direct user feedback, e.g. regarding horizontal alignments of phrases in addition to classical synoptic editions. These requests are themselves sign of an increasing and encouraging take-up of <hi rend="italic">XML-Print</hi> amongst early adopters, keen to introduce the software into their projects.</p>
+
+
+</div>
+</div>
+</body>
+
+<back>
+
+<div type="References">
+<listBibl>
+
+
+<bibl><hi rend="bold"> Sievers, M., Burch, T., Küster, M. W., Moulin, C., Rapp, A., Schwarz, R., Gan, Y.</hi> (2012). <hi rend="italic">XML-Print: an Ergonomic Typesetting System for Complex Text Structures.</hi> In Hamburg, S. <hi rend="italic">Digital Humanities. Conference Abstracts.</hi> 375–379.</bibl>
+
+<bibl><hi rend="italic">Wie Kritik zur Kunst wird</hi>. Project website. <ref type="url" target="http://www.avl.uni-wuppertal.de/forschung/projekte/wie-kritik-zu-kunst-wird.html">http://www.avl.uni-wuppertal.de/forschung/projekte/wie-kritik-zu-kunst-wird.html</ref> [accessed 4 Mar 2013].</bibl>
+
+<bibl><hi rend="bold">Bellman, R.</hi> (1954). <hi rend="italic">Dynamic Programming and Modern Control Theory</hi>. Princeton, New Jersey.</bibl>
+
+<bibl><hi rend="bold">Anders, B.</hi> (2006). Extensible Stylesheet Language (XSL) Version 1.1. <hi rend="italic">W3C Recommendation</hi>. <ref type="url" target="http://www.w3.org/TR/xsl11/">http://www.w3.org/TR/xsl11/</ref>  (accessed 4 Mar 2013).</bibl>
+
+<bibl>Relationen im Raum &#8212; Visualisierung topographischer Klein(st)strukturen. Project website. <ref type="url" target="https://dev2.dariah.eu/wiki/display/RIRPUB/RiR">https://dev2.dariah.eu/wiki/display/RIRPUB/RiR</ref> (accessed 4 Mar 2013).</bibl>
+
+<bibl>epidat &#8212; epigraphische Datenbank. Project website. </bibl>
+
+<bibl><hi rend="bold"> Davis, M.</hi> Unicode Bidirectional Algorithm. <ref type="url" target="http://www.unicode.org/reports/tr9/">http://www.unicode.org/reports/tr9/</ref> (accessed 4 Mar 2013).</bibl>
+
+<bibl><ref type="url" target="http://www.sikuli.org">http://www.sikuli.org/</ref> (accessed 4 Mar 2013).</bibl>
+</listBibl>
+</div>
+
+
+
+<div type="Notes">
+<note xml:id="n01" n="1">XSL-FO+ is an extension of the XSL-FO standard [4] to meet the requirements of scholars in the Humanities. It has been especially designed for XML-Print.</note>
+<note xml:id="n02" n="2">This is a prominent example for extending the XSL-FO standard, which does not offer anything for using apparatuses yet.</note>
+</div>
+</back>
+
+</text>
+</TEI>
+
+

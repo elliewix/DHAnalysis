@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-445">
+    
+<teiHeader>
+ <fileDesc>
+ <titleStmt>
+<title>Encoding Historical Financial Records</title>
+<author>
+<name><surname>Tomasek</surname>, <forename>Kathryn</forename></name>
+<affiliation>Wheaton College, Norton, Massachusetts, United States of America</affiliation>
+<email>ktomasek@wheatonma.edu</email>
+</author> 
+<author>
+<name><surname>Bauman</surname>, <forename>Syd</forename></name>
+<affiliation>Brown University, Providence, Rhode Island, United States of America</affiliation>
+<email>Syd_Bauman@brown.edu</email>
+</author>
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">A poster focused on options for encoding of historical financial records , which includes a model for standoff markup based on the principles of double entry accounting . As currently conceived a “transactionography,” like a “personography,” provides information about the financial information within each transaction separately from the transcribed text. “Transactionographies” follow the principles of double entry accounting to model transactions as a sequence of one or more transfers of anything of value from one account to another. *The presentation includes a (working) ODD file that is currently being tested for further development.*</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>historical financial records</term>
+<term>TEI</term>
+<term>standoff</term>
+                    
+</keywords>
+<keywords scheme="original" n="topic">
+<term>encoding &#8212; theory and practice</term>
+<term>historical studies</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+    
+    <p>A significant number of scholars in Europe and North America are now involved in projects utilizing or encoding historical financial and tabular records. Many of them hope that it will be possible to develop guidelines that account for both the idiosyncrasies of such manuscripts and the semantic information embedded in them.</p>
+    <p>A genre of primary sources that includes such materials as bills, receipts, cashbooks, journals, and account ledgers, historical financial records (HFRs) are abundant in traditional archives. Most current digitization projects do not capture the full range of financial information, and if they do, they have yet to develop a common method for fully expressing this range.</p>
+    <p>HFRs share certain structural characteristics with such other genres of historical records as plague bills, theatre returns, and probate records. Documents from such genres are generally represented as lists or tables, and in many cases they include numerical sums. The apparent regularity of these documents presents perhaps the most significant challenge for those who seek to encode them, as it often collapses in use. Thus such tabular records tend to include information that cannot be represented through simple transcription of tabular layout. In fact, they tend to contain significant variations and idiosyncrasies, often within the same document or collection.</p>
+    <p>In the subgenre of double entry accounts, the impulse to keep regular records produced a set of standards for recording financial information. Through the centuries, various influential texts offered ordinary businessmen opportunities to learn how to keep regular accounts. But the popularity of these texts did not guarantee perfect adherence to their principles.</p>
+    <p>HFRs tend to include three levels of data to consider: layout, textual expression, and a third, more abstract level of financial semantics that are not as yet easily captured through TEI conformant markup. Attention to layout may or may not be necessary. In cases where page images are included in online publication, for example, some projects may choose to omit digital representation of layout. Similarly, different projects place varying emphasis on particular textual features.</p>
+    <p>At the more abstract level, double entry bookkeeping uses a specialized vocabulary, a professional jargon that requires data modeling with attention to the special meanings of the terms “debtor” and “creditor,” as well as the relationships between transactions recorded in the journal and accounts kept in a separate ledger. We are developing a TEI customization for conveying such meanings and their expressions within double entry account books through a “transactionography” that will represent the relationships among such records in abstracted form.</p>
+    <p>As currently conceived a “transactionography,” like a “personography,” provides information about the financial information within each transaction separately from the transcribed text. “Transactionographies” follow the principles of double entry accounting to model <hi rend="italic">transactions</hi> as a sequence of one or more <hi rend="italic">transfers</hi> of anything of value from one <hi rend="italic">account</hi> to another. Thus, the simple purchase of a candy bar from a convenience store is represented as two <code>&lt;transfer&gt;</code>s: one of a candy bar from the vendor’s stock account to the buyer, and one of $1.25 from the buyer’s cash account to the vendor’s cash account.</p>      
+    <p>We believe that this model will be sufficient to represent double entry bookkeeping, though we have not yet tested it thoroughly. We are presenting a (working) ODD file for a first cut at such a “transactionography” at the TEI meeting in fall 2012, and we hope to have a more refined version for presentation at DH2013.</p>
+    <p>This abstract only begins to suggest the research opportunities that might eventually be available should large numbers of HFRs be digitally accessible in machine processable form. As editors of the Alcalá Account Book Project have noted with regard to their digital edition of the account books of the Royal Irish College of Saint George the Martyr in Alcalá, such records promise “insight into the day-to-day running of the college with valuable information on diet, discipline, and domestic matters.” Standardized digitization of HFRs, a rich yet currently inaccessible genre of texts, has the potential to produce harvestable data that could open significant new lines of inquiry about economic, social, and cultural history.</p>
+</div>
+
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">The Alcalá Account Book Project</hi> <ref type="url" target="http://archives.forasfeasa.ie/index.shtml">http://archives.forasfeasa.ie/index.shtml</ref>.</bibl>
+
+<bibl><hi rend="bold">Burnard, L., and S. Bauman (eds.)</hi> <hi rend="italic">TEI P5: Guidelines for Electronic Text Encoding and Interchange.</hi> 2.0.2. 2012-02-02T17:24:24Z. <ref type="url" target="http://www.tei-c.org/P5/.">http://www.tei-c.org/P5/.</ref></bibl>
+
+<bibl><hi rend="bold">Gleeson-White, J.</hi> (2011). <hi rend="italic">Double Entry: How the Merchants of Venice Created Modern Finance</hi> New York: Norton.</bibl>
+
+<bibl><hi rend="bold">Mair, J.</hi> (1765). <hi rend="italic">Book-keeping Methodiz’d; or, A methodical treatise of Merchant-accompts, according to the Italian form. Wherein the theory of the art is fully explained,... To which is added, a large appendix. ...</hi> Edinburgh: W. Sands, A. Murray, and J. Cochran.</bibl>
+
+<bibl><hi rend="bold">McCusker, J. J.</hi> (2001). <hi rend="italic">How Much Is That in Real Money?: A Historical Price Index for Use as a Deflator of Money Values in the Economy of the United States</hi> Worcester, MA: American Antiquarian Society.</bibl>
+
+<bibl><hi rend="bold">Pacioli, L.</hi> <hi rend="italic">The Rules of Double-Entry Bookkeeping: Particularis de computis et scripturis.</hi> Michael Schemmann, ed. Orig. pub. 1494. International Institute of Certified Public Accountants, 2012.</bibl>
+
+<bibl><hi rend="bold">Poovey, M.</hi> <hi rend="italic">Genres of the Credit Economy: Mediating Value in Eighteenth- and Nineteenth-Century Britain.</hi> Chicago, Ill.: University of Chicago Press, 2008.</bibl>
+
+<bibl><hi rend="bold">Visible Prices: A Collection of Literary and Historical Economic Information</hi>. <ref type="url" target="http://staff.washington.edu/paigecm/vp">http://staff.washington.edu/paigecm/vp</ref>.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

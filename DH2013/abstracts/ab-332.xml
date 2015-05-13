@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-332">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Research to clarify the interrelationships between family members through the analysis of family photographs</title>
+<author>
+<name><surname>Togiya</surname>, <forename>Norio</forename></name>
+<affiliation>Tokyo Institute of Technology</affiliation>
+<email>t_kawa@valdes.titech.ac.jp</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+<notesStmt><note type="abstract">In this research, we will create authoritative information related to historical personal names, put it to use toward Digital Cultural Heritage in which old photographs are stored, and use it to analyze the interrelationships of the family members who are the subjects of these photographs. Specifically, we will attach personal name data provided by authoritative personal name information to the iconographic parts of people featured in old photographs. Then, for these photos, we will interpret that “the higher level of frequency with which certain members appear together in group photographs, the stronger the interrelationship between the members”, and will analyze the network relationship of the ties between each member. We will then compare the data by decade and generation, thereby clarifying the transitions in personal networks between family members.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">SP07</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>iconography</term>
+<term>network relationship</term>
+<term>authority file</term>
+<term>API</term>
+<term>photograph</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>art history</term>
+<term>historical studies</term>
+<term>asian studies</term>
+<term>authorship attribution/authority</term>  
+<term>history of Humanities Computing/Digital Humanities</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+<term>data mining/text mining</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+    
+<div>
+<head>1. Background</head>  
+    
+    <p>In Japan, historical studies have focused on communities, such as families, have usually taken the form of using written documents. However, written documents such as diaries, records, and letters contain many descriptions of events that occurred in the past and of the actions of the head of the family etc., and they are as such not appropriate for bringing light to the relationships between the family members in the carrying out of this research. And these written documents are often dependent on the subjective view of the person who wrote them.</p>
+    <p>On the other hand, it is possible to perform an objective and holistic analysis of human relations by performing a numerical analysis of the people displayed together in photographic materials that were taken during the family’s official events. Especially the aristocratic family had the habit of taking pictures at their regular rituals, meaning they left behind many official photographs. The reason that digital tools were used is that network analysis of all of the people depicted on over 100 photographs requires not only functions that assign the information of person to images but also computing facilities that perform network analysis on relationships between tagged persons, and in order to implement this, digital technology is indispensable. Thus,we constructed a digital cultural heritage system  to analyze relationship in a  family using photograph.</p>
+</div>
+
+<div>
+<head>2. An Overview of Iconographic Analysis using Authoritative Information.</head> 
+    
+    <p>In this research, as shown in Fig. 1, an authoritative information database of personal names was constructed, and that information was analyzed through API using an iconographic material subject analysis system.</p>
+    
+<figure><graphic url="ab-332.001"/><head>Fig 1:</head><p>System Overview</p></figure>
+    
+    <p>For authoritative personal name information, focusing on the pre-war imperial family, the nobility and photographers, roughly 3000 names were entered into a Shareword DB system. This authoritative personal name information was mainly made from standardized reference materials used in museums, libraries and archives, and created from element sets which allowed the sharing of information in this research, and API was added to the database to enable external searching (Togiya 2010; Kawashima and Togiya 2010). In addition, as an external system a picture annotator was created using this API.</p>
+</div>
+
+<div>
+<head>3. Photograph Annotator</head> 
+    
+    <p>The photograph annotator was based on analysis of annotations of individuals present in group photos of the nobility. For the prototype, a stand-alone application using Java was implemented. Functions were largely divided into three: search, annotation, and analysis.
+    <list type="ordered">
+        <item>(1) Search: The search function can search through annotated photos. For each picture, metadata of title, photographer, creation date, publication, related organization, location, time and copyright is assigned, and search can be performed using this as a basis. Furthermore, for photographs that are annotated with personal names, specified characters can be searched.</item>  
+        
+        <item>(2) Annotation: Fig. 2 shows the annotation screen. Annotations are enclosed in a circle around a person's face, and are assigned the name of that individual. Using an API the name is linked to the individual in the authoritative information source, and is identified. At the present, individuals that are not included in the authoritative reference source are saved only on the local database, and are not specified. This is to prevent data from easily being added to authoritative information sources which are necessary to control, from here on the introduction of an API for adding new data is being considered.</item>    
+        
+        <item>(3) Analysis: As a further developmental feature, an analysis function was included. The analysis function creates graphs of the personal network of those assigned annotations. (Fig. 3) This graph affixes a node (point) to each individual and, by drawing edges (lines) between each person, allows the visualization of the personal relationships between individuals appearing in the same photograph.</item></list>
+        
+In addition, a merit of entering blood relation data in the authoritative data DB through an API is that kinship ties between two specified individuals can be searched. By combining these two functions, it is possible to determine the kinship ties between two individuals who always appear together in photographs.</p>     
+
+
+<figure><graphic url="ab-332.002"/><head>Fig 2:</head><p>Annotation Display</p></figure>
+    
+</div>
+<div>
+<head>4. Family network analysis results</head>    
+    
+    <p>For the analysis of family members, photographs of the former ducal Iwakura family from the 1860s to the 1920s were analyzed. Divided into generations by the heads of the family, generations can be divided into the 1st generation (from the 1860s to the 1900s), the 2nd and 3rd generations (from the 1890s to the 1900s), and the 4th and 5th generations (from the 1910s to 1945). For analysis of the family network, personal name information provided from authoritative information was attached to the appropriate family heads in digitalized photographs. Then, we interpreted that “the higher level of frequency with which certain members appear together in group photographs, the stronger the interrelationship between the members”, and analyzed the network relationship of the ties between each member. The basic information of analysis was summarized in Table1. The total number of photographs was 326 and the total number of family number in photographs was 29.And co-appearance pattern was 28 and the average number of occurrence of same pattern was 1.7.</p>
+    <p>As for analysis results, on a whole, since there is severance between the 1st generation and the 2nd and 3rd generations and on, and because daughters in particular bring the families into which they have married to be photographed with the main families, new groups become added to the family network in the photographs. Also, since people in the families of women who had married into the Iwakura family were invited and there were opportunities to be photographed with the family married into, it is possible to verify the formation of new family networks from the Iwakura family photographs.</p>
+    <p>Additionally, for the 1st generation, the family head was photographed alone, men and women were photographed separately, and the head, child siblings, women, and retainers were all photographed separately, network severance was observed. On the other hand, for the 2nd and 3rd generations, there were more photos which portrayed the family head together with the family members, and with the 4th and 5th generations in particular, there was a great volume of family photographs, with more photographs with relatives. Also, for the 1st generation the head husband and wife acted as a sort of “hub” which connected the family members and each of the 2nd and 3rd generations, but for the 3rd and 4th generations, the family head acted as a “hub” connecting their own generation with the previous generation.</p>
+    <p>On top of the results of this photograph analysis, we also examined written records and spoke to descendants of the family, and we learned that in actuality, in the 1st generation the family head played a feudalistic role, and family members were not able to simply interact with them. Also, the 2nd and 3rd generations had the same sort of situation, and it was the head husband and wife of the 1st generation who brought the family together and around whom the family was centered. Additionally, on the other hand, for the 4th and 5th generations, there were many cases in which the entire family was photographed together. Since the 4th generation retired from activity early on, the 4th generation head husband and wife act as the hub. Also, since the head of the 5th generation became head at the age of six, he is shown as the center of the family from early childhood, and is shown together with other family members in many photographs. Since he was the head of the family for over 60 years, it can be clearly seen from the analysis of the photographs that he acted as the “hub” which brings the family together.</p>
+    
+<figure><graphic url="ab-332.003"/><head>Fig 3:</head><p>Diagram of Individual Appearance Network (Chinese character Version)</p></figure>
+    
+<figure><graphic url="ab-332.t01"/><head>Table 1:</head><p>The summary of the analyses</p></figure>
+</div>
+
+<div>
+<head>5. Usage and Future Issues</head>
+
+    <p>By studying photographs and other iconography using these tools, perhaps the actions of the members, families or the individuals in the targeted picture can, to a degree, be comprehended, or possibly, further investigation is necessary to objectively identify the contents of the remaining materials as well as the matter of to which of these materials these contents belong. Furthermore, in order to improve the accuracy of the examination contents, comparison and verification with other materials is necessary. For this reason, it is necessary to promote the coordination with other databases through the sharing of API.</p>
+    <p>Additionally, as explained in the previous part, by analyzing photographs added to group photos, effective analytical data regarding the manner in which human relationship networks were formed among groups such as families can be provided. By using this data, it is possible to analyze the ways in which the interrelationships between members change throughout the years and generations. Also, by using these tools, photographs which have been used as verification tools for written records can be further utilized as historical materials which can be used for the acquisition of further subjective data.</p>
+</div>
+</div>
+</body>
+    
+<back>
+<div type="References">
+<listBibl>  
+            
+    <bibl><hi rend="bold">Togiya, N.</hi> (2010). Building an authority file for personal names that leverages societal networks: centered on personal names of the 'Shashin-shi' of the pre-War period. <hi rend="italic">The Bulletin of Japan Art Documentation Society</hi> 17: 31-52</bibl>
+    
+    <bibl><hi rend="bold">Kawashima, T., and N. Togiya</hi> (2010). Cooperative Database Editor for expanding Japan MARC/A  <hi rend="italic">Japan Society of Information and Knowledge</hi>. 20(1): 24-29</bibl>
+    
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+    
+    
+    
+    
+    
+            

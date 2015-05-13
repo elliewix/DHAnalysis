@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-409">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Framework for Testing Text Analysis and Mining Tools</title>
+<author>
+<name><surname>Simpson</surname>, <forename>John Edward</forename></name>
+<affiliation>University of Alberta</affiliation>
+<email>john.simpson@ualberta.ca</email>
+</author>
+<author>
+<name><surname>Rockwell</surname>, <forename>Geoffrey</forename></name>
+<affiliation>University of Alberta</affiliation>
+<email>grockwel@ualberta.ca</email>
+</author>
+<author>
+<name><surname>Sinclair</surname>, <forename>Stéfan</forename></name>
+<affiliation>McGill University</affiliation>
+<email>stefan.sinclair@mcgill.ca</email>
+</author>
+<author>
+<name><surname>Uszkalo</surname>, <forename>Kirsten C.</forename></name>
+<affiliation>University of Alberta</affiliation>
+<email>circe@ufies.org</email>
+</author>
+<author>
+<name><surname>Brown</surname>, <forename>Susan</forename></name>
+<affiliation>University of Alberta; University of Guelph</affiliation>
+<email>susanirenebrown@gmail.com</email>
+</author>
+<author>
+<name><surname>Dyrbye</surname>, <forename>Amy</forename></name>
+<affiliation>University of Alberta</affiliation>
+<email>amy.dyrbye@gmail.com</email>
+</author>
+<author>
+<name><surname>Chartier</surname>, <forename>Ryan</forename></name>
+<affiliation>University of Alberta</affiliation>
+<email>recharti@ualberta.ca</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+            
+    <notesStmt><note type="abstract">Text mining tool summaries regularly apply only general review criteria and do not offer any testing-based observations to help users assess actual usability. Humanists looking to try text mining tools for research need information that is relevant to their needs. This poster presents the testing framework developed for the TAPoR 2.0 portal. The poster covers:
+        <list type="unordered">
+            <item>The need for tool reviews</item>
+            <item>The information gathered about tools</item>
+            <item>The testing and reviewing process</item>
+            <item>Conclusions about the state of text tools</item></list>
+The poster will be accompanied by a demonstration of TAPoR 2.0 so that reviews can be seen in context.</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>text mining</term>
+<term>tool reviews</term>
+<term>TAPoR 2.0</term>
+</keywords>
+    
+<keywords scheme="original" n="topic">
+<term>software design and development</term>
+<term>text analysis</term>
+<term>user studies/user needs</term>
+<term>content analysis</term>  
+<term>data mining/text mining</term>
+                    
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+<div>
+    
+    <p>The most extensive compendium of text mining tools to date included 71 tools and summarized
+each based on ten criteria (van Gemert 2007). While extensive, this listing of tools and their
+properties is general in its review criteria and does not offer any testing-based observations to
+help users assess actual usability. Humanists looking to try text analysis, visualization and
+mining tools for research need better information that is relevant to their needs and reviews of
+tools that help them make choices. This poster presents the testing framework developed for the
+TAPoR 2.0 portal reviews. The poster will cover:
+        
+        <list type="ordered">
+            <item>1. The need for tool reviews</item>
+            <item>2. The information gathered about tools</item>
+            <item>3. The testing and reviewing process</item>
+            <item>4. Conclusions about the state of text tools</item></list>
+            
+The poster will be accompanied by a demonstration of TAPoR 2.0 so that users can see the
+reviews in context.</p>
+</div>
+
+<div>
+<head><hi rend="italic">1. The Need for Tool Reviews</hi></head>    
+    
+    <p>A humanities researcher new to computing methods looking for reviews of text tools on the
+internet by peers is going to be disappointed. There is nothing like the <hi rend="italic">New York Review of
+Books,</hi> though in the early days of humanities computing you could find short announcements
+about tools in journals like <hi rend="italic">Computing in the Humanities.</hi> We, however, believe that certain text
+tools are intellectual contributions to the field (Ramsay 2012) that should be reviewed not just to
+help people choose what tools to use, but also as a way of engaging these tools in a dialogue
+around computer-assisted interpretation. While there are individual blog entries about tools
+scattered across the web, each is from the perspective of a single user with an entirely different
+dataset, making comparison difficult. If we want to make computing methods accessible and
+encourage colleagues to use tools we need a more systematic approach. This is especially true of
+text mining tools that can’t simply be tried with a text at hand.</p>
+</div>
+    
+<div>
+<head><hi rend="italic">2. Information Gathered About Tools</hi></head>
+    
+    <p>TAPoR 2.0 (<ref type="url" target="http://www.tapor.ca">www.tapor.ca</ref>) is a 
+portal for text analysis, visualization mining tool discovery and
+review. TAPoR 2.0 is a complete redevelopment
+of the original TAPoR portal (Rockwell 2009)
+that has refocused the portal on discovery and
+review instead of trying to provide access only
+to web services. As part of the redevelopment of
+TAPoR 2.0 we used a persona/scenario usability
+design approach (Cooper 2004) to identify
+attributes that users might want to discover
+tools. Further we built TAPoR 2.0 so that editors
+can add new attributes without the database
+having to be reprogrammed. Some of the
+attributes we currently record for tools include
+the author(s), ease of use, type of analysis, type
+of license and so on. We also have links to
+related tools and tools people also used. Our
+poster will be accompanied by a demonstration
+of TAPoR 2.0 so that visitors can explore what
+we have and how we represent it.</p>
+    
+<figure><graphic url="ab-409.001"/><head>Figure 1:</head><p>TAPoR 2.0 Home Screen</p></figure>
+</div>    
+
+<div>
+<head><hi rend="italic">3. The Testing and Reviewing Process</hi></head> 
+    
+    <p>Recording basic information about tools alas, is not enough, especially with sophisticated text
+mining tools like Mallet (<ref type="url" target="http://mallet.cs.umass.edu/">mallet.cs.umass.edu/</ref>) that take time to learn and that can be used in
+different ways. With text mining tools users need longer narrative reviews. For this reason we
+developed processes for testing and reviewing tools. For simpler text analysis and visualization
+tools this involved developing a set of different texts with which to test tools so we could
+compare their use. For text mining we had to go further and are working with the CWRC project
+(Canadian Writing Research Collaboratory, <ref type="url" target="http://www.cwrc.ca">www.cwrc.ca</ref>) developing a number of literary
+corpora with experts we can draw on to help assess the value of results. As of writing we have
+three corpora drawn from the Orlando project (<ref type="url" target="http://www.ualberta.ca/ORLANDO">www.ualberta.ca/ORLANDO</ref>) and one of
+Victorian children’s literature. We expect to have two more by the time or presentation. The
+poster will discuss the criteria used to develop these open test corpora.</p>
+    <p>The reviews take the form of comments that have been pinned to the top of the list of comments
+available. This allows others to leave comments, though we haven’t seen much activity by
+people not connected to the project (with the exception of spammers who seem to feel there is a
+connection between text analysis tools and various stimulants.) We have developed guidelines
+for reviews so as to make them accessible and comparable. The poster will outline our
+guidelines.</p>
+</div>
+
+<div>
+<head><hi rend="italic">4. Conclusions from Testing and Reviewing</hi></head>    
+    
+    <p>Having tested and reviewed a variety of tools and text mining systems we see some common
+barriers to access. Most of these tools have been developed for use by the developers and are
+poorly documented for people not involved in the development. Further, many tools, including
+those we are involved in, are in continuous development so what documentation there is, is out
+of date. We will therefore end this poster with lessons learned while testing and reviewing text
+mining tools, with particular attention to removing usability barriers for novice users.</p>
+</div>
+</div>
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+<bibl><hi rend="bold">Cooper, A.</hi> (2004). <hi rend="italic">The Inmates Are Running the Asylum.</hi> Indianapolis, Indiana: SAMS.</bibl>
+    
+<bibl><hi rend="bold">Ramsay, S. and G. Rockwell</hi> (2012). Developing Things: Notes toward an Epistemology of Building in
+the Digital Humanities. In Gold, M. K. (ed.), <hi rend="italic">Debates in the Digital Humanities</hi>.  Minneapolis,
+Minnesota: University of Minnesota Press, 75-84.</bibl>
+    
+<bibl><hi rend="bold">Rockwell, G.</hi> (2006). TAPoR: Building a Portal for Text Analysis. <hi rend="italic">Mind Technologies:
+Humanities Computing and the Canadian Academic Community.</hi> edited by Raymond
+Siemens and David Moorman. Calgary: University of Calgary Press, 285-299.</bibl>
+    
+<bibl><hi rend="bold">van Gemert, J.</hi> (2000). <hi rend="italic">Text Mining Tools on the Internet.</hi> ISIS Technical Report Series.
+<ref type="url" target="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4312886.">http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4312886.</ref></bibl>
+    
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+    

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-397">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>The Sounds of the Psalter: Computational Analysis of Phonological Parallelism in Biblical Hebrew Poetry</title>
+<author>
+<name><surname>Benner</surname>, <forename>Drayton Callen</forename></name>
+<affiliation>University of Chicago, United States of America</affiliation>
+<email>drayton@uchicago.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Parallelism lies at the artistic heart of Biblical Hebrew poetry. In this paper, I explore computational techniques for studying phonological parallelism in a single, sizable corpus of Biblical Hebrew poetry, namely the Book of Psalms. A technique for evaluating whether a given poem or section thereof contains a statistically anomalous clustering of a consonantal phoneme or group of consonantal phonemes is presented. This technique can be used to evaluate the legitimacy of a proposal concerning the artistic use of sound identified by a critical eye/ear, and it also forms the basis of software designed to analyze the entire corpus and present passages for the researcher to consider as possible examples of the artistic use of sound.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP28</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>sound</term>
+<term>poetry</term>
+<term>Bible</term>
+<term>phonological parallelism</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>corpora and corpus activities</term>
+<term>literary studies</term>
+<term>stylistics and stylometry</term>
+<term>near eastern studies</term>
+<term>philology</term>
+<term>theology</term>
+<term>genre-specific studies: prose, poetry, drama, cultural studies, data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+    <change>
+        <date when="2013-05-23"></date>
+        <name>Elizabeth Lorang</name>
+        <desc>added decimal entities for Hebrew characters and phonetic symbols</desc>
+    </change>    
+<change>
+<date when="2013-05-15"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+
+<div>
+<head>1. Introduction</head>
+<p>Parallelism lies at the artistic heart of Biblical Hebrew poetry. Traditionally, the focus of research on parallelism in Biblical Hebrew poetry was largely limited to semantic parallelism, but in recent decades scholars have responded to Roman Jakobson's challenge to explore the grammatical and phonological aspects of parallelism as well (1966). These recent treatments of phonological parallelism have represented an important addition to the study of Biblical Hebrew poetry (Watson 1984, 1994; Pardee 1988; Alonso-Schökel 1963, 1988; McCreesh 1991). However, the number of phonemes in Biblical Hebrew is naturally limited, so repetition of phonemes and phonemes with similar features is inevitable. In the rare instances in which scholars have offered objective criteria by which to discriminate between intentional and unintentional phonological parallelism in ancient Semitic poetry, the criteria have been arbitrary, divorced from any nuance required to make them statistically meaningful (e.g. Margalit 1979). Criteria proposed by scholars for other languages have been better but still not designed to responsibly find clusters of any phonemes over an arbitrarily large swath of poetry (Clement 2012; Plamondon 2001, 2005, 2006; Barquist 1987, 1991; Hidley 1986; Leavitt 1976; Jackson 1942; Skinner 1941; Chisholm 1976, 1981; Magnuson 1962; Hervás 2007).</p>
+
+<p>There are three main ways in which ancient Israelite poets used phonological parallelism. First, they used a cluster of a single phoneme or a group of phonemes with similar features in a small section of a poem for artistic effect, making lines memorable and binding together poetic units tightly. Second, they clustered the sounds from a key word in the poem, reinforcing the theme. Third, they used phonological parallelism in creative ways across large sections of a poem to reinforce the structure of the poem and/or its function in Israelite society. In this paper, I explore computational techniques for studying the first two of these categories in a single, sizable corpus of Biblical Hebrew poetry, namely the Book of Psalms.</p>
+
+    <p>This paper limits its investigation to the consonants on account of the difficulties in reconstructing the precise vowels of the biblical period, particularly in the Book of Psalms, an anthological corpus with compositions from many different centuries. For the consonants, I assume that the consonantal orthography represents the phonology well, with three exceptions: the representation of /ʕ/ and /ɣ/  by ע (ʿ),  the representation of /ħ/ and /x/ by ח (ḥ), and the occasional quiescence of א (ʔ). I also assume that the Massoretes correctly distinguished between two phonemes in marking ש as שׁ (ʃ) and שׂ (ɬ).</p>
+</div>
+
+<div>
+<head>2. Source of Data</head>
+<p>The J. Alan Groves Center for Advanced Biblical Research maintains an accurate digital representation of the text of the Hebrew Bible, following the Leningrad Codex, and has also tagged each word with lexical and morphological information. Version 4.14 is used herein after having stripped the vowels, cantillation marks, and matres lectionis—vowels represented in the orthography using consonant symbols—from the text.</p>
+</div>
+
+<div>
+<head>3. Visualization</head>
+<p>Two types of visualizations have been employed. Both rely on a mapping from the features of each phoneme onto a three dimensional RGB color space so that similar sounds are mapped to similar colors. In the first visualization, each consonant of the text of the Hebrew Bible is colored. In the second visualization, each consonantal phoneme is represented by a short vertical line, with one row of these vertical lines per chapter. The user can view the vertical lines for all consonantal phonemes or any subset of them, with the rest forming a black background. </p>
+
+<figure>
+<graphic url="ab-397.001" />
+    <head>Figure 1.</head> <p>Visualization for Psalm 37, showing just the <hi rend="Hebrew">&#64295;</hi> (<hi rend="Hebrew">&#641;</hi>) phoneme. The white block indicates the end of the psalm. Note the cluster of lines near the right side (verses 34-36), in which eighteen consecutive words contain a <hi rend="Hebrew">&#64295;</hi> (<hi rend="Hebrew">&#641;</hi>).</p></figure>
+</div>
+
+<div>
+<head>4. Statistical and Computational Techniques</head>
+<p>With a limited consonantal phonemic inventory A and the hypothesis that a particular poem or section thereof contains a cluster of a set of phonemes P, the simplest way of testing that hypothesis is to calculate the probability that a poetic section that size would contain at least the observed number of occurrences of phonemes in P if the phonemes were chosen randomly in accordance with their respective frequencies in the corpus as a whole. Thus, let n be the number of consonantal phonemes in the poetic section, let x be the observed number of phonemes in P in the poetic section, and let p be the probability of any given consonantal phoneme in the entire corpus being an element of P. Then, based on the cumulative distribution function of the binomial distribution:</p>
+
+<figure>
+<graphic url="ab-397.m01"/>
+<figDesc>Pr(X≥x)=∑_(i=x)^n▒〖(n¦i) p^i 〖(1-p)〗^(n-i) 〗</figDesc></figure>
+
+<p>Where computationally necessary, the normal approximation of the binomial distribution or the Poisson approximation of the binomial distribution can be used to estimate this probability.</p>
+
+<p>Greater nuance can be added to this statistical test by weighting certain words in the text more heavily than others, taking into account all of the following:</p>
+
+<list type="ordered">
+    <item>a) The relative frequency of lexemes. A list of nouns with the definite article  ה (h) does not represent a cluster of the ה (h) phoneme. By contrast, a rare lexeme may have been chosen over a more common one precisely on account of its sound.</item>
+    <item>b.	The repetition of lexemes. The repetition of a particular lexeme does not signal that the poet was specifically seeking to employ phonological parallelism over against another type of parallelism. A clause such as <hi rend="Hebrew">פַַּ֥חַד וָפַַ֖חַת וָפָָ֑ח עָ לַ֖יךָ</hi>(pħd wpħt wpħ ʕlk; “terror, pit, and snare are upon you”; Isaiah 24:17), is rhetorically effective on account of its use of different lexemes with similar phonemes.</item>
+       <item> c.	Parts of speech. Phonological parallelism using content words is more effective than that which uses function words.</item></list>
+        <p>These factors are used to weight each word so that each consonantal phoneme in that word counts not as a single Bernouilli trial but rather as a trial with weight in the range (0.0, 1.0]. Since this no longer results in a discrete binomial distribution, the distribution can be approximated via the continuous Gamma distribution, the cumulative distribution function of which can be used to find the probability of a given poetic section having at least the observed number of phonemes in P.</p>
+        <p>When a scholar proposes the artistic use of sound in a text, one can evaluate this claim using this technique. In addition, this technique can be used to identify poems or sections thereof that deserve the researcher’s consideration. I have written software that, given a set of consonantal phonemes and constraints on the size of text, computes this metric for every stretch of text in the Hebrew Bible and lists all of them that score above a given value, with care taken so that only the highest scoring passage is shown among qualifying passages that overlap. In other words, this software finds the passages within a given size range that are most likely to contain an artistic clustering of the desired sounds.</p>
+</div>
+    
+
+<div>
+<head>5. Results</head>
+<p>The Hebrew Bible, and even the Book of Psalms, is large enough that given a set of phonemes, our software is bound to find many false positives alongside any legitimately artistic uses of sound. Indeed, estimates concerning the number of expected false positives can be discerned by two methods. First, one can compare the number of prose texts found with a given minimum score to the number of poetic texts found. In addition, one can rearrange at random the words of the Hebrew Bible and of the psalms in particular and then re-run the algorithm to see how many passages score above a given level. Doing these tests indicates that we should expect the majority—but not all—of the high-scoring passages to be false positives. Thus, a critical eye and ear are required to determine when phonological parallelism is not merely statistically plausible but also rhetorically plausible, to the point that it is likely that the poet used sound intentionally.</p>
+    
+    
+    <p>Looking through the output of the software tool has produced some compelling examples, of which three are presented briefly in conclusion. In Psalm 37:34-36, the ר (ʁ) phoneme appears precisely one time in each of eighteen consecutive words. Psalm 37 is an acrostic poem, and these eighteen words span the ק (kʾ) and ר (ʁ) sections. This phonological parallelism helps to reinforce the acrostic structure of the poem and also serves to bind the ק (kʾ) and ר (ʁ) sections together. Psalm 46 is generally classified by modern interpreters as a song of Zion, one of a series of psalms with Jerusalem/Zion as its central theme. The psalmist only actually mentions the city in verses 5-6 and does not even name it. Yet in verses 3-4, there is a cluster of the sounds of the word <hi rend="Hebrew">יְרוּשָׁלַם</hi> (jʁʃlm; “Jerusalem”), climaxing with the two words <hi rend="Hebrew">יִרְעֲשׁוּ־הָרִים</hi> (jʁʕʃ hʁm; “mountains quake”), which together sound very much like <hi rend="Hebrew">יְרוּשָׁלִַם</hi> (jʁʃlm; “Jerusalem”). Similarly, Psalm 122 is all about Jerusalem and its temple, and it makes heavy use of the phonemes in <hi rend="Hebrew">יְרוּשָׁלִַם</hi> (yʁʃlm; “Jerusalem”) throughout the psalm, with an especially high density in verse 6.</p>              
+</div>
+</div>   
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Alonso Schökel, L.</hi> (1963). <hi rend="italic">Estudios de Poética Hebrea</hi>. Barcelona: J. Flors.</bibl>
+
+<bibl><hi rend="bold">Alonso Schökel, L.</hi> (1988). <hi rend="italic">A Manual of Hebrew Poetics</hi>. Translated by Adrian Graffy. Subsidia Biblica 11. Rome: Biblical Institute Press.</bibl>
+
+<bibl><hi rend="bold">Barquist, C. R.</hi> (1987) Phonological Patterning in <hi rend="italic">Beowulf</hi>. <hi rend="italic">Literary and Linguistic Computing</hi> 2: 19-23.</bibl>
+
+    <bibl><hi rend="bold">Barquist, C. R., and D. L. Shie</hi> (1991). Computer Analysis of Alliteration in Beowulf Using Distinctive Feature Theory. <hi rend="italic">Literary and Linguistic Computing</hi> <hi>6</hi>. 274-280.</bibl>
+
+<bibl><hi rend="bold">Berlin, A.</hi> (1985). <hi rend="italic">The Dynamics of Biblical Parallelism</hi>. Bloomington, Ind.: Indiana University Press.</bibl>
+
+<bibl><hi rend="bold">Chisholm, D.</hi> (1976). Phonological Patterning in German Verse. <hi rend="italic">Computers and the Humanities.</hi> <hi>10</hi>. 5-20.</bibl>
+
+<bibl><hi rend="bold">Chisholm, D.</hi> (1981). Phonology and Style: A Computer-Assisted Approach to German Verse. <hi rend="italic">Computers and the Humanities.</hi> <hi>15</hi>. 199-210.</bibl>
+
+<bibl><hi rend="bold">Clement, T.</hi> (2012). "Methodologies in the Digital Humanities for Analyzing Aural Patterns in Texts." Proceedings of the 2012 iConference. New York: ACM, 2012. 287–293.</bibl>
+
+<bibl><hi rend="bold">Hervás, R., J. Robinson, and P. Gervás</hi>. (2007). Evolutionary Assistance in Alliteration and Allelic Drivel. <hi rend="italic">Lecture Notes on Computer Science.</hi> <hi>4448</hi>. 537-546.</bibl>
+
+<bibl><hi rend="bold">Hidley, G. R.</hi> (1986). Some Thoughts Concerning the Application of Software Tools in Support of Old English Poetic Studies. <hi rend="italic">Literary and Linguistic Computing</hi>. <hi>1</hi>. 156-162.</bibl>
+
+<bibl><hi rend="bold">Jackson, E.</hi> (1942). The Quantitative Measurement of Assonance and Alliteration in Swinburne. <hi rend="italic">American Journal of Psychology</hi>. <hi>55</hi>. 115-123.</bibl>
+
+<bibl><hi rend="bold">Jakobson, R.</hi> (1966). Grammatical Parallelism and Its Russian Facet. <hi rend="italic">Language</hi> <hi>42</hi>. 399-429.</bibl>
+
+<bibl><hi rend="bold">Leavitt, J. A.</hi> (1976). On the Measurement of Alliteration in Poetry" <hi rend="italic">Computers and the Humanities</hi>. <hi>10</hi>. 333-342.</bibl>
+
+<bibl><hi rend="bold">Magnuson, K.</hi> (1962). Consonant Repetition in the Lyric of Georg Trakl. <hi rend="italic">Germanic Review</hi>. <hi>37</hi>. 263-281.</bibl>
+
+<bibl><hi rend="bold">Margalit, B.</hi> (1979). Introduction to Ugaritic Prosody. <hi rend="italic">Ugarit Forschungen</hi>.<hi>11</hi>. 289-313.</bibl>
+
+<bibl><hi rend="bold">McCreesh, T. P.</hi> (1991). <hi rend="italic">Biblical Sound and Sense: Poetic Sound Patterns in Proverbs 10-29.</hi> Sheffield, England: Sheffield Academic Press.</bibl>
+
+<bibl><hi rend="bold">Pardee, D.</hi> (1988). <hi rend="italic">Ugaritic and Hebrew Poetic Parallelism: A Trial Cut ‘nt I and Proverbs 2</hi>. Vetus Testamentum Supplements 39. Leiden: E.J. Brill.</bibl>
+
+<bibl><hi rend="bold">Plamondon, M. R.</hi> (2001). <hi rend="italic">The Musical Aesthetics of the Poetry of Tennyson and Browning</hi>. Ph.D. dissertation. University of Toronto.</bibl>
+
+<bibl><hi rend="bold">Plamondon, M. R.</hi> (2005). Computer-Assisted Phonetic Analysis of English Poetry: A Preliminary Case Study of Browning and Tennyson. <hi rend="italic">TEXT Technology</hi>. <hi>14</hi>. 153-175.</bibl>
+
+<bibl><hi rend="bold">Plamondon, M. R.</hi> (2006). Virtual Verse Analysis: Analysing Patterns in Poetry. <hi rend="italic">Literary and Linguistic Computing</hi>. <hi>21</hi>. Supplemental Issue: 127-141.</bibl>
+
+<bibl><hi rend="bold">Skinner, B. F.</hi> (1941). A Quantitative Estimate of Certain Types of Sound-Patterning in Poetry. <hi rend="italic">American Journal of Psychology</hi>. <hi>54</hi>. 64-79.</bibl>
+
+    <bibl><hi rend="bold">Watson, W. G. E.</hi> (1984). Classical Hebrew Poetry: A Guide to its Techniques. <hi rend="italic">Journal for the Study of the Old Testament</hi>. Supplement Series 26. Sheffield: JSOT Press.</bibl>
+
+    <bibl><hi rend="bold">Watson, W. G. E.</hi> (1994). Traditional Techniques in Classical Hebrew Verse. <hi rend="italic">Journal for the Study of the Old Testament</hi>. Supplement Series 170. Sheffield: Sheffield Academic Press.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

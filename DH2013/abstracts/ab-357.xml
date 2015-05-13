@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-357">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Networking the Belfast Group through the Automated Semantic Enhancement of Existing Digital Content</title>
+<author>
+<name><surname>Koeser</surname>, <forename>Rebecca Sutton</forename></name>
+<affiliation>Emory University, United States of America</affiliation>
+<email>rebecca.s.koeser@emory.edu</email>
+</author>
+<author>
+<name><surname>Croxall</surname>, <forename>Brian</forename></name>
+<affiliation>Emory University, United States of America</affiliation>
+<email>brian.croxall@emory.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+ <address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">Libraries, archives, and museums have vast paper-based networks, but the data are locked away in forms that don’t easily lend themselves to analysis. What if we could open up that content? In this poster, we will report on an attempt to provide tools to expose the information embedded in the descriptions of their collections (EAD and TEI documents) as well as a test case for analyzing that data: an examination of the correspondence networks of the Irish poets collectively known as “the Belfast Group.”</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>semantic enhancement</term>
+<term>social networks</term>
+<term>literary communities</term>
+                 
+</keywords>
+                
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>encoding &#8212; theory and practice</term>
+<term>literary studies</term>  
+<term>metadata</term>
+<term>xml</term>
+<term>GLAM: galleries, libraries, archives, museums,</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+                 
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name><desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+
+    <p>There is increasing work on and interest in social networks in the digital humanities community
+(Meeks 2011). Analysis is frequently done on digital content&#8212;including images (Akdag Salah et
+al. 2012); email (Hangal et al. 2012); and citation networks (Visconti 2012) &#8212; because the data
+lend themselves to aggregation, conversion, and analysis. Yet despite this flurry of activity, the
+possibility exists for an exponential jump in network analysis. After all, the holdings and catalogs
+of galleries, libraries, archives, and museums (GLAMs) include traces of vast paper-based
+networks, but the data are locked away in forms that don’t easily lend themselves to analysis.
+What if we could open up that content? In this poster, we will report on an attempt to provide
+tools for archivists to expose the information embedded in the descriptions of their collections
+as well as a test case for analyzing that data: an examination of the networks of the Irish poets
+collectively known as “the Belfast Group.”</p>
+    <p>Our goal is to develop software tools and design a workflow to enhance TEI and EAD &#8212;
+documents that are already commonly created and maintained by archivists and text centers &#8212;
+without radically increasing the time and effort involved. The software tools (<ref type="url" target="http://github.com/emory-libraries-disc/name-dropper">http://github.com/emory-libraries-disc/name-dropper</ref>) consist of a plugin for the Oxygen XML editor and command
+line scripts that will, first, make use of DBPedia Spotlight to identify and annotate recognized
+names and other resources within the text and, second, connect to linked-data systems (starting
+with the Virtual International Authority File [VIAF]) to provide authoritative, scholarly identifiers.<ref type="note" target="n01" n="1">1</ref>
+The scripts will allow technical users to inspect and tune the results or to automatically tag
+high-certainty resources, and the plugin will provide a user-friendly interface to review and
+accept suggested names while editing a document. The enhanced documents should provide
+significant benefits to GLAMs, allowing them to connect disparate types of content (e.g.,
+digitized texts or photographs from an archival collection) and augment with data from other
+linked data systems. Furthermore, the enhanced documents will make it possible to expose
+these data in more machine-readable and research accessible formats. Our tools and workflow
+could be applied to resources held by different archives (for a different approach, see Blanke
+et al. 2012). What’s more, enhancing these documents helps GLAMs provide a means for
+researchers to do non-consumptive, social network research on the metadata of collections that
+might otherwise be closed or problematic in other ways (e.g., restricted correspondence from
+living authors).</p>
+    <p>Although our tools are not yet complete, we have already begun preliminary visualization and
+analysis of network relationships using data that mirrors what we will generate automatically by
+Summer 2013. The difficulties of defining “the Belfast Group” make for a compelling test case for our attempt to understand networks via data that are newly machine readable. The Group is a contentious network since the label has been variously applied to a weekly writing workshop that ran from 1963-1972, the most famous poets who attended that workshop &#8212; including Seamus Heaney, Michael Longley, and Paul Muldoon &#8212; or more loosely applied to all of the
+writers who “put Belfast on the literary map” (Clark 6). The significance of the writing workshop is debated by critics and often rejected by the poets themselves, sometimes vehemently. In contrast to a more formalized group, some scholars identify “an informal community” of poets evidenced by their letters, promotion of each other, and poems dedicated to each other(Drummond 32), connections which are richly documented by archival materials held at Emory
+University.</p>
+    <p>Using preliminary data manually generated from a subset of the correspondence EAD, our data
+suggests a wider set of connections in the Group than traditional scholarly approaches. The
+latter selectively emphasize the relationships of the most prominent authors and the role of the
+writing workshop (see fig. 1). Since our data is based on a much larger set of artifacts, as well
+as their complete metadata, we find that the locus of poetic activity in Belfast is not so oriented
+around the workshop (see fig. 2). Once we collect the full dataset via our completed tools and
+workflow, we will compare it with models generated by traditional scholarly methods, to identify
+significant gaps and discrepancies in either model.</p>
+    <p>Providing not only this new analysis of the Belfast Group’s network and a report on the
+development of our tools, our poster presentation at DH 2013 will also include a hands-on
+demonstration of the software tools and interactive visualizations of network data.</p>
+    
+<figure><graphic url="ab-357.001"/><head>Figure 1.</head><p>Graph of relationships inferred from Heather
+Clark’s <hi rend="italic">Ulster Renaissance</hi>. Nodes are sized by degree and colored by hub score. The writing workshop is the strongest hub; the trio of large nodes represent Michael Longley, Derek Mahon, and Seamus Heaney.</p></figure>
+    
+    
+<figure><graphic url="ab-357.001"/><head>Figure 2.</head><p>Relationship graph based on preliminary
+correspondence data, sized and colored as in figure 1. Based on this data, the writing workshop does not
+function as a hub at all, and Paul Muldoon becomes the largest node.</p></figure>
+</div>
+    
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+<bibl><hi rend="bold">Akdag Salah, A. A., et al.</hi> (2012). Exploring Originality in User-Generated Content with Network
+and Image Analysis Tools. <hi rend="italic">Digital Humanities 2012.</hi> University of Hamburg. 19 July 2012.</bibl>
+
+<bibl><hi rend="bold">Blanke, T., et al.</hi> (2012). Information Extraction on Noisy Texts for Historical Research. <hi rend="italic">Digital
+Humanities 2012.</hi> University of Hamburg. 19 July 2012.</bibl>
+    
+<bibl><hi rend="bold">Clark, H.</hi> (2006). <hi rend="italic">The Ulster Renaissance: Poetry in Belfast, 1962-1972.</hi> Oxford: Oxford
+University Press.</bibl>
+    
+<bibl><hi rend="bold">Drummond, G.</hi> (2005). The Difficulty of We: The Epistolary Poems of Michael Longley and Derek
+Mahon. <hi rend="italic">The Yearbook of English Studies,</hi> <hi rend="italic">Irish Writing since 1950</hi> 35: 31-42</bibl>
+    
+<bibl><hi rend="bold">Hangal, S.</hi> (2012). Processing Email Archives in Special Collections. <hi rend="italic">Digital Humanities
+2012.</hi> University of Hamburg. 20 July 2012.</bibl>
+    
+<bibl><hi rend="bold">Litta Modignani Picozzi, E., J.Norrish, and J. M. Monteiro Vieira</hi> (2012). Complex
+entity management through EATS: the case of the Gascon Rolls Project. <hi rend="italic">Digital Humanities
+2012. University of Hamburg.</hi> 18 July 2012.</bibl>
+    
+<bibl><hi rend="bold">Moretti, Franco et al.</hi> (2011). Networks, Literature, Culture. <hi rend="italic">Digital Humanities 2011. Stanford
+University.</hi> 21 June 2011.</bibl>
+    
+<bibl><hi rend="bold">Meeks, E.</hi> (2011). More Networks in the Humanities or Did books have DNA? <hi rend="italic">Digital Humanities
+Specialist.</hi> 6 December 2011. Web. 1 November 2012. <ref type="url" target="https://dhs.stanford.edu/visualization/more-networks/">https://dhs.stanford.edu/visualization/more-networks/</ref>.</bibl>
+    
+<bibl><hi rend="bold">Mendes, P. N., et al.</hi> (2011). DBpedia Spotlight: Shedding Light on the Web of Documents. 
+<hi rend="italic">Proceedings of the 7th International Conference on Semantic Systems (I-Semantics).</hi> Graz,
+Austria. 7–9 September 2011. <ref type="url" target="http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/research/
+publications/Mendes-Jakob-GarciaSilva-Bizer-DBpediaSpotlight-ISEM2011.pdf">http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/research/ publications/Mendes-Jakob-GarciaSilva-Bizer-DBpediaSpotlight-ISEM2011.pdf</ref>.</bibl>
+    
+<bibl><hi rend="bold">Pitti, D., et al.</hi> (2011). The Social Networks and ARchival Context Project. <hi rend="italic">Digital Humanities 2011</hi>
+Stanford University. 22 June 2011.</bibl>
+    
+<bibl><hi rend="bold">Pitti, D., et al.</hi> SNAC: The Social Networks and Archival Context Project. <ref type="url" target="http://socialarchive.iath.virginia.edu/.">http://socialarchive.iath.virginia.edu/.</ref> (accessed 29 October
+2012.)</bibl>
+    
+<bibl><hi rend="bold">Visconti, A.</hi> View DHQ: Citation Network Visualization for Digital Humanities Quarterly. <ref type="url" target="http://digitalliterature.net/viewDHQ/.">http://digitalliterature.net/viewDHQ/.</ref> (accessed 1 November 2012.)</bibl>
+    
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">It is in the use of existing systems (DBpedia) and vocabularies (VIAF) that distinguishes this project
+from the Entity Authority Tool Set (EATS), which involves setting up and maintaining one’s own authority
+server. See Litta Modignani Picozzi, Norrish, and Monteiro Vieira (2012).</note>
+
+</div>
+
+</back>
+</text>
+</TEI>
+    

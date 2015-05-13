@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-320">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Approaching Algorithmic Media Analysis in the Humanities: An Experimental Testbed</title>
+<author>
+<name><surname>McDonald</surname>, <forename>Jarom Lyle</forename></name>
+<affiliation>Brigham Young University, United States of America</affiliation>
+<email>jarom_mcdonald@byu.edu</email>
+</author>
+<author>
+<name><surname>Hunter</surname>, <forename>Ian</forename></name>
+<affiliation>Brigham Young University, United States of America</affiliation>
+<email>beanland2@gmail.com</email>
+</author>
+</titleStmt>
+    
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">Our preliminary trials are designed to explore what sorts of tools and visualizations might be truly useful for something as complex as a television episode or feature film. What sorts of patterns might arise, for example, if we look at a visualization of a script in juxtaposition with a spectrogram of the audio track? How can we look at the spatial and temporal difference between pixel color from one frame to the next as it might relate to a motion analysis? We are excited about some early work in this field done by others, and hope our experiments will contribute to the discourse and develop a more robust model of quantitative, algorithmic analysis of digital video objects.</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">SP08</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Television</term>
+<term>Visualization</term>
+<term>Algorithm</term>
+<term>Multimedia</term>
+</keywords>
+    
+<keywords scheme="original" n="topic">
+<term>audio</term>
+<term>video</term>
+<term>multimedia</term>
+<term>film and cinema studies</term>
+<term>knowledge representation</term>
+<term>media studies</term>
+<term>analysis and visualisation</term>
+                   
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+    
+    <p>With all of the growth and advancement in text analysis and visualization over the past several years<ref type="note" target="n01" n="1">1</ref> , more attention is being paid both to analyzing Humanities data as well as to
+exploring the relationship the interpretive mind of the Humanist has with the quantitative
+evidence gathered by machines. Recently, Steve Ramsay has called for more attentive
+development of an “algorithmic criticism” for literary analysis, where a reader uses
+computers to reveal patterns not easily evident or retrievable without the computational
+power a machine can offer (34). The key for Ramsay, however, is that the computer itself
+struggles with <hi rend="italic">interpretation</hi>, and it behooves the literary critic to read the patterns as one
+might read a text to find meaning rather than rely on the data as a sort of factual proof of any
+Humanistic argument. And while, as Ramsay has pointed out, this sort of computational
+reading is not without conceptual or methodological obstacles (not to mention the technical
+ones that new tools, projects, and ideas constantly encounter), there is enormous value in
+“allow[ing] computer-assisted criticism to be situated within the broader context of literary
+study” (13). In fields ranging from literary studies (consider Franco Moretti’s concept of
+distant reading) to computer science (such as Ben Shneiderman’s work on information
+visualization) to predictive cultural analysis (exemplified in today’s popular culture by Nate
+Silver and his arguments for more work in computer modeling of complex systems), the act
+of harnessing the power of algorithms to help read “text” demonstrates how vital it is for the
+digital humanities to avoid the pitfalls that come from crunching words without an ability to
+also understand them.</p>
+
+<p>It’s our contention that something is often missing from the conversation,
+however&#8212;algorithmic media analysis. If Digital Humanists want to more fully make sense of
+the relationship between meaning and computation, investigating quantitative reading of
+media is a far too under developed endeavour. The immediate initial reaction is often one of
+skepticism&#8212;after all, even when focusing solely on textual data, computer-assisted analysis is
+making strides but is still in its infancy in terms of being able to offer patterns to read that
+move beyond linguistic models or sentiment analysis. Yet outside of the Digital Humanities
+an ever-growing number of projects and computational tools from big names in “big data”
+are exploring the application of traditional text analysis approaches within a wider variety of
+media, ultimately allowing researchers to discover how multimedia might aid in the evolution of tools and paradigms for making more of quantitative analysis,<ref type="note" target="n02" n="2">2</ref> and we see an algorithmic
+approach from the Humanistic perspective a significant complement to what might be
+happening in the commercial enterprise R&amp;D labs.</p>
+
+<p>Of course, we’re not in any way claiming that no work on machine-based analysis of
+multimedia data has ever taken place in the Humanities; quite the opposite, actually. There
+has always been a small but steady attention paid to how digital humanists might utilize new
+models for computationally approaching complex textual narratives, semantic relationships,
+image corpora, audio, and other such media <ref type="note" target="n03" n="3">3</ref>; we might look to the work ongoing at the
+University of California, San Diego’s Software Studies Initiative (such as their “FilmHistory.viz”
+project generated with the CineMetrics software tools); Lev Manovich’s recent writings on
+visualization of visual media; the ShotLogger project, and Jason Mittell’s media studies
+theories of what he calls complex television. But nothing has ever taken off in the way that
+text analysis has recently, so a question arises; how might the digital humanist more fully
+embrace multimedia modes of expression as a valid, if not even more informative, subject of
+algorithmic criticism? What would, for example, a text analysis model for video look like, and
+might a quantitative approach to something like television or film yield a better
+understanding of some core Humanistic concepts such as story, character, or emotion? What
+sorts of quantitative analysis models might we apply to a medium such as television as a
+gateway for a deeper understanding of humanistic inquiry? And how useful might those
+models be, given some of the fundamental differences between text or language and newer
+communicative media of the past century?</p>
+
+<p>In this short presentation, I will lay out this conceptual conversation and demonstrate some
+of this historical work that exists as examples of attempts to develop analytical tools for
+quantitative media reading. We are excited about how we might design our experiments to
+expand the realm that quantitative analysis of video might explore. I will then offer some of
+the initial trials we are undertaking to explore more robust approaches to an algorithmic
+criticism of multimedia within the digital humanities. Our preliminary trials are designed to
+explore what sorts of tools and visualizations might be truly useful for something as complex
+as a television episode or feature film. For example, whereas a digitized text might have only
+words to offer, a digital video object will have a text (the transcript), an audio stream (which
+may overlap with the text but which also includes points of analysis such as intensity, tone,
+pitch, speed, background music, ambient noise, etc.), and a linear sequence of images (which
+may be analyzed separately or in relation to other frames). Our various proof of concept
+models place all of these modes of information in conversation with each other, and we will
+begin to theorize the types of things that humanists might glean from further development of
+our initial experiments. For example, we look at what sorts of patterns might arise, from a
+visualization of a script placed in juxtaposition with a spectrogram of the audio track; how
+might the spatial and temporal difference between pixel color from one frame to the next as
+it might relate to a motion analysis.</p>
+
+<p>As I report on our successes and failures with various quantitative models, seeing them truly
+as preliminary experiments that we hope will lead to tools, we will close with a case study
+that we hope to use as a demonstration of the real humanistic value of an algorithmic
+approach to multimedia. Given the underlying principle that algorithmic criticism is only
+useful inasmuch as a reader can discover patterns and apply semantics to those patterns, we
+might theorize that an effective way to evaluate a quantitative analytical tool would be to
+compare the patterns it reveals to patterns discovered manually by critics external to our
+experiments. We have taken a collection of pilot episodes of 30 American television series
+from the past 20 years, and and have given them to several different content experts at our
+university &#8212; media studies scholars, literary scholars specializing in narrative principles,
+contemporary American Studies scholars, etc. We have asked them to generate simple
+narrative maps of the episodes (i.e. periods of exposition, rising action, location of the
+climax, scenes depicting various emotions, etc.), as well as to generate some discussion as
+to what sorts of narrative features the various episodes have in common. Our purpose is to
+apply quantitative analysis approaches to the digital videos as well, with the ultimate goal
+being a theory as to what sorts of data-driven calculations, based on observation of technical
+details of digital video, might correlate best with the manual patterns that our scholars
+discover with traditional techniques. Can we use changes in audio intensity to help us better
+understand moments of conflict in a multimedia narrative? Can we find relationships between
+motion analysis and changing plot action?</p>
+
+<p>Computers are still quite far from being able to perform tasks such as “understanding”
+nuance, tone, humor, irony, and other components of full semantic comprehension of
+literature. And we’re not in any way claiming that our analytical approaches are a silver bullet
+in machine learning of humanities text. But we’re arguing that they are the next step; that the
+digital humanities can advance the utility of algorithmic analysis by driving full-force in
+making multimedia the object of our study.</p>
+
+</div>
+    
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+
+<bibl><hi rend="bold"><hi rend="italic">Cinemetrics Tools.</hi></hi> <ref type="url" target="http://cinemetrics.lv/">http://cinemetrics.lv/</ref></bibl>
+
+<bibl><hi rend="bold">Heras, D. C.</hi> (2012). The Malleable Computer: Software and the Study of the Moving
+Image. <hi rend="italic">Frames Cinema Journal</hi>. 
+<ref type="url" target="http://framescinemajournal.com/article/the-malleable-computer/">http://framescinemajournal.com/article/the-malleable-computer/</ref></bibl>
+
+<bibl><hi rend="bold">Manovitch, L.</hi> Visualization Methods for Media Studies.
+<ref type="url" target="http://softwarestudies.com/cultural_analytics/Manovich.Visualization_Methods_Media_Studies.pdf">http://softwarestudies.com/cultural_analytics/Manovich.Visualization_Methods_Media_Studies.pdf</ref></bibl>
+
+<bibl><hi rend="bold">Mani, I.</hi> Computational Narratology. <hi rend="italic">The Living Handbook of Narratology</hi>.
+Hamburg University Press.
+<ref type="url" target="http://hup.sub.uni-hamburg.de/lhn/index.php/Computational_Narratology">http://hup.sub.uni-hamburg.de/lhn/index.php/Computational_Narratology</ref></bibl>
+
+<bibl><hi rend="bold">Mittell, J.</hi> (2006). Narrative Complexity in Contemporary American Television. <hi rend="italic">The Velvet Light
+Trap</hi> <hi rend="bold">58</hi>. 29-40.</bibl>
+
+<bibl><hi rend="bold">Moretti, F.</hi> (2000). Conjectures on World Literature. <hi rend="italic">New Left Review</hi> <hi rend="bold">1</hi>. <ref type="url" target="http://newleftreview.org/II/1/franco-moretti-conjectures-on-world-literature">http://newleftreview.org/II/1/franco-moretti-conjectures-on-world-literature</ref></bibl>
+
+<bibl><hi rend="bold">Porter, M. J., D. L. Larson, A. Harthcock, and K. B. Nellis</hi>. Examining television narrative
+structure. <hi rend="italic">Journal of Popular Film and Television.</hi> <hi rend="bold">30</hi>. 23-30.</bibl>
+
+<bibl><hi rend="bold">Ramsay, S.</hi>  (2011) <hi rend="italic">Reading Machines: Toward an Algorithmic Criticism</hi>. Champaign, IL: University of
+Illinois Press.</bibl>
+
+<bibl><hi rend="bold">Shotlogger 2.0</hi>. <ref type="url" target="http://shotlogger.org/aboutusV2.php">http://shotlogger.org/aboutusV2.php</ref></bibl>
+
+<bibl><hi rend="bold">Silver, N.</hi> (2012) <hi rend="italic">The Signal and the Noise: Why So Many Predictions Fail, but Some Don’t</hi>. New
+York: Penguin Press.</bibl>
+
+
+
+    
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">I most certainly recognize that text analysis is far from a new field, and has been an activity at the
+intersection of technology and the Humanities since the days of Father Busa. What I’m referring to,
+however, is the central primacy that text analysis and similar methodologies have recently acquired in the
+Digital Humanities discourse.</note>
+
+<note xml:id="n02" n="2">For example, Microsoft (“Multimedia Search and Mining”), IBM (“Semantic Learning and Analysis of
+Multimedia”), and Google (“Google X Laboratory”) are all heavily invested in automated processing of
+multimedia for the purpose of pattern recognition.</note>
+
+<note xml:id="n03" n="3">In addition to more comprehensive work, a cursory scan reveals that last year’s Digital Humanities
+conference offered presentations that dealt with computational analysis (or related strategies such as data
+mining, visualization, etc.) of acoustic ecology, literary genres, spatial readings, user generated content,
+aural and prosodic patterns in text, and computational narratology.</note>
+</div>
+
+</back>
+</text>
+</TEI>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-371">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Lost in the Data, Aerial Views of an Archaeological Collection</title>
+
+<author>
+<name><surname>Esteva</surname>, <forename>Maria</forename></name>
+<affiliation>Texas Advanced Computing Center, University of Texas at Austin, United States of America</affiliation>
+<email>maria@tacc.utexas.edu</email>
+</author>
+<author>
+<name><surname>Trelogan</surname>, <forename>Jessica A.</forename></name>
+<affiliation>Institute of Classical Archaeology, University of Texas at Austin, United States</affiliation>
+<email>j.trelogan@austin.utexas.edu</email>
+</author>
+<author>
+<name><surname>Xu</surname>, <forename>Weijia</forename></name>
+<affiliation>Texas Advanced Computing Center, University of Texas at Austin, United States of America</affiliation>
+<email>xwj@tacc.utexas.edu</email>
+</author>
+<author>
+<name><surname>Solis</surname>, <forename>Andrew J.</forename></name>
+<affiliation>Texas Advanced Computing Center, University of Texas at Austin, United States of America</affiliation>
+<email>asolis@tacc.utexas.edu</email>
+</author>
+<author>
+<name><surname>Lauland</surname>, <forename>Nicholas E.</forename></name>
+<affiliation>Liberal Arts Instructional Technologies Service, University of Texas at Austin, United States</affiliation>
+<email>lauland@austin.utexas.edu</email>
+</author>
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+<notesStmt><note type="abstract">This paper presents advanced work on the adaptation of a visual analytics tool to triage an active and disorganized archaeological data collection, aggregated over decades. The tool provides aerial views of the collection’s structure and features rendered from metadata extracted, classified, and aggregated at different directory levels and presented as a treemap. Features such as data classes, directory and file names, dates and checksums can be analyzed to study the collection’s formation processes and establish priorities for archiving. While analysis of formation processes, viewed from a variety of scales and perspectives, is especially intuitive for archaeologists, these tools have wide application for any data collection both active and archived. Preliminary results and ongoing work as well as the wider implications for organizing humanities data are discussed.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">SP01</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>data management</term>
+<term>curation</term>
+<term>disorganized data</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archaeology</term>
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>metadata</term>
+<term>visualisation</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+<div>
+    
+<head>Introduction</head>    
+    
+    <p>A guiding principle in digital curation is that continuous management of data renders digital collections sustainable for continuous access and reuse (Higgings 2008). This assumes embedding data organization, documentation, and preservation practices in the research process, ideally from inception, as well as the persistence of resources to support past, current, and future technologies. In reality, these goals remain unattainable for many projects, especially those with long histories. Large gaps must still be bridged to build solutions to accommodate the realities of contemporary humanities data (Borgman, 2009).</p>
+    <p>Humanities projects can be long and multi-faceted, leading to convoluted collections that reflect technological and methodological changes over time. Researchers tend to adopt new technologies to solve specific problems and intend to deal with preservation later. Meanwhile, technologies evolve, putting data at risk. Research can be segmented due to funding constraints, changing teams, and new domain directions, making it difficult to enforce standards and achieve consistency. This is especially true in archaeological research, where fieldwork is cyclical and produces huge and complex datasets (Kansa, el al. 2011). After decades of accumulating data, it is easy to become lost in one’s own collection, wondering how to make sense of it all (Trelogan et al. 2010).</p>
+    <p>While initiatives are developing (Open Context 2012; Richards 1997) to help projects prepare data for centralized repositories, there is still a dearth of tools for on-the-fly management of evolving datasets with a long history. Here we present a visual analytics tool that provides an “aerial views” of digital collections and tools to help navigate the curation process.</p>
+    <p>We present a case study that adds new functionality to a visual analytics application designed for archival analysis with support from the National Archives and Records Administration (Esteva, et al. 2011; Xu, et al. 2011). New developments provide intuitive guidance for users with large collections in need of intervention without interrupting the flow of active research. New functions include tools for locating and sorting primary data, identifying duplicated and corrupted files, and creating timelines of production. It provides a toolkit for investigating formation processes in order to inform future plans and establish priorities for a collections’ documentation, preservation, and archiving. While this concept may resonate well with archaeologists familiar with the importance of formation processes and multiple viewpoints for analysis, the tool has wide application for any kind of disparate data with a long, continuing evolution.</p>
+</div>
+
+<div>
+<head>Project Background</head>    
+    
+    <p>This study consists of an active collection of over 1,000,000 files from investigations by the Institute of Classical Archaeology (ICA) at the University of Texas at Austin, representing over forty years of research activities. It reflects the technological changes that have affected research since the mid-seventies, as well as the methodological and theoretical changes that have influenced archaeology and associated disciplines. The data are typical of a large archaeological project, from scans of photographs, drawings and field notes, to GIS datasets, 3D visualizations, and databases. Adding further complexity, ICA’s multidisciplinary approach has resulted in data amassed by generations of scholars and students, reaching across disciplinary, geographical, and political boundaries, each with its own set of methods, questions, and solutions.</p>
+    <p>As ICA’s focus has recently turned from fieldwork to publication, an increasing sense of crisis has arisen as researchers attempt to retrieve, assimilate, and share digital resources for study and dissemination. Past efforts to organize and document this collection have been piecemeal and have lacked consistent conventions for file naming, metadata, or organization. Data previously distributed throughout hard drives and detached storage devices have been consolidated in a networked server, but remain in serious disarray.</p>
+    <p>Help was sought from the Texas Advanced Computing Center (TACC), which provides high performance computing services, including data management support. Starting in 2009, the teams began a collaboration to assess and organize a sample dataset from one of ICA’s excavations (Esteva, et al. 2010). Work has since expanded to assess the entire collection, with goals to develop data management strategies that can be adopted without interrupting ongoing research, to document and archive the collection in TACC’s storage infrastructure, and to provide web access for collaboration and dissemination. Here we describe new functionality and promising results with the initial triage of the collection using the visual analytics application discussed above.</p>
+</div>
+    
+<div>
+<head>Methods</head>    
+    
+    <p>The application uses file system and file format metadata extracted from files and directories to create a visualization of the collection, akin to aerial photographs that provide encompassing views of a landscape from above. File paths and sizes represent the collection’s organizational structure as a treemap (Shneiderman 1992), and file format metadata is further classified using PRONOM’s file categories (PRONOM 2012) to narrow the information to a comprehensible amount. File classes are rendered as colored distributions within the collection’s structure.</p>
+    <p>In the background the extracted metadata is computationally analyzed and aggregated at different directory levels, and the results are written to a comma-separated table processed for display by the visualization. Users can interact with the visual representation of the collection by navigating directory levels, searching directory names, browsing, and selecting directories for observation. They can also select and group metadata using filtering functions. Tag clouds showing directory and file names, color and file class maps, and charts representing numbers of files per class allow users to verify and clarify the collection views.</p>
+</div>    
+    
+<div>
+<head>File Class Analysis</head>    
+    
+    <p>In this project, for purposes of understanding the contents of the collection in relation to research stages, file classes are further categorized as: 1) primary, 2) process, and 3) publication data. Raster images, for example, are more likely primary data (e.g. site photographs), whereas vector images are more likely illustrations for publication. These categories were mapped to contrasting color maps, allowing for quick visual identification of directories according to classes and categories of the files they contain (Figure 1). Figure 1 is a view of the entire collection represented as a treemap showing file classes.</p>
+ 
+<figure>
+<graphic url="ab-371.001"/>
+<head>Figure 1.</head> <p>5tb of archaeology data are represented as a treemap. The predominance of raster images across the collection, as well as primary, process, and publication data can be identified.</p></figure>
+
+   
+    <p>Directories can be further explored via search and browsing functions to refine the assessment. One useful discovery was a large collection of artifacts left over from obsolete operating systems and software. Using the directory labels search function we located a large collection of raw digital photographs that had been thought lost. Consequently several areas of the collection were identified as priority for archiving and others for disposal.</p>
+
+
+
+   
+</div>    
+ 
+ <div>
+<head>Checksums and Date Analyses</head>    
+    
+    <p>A checksum analysis function was developed to aid identifying corrupted and duplicated files. Identical checksums are rendered in the directories where they are located. Through this function we found that identical checksums can exist in large quantities (over ~5000 in this archive). Those are likely to belong to error messages, empty strings, cache artifacts and similar images made by databases for speeding retrieval, are generated automatically, and can span many directories. This led the team to find multiple copies of old web-based databases to mark for deletion. Instead, checksums for duplicate files likely created by copying files or directories, are generally distributed across only two or three directories. Several sets of duplicated files were located and marked for deletion, freeing up space and allowing a clearer picture of the collection.</p>
+    <p>In analyzing repeated checksums, associating them with file class information aids in deciding if they should be kept or deleted. In addition, learning the complete file path allows identifying if these are temporary files, svn-related, duplicates, backups, and their provenance. The location of these files and their distribution are indicative of the archive's formation process and can lead to clues about associated data (Esteva 2008).</p>
+ <p>We are working on incorporating dates into the analysis so that file classes and checksums can be viewed in a timeline. Last modified dates will be aggregated by year and shown in relation to file classes. Users will be able to select viewing features and amounts for a given year<ref type="note" target="n01">1</ref>, and many treemaps can be opened at a time to allow comparison of technologies in a timeline.</p>
+ <p>Much like in archaeological excavations, the knowledge brought by various experts regarding the collection’s history, work processes, workflows, and technological change, aids in understanding the collection’s context and planning for its preservation. With these tools, we are able to “dig” through the archive much more effectively and gain a clearer picture of its content and significance.</p>
+ </div>
+
+<div>
+<head>Conclusions</head>
+
+     <p>This application provides a framework to study collections with interactive tools for discovery, condition assessment, and a roadmap to make inferences about the processes by which they were formed. It has wide-ranging implications for collections that must be explored from multiple viewpoints &#8212; as with archaeological landscapes &#8212; in order to understand their condition and plan their future trajectories.</p>
+    <p>A work in progress, the tool requires further development from multiple ends. Presently, not all file formats can be identified and the file classes may be too broad for the study of specific datasets. Ideally, the tool should be implemented to update dynamically for purposes of continuous monitoring of active collections. We will illustrate the presentation with images, report findings, and will discuss functionalities and the challenges ahead.</p>
+</div>
+
+</div>
+
+</body>
+
+<back>
+
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Borgman, C. L.</hi> (2009). The Digital Future is Now: A Call to Action for the Humanities. <hi rend="italic">Digital Humanities Quarterly,</hi> 3(4) <ref type="url" target="http://digitalhumanities.org/dhq/vol/3/4/000077/000077.html%20/000077.html">http://digitalhumanities.org/dhq/vol/3/4/000077/000077.html%20/000077.html</ref>  (accessed 1 November 2012). </bibl>
+
+<bibl><hi rend="bold">Esteva, M.</hi> (2008). Formation Process and Preservation of a Natural Electronic Archive. In <hi rend="italic">Proceedings of the American Society for Information Science and Technology 2008 Conference</hi> held 24-29 October 2008 in Ohio. 45(1): 1-9. doi: 10.1002/meet.2008.1450450270</bibl>
+
+<bibl><hi rend="bold">Esteva, M.,  J. Trelogan,  A. Rabinowitz, D. Walling, and S. Pipkin</hi> (2010). <hi rend="italic">From the Site to Long-Term Preservation: A Reflexive System to Manage and Archive Digital Archaeological Data. Proceedings of the IS&amp;T’s Archiving 2010 Conference</hi> June 1-4, 2010, Den Haag, The Netherlands. <ref type="url" target="http://test.imaging.org/ScriptContent/store/epub.cfm?abstrid=43763">http://test.imaging.org/ScriptContent/store/epub.cfm?abstrid=43763</ref> (accessed 1 November 2012).</bibl>
+
+<bibl><hi rend="bold">Esteva, M, W. Xu, S. D. Jain, J. Lee, and W. K. Martin</hi> (2011). Assessing the Preservation Condition of Large and Heterogeneous Electronic Records Collections with Visualization. <hi rend="italic">International Journal of Digital Curation,</hi> <hi rend="bold">6:1</hi> UKLON, University of Bath. Digital Curation Center. <ref type="url" target="http://www.ijdc.net/index.php/ijdc/article/view/162">http://www.ijdc.net/index.php/ijdc/article/view/162</ref> (accessed 1 November 2012).</bibl>
+
+<bibl><hi rend="bold">Higgins, S.</hi> (2008).The DCC Curation Lifecycle Model. <hi rend="italic">International Journal of Digital Curation.</hi> <hi rend="bold">3:1</hi> 134-140. doi:10.2218/ijdc.v3i1.48.</bibl>
+
+<bibl><hi rend="bold">Kansa, E. C., S. W. Kansa, and E. Watrall</hi> (2011). Archaeology 2.0: New Approaches to Communication and Collaboration Location: Cotsen Institute of Archaeology. <ref type="url" target="http://escholarship.org/uc/item/1r6137tb">http://escholarship.org/uc/item/1r6137tb</ref> (accessed 1 November 2012).</bibl>
+
+<bibl><hi rend="bold">Open Context.</hi> Alexandria Archive Institute. <ref type="url" target="http://www.opencontext.org.">http://www.opencontext.org.</ref> (accessed 1 November 2012).</bibl>
+
+<bibl><hi rend="bold">Richards, J. D.</hi> (1997). Preservation and Re-use of Digital Data: the Role of the Archaeology Data Service. <hi rend="italic">Antiquity</hi> <hi rend="bold">71</hi> 1057–1059.</bibl>
+
+<bibl><hi rend="bold">Shneiderman, B.</hi> (1992). Tree Visualization with Tree-maps: 2-d Space-filling Approach. <hi rend="italic">ACM Trans. Graph.</hi> 1992: <hi rend="bold">11</hi>, 92-9. </bibl>
+
+<bibl><hi rend="bold">The National Archives.</hi> PRONOM,The Technical Registry. <ref type="url" target="http://www.nationalarchives.gov.uk/aboutapps/pronom/">http://www.nationalarchives.gov.uk/aboutapps/pronom/</ref> (accessed 1 November 2011).</bibl>
+
+<bibl><hi rend="bold">Trelogan, J., A. Rabinowitz, M. Esteva, and S. Pipkin</hi> (2010). What Do we Do with the Mess? Managing and Preserving Process History in Evolving Digital Archaeological Archives.  In Contreras, F., and F. J. Melero  (eds.), <hi rend="italic">Proceedings of the 38th Conference on Computer Applications and Quantitative Methods in Archaeology.</hi> held April 6-9 in Granada, Spain.</bibl>
+
+<bibl><hi rend="bold">Xu, W., M. Esteva, S. J. Dott, and V. Jain</hi> (2011). Analysis of Large Digital Collections with Interactive Visualization. VisWeek. Conference. In <hi rend="italic">Proceedings of the IEEE Conference on Visual Analytics Science and Technology.</hi> held 23-28 October in Providence, Rhode Island. 241-250, doi: 10.1109/VAST.2011.6102462.</bibl>
+
+
+</listBibl>
+</div>
+
+
+<div type="Notes"><note xml:id="n01" n="1">The assumption is that last modified dates are valid for analysis, which is the case in this study collection. </note></div>
+
+
+</back>
+</text>
+</TEI>
+
+

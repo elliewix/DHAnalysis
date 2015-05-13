@@ -1,0 +1,40 @@
+
+
+
+
+Our paper describes 
+Uncovering Reprinting Networks in Nineteenth-Century American Newspapers
+, a project to develop theoretical models to help scholars better understand what qualities—both textual and thematic—helped particular news stories, short fiction, and poetry “go viral” in nineteenth-century newspapers and magazines. Prior to copyright legislation and enforcement, literary texts as well as other non-fiction prose texts circulated promiscuously among newspapers as editors freely reprinted materials borrowed from other venues. What texts were reprinted and why? How did ideas—literary, political, scientific, economic—circulate in the public sphere and achieve critical force among audiences? By employing and developing computational linguistics tools to analyze the large textual databases of nineteenth-century newspapers newly available to scholars, this project will generate new knowledge of the nineteenth-century print public sphere. 
+
+
+
+Although digital databases of nineteenth-century U.S. newspapers are currently keyword searchable, such searches do not allow one to discover frequently reprinted texts of which one is not already aware. To find reprinted texts with currently available online tools, a scholar must first know that a text was reprinted, and then laboriously search for witnesses using a battery of search terms across a range of nineteenth-century periodicals archives. Scholars can easily find more witnesses of texts they already know were popular during the nineteenth-century, but the vast majority of viral texts, since lost to scholarship, remain undiscovered, buried amid millions of scanned pages. This limitation is especially dangerous because it tends to reinforce a scholar’s existing suppositions—on, say, the dominance of a text that is canonical today—while leaving undiscovered the more popular text that is no longer on our radar and that might reveal to us precisely what we have failed to understand about popular opinion, reading habits, and public debate in the period. In other words, the sheer time it takes to trawl through digital archives can reify ideas of canonicity rather than expand our ideas about which texts should be central to academic inquiry.
+
+
+
+Our paper will describe how we seek to redress the limitations of keyword searching to uncover previously-lost reprinted texts. We are developing models and algorithms to compare repetitions of words and n-grams (contiguous sequences of n words) between documents in a large corpus. We employ space-efficient n-gram indexing techniques to identify candidate newspaper issues and then exploit local models of alignment (in contrast to whole-sequence models used in much duplicate detection work) to identify the boundaries of reprinted passages, which are not known a priori. Probabilistic alignment techniques also provide greater robustness in the presence of optical character recognition errors. We then group pairs of matching passages into larger clusters of text reuse. This all-to-all comparison automatically uncovers duplicated passages: both shorter quotations and fully reprinted texts.
+
+
+
+We have already seen significant success applying these techniques to the Library of Congress’ Chronicling America archive (
+http://chroniclingamerica.loc.gov/
+). In our initial tests, the archive yielded tens of thousands of potential reprinted texts among its publications. Most of these discovered texts are unfamiliar to us, indicating that the archive does include many, many popular texts that have been for years outside the purview of period scholars. This early success points to enormous potential for the project for scholars both in the digital humanities and nineteenth-century American studies. This project also capitalizes on the Library of Congress’ investment in creating an open, accessible record of American print culture, using the data it compiled to develop new knowledge about an important moment in both print and national history. Once honed, these approaches also could be applied to other digitized sources—e.g., materials from the American Memory and Internet Archive magazine and book collections—to uncover patterns of textual reuse and reappropriation in other periods and places.
+
+
+
+Our paper will also describe new models we are developing to characterize reprinted texts using both internal and external evidence. We augment models of the linguistic features of reprinted texts with features of the political, social, religious, and geographic affinities of the venues where they appeared, and evaluate the effectiveness of both these components by manually annotating collections of reprinted texts. Using GIS, for instance, we have begun to map our discovered print histories onto historical spatial and social data in order to outline the communities through which particular texts traveled. Historical census data can illuminate who may have read any given publication based on where it was reprinted. By analyzing community data around reprinted texts, we are testing what social variables may have affected textual virality during the antebellum period.
+ 
+
+
+Our ultimate goal for 
+Uncovering Reprinting Networks
+ is to construct models to describe nineteenth-century virality: what textual, social, or other factors contributed to the success of a text in the antebellum newspaper, magazine, or book? By recovering a corpus of antebellum-period, viral texts—many of them previously lost to scholarly view—from within the vast Chronicling America collection, we will give scholars of the period a new window into the values and priorities of antebellum editors and readers. Importantly, this granular data about the nature of frequently circulated texts and the paths of their circulation will enable us to understand the shape and constraints of the public sphere, the development of which was key to nineteenth-century U.S. history, including the democratic extension of the franchise, antebellum sectionalism, the abolitionist movement, and the westward growth of the nation.
+
+
+
+                
+
+
+
+
+

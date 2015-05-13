@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-236">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title><hi rend="bold">Representing Materiality in a Digital Archive: <hi rend="italic">Death Comes for the Archbishop</hi> as a Case Study</hi></title>
+<author>
+<name><surname>Lavin</surname>, <forename>Matthew</forename></name>
+<affiliation>University of Nebraska-Lincoln, United States of America</affiliation>
+<email>matthew-lavin@unl.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">A central concern of digital humanities has been how satisfactorily a digital transcription or facsimile represents its object of study. Integral to various interventions is a distinction between the material form and linguistic content of source material and a desire to bring audiences closer to both. My proposed paper will discuss my continuing project for the UNL&#039;s Center for Digital Research in the Humanities to build a dynamic, visually-rich, and critically nuanced history of Willa Cather’s <hi rend="italic">Death Comes for the Archbishop</hi> (1927) as a series of material objects in multiple forms, including but not limited to manuscripts, notable editions, notebooks, translations, and interviews. I report on the challenges I have encountered in this process and explain some of the decisions I&#039;ve faced.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP15</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>TEI</term>
+<term>FRBR</term>
+<term>history of the book</term>
+<term>material culture</term>
+<term>digitalization</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>encoding - theory and practice</term>
+<term>literary studies</term>
+<term>metadata</term>
+<term>ontologies</term>
+<term>xml</term>
+<term>content analysis</term>
+<term>bibliographic methods / textual studies</term>
+<term>digitisation &#8212; theory and practice</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-09"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<p>A central concern of digital humanities has been how satisfactorily a digital transcription or facsimile represents its object of study. Dino Buzzetti, noting that “every form of text representation entails the implicit or explicit assumption of a model,” has stressed the importance of a clearly defined digital text model to define a threshold for digital representation and critical study.<ref type="note" target="n01">1</ref>  Sarah Werner, in a related turn, has asked what happens if “we move away from reading text to studying the physical characteristics of text, characteristics that can reveal important information about the content of the text and the cultural and historical creation of the artifact.”<ref type="note" target="n02">2</ref>  Werner is particularly concerned with large-scale digitization projects’ inability to represent works with physical features integral to their interpretation. Andrew Jewell and Amanda Gailey, in their introduction to the journal <hi rend="italic">Scholarly Editing</hi>, echo her concern with “quick and dirty automated methods” that “digitize vast quantities of texts” but invariably create “shortcomings in metadata, accuracy, representation of compositional and publication complexities, and annotation.”<ref type="note" target="n03">3</ref>  Integral to all of these interventions is a distinction between the material form and linguistic content of print and manuscript material, and a desire to create digital archives that bring audiences closer to both.<ref type="note" target="n04">4</ref></p> 
+
+<p>Two prominent initiatives, FRBR and TEI, exemplify efforts to address these kinds of concerns. The first has its origins in the International Federation of Library Associations and Institutions (IFLA), which authored a study in 1990 “to delineate in clearly defined terms the functions performed by the bibliographic record with respect to various media, various applications, and various user needs.”<ref type="note" target="n05">5</ref>  The result of this study was a report on Functional Requirements for Bibliographic Records (FRBR), released in 1997 and updated as recently as 2009. The Text Encoding Initiative (TEI) evolved from previous efforts to make texts machine readable through standardized markup practices. TEI states as its “chief deliverable” a set of guidelines “to represent all kinds of textual material for online research and teaching.”<ref type="note" target="n06">6</ref>  Particular communities within TEI such as the Manuscript Description Task Force, the Physical Bibliography Work Group, and the Work group on Genetic Editions have established specialized approaches for the markup of particular bibliographical and book historical data.<ref type="note" target="n07">7</ref>  TEI and FRBR share a vested interest in the responsibility of representation. Whereas TEI markup represents a mix of linguistic representation and bibliographic information, FRBR attempts to create hierarchies to differentiate record-level bibliographical attributes.<ref type="note" target="n08">8</ref></p> 
+
+<p>I am developing a small-scale mark-up and metadata approach that reflects the strengths of TEI and FRBR.<ref type="note" target="n09">9</ref>  The strength of such an approach would be its applicability to items with noteworthy physical and/or bibliographical features. I have created the structure for a relational database that integrates FRBR-inspired metadata with a collection of digital texts, which will eventually include digital facsimiles and transcriptions. My paper will discuss my continuing project for the University of Nebraska-Lincoln Center for Digital Research in the Humanities to provide users with a dynamic, visually-rich, and critically nuanced history of Willa Cather’s <hi rend="italic">Death Comes for the Archbishop</hi> (1927) as a set of different material objects in multiple forms, including but not limited to manuscripts, notable editions, notebooks, translations, and interviews. My project has the particular goal of advancing knowledge about the creation, production, distribution, and reception of <hi rend="italic">Death Comes for the Archbishop</hi>. It is also a test case in creating digital representations of print culture artifacts, textual variances, and bibliographical relationships among items. Central to my presentation will be a discussion of questions of form and content a project like this one raises: </p> 
+
+<list type="ordered">
+<item>1. What is the minimum baseline for representing the materiality of digital facsimiles and transcriptions? What is the optimum standard?</item>
+<item>2. How successfully have efforts such as TEI and FRBR offered digital text models for different kinds of materials?</item> 
+<item>3. Do we need a better understanding of potentially significant bibliographical lines of inquiry in order to make these decisions?</item>
+<item>4. Is materiality essentially a cataloging/records management problem, a mark-up problem, both, or neither?</item>
+<item>5. To what extent will advances in interoperability improve book historical and digital humanities scholarship?</item>
+<item>6. What is the optimum relationship between large-scale digitization efforts and small scale projects of scholarly interest?</item> 
+</list>
+
+<p>My presentation will engage with these questions and report on the challenges I have encountered in this process and explain some of the decisions associated with the project. I will compare and contrast my work with some of the approaches to book historical questions taken by significant digital projects, including but not limited to the Modernist Journal Project, Radical Scatters, The Walt Whitman Archive, and The Digital Scriptorium, and Folger Digital Texts. I will also compare my approach to other experiments in FRBRization. </p>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="Notes">
+
+<note xml:id="n01" n="1">  <hi rend="bold">Buzzetti, D.</hi>, Digital Representation and the Text Model <hi rend="italic">New Literary History</hi>. 33 (1). 61. Buzzetti differentiates between the “form of the information’s expression”&#8212;the data representation&#8212;and the “form of the information’s content”&#8212;the “data model” (pp. 65-66). Markup has aspects of both. His central point rests on the conclusion that “the correct use of markup and the adequacy of digital representation presuppose … recourse to a suitable text model” (p. 84). </note>
+
+<note xml:id="n02" n="2"> <hi rend="bold">Werner, S.</hi> (2012). <hi rend="italic">Where Material Book Culture Meets Digital Humanities.</hi> 'Geographies of Desire Conference'. held 27-28 April 2012 at University of Maryland, College Park. <ref type="url" target="http://sarahwerner.net/blog/index.php/2012/04/where-material-book-culture-meets-digital-humanities/">http://sarahwerner.net/blog/index.php/2012/04/where-material-book-culture-meets-digital-humanities/</ref></note>
+
+<note xml:id="n03" n="3"> <hi rend="bold"> Gailey, A. and Jewell, A.</hi>(2012). Editors' Introduction to the First Issue of <hi rend="italic">Scholarly Editing: The Annual of the Association for Documentary Editing</hi>. 33. <ref type="url" target="http://www.scholarlyediting.org/2012/essays/essay.v33intro.html">http://www.scholarlyediting.org/2012/essays/essay.v33intro.html</ref></note>
+
+<note xml:id="n04" n="4"> <hi rend="bold">McGann, J. J.</hi>(1991). <hi rend="italic">The Textual Condition</hi>. Princeton: Princeton University Press). 16. In Jerome J. McGann’s terms, interpreting a textual object requires delineation between its linguistic and bibliographical codes.</note>
+
+<note xml:id="n05" n="5">  <hi rend="bold">International Federation of Library Associations and Institutions.</hi> (1997). <hi rend="italic">Functional Requirements for Bibliographic Records, Final Report.</hi> As amended and corrected through February 2009, p. 2.</note>
+
+<note xml:id="n06" n="6">  TEI: Text Encoding Initiative Home Page, <ref type="url" target="http://www.tei-c.org/index.xml">http://www.tei-c.org/index.xml</ref></note>
+
+<note xml:id="n07" n="7">  Bibliographical data, manuscripts’ physical layout, and text topography fall under what McGann classifies as bibliographical codes.</note>
+
+<note xml:id="n08" n="8">  TEI markup describes linguistic text structure and physical object properties with hierarchizing them per se. The proportion of each category differs from case to case, as TEI offers different guidelines for different types of texts, as well as a range of established customizations and recommended practices for establishing new customizations. See <ref type="url" target="http://www.tei-c.org/Guidelines/Customization/">http://www.tei-c.org/Guidelines/Customization/</ref>.</note>
+
+<note xml:id="n09" n="9">  FRBR is a bibliographical ontology but does not have a prescribed implementation scheme. Recognizing its potential, several projects have attempted to “FRBRize” their catalogues with varying degrees of success. The Resources Description and Access (RDA) standard is influenced by FRBR groupings. Perseus has a “FRBR-inspired” catalogue. Indiana University has piloted "Variations as a Testbed for the FRBR Conceptual Model" as a digital project. For an initial analysis of compatibilities between TEI and FRBR, see Kevin S. Hawkins, FRBR Group 1 Entities and the TEI Guidelines TEI Annual Members Meeting, held 6–8 November 2008, London <ref type="url" target="http://www.ultraslavonic.info/preprints/20081102.pdf">http://www.ultraslavonic.info/preprints/20081102.pdf</ref></note>
+
+
+</div>
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-394">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Computational Rhetoric: Adapting Graph Theory Analytics to Big Data</title>
+<author>
+<name><surname>Hart-Davidson</surname>, <forename>William</forename></name>
+<affiliation>Michigan State University, United States of America</affiliation>
+<email>hartdav2@msu.edu</email>
+</author>
+<author>
+<name><surname>Rehberger</surname>, <forename>Dean</forename></name>
+<affiliation>Michigan State University, United States of America</affiliation>
+<email>rehberge@msu.edu </email>
+</author>
+<author>
+<name><surname>Grabill</surname>, <forename>Jeffrey</forename></name>
+<affiliation>Michigan State University, United States of America</affiliation>
+<email>grabill@msu.edu</email>
+</author>
+<author>
+<name><surname>Omizo</surname>, <forename>Ryan</forename></name>
+<affiliation>Michigan State University, United States of America</affiliation>
+<email>omizo@msu.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This panel presents three short papers by a research group working in a new area called “computational rhetoric.” As the name implies, computational methods are used to perform rhetorical analysis on large corpora of texts. In this case, our examples are drawn from online discussion forums related to science topics and hosted by informal learning institutions (science centers and museums). The purpose of the panel is to present a few highly experimental methods developed to conduct rhetorical analysis on big data sets for critique and feedback by members of the DH community who might find such methods useful.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">PS07</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Panel</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>rhetoric</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>corpora and corpus activities</term>
+<term>social media</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-20"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="panel">
+<body>
+<div>
+
+ 
+<div>
+<p>This panel presents three short papers by a research group working in a new area 
+called “computational rhetoric.” As the name implies, computational methods are used to perform rhetorical analysis on large corpora of texts. In this case, our examples are drawn from online discussion forums related to science topics and hosted by informal learning institutions (science centers and museums). The purpose of the panel is to present a few highly experimental methods developed to conduct rhetorical analysis on big data sets for critique and feedback by members of the DH community who might find such methods useful.  </p>
+</div>
+ 
+ 
+<div>
+<head>The Rhetoric of Facilitating Learning in Social Media Environments </head>
+ 
+<p>Speaker one will focus on specific outcomes from five years of studying how people interact via social software tools hosted by two science museums and designed to support science learning. Studies have shown that computer-based learning environments can make inquiry experiences more successful by offering participants cognitive and procedural guidance (diSessa, 1992; Kafai &amp; Resnick, 
+1996; Linn &amp; Hsi, 2000; Linn &amp; Slotta, 2000; White &amp; Fredericksen, 1998). Internet- based learning environments can also provide embedded reflective opportunities that capture participants’ abilities to critique evidence, make arguments, and reach conclusions. </p>
+ 
+<p>Our results suggest that social media environments can be effective informal learning spaces because of discourse characteristics that seem to support learning, such as sharing, making ideas public, and writing to learn, all facilitated in particular ways (e.g., invitations to explain and connect; connecting people and their ideas together). My focus in this paper, however, is on the specific rhetorical moves of facilitation that lead to productive outcomes and how to reliably identify them in large discourse sets. As a rhetoric scholar leading a project on science learning, it is this area of expertise—rhetorical discourse analysis—and our ability to develop analytics at scale that has been useful to the larger project and hopefully interesting and relevant to other digital humanists. </p>
+ 
+<p>The analytical work outlined in this paper begins with understanding that most social software environments are written. That is, people interact through what they write, and so analyzing those written interactions is fundamental to understanding online activity. There are exceptions, of course, but the point is to turn to analytic techniques and expertise appropriate for the modes of interaction (writing, image, video, and so on). In our case, we turned to rhetorical theory and to discourse analysis in order to supplement approaches from the learning sciences. Discourse analysis is commonly used in communication studies to characterize and 
+understand interactions (Fairclough, 1992; Dijk, 1997; Wood &amp; Kroger, 2000; Schiffrin, Tannen, &amp; Hamilton, 2001; Bazerman &amp; Prior, 2004; Gee, 2005). This paper sets the scene for the project and devote much of my time to laying out the 
+ 
+analytical approach and tools for the audience. My doing so will make the two other papers on this panel intelligible, but this approach to rhetorical discourse analysis also represents an innovation in rhetorical studies of online interactions (see Grabill and Pigg, 2012).</p>
+</div>
+
+<div>
+<head>Betweenness Centrality as Rhetorical Arrangement</head>
+
+<p>Speaker Two reports on experimental protocols used to transform the facilitation data discussed by Speaker 1 into computational formats with the aim of producing an analytic program that might replicate the insights of the human coders on large-scale datasets. These protocols incorporate text tokenization methods employed in computational linguistics and natural language processing to produce contiguous bigrams of words, which, aside from being the smallest graphable unit, we believe retain the lexical and temporal contours of the original discussion board threads.</p>
+
+<p>Speaker Two will then outline a graph-driven approach to these bigram units based on the measure of <hi rend="italic">betweenness centrality</hi>. Developed in the field of social network analysis, betweenness centrality holds that for a given sequences of connected nodes numbering more than 2, the node positioned between the most adjacent nodes will serve as the prime mediator of information desseminated through the network, thus rendering it the controller node (see Borgatti, 2005; Freeman, 1979; Freeman, Borgatti, &amp; White, 1991; Friedkin, 1991; Hanneman &amp; Riddle, 2011). Though this type of social network measure is usually applied to discrete entities or interrelated social actors, Speaker Two will demonstrate how we can use the
+betweenness centrality of interrelated words within a text to understand how a text is organized according to critical terms deployed at critical moments over time. In short, we are interested in how words with high betweenness scores influence words associated with them, signalling probative indices, which we call “matters of concern.”</p>
+
+<p>In marking these matters of concern on discussion board threads focused on the facilitation of science learning, we feel that we have arrived at two significant innovations that could interest the community of digital humanists. First, the ability to graph matters of concern can serve as a productive first step in the global, computational rhetorical analysis of big data. This move could lead to more granular analysis and specific discursive codings. Second, the emergence of machine-driven rhetorical analytics powered by the pattern distribution of bigrams challenges conventional notions of a how written communication creates meaning.</p>
+</div>
+
+<div>
+<head>Aristotle, Toulmin, Erdös-Rényi &amp; Markov: Modeling rhetorical moves and patterns of argument using graph theory concepts</head>
+
+<p>Speaker Three presents a brief review of the various mathematical models used in our attempts to render internet discussion threads as computational objects (graphs). The focus of this paper is on the correspondence between these mathematical models and concepts from rhetorical theory, beginning with the way
+ 
+both human coders and our computer model focus on basic units of analysis, and discussing how these units are understood to form larger discursive structures such as arguments. We will also show how we understand random graph and Markov chain models to provide us with a baseline for describing and perhaps predicting
+the way discussion threads develop over time.</p>
+
+<p>Our group is not the first to propose using text-extraction techniques from Natural Language Processing and mathematical models, some adapted from computational linguistics, to examine rhetorical patterns (see, Grasso 2002, Reed &amp; Grasso 2007, Grasso, et. al. 2010). Our methods take a turn from a relatively strict focus on argument  dialectic, strictly defined, to a more holistic view of rhetorical reasoning, Our aim is to understand what rhetorical strategies work in specific situations and what, if any, relationships can be detected between rhetorical patterns deployed and specific outcomes desired. In aim, our work is similar to Ishizakie, Kaufer &amp; colleagues’ efforts using their DocuScope analysis software (Ishizaki &amp; Kaufer, 2011). Where our work differs a bit from Ishizaki &amp; Kaufer is in the use of graph theory techniques to construct textual models for analysis.</p>
+
+<p>Our approach to computational rhetorics, metaphorically, involves attempts to assay complex rhetorical compounds found in nature, with rules of grammar and syntax providing specific affinities to bind markers, amplify &amp; stabilize signals against a noisy background. We seek to isolate the discursive equivalent of what biologists refer to as chemical 'pathways' that yield certain kinds of results in the real world. Of course, we don’t call them pathways. Rather, we are trying to understand if more familiar rhetorical terms like "topoi" might function like chemical pathways. If so, we can consider certain patterns as normal (expected) or abnormal (reflective of some pathology). This view also suggests that there may methods to inhibit a pathway at some point, thus changing the outcome but in a (relatively) predictable way. To know for sure, we must first perform some ‘basic science’ to understand how useful known models that could be applied – here we focus on Erdös-Rényi random graphs and Markov Chains – can be for describing rhetorical patterns in a large text corpus.</p></div>
+
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Bazerman, C., and P. Prior (eds).</hi>  (2004). <hi rend="italic">What writing does and how it does it: An introduction to analyzing texts and textual practices</hi>. Mahwah, NJ: Lawrence Erlbaum.</bibl>
+
+<bibl><hi rend="bold">diSessa, A.</hi> (1992).  Images of Learning. In De Corte, E., M. C. Linn, H. Mandel, and L. Verschaffel  (eds.), <hi rend="italic">Computer-based learning environments and problem solving</hi>. Berlin: Springer-Verlag.</bibl>
+
+<bibl><hi rend="bold">Dijk, T. A. V.</hi> (1997). Discourse as interaction in society. In  Dijk, T. A. V. (ed.),
+<hi rend="italic">Discourse as social interaction</hi>. London: SAGE. 1-37.</bibl>
+
+<bibl><hi rend="bold">Fairclough, N.</hi> (1992). Discourse and social change. Cambridge, UK: Polity Press. </bibl>
+
+<bibl><hi rend="bold">Gee, J. P.</hi> (2005). <hi rend="italic">An Introduction to Discourse Analysis: Theory and Method</hi>. London: Routledge.</bibl>
+ 
+<bibl><hi rend="bold">Grabill, J. T., and S. Pigg</hi> (2012). Messy Rhetoric: Identity performance as rhetorical agency in online public forums. <hi rend="italic">Rhetoric Society Quarterly</hi>. 42: 99-119</bibl>
+
+<bibl><hi rend="bold">Grasso, F.</hi> (2002). Toward Computational Rhetoric. <hi rend="italic">Informal Reasoning</hi> 22(3):
+195-229.</bibl>
+
+<bibl><hi rend="bold">Grasso, F., I. Rahwan, C. Reed, and G. R. Simari</hi> (2010).
+Introducing Argument &amp; Computation , Argument &amp; Computation, 1(1): 1-5.</bibl>
+
+<bibl> <hi rend="bold">Ishizaki, S., and D. Kaufer</hi> (2012). Computer-Aided Rhetorical Analysis. A<hi rend="italic">pplied Natural Language Processing and Content Analysis: Identification, Investigation, and Resolution</hi>, ed. McCarthy, P. &amp; Boonthum, C. IDI Global. 276-296.</bibl>
+
+<bibl><hi rend="bold">Kafai, Y., and M. Resnick (eds.)</hi> (1996). <hi rend="italic">Constructionism in practice: Designing, thinking, and learning in a digital world</hi>. Mahwah: Erlbaum.</bibl>
+
+<bibl><hi rend="bold">Linn, M. C., and S. Hsi</hi> (2000). <hi rend="italic">Computers, Teachers, Peers: Science Learning Partners</hi>. Mahwah: Erlbaum.</bibl>
+
+<bibl><hi rend="bold">Linn, M.C. and J.D. Slotta</hi> (2000, October) WISE science. <hi rend="italic">Educational Leadership</hi>, 58(2):
+29-32.</bibl>
+
+<bibl><hi rend="bold">Reed, C., and F. Grasso</hi>. (2007). Recent advances in computational models
+of natural argument’, <hi rend="italic">Int. J. Intell. Syst.</hi> 22: 1–15.</bibl>
+
+<bibl><hi rend="bold">Schiffrin, D., D. Tannen, and H. E. Hamilton (eds.)</hi> (2001). <hi rend="italic">Handbook of discourse analysis</hi>. Oxford: Blackwell</bibl>
+
+<bibl><hi rend="bold">White, B. Y., and J. R. Frederiksen</hi> (1998). Inquiry, modeling, and metacognition: Making science accessible to students.  <hi rend="italic">Cognition and Instruction</hi>. 16: 3-118</bibl>
+
+<bibl><hi rend="bold">Wood, L. A., and R. O. Kroger</hi> (2000). <hi rend="italic">Doing discourse analysis</hi>. Thousand Oaks, CA: Sage.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

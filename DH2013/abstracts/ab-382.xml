@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-382">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>SIMSSA: Towards full-music search over a large collection of musical scores</title>
+<author>
+<name><surname>Fujinaga</surname>, <forename>Ichiro</forename></name>
+<affiliation>Centre for Interdisciplinary Research in Music Media and Technology, McGill University, Canada</affiliation>
+<email>ich@music.mcgill.ca</email>
+</author>
+<author>
+<name><surname>Hankinson</surname>, <forename>Andrew</forename></name>
+<affiliation>Centre for Interdisciplinary Research in Music Media and Technology, McGill University, Canada</affiliation>
+<email>andrew.hankinson@mail.mcgill.ca</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">In this paper we present a work-in-progress report of the Single Interface for Music Score Searching and Analysis(SIMSSA) project, a new large-scale initiative to provide tools and best practices for digitizing, analyzing, and retrieving printed music documents.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">SP04</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>optical music recognition</term>
+<term>full-music search</term>
+           
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>information retrieval</term>  
+<term>music</term>
+<term>digitisation</term>
+<term>resource creation, and discovery</term>
+<term>content analysis</term>
+<term>crowdsourcing</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+
+    <p>Musical scores are the central resource for music research, and research involving the capture, transmission, and analysis of these resources is a unique and largely untapped area in the Digital Humanities. For hundreds of years before the invention of audio recording music scores were the only format capable of capturing and transmitting sounds from one musician to the next. Our project, the Single Interface for Music Score Searching and Analysis (SIMSSA) targets digitized (scanned) music scores, and seeks to provide tools for searching and retrieving these resources. We seek to replicate the successes of similar initiatives for textual materials, like the HathiTrust or Google Books, in bringing large collections of musical materials to anyone with an internet connection. We have made the first steps towards this goal by developing a number of prototype systems, and have been actively seeking partnerships with music researchers and libraries.</p>
+    <p>An unprecedented number of musical scores are being made available as libraries digitize their collections. Nevertheless, there are two major challenges to using them. One is that the digitization efforts are distributed: all across the world, many different libraries, archives, and museums are digitizing their collections of music scores, both printed and manuscript, but no standards exist currently to unify these collections so that these digital scores can be easily found. The other challenge is that it is virtually impossible to perform content-based search or analysis of online scores &#8212; a sharp contrast with the situation for digitized texts. There is simply no reliable optical music recognition (OMR) software that can achieve results comparable to the optical character recognition (OCR) software that institutions use to make their text collections searchable. Until digital page images of musical scores can be converted into computer-readable format using OMR, the full potential of search, analysis, and retrieval of digital music collections is cannot be realized.</p>
+    <p>We currently have two research teams in place, developing tools to support our efforts. One team is concentrating on finding scores available as digital images on the Internet. This task requires crawling the Internet, automatically discovering digitized books, articles, and facsimiles of music sources. Each digital image is analyzed to determine whether it contains printed music. This type of large-scale music document analysis has never been attempted before, thus new and efficient algorithms need to be developed. Our preliminary study involving 659 page images, resulted in 98.7% recall; missing only 3 pages containing musical scores (false negatives). We are aware of large sites that contain music scores among the millions of books already digitized, such as Google Books, Internet Archive, HathiTrust, and the Bibliothèque nationale de France. When our system determines that there are music scores in a book, we will index the information so that in the future, each digital object will be easily locatable. In other words, we will automatically create a catalogue of digitized scores so that researchers can use a central resource to search hundreds of independent websites containing scores &#8212; much like web crawlers do today.</p>
+    <p>Our second team is working on developing content-based analysis tools for performing large-scale OMR. Current OMR tools are highly limited in scope &#8212; they can only work with a subset of music notation types, and are restricted to operating as a desktop application. We are currently developing new, web-based OMR tools that will allow us to operate large, flexible OMR systems through a web browser. We are also developing new methods of “crowdsourcing,” allowing us to distribute the steps of the OMR process to a wide, global audience. This work represents a significant advance in the state-of-the-art for OMR systems.</p>
+    <p>The outcomes of the SIMSSA project will prompt further exploration into large-scale digitization, transcription, retrieval, and analysis of music documents. The larger agenda behind SIMSSA is to make all musical documents available in electronic format to the wider public &#8212; an ambitious goal, but one that has some precedent in the library and musicological domain. To achieve this goal, we recognize that there are both technological and intellectual issues that need to be addressed.</p>
+    <p>The technological outcome of the SIMSSA project will be the development of powerful software tools that are accessible and usable by our constituent communities. Through the creation of web crawling and music image indexing systems, we hope to unlock the contents of existing digital music page images and convert them into searchable and analyzable data. The creation of an advanced, online toolkit for optical music recognition will also assist researchers in performing their own content analysis, both for improving the results of our indexing system, as well as operating on their own document collections.</p>
+    <p>Intellectually, the SIMSSA project will open up the possibility of performing search and analysis on the world’s musical collections, which will create new avenues of exploration in music theory and history. Currently researchers are limited to small personal data sets or to music that they have transcribed and analysed by hand. Researchers need tools that provide the ability to search across thousands of documents. This will promote discoveries about the nature of music that would have taken years or even lifetimes to do manually.</p>
+    <p>We also hope to tackle some of the issues surrounding the creation of the digital scholarly edition for music. While the digital edition represents several important advances over the traditional print edition by virtue of being in a dynamic, interactive environment, it also presents some difficulties in how these musical editions are represented at the computational level, and the amount of complexity involved in making these editions a reality. The large-scale nature of the SIMSSA project presents a unique opportunity for practitioners in musicology, library science, and computer science to develop standards, tools, and best practices for creating the digital scholarly edition.</p>
+    <p>The SIMSSA project is well into its second year of operation and we have already presented a number of prototype projects and software packages useful for both our project, and the digital humanities in general. We have developed the Diva.js image viewer, a web-based software package that allows users to quickly and efficiently view extremely high-resolution (multi-gigabyte) document images on the web. We have demonstrated both the Liber Usualis prototype for performing musical search and retrieval, and the Salzinnes Antiphonal prototype that combines high-quality scholarly information from the CANTUS website with a unique exploration interface that allows users to see this information in situ with the original page images.</p>
+    <p>We are continuing to develop a number of important relationships with the large, national libraries (British Library, Library of Congress, Bibliotheque Nationale de France, Bayerische Staatsbibliothek) who will provide access to their digital collections. We are also working closely with the Music Encoding Initiative, an international group of scholars, technologists, and librarians based at the University of Virginia who are developing standards and best practices for the digital music edition.</p>
+    <p>Musical scores is a unique and, as-yet, untapped area for digital humanities research. We have a very limited understanding of how people use and interact with vast amounts of musical information at their fingertips, since there are no large-scale initiatives that offer this. To address this we are actively creating a community of technologists, musicologists, librarians, and other interested parties to begin to uncover the many questions that must be answered, and to explore the new areas of research that will emerge from this work.</p>
+</div>
+
+</body>
+
+<back>
+<div type="Notes">
+<note xml:id="n01" n="1"><ref type="url" target="http://ddmal.music.mcgill.ca/diva/">http://ddmal.music.mcgill.ca/diva/</ref></note>
+<note xml:id="n02" n="2"><ref type="url" target="http://ddmal.music.mcgill.ca/liber/">http://ddmal.music.mcgill.ca/liber/</ref></note>
+<note xml:id="n03" n="3"><ref type="url" target="http://ddmal.music.mcgill.ca/salzinnes/">http://ddmal.music.mcgill.ca/salzinnes/</ref></note>
+<note xml:id="n04" n="4"><ref type="url" target="http://www.music-encoding.org/">http://www.music-encoding.org/</ref></note>
+
+</div>
+</back>
+</text>
+</TEI>

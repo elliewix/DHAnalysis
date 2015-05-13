@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-204">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>The Full-Spectrum Text-Analysis Spreadsheet</title>
+<author>
+<name><surname>Hoover</surname>, <forename>David L.</forename></name>
+<affiliation>New York University, United States of America</affiliation>
+<email>david.hoover@nyu.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">This paper describes a Microsoft Excel Spreadsheet with Visual Basic macros that compares two groups of texts on the basis of the entire word frequency spectrum. It also suggests further ways of researching the effects of analyzing all the words of a set of texts at once, and of modifications and variations on full-spectrum analysis.</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">SP02</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>computational stylistics</term>
+<term>authorship attribution</term>
+<term>Zeta</term>
+<term>Iota</term>
+<term>Microsoft Excel</term>
+                    
+</keywords>
+<keywords scheme="original" n="topic">
+<term>literary studies</term>
+<term>stylistics and stylometry</term>
+<term>text analysis</term>
+<term>authorship attribution/authority</term>
+<term>english studies</term>
+<term>data mining/ text mining</term>
+                    
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+
+<body>
+<div>
+
+    <p>The most frequent function words have received the lion’s share of attention in authorship attribution and computational stylistics, partly because they seem intuitively unlikely to be manipulated consciously by authors, and partly because analyses based on them have been quite successful. Rare words have sometimes also been studied (Baayen, H., van Halteren, H., and Tweedie. F. 1996; Holmes 1998). Burrows has recently introduced Iota, which focuses on relatively rare words, and Zeta, which focuses on words that are neither among the very most frequent words nor rare (Burrows 2007; Hoover 2007b; Hoover forthcoming; Craig and Kinney 2009). Other researchers have analyzed very large numbers of the most frequent words (Rybicki, J. and M. Eder 2011; Hoover 2007a). And Rudman has argued that “An individual's style is made up of hundreds and hundreds of markers. The more of these that can be shown to be used consistently (within the same genre and time constraints) by the author, the more that can be used in the study” (1998: 153). However, I know of no computational stylistics tool that analyzes the entire word frequency spectrum.</p>
+    <p>My Full-Spectrum Text-Analysis spreadsheet, designed to do just that, is a Microsoft Excel spreadsheet with macros, using a simple but powerful method of measuring differences between two groups of texts. It begins with sets of texts by two authors, divided into equal-sized segments, and then compares how many segments for each author contain each word, ignoring their frequencies. Any two groups can be compared, but here I describe the simplest comparison, between two authors, Willa Cather and Edith Wharton.</p>
+    <p>The snippet from the Calculation sub-sheet of the spreadsheet in Fig. 1 clarifies how it is used (shown before the macro has completed the analysis; the buttons are explained below). In cells E7 and E8, the user enters the names of the two authors to be compared (automatically copied into columns A and G and Row 9), then enters the raw word frequencies for the segments into five sub-sheets (see the tabs at the bottom of Fig. 1). The frequencies for the segments that will be used to create the comparison between the two authors are placed in the “Author1” and “Author2” sub-sheets, with the full word list in column A of“Author1” (all segments in this analysis are 2,500 words). Optionally, independent segments by the same authors can be placed in “Author1Ind” and “Author2Ind” and used to confirm that the method correctly attributes texts not involved in creating the initial comparison. Finally, any texts to be tested for authorship are placed in “Test.” (All word frequency lists must be based on the word list in “Author1.”)</p>
+    <p>The macro, run by clicking the “Analyze &amp; Graph” button, clears out old data, enters formulas, copies data from the sub-sheets into the “Calculation” sheet (columns H and following), shrinks the columns for easier reading. It also copies the word list into column G, and enters their ranks in column F (this is useful for studying where each author’s characteristic words fall in the frequency spectrum). The calculations are performed in columns A-E. Column D records the number of Cather’s segments that contain the word, and column E records the number of Wharton’s segments that do <hi rend="italic">not</hi> contain the word. The most frequent words typically occur in all segments and receive a neutral score of 1, but note that <hi rend="italic">her</hi> the 6th most frequent, occurs in only 186 of the 193 Cather segments. Column B calculates the percentage of Cather's segments that contain each word; column C calculates the percentage of Wharton’s segments that do <hi rend="italic">not</hi> contain each word (both expressed as decimals). Column A sums columns B and C, producing the Distinctiveness Scores (DS). Columns H and following of row 1 show the number of different words (types) in each segment, and below them the percentage of types that are marker words for Cather or Wharton (these figures are not meaningful until the macro has finished). It sorts the words on the DS, with Cather’s most distinctive marker at the top and Wharton’s at the bottom, then selects Wharton’s markers and re-sorts them in reverse order. The sheet can handle 50,000 words, but the full word list for these samples is 30,435 words.</p>
+
+<figure><graphic url="ab-204.001"/><head>Fig. 1 &#8212;</head><p>The Full-Spectrum Text-Analysis Spreadsheet, With Data, Macro Not Finished</p></figure>
+
+    <p>After the macro has finished, the spreadsheet looks like Fig. 2. Cather’s most distinctive marker, <hi rend="italic">until</hi>(row 11), is found in 162 of the 193 Cather segments and is absent from 170 of the 185 Wharton segments. Wharton’s most distinctive marker, <hi rend="italic">continued</hi> (row 14,611), is found in just 22 of the 193 Cather segments, but is absent from only 58 of the 185 Wharton segments. (Note that <hi rend="italic">till</hi>, a nice authorial contrast to <hi rend="italic">until</hi>, is Wharton’s second most distinctive marker.) Rows 2 and 3 of columns H and following show how these markers are distributed in each segment. For example, H2-H3 shows that about 70% of the types in this segment are Cather markers, but only about 33% are Wharton markers. For Wharton’s first segment (not shown), the proportions are roughly reversed: about 66% of the types are Wharton markers and about 37% are Cather markers.</p>
+
+<figure><graphic url="ab-204.002"/><head>Fig. 2 &#8212;</head><p>The Full-Spectrum Text-Analysis Spreadsheet, With Cather and Wharton Data</p></figure>
+
+    <p>The macro also creates the scatter graph in Fig. 3. The horizontal and vertical axes record the percentage of types in each segment that are Cather and Wharton markers, respectively. Note that all the independent and test segments are correctly attributed. (I have put some texts in “Author1Ind” and “Author2Ind” and some in “Test” for illustration and have deleted some labels to make the graph easier to read.) Although full-spectrum analysis produces excellent results for these authors and texts, more work will be needed to evaluate its general effectiveness fairly.</p>
+
+<figure><graphic url="ab-204.003"/><head>Fig. 3 &#8212;</head><p>A Full-Spectrum Text-Analysis Scatter Graph, With Cather and Wharton Data</p></figure>
+
+    <p>The spreadsheet is designed to facilitate further study. I have included a button that toggles the elimination of hapax legomena. Setting this option to “Eliminate” before clicking the “Analyze &amp; Graph” button removes these words from the analysis.  The default range of analysis is full-spectrum, but the “Set/Clear Optional Max F2&amp;F3” button toggles a limit of 500 marker words for each author, for comparison with Craig Zeta, which it then mimics. Half the maximum markers for each author are calculated in cells F4 and F5 and one fourth in F6 and F7, and three sets of results based on these three pairs of numbers appear rows 2-7 of column H and following. If these or any other numbers are pasted into cells F2 and F3, the graph automatically updates, facilitating a comparison between full-spectrum and more limited analyses.</p>
+
+<p>I conclude with two more graphs, Fig. 4 showing the same analysis as Fig. 3, but without the hapax legomena, and Fig. 5 showing line graphs of the same information in Fig. 3 and Fig. 4 along with information based on the 500 most distinctive Craig Zeta markers for comparison (the sheet pastes the data on which these graphs are based to the right of the word frequency information, ready for graphing). These line graphs show less information about how various segments compare, but give a clearer picture of how many Cather and Wharton markers appear in each segment.</p>
+    
+    <figure><graphic url="ab-204.004"/><head>Fig. 4 &#8212;</head><p>A Full-Spectrum Text-Analysis Scatter Graph, With Cather and Wharton Data</p></figure>
+
+    <figure><graphic url="ab-204.005"/><head>Fig. 5 &#8212;</head><p>Cather vs Wharton: Full-Spectrum, Full-Spectrum Less Hapax, 500 Markers Each</p></figure>
+</div>
+
+<div>
+
+</div>
+
+</body>
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Burrows, J.</hi> (2007). All the Way Through: Testing for Authorship in Different Frequency Strata. <hi rend="italic">LLC</hi> <hi>22</hi>: 27-47.</bibl>
+
+<bibl><hi rend="bold">Baayen, H., H. van Halteren, and F. Tweedie. </hi> (1996). Outside the Cave of Shadows: Using Syntactic Annotation to Enhance Authorship Attribution. <hi rend="italic">LLC</hi> <hi>11</hi>: 121-132.</bibl>
+
+<bibl><hi rend="bold">Craig, H., and A. Kinney.</hi> (eds.) (2009). <hi rend="italic">Shakespeare, Computers, and the Mystery of Authorship.</hi> Cambridge: Cambridge University Press.</bibl>
+
+<bibl><hi rend="bold">Holmes, D.</hi> (1998). The Evolution of Stylometry in Humanities Scholarship. <hi rend="italic">LLC</hi> <hi>13</hi>: 111-117.</bibl>
+
+<bibl><hi rend="bold">Hoover, D.</hi> (Forthcoming). “Text Analysis,” in Ken Price and Ray Siemens (eds), <hi rend="italic">Literary Studies in the Digital Age.</hi> New York: MLA.</bibl>
+
+<bibl><hi rend="bold">Hoover, D.</hi> (2011). <hi rend="italic">Delta, Zeta, and Iota: An Ngrammatical Investigation</hi> 'Language Individuation: A Symposium in Honour of John Burrows'. held July 4-8, 2011 at University of Newcastle. Australia.</bibl>
+
+<bibl><hi rend="bold">Hoover, D.</hi> (2007a). Corpus Stylistics, Stylometry, and the Styles of Henry James. <hi rend="italic">Style</hi> <hi>41</hi>: 174-203.</bibl>
+
+<bibl><hi rend="bold">Hoover, D.</hi> (2007b). Quantitative Analysis and Literary Studies. In Schreibman, S., and Siemens, R. (eds). <hi rend="italic">A Companion to Digital Literary Studies.</hi> Oxford: Blackwell. 517-33.</bibl>
+
+<bibl><hi rend="bold">Rudman, J.</hi> (1998). Non-traditional Authorship Attribution Studies in the Historia Augusta: Some Caveats. <hi rend="italic">LLC</hi> <hi>13</hi>: 151-57.</bibl>
+
+<bibl><hi rend="bold">Rybicki, J. and M. Eder.</hi> (2011). Deeper Delta Across Genres and Languages: Do We Really Need the Most Frequent Words? <hi rend="italic">LLC</hi> <hi>26</hi>: 315-21.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+
+
+
+
+            

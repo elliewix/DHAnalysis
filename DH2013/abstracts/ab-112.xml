@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-112">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Text to Image Linking Tool (TILT)</title>
+<author>
+<name><surname>Schmidt</surname>, <forename>Desmond</forename></name>
+<affiliation>University of Queensland, Australia</affiliation>
+<email>desmond.allan.schmidt@gmail.com</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">The modern digital edition is a collection of text and facsimile images of sources. But what we lack currently are better ways to integrate these forms of digital surrogate. Image-based electronic editions were proposed some years ago as a way to link sections of images to sections of corresponding text. The AustESE (Australian electronic scholarly editing) project aims - among other things - to develop interoperable tools for viewing, editing and storing such links in a reusable and shareable way. The TILT tool is a Java applet that can create text-image links and automate the process on several levels: by auto-recognising lines and words on print and manuscript pages even when they are tilted or wavy, and by auto-selecting the corresponding text simultaneously. This would enable the rapid creation of text-image link data and make image-based electronic editions more practical.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP22</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Image-based electronic editions</term>
+<term>Text-image linking</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>image processing</term>
+<term>encoding &#8212; theory and practice</term>
+<term>digitisation, resource creation, and discovery</term>
+<term>scholarly editing</term>
+<term>digitisation &#8212; theory and practice</term>
+<term>linking and annotation</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-01"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<p>The digital edition has long been conceived not only as a set of transcriptions of the witnesses that underlie a work, but also as the images of the manuscript and book pages that physically represent it. Showing a readable transcription next to the facsimile of its source document provides the reader with the same level of evidence enjoyed by the editor of a print edition.</p>
+
+<p>Connecting ranges of text to areas in the image is useful wherever a manuscript has been heavily corrected or was written long ago in a writing style now hard to decipher. Even for printed works, the absence of such links forces the reader to waste time scanning the facsimile whenever the layouts differ, spelling variations have been regularised, or the text emended (Kiernan, 2006). Establishing text-image links was first explored in the electronic Beowulf edition (Dektyar et al., 2004). Other examples include the British Museum’s electronic Codex Sinaticus (2009) and, using a different display technique,  the ‘zoom topographic’ view of the Samuel Beckett digital manuscript project (Van Hulle et al., 2011). But the technical requirements of providing this form of interaction for any digital edition are considerable. There are three main problems:
+
+<list type="ordered">
+<item>1. How to display text-image links at the line and word-level over the Web</item>
+<item>2. How to edit and automate the creation of links</item>
+<item>3. How to store them in a reusable and efficient form</item>
+</list>
+
+The following sections describe solutions to these problems and how they can be combined into a single system for storing, displaying and editing text to image links. This solution forms part of the AustESE (Australian electronic scholarly editing) project (Osborne, 2012), which aims to create interoperable Web-based tools for managing and creating digital editions.</p>
+</div>
+
+<div>
+<head>1. Viewing links</head>
+
+<p>As a solution to problem 1 a background image (Figure 1c) is overlaid first by a transparent pane or canvas on which drawing is done (b), and second by a set of invisible areas (a) that trigger simultaneous highlighting in the text and image as the mouse moves over them (Schmidt, 2012c). Polygonal areas are needed, since in many cases, e.g. curved or slanted lines, corrections, inserted text-blocks etc. rectangles are simply too imprecise.  It is also versioned: the highlighted areas change according to the version of the text (base or corrected) chosen on the right.</p>
+ 
+<figure><graphic url="ab-112.001"></graphic><head>Figure 1: Web visualisation of image areas</head></figure>
+
+<p>In an alternative technique described by Cayless (2008), images of the text are converted to SVG surrogates (an XML format), and their bounding rectangles computed, to facilitate linking with the XML-encoded text. However, this increases the overall complexity of the encoding, and invites overlap between existing markup and the newly added spans. The solution described here, on the other hand, requires only simple features of HTML5, and is more amenable to automation.</p>
+</div>
+
+<div>
+<head>2. Creating and editing links</head>
+
+<p>There have been several tools already developed for creating and updating links from areas in a facsimile to spans in a transcription. This operation should be distinguished from more general kinds of image annotation, because text-image links are far more numerous, more specialised and, as Kiernan notes (2006b), likely to overwhelm any standard annotation system.</p>
+
+<p>There appear to be only three tools that meet this narrow definition. The first is EPPT, created for the electronic Beowulf edition (Iacob and Kiernan, 2009) as part of the ArchWay project (Kiernan et al, 2005). This was an Eclipse plug-in (a programmer’s tool) that created simple shapes without automation. The Textgrid TBLE tool is likewise an Eclipse plug-in (Al-Hajj, 2011). Although it does not yet support automation, it can draw polygons. However, having the editing tool available over the Web would facilitate updating through scholarly collaboration and crowd-sourcing (e.g. ANL, 2012). TILE (Reside et al., 2009) is so far the only Web-based solution to the text-to-image editing problem, but it remains incomplete.</p>
+ 
+<p>Our need was for an immediate solution for both print and manuscript texts so we could begin entering data for projects like the Charles Harpur archive (SETIS). This is a collection of large manuscript anthologies (100-350 pages) and newspaper cuttings. Thus, to be practical, the text to image linking process would have to be largely automated. Our program was designed as an applet (a Java web plug-in) because this allows for rapid and stable development, support for image analysis, and Web presentation. It is called TILT (text-image linking tool) because it is designed to deal with moderately curved or slanting text (Schmidt 2012b). This is frequently found in facsimilies due to the difficulty of laying books or manuscripts absolutely flat, and also in manuscripts where the text is written in crooked lines or at an angle. TILT uses automation at several levels:
+<list type="ordered">
+<item>1. Auto-recognition of pages at the word or line-level</item>
+<item>2. Auto-outlining of individual lines in response to a click or tap</item>
+<item>3. Auto-outlining of individual words similarly</item>
+<item>4. Manual drawing of polygons and rectangles</item>
+<item>5. Automatic linking of the current shape to the text</item>
+</list>
+The idea is that when one technique fails another can be used with finer control, and with manual adjustment in case of error.</p>
+</div>
+
+<div>
+<head>Word recognition</head>
+<p>When the user clicks on a word, a small square is assessed around the click-point (Figure 2). If the darkness of this square exceeds the average document darkness it is accepted (solid outlines, left). Adjacent squares are assessed similarly. If a square fails the test it is subdivided into four. If any one of these smaller squares is accepted then adjacent full-size squares are assessed as before. Otherwise it is discarded (dotted outlines, left). This leads to a rapid determination of word-boundaries. The basic outline is then converted into a bounding box (solid outline, right), or if this is too wasteful, into a polygon (dotted outline, right).</p>
+ 
+<figure><graphic url="ab-112.002" /><head>Figure 2: Detection of word boundaries</head></figure>
+</div>
+
+<div>
+<head>Line recognition</head>
+
+<p>To facilitate line-recognition, the facsimile, which is often in colour, is first reduced to grayscale, then to pure black and white by application of a localised contrast filter, which erases differences caused by uneven lighting.</p>
+
+<p>Baselines of the text can be found by summing the pixels in each horizontal row of the image. Rows with peak pixel-counts exceeding the average background darkness may be interpreted as baselines. These can be further constrained to lie within the text block, and only where there is surrounding text. The user can see the detected baselines by clicking the Lines tool. To detect entire lines the word-detection algorithm is simply applied along each baseline. To detect slanted or wavy baselines the image could be vertically divided into strips, and the lines in each strip joined up, although this is not yet implemented.</p> 
+</div>
+
+<div>
+<head>Linking word-shapes to the text</head>
+<p>Word-shapes detected in the image are allocated approximately to corresponding word-positions in the text. Although breaking up the text into lines will make this more accurate, manually specifying positions where words and shapes do in fact match will allow this approximation to be gradually refined. Thus it is expected that, in practice, little human intervention will be needed to connect all word shapes to their correct words. For well laid-out facsimilies, e.g. of printed books, whole page recognition may be sufficient to link everything in one go. </p>
+</div>
+
+<div>
+<head>3. Storing links</head>
+
+<p>There have been several proposals for recording the data of text-image links. The model described by Audenart and Furuta (2009) focuses on the images rather than the work, whereas for our needs the latter is primary. The markup schemes described by Dekhtyar et al. (2005), and in TEI P5 (22.3) are based on embedded XML. As Kiernan (2006b) notes, text to image links, if embedded in the text, usually overlap with any markup already present. The resulting mixture of milestones and ordinary tags can be very complex.</p>
+
+<p>On the other hand, simply using standoff properties (Schmidt 2012a), which are based on LMNL (Piez, 2010), to record the links, would simplify things considerably. Although saving is not yet implemented in TILT, each link, consisting of a shape and a textual span, could be saved as a separate layer. Links could then be merged with the other markup in the text, or used to generate the map which overlays the image (Figure 1a). </p>
+</div>
+
+<div>
+<head>Conclusions and future work</head>
+<p>The most important goal of TILT will be the testing of user requirements, which can only happen once a practical tool has been built. For example, how to deal with line-breaks in the middle of words, and what level of granularity (word or line) will work best must still be determined. TILT still lacks essential features like zooming, saving, the ability to change images as the user scrolls through the text, and export to other formats. However, based on current progress it is anticipated that these features will be completed by July 2013. There seems to be a pent-up demand for a text-image linking tool like this, given the current interest in digital facsimiles and the general exploration of more interactive interfaces for digital editions.</p>
+</div>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+
+<listBibl>
+
+<bibl><hi rend="bold">Al-Hajj, Y. A. A., and M. W. Küster</hi> (2011). The Text-Image-Link-Editor: A tool for Linking Facsimiles &amp; Transcriptions and Image Annotations. <hi rend="italic">Proceedings of Digital Humanities</hi> <ref type="url" target="http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-197.xml;query=Al%20Hajj;brand=default">http://dh2011abstracts.stanford.edu/xtf/view?docId=tei/ab-197.xml;query=Al%20Hajj;brand=default</ref> (accessed 25 October 2012).</bibl>
+
+<bibl><hi rend="bold">ANL,</hi> (2012). Trove, Australian National Library, <ref type="url" target="http://trove.nla.gov.au">http://trove.nla.gov.au</ref> (accessed 19 October 2012)</bibl>
+
+<bibl><hi rend="bold">Audenart, N., and R. Furuta</hi> (2009). Annotated Facsimile Editions: Defining macro-level structure for image-based electronic editions. <hi rend="italic">Literary and Linguistic Computing</hi>, <hi>24.2</hi> pp. 143-151.</bibl>
+
+<bibl><hi rend="bold">Cayless, H. A.</hi> (2008). Linking Page Images to Transcriptions with SVG. In <hi rend="italic">Proceedings of Balisage: The Markup Conference.</hi> held 12-15 August in Montréal, Canada. Balisage Series on Markup Technologies <hi>1</hi>, doi:10.4242/BalisageVol1.Cayless01.</bibl>
+
+<bibl><hi rend="bold">Codex Sinaticus,</hi> (2009). <ref type="url" target="http://codexsinaiticus.org">http://codexsinaiticus.org</ref> (accessed 25 October 2012).</bibl>
+
+<bibl><hi rend="bold">Dekhtyar, A., I. E. Iacob, J. W. Jaromczyk, K. Kiernan, N. Moore, and D. C. Porter</hi> (2005). Support for XML Markup of Image-based Electronic Editions <hi rend="italic">International Journal on Digital Libraries.</hi></bibl>
+
+<bibl><hi rend="bold">Iacob, E. and K. Kiernan</hi> (2009). Installing the EPPT-Trial. <ref type="url" target="http://beowulf.engl.uky.edu/~eft/eppt-trial/EPPT-Install.htm">http://beowulf.engl.uky.edu/~eft/eppt-trial/EPPT-Install.htm</ref> (accessed 19 October 2012).</bibl>
+
+<bibl><hi rend="bold">Kiernan, K.</hi> (2006a) Electronic Textual Editing: Digital Facsimiles in Editing. In Burnard, L., O'Brien, K., O'Keeffee and Unsworth, J. (eds), <hi rend="italic">Electronic Textual Editing</hi>. New York: Modern Language Association of America.</bibl>
+
+<bibl><hi rend="bold">Kiernan, K.</hi> (2006b). Technology.<ref type="url" target="http://beowulf.engl.uky.edu/~kiernan/eBoethius/tech.htm#tech">http://beowulf.engl.uky.edu/~kiernan/eBoethius/tech.htm#tech</ref> (accessed 25 October 2012).</bibl>
+
+<bibl><hi rend="bold">Kiernan, K., J. W. Jaromczyk, A. Dekhtyar, D. C. Porter, K. Hawley, S. Bodapati, and I. E. Iacob</hi> (2005). The ARCHway Project: Architecture for Research in Computing for Humanities through Research, Teaching, and Learning. <hi rend="italic">Literary and Linguistic Computing</hi> 20 (Suppl) pp. 69-88.</bibl>
+
+<bibl><hi rend="bold">Osborne, R.</hi><ref type="url" target="http://austese.wordpress.com">http://austese.wordpress.com</ref> AustESE: Australian Electronic Scholarly Editing (accessed 25 October 2012).</bibl>
+
+<bibl><hi rend="bold">Piez, W.</hi> (2010). Towards Hermeneutic Markup: An Architectural Outline. Digital Humanities Conference. held 7-10 July at Kings College. London.</bibl>
+
+<bibl><hi rend="bold">Porter, D.</hi> (2009). The Text Image Linking Environment. Digital Humanities Summer Institute held at the University of Victoria. <ref type="url" target="http://www.youtube.com?v=BiiNfDLqs6I">http://www.youtube.com?v=BiiNfDLqs6I</ref> (accessed 25 October 2012).</bibl>
+
+<bibl><hi rend="bold">Reside, D., D. Lester, D. Porter, and J. Walsh</hi> (2011). tile–text image linking environment. <ref type="url" target="http://mith.umd.edu/tile/">http://mith.umd.edu/tile/</ref> (accessed 25 October 2012).</bibl>
+
+<bibl><hi rend="bold">Schmidt, D.</hi> (2012a). The Role of Markup in the Digital Humanities. <hi rend="italic">Historical and Social Research/Historische Sozialforschung</hi> <hi>37.3</hi> pp. 125-146.</bibl>
+
+<bibl><hi rend="bold">Schmidt, D.</hi> (2012b). TILT <ref type="url" target="http://austese.net/tests/tilt">http://austese.net/tests/tilt</ref> (accessed 25 October 2012).</bibl>
+
+<bibl><hi rend="bold">Schmidt, D.</hi> (2012c). Image. <ref type="url" target="http://austese.net/tests/image">http://austese.net/tests/image</ref> (accessed 25 October 2012).</bibl>
+
+<bibl><hi rend="bold">SETIS, The Sydney Electronic Text and Image Service</hi>. Harpur. <ref type="url" target="http://setis.library.usyd.edu.au/ozedits/harpur/">http://setis.library.usyd.edu.au/ozedits/harpur/</ref> (accessed 26 October 2012).</bibl>
+
+<bibl><hi rend="bold">Guidelines for Electronic Text Encoding and Interchange</hi>. TEI P5, TEI Consortium(eds). <ref type="url" target="http://www.tei-c.org/P5/">http://www.tei-c.org/P5/</ref> (last accesed 26 October 2012).</bibl>
+
+<bibl><hi rend="bold">Van Hulle, D., M. Nixon, and V. Neyt</hi> (2011). Samuel Beckett Digital Manuscript Project. <ref type="url" target="http://www.beckettarchive.org/demo/">http://www.beckettarchive.org/demo/</ref> (accessed 31 October 2012).</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

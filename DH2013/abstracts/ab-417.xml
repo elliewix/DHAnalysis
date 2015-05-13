@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-417">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Six Degrees of Francis Bacon</title>
+<author>
+<name><surname>Finegold</surname>, <forename>Michael Andrew</forename></name>
+<affiliation>Carnegie Mellon University, United States of America</affiliation>
+<email>mfinegol@andrew.cmu.edu</email>
+</author>
+<author>
+<name><surname>Warren</surname>, <forename>Christopher</forename></name>
+<affiliation>Carnegie Mellon University, United States of America</affiliation>
+<email>cnwarren@cmu.edu</email>
+</author>
+<author>
+<name><surname>Shalizi</surname>, <forename>Cosma</forename></name>
+<affiliation>Carnegie Mellon University, United States of America</affiliation>
+<email>cshalizi@cmu.edu</email>
+</author>
+<author>
+<name><surname>Shore</surname>, <forename>Daniel</forename></name>
+<affiliation>Georgetown University, United States of America</affiliation>
+<email>ds663@georgetown.edu</email>
+</author>
+<author>
+<name><surname>Wang</surname>, <forename>Lawrence</forename></name>
+<affiliation>Carnegie Mellon University, United States of America</affiliation>
+<email>lawrencw@andrew.cmu.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Six Degrees of Francis Bacon (SDFB) is a digital reconstruction of the early modern social network (EMSN) that scholars and students from all over the world will be able to collaboratively expand, revise, curate, and critique. The primary motivation for the creation of SDFB is to make possible a new way to reconstruct, represent, and study the complex relations between authors, texts, publishers, and readers in the early modern period. It combines computational and statistical methods, which can explore the relationships of thousands of historical figures using hundreds of thousands of source documents, with the local expertise of a growing number of humanities scholars.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP17</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Social Networks</term>
+<term>Text Mining</term>
+<term>Statistical Modeling</term>
+<term>Early Modern</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>data modeling and architecture including hypothesis-driven modeling</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-29"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+<p><hi rend="italic">Six Degrees of Francis Bacon</hi> (SDFB) is a digital reconstruction of the early modern social network (EMSN) that scholars and students from all over the world will be able to collaboratively expand, revise, curate, and critique.  The primary motivation for the creation of SDFB is to make possible a new way to reconstruct, represent, and study the complex relations between authors, texts, publishers, and readers in the early modern period. </p>
+ 
+<p>Historians and literary critics have long studied the ways that early modern writers and thinkers associated with each other and participated in various kinds of formal and informal groups.  Yet their findings, published in countless books and articles, are scattered, unsynthesized, and unstructured.  There is currently no way to get a unified view of the early modern social network.  A scholar must start largely from scratch if she seeks to do any of the following:
+<list type="ordered">
+<item>1      Understand the importance or type of a particular bilateral relationship</item>
+<item>2      Identify potentially important relationships that have yet to be explored</item>
+<item>3      Understand the extent of communities of interaction</item>
+<item>4      Visualize the consensus opinion regarding networks, whether small or large</item>
+</list></p>
+ 
+<p>To grasp the scale of the problem, consider that, at a conservative estimate, a network representing key early modern figures, their friends, families, critics, biographers, adversaries, influences, etc., could easily run to over 10,000 nodes. Each actor node could potentially be connected to any of the other nodes, leading to 5 million or more potential edges to explore.</p>
+ 
+<p>To build a network of such a size manually is scarcely feasible.  A computational approach, unifying the dispersed knowledge in the scholarly literature, is essential.  Indeed, the digital tool we are building is superior to prose alone in representing the complexities of the early modern social network.  Unlike published prose, it is extensible, collaborative, and interoperable: extensible in that affiliations can always be added, modified, developed, or, removed; collaborative in that it synthesizes the work of many scholars; interoperable in that new work on the network is put into immediate relation to previously mapped relationships.</p>
+ 
+<p>Currently funded by a Faculty Research Grant from Google, SDFB is an innovative approach to comprehensively learning the early modern social network.  It combines computational and statistical methods, which can explore the relationships of thousands of historical figures using hundreds of thousands of source documents, with the local expertise of a growing number of humanities scholars. </p>
+ 
+<p>SDFB does not aim to replace the work of scholars studying individual texts, persons, or historical conjunctures.  It does not even aim to provide a single totalizing synopsis of the scholarly literature.  Rather, its twin goals are to make it easier for scholars to grasp what the scholarly community, as a whole, already knows about particular connections or social formations, and to enable the exploration of larger-scale patterns, alongside detailed studies.
+SDFB generates the social network in the following steps:
+<list type="ordered">
+<item>1      Identify and continuously expand the collection of sources used as input</item>
+<item>2      Process unstructured data sources (largely text) into structured data amenable for statistical analysis</item>
+<item>3      Apply statistical methods to infer relationships</item>
+<item>4      Validate a sample of proposed relationships using local expertise of humanities scholars</item>
+<item>5       Organize and visualize the social network</item>
+</list>
+We illustrate these steps by describing the start-up phase of SDFB, where we used the entries in the Oxford Dictionary of National Biography, and a statistical model in which network connections are reflected in co-mentions of actors’ names, to produce an estimate of the existence and types of relationships between thousands of figures in early modern Britain.</p>
+ 
+<p>We used the ODNB as the source of documents both because of the present authors’ primary interest in the target geography and time period (Britain, c. 1550&#8211;1700), and because the dense-in-data documents are all machine-readable text in largely uniform format.   Existing named entity extraction software (Alias-i, 2008; Finkel et al., 2005) produced an initial list of people mentioned in each document, which was refined with semi-automatic disambiguation and de-duplication of names.  From this we created a matrix, where the rows represent documents (or document sections), the columns represent historical figures, and the entries of the matrix are the number of times each document mentioned each figure.</p>
+ 
+<p>We developed a statistical model for the data in this matrix form, assuming that direct connections between historical figures will be reflected by their being mentioned together, but that such direct connections will “screen off” indirect connections mediated by third (or fourth, etc.) parties, rendering the latter irrelevant.  That is, if Irene and Joey are connected they will tend to be mentioned together in source documents, so how often Irene is mentioned can be predicted (in part) from how often Joey is mentioned.  Likewise if Joey and Karl are connected, mentions of Karl predict mentions of Joey.  But if there is no direct tie between Irene and Karl, then mentions of Karl convey no information about mentions of Irene not already accounted for by mentions of Joey.  Under this assumption, inferring the existence of network connections is then the same problem as inferring the conditional independence structure in our statistical model, a well-studied problem in statistics and machine learning (Spirtes, Glymour and Scheines, 1993).  We solve our instance of the problem through a sequence of penalized Poisson regressions (the “Poisson graphical lasso”, Allen and Liu 2012).  This allows us to process thousands of historical figures in tens of thousands of documents in a matter of hours, and to obtain confidence intervals on each network connection through subsampling of documents.</p>
+ 
+<p>Having inferred the existence of network ties through conditional dependence, we infer the types of relationship by examining the distribution of key words found in small sections of documents where a pair of connected people are both mentioned.  We compare this distribution to those of pairs where the relationship is known and validated by experts, building a relationship-type classifier with standard supervised learning techniques.</p>
+ 
+<p>We then choose a sample of people in our network and create a master list of connections inferred from our model and from competing methods.  These master lists are provided in random order to a select group of scholars who then order them by importance of the relationships.  We use these ordered lists to tune our model and demonstrate its effectiveness relative to competing methods.</p>
+ 
+<p>The next phases of the project will involve extending all components of the approach.  Millions of texts have been digitized and are theoretically available for use in this project, but even identifying the relevant sources is a non-trivial task. The next phase will not just increase the number of source documents, but also broaden the kinds of documents used.  Some historical accounts may provide evidence of relationships not found in DNB entries, and printed scholarly compilations from primary sources (e.g., membership rolls, parish records) may be invaluable for some types of relationships.  This will require new methods of processing different types of unstructured data as well as new statistical models.  In the first phase all the documents were of the same type (online biographies) and a unified statistical model made sense – this may not be true as we include a variety of texts. We will also consider dynamic network models that attempt to infer the timing of relationships.</p>
+ 
+<p>Validation will be expanded to include an ever broader collection of experts and will focus on individual relationships that are not well explained by the current model.  The problem is algorithmic (an automated feedback loop to refine the model) as well as managerial (allowing corrections from multiple experts while assuring quality). </p>
+ 
+<p>Finally, the next phase will involve roll-out of a wiki front-end that allows easy exploration of actors, their connections, and network visualizations.</p>
+
+          
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Alias-i</hi> (2008). LingPipe 4.1.0. <ref type="url" target="http://alias-i.com/lingpipe">http://alias-i.com/lingpipe</ref>.</bibl>
+
+<bibl><hi rend="bold">Allen, G. I., and Z. Liu</hi> (2012). <hi>A Log-Linear Graphical Model for Inferring Genetic Networks from High-Throughput Sequencing Data</hi>, <ref type="url" target="http://arxiv.org/abs/1204.3941">htttp://arxiv.org/abs/1204.3941</ref>.</bibl>
+
+<bibl><hi rend="bold">Davidson, C. N.</hi> (2012). Humanities 2.0: Promise, Perils, Predictions. In Gold, M. K. (ed.) <hi rend="italic">Debates in the digital humanities</hi>. Minneapolis: University of Minnesota Press.</bibl>
+
+<bibl><hi rend="bold">Evans, J. A., and J. G. Foster</hi> (2011). <hi rend="italic">Metaknowledge</hi>. Science 331.6018: 721–725. Online. Internet. 3 Nov. 2012.</bibl>
+
+<bibl><hi rend="bold">Finkel, J. R., T. Grenager, and C. Manning</hi> (2005). Incorporating Non-local Information into Information Extraction Systems by Gibbs Sampling in <hi rend="italic">Proceedings of the 43nd Annual Meeting of the Association for Computational Linguistics</hi> (ACL 2005), 363-370 <ref type="url" target="http://nlp.stanford.edu/~manning/papers/gibbscrf3.pdf">http://nlp.stanford.edu/~manning/papers/gibbscrf3.pdf</ref>.</bibl>
+
+<bibl><hi rend="bold">Grafton, A.</hi> (2009). <hi rend="italic">Worlds Made by Words: Scholarship and Community in the Modern West</hi>. Harvard University Press.</bibl>
+
+<bibl><hi rend="bold">Liu, A.</hi> (2011). Friending the Past: The Sense of History and Social Computing. <hi rend="italic">New Literary History</hi> 42(1) : 1–30. Accessed 3 Nov. 2012.</bibl>
+
+<bibl><hi rend="bold">Michel, J.-B., et al.</hi> (2011). <hi rend="italic">Quantitative Analysis of Culture Using Millions of Digitized Books</hi>. Science 331(6014): 176–182. Accessed  4 Oct. 2012.</bibl>
+
+<bibl><hi rend="bold">Moretti, F.</hi> (2007). Graphs, Maps, Trees: Abstract Models for Literary History. vols. Verso.</bibl>
+
+<bibl><hi rend="bold">Spirtes, P, C. Glymour, and R. Scheines</hi> (1993). Causation, Prediction, and Search.  Springer Lecture Notes in Statistics, vol. 81.  New York: Springer-Verlag.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

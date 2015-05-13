@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-399">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>TXM Portal: Providing Online Access to Textometric Corpus Analysis</title>
+<author>
+<name><surname>Heiden</surname>, <forename>Serge</forename></name>
+<affiliation>ICAR Laboratory, ENS de Lyon - CNRS, France</affiliation>
+<email>slh@ens-lyon.fr</email>
+</author>
+<author>
+<name><surname>Lavrentiev</surname>, <forename>Alexei</forename></name>
+<affiliation>ICAR Laboratory, ENS de Lyon - CNRS, France</affiliation>
+<email>alexei.lavrentev@ens-lyon.fr </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This poster presents the TXM open-source portal, providing online corpus access through qualitative and quantitative tools applicable in various fields of the humanities.
+
+The major specific feature of the TXM portal, compared to the desktop version of the platform, is the management of user registration and access rights to the corpora with the possibility to specify access conditions for each individual text of the corpus (e.g. limitation of context size in concordances).
+
+A demo TXM portal where the various tools can be tested on sample corpora is accessible at the following address: http://txm.risc.cnrs.fr/demo.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>online</term>
+<term>corpus</term>
+<term>text analysis</term>
+<term>portal</term>
+<term>txm</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>interface and user experience design</term>
+<term>publishing and delivery systems</term>
+<term>text analysis</term>
+<term>internet / world wide web</term>
+<term>concording and indexing</term>
+<term>digital humanities - facilities</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-24"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<p>This poster presents the TXM portal, a software providing online access to textometric corpus analysis. Textometry is a computerized methodology of corpus analysis combining qualitative and quantitative tools applicable in various fields of the humanities (linguistics, literary studies, geography, philosophy, history, etc.). This methodology was initially developed in France in the 1980’s under the name of lexicometry and a number of software products implementing various analytical tools were developed. TXM is a new generation of open-source software built on a modular basis  bringing together previous textometric techniques and state-of-the-art text encoding and corpus-building technologies (Unicode, XML, TEI, NLP) (Heiden, 2010; Heiden et al., 2010; Pincemin et al., 2010). The word search engine used for TXM is provided by the Open CWB open-source project (http://cwb.sourceforge.net) and syntactic structures can be queried using the TigerSearch engine (provided that the corpus is syntactically annotated in Tiger XML format) (Lezius 2002). Statistical analyses are performed using the R library (<ref type="url" target="http://www.r-project.org">http://www.r-project.org</ref>). Other search engines and libraries can be plugged in the TXM platform as necessary.</p>
+    <p>The TXM software is available in the form of a desktop application (for Windows, Mac and Linux) and of a web portal application sharing a common “toolbox” for corpus building, query and statistical analysis. Most of the corpus analysis features are the same in both applications, however a special attention in the poster will be given to the features that are only available in the portal version.</p>
+     <p>It should be noted that corpus import and annotation features are only available in the desktop version. The portal version allows the administrator to upload previously compiled “binary” TXM corpora.</p>
+    <p>The major specific feature of the TXM portal is the management of user registration and access rights to the corpora with the possibility to specify access conditions for each individual text of the corpus (e.g. limitation of context size in concordances). This is important for copyrighted texts where owners may wish to prevent users from copying an entire text or a substantial part of it. User accounts and profiles can be edited by the portal administrator through the web interface. Customized web pages (“home”, “help” and “contact”) can be created for each user profile. Internationalization feature is available for the portal interface and user web pages (the current portal distribution provides English and French interface).</p>
+    <p>Another feature that is only available in the TXM portal version is the creation of subcorpora by selecting texts with a special interface. It allows the user to choose various criteria to select texts (depending on the metadata available for the corpus), to add or remove texts individually and to visualize the dimensions of the subcorpus in number of words or texts.</p>
+    <p>The basic tools of textometric analysis are available in all TXM versions. These include creating  corpus partitions for contrastive analysis, building indexes and concordances of word or text patterns, display of one or several alternative text edition versions (including facsimile images). One can also search for collocates of a particular word. Statistical analysis tools are available for corpus partitions. These include computing specificity of word or text patterns and  correspondence analysis. The results of corpus queries can be downloaded for further analysis in the form of CSV tables.</p>
+   <p>The TXM portal software is available for free under the GNU GPLv3 license from the sourceforge development site (<ref type="url" target="http://www.r-project.org">http://sourceforge.net/projects/txm</ref>). A demo TXM portal where the various tools can be tested on sample corpora is accessible at the following address: http://txm.risc.cnrs.fr/demo. TXM portal is currently used in production to provide regular access to the Base de Français Médiéval old French corpus (http://txm.bfm-corpus.org/bfm) to a user community of 200 medievalists from around the world.</p>
+</div>
+
+<div>
+
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+
+<bibl><hi rend="bold">Pincemin, B., S. Heiden, M.-H. Lay, J.-M. Leblanc, and J.-M. Viprey</hi> (2010). Fonctionnalités textométriques: Proposition de typologie selon un point de vue utilisateur. In S. Bolasco et al. (Eds.), Statistical Analysis of Textual Data &#8212; Proceedings of 10th International Conference JADT 2010, Edizioni Universitarie di Lettere Economia Diritto, Rome, 9-11 juin 2010.</bibl>
+
+<bibl><hi rend="bold">Heiden, S.</hi> (2010). The TXM Platform: Building Open-Source Textual Analysis Software Compatible with the TEI Encoding Scheme. 24th Pacific Asia Conference on Language, Information and Computation. Éd. Kiyoshi Ishikawa Ryo Otoguro. Institute for Digital Enhancement of Cognitive Development, Waseda University, 2010. 389-398. online.</bibl>
+
+<bibl><hi rend="bold">Heiden S., M. Jean-Philippe, and P. Bénédicte</hi> (2010). TXM : Une plateforme logicielle open-source pour la textométrie – conception et développement, in Sergio Bolasco&amp; al (eds), Statistical Analysis of Textual Data -Proceedings of 10th International Conference JADT 2010.</bibl>
+
+<bibl><hi rend="bold">Heiden S., and L. Alexei</hi> (2012). The TXM Portal Software Giving Access to Old French Manuscripts Online, Proceedings of the 1st Workshop on Adaptation of Language Resources and Tools for Processing Cultural Heritage Objects, Seventh International Conference on Language Resources and Evaluation, Istanbul, Turkey, 2012.</bibl>
+
+<bibl><hi rend="bold">Lezius, W.</hi> (2002). TIGERSearch – Ein Suchwerkzeug für Baumbanken // Proceedings der 6. Konferenz zur Verarbeitung natürlicher Sprache (KONVENS 2002). Saarbrücken. 2002. <ref type="url" target="http://konvens2002.dfki.de.">http://konvens2002.dfki.de.</ref></bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-246">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Optimized platform for capturing metadata of historical correspondences</title>
+<author>
+<name><surname>Andert</surname>, <forename>Martin</forename></name>
+<affiliation>Computer Science Department, Martin-Luther-Universität Halle-Wittenberg, Germany</affiliation>
+<email>martin.andert@informatik.uni-halle.de</email>
+</author>                
+<author>
+<name><surname>Ritter</surname>, <forename>Joerg</forename></name>
+<affiliation>Computer Science Department, Martin-Luther-Universität Halle-Wittenberg, Germany</affiliation>
+<email>joerg.ritter@informatik.uni-halle.de</email>
+</author>             
+<author>
+<name><surname>Molitor</surname>, <forename>Paul</forename></name>
+<affiliation>Computer Science Department, Martin-Luther-Universität Halle-Wittenberg, Germany</affiliation>
+<email>paul.molitor@informatik.uni-halle.de</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">We present a browser based platform which allows the philologists to quickly enter metadata of historical correspondences in an adequate and simple manner. It supports unformatted data entry of the names of the senders and addressees by auto-completion based on external catalogues, e.g., the Deutsche Nationalbibliografie. Additional information which is automatically extracted from the catalogues helps the philologist identify uniquely the scholars. Moreover, the platform allows the philologist input the date of the letter in various formats, e.g., &quot;early January 1798&quot;, &quot;Eastern 1770&quot;, &quot;mid-April 1770&quot;, &quot;15.-20.04.1770&quot;. The conversion of the entry to an exact date or a period is automatically done by the system. After the date is entered, the system provides additional historical information on historical events (extracted from chronicals) that took place immediately before or immediately after that date.</note></notesStmt>          
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">SP05</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>capturing metadata</term>
+<term>unformatted entry</term>
+<term>catalogue based auto-completion</term>
+<term>browser based platform</term>
+<term>correspondences</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>interface and user experience design</term>
+<term>metadata</term>
+<term>scholarly editing</term>
+                  
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>   
+    
+    <p>Various projects around the world focus on analyzing and visualizing the correspondences and social networks of scholars(academics, writers, etc), e.g., the ‘Mapping the Republic of Letters’ project centered at Stanford University (Edelstein et al., 2008) and the project ‘Vernetzte Korrespondenzen’(engl.: Networked Correspondences)(Burch et al., 2012) run by Trier Center for Digital Humanities, German Literary Archive Marbach, and Martin-Luther-University Halle-Wittenberg. In addition to the design and implementation of adequate tools for analyzing and visualizing the big data, an indexing scheme for the content of the letters of the corpus under consideration has to be developed and the letters have to be captured, annotated, and indexed with respect to the indexing scheme.</p>
+    <p>The capturing, annotating, and indexing process should be supported by an interactive browser based platform which allows the professional philologists (as well as ‘citizen scholars’ from non-academic backgrounds) to quickly enter metadata (e.g., date, name/identification of senders and addressees) in an accurate und simple manner. To meet the simplicity requirement, the platform should accept unformatted entries as far as possible; to meet the accuracy requirement, the entries have to be clear without ambiguity. The two requirements appear to be competitive and conflicting. To sort out the problem, we propose to support unformatted data entry by auto-completion based on external catalogues, e.g., the ‘Deutsche Nationalbibliografie’(DNB, 2013b) provided by the German National Library. The auto-completion tool should provide additional biographical information on the proposed scholars as soon as the philologist enters first data, to help the philologist uniquely identify scholars.</p>
+    <p>In preparation for the above mentioned ‘Vernetzte Korrespondenzen’ project(Burch et al., 2012) which investigates the correspondences and social networks of German scholars which went into exile during Nazi Germany, we have implemented such a browser based platform.</p>
+    
+<list type="unordered">
+<item>The platform is generic in the sense that it can be trained on different centuries by using one or several external catalogues. In principle, each catalogue which provides a web service that offers infix search of names with the possibility of limiting the search to a specified time period can be used for training the platform. The illustrations presented in the next paragraph assume that the platform has been trained on scholars of the 18th and 19th Century.</item>
+        
+<item>The platform only propounds scholars based on PND/GND-normed data together with additional accurate biographical and historical data which are extracted from existing audited catalogues. These supplementary data should allow the philologist/historian to uniquely identify the scholar. After identification the system files the scholars in a standardized manner, i.e., normed data are inserted in the metadata.</item>
+        
+<item>The platform provides capturing of accurate dates by nearly unformatted entries.</item></list>
+    
+    <p>As soon as the philologist enters a part of the name of the sender or the addressee, e.g., ‘Joseph’, the tool makes proposals of scholars of the 18th and 19th Century that match the requirement, e.g., ‘Eichendorff, Joseph von’, ‘Hübner, Joseph Alexander von’ and so on, together with their dates of birth and death, identification number of the name authority file (‘Gemeinsame Normdatei’) published by the German National Library(DNB, 2013a), and short vitae. Especially these secondary data are of benefit if several scholars with similar(or same) name exist. Once the philologist made her choice, the system pins the scholar’s biographical data to the work space. If the person is unknown to the system which may be the case if the letter was sent, e.g., to the pharmacist next door (whose name is not specified in the letter), the philologist enters this new person into the system. The autocompletion mechanism of the platform uses these new data during future requests.</p>
+    <p>The entry of the letter’s date poses a further challenge as the determination of the date is harder than you think. For instance, a letter can be written over several days, the date may be hardly readable, it can be given by a holiday, or it can be specified imprecisely. That’s why our platform allows the philologist input the date of the letter in various formats. For instance, the letter can be dated ‘early January 1798’, ‘Eastern 1770’, ‘mid-April 1770’, ‘19/04/1770’, or ‘15/04/1770-20/04/1770’. The conversion of the entry to an exact date or a period is automatically done by the underlying system. ‘Early January 1798’, e.g., is converted to the period 01/01/1798-10/01/1798, ‘Eastern 1770’ to the period 12/04/1770-16/04/1770, ‘mid April 1770’ to 11/04/1770-20/04/1770. After the date had been entered, the platform provides additional information: It runs plausibility checks, e.g., whether the date of the letter is in life of the correspondents, and provides information on historical events that took place immediately before or immediately after that date. For instance, in the case of Eastern 1770, the system would provide the information that the German evangelical theologian August Wilhelm Reinhart passed away on 17 April 1770 and Marie Antoinette got married per procurationem Dauphin Louis-Auguste in the Augustinian Church in Vienna on 19 April 1770. Especially, later on, such data should help the philologist annotate the letters. These latter data can be extracted from digital chronicles, e.g., the ‘Chronik deutscher Zeitgeschichte’(Overesch et al., 1982) for adapting the platform to the project ‘Vernetzte Korrespondenzen’(Burch et al., 2012).</p>
+    <p>If possible, we will distribute the tool in different digital research infrastructures for the humanities, e.g., DARIAH(DARIAH-EU, 2012), CLARIN(CLARIN, 2011).</p>
+</div>
+    
+<div>    
+<head>Funding</head>
+    
+    <p>This work was supported by the German Federal Ministry of Education and Research (BMBF) [grant number 01UG1354C]</p>
+</div>       
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+<bibl><hi rend="bold">Edelstein, D., P. Findlen, and N. Coleman</hi> (2008). Mapping the Republic of Letters. Stanford University. <ref type="url" target="https://republicofletters.stanford.edu/">https://republicofletters.stanford.edu/</ref>(accessed 15 February 2013)</bibl>
+    
+<bibl><hi rend="bold">Burch, T., V Hildenbrandt., S. Kamzelak, P. Molitor,  C. Moulin, and J. Ritter</hi> (2012). Vernetzte Korrespondenzen &#8212; . BMBF-Projekt 01UG1354. <ref type="url" target="http://kompetenzzentrum.uni-trier.de/de/projekte/projekte/briefnetzwerk/">http://kompetenzzentrum.uni-trier.de/de/projekte/projekte/briefnetzwerk/</ref>(accessed 15 February 2013)</bibl>
+    
+<bibl><hi rend="bold">Deutsche Nationalbibliothek</hi> (2013a). Homepage. <ref type="url" target="http://www.dnb.de/DE/Home/home_node.html">http://www.dnb.de/DE/Home/home_node.html</ref>(accessed 15 February 2013)</bibl>
+    
+<bibl><hi rend="bold">Deutsche Nationalbibliothek</hi>(2013b). Deutsche Nationalbibliografie. <ref type="url" target="http://www.dnb.de/EN/Service/DigitaleDienste/DNBBibliografie/dnbbibliografie_node.html">http://www.dnb.de/EN/Service/DigitaleDienste/DNBBibliografie/dnbbibliografie_node.html</ref>(accessed 15 February 2013)</bibl>
+    
+<bibl><hi rend="bold">Overesch, M., and F. W. Saal</hi> (1982). Chronik deutscher Zeitgeschichte. Droste Geschichtskalendarium. Droste Verlag 1982-1986.</bibl>
+    
+<bibl><hi rend="bold">DARIAH-EU</hi> (2012). Introducing DARIAH-EU. Information Brochure. <ref type="url" target="http://www.dariah.eu/">http://www.dariah.eu/(accessed 15 February 2013)</ref></bibl>
+    
+<bibl><hi rend="bold">CLARIN</hi>(2011). CLARIN ERIC STATUTES.<ref type="url" target="http://www.clarin.eu/external/index.php?page=about-clarin">http://www.clarin.eu/external/index.php?page=about-clarin</ref>(accessed 15 February 2013)</bibl>
+    
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>

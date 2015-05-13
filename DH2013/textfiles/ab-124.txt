@@ -1,0 +1,101 @@
+
+
+
+
+Computational stylistics over the past twenty-five years has focused mainly on the most frequent (function) words of texts. This focus has been based on the reasonable belief that very frequent words, especially function words, tend to be used in a routinized or habitual way. Such words seem unlikely to be affected by the conscious manipulations of authors and thus should be the safest words to use in authorship attribution and computational stylistics. However, there has been a recent trend of increasing the number of words for analysis, with improved results (Hoover 2001; Burrows 2002; Hoover 2007; Rybicki and Eder 2011). Recently, special attention has also been paid to individual parts of the word frequency spectrum, attention sparked by Burrows’s “All the Way Through: Testing for Authorship in Different Frequency Strata” (2007), which introduces two new measures of textual difference, Zeta and Iota. Zeta focuses on words that are neither extremely frequent nor rare, and Iota focuses on relatively rare words. Both measures have been applied to a variety of texts (Craig and Kinney 2009; Hoover 2008, 2010, forthcoming). So far as I know, however, no one has suggested using the entire word spectrum all at once, and that is the focus of my proposal.
+ 
+
+
+One problem with analyzing all the words is that standard statistical methods are inappropriate for rare words, as Burrows points out in his discussion of Iota (Burrows 2007: 36). However, both Zeta and Iota are based on presence/absence rather than frequency, and do not require any sophisticated statistical analysis. They are derived by dividing two authors’ texts into segments of the same size and identifying “marker” words that are characteristic of the two authors. (Zeta and Iota can be used to compare any two groups of texts, but my discussion is based on a comparison of two authors for simplicity.) In his introduction of Zeta and Iota, Burrows begins with samples of text by Marvell and Waller and divides Marvell’s sample into five equal segments. For Zeta, he analyzes only those words that appear in at least three of Marvell’s five segments and have a maximum frequency of two in Waller’s sample. For Iota, he analyzes only those words that appear in fewer than three of Marvell’s segments and not at all in Waller’s sample. Both measures eliminate the most frequent words, which appear in most segments of most texts.
+
+
+
+Hugh Craig’s version of Zeta (Craig and Kinney 2009), which I will modify to analyze the entire word list, can be explained more clearly by comparing Joseph Conrad and Ford Madox Ford, two authors who were involved in three problematic collaborations. First, samples of text by Ford and Conrad (twelve novels and novellas) are divided into equal-sized segments, here 3,000 words, 132 segments by Conrad and 131 by Ford. Zeta is calculated for each word by counting how many segments by each author contain the word and adding the percentage of Conrad’s segments in which the word appears to the percentage of Ford’s segments in which the word does not appear (with the percentages expressed as decimals). A word found in all of Conrad’s segments but none of Ford’s would have a Zeta score of two; with the occurrences reversed, the Zeta score would be zero. In practice, scores higher than 1.8 or lower than .2 are rare; here they range from 1.66 to .48 (the range depends on the size and number of segments, and on how different the authors are). Sorting the words on their Zeta scores identifies marker words that are consistently used by Conrad and consistently avoided by Ford, and vice versa.
+
+
+
+
+
+Fig. 1–
+Craig Zeta Analysis of Conrad and Ford: 500 Most Distinctive Marker Words for Each
+The results of a Craig Zeta analysis of Conrad and Ford are presented in Fig. 1, in which the X axis is the percentage of the types (individual word forms) in each text that are among the 500 most distinctive Conrad marker words, and the Y axis is the percentage of types that are among the 500 most distinctive Ford markers. Craig Zeta does a good, but not perfect, job of separating the segments of text by Conrad and Ford and in attributing some additional independent texts by the two authors–ones not involved in creating the lists of marker words. It also assigns all but the final segment of the collaborative 
+The Nature of a Crime
+ to Ford (most critics believe it was written almost entirely by Ford). For the Ford segments (upper left), Ford marker words account for a minimum of about 8% of the types and a maximum of about 23%, while Conrad marker words account for a minimum of about 6% and a maximum of about 13%. Conversely, about 13%-24% of the types in the Conrad segments (lower right) are Conrad marker words, but only about 3%-10% are Ford marker words. The part of the word frequency spectrum that Zeta is capturing can be gauged by noting that the 1000 marker words here (500 for each author) appear in a range of 12 to 244 of the 263 total base segments, with frequencies ranging from 13 to 7296 and ranks ranging from 16 to 4416. In this analysis, Zeta eliminates the 15MFW, all but 8 of the 100MFW and more than 3/4 of the 200MFW.
+
+
+
+Fig. 2–
+Craig Zeta Analysis of Conrad and Ford: 500 Most Distinctive Rare Markers for Each
+Focusing only on the rest of the words, those appearing in 11 or fewer of the 263 base segments, results in Fig. 2, an analog of Burrows Iota, based on 500 marker words for each author with total frequencies ranging from 1 to 179 and ranks ranging from 4225 to 7797. The fact that the primary and independent texts are more clearly distinguished by these “Iota” markers than by the Zeta markers suggests that it may be useful to test the entire spectrum at once. The results of such a test are shown in Fig. 3, based on almost the full 28,177-word vocabulary of the combined texts by both authors —about 14000 marker words for each author. This analysis omits the 31 words that occur in every segment of every text because these words have a Zeta score of exactly 1, and so cannot help to distinguish the authors.
+1
+
+
+
+Fig. 3–
+Analysis of (Almost) All the Words of Conrad and Ford: 14,000 Marker Words Each
+Much more work is needed to determine how well analyzing the entire word frequency spectrum at once works on various groups of texts and authors, but the method seems promising, in spite of, or perhaps because of, the demonstration by Rybicki and Eder that different groups of texts and authors show different “sweet spots” in the word frequency spectrum (Rybicki and Eder 2011). One reason for this can be seen in Fig. 4, which shows that, in comparing Conrad and Ford, Conrad’s most distinctive words tend to be found among the more frequent words (with lower ranks) than Ford’s.
+2
+  Perhaps using the entire spectrum at once can help to overcome some of the problems of using various methods with various groups of texts. At the very least it has the benefit of basing an argument about similarity and difference on (almost) all of the words of the texts — all at once.
+
+
+
+Fig. 4–
+Average Ranks of the 8000 Most Distinctive Conrad and Ford Marker Words
+
+
+
+
+
+
+
+Burrows, J. 
+ (2007). All the Way Through: Testing for Authorship in Different Frequency Strata,  
+LLC
+, 22. 27-47.
+Burrows, J. 
+ (2002). Delta: a Measure of Stylistic Difference and a Guide to Likely Authorship. 
+LLC
+ 17. 267-287.
+Craig, H., and A. Kinney (eds) 
+ (2009). 
+Shakespeare, Computers, and the Mystery of Authorship
+. Cambridge: Cambridge University Press.
+Hoover, D. 
+ (2012). Text Analysis. In Price, K. and Siemens, R. (eds) 
+Literary Studies in the Digital Age
+. New York: Modern Language Association.
+Hoover, D.
+ (2010). Authorial Style. In McIntyre, D. and Busse, B. (eds) 
+Language and Style: Essays in Honour of Mick Short
+. London: Palgrave. 250-71.
+Hoover, D.
+ (2008). Searching for Style in Modern American Poetry. In  Zyngier, S. et. al. (eds) 
+Directions in Empirical Literary Studies: Essays in Honor of Willie van Peer
+. Amsterdam: John Benjamins.  211-27.
+Hoover, D. 
+(2007). Corpus Stylistics, Stylometry, and the Styles of Henry James. 
+Style
+41
+ 174-203.
+Hoover, D.
+ (2001). Statistical Stylistics and Authorship Attribution: An Empirical Investigation. 
+LLC
+16
+  421-444.
+Rybicki, J. and M. Eder
+ (2011). Deeper Delta across genres and languages: do we really need the most frequent words? 
+LLC
+ 26. 315-21.
+
+
+
+
+
+ In analyses with equal numbers of segments, all words that occur in the same number of segments for each author, sometimes as many as 1,500-2000, also have a Zeta score of 1 and are eliminated; the potential effects of this need further investigation.
+ The X axis shows the average ranks for the 1-250 most distinctive marker words (MDW), the 251-500MDW, etc. The bizarre peaks and valleys are caused by words with radically different ranks but almost identical Zeta scores; for example, the rare word 
+who’d
+ (rank 10772) appears in 0 of 132 Conrad segments, and in 4 of 131 Ford segments (0% presence + 97% absence = a Zeta of .97), and the common word 
+little
+ (rank 58) appears in 127 Conrad segments and is absent from just 1 Ford segment (96.2% presence + .8% absence = a Zeta of .97).
+
+

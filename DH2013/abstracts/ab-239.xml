@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-239">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Computer Identification of Movement in 2D and 3D Data</title>
+<author>
+<name><surname>Wiesner</surname>, <forename>Susan L.</forename></name>
+<affiliation>University of Virginia;
+Society of Dance History Scholars</affiliation>
+<email>slywiesner@virginia.edu</email>
+</author>
+<author>
+<name><surname>Bennett</surname>, <forename>Bradford C.</forename></name>
+<affiliation>University of Virginia</affiliation>
+<email>bcb3a@virginia.edu </email>
+</author>
+<author>
+<name><surname>Stalnaker</surname>, <forename>Rommie L.</forename></name>
+<affiliation>Independent Scholar/Artist; San Diego United</affiliation>
+<email>rstalnaker81@gmail.com</email>
+</author>
+<author>
+<name><surname>Simpson</surname>, <forename>Travis</forename></name>
+<affiliation>University of Virginia</affiliation>
+<email>tts2q@virginia.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Although scholars have long recognized the need to employ digital analysis of human movement, especially in dance, the technology for such analyses has not been available. Further, Wang (2003) noted that the majority of research conducted into movement patterns has been for surveillance, while ‘the breadth of uses for motion analysis beyond surveillance includes sports and ballet’. The present work, funded by an NEH Digital Start-up Grant and an ACLS Digital Innovation Fellowship, addresses this lack by developing methodologies for computer identification of dance movements in 3-D, through initial work towards the ability to have computer analysis and tagging of 2-D dance film. In addition we have developed an ontology and identified movement patterns relative to natural language ‘terms’ (conceptual metaphor). Finally, we have conducted a “deep reading” of the dance texts to classify movement into metaphoric concepts.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP10</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>movement</term>
+<term>motion-capture</term>
+<term>identification</term>
+<term>metaphor</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>audio</term>
+<term>video</term>
+<term>multimedia</term>
+<term>interdisciplinary collaboration</term>
+<term>creative and performing arts</term>
+<term>including writing</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-09"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<p>Wang (2003) noted that the majority of research conducted into movement patterns has been for surveillance, while ‘the breadth of uses for motion analysis beyond surveillance includes sports and ballet’. Although scholars have long recognized the need to employ digital analysis of human movement, especially in dance, the technology for such analyses has not been available. The ARTeFACT project, funded by an NEH Digital Start-up Grant and an ACLS Digital Innovation Fellowship, addresses this lack by developing methodologies for computer identification of complex dance movements in 3-D, through initial work towards the ability to have computer analysis and tagging of 2-D dance film. </p>
+
+<p>Although other projects have had goals specific to dance research and the use of motion capture, we have discovered only one other project that considers a grammar of movement to enable the segmentation, recognition, retrieval, and qualitative analysis of movement from 3D data as we envision (Choensawat et al., 2009). This paper discusses the ARTeFACT approach: the methods used to describe movement, the relationship of NLP to the non-verbal language of dance, and the technology used to automatically identify dance movement in 3-D data.</p>
+ </div>
+
+<div>
+<head>Ontology, Mo-Cap and Movement Identification</head>
+
+<p>One of the challenges in developing a grammar based on movement is the lack of any clear distinctions between movements, relative to the spaces and punctuation delimiting words in NLP. Thus we must find other means of identifying the patterns and features of movements within a corpus of movement texts. As a first step we developed an ontology, stored in XML files which contain fields and variables pertinent to an individual STEP. STEPS are defined as specific codified movements performed in isolation or in combination with other STEPS; the codified movements are typically performed as part of technique class, and are subsequently used in choreographic works as sections of movement phrases. Each STEP entry includes spatial level, body part, effort, genre, style, relationship to other STEPs (IS A, IS A PART OF, CONTAINS), terminology (folksonomic, codified), and any movement synonyms (movements in one genre synonymous with a movement in another genre, e.g. ‘ecarte derrier’ in ballet and ‘tilt’ in modern dance). </p>
+
+<p>Using a motion capture system we captured over 100 codified steps and phrases from Ballet, Modern, Jazz and Tai Chi Chuan genres. At least three good trials of each move were captured from which we developed a movement database or library of codified moves, with <hi rend="italic">model moves</hi> determined by selecting a representative trial for each move. Data was collected at 120 Hz with a VICON 8 camera motion capture system on two highly qualified performers &#8212; a professional ballet dancer of 15 years and a practicing Tai Chi Chuan expert of 25 years. Per the modified Plug-In Gait full body marker set, 38 infrared reflecting markers were placed on the performers. The library contains joint position data, classification information (e.g. relationship of feet to ground, number of occurrences, traveling movements, and rotation around the pelvic center). Movement identification was provided by custom MATLAB code, idMove, which reads the joint positions and uses a combination of classification and pattern recognition to identify a dance move.</p>
+
+<p>Data analysis was performed with validated software written in VICON’s Bodybuilder language, which generated the 3-D marker kinematics used in the analysis (Bennett et al. 2005). The output of this software contained 3-D positions of the joints over time, which was the basis for kinematic analysis. Although other parameters such as joint angles and movements were available, only marker position data was used as it was deemed the most compatible with the eventual goal of identifying moves from 2-D film. Classification used empirically pre-set threshold values to determine whether certain conditions were met, e.g. whether a foot was off the ground. idMove computed ten independent time series for the model and the test move &#8212; transverse proximity of knees and ankles (2) and both orientations of bilateral hip-knee and knee-heel elevation (8) and the appropriate time series of model and test move were cross-correlated. </p>
+
+<p>A total of 181 trials of 93 unique codified movements were tested with and without classification filtering. Both methods correctly identified the majority of the trials; however, using correlation alone was more accurate. The algorithm using classification as a way to reduce potential model moves produced a sensitivity of 84.5% over the 181 codified trials with an average combined correlation coefficient of 0.856. Additionally, there were 7 false positives and 21 trials not matched with any move. Overall, 88 of the total 93 codified moves were identifiable by at least one trial. When using only correlation in the process of matching moves, the results were greatly improved, demonstrated by a sensitivity of 97.3% and false positives were reduced to a total of five with all unique moves identifiable in at least one trial.</p>
+
+</div>
+
+<div>
+<head>Abstract Movement and Conceptual Metaphor</head>
+
+<p>As helpful as it is to identify codified movements, in reality many movements in dance and other movement-based activities are not codified. Further, earlier research has shown that dance viewers rarely describe movements; instead they note an interpretive, subjective response to movement. Therefore, while codified movements were a logical first step for our research, we chose to use Lakoff and Johnson’s research on conceptual metaphor and embodied knowledge to develop another means of classifying and identifying movement patterns (Lakoff and Johnson 1980; Johnson 2007). By incorporating abstract movement into our library we are able to conduct research into semantic descriptions of human motion in complex unconstrained activities. This is the first time that conceptual metaphor has been used to study the meaning of movement for the purposes of automatic recognition and segmentation of 2D and 3D data strings.</p>
+
+<p>With movements from seven dance works that represent conflict (war) and contain both codified and abstract movement, we categorised and captured 396 different sections of movement, performed by two dancers. We found that movements are shared across the seven dance works studied, specific to 19 different CONFLICT terms listed in the <hi rend="italic">Collins Cobuild Dictionary of Metaphor</hi> (Diegnan 1995). Therefore, in order to overcome the challenge of segmentation inherent in abstract movement we have developed rules for identifying similar patterns within a specific context (in this case, metaphoric terms). For example, joint angles of specific body parts can be identified per conflict term (e.g. acute knee and hip angles in ‘struggle’), as can the relation of foot to floor (jumps appear often with ‘hero’ and ‘victory’). Also, as choreographers may include codified movements within an abstract string, we are able to identify those through the application of the model moves in the codified library. By creating the rules and clearly defining the movement specifics relative to the metaphor terms, we can generate ‘start and stop’ points within the string of data, thus replicating the use of spaces to delineate words in NLP methodologies.</p>
+
+<p>In addition to developing rules, we have conducted statistical analysis on the frequency of movements and movement durations per term providing information regarding movement quality, as well as quantity. The most frequently occurring terms are Victim, Struggle and Attack in descending order, although Struggle consumes more time than Victim. Analysis of the empirical data and testing of idMove with the abstract movements associated with Conflict terms is ongoing, as is the development of a grammar to which NLP methods can be applied (i.e. the derivation of tokens from 2D data that are the building blocks for expressions of dance movement).</p>
+</div>	
+
+<div>
+<head>Conclusion</head>
+
+<p>The ARTeFACT project &#8212; which brings together scholars and artists across the sciences, humanities, and arts &#8212; is making several scientific and technical advancements in the fields of motion analysis and image pose recognition. This initial work demonstrates our ability to identify codified dance moves using 3-D data from film of a single performer. Consistent with our goal of using only 2-D data, the analysis relied on elevation changes as the primary criteria for recognition. With the assistance of pose recognition software for film, elevation changes in joint centers could be directly applicable to a similar analysis on single camera video. In addition to adding to the ability to identify the semantics of movement in 2D and 3D data and to provide data mining of abstract movement based on concepts as well as codified movements, this is a unique use of conceptual metaphor against a corpus of movements. Further, the knowledge gleaned from this project extends to research into movement-based disciplines (dance, kinesiology, sports medicine, anthropology, etc.) </p></div>
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Ahmad, K., A. Salway, J. Lansdale, H. Selvaraj, and B. Verma</hi> (1998). (An)Notating Dance: Multimedia Storage and Retrieval. in <hi rend="italic">Conference Proceedings, International Conference on Computational Intelligence and Multimedia Applications</hi>. held in Singapore. <hi rend="italic">World Scientific</hi>. 788-793.</bibl>
+
+<bibl><hi rend="bold">Allen, F. R., E. Ambikairajah, N. H. Lovell, and B. G. Celler</hi> (2006). Classification of a known sequence of motions and postures from accelerometry data using adapted Gaussian mixture models. <hi rend="italic">Physiological Measurement</hi>. 1-17.</bibl>
+
+<bibl><hi rend="bold">Bao, L., and S. S. Intille</hi> (2004). Activity recognition from user-annotated acceleration data. In <hi rend="italic">Proceedings of the 2nd International Conference on Pervasive Computing</hi>. 1-17. </bibl>
+
+<bibl><hi rend="bold">Bennett, B. C., M. F. Abel, A. Wolovick, T. Franklin, P. E. Allaire, and D. C. Kerrigan</hi> (2005). Center of Mass Movement and Energy Transfer During Walking in Children With Cerebral Palsy. <hi rend="italic">Archives of Physical Medicine and Rehabilitation</hi> 86. 2189-2194.</bibl>
+
+<bibl><hi rend="bold">Bobick, A. F. and J. W. Davis</hi> (2001). The recognition of human movement using temporal templates. <hi rend="italic">IEEE Transactions on Pattern Analysis and Machine Intellligence</hi> 23 (3).</bibl>
+
+<bibl><hi rend="bold">Campbell, L. W. and A. F. Bobick</hi> (1995). Recognition of human body motion using phase space constraints. <hi rend="italic">ICCV, 5th Int’l. Conf on Computer Vision. (ICCV '95)</hi>. 624.</bibl>
+
+<bibl><hi rend="bold">Choensawat, W., W. Choi, and K. Hachimura</hi> (1995). A quick filtering for similarity queries in motion capture databases. <hi rend="italic">PCM 2009, LNCS 5879</hi>. 404-415. In Diegnan, A. (ed). <hi rend="italic">Collins Cobuild English Guides 7: Metaphor</hi>, New York: HarperCollins.</bibl>
+
+<bibl><hi rend="bold">Ermes M., J. Parkka, J. Mantyjarvi, I. Korhonen</hi> (2008). Detection of daily activities and sports with wearable sensors in controlled and uncontrolled conditions. <hi rend="italic">IEEE Transactions on Information Technology in Biomedicine</hi> 12. 20-26.</bibl>
+
+<bibl><hi rend="bold">Golshani, F., P. Vissicaro, and Y. Park</hi> (2004). A Multimedia Information Repository for Cross Cultural Dance Studies in <hi rend="italic">Multimedia Tools and Applications.</hi> 89-104.</bibl>
+
+<bibl><hi rend="bold">Goulermas, J. Y., A. H. Findlow, C. J. Nester, P. Liatsis, X. J. Zeng, L. Kenney, P. Tresadern, S. B. Thies, and D. Howard</hi> (2008). An instance-based algorithm with auxiliary similarity information for the estimation of gait kinematics from wearable sensors. <hi rend="italic">IEEE Transactions on Neural Networks</hi> <hi>19</hi>. 1574-1582.</bibl>
+
+<bibl><hi rend="bold">Johnson, M.</hi> (2007). <hi rend="italic">The Meaning of the Body: Aesthetics of Human Understanding.</hi> Chicago: The University of Chicago Press. </bibl>
+
+<bibl><hi rend="bold">Kanan, R., F. Andres, and C. Guetl</hi> (2009). DanVideo: an MPEG-7 authoring and retrieval system for dance videos. <hi rend="italic">Multimed Tools.  Appl.</hi> 46. 545-572.</bibl>
+
+<bibl><hi rend="bold">Lakoff, G., and M. Johnson</hi> (1980). <hi rend="italic">Metaphors We Live By</hi>. Chicago: The University of Chicago Press.</bibl>
+
+<bibl><hi rend="bold">Lau, H. Y., K. Y. Tong, and H. Zhu</hi> (2008). Support vector machine for classification of walking conditions using miniature kinematic sensors. <hi rend="italic">Medical and Biological Engineering and Computing</hi>. <hi>46</hi>. 563-73.</bibl>
+
+<bibl><hi rend="bold">Lausberg, H., and H. Sloetjes.</hi> (2008). Gesture Coding with the NGCS-ELAN System. <hi rend="italic">Proceedings of Measuring Behavior 2008.</hi> Maastricht, The Netherlands.</bibl>
+
+<bibl><hi rend="bold">Lester, J., T. Choudhury, N. Kern, G. Borriello, B. Hannaford.</hi> (2005). A hybrid discriminative/generative approach for modeling human activities. <hi rend="italic">Proceedings of the International Joint Conference on Artificial Intelligence</hi>.</bibl>
+
+<bibl><hi rend="bold">Lester, J., T. Choudhury, and G. Borriello.</hi> (2006). A practical approach to recognizing physical activities. <hi rend="italic">Pervasive Computing LNCS</hi>. <hi>3968</hi>. 1-16.</bibl>
+
+<bibl><hi rend="bold">Miles-Board, T., Deveril, W. Hall, and J. Lansdale.</hi> (2012). Decentering the Dancing Text: From dance intertext to hypertext. <ref type="url" target="http://eprints.soton.ac.uk/id/eprint/257304">http://eprints.soton.ac.uk/id/eprint/257304</ref> Accessed on 10-08-2012.</bibl>
+
+<bibl><hi rend="bold">Moeslund, T. B., A. Hilton, and V. Krüger.</hi> (2006). A survey of advances in vision-based human motion capture and analysis. <hi rend="italic">Computer Vision and Image Understanding</hi>. <hi>104</hi>. 90-126.</bibl>
+
+<bibl><hi rend="bold">Qian, G., F. Guo, T. Ingalls, L. Olson, J. James, and T. Rikakis.</hi> (2004). “A gesture-driven multimodal interactive dance system.” <hi rend="italic">Multimedia and Expo, 2004. ICME ’04 IEEE Int’l. Conference</hi>. <hi>3</hi>. 1579-1582.</bibl>
+
+<bibl><hi rend="bold">Ramadoss, B., and K. Rajkumar.</hi> (2007). Semi-automated Retrieval of Dance Media Objects in <hi rend="italic">Cybernetics and Systems: An Int’l. Journal</hi>. 38. 349-379.</bibl>
+
+<bibl><hi rend="bold">Reng, L., T. Moeslund, and E. Granum.</hi> (2006). Finding motion primitives in human bodygestures. In <hi>S. Gibet, N. Courty, and J.-F. Kamp.</hi> (eds). <hi rend="italic">Gesture in Human-Computer Interaction and Simulation, Lecture Notes in Computer Science</hi> <hi>1</hi>. 133-144. Berlin: Springer.</bibl>
+
+<bibl><hi rend="bold">Reside, D.</hi> (2007). The AXE Tool Suite: Tagging across time and space. Proceedings from <hi rend="italic">Digital Humanities</hi>. Urbana-Champaign: Illinois. 178-179.</bibl>
+
+<bibl><hi rend="bold">Salway, A.</hi> (1999). <hi rend="italic">Video Annotation: the Role of Specialist Text</hi>. PhD Thesis. University of Surrey.</bibl>
+
+<bibl><hi rend="bold">Wang, L., W. Hu, and T. Tan.</hi> (2003). “Recent developments in human motion analysis.” <hi rend="italic">Pattern Recognition.</hi> <hi>36</hi>. 585-601.</bibl>
+
+<bibl><hi rend="bold">Wiesner, S., B. Bennett, and R. Stalnaker.</hi> (2011). <hi rend="italic">ARTeFACT Movement Thesaurus.</hi> [white paper] NEH Office of Digital Humanities.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

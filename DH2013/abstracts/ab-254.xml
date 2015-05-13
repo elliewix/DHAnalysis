@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-254">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Linked Jazz 52nd Street: A LOD Crowdsourcing Tool to Reveal Connections among Jazz Artists</title>
+<author>
+<name><surname>Pattuelli</surname>, <forename>M. Cristina</forename></name>
+<affiliation>Pratt Institute, United States of America</affiliation>
+<email>mpattuel@pratt.edu</email>
+</author>   
+<author>
+<name><surname>Miller</surname>, <forename>Matt</forename></name>
+<affiliation>Pratt Institute, United States of America</affiliation>
+<email>mmille18@pratt.edu</email>
+</author>
+<author>
+<name><surname>Lange</surname>, <forename>Lea</forename></name>
+<affiliation>Pratt Institute, United States of America</affiliation>
+<email>llange@pratt.edu</email>
+</author>
+<author>
+<name><surname>Thorsen</surname>, <forename>Hilary</forename></name>
+<affiliation>Pratt Institute, United States of America</affiliation>
+<email>hthorsen@pratt.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+<notesStmt><note type="abstract">This paper discusses the development of Linked Jazz 52nd Street, a Linked Open Data (LOD) tool that uses a crowdsourcing approach to identify the relationships among jazz artists as represented in archival digital collections. The application enhances a machine-generated network of relationships representing the jazz community.</note></notesStmt>          
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">SP05</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Linked Open Data</term>
+<term>Crowdsourcing</term>
+<term>Jazz History Archives</term>
+<term>Social Networks</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>knowledge representation</term>
+<term>visualisation</term>
+<term>crowdsourcing</term>
+<term>semantic web</term>
+               
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc><change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>  
+    
+    <quote><p><hi rend="italic">“There's a bond, a sort of invisible bond between all musicians who play jazz. There is always that bond, it holds them together.” &#8212; Ian Patterson, 2009</hi></p></quote>
+</div>
+
+<div>
+<head><hi rend="bold">Introduction</hi></head>    
+    
+    <p>Linked Jazz <ref type="note" target="n01">1</ref> is a Linked Open Data (LOD) project that aims to create methods and tools that reveal the dense fabric of relationships connecting the community of jazz artists who typically practice in rich and diverse social networks. This project takes advantage of the potential of LOD to connect cultural heritage data in new ways and expand traditional access to archival content by making it visible and discoverable in an open information environment. The Linked Jazz project consists of multiple phases and has progressed in an iterative and experimental process. In the first phase, a LOD dataset representing a social network of connections among jazz artists was created through the automatic extraction of personal names from interview transcripts acquired from digital archives of jazz history. Based on this dataset, a visualization tool was developed that offers static and dynamic views of the social network<ref type="note" target="n02">2</ref>. While the social network is effective in conveying the vast and rich web of interpersonal associations, its connections remain semantically undefined.</p>
+    
+<figure><graphic url="ab-254.001"/><head>Fig. 1:</head><p>Frequency-based network rendering</p></figure>
+</div>
+
+<div>
+<head><hi rend="bold">Enriching the Network</hi></head>     
+    
+    <p>Social network analysis is based on graph theory, in which entities such as individuals are presented as nodes and their relationships are represented by edges between them (Chen &amp; Yang, 2010). While this mathematically-based approach allows for analysis of the network’s structure based on parameters like centrality and clustering, typically, social graphs provide little or no explicit information about the nature of the relationship that connects two entities (Chen &amp; Yang, 2010; Scott, 2011). The need for richer descriptions of social relationships within networks and for researchers to be able to find resources more readily has led to projects that focus on enhancing the visibility and interconnectedness of archival resources. Such projects included the development of Encoded Archival Context-Corporate Bodies, Persons, and Families (EAC-CPF)<ref type="note" target="n03">3</ref> and Social Networks and Archival Context (SNAC)<ref type="note" target="n04">4</ref>.</p>
+    <p>The jazz community is characterized by a high degree of interaction and connectivity. A few studies have examined the interconnectivity among jazz musicians. Heckathorn and Jeffri (2003) studied their affiliation patterns and found that this community is highly egalitarian and cohesive. They employed the respondent-driven sampling method, a technique that requires respondents to know and come in regular contact with one another. Approaching the study of personal connections in this community from a different angle, Schubert (2012) adopts discometrics &#8212; the application of bibliometric network techniques to discographic data &#8212; to reveal how embedded a particular musician is within the jazz community network.</p>
+</div>
+
+<div>
+<head><hi rend="bold">Human-Generated Approach</hi></head>  
+    
+    <p>The complex and dynamic web of interpersonal connections inherent to jazz music is well documented in books and discographies, yet not easy to discover. While a machine-driven approach combining Natural Language Techniques (NLP) techniques and LOD technology has proven effective in revealing basic connections among personal entities (Pattuelli, Weller and Szablya 2011), this approach fell short when attempting to uncover the nature of artists’ interpersonal ties and provide a more powerful tool for analysis. We can only assume that jazz artists who cite other jazz artists in their interviews have some kind of association with them, but this relationship could be anything from close friendship and collaboration to just knowing the other person exists.</p>
+    <p>Identifying and representing the varied and nuanced semantics of social relationships pose significant computational challenges. To perform a deeper analysis of the social network, we complemented the machine-driven approach with a human-driven one that employs crowdsourcing techniques to assist with the interpretation of the interpersonal connections. Crowdsourcing has become increasingly popular as a means to harness human intelligence to complete small, but crucial tasks within a large-scale project.</p>
+    <p>Linked Jazz 52nd Street <ref type="note" target="n05">5</ref> was developed to harness the knowledge of jazz scholars from academic centers for jazz studies as well as jazz enthusiasts from dedicated online forums to assist with the interpretation of the relationships among jazz artists as documented in archived interviews. This tool is a web-based application that asks contributors to classify the relationship between two jazz artists according to a menu of options. This assessment is facilitated by presenting the contributor with interview excerpts referencing the individuals in question. Results are tallied and converted into RDF statements that feed the project’s LOD dataset. As part of the development of the tool, a list of social relationships was compiled by selecting suitable predicates from LOD vocabularies including the Relationship vocabulary <ref type="note" target="n06">6</ref>,  FOAF<ref type="note" target="n07">7</ref>,   and the Music Ontology <ref type="note" target="n08">8</ref>.  The spectrum of relationships ranges from lower degrees of personal closeness (e.g., knows_of, has_met) to deeper levels of social ties (e.g., collaborated_with, influenced_by, mentor_of). This selection was the result of the analysis and mapping of person-centered RDF vocabularies (Pattuelli 2011). Jazz experts were also tapped to help discern which of these relationships would be of most interest to them and the larger community of potential users of jazz archives.</p>
+</div>
+    
+<div>  
+<head><hi rend="bold">Linked Jazz 52nd Street Design</hi></head>     
+    
+    <p>Crowdsourcing, a term coined by Jeff Howe (2006) in <hi rend="italic">Wired</hi> magazine, was predominantly seen as an online business model, but recently successful projects, including New York Public Library’s <hi rend="italic">What’s on the Menu</hi><ref type="note" target="n09">9</ref>  and University College London’s <hi rend="italic">Transcribe Bentham</hi><ref type="note" target="n010">10</ref>, have brought attention to crowdsourcing in the domain of cultural heritage as a method of supporting an array of labor-intensive and error-prone tasks including transcribing, classifying, proofreading, tagging, and annotating digital content.</p> 
+    <p>The design of the Linked Jazz 52nd Street application was informed by research on crowdsourcing, as shown in Figure 2. The overall design of the site is geared towards lowering the barrier for participation through a simple and clean layout (Oomen and Aroyo 2011). Several studies have revealed that while extrinsic factors, such as monetary compensation and recognition, are strong motivators to engage in crowdsourcing projects, so are intrinsic factors, such as the opportunity to contribute to the greater good and learn new skills (Brabham 2010). This suggests that acknowledging user contributions through methods such as feedback and ranking of contributors, as well as providing tutorials and interaction with staff, helps to keep users engaged (Causer, Tonra and Wallace 2012; Huberman, Romero and Wu 2009). To this end, we encourage visitors to begin contributing by having a strong call to action message on the homepage asking visitors to click on a musician's photograph. As the contributor processes a transcript, an ego network visualization is built in real time while a progress bar fills indicating their progress (Fig. 2.1). This extrinsic motivator provides visual feedback indicating the immediate results of their contribution and makes their work transparent and accessible (Holley 2010). We also provide the ability for the contributor to put the task in context by expanding the transcript dialog (Fig. 2.2) to read more of the interview. This intrinsic motivator allows the contributor to break out of their current task and read more of the transcript if they find a compelling story or want to learn more about what is being discussed. Holly (2010) highlighted the importance of offering the contributor options of where to focus their work. We facilitate this choice by providing the contributor with the ability to select which individuals they wish to review (Fig. 2.3). Another important aspect is maintaining the provenance of the source information (Oomen and Aroyo, 2011) which we accomplish by including a link to the contributing institution and metadata such as the interviewer’s name (Fig. 2.4). As recommended by Causer, Tonra and Wallace (2012), we provide detailed assistance through a tutorial system and instant popup help tips (Fig. 2.5). We also track and display metrics of the contributors (Fig. 2.6) to acknowledge their work and create a sense of community (Huberman, Romero and Wu, 2009).</p>
+    
+<figure><graphic url="ab-254.002"/><head>Fig. 2:</head><p>Linked Jazz 52nd Street design elements</p></figure>
+        <p>
+Future plans for Linked Jazz 52nd Street include usability testing to be conducted both with jazz experts and non-experts. Feedback from these tests will inform decisions regarding refinements and further development of the tool before its public release.</p>        
+</div>
+
+<div>
+<head><hi rend="bold">Conclusion</hi></head> 
+
+    <p>Scott (2011) points out that advances in social network analysis should not be simply descriptive work, but rather hold substantive significance. In addition to creating a deep network of the jazz community through the description of relationships at a more meaningful level, Linked Jazz 52nd Street will contribute a new LOD dataset representing jazz artists and their relationships that will be freely available for applications developers. Not only does it give new visibility to jazz archival resources, but it has the potential to promote new streams of research, including a socially-driven approach to the study of jazz history.</p>
+</div> 
+    
+    
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Brabham, D. C.</hi> (2010). Moving the crowd at Threadless. <hi rend="italic">Information, Community, &amp; Society,</hi> 13(8), 112-1145.</bibl>
+    
+<bibl><hi rend="bold">Causer, T., J. Tonra, and V. Wallace</hi> (2012). Trascription maximized; expense minimized? Crowdsourcing and editing <hi rend="italic">The Collected Works of Jeremy Bentham. Literary and Linguistic Computing.</hi> <hi>27.2</hi> 119-137.</bibl>
+    
+<bibl><hi rend="bold">Chen, I. X. and C. Z. Yang</hi> (2010). Visualization of social networks. <hi rend="italic">Handbook of Social Network Technologies and Applications.</hi> New York: Springer. 585-610.</bibl>
+    
+<bibl><hi rend="bold">Davis, I. and E. Vitiello</hi> (2010). Relationship: A vocabulary for describing relationships between people. Available at: <ref type="url" target="http://vocab.org/relationship/.html">http://vocab.org/relationship/.html</ref></bibl>
+    
+<bibl><hi rend="bold">Heckathorn, D. D., and J. Jeffri</hi> (2003). Social networks of jazz musicians. In <hi rend="italic">Changing the Beat: A Study of the Worklife of Jazz Musicians, Volume III: Respondent-Driven Sampling: Survey Results by the Research Center for Arts and Culture.</hi> Washington, D.C.: National Endowment for the Arts Research Division Report #43. 48-61.</bibl>
+    
+<bibl><hi rend="bold">Holley, R.</hi> (2010). Crowdsourcing: How and Why Libraries Should Do It. <hi rend="italic">D-Lib Magazine,</hi> <hi>16.3/4)</hi>. Retrieved from <ref type="url" target="http://www.dlib.org/dlib/march10/holley/03holley.html">http://www.dlib.org/dlib/march10/holley/03holley.html</ref></bibl>
+    
+<bibl><hi rend="bold">Huberman, B. A., D. M. Romero, and F. Wu</hi> (2009). Crowdsourcing, attention and productivity. <hi rend="italic">Journal of Information Science,</hi> <hi>35.6</hi>, 758-765.</bibl>
+    
+<bibl><hi rend="bold">Oomen, J., and L. Aroyo</hi> (2011). Crowdsourcing in the cultural heritage domain: opportunities and challenges. <hi rend="italic">Initiatives, 29</hi>, 138-149.</bibl>
+    
+<bibl><hi rend="bold">Pattuelli, M. C.</hi> (2011). Mapping people-centered properties for Linked Open Data. <hi rend="italic">Knowledge Organization</hi> <hi>38.4</hi>, 352-359.</bibl>
+    
+<bibl><hi rend="bold">Pattuelli, M. C., C. Weller, and G. Szablya</hi> (2011). Linked Jazz: An exploratory pilot. In <hi rend="italic">DC-2011: Proceedings of the International Conference on Dublin Core and Metadata Applications</hi> (pp. 158-164). The Hague, The Netherlands.</bibl>
+    
+<bibl><hi rend="bold">Schubert, A.</hi> (2012). Jazz discometrics: A network approach. <hi rend="italic">Journal of Informetrics</hi> <hi>6</hi>: 480-484.</bibl>
+    
+<bibl><hi rend="bold">Scott, J.</hi> (2011). Social network analysis: Developments, advances, and prospects. <hi rend="italic">Social Network Analysis and Mining</hi> <hi>1.1</hi>, 21-26.</bibl>
+    
+</listBibl>
+</div>
+<div>
+
+<head>Notes</head>
+
+<note xml:id="n01" n="1"><ref type="url" target="http://linkedjazz.org">linkedjazz.org</ref></note>
+<note xml:id="n02" n="2"><ref type="url" target="http://linkedjazz.org/network">linkedjazz.org/network</ref></note>
+<note xml:id="n03" n="3"><ref type="url" target="http://eac.staatsbibliothek-berlin.de">http://eac.staatsbibliothek-berlin.de</ref></note>
+<note xml:id="n04" n="4"><ref type="url" target="http://socialarchive.iath.virginia.edu/">http://socialarchive.iath.virginia.edu/</ref></note>
+<note xml:id="n05" n="5"><ref type="url" target="http://linkedjazz.org/52ndStreet">linkedjazz.org/52ndStreet</ref></note>
+<note xml:id="n06" n="6"><ref type="url" target="http://vocab.org/relationship/.html">http://vocab.org/relationship/.html</ref></note>
+<note xml:id="n07" n="7"><ref type="url" target="http://www.foaf-project.org/">http://www.foaf-project.org/</ref></note>
+<note xml:id="n08" n="8"><ref type="url" target="http://musicontology.com/">http://musicontology.com/</ref></note>
+<note xml:id="n09" n="9"><ref type="url" target="http://menus.nypl.org">http://menus.nypl.org	</ref></note>
+<note xml:id="n010" n="10"><ref type="url" target="http://www.ucl.ac.uk/transcribe-bentham/">http://www.ucl.ac.uk/transcribe-bentham/</ref></note>
+</div>
+</back>
+</text>
+</TEI>    
+
+

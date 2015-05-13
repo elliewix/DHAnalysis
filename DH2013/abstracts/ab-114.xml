@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-114">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Agent-Based Modeling and Historical Simulation</title>
+<author>
+<name><surname>Gavin</surname>, <forename>Michael</forename></name>
+<affiliation>University of South Carolina, United States of America</affiliation>
+<email>michael.a.gavin@gmail.com</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper will discuss Agent-Based Modeling (ABM) and its application in the humanities, with special focus on questions of concern to literary history. In the fields of ecology, economics, and political science, ABM has been used to show how the behaviors of individual entities collectively alter large emergent phenomena. ABM offers a promising new way to approach long-standing humanistic questions, such as how literary genres change over time, how publics form and transform, or how consumer markets influence authors.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP24</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>agent-based modeling</term>
+<term>simulation</term>
+<term>artificial societies</term>
+<term>NetLogo</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>historical studies</term>
+<term>literary studies</term>
+<term>virtual and augmented reality</term>
+<term>english studies</term>
+<term>renaissance studies</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+<term>spatio-temporal modeling</term>
+<term>analysis and visualisation</term>
+<term>agent modeling and simulation</term>
+<term>media studies</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-01"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>Overview</head>
+ 
+
+<p>This paper will discuss Agent-Based Modeling (ABM) and its application in the humanities, with special focus on questions of concern to literary history. I begin with an introduction to ABM. Unlike text mining, topic modeling, and social-network analysis, which apply quantitative analysis to already existing text corpora, ABM creates a simulated environment and measures the interactions of individual agents within that environment. Like video games, agent-based models simulate rule-bound behaviors and generate outcomes based on those rules. However, unlike
+most games, where the “procedural rhetoric” of the game “persuades” users (Bogost), ABM does not depend on human interaction, but can be run many times with changing variables. Researchers can alter the parameters of agent behavior and compare how different models generate different outcomes. In the fields of ecology, economics, and political science, ABM has been used to show how the behaviors of individual entities&#8212;microbes, consumers, and voters&#8212; collectively alter large emergent phenomena. ABM offers a promising new way to approach long-standing humanistic questions, such as how literary genres change over time, how publics form and transform, how consumer markets influence authors, how ideologies move across national boundaries, or how family structures affect reading practices.</p>
+
+<p>The bulk of my presentation will concern ABM in general and the theoretical issues posed by its application to historical data, but I will also discuss our ongoing project: a computer simulation of English print culture of the seventeenth century. Using NetLogo ABM software, we attempt to simulate some of the ways literary and political arguments moved through various textual media (print, manuscript, gossip, and the stage) of the seventeenth century. As the agents in our simulation trade texts, their networks of affiliation create “opinion formations” (groups of like- minded agents), helping us to see how literary and political values were transmitted in tandem. Book historians have shown how the history of ideas is inextricable from the networks of textual circulation through which ideas move. ABM will allow researchers to see these connections in a new way and, most importantly, to test textual relationships in a controlled, manipulable environment.</p>
+
+<p>This paper aims to introduce ABM to digital humanists, not (just) because ABM is “the next big thing,” but also to enrich ABM by importing a “more comprehensive understanding of human decision-making ... needed to move the technique forward” (Williams 2012). The rich traditions and methods of humanistic inquiry have much to contribute to this new and important computational method.</p>
+</div>
+
+<div>
+<head>Background: What is Agent-Based Modeling?</head>
+
+<p>Computer simulation has emerged in the past two decades as an important alternate method of quantitative analysis. The social and biological sciences, in particular, have benefited from the adoption of NetLogo, a simple-to-use open-source program which has opened ABM to a wide range of new inquiries (Railsback). In archeology, researchers used ABM to test possible causes for the disappearance of the Kayenti Anasazi, a prehistoric precursor of the Pueblo cultures (Dean, et al.), but ABM has made few inroads into the humanities. In the humanities, quantitative approaches have tended to involve the manipulation of text. Agent-based modeling differs significantly from topic modeling, which identifies and visualizes “lexical relationality among literary works” (Piper and Algee-Hewitt; McCarty). Such techniques identify word-clusters that represent core ideas and demonstrate how these clusters relate to each other within an existing field of text-data. Similarly, text-mining and text-mapping, sometimes called “culturomics,” find large-scale patterns, which sometimes confirm and sometimes unsettle prior expectations (Michel et al.; Wilkens; Underwood; Lieberman). ABM is also concerned with identifying relationships across large bodies of data. However, ABM differs from these methods significantly by moving away from a text-centric understanding of history. ABM instead simulates the causal forces that motivate change in complex systems like historical societies.</p>
+
+<p>ABM is most similar to Game Simulation (GS), and my discussion will briefly outline points of overlap. Historical gaming is an important genre, and research communities like PlayThePast.org are beginning to identify the pedagogical value of historical games. Like GS, ABM can be said to create a “problem space” where the “affordances” and “constraints” of the space dictate player behavior (McCall). Much of what Ian Bogost has said about games applies to ABM as well: “Games represent how real and imagined systems work, and they invite players to interact with those systems and form judgments about them” (Bogost). ABM shares with GS this attention to systems of interaction. Accordingly, there has been a new push to incorporate ABM into GS in order to provide better simulations for gameplay (Arai et al.; Bonnett).</p>
+</div>
+
+<div>
+<head>Project Description: Simulating the History of Print Controversy</head>
+
+<p>How do texts move through social networks? How does the movement of texts affect the movement of ideas? Although detailed financial records from the early print era are necessarily sparse, we know a great deal about the history of publishing <hi rend="italic">as a system</hi> (Darnton; St. Clair; Raven). Book historians have developed complex qualitative models for understanding how books were produced, sold, and distributed. The most famous such model is Robert Darnton’s “communications circuit,” which provides a schema for describing the production of books as
+they flow through various contact points in the book trade. Our models point to three specific points of interaction in the circuit:</p>
+
+<div>
+<head><hi rend="italic">I: How do readers decide to purchase books?</hi></head>
+
+<p>Working from William St. Clair’s “reader-led model” for understanding the communications circuit, my first model will examine how readers’ preferences influence the decisions of printers and booksellers (St. Clair). Historians know a great deal about what books were published when and about the mix of old and new titles that circulated through bookshops. This simulation will describe when and how books run through multiple editions, when they are kept for sale, and when they are reverted to pulp.</p>
+</div>
+<div>
+<head><hi rend="italic">II: How does censorship affect controversial political writing?</hi></head>
+ 
+<p>The print marketplace was tightly controlled by several governing forces. Some of these were official institutions, like the state Licenser and the Stationers’ Company (the professional association of printers and booksellers), but punishments were also meted out by influential individuals offended by books. In this model, I will adapt Joshua Epstein’s simulation of 20th- century political oppression to the seventeenth-century context in order to examine how the circulation of controversial books was affected by censors (Epstein).</p>
+</div>
+<div>
+<head><hi rend="italic">III: How do books change readers’ opinions over time?</hi></head>
+
+<p>ABM has been used to describe voting patterns and “opinion formations” (Afshar and Asadpour; Lorenz). Following this research, my third model will examine how readers’ opinions change over time in response to political rhetoric. The reader-agents will hold an array of opinions along a continuously sliding scale from [-1] to [+1]. Agents respond to the opinions of others based on
+the confidence they placed in the author and in their proximity within continuously shifting social networks.</p>
+</div>
+</div>
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Afshar, M., and M. Asadpour</hi> (2010). “Opinion Formation by Informed Agents.” <hi rend="italic">Journal of
+Artificial Societies and Social Simulation</hi> <hi rend="bold">13 (4).</hi>: 5.</bibl>
+
+<bibl><hi rend="bold">Arai, K., H. Deguchi, and H. Matsui</hi> (2006). <hi rend="italic">Agent-Based Modeling Meets Gaming Simulation</hi>. Springer.</bibl>
+
+<bibl><hi rend="bold">Bogost, I. </hi>(2007). <hi rend="italic">Persuasive Games: The Expressive Power of Videogames</hi>. Cambridge, MA: MIT Press.</bibl>
+
+<bibl><hi rend="bold">Bonnett, J. </hi> (2007). Charting a New Aesthetics for History: 3D, Scenarios, and the Future of the
+Historian’s Craft. <hi rend="italic">L’histoire Sociale/Social History</hi> 40. 169–208.</bibl>
+
+<bibl><hi rend="bold">Darnton, R.</hi> (2006). What is the History of Books? in <hi rend="italic">Book History Reader</hi>. 2nd edn. Routlege.</bibl>
+
+<bibl><hi rend="bold">Dean, J., J. Epstein, A. Swedlund, M. Parker, and S. McCarroll</hi> Understanding Anasazi Culture Through Agent-Based Modeling. Sante Fe Institute. <ref type="url" target="http://www.santafe.edu/media/workingpapers/98-10-094.pdf">http://www.santafe.edu/media/workingpapers/98-10-094.pdf</ref>.</bibl>
+
+<bibl><hi rend="bold">Lieberman, M.</hi> (2012). The ‘Dance of the P’s and B’s’: Truth or Noise? <hi rend="italic">Language Log</hi>. <ref type="url" target="http://languagelog.ldc.upenn.edu/nll/?p=3730">http://languagelog.ldc.upenn.edu/nll/?p=3730</ref>.</bibl>
+
+<bibl><hi rend="bold">Lorenz, J.</hi> (2007). Continuous Opinion Dynamics Under Bounded Confidence: a Survey.
+<hi rend="italic">International Journal of Modern Physics</hi> <hi rend="bold">18</hi> 1819–38.</bibl>
+
+<bibl><hi rend="bold">McCall, J.</hi> (2012). Historical Simulations as Problem Spaces: Criticism and Classroom Use.
+<hi rend="italic">Journal of Digital Humanities</hi>.</bibl>
+
+<bibl><hi rend="bold">McCarty, W.</hi> (2004). Modeling: a Study in Words and Meanings. in <hi rend="italic">Companion to the Digital
+Humanities</hi>. Blackwell.</bibl>
+
+<bibl><hi rend="bold">Michel, J.-B., et al.</hi> (2011). Quantitative Analysis of Culture Using Millions of Digitized Books. <hi rend="italic">Science</hi> <hi rend="bold">331</hi> 176–182.</bibl>
+
+<bibl><hi rend="bold">Piper, A., and M.  Algee-Hewitt</hi> (2012). About in <hi rend="italic">Literary Topologies</hi>. <ref type="url" target="http://literarytopologies.org/?page_id=15">http://literarytopologies.org/?page_id=15</ref>.</bibl>
+ 
+<bibl><hi rend="bold">Railsback, S.</hi> (2012). <hi rend="italic">Agent-based and Individual-based Modeling a Practical Introduction</hi>. Princeton
+University Press.</bibl>
+
+<bibl><hi rend="bold">Raven, J.</hi> (2007). <hi rend="italic">The Business of Books</hi>. Yale University Press.</bibl>
+
+<bibl><hi rend="bold">St. Clair, W.</hi> (2004). <hi rend="italic">Reading Nation in the Romantic Period</hi>. Cambridge.</bibl>
+
+<bibl><hi rend="bold">Underwood, T. </hi>(2012). Where to Start with Text Mining. in <hi rend="italic">The Stone and the Shell.</hi> <ref type="url" target="http://tedunderwood.wordpress.com/2012/08/14/where-to-start-with-text-mining/">http://tedunderwood.wordpress.com/2012/08/14/where-to-start-with-text-mining/</ref>.</bibl>
+
+<bibl><hi rend="bold">Wilkens, M.</hi> (2012). “Canons, Close Reading, and the Evolution of Method.” In <hi rend="italic">Debates in the Digital Humanities,</hi> ed. Gold, M. K.  249–58. Minneapolis: University of Minnesota Press.</bibl>
+
+<bibl><hi rend="bold">Williams, S.</hi> (2012). <hi rend="italic">Agent-Based Modeling: History and Applications. Conference Presentation.</hi> Quantifying Social Fields. held at Berkeley, CA. <ref type="url" target="http://www.irle.berkeley.edu/culture/conf2012/williams-agents12.pdf">http://www.irle.berkeley.edu/culture/conf2012/williams-agents12.pdf</ref></bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-221">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Simulating Plot: Towards a Generative Model of Narrative Structure</title>
+<author>
+<name><surname>Sack</surname>, <forename>Graham Alexander</forename></name>
+<affiliation>Columbia University, United States of America</affiliation>
+<email>gas2117@columbia.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper explores the application of computer simulation techniques to the fields of literary studies and narratology by developing a model for plot structure and characterization. Using a corpus of 19th Century British novels as a case study, the author begins with a descriptive quantitative analysis of character names, developing a set of stylized facts about the way narratives allocate attention to their characters. The author shows that narrative attention in many novels appears to follow a “long tail” distribution. The author then constructs an explanatory model in NetLogo, demonstrating that basic assumptions about plot structure are sufficient to generate output consistent with the real novels in the corpus.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP28</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Simulation</term>
+<term>Narratology</term>
+<term>Plot</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>literary studies</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+<term>agent modeling and simulation</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-08"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div> 
+<head>Introduction</head>
+
+<p>This paper explores the application of computer simulation techniques to the fields of literary studies and narratology by developing a model for plot structure and characterization. Using a corpus of 19th Century British novels as a case study, this author begins with a descriptive quantitative analysis of character names, developing a set of stylized facts about the way narratives allocate attention to their characters. I show that narrative attention in many novels appears to follow a “long tail” distribution. I then construct an explanatory model instantiated in a JAVA-based simulation, demonstrating that basic assumptions about plot structure are sufficient to generate output consistent with the real novels in the corpus.</p>
+
+<p>This study differs from prior computational work in literary criticism in two crucial respects. First, rather than style, this paper is concerned with plot and characterization. As critic Franco Moretti has argued, plot is the crucial element that must be quantified if computational methods are to gain traction in mainstream literary criticism. Second, the overwhelming majority of prior computational studies in literary criticism have been <hi rend="italic">descriptive</hi>&#8212;counting and classifying the surface features of a text. This study, however, is focused on <hi rend="italic">generative models</hi>. Although I make use of descriptive analysis, the main intent is to motivate a computer simulation that I will show is sufficient to reproduce several key stylized facts about actual narratives.</p> 
+</div>
+
+<div>
+<head>Part 1: Descriptive Analysis</head>
+
+<p>In <hi rend="italic">The One vs. The Many</hi> (2003), literary critic Alex Woloch repositions the questions of plot and characterization with which narratologists and formalists have traditionally been concerned in terms of the concept of “narrative attention.” Woloch argues that “narrative attention” is a scarce resource that authors must choose how to allocate amongst the characters populating their stories.</p> 
+
+<p>Taking a cue from <hi rend="italic">The One vs. The Many</hi>, this paper begins by applying quantitative rigor to the concepts of “distribution” and “apportioning of narrative attention,” terms that Woloch uses qualitatively. By way of example, Figure 1 depicts the statistical distribution of character name mentions in Charles Dickens’ <hi rend="italic">The Pickwick Papers</hi>. The distribution of name mentions (an observable metric) can be used as an instrumental variable for the distribution of narrative attention (a latent, unobservable variable). The result is striking&#8212;109 characters organized into what one might term “the long tail”: a small set of central characters represented by the spike on the left followed by a steep drop off to a long but shallow tail consisting of dozens of characters who are mentioned fewer than 10 times.</p> 
+
+<p>A wide range of phenomena are also known to follow a long tail: wealth distribution, website hits, and online books sales, for example, all obey a power law. The data for the novels sampled suggests that character name mentions and, by extension, narrative attention, are similarly distributed. That the distribution of attention within a novel should closely resemble the distribution of wealth within a nation is a provocative fact that calls for explanation. Do narratives exhibit power-law behavior because of rich-get-richer effects such as preferential attachment or are character names merely a special case of Zipf’s law regarding word frequency?</p>
+
+<figure>
+<graphic url="ab-221.001" />
+</figure>
+
+
+</div>
+
+<div>
+<head>Part 2: Generative Models</head>
+
+<p>Computer simulation techniques can play a valuable role in elucidating the dynamics driving narrative attention. This paper takes a structuralist approach that envisions narrative as composed of sub-structures with combinatorial rules. I assume that a plot structure is composed of a set of interwoven “plot strands” each with an internal hierarchy of characters. A JAVA-based simulation is used to implement this model. The user specifies the number of characters, plot strands, and scenes. The model then progresses sequentially through the plot, instantiating each strand as a scene in the predetermined order.</p> 
+
+
+<p>Although simplistic in its assumptions, this simulation is sufficient to reproduce a number of the salient features of narrative attention in the novels sampled. If the number of plot strands and main characters are set low&#8212;corresponding to a narrative that is tightly focused around one or a few characters in a single story line&#8212;the results closely resemble those observed for a <hi rend="italic">Bildungsroman</hi> such as <hi rend="italic">Pride and Prejudice</hi>. If the number of plot strands and main characters are set high&#8212;corresponding to a narrative focused around a large ensemble of characters across many subplots or parallel plots&#8212;the results closely resemble those observed for a sweeping social problem novel such as <hi rend="italic">Bleak House</hi>.</p>
+
+
+<p>Figure 2 shows a sweep of the model’s output in parameter space. The z-axis is the average goodness of fit of a power-law distribution. The x-axis represents the number of main characters (from x = 1 to x = 20) and the y-axis the number of plot strands (from y = 1 to y = 20). The number of characters is held constant at 50 and the number of scenes is held constant at 30. The model is run 40 times for each (x,y) pair, for a total of 16,000 runs. As the graph shows, the distribution of narrative attention fits a power law well for a low number of plot strands. As the number of plot strands increases, the fit erodes, particularly if the number of characters is increased along with the strands. </p>
+
+
+<p>The simulation developed is intentionally simplistic: I have modeled plot structure and characterization only in terms of combinatorial rules for plot strands. Nevertheless, this simple model of plot structure is sufficient to generate results consistent with the way narrative attention is allocated in actual novels. This suggests the explanatory power of the “strand”&#8212;an historically under-theorized narrative unit that is worthy is further investigation.</p>
+
+<figure>
+<graphic url="ab-221.002" />
+</figure>
+
+</div>         
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Anderson, C.</hi> (2008). <hi rend="italic">The Long Tail</hi>. New York: Hyperion.</bibl>
+
+<bibl><hi rend="bold">Easley, D., and J. Kleinberg</hi> (2010). Power Laws and Rich Get Richer Phenomena. <hi rend="italic">Networks, Crowds, and Markets</hi>. Cambridge UP.</bibl>
+
+<bibl><hi rend="bold">Moretti, F.</hi> (2010). Network Theory, Plot Analysis. <hi rend="italic">New Left Review</hi>.</bibl>
+
+<bibl><hi rend="bold">Woloch, A.</hi> (2003). <hi rend="italic">The One vs. the Many</hi>. Princeton, NJ: Princeton University Press.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-273">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Incidental Crowdsourcing: Crowdsourcing in the Periphery</title>
+<author>
+<name><surname>Organisciak</surname>, <forename>Peter</forename></name>
+<affiliation>University of Illinois at Urbana-Champaign, United States of America</affiliation>
+<email>organis2@illinois.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper introduces incidental crowdsourcing (IC): an approach to user-provided item description that adopts crowdsourcing as a way to think about augmentative features of system design. IC is intended to frame discussion around peripheral and non-critical system design choices. One place of value for IC is in generating augmented metadata about digital resources.
+
+There are two parts to the proposed paper. First, a provisional definition is offered. Examples that fit the definition are considered and used to refine the definition. This allows us to explore the robustness and feasibility of IC, looking at its uses and implications in representing digital objects in virtual spaces.
+
+In the second part, this paper shares an example study comparing the participation habits of users in two system features - one which is representative of IC properties and one which is not. This study find difference in user engagement between the two systems.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP02</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>crowdsourcing</term>
+<term>incidental crowdsourcing</term>
+<term>system design</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>information retrieval</term>
+<term>metadata</term>
+<term>internet / world wide web</term>
+<term>crowdsourcing</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-17"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<p>As the customs of the Internet grow increasingly collaborative, crowdsourcing offers an appealing frame for looking at the interaction of users with online systems and each other. However, it is a broad term that fails to emphasize the use of crowds in subtler system augmentation.</p>
+
+<p>This paper introduces incidental crowdsourcing (IC): an approach to user-provided item description that adopts crowdsourcing as a frame for thinking about augmentative features of system design. IC is intended to frame discussion around peripheral and non-critical system design choices.</p>
+
+<p>A provisional definition of incidental crowdsourcing will be defined in this paper, and then refined based on examples seen in practice. IC will be examined from both the user and system ends, positioned within existing work, and considered in the context of its benefits and drawbacks. This approach allows us to explore the robustness and feasibility of IC, looking at the implications inherent to accepting the provisional definition.</p>
+
+<p>The consequences of considering system design on a scale between IC and non-IC design choices remain to be seen. Toward this goal, the second part of this paper shows a study comparing the participation habits of users in two online systems &#8212; one that is representative of IC properties and one that is not. This study finds differences in user engagement between the two systems.</p>
+</div>
+
+<div>
+<head>Introduction</head>
+
+<p>Crowdsourcing asks a dispersed group of people to contribute toward a common task. It does not need to be the central feature of a project; it can be used for augments parts of a project. For example, Facebook<ref type="note" target="n01">1</ref>  uses “Likes” to gauge popularity of user-generated content, while photo-sharing website Flickr<ref type="note" target="n02">2</ref>  uses user labeling to improve their search engine.</p>
+
+<p>Incidental crowdsourcing functions in in this way, capturing useful but unobtrusive user input and making sense of it in aggregate. An incidental crowdsourcing feature is supplemental to its site’s primary function. Thus, visitors to the website are gently given ways to make a contribution, but not forced into it. IC offers a way to consider the design of online systems through the lens of crowdsourcing, which offers a compelling framework for gathering abstract, perception-based, or conceptual data in a volunteer-driven and often mutually beneficial way. </p>
+
+<p>The value of IC is largely in augmenting existing information, making it valuable in the digital humanities for enriching digital resources. Version 1.0 of Digital Humanities Now, for example, used implicit linking by DH scholars on Twitter to determine the quality of online information (Cohen 2009). Another system dealing with digital resources, citation manager Mendeley, takes an IC approach in improving metadata and predicting research trends (Henning et al. 2010).</p>
+</div>
+
+<div>
+<head>Defining incidental crowdsourcing</head>
+
+<p>Incidental crowdsourcing is the gathering of contributions from online groups in an unobtrusive and non-critical way.</p>
+
+<p>It is <hi rend="italic">unobtrusive</hi> in that it does not cause significant barriers to a user’s completion of a task. The corollary to this is that IC exists in a task-driven environment where the user has a primary objective and IC exists alongside it without causing resistance to it.</p>
+
+<p>IC is also <hi rend="italic">non-critical</hi> to users and systems. For users, making a contribution is not a necessary part of a their use, while systems should not rely on contributions to function, using them for value-added features but degrading gracefully when there are few or unevenly distributed contributions.</p>
+
+<p>This provisional definition is expanded in the full paper by considering complementary characteristics of examples that fit the definition. This refinement expands the definition to note that contributing to IC is <hi rend="italic">descriptive</hi> &#8212; producing data about existing information objects, contributions tend to toward <hi rend="italic">low granularity</hi>, and systems favor <hi rend="italic">choices over statements</hi>.</p>
+
+<p>IC is best considered as a scale, where the IC fitness of a crowdsourcing system design element is a mixture of how well it conforms to each part of the above definition.</p>
+
+
+<figure>
+<graphic url="ab-273.t01"/>
+<figDesc>Action	Examples
+Rating	Rating the quality of online content, Rating helpfulness of online comments or reviews
+Classification/Curation	Tagging, labeling, adding to lists
+Saving/Recommending	Starring, liking/recommending, adding to favorites
+Editing	Translating content, correcting grammar or spelling
+Feedback Flagging online comments as inappropriate, “Did you find this helpful?”
+Other Commenting, sharing, encoding</figDesc>
+<head>Table 1:</head> <p>Common forms of incidental crowdsourcing and examples</p></figure>
+
+
+<p>Following from the provisional definition, Table 1 shows common IC actions, alongside examples of how they are implemented. The full paper outlines these actions relative to their use in digital humanities. These include:</p>
+
+<p><hi rend="italic">Scoring the quality of an information object</hi>. Rating or ranking systems that conform to the definition of IC tend to be on the lower end of granularity, most often using five- or two-point scales. Unary rating mechanisms are also used, for saving or supporting information items in online systems. For example, Facebook’s “Like” buttons allow users of the social network can make an assertion on the quality of an item. Rating systems tend to skew upward (Hu et al. 2006, Banjeree and Fudenberg 2004), and single button saving features are generally positive. Implicit recommendation is another valuable indicator of support; for example, it has been used to discover notable web resources through microblogging links (Cohen 2009).</p>
+
+<p><hi rend="italic">Organizing content.</hi> Curatorial features are a way for users to thematically group information objects in a way that can teach a system about the relationships between those objects. For example, newer OPAC replacements encourage IC classification and curation with patron-built book lists, ratings, and tagging (Singer 2008, Spiteri 2011). Such catalogues can be interaction points rather than simply retrieval systems, but participation is non-critical to users.</p>
+
+<p><hi rend="italic">Editing content</hi>. Incidental crowdsourcing is sometimes used to switch user roles from consumer to creator. The Australian Newspaper Digitization Project implemented this approach in corrected OCR transcriptions of old newspapers (Holley 2009), offering a link to the editing interface from the newspaper reading screen.</p>
+
+<p><hi rend="italic">Feedback</hi>. Simply asking users questions which they have the capacity to answer has been noted as a strong motivator for contribution (Kraut and Resnick 2012, Organisciak 2010), and feedback mechanisms often make use of this with direct questions and easy to choose answers.</p>
+</div>
+
+<div>
+<head>User- and System-end considerations</head>
+
+<p>Since IC contributions are non-critical, systems utilizing IC should degrade gracefully when there is a lack of contributions. A system dealing with IC contributions should not be dependent on large or evenly distributed data sets. For example, the transit tracking application <hi rend="italic">Tiramisu</hi> (Zimmerman et al. 2011, Tomasic et al. 2011) aggregates the location of riders when it is being used, but falls back on historical information when real-time data is unavailable.</p>
+
+<p>Table 2 considers common IC actions and the corresponding value to a system and its users. Notably, in the majority of cases the user’s act of contributing is one of description rather than creation. Systems primarily use IC for understanding the content within them, while users primarily contribute to fulfill personal and social needs.</p>
+
+<figure>
+<graphic url="ab-273.t02"/>
+<figDesc>Action	User Use	System Use
+Tagging a photo/bookmark	Easy personal retrieval, appeal of collecting, item grouping for easy sharing	Improved search, improved browsing
+Rating an product	Sharing opinion	Improved recommendations, prioritize good items
+Rating/starring a digital item, starring	Sharing opinion, communicating approval, saving for reference	Identifying quality content
+Flagging content	Altruism, catharsis	Higher signal-to-noise in maintenance
+Sharing	Showing items to friends, curating content	Identifying popular/interesting content
+Feedback	Sharing personal knowledge and opinions, altruism	Correct problem data, discover system issues</figDesc>
+<head>Table 2</head></figure>
+
+</div>
+
+<div>
+<head>Comparison of design choice in product ratings</head>
+<p>How would an evaluation of systems through the lens of IC look? As an example, I compared the rating patterns of two application marketplaces&#8212;Amazon Appstore<ref type="note" target="n03">3</ref>  and Google Play<ref type="note" target="#n04">4</ref>. From each store the lists of best-selling free and paid items were scraped and parsed, and the applications that were on the lists of both sites were matched while others were removed from the data.</p>
+
+<p>The sites were chosen because they are alike in purpose, selling applications for the Android operating system, and much of the same content is represented between them. However, how each store allows users to rate their purchases differs. Google’s rating functionality is more aligned with IC, allowing users to rate an item with two clicks on one page. Meanwhile, Amazon is non-IC, asking raters to include title, reviews, and to abide by a codebook.</p>
+ 
+<figure><graphic url="ab-273.001" /><head>Figure 1</head></figure>
+
+
+<p>This study found that the distribution of mean ratings skewed higher for Google Play than for Amazon Appstore (Wilcoxon p&lt;0.001, see Figure 1). The difference in rating style exists even though there is no difference between the systems in how likely an application is to be rated (T-test p=0.9873, H<hi rend="sup">o</hi>:&#956;<hi rend="sub">diff</hi>=0).  Breaking the rating distributions down by relative choice frequency (Figure 2) shows a clear pivot at four stars.</p>
+  
+<figure>
+<graphic url="ab-273.002.1" />
+<head>Figure 2-1</head>
+</figure>
+
+<figure>
+<graphic url="ab-273.002.2" />
+<head>Figure 2-2 (Simplified)</head>
+</figure>
+
+
+<p>The distinct pivot between the distributions suggests that an adjustment can make Google’s distribution &#8212; collecting in a more IC appropriate manner &#8212; nearly identical to Amazon’s. Thus, while the non-IC approach receives more written reviews, Google does not appear to sacrifice rating quality with easier ratings. This could make a difference when looking to measure quality of new or barely-seen items.</p>
+</div>
+
+<div>
+<head>Conclusion</head>
+<p>This paper introduces the concept of incidental crowdsourcing, a way to crowdsource in a way that is non-critical, descriptive, unobtrusive and peripheral. Incidental crowdsourcing matters as a way to adopt crowdsourcing practices to reflect the subjective ‘humanness’ of digital object interpretations by consumers.</p>
+
+</div>
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+ 
+<bibl><hi rend="bold">Banerjee, A., and D. Fudenberg</hi> (2004). Word-of-mouth Learning. <hi rend="italic">Games and Economic Behavior</hi> 46(1). Web. 7 Dec. 2011.</bibl>
+
+<bibl><hi rend="bold">D. Cohen.</hi> (2009). Introducing Digital Humanities Now. 18 Nov. 2009.</bibl>
+
+<bibl><hi rend="bold">Henning, V., J. J. Hoyt, and J. Reichelt</hi> (2010). Crowdsourcing Real-Time Research Trend Data. Raleigh, USA. Web. 1 Nov. 2012.</bibl>
+
+<bibl><hi rend="bold">Holley, R.</hi> (2009). Many Hands Make Light Work: Public Collaborative OCR Text Correction in Australian Historic Newspapers. National Library of Australia. National Library of Australia Staff Papers.</bibl>
+
+<bibl><hi rend="bold">Hu, N., P. A. Pavlou, and J. Zhang</hi> (2006). Can Online Word-of-mouth Communication Reveal True Product Quality? Experimental Insights, Econometric Results, and Analytical Modeling. <hi rend="italic">Proceedings of the 7th ACM Conference on Electronic Commerce-2006</hi>. 324–330.</bibl>
+
+<bibl><hi rend="bold">Kraut, R.E., and P. Resnick</hi> (2012). Encouraging Contribution to Online Communities. <hi rend="italic">Designing From Theory: Using the Social Sciences as the Basis for Building Online Communities.</hi></bibl>
+
+<bibl><hi rend="bold">Organisciak, P.</hi> (2010). Why Bother? Examining the Motivations of Users in Large-scale Crowd-powered Online Initiatives. 31 Aug.</bibl>
+
+<bibl><hi rend="bold">Singer, R.</hi> (2008). In Search Of A Really ‘Next Generation’ Catalog. <hi rend="italic">Journal of Electronic Resources Librarianship</hi>. <hi>20(3)</hi>.  139–142. Web. 1 Nov. 2012.</bibl>
+
+<bibl><hi rend="bold">Spiteri, L. F.</hi> (2011). Social Discovery Tools: Cataloguing Meets User Convenience. <hi rend="italic">Proceedings from North American Symposium on Knowledge Organization</hi>. <hi>3</hi>.</bibl>
+
+<bibl><hi rend="bold">Tomasic, A., et al.</hi> (2011). Design Uncertainty in Crowd-Sourcing Systems.</bibl>
+
+<bibl><hi rend="bold">Zimmerman, J., et al.</hi> (2011). “Field Trial of Tiramisu: Crowd-sourcing Bus Arrival Times to Spur Co-design.” <hi rend="italic">Proceedings of the 2011 Annual Conference on Human Factors in Computing Systems. CHI  ’11</hi> held in Vancouver, BC. ACM. 1677–1686. Web. 4 Dec. 2011. </bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+
+<note xml:id="n01" n="1">  <ref type="url" target="http://www.facebook.com">http://www.facebook.com</ref></note>
+<note xml:id="n02" n="2">  <ref type="url" target="http://www.flickr.com">http://www.flickr.com</ref></note>
+<note xml:id="n03" n="3">  <ref type="url" target="http://www.amazon.com/appstore">http://www.amazon.com/appstore</ref></note>
+<note xml:id="n04" n="4">  <ref type="url" target="http://play.google.com">http://play.google.com</ref></note>
+
+</div>
+
+</back>
+</text>
+</TEI>
+

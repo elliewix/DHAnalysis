@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+ <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-162">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>A Text-Mining Approach to the Authorship Attribution Problem of <hi rend="italic">Dream of the Red Chamber</hi></title>
+<author>
+<name><surname>Tu</surname>, <forename>Hsieh-Chang</forename></name>
+<affiliation>National Taiwan University, CSIE Department, Taiwan, Republic of China</affiliation>
+<email>tu@turing.csie.ntu.edu.tw</email>
+</author>
+<author>
+<name><surname>Hsiang</surname>, <forename>Jieh</forename></name>
+<affiliation>National Taiwan University, CSIE Department, Taiwan, Republic of China</affiliation>
+<email>jhsiang@ntu.edu.tw </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Dream of the Red Chamber (DRC), written in the 18th century, is among the greatest Chinese classic novels. DRC has 120 chapters. In 1921, Hu Shi (<hi rend="Chinese">胡適</hi>) provided solid evidence to show that the first 80 chapters were written by Cao Xueqin (<hi rend="Chinese">曹雪芹</hi>) based on his life. He also attributed the remaining 40 chapters to Gao E (<hi rend="Chinese">高鶚</hi>). While the first conclusion is commonly accepted, the second is still not settled.
+
+In this paper we propose a text-mining approach to the DRC author attribution problem. We define a mining function to find terms that clearly show discrepancies between the two corpuses (Chapters 1-80 and Chapters 81-120). Some of the terms are semantic in nature, thus avoiding the pitfalls with the more syntactic function words approach. Our result supports the claim that the first 80 chapters and the last 40 were written by different authors.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP14</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>authorship attribution</term>
+<term>text mining</term>
+<term>Dream of the Red Chamber</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>authorship attribution / authority</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-03"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>Abstract</head>
+
+<p><hi rend="italic">Dream of the Red Chamber</hi> (DRC), written in the 18th century, is among the greatest Chinese classic novels.  Indeed, so many studies have been devoted to this work that the term <hi rend="italic">Redology</hi> was created to designate this field of research (Pan 1974). In 1921, Hu Shi (<hi rend="Chinese">胡適</hi>) provided solid evidence to show that, of the 120 chapters,  the first 80 were written by Cao Xueqin (<hi rend="Chinese">曹雪芹</hi>) based on his life.  He also attributed the remaining 40 chapters to Gao E (<hi rend="Chinese">高鶚</hi>) (Hu 1921).  While the first conclusion is commonly accepted, the second is not settled.</p>
+
+<p>Researchers have also used statistical methods to study this problem.  The most common approaches use pre-defined linguistic features, usually <hi rend="italic">function words</hi>, to check frequencies of words.  Interestingly, however, people came to different conclusions when choosing different features.</p>
+
+<p>We propose a text-mining approach to the DRC author attribution problem.  We define a mining function to find terms that clearly show discrepancies between the two corpuses.  Some of the terms are semantic in nature, thus avoiding the pitfalls with the more syntactic function words approach.  In addition to supporting the claim that the first 80 chapters and the last 40 were written by different authors, a somewhat surprising side result is the evidences that show Chapters 64 and 67, two chapters missing from the oldest existing edition, may also have been written by someone else.</p>
+</div>
+
+<div>
+<head>1. Introduction</head>
+
+<p><hi rend="italic">Authorship attribution</hi> is a well-researched subject. Brinegar (1963) used <hi rend="italic">word length</hi> as the text feature to conclude that the 10 Quintus Curtius Snodgrass letters were not written by Mark Twain.  Recent approaches, that usually assume the contextual independence of the texts being compared, make use of most frequent words and clustering analysis to identify the most likely author (Peng and Hengartner 2001, Burrows 2002, Hoover 2004, Malyutov 2006, Stamatatos 2009, Jockers and Witten 2010).</p>
+
+<p>A well-known author attribution problem in Chinese literature is the author of the last 40 chapters of the novel <hi rend="italic">Dream of the Red Chamber</hi>.  Past stylistic studies lead to contradictory claims due to different feature selections and experiment designs.  Karlgren (1952), Chan (1986), and He (2002) concluded that the entire DRC was written by the same person, while Zhao and Chen (1975), Yu (1998), and Yang (2003) observed significant differences between the first 80 and the last 40 chapters.</p>
+
+<p>Most of these works started from choosing certain linguistic features (usually <hi rend="italic">function words</hi>).  A hypothesis testing method is then deployed to check whether the frequency distributions of features in the first 80 chapters are significantly different from those in the last 40.  Yang (2003) used a different approach.   They first partitioned DRC into 12 documents, each with 10 chapters.  Instead of using pre-defined words, they designed a simple function that used the frequencies of unigrams to associate similarities between each pair of the 12 documents.  They found strong similarities in the first 2 documents (containing Chapters 1-20), the next 6 documents (Chapters 21-80), and the final 4 (Chapters 81-120), and thus concluded that the final 40 chapters were written by a different author.   However, following the same reasoning, one should also conclude that the first 20 chapters and the middle 60 were written by different authors.</p>
+</div>
+
+<div>
+<head>2. Our text-mining approach</head>
+
+<div>
+<p>We propose a text-mining approach to the DRC author attribution problem.  Instead of choosing pre-defined words, we design a mining function to generate candidate words. In addition to term frequencies, we also consider the number of chapters in which a term appears.</p>
+</div>
+
+<div>
+<head>2.1 The edition question</head>
+<p>The first question is to choose a proper edition.  The earliest of DRC (1754) contains merely 16 chapters, and the second, <hi rend="italic">gengchen</hi> edition (<hi rend="Chinese">庚辰本</hi>) of 1760, has 78 chapters (1-80 except 64 and 67).  The earliest existing version with 120 chapters, edited by Cheng Weiyuan and Gao E, appeared in 1791.  The full text we chose was
+</p>
+<figure>
+<graphic url="ab-162.t01"/>
+<head>Table 1.</head><p>The top 5 high-scored unigrams and top 10 bigrams computed by the mining function <hi rend="italic">f(t)</hi>.</p>
+</figure>
+<p>
+the one provided by YuanZe University<ref target="n01">1</ref>,  which is the closest to the earliest editions.</p>
+</div>
+
+<div>
+<head>2.2	The text-mining function</head>
+
+<p>Regarding each chapter as a document, we use <hi rend="italic">A</hi> and <hi rend="italic">B</hi> to denote the corpuses of the first 80 chapters and the last 40 respectively.  Thus |<hi rend="italic">A</hi>|=80 and |<hi rend="italic">B</hi>|=40.  We use <hi rend="italic">t<hi rend="math_alt_font">∈</hi>d</hi> if the term <hi rend="italic">t</hi> occurs in document <hi rend="italic">d</hi>.  Let <hi rend="italic">Dt={d: t<hi rend="math_alt_font">∈</hi>d, d<hi rend="math_alt_font">∈</hi>D</hi>} be the subset of <hi rend="italic">D</hi> which contains term <hi rend="italic">t</hi>.  We call |<hi rend="italic">Dt</hi>| the <hi rend="italic">document frequency</hi> of <hi rend="italic">t</hi> in <hi rend="italic">D</hi>.  We define the <hi rend="italic">average document frequency</hi> of <hi rend="italic">t</hi>, a term, in <hi rend="italic">D</hi>, a document set, to be <hi rend="italic">pt(D)= |Dt|/|D|</hi>.  <hi rend="italic">pt(D)</hi> indicates the average probability for any document in D to contain <hi rend="italic">t</hi>.</p>
+
+<p>We define the text-mining function to be
+</p>
+<figure><graphic url="ab-162.m01"/></figure>
+<p>
+
+where a constant <hi rend="italic">k</hi> is added to avoid the case <hi rend="italic">f(t)=∞</hi> when <hi rend="italic">pt(A)</hi> or <hi rend="italic">pt(B)</hi> equals 0. We set <hi rend="italic">k</hi>=0.02 in our experiments.  We assume <hi rend="italic">pt(A) ≥ pt(B)</hi> and use <hi rend="italic">k</hi>=0 to illustrate how the function works.  Then <hi rend="italic">f(t)</hi>= <hi rend="italic">pt(A)/ pt(B)</hi> and a big <hi rend="italic">f(t)</hi> means a high ratio of <hi rend="italic">pt(A)</hi> to <hi rend="italic">pt(B)</hi>.  Thus a high-scored <hi rend="italic">f(t)</hi> means that the average document frequency of term <hi rend="italic">t</hi> in A is significantly different from that in <hi rend="italic">B</hi>. </p>
+
+<p>The top 5 unigrams and top 10 bigrams obtained through <hi rend="italic">f(t)</hi> are given in Table 1.  We have studied the top 30 unigrams and bigrams, which all showed similar behavior.</p>
+</div>
+
+<div>
+<head>2.3 Some findings</head>
+
+<p>We now briefly discuss some of our findings.  The top-scored unigram <hi rend="italic">ma</hi> (<hi rend="Chinese">嬤</hi>) occurs only in the form of <hi rend="italic">mama</hi> (<hi rend="Chinese">嬤嬤</hi>) which we shall discuss later.  The second unigram <hi rend="italic">li</hi> (<hi rend="Chinese">裡</hi>) is interchangeable with another <hi rend="italic">li</hi> (<hi rend="Chinese">裏</hi>), thus could have been replaced during transcribing and should not be considered.  However, we remark that among the 109 appearances of <hi rend="italic">li</hi> (<hi rend="Chinese">裡</hi>) in the first 80 chapters, 54 of which are in Chapter 67 alone!  This strongly suggests that the current Chapter 67 (missing in the gengchen edition) was later added by another person. </p>
+
+<p>The bigrams reveal even more insight.  The top scored <hi rend="italic">qizhi</hi> (<hi rend="Chinese">豈知</hi>), which occurs in 24 chapters in corpus <hi rend="italic">B</hi> but none in corpus <hi rend="italic">A</hi>, does not have a clear semantics in itself.  The third bigram <hi rend="italic">weizhi</hi> (<hi rend="Chinese">未知</hi>) appears in 31 chapters of the last 40, and the <hi rend="italic">only</hi> chapter of the first 80 in which it appears is Chapter 64, another chapter missing in the <hi rend="italic">gengchen</hi> edition.  This provides another evident that both chapters (64 and 67) were added later by someone else.  The third example, the fifth bigram <hi rend="italic">mama</hi> (<hi rend="Chinese">嬤嬤</hi>, a respectful title given to an elder wet nurse) occurs in 34 of the first 80 chapters but none in the last 40.  There are many <hi rend="italic">mama</hi>’s in DRC.  They all conspicuously disappeared after Chapter 80.</p>
+</div>
+
+<div>
+<head>2.4  The three-author question?</head>
+
+<p>Recall that Yang (2003) also did not chose function words <hi rend="italic">a priori</hi> and found strong discrepancies between Chapter 1-20, 21-80, and 81-120. Thus, if one is to conclude from their studies that the last 40 chapters were written by a different author, one may also need to declare that the first 80 chapters were also written by two different authors.</p>
+
+<p>To make sure that our method does not pose similar problems, we ran the same experiment between the texts of Chapters 1-20 and Chapters 21-80.  Not surprisingly, we found some unigrams and bigrams that appear in one corpus but not in the other.  A careful analysis, however, shows that they are mostly event-dependent, involving persons or places that appeared later in the story or died.  Considering that there are more than 400 characters in DRC, such event-dependent differences are expected.</p>
+</div>
+</div>
+
+<div>
+<head>3. Discussions</head>
+
+<p>Our studies support the thesis that the last 40 chapters of DRC were written by someone other than Cao Xueqin.  It also shows that Chapters 64 and 67 may also have been written by another person.  Furthermore, the text-mining method we used offers a different approach to the author attribution problem.</p>
+
+<p>A common textual analysis approach is to use function words to detect discrepancies in different texts.  For instance, in Chinese <hi rend="italic">ma</hi> (<hi rend="Chinese">嗎</hi>) as a function word has the equivalent <hi rend="italic">me</hi> (<hi rend="Chinese">麼</hi>).  Suppose one uses <hi rend="italic">ma</hi> as a proof that an article is not written by a certain person, can the verdict be overturned if one uniformly replaces all the function word occurrences of <hi rend="italic">ma</hi> by <hi rend="italic">me</hi>?</p>
+
+<p>The text-mining approach proposed here is different.  Although it is also based on differences in word style, the words are generated by the method itself.  Take the term <hi rend="italic">mama</hi> as an example.  <hi rend="italic">Mama</hi> appeared in 34 of the first 80 chapters, and was used to address quite a few minor characters in the book (last appearance in Chapter 80).  However, not only was the term completely missing from the last 40 chapters, so did the concept and the characters!  Such "semantic" differences seem to provide more solid evidence than purely syntactic ones.</p>
+</div>
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Brinegar, C. S.</hi> (1963). Mark Twain and the Quintus Curtius Snodgrass Letters: A Statistical Test of Authorship, <hi rend="italic">Journal of the American Statistical Association,</hi> 58(301): 85-96.</bibl>
+
+<bibl><hi rend="bold">Burrows, J.</hi> (2002). 'Delta': a Measure of Stylistic Difference and a Guide to Likely Authorship, <hi rend="italic">Literary and Linguistic Computing</hi>, 17(3).</bibl>
+
+<bibl><hi rend="bold">Chan, B.-C.</hi> (1986). <hi rend="italic">The authorship of the Dream of the red chamber based on a computerized statistical study of its vocabulary</hi>, Joint Publishing Co Ltd., Hong Kong.</bibl>
+
+<bibl><hi rend="bold">He, G.-G.</hi> (2002). From Chinese function words to the characteristics of authors – also the author attribution problem of Dream of the Red Chamber, <hi rend="italic">Traditional Chinese Literature e-Journal</hi>, Hualian.</bibl>
+
+<bibl><hi rend="bold">Hoover, D. L.</hi> (2004). Testing Burrows's Delta, <hi rend="italic">Literary and Linguistic Computing</hi>,19(4).</bibl>
+
+<bibl><hi rend="bold">Hu, Shi</hi>(1921). <hi rend="italic">Textual Research on the Dream of the Red Chamber</hi>, reprinted by Yuandong Publishing, 1985.</bibl>
+
+<bibl><hi rend="bold">Jockers, M. L.,  and D. M. Witten</hi> (2010). A comparative study of machine learning methods for authorship attribution, <hi rend="italic">Literary and Lingistic Computing</hi>, 5(2).</bibl>
+
+<bibl><hi rend="bold">Karlgren, B.</hi> (1952). New Excursions in Chinese Grammar, <hi rend="italic">Bulletin of the Museum of Far Eastern Antiquities</hi> (Stockholm), 24: 51-80.</bibl>
+
+<bibl><hi rend="bold">Malyutov, M. B.</hi>(2006). Authorship attribution of texts: a review. <hi rend="italic">General Theory of Information Transfer and Combinatorics</hi>, Springer-Verlag, 362-380.</bibl>
+
+<bibl><hi rend="bold">Pan, C.-G.</hi>(1974). <hi rend="italic">Sixty years of Redology</hi>. 2,226 pages. Taipei: Wen-shi-je Publishing.</bibl>
+
+<bibl><hi rend="bold">Peng, R., and N. Hengartner</hi> (2001). <hi rend="italic">Quantitative Analysis of Literacy Styles</hi>. Department of Statistics Papers, Department of Statistics, UCLA.</bibl>
+
+<bibl><hi rend="bold">Stamatatos, E.</hi> (2009). A Survey of Modern Authorship Attribution Methods, <hi rend="italic">Journal of the American Society for Information Science and Technology</hi>, 60(3): 538-556, March 2009.</bibl>
+
+<bibl><hi rend="bold">Yang, A. C.-C., C.-K Peng, H.-W. Yien, and A. L. Goldberger</hi> (2003). Information categorization approach to literary authorship disputes, <hi rend="italic">Physica A</hi> 329: 473-483.</bibl>
+
+<bibl><hi rend="bold">Yu, Q.-X.</hi> (1998). Applications of Statistical methods to Dream of the Red Chamber, <hi rend="italic">Journal of National Cheng-Chi University</hi>, 76: 303-327.</bibl>
+
+<bibl><hi rend="bold">Zhao, G., and Z. Chen</hi> (1975). &#171;<hi rend="Chinese">紅樓夢研究新編</hi>&#187; <hi rend="italic">A New Compilation on the research of The Dream of The Red Chamber</hi>, Taipei: Linking Publishing.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

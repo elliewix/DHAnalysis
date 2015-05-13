@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0" xml:id="workshops-011">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Teaching Text Analysis with Voyant</title>
+<author>
+<name><surname>Rockwell</surname>, <forename>Geoffrey</forename></name>
+<affiliation>Professor of Philosophy and Humanities Computing at the University of Alberta, Canada</affiliation>
+</author>
+<author>
+<name><surname>Sinclair</surname>, <forename>Stéfan</forename></name>
+<affiliation>Associate Professor of Digital Humanities at McGill University</affiliation>
+</author>
+</titleStmt>
+
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130716"></date>
+<time when="08:00:00"></time>
+</p>
+<p n="session">Workshop</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Workshops</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-28"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+  
+<head>Introduction</head>
+
+    <p>One of the common skills covered in introductory digital humanities courses at both the undergraduate and graduate levels is computer-assisted text analysis. This workshop will introduce participants to ways of teaching text analysis with the online text analysis environment, <hi rend="italic">Voyant Tools</hi> (<ref type="url" target="http://voyant-tools.org">voyant-tools.org</ref>). Unlike previous workshops that have been focused on using Voyant Tools for research, this workshop is aimed at participants who want to introduce text analysis into their teaching. Participants are not expected to know much about text analysis or Voyant; this workshop will include a brief hands-on component to introduce text analysis with Voyant as an example of what can be done.</p>
+</div>
+
+<div>
+    <head>Outline of the workshop</head>
+
+    <p>The workshop will take the following form.</p>
+
+<list>
+
+    <item><hi rend="bold">Introductions:</hi> where the instructors and participants introduce themselves and their
+        teaching context.</item>
+
+    <item><hi rend="bold">Brief example of teaching text analysis with Voyant:</hi> where participants are led
+        through a hands-on introduction to Voyant as if they were students.</item>
+
+    <item><hi rend="bold">Discussion of example:</hi> where we discuss how the hands-on example tutorial could
+        work (or not) in an undergraduate class.</item>
+
+    <item><hi rend="bold">Models for text analysis:</hi> where we break into groups that develop models for how they
+        might use text analysis in a course. Some might develop a model for introducing text
+        analysis in a literature course, some in a digital humanities course.</item>
+
+    <item><hi rend="bold">Managing the module:</hi> where we discuss what can go wrong and what learning
+        resources there are.</item>
+
+    <item><hi rend="bold">Why bother:</hi> where we conclude with a discussion of the place of text analysis in the
+        digital humanities curriculum.</item></list>
+</div>
+
+<div>
+<head>What is text analysis and why teach it?</head>
+
+    <p>Text analysis is about asking questions of a text with the help of a computer. As such it is a research method of interest to any who interpret texts. Computer-assisted text analysis tools evolved out of the concordance as a tool for studying a text by searching it for patterns and gathering passages that agree in some way. Early text analysis tools like COCOA and OCP were designed to produce print concordances from the early electronic texts being entered in the 1960s and 70s (Lancashire 1986). With interactive programs like TACT in the late 1980s we saw tools designed to support research on the computer screen (Lancashire 1996). Now text analysis tools like Voyant are available as online web services that you can upload a text to. The newer tools can handle large e-texts and they provide text mining and visualization features. Tools like HyperPo and Voyant can be thought of as reading tools designed to provide multiple interfaces for interpretation (Sinclair 2003). These online tools make it possible to teach text analysis without having students struggle with the complexities of pre-indexing tools, special markup, or installing software.</p>
+    <p>Teaching text analysis has been part of introductory digital humanities courses because of the important place of electronic texts in computing in the humanities. Humanities computing grew out of early concording efforts like the Index Thomisticus of Father Busa (Busa 1980). As we developed models for how to represent texts in electronic form we began to ask what might be learned from these electronic texts. What questions might be asked of etexts that we couldn’t ask in close reading of a text? Teaching text analysis is a way of letting students see the opportunities and limits to algorithmic criticism, as Stephen Ramsay calls it (Ramsay 2008). Teaching text analysis lets them engage with what the computer can really do in the way of analyzing (taking apart or tokenizing) information and synthesizing new views on information like visualizations. It is also a way of introducing students to research methods that they can use in their studies of texts.</p>
+</div>
+
+<div>
+<head>Models for integrating text analysis into a course</head>
+
+    <p>Text analysis can be woven into a course in different ways. It can be integrated as a short module just to give students a taste or it can be taught in depth as a research method. In this workshop we will look at three models for integrating text analysis into a course:
+
+        <list type="simple">
+            
+            <item><hi rend="italic">Short module in an undergraduate class:</hi> First, we will look at how this can be taught as a one week module in an undergraduate class with a hands-on tutorial. This is the example that we will walk through with the participants as if they were students.</item>
+            
+            <item><hi rend="italic">One day workshop:</hi> Second, we will look at how text analysis can be taught in a one day workshop for students and colleagues. We will discuss how instructors can set tasks for students to tackle on their own and how one can alternate hands-on instruction with discussion.</item>
+            
+            <item><hi rend="italic">Research methods for graduate students:</hi> Lastly we will cover how one might teach text analysis to graduate students who are going to use it as a research method. In this context we will discuss readings that can be assigned and projects one can assign. We will talk about other tools and resources that graduate students may need for research projects. We will discuss how data can be prepared for Voyant and how data can be extracted from Voyant for other tools. Voyant can be part of a larger suite of tools graduate students use in real research.</item></list></p>
+</div>
+
+<div>
+
+    <p>In all of these cases there are some common types of materials we will have for participants:
+
+        <list type="simple">
+            
+            <item><hi rend="italic">Scripts:</hi> We will walk through online scripts that can be used for teaching Voyant. These scripts with links to all the resources needed are based on our working scripts that have been tested teaching Voyant around the world. (See <ref type="url" target="http://hermeneuti.ca/workshops">http://hermeneuti.ca/workshops</ref> for example scripts).</item>
+
+                <item><hi rend="italic">Readings:</hi> We will share an annotated bibliography of readings about text analysis that can be used with students.</item>
+                
+                <item><hi rend="italic">Examples:</hi> One of the hardest things to teach is how text analysis might be reported in a real research paper. We will share examples of research reports, papers and blog essays that show how others have used text analysis and woven it into assignments.</item>
+                
+                <item><hi rend="italic">Other Tools:</hi> Students who are pursuing original questions almost always run up against the limitations of any particular tool. We will share a list of other tools and discuss how Voyant can be used both to analyze hybrid texts from other tools or to export data for use with other tools.</item></list></p>
+</div>
+
+<div>
+<head>What can go wrong?</head>
+
+    <p>An important part of the workshop will be a final discussion of what can go wrong with Voyant in a classroom and how to deal with it. Courses that introduce computing tools need to be carefully paced and tested so that the technology does not hold back the learning. When teaching with any online tool you need to have contingencies for when the server goes down or is busy with other queries. In the case of Voyant we now have backup servers and a resolver that was set up specifically for training situations. In the workshop we will go over how to prepare for teaching Voyant, how to set up multiple versions of the indexed texts that are being used for a class, and other tactics for dealing with delays with Voyant. For those that are interested we will also discuss how they can set up Voyant on their own servers so that they have control.</p>
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+    <bibl>Barnbrook, G. (1996). <hi rend="italic">Language and Computers: A Practical Guide to the Computer Analysis of Language.</hi> Edinburgh: Edinburgh University Press.</bibl>
+
+    <bibl>Busa, R. (1980). The Annals of Humanities Computing: The Index Thomisticus. <hi rend="italic">Computers and the Humanities</hi> <hi>14 (2)</hi>. 83-90.</bibl>
+
+    <bibl>Lancashire, I. (1986). Concordance Programs for Literary Analysis. <hi rend="italic">Computing in Higher Education, SIGCUE Outlook</hi> <hi>19 (112)</hi>. 54-61.</bibl>
+
+    <bibl>Lancashire, I. (ed). (1996). <hi rend="italic">Using TACT with Electronic Texts.</hi> New York: Modern Languages Association of America.</bibl>
+
+    <bibl>Ramsay, S., S. Schreibman and R. Siemens. (2008). <hi rend="italic">Algorithmic Criticism. A Companion to Digital Literary Studies.</hi> Oxford, Blackwell.</bibl>
+
+    <bibl>Sinclair, S. (2003). Computer-Assisted Reading: Reconceiving Text Analysis. <hi rend="italic">Literary and Linguistic Computing.</hi> <hi>18 (2)</hi>. 175-184.</bibl>
+
+    <bibl>Sinclair, S. and G. Rockwell. (2009). Teaching Text Analysis with Voyant: Between Language and Literature: Digital Text Exploration. In Lancashire, I. (ed). <hi rend="italic">Teaching Literature and Language Online</hi>. New York: Modern Languages Association of America. 104-117.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,143 @@
+   
+    
+I. Introduction
+    
+    
+Noh is a classical Japanese stage art involving singing and dancing accompanied by music. Kan’ami (?-1384) and Zeami (1363–1443) are responsible for the present format of Noh. The lyrics of the song have been documented and are known as Noh texts, which are also called as “Utai bon.”
+
+    
+The current repertoire consists of 250 plays. Noh plays are divided into five categories, numbered in the order of the frequency of performance in the past and referred by the following numbers. Japanese words Sho, Ni, San, Yon, and Go correspond to 1, 2, 3, 4, and 5, respectively , and “banme” is the ordering suffix. For each category, we list the role that the “Shite” (main actor) plays.    
+        
+    
+1st Sho-banme: Kami mono. Deity. Mythic story.
+2nd Ni-banme: Shura mono. Warrior’s ghost. Battle.
+3rd San-banme: Katsura mono. Female. Songs and Dances.
+4th Yon-banme: Kyoran mono. Madness or vengeful ghost.
+5th Go-banme: Oni mono. Monsters, goblins, or demons.
+
+    
+    
+Each category has a typical construction. However, it is natural that the author’s preference is considerably revealed in the play, both in the texts and songs. It is very important to judge what kind of Noh play can be claimed to be Zeami's work.
+
+    
+The type of rhythm in Noh is called “Nori type.” The standard “Nori” is “Hira-nori,” in which two beats are arranged for three characters. One phrase corresponds to a verse in the seven-and-five syllable meter; thus, 7 + 5 = 12 characters (pronunciation units) will correspond to eight beats or 16 half-beats. It is shown as follows: 1    2   3     4    5   6     7    8   9    10   11   12th  character (0.5, 1, 0.5, 0.5, 1, 0.5, 0.5; 1, 0.5, 0.5, 0.5, 0.5) beats.
+
+    
+Compared with the constant rhythmic sentence (“Teiritsu” in Japanese), the sentence is broken rhythmically (“Haritsu”) if a phrase has extra syllables (more than seven for the upper phrase and more than five for the lower phrase) or has an insufficient number of syllables (less than seven or less than five) many times. 
+
+    
+In particular, the “Kuse” part, which if exists, is the most important part in a Noh play and should be composed of Haritsu sentences. As an example, we list some Nori parts of the Noh play “Atsumori” in Table 1. The first column is “Ma” for the phrase, which usually represents the start of singing (written on the left side in Utai-bon), whereas “tori” (written on the right side) means that the lower phrase is vacant. The 2nd and 3rd columns are upper (“Kamino-ku”) and lower phrases (“Shimono-ku”), respectively, and the 4th and 5th columns contain the number of characters. In the 6th column, we mention the symbolic expression of the total phrase, whose meaning is easily recognized. In this table, we observe that
+        
+1) There are four phrases, whose upper phrase has seven characters.
+2) There are three phrases, whose lower phrase has five characters.
+3) There are only two phrases whose total phrase has 7 + 5 characters = 12 characters (in the symbol “h75”).
+
+        
+This is a typical example ofin a “Haritsu” sentence.
+
+   
+
+An example of phrases in “Kuse” for a play “Atsumori”
+The first author expected that the authorship should be revealed in the Kuse part. The second author prepared more than 3000 phrases of the Kuse data such as that shown in Table 1 from over 70 Noh plays. The third author analyzed the data using multivariate analysis. Here we explain the partial result concerning 45 Noh plays.
+
+    
+We mainly studied the distribution of Zeami’s Noh plays among other plays during almost the same period. Our result shows that Zeami's work has the specific feature.
+
+
+    
+    
+
+    
+II. Previous Studies
+    
+    
+Two previous studies were identified. 
+M. Yokomichi & A. Omote (1963), “Yokoku-shu. Ge."
+ 
+    
+On p.8, Prof. M. Yokomichi mentioned the proportion of unusual phrases in the Kuse part for 10 of Zeami’s Noh plays (plays with asterisk in Table 2). On p. 12 and 13, he quoted the three partial Kuse parts of Zeami’s plays in comparison with those of Kanze Nobumitsu. According to the first author, who was one of Yokomichi’s graduate students, Yokomichi seemed to conduct more studies on Haritsu, but did not publish anything on the subject. 
+
+Yoshimi Iwata (2012) The tendency of the authors of the  Noh play with respect to the basic rhythm. (presentation, not published)
+
+    
+Iwata used Kuse and Kiri (the last song and dance part) data in 20 Noh plays, mainly in the 2nd category (Shura mono). The result shows that with the exception of Sanemori, Zeami’s plays focus on a narrow area. This study was conducted by the third author following the suggestion of the first author two years prior. At this instant, Iwata proposed the parallel usage of the Kiri part and showed that the Kiri part is helpful for the analysis.
+
+
+
+    
+
+
+III. Analysis    
+    
+We used texts from two books “Yokyoku-shu. Jyo & Ge” (Yokomichi and Omote 1963) and extracted the Kuse parts. Then, we checked “Ma” in “Kanzeryu yokyoku hyakuban & zoku hyakuban.” We listed only 45 plays in Table 2. Zeami’s father is Kan’ami, and Motomasa (1394?-1432) is his son. Moreover , we added three plays that are attributed to either Zeami or Motomasa.
+
+    
+We prepared a cross table for all Kuse data by using the names of plays and phrase symbols (such as h75). Then, we obtained the 45 × 44 table, in which the rows represent “names of plays,” and the columns represent “symbols.”
+
+    
+First, we analyzed that table using “principal-component analysis”(PCA). Then, we selected variables using “random forests”(RF) and again analyzed them using PCA. Finally, we made a synthetic consideration.
+  
+      
+
+Table 2. Forty-five plays by Zeami and others
+
+    
+
+
+IV. Results
+    
+    
+The cross table is transformed using the relative frequencies of symbols for each play. We used the 12 variables of the top frequencies to perform PCA. We formed a scatterplot for the 1st and 2nd principal components (Fig. 1) and depicted convex hulls on the plot according to the categories of Zeami’s plays (shown by big numerals). Labels are added in the abbreviated form (cf. Table 2.). Factor loadings are shown in Fig. 2.
+
+    
+
+Figure 1. 
+Scatterplot of PCA scores for 45 plays and convex hulls
+Figure 2.
+ PCA loadings for 12 variables.
+Figure 3:
+Distribution of mean decrease in accuracy
+Table 3. 
+Part of data with selected 7 variables
+The result shows a greater concentration of Zeami’s plays compared with those shown in Figure 1. At the far right on top, there is one “Z?2” identified with “Tomonaga.” The play “Tomonaga” is attributed to Zeami or Motomasa. From this diagram, we can say that “Tomonaga” has a very different character from those of Zeami and Motomasa (M2, M4). On the other hand, “Tamura” is very near to Zeami’s 2nd category.
+ 
+    
+	Finally, we performed an “evaluation analysis,” which was developed by the third author. The result (Fig. 5) shows that with few exceptions, for n=4–8 & m in 4–6, {hnm}’s form 5 nearby groups under the framework of selected seven variables.
+
+
+
+
+
+
+V. Conclusion
+
+    
+The combination of PCA and RF was successfully applied for the identification of the authors of the Noh play. This methodology can be applied to other analyses related to authors will attempt to apply variable selection by regression and compare the result with those obtained by other methods.
+
+    
+For Noh plays, it was revealed that the rhythm is important for discriminating characteristic features. In the near future, we will develop an appropriate decision method by using a combination of lyrics and the rhythm of Noh plays and also for the art of other kinds.
+
+    
+
+Figure 4. 
+Scatterplot of PCA scores and loadings
+Figure 5.
+Scatterplot of Evaluation Analysis
+
+
+
+    
+
+
+
+Yokomichi, M., and A. Omote
+ (1963). 
+“Yokyoku-shu, Jyo & Ge” (Anthology of Noh lyrics, volume 1 & 2)
+, Iwanami Shoten.
+Strobl, C., A. L. Boulesteix, A. Zeileis, and T. Hothorn
+ (2007). Bias in random forest variable importance measures: Illustrations, sources and a solution. 
+BMC Bioinformatics
+, 8:25.
+
+http://www.biomedcentral.com/1471–2105/8/25
+

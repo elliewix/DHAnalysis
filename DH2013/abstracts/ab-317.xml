@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-317">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Beyond the Document: Transcribing the Text of the Document and the Variant States of the Text</title>
+<author>
+<name><surname>Bordalejo</surname>, <forename>Barbara</forename></name>
+<affiliation>University of Saskatchewan</affiliation>
+<email>b.bordalejo@bham.ac.uk</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper describes our use of an encoding system that allows editors to present a transcription of the text of the document alongside the variant states of the text, making it possible to go beyond the encoding of documents.
+
+For the purposes of textual scholarship, it is necessary to have a clear idea of what is meant by “representing the text of the document.” It is not enough to represent this, we must also represent variant states of the text and give editorial interpretation a more explicit place in the transcription of primary sources.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP15</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>textual criticism</term>
+<term>encoding</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>encoding - theory and practice</term>
+<term>xml</term>
+<term>bibliographic methods / textual studies</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-23"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<p>The transcription of primary textual sources is at the center of digital editing projects. The capacity offered by the digital medium allows for the inclusion of much more detailed transcriptions than is possible within the frame of printed editions. But this capacity tempted scholars into attempts to capture every possible aspect of the document in their transcription. Unless we are very careful about the choices that we make in relation to the transcription of a document, we risk making an enormous effort and spending a great deal of money on transcriptions that end up not being very useful.  This paper describes our use of an encoding system that allows scholars to present a transcription of the text of the document alongside the variant states of the text, making it possible to go beyond the encoding of documents.</p> 
+
+<p>Some important projects in digital humanities are focused on the transcription of documents. Notable examples of this are Transcribe Bentham (<ref type="url" target="http://www.ucl.ac.uk/transcribe-bentham/">http://www.ucl.ac.uk/transcribe-bentham/</ref>), the Jane Austen’s Fiction Manuscripts Digital Edition (<ref type="url" target="http://www.janeausten.ac.uk">http://www.janeausten.ac.uk</ref>) or Nietzsche Source (<ref type="url" target="http://www.nietzschesource.org/">http://www.nietzschesource.org/</ref>). Moreover, editors such as Hans Walter Gabler  who have made the transition from print to digital and who advocate critical editions are shifting their focus towards the transcription of primary sources. For example, Gabler, in his article “The Primacy of the Document in Editing,” asserts that:</p>
+
+<quote>…the text should be seen fundamentally as a function of the document. For, after all,… it is documents that we have, and documents only. In all transmission and all editing, text are (and, if properly recognized, always have been) constructs from documents. (Gabler 199)</quote>
+
+<p>This re-definition of text as construct from a document develops in Gabler’s argument to  become “…a set of document functions comprehensively deriving from the continuous manuscript posited…” (207). This represents a shift from what has been considered the traditional role of the editor as the scholar that establishes the text. Indeed, Peter Robinson points out that:</p>
+
+<quote>[Gabler] proposes a complete refocusing [sic] of editorial perspective: away from a concentration on the finished product, the editorial text which is supported by reference to various documents, towards a concentration on the documents themselves, from which an editorial text may (or may not) emerge. This is an immense shift. Gabler proposes that the intense editorial effort which for centuries has seen as its goal the construction of an editorial text, should now focus on the construction of the text of the documents. (Robinson 5)</quote>
+
+<p>Robinson’s interpretation of Gabler’s text is informed by my own concept of the text of the document, as developed for the article “The <hi rend="italic">Commedia</hi> Project Encoding System.” While working on the electronic edition of the <hi rend="italic">Divine Comedy</hi>, I developed a complex encoding system to represent, within a single file, the text of the document and the variant states of the text. In this article, I explain that:</p>
+<quote>I use the phrase the ‘text of the document’ to refer to the sequence of marks present in the document, independently of whether these represent a complete, meaningful text. That is: the reader sees a sequence of letters, occurring in various places in relation to each other (perhaps between the lines or within the margins) and carrying various markings (perhaps underdottings or strikethroughs). These make up what I here refer to as the text of the document. (Bordalejo 2010). </quote>
+
+<p>I am not the first in referring to text of the document,  G. Thomas Tanselle  has contrasted the text of the document (1978; 1996) with “the text of the work” (Tanselle, 1996).</p>
+
+<p>The text of the document, then, can be recorded as a sequence of meaningful marks present on a particular document. MS. Riccardianna 1005, a witness of Dante’s<hi rend="italic"> Divine Comedy,</hi> presents the following example:</p>
+
+<figure>
+<graphic url="ab-317.001" />
+</figure>
+
+<p>This could ordinarily be represented by:
+<code>&lt;del&gt;dura&lt;/del&gt;&lt;add&gt;duro&lt;/add&gt;</code></p>
+
+<p>In our transcriptions, however, we represent this as:
+<code>&lt;app&gt;  </code>
+<code>&lt;rdg type="orig"&gt;dura&lt;/rdg&gt;  </code>
+<code>&lt;rdg type="c1"&gt;duro&lt;/rdg&gt;</code>
+<code>&lt;rdg type="lit"&gt; dur&lt;hi rend="ud"&gt;a&lt;/hi&gt;o&lt;/rdg&gt;</code>
+<code>&lt;/app&gt;</code>
+</p>
+
+<p>Here, the last reading, <code>&lt;rdg type="lit"&gt;</code>, represents the text of the document literally. Unlike traditional TEI recommended encoding we do not use <code>&lt;add&gt;</code> or <code>&lt;del&gt;</code>, on the premise that both of these confound a statement of editorial interpretation (this is a deletion or an addition, so we should read the text with or without these characters) with a statement of what appears on the document (there is a mark under these characters; they are placed interlineally). In our view, the statement of what we see on the page is a different order of declaration from a statement of how we think this should be read. The aim of <code>&lt;rdg type="lit"&gt;</code> is to present the meaningful marks we see on the document. The statement of how we think these marks should be read, as a sequence of readings, should be left for the other elements within <code>&lt;app&gt;</code>: thus, <code>&lt;rdg type="orig"&gt;</code> and  <code>&lt;rdg type="c1"&gt;</code>, representing the different perceived stages a particular text has gone through during a process of revision, from its original (“orig”) to first corrected state (“c1”). All these statements &#8212; <code>&lt;rdg type="lit"&gt;</code>, <code>&lt;rdg type="orig"&gt;</code> and <code>&lt;rdg type="c1"&gt;</code> &#8212; are interpretive.  However, they are interpretive in different ways and serve different purposes.</p> 
+
+<p>The TEI, in “An Encoding Model for Genetic Editions” (<ref type="url" target="http://users.ox.ac.uk/~lou/wip/geneticTEI.doc.html#index.xml-body.1_div.1_div.1">http://users.ox.ac.uk/~lou/wip/geneticTEI.doc.html#index.xml-body.1_div.1_div.1</ref>) includes some similar elements to the ones developed for our edition of the <hi rend="italic">Commedia</hi>.  Consider this example from “An Encoding Model for Genetic Editions”:</p>
+
+<quote>“The following example, taken from a manuscript of Jane Austen's <hi rend="italic">Sanditon</hi>, shows a rewriting where a pencilled passage has been fixed with ink, with some modification:</quote>
+ 
+<figure><graphic url="ab-317.002" /><!-- <head>Figure 3.</head> --> <p>Image from page 70 of the Sanditon manuscript</p></figure>
+
+<quote>In this example, Austen sees in the fixation an opportunity to manipulate the text previously written, and thus changes the pencilled <hi rend="italic">could but get</hi> to the inked <hi rend="italic">could get</hi>. A simple way of encoding this might be as follows:
+<code>&lt;ge:rewrite cause="fix" hand="ja2" stage="#s1"&gt;</code>
+Now, if we could get
+<code>&lt;del stage="0"&gt;but&lt;/del&gt; a young Heiress&lt;/ge:rewrite&gt;”</code></quote>
+
+<p>In our proposed system, not originally designed for genetic encoding but easily adaptable for this purposes, we would encode it as:
+
+<code>
+&lt;app&gt;</code>
+<code> &lt;rdg type="orig"&gt;Now, if we could but get &lt;/rdg&gt; </code>
+<code> &lt;rdg type="c1"&gt;Now, if we could get&lt;/rdg>&gt;</code>
+<code> &lt;rdg type="lit"&gt; </code>
+<code>  &lt;seg type="overwritten"&gt;</code>
+<code>   &lt;seg type="orig" rend="pencil"&gt;Now, if we could but 
+get &lt;/seg&gt;</code>
+<code>    &lt;seg type="c1" rend="ink"&gt;Now, if we could 
+    get&lt;/seg&gt;</code>
+<code>  &lt;/seg&gt; </code>
+<code> &lt;/rdg&gt;</code>
+<code>&lt;/app&gt;</code>
+
+
+
+Both systems explicitly state that there was an original text, written by Jane Austen and that the text was rewritten by herself. The “lit” reading in my proposed transcription specifies that this was originally written in pencil and that the second version of the text was written in ink. In my transcription, it is clearly stated that the original form of the text was “Now if we could but get ” (written in pencil) and that this was altered to “Now if we could get” (written in ink).  In contrast, in the proposed TEI encoding it is not at all clear from the use of the various attributes (stages “0” and “#s1”) and from the <code>&lt;ge:rewrite&gt;</code> and <code>&lt;del&gt;</code> elements what was originally written, what it was revised to, and how this was done.</p>
+
+<p>For our purposes, we find that by stating explicitly what occurred to the text, that is whether it was stroke through, underdotted, underlined, erased, scrapped or rewritten, we avoid the ambiguity of the <code>&lt;del&gt;</code> element. The <code>&lt;add&gt;</code> element has also been set aside, to be replaced with markup that indicates position or mode of insertion. </p>
+
+<p>The encoding system being used in our projects is TEI compliant, but it attempts to serve the purposes of various types of scholarly editions. For the purposes of textual scholarship, it is necessary to have a clear idea of what is meant by “representing the text of the document.” In any case, it is not enough to represent the text of the document, we must also represent variant states of the text and give editorial interpretation a more explicit place in the transcription of primary sources. 
+</p>
+
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Bordalejo, B.</hi> (2010). The encoding system. In Prue Shaw (ed.) <hi rend="italic">The Commedia of Dante Alighieri: A Digital Edition</hi>. Saskatoon: Scholarly Digital Editions.</bibl>
+<bibl><hi rend="bold">Burnard, L., F. Iannidis, E. Pierazzo, and M. Rehbein</hi> (n.d.) An Encoding Model for Genetic Editions. <ref type="url" target="http://www.tei-c.org/Activities/Council/Working/tcw19.html">http://www.tei-c.org/Activities/Council/Working/tcw19.html</ref>. (Accessed November 1st, 2012).</bibl>
+<bibl><hi rend="bold">Gabler, H. W. </hi>(2007). The Primacy of the Document in Editing. <hi rend="italic">Ecdotica</hi>, 4, 197–207.</bibl>
+<bibl><hi rend="bold">Pierazzo, E.</hi> (2011). A Rationale of Digital Documentary Editions. <hi rend="italic">Literary and Linguistic Computing</hi>, 26, 463–477.</bibl>
+<bibl><hi rend="bold">Robinson, P.</hi> (2013). Towards a Theory of Digital Editions. <hi rend="italic">Variants</hi> 10, 105-32.</bibl>
+<bibl><hi rend="bold">Tanselle, G. T.,</hi> (1978). Editing Historical Documents <hi rend="italic">Studies in Bibliography</hi> 31, 1-56.</bibl>
+<bibl><hi rend="bold">Tanselle, G. T.,</hi> (1996). Editing Historical Documents <hi rend="italic">Studies in Bibliography</hi> 49, 1-60.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-174">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Agents for Actors: A Digital Humanities framework for distributed microservices for text linking and visualization</title>
+<author>
+<name><surname>K&#252;ster</surname>, <forename>Marc Wilhelm</forename></name>
+<affiliation>FH Worms, Worms</affiliation>
+<email>kuester@fh-worms.de</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Agents for Actors (AfA, <ref type="url" target="https://github.com/mwkuster/agents-for-actors">https://github.com/mwkuster/agents-for-actors</ref>) is an Open Source DH framework for distributed microservices for text linking and visualization. It identifies allusions between XML texts and their supposed sources using a double NGram algorithm. Results are provenanced using XPointers.
+
+AfA is written in the functional language Clojure and builds on purely functional data structures. It heavily parallelizes computations, using agents for asynchronous processing. Per default AfA stores its results in an XML linking file and uses Neo4j for the visualization of networks of intertextuality, but other visualization components and comparison algorithms can be plugged in.
+
+The findings are exemplified by a passage from Atkinson&#039;s Black Adder and its links to its Shakespearean sources.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP21</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Text-text-linking</term>
+<term>provenancing</term>
+<term>NGram</term>
+<term>functional programming</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>film and cinema studies</term>
+<term>natural language processing</term>
+<term>scholarly editing</term>
+<term>hypertext</term>
+<term>visualisation</term>
+<term>semantic web</term>
+<term>agent modeling and simulation</term>
+<term>linking and annotation</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-05"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>The Scene</head>
+
+<p>A raucous party on the eve of the Battle of Bosworth field in 1485, wine flows by the gallon, the table bends under the weight of the meat and breadcrumbs fly across the table as Richard III rises painfully to address his loyal peers:</p>
+
+<quote>
+<lg>
+<l>Now is the summer of our sweet content,</l>
+<l>Made overcast winter by these Tudor clouds.</l> 
+<l>And I that am not shaped for black-faced war,</l>
+<l>I that am rudely cast and want true majesty,</l>
+<l>Am forced to fight, To set sweet England free.</l>
+<l>I pray to Heaven we fare well,</l>
+<l>And all who fight us go to Hell </l>
+</lg>
+
+(transcription of the audio recording (British Broadcasting Corporation 2009), checked against (Curtis 2001)).</quote>
+
+
+<p>Thus starts Rowan Atkinson’s fabulously funny alternate history of Britain, the History of the Black Adder (Atkinson et al. 1983), one of the hallmark BBC sitcoms of the 1980s.</p>
+
+<p>Fast forward through the show, right to the closing credits: “Written by Richard Curtis and Rowan Atkinson with additional dialogue by William Shakespeare”. And, indeed, even Richard III’s short speech contains at least three near-verbatim citations from Shakespeare’s play of the same name (and actually a fourth and a fifth, but more on that later):</p>
+
+<quote>
+
+<lg>
+<l>Now is the Winter of our Discontent</l>
+<l>Made glorious Summer by this Son of Yorke: […]</l>
+<l>But I, that am not shap'd for sportiue trickes, […]</l>
+<l>I, that am Rudely stampt, and want loues Maiesty, […]</l>
+<l>And that so lamely and vnfashionable,</l>
+<l>That dogges barke at me, as I halt by them<ref type="note" target="n01">1</ref></l>
+</lg>
+
+</quote>
+
+<p>All would be good if the citations were indeed verbatim, but they are not &#8212; the wit of Richard’s speech and indeed of much of Blackadder’s attraction depends on twisting citations, creating tension between original and new wordings. Blackadder like much of postmodern British Sitcom consciously sees history as a “cluttered patchwork of questionable stories which have been re-written, re-evaluated and ridiculed“ ((Roberts 2012), pos. 26, Kindle edition), using allusions precisely to enhance the sense of a subjective, patchwork-like history.</p> 
+</div>
+
+
+<div>
+<head>Enter Agents for Actors</head>
+
+<div><p>Agents for Actors (AfA) (<ref  type="url" target="https://github.com/mwkuster/agents-for-actors">https://github.com/mwkuster/agents-for-actors</ref>) is an experimental, LGPL-licensed Open Source “framework for distributed microservices for text linking and visualization” that the author has developed to calculate precisely the types of “twisted” citations that we are seeing. It takes some inspiration from W. Artes’ Bachelor thesis (Artes 2012) on  Similarity Search (cf. also (Hedges et al. 2012)), that the author has supervised, especially on the choice of NGram  models for comparison, but is an independent implementation that deviates in the way the NGram model is built (cf. below). AfA is linked to TextGrid’s Text-Text-Image-Link Editor (Selig, K&#252;ster, and Conner 2012).</p>
+
+<p>Afa identifies allusions between texts and their presumed sources and gives exact provenance information as XPointers (K&#252;ster et al. 2011).  As an additional spin we make the comparison of Black Adder’s modern orthography transcript against the original-spelling First Folio, transcribed by Trevor Howard-Hill (<ref type="url" target="http://ota.ox.ac.uk/id/3014">http://ota.ox.ac.uk/id/3014</ref>).</p>
+
+<p>AfA is extendable to other similarity models and measures and could be adapted for new visualization frontends. Given the computational complexity it embraces multicore architectures and parallelizes computations wherever possible. AfA situates itself between the macro-vision of big data digital humanities (e.g. (Jockers 2012) and the forthcoming (Jockers 2013)) and the micro-vision of the classical, manually encoded critical apparatus. </p></div>
+
+<div>
+<head>Implementation</head>
+
+<p>AfA is implemented in the functional language Clojure (Hickey 2010) (Emerick, Carper, and Grand 2012; Halloway and Bedra 2012) on top of the Java Virtual Machine (JVM).  Clojure thrives on immutable functional data structures (Okasaki 1999) for heavily multithreaded applications. Mutable operations are largely under control of Clojure’s Software Transactional Memory (STM).</p>
+
+<p>AfA uses two Clojure paradigms to parallelize activities:
+<list type="unordered">
+<item>Futures: non-blocking threads that are transparently managed to parallelize calculations</item>
+<item>Agents: asynchronous, used to interact with the visualization layer</item>
+</list>
+</p>
+<p>The code basis itself consists of a number of individual functions for interacting with files, calculating similarity measures, handling visualization etc. They can be regrouped flexibly.</p>
+
+</div>
+
+<div>
+<head>Handling XML</head>
+
+<p>AfA currently expects both source and target to be encoded in XML.  Both therefore contain parts such as the TEI header, cast lists or stage directions that without filtering generate noise when searching for references.  Still, we need to preserve the exact pointers to source and target fragments in the underlying XML files to guarantee traceability.</p>
+
+<p>With mutable data structures this objective would be difficult to attain without costly copying operations of XML structures in memory. The immutable abstraction of Zippers (Huet 1997) offers a solution by having the XML structures only once in memory, the algorithm operating on pointers to individual elements (“locations”). Furthermore, unlike e.g. XML DOMs Zippers are generic abstractions for tree structures, not only XML. AfA can hence be adapted to any form of structured data sources.</p>
+</div>
+
+<div>
+<head>Measuring similarity</head>
+
+<p>The AfA framework allows for multiple models and measures. At is simplest, the comparison is done using NGram models (cf. (Manning and Schuetze 1999)), that are used for fuzzy text comparison, e.g. in (Kestemont, Daelemans, and De Pauw 2010) and (Bernholz and Pytlik Zillig 2011), not to mention in Google-style big-data (Google 2010).</p>
+
+<p>The tests presented in this paper are done with a variation of the NGram model, combining NGrams of words, that move in a slider over the text, creating chunks of size C, with NGrams of letters for the actual comparison of those chunks.</p>
+
+<p>In the following example C=5. This way, the phrase “Now is the summer of our sweet content” into four chunks of five words each:</p>
+ 
+<figure><graphic url="ab-174.001"/></figure>
+
+<p>Each of these chunks is compared with a chunk from the supposed source material, built with the same algorithm, so that the totality of compared chunks is the Cartesian product NxM, N being the number of chunks in the source and M that in the target. Each of these pairs of chunks is compared using an NGram of <code>ngram-count</code> characters to smoothen over differences in spelling. The respective confidence level for a hit is calculated using the maximum dice-coefficient (cf. (Manning and Schuetze 1999), table 8.7) applied to this combination of chunks:
+
+<code> (apply max 
+             (map
+              (fn [[t1 t2]]
+                (dice-coefficient 
+                 (ngrams ngram-count t1)
+                 (ngrams ngram-count t2)))
+              (for [chunk1 chunk-seq1 chunk2 chunk-seq2] [chunk1 chunk2])))</code>
+
+The algorithm works for other measures returning similarities normalized to [0,1].</p>
+
+<p>Applying this admittedly computationally expensive algorithm to Richard’s speech with C=6, N=4 and a minimum confidence level of 0.65 identifies in Shakespeare’s complete First Folio precisely the expected links (XPointers referring to <ref type="url" target="http://ota.ox.ac.uk/id/3014">http://ota.ox.ac.uk/id/3014</ref>):</p>
+
+<figure>
+<graphic url="ab-174.t01"/>
+<figDesc>Blackadder	First Folio	Confidence level
+Now is the summer of our sweet content,	Now is the Winter of our Discontent,
+xpointer(/TEI[1]/text[1]/group[1]/text[23]/body[1]/div[1]/ab[1]/text()[1])	0.74
+And I that am not shaped for black-faced war,	But I, that am not shap'd for sportiue trickes,
+xpointer(/TEI[1]/text[1]/group[1]/text[23]/body[1]/div[1]/ab[1]/text()[14])	0.85
+I that am rudely cast and want true majesty,	I, that am Rudely stampt, and want loues Maiesty,
+xpointer(/TEI[1]/text[1]/body[1]/sp[2]/l[4]/text()[1])	0.65</figDesc></figure>
+
+<p>The algorithm cannot identify the fourth allusion, though, that contrasts the concepts of “overcast winter” with “glorious Summer”. </p></div>
+</div>
+
+<div>
+<head>Dressing up</head>
+
+<p>For visualization AfA uses Neo4j, an increasingly popular Open Source Non-SQL graph database (Neo4j.org 2012). Neo4j centres around two Topic Map (ISO/IEC 2002) like concepts, nodes and relationships. Both have unique identifiers and can have arbitrary properties besides. Relationships must have a start and an end node.</p>
+
+<p>With neocons (Klishin 2012) Neo4j has an intuitive Clojure interface that permits to store and query the graph. Neo4j’s admin interface also has one of the more innovative graph UIs available in an off-the-shelf database.</p>
+
+<figure><graphic url="ab-174.002"/></figure>
+
+</div>
+
+<div>
+<head>Intertextuality and a bit of theory</head>
+
+<p>This screenshot shows the individual phrases of Richard’s speech in Blackadder with their links to their source (“part-of”) and the phrases they cite (“cites”), giving a good visualization of the intertextuality (Kristeva 1969) (Barthes and Marty 1980; Barthes 1968) (Allen 2011) that animates much of Atkinson’s comedy. </p>
+
+<p>Note that AfA does not “interprete” the links. Statistical methods rarely have an obvious interpretation, their epistemological openness and continuity being an asset for postmodern texts in a world of “stylistic and discursive heterogeneity without a norm” (Jameson 1991). If anything, Genette’s theory of <hi rend="italic">hypertextualit&#233;</hi> (Genette 1982) might give us an adequate terminological apparatus.</p>
+
+<div>
+<head>Outlook</head>
+
+<p>Three of the citations in Richard’s speech AfA has identified for us, the fourth we have discussed &#8212; but there is a fifth. Films are more than dialogue; intertextuality can just as well be construed without words. When Atkinson’s Richard is halfway through his speech we hear a dog barking &#8212; Richard is so ugly that “<hi rend="italic">dogges barke at me</hi>”.  Also, there is open linked data out there that situates Blackadder in context, here linking manually to Freebase movie data with some of Atkinson’s other films (for handling Freebase data cf. (Redmond and Wilson 2012), chapter Neo4j/Big data):</p>
+ 
+<figure><graphic url="ab-174.003"/></figure>
+
+<p>In the end an approach focussed on a narrow understanding of intertextuality will not suffice for audiovisual media; it must evolve into a network including knowledge and symbols (Peirce 1998), contextual, textual and non-textual. Now we can only manually add nodes establish these links, but there may be another untold history ahead.</p>
+</div>
+</div>
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Allen, G.</hi> (2011). <hi rend="italic">Intertextuality</hi>. 2nd edn. Abdingdon: Routledge.</bibl>
+
+<bibl><hi rend="bold">Artes, W.</hi> (2012). In Marc Wilhelm K&#252;ster, (ed). “Konzeption Und Entwicklung Eines Plug-in Basierenden SOAP-Services F&#252;r Die &#196;hnlichkeitsanalyse Im Text-Text-Link-Editor.”  Worms: University of Applied Sciences Worms.</bibl>
+
+<bibl><hi rend="bold">Atkinson, R., B. Blessed, E. Gray, R. East, T. McInnerny, and R. Robinson</hi> (1983). In Shardlow, M. <hi rend="italic">The Black Adder</hi>. <ref type="url" target="http://www.bbc.co.uk/programmes/p006cx8w">http://www.bbc.co.uk/programmes/p006cx8w</ref>.</bibl>
+
+<bibl><hi rend="bold">Barthes, R.</hi> (1968). “La Mort De l'Auteur.” <hi rend="italic">Manteia</hi> (4e trimestre).</bibl>
+
+<bibl><hi rend="bold">Barthes, R., and E. Marty</hi> (1980). <hi rend="italic">Oeuvres Compl&#232;tes: 1974-1980</hi>.</bibl>
+
+<bibl><hi rend="bold">Bernholz, C. D., and B. L. Pytlik Zillig</hi> (2011). “Comparing Nearly Identical Treaty Texts: a Note on the <hi rend="italic">Treaty of Fort Laramie with Sioux</hi>, Etc., 1851 And Levenshtein's Edit Distance Metric..” <hi rend="italic">Llc</hi> 26.1: 5-16. doi:10.1093/llc/fqq016.</bibl>
+
+<bibl><hi rend="bold">British Broadcasting Corporation.</hi> (2009). <hi rend="italic">The Black Adder</hi>. Unabridged. AudioGO Ltd.</bibl>
+
+<bibl><hi rend="bold">Curtis, R.</hi>. (2001). <hi rend="italic">Blackadder: the Whole Damn Dynasty: 1485-1917</hi>. Re-issue. Penguin Books, Limited (UK).</bibl>
+
+<bibl><hi rend="bold">Emerick, C., B. Carper, and C. Grand</hi> (2012). “Clojure Programming &#8212; Practical LISP for the Java World.” <hi rend="italic">O'Reilly 2012</hi>.</bibl>
+
+<bibl><hi rend="bold">G&#233;rard, G.</hi> (1982). <hi rend="italic">Palimpsestes. La Litt&#233;rature Au Second Degr&#233;</hi>. Paris: &#201;ditions du seuil.</bibl>
+
+<bibl><hi rend="bold">Google.</hi> (2010). <hi rend="italic">Google Books NGram Viewer</hi>.</bibl>
+
+<bibl><hi rend="bold">Halloway, S., and A. Bedra</hi> (2012). <hi rend="italic">Programming Clojure</hi>. Second Edition. Pragmatic Bookshelf.</bibl>
+
+<bibl><hi rend="bold">Hedges, M., A. Jordanous, S. Dunn, C. Roueche, M.W. K&#252;ster, T. Selig, M. Bittorf, and W. Artes</hi> (2012). “New Models for Collaborative Textual Scholarship.” In, 1-6. doi:10.1109/DEST.2012.6227933.</bibl>
+
+<bibl><hi rend="bold">Hickey, R. </hi>(2010). “Clojure.”</bibl>
+
+<bibl><hi rend="bold">Huet, G. </hi>(1997). “The Zipper.” <hi rend="italic">Journal of Functional Programming</hi> 7 (5) (September).</bibl>
+
+<bibl><hi rend="bold">ISO/IEC.</hi> (2002). <hi rend="italic">ISO/IEC 13250: Information Technology &#8212; SGML Applications &#8212; Topic Maps</hi>. {ISO}.</bibl>
+
+<bibl><hi rend="bold">Jameson, F.</hi> (1991). <hi rend="italic">Postmodernism or the Cultural Logic of Late Capitalism</hi>. Durham: Duke University Press.</bibl>
+
+<bibl><hi rend="bold">Jockers, M. L.</hi> (2012). “Computing and Visualizing the 19th-Century Literary Genome.” In Hamburg. <ref type="url" target="http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/computing-and-visualizing-the-19th-century-literary-genome/">http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/computing-and-visualizing-the-19th-century-literary-genome/</ref>.</bibl>
+
+<bibl><hi rend="bold">Jockers, M. L.</hi> (2013). <hi rend="italic">Macroanalysis: Digital Methods and Literary History (Topics in the Digital Humanities)</hi>. 1st edn. University of Illinois Press. <ref type="url" target="http://www.matthewjockers.net/macroanalysisbook/">http://www.matthewjockers.net/macroanalysisbook/</ref>.</bibl>
+
+<bibl><hi rend="bold">Kestemont, M., W. Daelemans, and G. De Pauw</hi> (2010). “Weigh Your Words - Memory-Based Lemmatization for Middle Dutch..” <hi rend="italic">Llc</hi> <hi>25.3</hi> 287-301. doi:10.1093/llc/fqq011.</bibl>
+
+<bibl><hi rend="bold">Klishin, M.</hi> (2012). “Neocons.” <hi rend="italic">Clojureneo4j.Info</hi>. Accessed October 29. <ref type="url" target="http://clojureneo4j.info/">http://clojureneo4j.info/</ref>.</bibl>
+
+<bibl><hi rend="bold">Kristeva, J.</hi> (1969). Semeiotike. Recherches Pour Une S&#233;manalyse. &#201;ditions du seuil.</bibl>
+
+<bibl><hi rend="bold">K&#252;ster, M. W., C. Ludwig, Y. Al-hajj, and T. Selig</hi> (2011). “TextGrid Provenance Tools for Digital Humanities Ecosystems.” In, 317-323. doi:10.1109/DEST.2011.5936615.</bibl>
+
+<bibl><hi rend="bold">Manning, C. D., and H. Schuetze</hi> (1999). <hi rend="italic">Foundations of Statistical Natural Language Processing</hi>. 1st edn. Cambridge, MA: MIT Press.</bibl>
+
+<bibl><hi rend="bold">Neo4j.org.</hi> (2012). “Neo4j.” <hi rend="italic">Neo4j.org</hi>. <ref type="url" target="http://neo4j.org/">http://neo4j.org/</ref>.</bibl>
+
+<bibl><hi rend="bold">Okasaki, C.</hi> (1999). <hi rend="italic">Purely Functional Data Structures</hi>. Cambridge University Press.</bibl>
+
+<bibl><hi rend="bold">Peirce, C. S.</hi> (1998). “What Is a Sign?.” In <hi rend="italic">The Essential Peirce. 1893-1913</hi>, ed. Peirce Edition Project. <hi>2</hi> Bloomington.</bibl>
+
+<bibl><hi rend="bold">Redmond, E., and J. R. Wilson</hi> (2012). <hi rend="italic">Seven Databases in Seven Weeks: a Guide to Modern Databases and the NoSQL Movement</hi>. Pragmatic Bookshelf.</bibl>
+
+<bibl><hi rend="bold">Roberts, J. F.</hi> (2012). <hi rend="italic">The True History of the Black Adder: the Unadulterated Tale of the Creation of a Comedy Legend</hi>. Preface Publishing.</bibl>
+
+<bibl><hi rend="bold">Selig, T., M.W. K&#252;ster, and E. Conner</hi> (2012). “Semantically Connecting Text Fragments &#8212; Text-Text-Link-Editor (Poster).” In, ed. Jan Christoph Meister, 518&#8212;520. Hamburg. <ref type="url" target="http://www.dh2012.uni-hamburg.de/wp-content/uploads/2012/07/HamburgUP_dh2012_BoA.pdf">http://www.dh2012.uni-hamburg.de/wp-content/uploads/2012/07/HamburgUP_dh2012_BoA.pdf</ref>.</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">The Tragedy of Richard the Third, cited after Shakespeare’s First Folio as transcribed in <ref type="url" target="http://ota.ox.ac.uk/id/3014">http://ota.ox.ac.uk/id/3014</ref></note>
+
+</div>
+
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-364">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Mapping Text: Automated Geoparsing and Map Browser for Electronic Theses and Dissertations</title>
+<author>
+<name><surname>Weimer</surname>, <forename>Katherine H.</forename></name>
+<affiliation>Texas A&amp;M University Libraries, United States of America</affiliation>
+<email>k-weimer@library.tamu.edu</email>
+</author>
+<author>
+<name><surname>Creel</surname>, <forename>James</forename></name>
+<affiliation>Texas A&amp;M University Libraries, United States of America</affiliation>
+<email>jcreel@library.tamu.edu</email>
+</author>
+<author>
+<name><surname>Modala</surname>, <forename>Naga Raghuveer</forename></name>
+<affiliation>Texas A&amp;M University, Dept. of Biological and Agricultural Engineering</affiliation>
+<email>raghuravi23@tamu.edu</email>
+</author>
+<author>
+<name><surname>Gargate</surname>, <forename>Rohit</forename></name>
+<affiliation>Texas A&amp;M University, Dept. of Computer Science and Engineering</affiliation>
+<email>rohitvg@gmail.com</email>
+</author>
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+    <notesStmt><note type="abstract">Researchers are taking theses and dissertations, geoparsing those texts, and creating a visual, map-based search interface in order to glean better understanding of the locations and topics presented in these scholarly works. The ETDMap is a prototype which automatically discerns the places mentioned in digital documents(i.e. geoparsing) and through a series of automated steps creates a map to browse the collection.</note></notesStmt>          
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">SP11</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>geoparsing</term>
+<term>mapping</term>
+<term>digital collections</term>
+<term>visual browsing</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>geospatial analysis</term>
+<term>interfaces and technology</term>
+<term>metadata</term>
+<term>natural language processing</term>
+<term>maps and mapping</term>
+<term>data mining/ text mining</term>
+               
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+<div> 
+    <p>While texts contain extensive mentions of locations, traditional library catalogs are lacking when searching for geographic locations. Ahlers and Boll (2007) state that approximately twenty percent of web queries have a geographic relation. Buckland (2007), Hill (2006) and others have emphasized the need for collections to be searchable using geographic means. With the advent of visualization tools and web based mapping, there are numerous possibilities to gain insight into the geographic content of texts. Gregory, and Hardie (2011), Bodenhamer, Corrigan and Harris (2010), Dear, Ketchum, Luria and Richardson (2011) and others discuss the role of geographic information in the humanities. Texts, maps and photographs have been described using map interfaces; however, the grey literature of graduate scholarship output has not thus far been presented graphically.  Researchers at Texas A&amp;M University Libraries are taking theses and dissertations, geoparsing those texts, and creating a visual, map-based search interface in order to glean better understanding of the locations and topics presented in these scholarly works.</p>
+    <p>The ETDMap is a prototype which automatically discerns the places mentioned in digital documents(i.e. geoparsing)and through a series of automated steps creates a map to browse the collection. Researchers gained conceptually from work outlined by Grover, et al (2010) and Leidner (2007). This geoparser operates in the context of a DSpace institutional repository. Development has focused on the electronic theses and dissertations collection, although the software is applicable to any textual content in the repository. This abstract will present the current status and overview of the geoparser and map search interface tool.</p>
+    <p>The geoparser is implemented as a curation task in the DSpace repository, using the Java programming language. The geoparser automatically parses the text document, dividing it into sections and identifying prospective toponyms. The geoparser excludes certain portions of the document, such as bibliographies and appendices, since the toponyms found in those sections are typically not directly related to the subject matter of the text. The toponyms are filtered according to several heuristic criteria, and then are used to construct queries through the GeoNames Web-based Java API. The GeoNames server returns a set of locations that match the queries. The geoparser then applies disambiguation heuristics to score the locations and determine the most likely referent of the toponym. Finally, the top-scored locations, along with geospatial metadata (including coordinates) are written to metadata fields on the item under consideration. These metadata are then output to a KML file for viewing in a variety of interfaces. The term ‘map’ used in Fig. 1 refers to a data structure map, not a geospatial visualization.</p>
+    
+<figure><graphic url="ab-364.001"/><head>Figure 1.</head><p>Geoparsing Workflow [image credit: James Creel]</p></figure>
+    
+    <p>The geoparser uses regular expressions to partition the document text into sections. Theses and dissertations follow a predictable and regulated document format, which allows for clean results. Currently, the sections of interest are the abstract and main document body. These are processed by the geoparser, while the references, vita and appendices are ignored. The geoparser identifies toponyms in several stages using the OpenNLP maximum entropy software library<ref type="note" target="n01" n="i">i</ref> The ETDmap utilizes training data available on the OpenNLP Models page.<ref type="note" target="n02" n="ii">ii</ref> The detected potential toponyms are stored along with contextual information, such as the number of occurrences and the locations of those occurrences, all of which is used in subsequent heuristic processing.</p>
+    <p>The locations referred to are discerned by a variety of heuristics. The primary Java entities used in the process are the CandidateMapper, the RefinementImpl(Implementation) and DisambiguationHeuristic. Pruning heuristics, which eliminate spurious prospective toponyms, are being implemented, and are under review and refinement. Those include heuristics that ignore short or common words, ignore singe occurrences, and require exact matches to records found in GeoNames.  Additionally, scoring heuristics add points to scores associated with the possible toponyms.  Populated places receive higher scores, as do those closer to or contained within other candidate locations. Once the stock of heuristics has been exhausted, the candidates with the top scores are selected as referents of the toponyms.</p>
+    <p>The Generate KML curation task reads the geospatial metadata thus generated (including geospatial coordinates provided by the GeoNames server) and encodes it in a KML file attached to the item in DSpace. This KML file includes placemarks for each of the mentioned places and includes description on each placemark with the title, author, advisor, url, date and department.  At the collection level, the repository supplies a link to a KML file generated on request that consists of the aggregation of all the KML files generated for items in the collection.</p>
+    <p>GeoNames.org was selected as the gazetteer for the project due to its inclusion of numerous official gazetteers from countries around the world, and because it is easily and freely downloadable, so therefore practical for use in this case. In terms of visualization, the initial map background was OpenLayers WMS. It provides a simple and easy to use interface and is open source, but did not provide great detail when zoomed in.(See Fig. 2.) Other map backgrounds included are GoogleMaps and Open Street Maps. Open Street maps is open source, but, includes names in the native language of the country, so is not universally user friendly. Google is not open source, but has a nicely displayed product. In our current version, the user has the choice to select which map background they would like displayed by clicking on a button at the upper right hand portion of the map.</p>
+    
+<figure><graphic url="ab-364.002"/><head>Figure 2.</head><p>Map Using OpenLayers WMS Interface</p></figure>
+    
+    <p>The metadata created through the KML curation task are used not only to create the points of interest for the map viewer, but to also serve as the database for the search filters.   During the early development stage, metadata fields were expanded in the KML to include official place names and geographic coordinates for each location mentioned in the text as well as the work’s author, title, advisor, url, date of publication, and academic department. The latest version of the map includes a time slider search for date of publication, a keyword search for author or academic advisor name, and check boxes for academic college and/or department. Clustering of results enables the user, once zoomed into their areas of interest, to further refine the browse as the results are then broken into smaller groupings(Fig. 3).</p>
+    
+<figure><graphic url="ab-364.003"/><head>Figure 3.</head><p>Zoomed in View, Showing Expansion of Clusters</p></figure>
+    
+    <p>Once the user has pinpointed a location of interest, they may click on the pointer and be forwarded to the full text document located in the university’s institutional repository, DSpace. (Fig. 4)</p>
+    
+<figure><graphic url="ab-364.004"/><head>Figure 4.</head><p>Selected Item Showing Title and Metadata Linked to the Full Text</p></figure>
+</div>
+    
+<div>
+<head><hi>Future Research</hi></head>    
+    
+    <p>Research continues on refinement and development of the geoparser. Two short-term goals figure prominently in current efforts: an evaluation of the tool, and implementation of a statistical classifier as an augmentation to heuristic-based geoparsing.</p>
+    <p>Evaluation of the tool presents complications for the traditional precision/recall metrics of information retrieval. While these metrics are easily applicable to the disambiguation task, their application to the name extraction task is less straightforward. The mere occurrence of a toponym in a text does not indicate its relevance to the subject matter. We recognize and deal with certain negative cases by ignoring particular document sections like vitae, references, and appendices, but passing mentions of places occur in body text as well. We plan to implement a statistical comparator for target documents and a set of pre-selected documents known to refer meaningfully to particular places(encyclopedia articles, for instance). The statistics used for the comparator will include term-vectors or other textual derivatives. Techniques gleaned from this development will likely find application in the disambiguation task as well.</p>
+    <p>	We have prepared a set of manually identified and disambiguated toponyms for approximately 100 theses as a basis for our pending evaluation of the toponm disambiguation task. Evaluation of the toponym extraction task will require more subtlety, perhaps including a user study to assess human understanding of the relevance of particular place mentions to document subject matter.  Additional user studies will be conducted to enhance usability of the map interface. Finally, we plan to apply the mature application to collections beyond electronic theses and dissertations.</p>
+</div>    
+    
+<div>
+<head><hi>Funding</hi></head>    
+    
+    <p>This research was supported in part by AMIGOS Library Services [Fellowship 2010-2012 to K. Weimer].</p>
+</div>   
+</div>
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+    <bibl><hi rend="bold">Ahlers, D., and S. Boll.</hi> (2007). Location Based Web Search. In Sharl, A. and Tochtermann, K. (eds), <hi rend="italic">The Geospatial Web: How Geobrowsers, Social Software and the Web 2.0 are Shaping the Network Society.</hi>  London: Springer. 55-66.</bibl>
+    
+    <bibl><hi rend="bold">Bodenhamer, D., J. Corrigan, and T. Harris (eds).</hi> (2010). <hi rend="italic">The Spatial Humanities: GIS and the Future of Humanities Scholarship.</hi> Bloomington: Indiana University Press.</bibl> 
+    
+    <bibl><hi rend="bold">Buckland, M., A. Chen, F. Gey, R. Larson, R. Mostern, and V. Petras.</hi> (2007).  Geographic Search: Catalogs, Gazetteers, and Maps. <hi rend="italic">College &amp; Research Libraries</hi> 68(5): 376-387.</bibl>
+    
+    <bibl><hi rend="bold">Dear, M., J. Ketchum, S. Luria, and D. Richardson</hi> (eds). (2011). <hi rend="italic">Geohumanities: Art, History, Text at the Edge of Place.</hi> New York: Routledge.</bibl>
+    
+    <bibl><hi rend="bold">Gregory, I., and A. Hardie</hi> (2011). Visual GISting: Bringing Together Corpus Liguistics and Geographical Information Systems. <hi rend="italic">Literary &amp; Linguistic Computing</hi> 26(3): 297-314.</bibl>
+    
+    <bibl><hi rend="bold">Grover, C., et al.</hi> (2010). Use of the Edinburgh Geoparser for Georeferencing Digitized Historical Collections. <hi rend="italic">Philosophical Transactions of the Royal Society A</hi> 368. 3875-3889.</bibl>
+    
+    <bibl><hi rend="bold">Hill, L. L.</hi> (2006). <hi rend="italic">Georeferencing: The Geographic Associations of Information.</hi> Cambridge, MA: MIT Press.</bibl>
+    
+    <bibl><hi rend="bold">Leidner, J.</hi> (2007). <hi rend="italic">Toponym Resolution in Text.</hi> Doctoral Dissertation. Edinburgh: University of Edinburgh. <ref type="url" target="http://hdl.handle.net/1842/1849">http://hdl.handle.net/1842/1849</ref> (accessed 3 November 2012).</bibl>
+    
+</listBibl>
+</div>
+<div type="Notes">
+    <note xml:id="n01" n="i"><ref type="url" target="http://incubator.apache.org/opennlp/">http://incubator.apache.org/opennlp/</ref></note>
+    <note xml:id="n02" n="ii"><ref type="url" target="http://opennlp.sourceforge.net/models-1.5">http://opennlp.sourceforge.net/models-1.5</ref></note>
+
+
+</div>
+
+</back>
+</text>
+</TEI>
+    
+    

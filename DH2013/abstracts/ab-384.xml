@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-384">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Authorship problem of Japanese early modern literatures in Seventeenth Century</title>
+<author>
+<name><surname>Uesaka</surname>, <forename>Ayaka</forename></name>
+<affiliation>Doshisha University Graduate School,Japan</affiliation>
+<email>dil0015@mail4.doshisha.ac.jp</email>
+</author>
+<author>
+<name><surname>Murakami</surname>, <forename>Masakatsu</forename></name>
+<affiliation>Doshisha University, Japan</affiliation>
+<email>mamuraka@mail.doshisha.ac.jp</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">This paper aims to focus on &quot;Yorozu no fumihougu&quot; as the collection of posthumous works in Ukiyozoushi (realistic literature) written by Saikaku Ihara (1642？～1693) as a historic classical document of the Japanese cultural foundation and then examine the Authorship problem for Saikaku&#039;s works from a viewpoint of statistical science. In this study, we use the database with 578,617 words $2 as being processed for morphological analysis to all sentences of Saikaku&#039;s 24 works on the basis of &quot;Shinpen Saikaku Zenshu&quot;. This database was developed in cooperation with the editor of &quot;Yorozu no fumihougu &quot; at the affiliate laboratory. The database is the only database to be able to analyze Saikaku&#039;s works at present and has a high degree of reliability from a viewpoint of Japanese language and literature. The analysis uses an appearance ratio of word class as a basic data.</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">SP15</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Authorship problem</term>
+<term>Japanese early modern literatures</term>
+<term>Saikaku Ihara</term>
+<term>Statistical science</term>
+<term>Principal component analysis</term>
+</keywords>
+    
+<keywords scheme="original" n="topic">
+<term>authorship attribution/authority</term>
+<term>data mining/text mining</term>
+               
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+    
+<head>I. Introduction</head>
+    
+    <p>This study aims to focus on <hi rend="italic">Yorozu no humihougu</hi>  <hi rend="Japanese">万の文反古</hi> (“An Old letter scrapbook”; 1696), a collection of posthumous works in the early modern Japanese genre of <hi rend="italic">Ukiyozoushi</hi> <hi rend="Japanese">浮世草子</hi>, written by Saikaku Ihara <hi rend="Japanese">井原西鶴</hi> (1642?–1693) as a classical, foundational document of Japanese culture; then it will examine the “authorship problem” in Saikaku’s works using the tools of quantitative analysis.</p>
+    <p>In contrast to so-called scholarly books with named authors, graphic novels or storybooks called <hi rend="italic">soushi</hi> <hi rend="Japanese">草子</hi>(realistic literature), were generally anonymous in this era. The earliest work generally acknowledged as <hi rend="italic">Ukiyozoushi</hi> <hi rend="Japanese">浮世草子</hi>, and thus the first Japanese early modern novel, emerges with the publication of Saikaku's <hi rend="italic">Kousyoku ichidai otoko</hi> <hi rend="Japanese">好色一代男</hi> (“The life of an amorous man”; 1682) (Munemasa 1969), but there are almost no attributed (signed) works among the 23 <hi rend="italic">Ukiyozoushi</hi> <hi rend="Japanese">浮世草子</hi> considered to be Saikaku’s. While work on Saikaku has proceeded, these fundamental doubts about his authorship remain.</p>
+    <p>Meanwhile, the potential of quantitative analysis of textual data and the related field of the digital humanities have also dramatically advanced. However, quantitative analysis of Japanese classical works has lagged behind. Delayed digitalization of classical works has been a problem due to complications regarding development of morphological analysis software for classical works. At this moment, adequate morphological analysis software for early modern Japanese literature does not yet exist.</p>
+    <p>Five Saikaku's collections of posthumous works were edited and published from 1693 to 1699 by followers of the author including Dansui Houjou <hi rend="Japanese">北条団水</hi>, on the basis of unpublished drafts considered by them to have been Saikaku’s. As a result, some doubt arose subsequently about the authorship and publication history of these works.</p>
+    <p><hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi> was published as the fourth such collection of posthumous works, in the third year after the death of Saikaku (1696). This work is a collection of epistolary novels, consisting of 17 chapters each telling a different short story. The next section considers the doubts about Saikaku’s authorship.</p>
+</div>
+
+<div>
+<head>II. Previous Studies</head>    
+</div>
+
+<div>
+<head type="sub"><hi rend="italic">A. Doubts raised by Yamaguchi</hi></head>    
+    
+    <p>Yamaguchi (1929) mentions that <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi> may be an apocryphal work actually written by Dansui, for the following reasons.
+        
+<list type="ordered">
+    
+<item>1. While the handwriting is similar to Saikaku’s, the lines are bolder and there is a slight lack of roundness due to the powerful strokes.</item>
+            
+<item>2. Unlike in the other posthumous publications, Dansui did not provide a preface to <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi>.</item>
+            
+<item>3. The publishers of <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi> are the same as those for <hi rend="italic">Saikaku oridome</hi> <hi rend="Japanese">西鶴織留</hi>, the unfinished second collection. There is doubt as to why they chose to publish <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi>, later than <hi rend="italic">Saikaku oridome</hi> <hi rend="Japanese">西鶴織留</hi> although it was in more complete form.</item>
+            
+<item>4. While it seems clear that some of the work was written by Saikaku, some chapters seem to have been rewritten by Dansui to impose an epistolary form and remove some descriptive passages. It is considered that these intrusions are less elegantly composed.</item></list></p>
+</div>
+
+<div>
+<head type="sub"><hi rend="italic">B. Arguments for Saikaku's scholarship</hi></head>   
+
+    <p>Teruoka (1953) thinks that the handwriting is similar to Saikaku’s, but notes that even if this is not the case, it does not prove that Saikaku did not write the actual text, which he feels exhibits clear ideological commonalities with Saikaku’s other work. In addition, Taniwaki (1981) raises various doubts but ultimately assumes that all 17 chapters were written by Saikaku since the inventive ideas would have been beyond the range of his imitators.</p>
+</div>
+
+<div>
+<head type="sub"><hi rend="italic">C. New doubts raised by Nakamura</hi></head>   
+    
+    <p>Nakamura (1982) mentions Yamaguchi’s concerns regarding the handwriting, concluding that the handwriting likely belongs to the author of <hi rend="italic">Tanba Taro monogatari</hi> <hi rend="Japanese">丹波太郎物語</hi> (“The story of Tanba Taro”), not Saikaku.</p>
+    <p>On the basis of similar arguments, Nakamura actually makes an argument for the identities of the authors of each chapter.</p>
+    <p>The existence/non-existence of the later insertions to the book has not yet been settled. For that reason, this study re-examines the text of <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi> using a quantitative approach.</p>
+</div>
+    
+ <div>
+<head>III. Database of Saikaku's Works</head>   
+     
+     <p>Table I shows part of the 578,617-word database used for
+this analysis (beginning with <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi>). We morphologically 
+analyzed all of Saikaku's 23 works. This database is the only one on Saikaku’s works at present
+and has a high degree of reliability.</p>
+     
+<figure><graphic url="ab-384.t01"></graphic><head>Table 1.</head> <p>Database of Saikaku’s works</p></figure>
+</div>   
+    
+<div>
+<head>IV. Analysis</head>    
+    
+    <p>In general, Saikaku’s works are made up of many short
+stories(chapters). We used information of each chapter in our
+analysis. Then, we compared <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文
+反古</hi> to <hi rend="italic">Kousyoku ichidai otoko</hi> <hi rend="Japanese">好色一代男</hi>, as an authenticated
+work of Saikaku.</p>
+    
+<figure><graphic url="ab-384.001"></graphic><head>Figure I.</head> <p>Boxplot (the top six most common classes)</p></figure>   
+    
+    <p>The basic analysis considers appearance ratio of words by
+grammatical class, using the top six most common classes:
+nouns, particles, (main) verbs, auxiliary verbs, adjectives, and
+adverbs for appearance ratio were used in the analysis.</p>
+    <p>Figure 1 is a boxplot depicting the appearance ratio of
+these items in both works. We found differences among verbs
+and particles only.</p>
+    <p>Furthermore, we examined by welch’s t-test at the 0.05
+significance level. It concluded that in <hi rend="italic">Yorozu no humihougu</hi>
+<hi rend="Japanese">万の文反古</hi> and <hi rend="italic">Kousyoku ichidai otoko</hi> <hi rend="Japanese">好色一代男</hi> of verbs and
+particles using way is different.</p>
+    <p>Figure II represents the results of the analysis on
+appearance rate, using principal component analysis (PCA)
+with a correlation matrix. The horizontal axis shows the
+importance of first principal component and the vertical axis,
+the second. Proportion of variance the first principal
+component is 0.34, while the second is 0.29; the cumulative
+prpportion up to the second principal component is 0.64.</p>
+    
+<figure><graphic url="ab-384.002"></graphic><head>Figure II.</head> <p>PCA results for <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi> and <hi rend="italic">Kousyoku ichidai otoko</hi> <hi rend="Japanese">好色一代男</hi> (the top six most common classes)</p></figure>   
+    
+    <p>In Figure II, indicating differences revealed by PCA,
+<hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi> is on the left and <hi rend="italic">Kousyoku ichidai otoko</hi> <hi rend="Japanese">好色一代男</hi> on the right.</p>
+    <p>Upon examining the principal component vector, we find
+that verbs, adverbs, auxiliary verbs, attributes, and adjectives
+affect in a positive direction, while particles and nouns affect
+in a negative direction. (Table II).</p>
+    <p><hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi> showed a high
+appearance ratio for verbs and nouns, while <hi rend="italic">Kousyoku ichidai otoko</hi> <hi rend="Japanese">好色一代男</hi>showed a high appearance ratio for auxiliary verbs, particles, and adjectives (Table II). Therefore, it can be said that the appearance ratio of attached words is high in <hi rend="italic">Kousyoku ichidai otoko</hi> <hi rend="Japanese">好色一代男</hi> compared to that in <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi>.</p>
+    
+<figure><graphic url="ab-384.t02"></graphic><head>Table II.</head> <p>The result of PCA</p></figure> 
+</div>
+
+<div>
+<head>V. Conclusion</head>    
+    
+      <p>In this study, two works attributed to Saikaku, <hi rend="italic">Yorozu no humihougu</hi> <hi rend="Japanese">万の文反古</hi> and <hi rend="italic">Kousyoku ichidai otoko</hi> <hi rend="Japanese">好色一代男</hi>, were compared and analyzed for word class appearance ratios. Significant differences were found.</p>
+    <p>However, it can be argued that the content and date of each work written will influence word class appearance ratios. Thus, we need to consider this issue from other perspectives and using other data.</p>
+</div>
+
+    
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+<bibl><hi rend="bold">Munemasa, I.</hi> (1969). “Kanazoushi kara Ukiyozoushi he (<hi rend="Japanese">仮名 草子から浮世へ</hi> )” Shibundo.</bibl>
+
+<bibl><hi rend="bold">Yamaguchi, T.</hi> (1929). "Saikaku meisakushu ge (<hi rend="Japanese">西鶴名作集下</hi>)" Nihonmeityo zenshu kankoukai.</bibl>
+
+<bibl><hi rend="bold">Teruoka, Y.</hi> (1953). "Saikaku kenkyu note (<hi rend="Japanese">西鶴研究ノート</hi>)" Tyuuoukouronsha.</bibl>
+
+<bibl><hi rend="bold">Taniwaki, M.</hi> (1981). "Saikaku kenkyu ronkou (<hi rend="Japanese">西鶴研究 西鶴研究 論攷</hi> )" Sintensha.</bibl>
+
+<bibl><hi rend="bold">Nakamura, Y.</hi> (1982). “Nakamura yukihiko cyogitsushu (<hi rend="Japanese">中村幸彦著述集</hi>)", Tyuuoukouronsha.</bibl>
+    
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>  
+

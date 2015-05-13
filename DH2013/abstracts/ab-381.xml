@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-381">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Tropes, Context and Computation: An approach to digital poetics</title>
+<author>
+<name><surname>Algee-Hewitt</surname>, <forename>Mark Andrew</forename></name>
+<affiliation>Stanford University, United States of America</affiliation>
+<email>mark.algee-hewitt@stanford.edu</email>
+</author>
+<author>
+<name><surname>Hauser</surname>, <forename>Ryan</forename></name>
+<affiliation>Stanford University, United States of America</affiliation>
+<email>heuser@stanford.edu </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Our project seeks to uncover formal and semantic artifacts of poetic tropes within eighteenth-century literature. It is our contention that the specific, trope-based genres of eighteenth-century poetic satire and allegory operate within the mediation of specific semantic fields by the formal constraints of poetic diction. Using a multi-pronged approach, that combines frequency analysis and topic modeling with an automated recognition of poetic form (including meter and rhyme scheme), we seek to test our ability to computationally identify figurative language at the level of genre within a corpus of eighteenth-century poems (~1500). This project not only expands our definition of the &quot;context&quot; that is necessary to identify satiric or allegoric writing (replacing knowledge of specific socio-cultural phenomenon with knowledge of form) but also serves as a pilot study into the possibility of automating the recognition of figurative language and thereby opening the field of poetry for analysis by the Digital Humanities.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP21</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>text mining</term>
+<term>poetry</term>
+<term>literary history</term>
+<term>formal analysis</term>
+<term>classification</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>corpora and corpus activities</term>
+<term>literary studies</term>
+<term>natural language processing</term>
+<term>semantic analysis</term>
+<term>text analysis</term>
+<term>content analysis</term>
+<term>linguistics</term>
+<term>genre-specific studies: prose, poetry, drama, data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-29"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<p>While text mining, and similar quantitative analyses of lexical and semantic frequencies, have proven to be highly informative about aspects of literary history, the origin of these methods within the “hard" sciences creates hurdles for their application within the humanities (Pasanek and Sculley 2008, Bei 2008). Fundamental to these statistical strategies is the assumption of communicative equivalence among words as types: to most kinds of frequency analysis, each instance of a particular word retains the same meaning, force and valence of all other instances of that word. A chapter of a book in which the word “money” is relatively frequent suggests, to these methods, that the author is concerned with economics and it can therefore be related to other texts densely populated by economic terms. A critical problem in literary analysis, however, occurs within the field of tropes: in a seventeenth-century poem, a flea may be a small insect, or it may be a complex metaphor for a particular kind of romantic relationship. While newer, mixture-based, text mining methods, such as topic modeling, can use semantic clusters to reveal the difference between homonyms (the associated “topic” words of “bow”&#8212; applause, cheer, crowd &#8212; would be different than those of “bow” - arrow, fletch, string) they remain unable to detect the nuance of metaphors that are critical to our understanding of literary effect (Ross 2003, Blei 2012). Indeed, if most of the work of a poem comes not through the communicative value of the literal meaning of the words themselves, but instead, through the complex tropology of the formal effects, then we, as digital scholars of literary texts, require a new way to incorporate an understanding of the work of tropes within the semantic field. In particular, at the level of genre identification, where much text mining or frequency analysis finds its home, the genres of allegory and satire, as extended tropes, remain unavailable to these methods. This problem is particularly acute when bringing to bear new quantitative methods on studies of poetry: with its highly figurative language and complex communicative intent, poetry remains on the fringe of quantitative analyses of literature. Most such studies focus exclusively on prose writing, and, in particular, the novel (Stanford Literary Lab 2011, Clement 2008). Given the importance of poetry to literary history, we believe that this lacuna represents a critical problem for the use of digital humanities in the study of literature.</p> 
+
+<p>Our project is an attempt to address this challenge through a new approach that combines a digital analysis of both the formal and lexical features of a constrained sample of poetry to test if it is possible to detect and identify the presence of tropological structures within poetic writing. In particular, this paper explores whether trope-based genres, specifically  satire and allegory, are identifiable from linguistic and formal artifacts that can be recovered through digital analysis. In literary criticism, these genres are highly dependent upon context: a traditional analytic approach insists that a detailed knowledge of the poem’s intended reception is necessary to recognize the satiric intent of a particular poem, or the allegorical framework that informs it (Fletcher and Bloom 2012). We contend, however, that there are generic markers within the formal and semantic fields of the poem that can be used to identify the presence of these tropes. To perform this analysis, we will draw upon a corpus of eighteenth-century poems selected for their comprehensive use of either satire or allegory, as well as a corpus with the same distribution across the period composed of poems that do not participate in either genre. By carefully choosing period and genre specific texts, our project, the first effort in this direction, seeks to limit the scope of its inquiry. As a way of approaching the larger question of poetic tropes, we ask if within the specific genres of eighteenth-century allegoric and satiric poems, we can train an algorithm to recognize the presence of either genre. A key to this project is our belief that the greatest challenge for the analysis of poetry using quantitative methods, that is, its highly figurative and stylized language, can be turned into an advantage in our approach. Both genres, we argue, operate on a semantic, as well as a formal level, and, therefore, the regularities of these formal structures can aid us in revealing key generic identifiers. Our method operates by identifying both the formal features and lexical regularities within a poem and comparing their relationship: we argue that the match, or more importantly, the <hi rend="italic">mismatch</hi> between the formal structure and the semantic fields within poems reveals the presence of these tropological genres. In our project, this relationship becomes one of mediation: what patterns emerge when a topic is mediated through a form for which it is traditionally unsuited?</p>
+
+<p>This is a particularly relevant question for the poetry of the eighteenth century, which formalized many of the generic tropes within specific combinations of style and meaning. Satire, for example, borrowed the rhetorical tropes of high-minded discourse (heroic couplets, iambic meter and poetic epithets) which are undercut by the inappropriateness of the poetic object (a lady’s dressing room, the theft of a lock of hair) to the poetic medium. Similarly, allegory uses specific formal constraints to layer meaning within its lexical patterns. It is this formal shift towards different models of mediation that our project measures by combining text mining strategies, such as frequency analysis and topic modeling, with an automated recognition of poetic structure (like meter or rhyme scheme). While the results that we will present are specific to the genres of eighteenth-century poetic allegory and satire, we nevertheless believe that this represents a crucial first step towards automating the ways in which we recognize figurative language and developing flexible methods that can be extended to other contexts of use. </p>
+
+<p>This project builds upon ongoing work within the Stanford Literary Lab on the subject of poetic discourse. Our project depends upon a corpus of poetry tagged as either satire or allegory (or neither, as a control), which can be used to both train our algorithm and test its efficacy. For this project, we have assembled a corpus of over 1500 poems, written between 1700 and 1800 that have been identified as belonging to one of our two particular genres. As this project seeks to test the ability of the methodology we have devised to identify the presence of satire or allegory within an entire poem, we have limited our corpus to poems that participate fully within the genres of satire or allegory, rather than those that have satiric or allegoric passages only. As the identifying markers of these genres are already highly nuanced, we feel that restricting our study to these two examples better enables us to identify a working model of poetic tropes that can later be improved for finer-grained and more detailed applications. Similarly, this will be the first practical application of an automated method for identifying and cataloguing meter and rhyme scheme within poetic writing that we have developed for the lab. As we argue that the artifacts of poetic tropes exist within the interaction between semantic fields and their formal mediation, we are able to bring our new ability to identify formal aspects of the poem to bear on the analysis of the patterns that these interactions take.</p>
+
+<p>The stakes of this project involve both a push to incorporate poetic writing within our methodology of quantitative analysis, and a challenge to our understanding of the ways that figurative language operates within eighteenth-century poetry. Scholars, such as Fletcher and Bloom on allegory (2012) and Connery and Combe on satire (1995), argue that we are only able to recognize these genres through a detailed understanding of the historical and cultural contexts in which the poem was written. Our methodology, however, argues for an expanded understanding of context: instead of a detailed knowledge of eighteenth-century political or economic history, context, in our study, is a function of the relationship between semantic fields and their formal mediation within a poem. This, we argue, is equally as important to the context of the poem as the geo-political and historical world from which it emerged. While the necessary specificity of our study limits our project's conclusions to the genres of eighteenth-century allegory and satire, we believe that our results have implications for a wider understanding of how figurative language can be incorporated within a quantitative analysis of literature. By carefully limiting our genres and period, we are offering this study as a proof-of-concept test whose results will aid in future quantitative and digital work on poetry. We anticipate that this pilot study can be extrapolated into a wider understanding of figurative language and the tropes in which it operates and that our results from this project can be incorporated into future work that seeks to undertake a wider and more comprehensive analysis of poetic language across multiple centuries. </p>
+
+                
+</div>
+
+</body>
+
+<back>
+
+</back>
+</text>
+</TEI>
+

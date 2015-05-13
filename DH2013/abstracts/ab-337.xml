@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-337">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Semantic Augmentation and Externalization in the Humanities: a Demonstrative Use Case</title>
+<author>
+<name><surname>Morbidoni</surname>, <forename>Christian</forename></name>
+<affiliation>Università Politecnica delle Marche, Italy</affiliation>
+<email>christian.morbidoni@gmail.com</email>
+</author>
+<author>
+<name><surname>Grassi</surname>, <forename> Marco</forename></name>
+<affiliation>Università Politecnica delle Marche, Italy</affiliation>
+<email>margra75@gmail.com</email>
+</author>
+<author>
+<name><surname>Nucci</surname>, <forename>Michele</forename></name>
+<affiliation>Università Politecnica delle Marche, Italy</affiliation>
+<email>m.nucci@univpm.it</email>
+</author>
+<author>
+<name><surname>Fonda</surname>, <forename> Simone</forename></name>
+<affiliation>NET7, Italy</affiliation>
+<email>fonda@netseven.it</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+<notesStmt><note type="abstract">Also in traditional research fields like the Humanities, Web is becoming a primary source for data and research material as well as a fundamental medium for communication and collaboration. In this scenario, new software tools are required that could integrate in the Web environment, i.e. where data is available, and support users in their basic activities &#8212; the so-called scholarly primitives &#8212; such as annotation, augmentation and contextualization. Finally, the result of these activities that constitutes itself valuable knowledge, should be externalized, i.e. made available not only other researchers and to entire mankind. This paper briefly introduces Pundit: a novel Web-based annotation tool that allows scholars to augment Web page contents with semantically structured data. In this way, user-created knowledge can not only be easily made available to other researches, enabling collaboration, but also further recombined with other data in external applications and used beyond the context they originated from.</note></notesStmt>          
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">SP05</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Semantic Web</term>
+<term>Linked Data</term>
+<term>Semantic Annotation</term>
+         
+</keywords>
+<keywords scheme="original" n="topic">
+<term>internet/world wide web</term>
+<term>programming</term>
+<term>semantic web</term>
+<term>linking and annotation</term>  
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>       
+  
+<div> 
+<head><hi>1. Introduction</hi></head>    
+   
+    <p>The Web is rapidly becoming an important source of documents and information for scholars in diverse disciplines and it is opening new scenarios for communication and collaboration. Scholars do not only need to easily find and access open content online, but also to be able to work with it, producing new knowledge and exchanging it with others. By means of content annotation and augmentation, two of the so-called “scholarly primitives” (Unsworth, 2000; Palmer et al., 2009), scholars have been doing this for decades. Their work consists, among other things, in enriching texts (or other kind of intellectual works) with new information, to advance the knowledge of a certain domain. Finally, externalization is an equally important scholarly primitive as it allows presenting results to the community; this usually corresponds to write a paper in the “traditional” academic world.</p>   
+    <p>Effectively translating these primitives in the digital world is the great challenge and opportunity of Digital Humanities. With such purpose, it is commonly accepted that structuring data and metadata about digital objects using standard formats and schemas is a needed step to make content effectively accessible on a global scale. The Semantic Web technologies and Linked Data paradigm have become growingly accepted a way of representing, contextualizing data and making it interoperable(Gradmann, 2010).</p> 
+    <p>The basic idea behind this paper is that the Semantic Web technologies can be used not only to properly represent “static” metadata but also to effectively structure annotations and make their semantics “explicit”. On one side, this allows scholars to create new data and to contribute to the Linked Data Web. On the other, it enhances the externalization of such created knowledge easing the creation of rich and innovative data visualization applications. This enables a “virtuous circle” in which the knowledge generated by scholars can be merged with other data and become the learning and researching object for other scholars.</p>    
+    <p>This paper presents an experimental scenario showing how annotation, augmentation and externalization of knowledge can be performed with (Semantic) Web tools that are currently under development and evaluation in the SEMLIB<ref type="note" target="n01">1</ref> and the DM2E<ref type="note" target="n02">2</ref>  EU projects.</p> 
+    <p>After having shortly introduced Pundit (Morbidoni et al., 2011), we present a demonstrative prototype, based on Edgemaps (Dörk, Carpendale and Williamson 2011), where structured annotations are reused in a Web application to visualize a graph of influences among philosophers.</p>
+</div>
+    
+<div>
+<head><hi>2. Pundit and Semantic Augmentation</hi></head>   
+
+    <p>Pundit is a semantic annotation tool that allows building structured data about digital objects, annotating entire Web pages down to single paragraphs, sentences or words. Web contents can be semantically augmented, establishing typed relations among different kinds of “entities”, and contextualized, linking them to the Web of Data. For example, a scholar can state that a certain text excerpt “cites” another one, that it “describes” the subject of a picture, or that it “refers to” a place or a person.</p>
+    
+<figure><graphic url="ab-337.001"/><head>Figure 1:</head><p>Augmenting original content with semantically structured annotations</p></figure>
+
+    <p>Augmentations always preserve authorship and are represented in RDF using Named Graphs. Augmentations, even when made by different users, can be merged to form a semantic graph, as the one shown in Fig. 1, where text fragments are connected with images, vocabularies entries and Linked Data sources as Freebase. Note that, as Freebase is an RDF data source itself, links from an annotation to a Freebase entity can be used by machines as possible gateways towards the Web of Data, where they can collect additional information (e.g. Kant date and place of birth)and further augment the original knowledge. </p>
+        <p>Nowadays, while some of the basic activities scholars do, as reading and writing papers, are already well supported in the digital world, some essential scholarly primitives, such as annotation, augmentation and externalization, do not yet have a clear support in terms of appropriate software tools.</p>
+    
+<figure><graphic url="ab-337.002"/><head>Figure 2:</head><p>Pundit in action</p></figure>
+    
+    <list type="unordered">
+        <item><hi rend="italic">Augmentation of online content:</hi>Pundit provides different GUIs allowing the annotation of several media contents at different level of granularity and complexity, ranging from simple comments and semantic tags to triples(statements), where different kinds of “items” as text excerpt, images and fragments on images are connected by semantically defined relations.</item>
+        
+        <item><hi rend="italic">Contextualization</hi>, by linking contents parts to the Web of Data (e.g. DBPedia, Freebase)or to controlled custom vocabularies.</item>
+        
+        <item><hi rend="italic">Simple aggregation.</hi> It allows collecting (and reusing in annotations) items of interest.</item>
+        
+        <item><hi rend="italic">Collaboration.</hi> In Pundit annotations are collected in “notebooks” (each user can have multiple notebooks)that can be kept private or shared with others.</item></list>
+    
+    <p>In Fig. 2, a screenshot shows the Pundit GUI. Annotations con be composed as triples of the form “subject-predicate-object” (as shown in Fig. 3). More details about Pundit, as well as a live demo, can be found in (Grassi et al., 2012; Nucci et al., 2012) and on the project Web site<ref type="note" target="n03">3</ref>.</p>
+    
+<figure><graphic url="ab-337.003"/><head>Figure 3:</head><p>The Pundit triple composer.</p></figure>   
+</div>
+
+<div>
+<head><hi>3. Consuming collective knowledge: externalization</hi></head>
+    
+    <p>In Pundit, semantic augmentations are stored as RDF named graphs and made accessible to software by means of SPARQL endpoints and RESTful HTTP APIs. This allows external applications to easily fetch data and mix it with other Linked Data sources. For example, in the SEMLIB project the collective knowledge created by annotators is reused by a Semantic Recommender System (Policarpio, et al. 2012; Fossati, et al. 2012), which creates similarity links among contents in a digital library, offering an additional navigation layer to users.</p>
+</div>
+
+<div>
+<head type="subhead"><hi>3.1 Edgemaps Visualization: A Demonstrative Use Case</hi></head> 
+    
+    <p>Data visualization is not a new topic in the Digital Humanities, as witnessed by projects such as Edgemaps(D&#246;rk, Carpendale and Williamson 2011), where an interactive graph visualization represents philosophers in a timeline or in a similarity graph, showing their influences. The demo shows influence relations coming from Freebase, a well know general-purpose Linked Data repository<ref type="note" target="n04">4</ref>.</p>
+    <p>While the visualization is intuitive and has been highly appreciated in the Digital Humanities community, scholars are also concerned with questions like: “Why exactly the graph says that Marx influences Gramsci?”, ”What is the evidence of that in the primary sources?”, “Who said that?”.</p>
+    <p>The simple idea behind the proposed demonstrative application is to feed the influences graph with precise statements made by scholars, so that each edge in the graph can be linked to an annotation that “justifies” its existence, linking back to primary sources.</p>
+    <p>In our example, we annotated open contents on Wikisource.org, which publishes in a wiki-form a big amount of primary literature. To do this, Pundit has been customized to accommodate semantic relations extracted from the CiTO ontology<ref type="note" target="n05">5</ref>. The relation set includes predicates like “cites” and “quotes”, as well as other more specific ones like “discusses”, “cites as sources”, “agrees with”, etc. The Pundit bookmarklet allows loading the Pundit annotation environment on any Web page, and annotating the text while browsing it in its original location (Wikisoruce.org).</p>
+    <p>Figure 1 shows how Pundit can be used to produce an annotation that connects two texts from different philosophers. The dropdown menu allows specifying a precise relation among the ones proposed (e.g. cites, agrees with, etc.).
+        In terms of RDF triples the annotations would look like the following:
+        
+        <list type="unordered">
+        <item>:text_1 cito:agreesWith :text_2.</item>
+        <item>:text_1 dc:creator freebase:John_Locke.</item>
+        <item>:text_2 dc:creator freebase:George_Berkeley.</item></list></p>
+
+<figure><graphic url="ab-337.004"/><head>Figure 4:</head><p>Creating a semantic annotation, composing a triple(or statement)with Pundit.</p></figure> 
+    
+    <p>Finally, we created a simple Web application based on Edgemaps to load influences relations from users augmentations: each time an annotation exists that connects texts from two different authors a corresponding edge is created in the graph connecting the two authors. When browsing the graph, a scholar can see all the annotations that “establish” a specific influence link with another philosopher selecting an author, as shown in Figure 2. The demonstrative application<ref type="note" target="n06">6</ref>  implements a simple HTTP API with the following parameters:</p>
+    
+    <list type="unordered">
+        <item><hi rend="italic">nbs,</hi> comma separated IDs of notebooks (users personal collections of annotations) to get data from</item>
+        <item><hi rend="italic">source:</hi> [freebase|pundit], tells the application if load data from freebase only, from pundit only or from both.</item></list>
+    
+<figure><graphic url="ab-337.005"/><head>Figure 5:</head><p>Showing evidences of philosopher influence with a Timeline Visualization</p></figure>
+    
+    <p>For example, at the following URL: <ref type="url" target="http://metasound.dibet.univpm.it/thepund.it/edgemaps_demo/demo.html?nbs={c4a2729c}&amp; source={freebase,pundit}#phils;map;;/en/john_locke">http://metasound.dibet.univpm.it/thepund.it/edgemaps_demo/demo.html?nbs={c4a2729c}&amp; source={freebase,pundit}#phils;map;;/en/john_locke</ref>; the Edgemap shows relations among John Locke and other philosophers retrieved both from freebase data and from a Pundit notebook (whose id is c4a2729c). By mouse over on Berkeley, a box appears showing an annotation that “justifies” the relation. A scholar can easily see who is the author of the annotation, read the annotated text and go to the annotated Web page to see the information in its original context.</p>
+</div>
+
+<div>
+<head><hi>4. Conclusions</hi></head>    
+    
+    <p>In this paper, we introduced the concept of semantic augmentation on which Pundit annotation system is founded and presented an example of how semantic data created by scholars or professional con drive live externalizations of a research activity. More experiments are currently undergoing to implement the proposed externalization paradigm also in other scenarios. Another example application has been developed for data journalism, whose detailed description is out of scope here, which allows to put in relations public declarations of politicians (annotated from online newspapers) with the trend of financial indicators<ref type="note" target="n07">7</ref>.</p>
+</div>
+
+<div>
+<head><hi>Acknowledgements</hi></head>    
+    
+    <p>The research leading to these results has received funding from the European Union's Seventh Framework Programme managed by REA-Research Executive Agency [SEMLIB &#8212; 262301 &#8212; FP7/2007-2013 &#8212; FP7/2007-2011 &#8212; SME-2010-1]. The research is also supported by the DM2E project, funded by the European Commission's "ICT Policy Support Programme" (ICT PSP), agreement No. 297274.</p>
+</div>
+</div>
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+
+
+    
+    <bibl><hi rend="bold">Fossati, M., C. Giuliano, and G.Tummarello.</hi> (2012). Semantic Network-driven News Recommender Systems: a Celebrity Gossip Use Case. In <hi rend="italic">International Workshop on Semantic Technologies meet Recommender Systems &amp; Big Data</hi> held at ISWC 2012.</bibl>
+    
+<bibl><hi rend="bold">Gradmann, S.</hi> (2010). Knowledge = Information in Context: on the Importance of Semantic Contextualisation in Europeana. <ref type="url" target="http://www.scribd.com/doc/32110457/Europeana-White-Paper-1">http://www.scribd.com/doc/32110457/Europeana-White-Paper-1</ref></bibl>
+    
+    <bibl><hi rend="bold">Grassi, M., C. Morbidoni, M. Nucci, S. Fonda, and G. Ledda</hi> (2012). Pundit: Semantically Structured Annotations for Web Contents and Digital Libraries in Mitschick, A., F. Loizides, P. Predoiu, A. Nürnberger, and S. Ross (eds.) <hi rend="italic">Semantic Digital Archives 2012. Proceedings of the Second International Workshop on Semantic Digital Archives (SDA 2012)</hi>, held 27 September in Paphos, Cyprus. CEUR-WS.org/Vol-912, urn:nbn:de:0074-912-6.</bibl>
+    
+<bibl><hi rend="bold">Morbidoni, C. and M. Grassi, and M. Nucci</hi> (2011). Introducing SemLib Project: Semantic Web Tools for Digital Libraries, <hi rend="italic">Proceedings of the International Workshop on Semantic Digital Archives &#8212; sustainable long-term curation perspectives of Cultural Heritage held as part of the 15th International Conference on Theory and Practice of Digital Libraries(TPDL)</hi>. Berlin, 29th September 2011.</bibl>
+    
+    <bibl><hi rend="bold">Nucci, M., M. Grassi, C. Morbidoni, and F. Piazza</hi> (2012). Enriching Digital Libraries Contents with SemLib Semantic Annotation System. <hi rend="italic">Proceedings of the Digital Humanities 2012 Conference</hi> held 16-20 July 2012 in Hamburg, Germany.</bibl>
+    
+<bibl><hi rend="bold">Palmer, C., L. Teffeau, and C. Pirmann</hi> (2009). Scholarly Information Practices in the Online Environment: Themes from the Literature and Implications for Library Service Development. Report. Development. <ref type="url" target="http://www.oclc.org/resources/research/publications/library/2009/2009-02.pdf">http://www.oclc.org/resources/research/publications/library/2009/2009-02.pdf</ref></bibl>
+    
+<bibl><hi rend="bold">Policarpio, S., S. Brunk, and S. Tummarello</hi> (2012). Implementation of a SPARQL Integrated Recommendation Engine for Linked Data with Hybrid Capabilities. <hi rend="italic">Artificial Intelligence meets the Web of Data Workshop at ECAI'12</hi>. held 27-28 August in Montpellier, France.</bibl>
+    
+<bibl><hi rend="bold">Unsworth, J.</hi> (2000). Scholarly Primitives: what methods do humanities researchers have in common, and how might our tools reflect this? Symposium on Humanities Computing formal methods experimental practice. <ref type="url" target="http://www3.isrl.illinois.edu/~unsworth/Kings.5-00/primitives.html">http://www3.isrl.illinois.edu/~unsworth/Kings.5-00/primitives.html</ref></bibl>
+    
+</listBibl>
+</div>
+    <div>
+        <head>Notes</head>
+        
+        <note xml:id="n01" n="1">SEMLIB Project: <ref type="url" target="http://www.semlibproject.eu/">http://www.semlibproject.eu/</ref></note>
+        <note xml:id="n02" n="2">DM2E Project: <ref type="url" target=" http://dm2e.eu/">http://dm2e.eu/</ref></note>
+        <note xml:id="n03" n="3">Pundit: <ref type="url" target=" http://thepund.it">http://thepund.it</ref></note>
+        <note xml:id="n04" n="4">Marian Dörk EdgeMaps: <ref type="url" target="http://mariandoerk.de/edgemaps/">http://mariandoerk.de/edgemaps/</ref></note>
+        <note xml:id="n05" n="5">CiTO Ontology: <ref type="url" target="http://purl.org/spar/cito/">http://purl.org/spar/cito/</ref></note>
+        <note xml:id="n06" n="6">  <ref type="url" target="  http://metasound.dibet.univpm.it/thepund.it/edgemaps_demo/demo.html">http://metasound.dibet.univpm.it/thepund.it/edgemaps_demo/demo.html</ref></note>
+        <note xml:id="n07" n="7">Political rhetoric vs. STOXX 600: <ref type="url" target="http://thepund.it/journalism-how-to.php">http://thepund.it/journalism-how-to.php</ref></note>
+    </div>
+</back>
+</text>
+</TEI>
+    

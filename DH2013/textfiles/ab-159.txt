@@ -1,0 +1,68 @@
+
+
+    
+The SAT Daizōkyō  text database committee has released a new version of its integrated Web service that has been offering a series of Buddhist scriptures 
+1
+ since June 2012 in order to provide more convenient and powerful digital resources for the field of Buddhist studies. Since August, the number of accesses is over 200,000 per month on an average (not counting accesses by Googlebot and several other automated indexerss). In this paper, we will describe the integration of various services and resources in this Web service.
+
+    
+First of all, we will explain the function of retrieving and displaying of English translations which has been published as a series of Buddhist scriptures rendered into English by the Bukkyō  Dendō  Kyō kai (BDK) 
+2
+. This function is an implementation of a result that was produced by 18 young researchers using a web collaboration system described in Nagasaki (2011). The collaboration system allows users to easily link a fragment of a text to another fragment of a resource. As a result, a parallel corpus including over 29,000 pairs of English and classical Chinese Buddhist texts has been published on the web service so that users can easily check the English translation of words or phrases in various contexts by dragging a sequence of the text. Moreover, the parallel texts can be shown on the text which was translated sentence-by-sentence. Thus, not only is the English translation provided, but also an interpretation is given for each division of the classical Chinese texts that are not clearly separated by any kind of punctuation. It also continues to provide the function of retrieving terms contained in the Digital Dictionary of Buddhism (DDB) 
+3
+ including over 58,000 entries so that users can easily look up the English renderings of terms. We also continue to provide the function of translating an English term into a Chinese term in the input form of keyword search of the whole text, whereby users can search the Chinese text by using an English term.
+
+    
+The Web service has added a function of retrieving two bibliographical databases:  SARDS3 
+4
+ and CiNii 
+5
+. SARDS3 includes over 60,000 bibliographical records of western books and papers published in the field of Indology. The SAT Web service provides automatic translation from selected Chinese words or phrases to English or Sanskrit terms using DDB as a support function of retrieval so that user can easily find related western secondary resources. In the previous version, a function of a Web API of the CiNii (the largest academic bibliographical database in Japan, managed by the National Institute of Informatics) was included via Indian and Buddhist Studies Treatise Database (INBUDS) in order to indicate whether or not a PDF file is available on the Web. However, in the new version, the additional function of retrieving the CiNii itself in order to easily search related resources in other fields such as history and linguistics was added according to user requests.
+
+    
+All digital facsimiles of the Taishō  Shinshū Daizō kyō  — approximately 80,000 files — are scanned in 600 DPI and made available on the web site. When a user clicks an image button embedded in the lines of the text, an image is displayed inside a window on the left in the page corresponding with the paragraph and lines of the text. The image can be zoomed in and out by use of slider in order to examine its details, which allows users to confirm whether or not the encoded texts are accurate, and whether or not the slight differences in ideographs were unified in the process of text encoding.
+
+    
+In the case of classical Chinese, the distinction and unification of ideographs has been an important topic which often provokes heated discussion in East Asia
+6
+. As the Taishō  Shinshū Daizō kyō  is one of the important materials for such discussion, we provide a function to research information about each ideographic character by linking to several character databases such as CHISE, Unihan, and so on.
+
+    
+Finally, we will explain our method of implementation of the above functions. Most of them are implemented by Linux, PostgreSQL, Apache, PHP, jQuery, and JavaScript. Most of the interfaces are implemented by jQuery and jQuery-ui, but partly by plain JavaScript because of insufficient functionality in the former. The above functions are provided in each window of jQuery-ui, which can be arbitrarily opened and closed so that users can use only necessary functions. We hope we can have the opportunity to discuss any aspects of this new Web service with those who visit our booth.
+
+
+
+
+
+
+    
+
+
+
+Muller, A. C., and K. Nagasaki
+ (2012). Request to add Unencoded  Characters in the Taishō  Shinshū Daizō kyō  (Taishō  edited series of Buddhist scriptures). 
+http://appsrv.cse.cuhk.edu.hk/~irg/irg/irg38/IRGN1858_ProposalSATgaiji.pdf
+ (Accessed 28 Oct 2012).
+Nagasaki, K., T. Tomabechi, and M. Shimoda
+ (2011). Toward a Digital Research Environment for Buddhist Studies. 
+Digital Humanities 2011
+. 342-343.
+
+
+
+
+Notes
+
+
+http://21dzk.l.u-tokyo.ac.jp/SAT/ddb-bdk-sat2.php
+ Accessed 28 Oct 2012.
+ http://www.bdkamerica.org/default.aspx?MPID=81
+ Accessed 28 Oct 2012.
+http://www.buddhism-dict.net/ddb/
+ Accessed 28 Oct 2012.
+http://www.indologie.uni-halle.de/sards/ 
+ Accessed 28 Oct 2012.
+http://ci.nii.ac.jp/en 
+ Accessed 28 Oct 2012.
+Regarding unencoded approximately over 6,000 characters in the text, we are addressing to encode them in the Universal Character set. See Muller (2012).
+

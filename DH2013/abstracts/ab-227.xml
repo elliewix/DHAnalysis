@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-227">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Textal: a text analysis smartphone app for Digital Humanities</title>
+<author>
+<name><surname>Terras</surname>, <forename>Melissa</forename></name>
+<affiliation>University College London,  Information Studies, United Kingdom</affiliation>
+<email>m.terras@ucl.ac.uk</email>
+</author>   
+<author>
+<name><surname>Gray</surname>, <forename>Steven</forename></name>
+<affiliation>University College London, Centre for Advanced Spatial Analysis</affiliation>
+<email>steven.gray@ucl.ac.uk</email>
+</author>
+<author>
+<name><surname>Rudolf</surname>, <forename>Ammann</forename></name>
+<affiliation>University College London, Information Studies, United Kingdom</affiliation>
+<email>ammann@gmail.com</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+<notesStmt><note type="abstract">This poster and demonstration introduces Textal, a text analysis application for iOS, and text analysis service infrastructure, which is currently in development at UCLDH and UCLCASA and will be freely available from January 2013. This poster will present findings evaluating the development, launch, and reception of the app, indicating how smartphone technology can increase the potential for public engagement within the Digital Humanities.</note></notesStmt>          
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords><keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Text Analysis</term>
+<term>Smartphone</term>
+<term>Wordcloud</term>
+<term>app</term>
+<term>mobile</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>software design and development</term>
+<term>text analysis</term>
+<term>mobile applications and mobile design</term>
+<term>data mining/ text mining</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc><change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="poster">
+<body>
+<div>  
+    
+    <p>This poster introduces Textal, a text analysis application for iOS, and text analysis service infrastructure, which is currently in development at UCLDH and UCLCASA and will be freely available from Summer 2013. This poster will present findings evaluating the development, launch, and reception of the app, indicating how smartphone technology can increase the potential for public engagement within the Digital Humanities.</p>
+    <p>Textal (soon to be launched at <ref type="url" target="http://www.textal.org">www.textal.org</ref>, currently on twitter at @textal) will be a freely available smartphone application which allows users to create, share, and explore word clouds of a document, website, or tweet stream. Those in visualization and Digital Humanities have tended to sneer at the popular use of word clouds (Harris 2011, Meeks 2012), given we are used to applying robust text analysis tools (such as <ref type="url" target="http://voyant-tools.org">http://voyant-tools.org/</ref>). However, Textal turns word clouds into an intuitive, visually-oriented interface: once a Textal of a chosen text is generated, users can click on words to access underlying statistics, such as frequency and collocates, and so we believe that the pinch, stretch, and click potential in smartphones, along with our judicious design, can fix the elements of word cloud visualization which are currently held to be problematic and act as a bridge between those who have never encountered text analysis techniques, and the more detailed approaches undertaken by researchers in Digital Humanities. All Textal visualizations, including word-clouds, graphs, charts, and word lists, can be shared via social media such as Twitter and Facebook, and the resulting interface word clouds will also be available online. Textal is powered by server-side processing of linguistic data (users can submit any text material they want, by URL, or copy or paste). The resulting sever architecture will also serve as an API for those wishing to carry out on-the-fly generation of text analysis statistics, which can be used in conjunction with other web services.</p>
+    <p>We envision the Textal iPhone, and iPad, app as a fun text-analysis-in-your-pocket product, which can raise the profile of this technique. We have built Textal with the general audience in mind, to bring Digital Humanities approaches to as wide an international audience as possible (we will be translating the interface into many languages). With an increasing move towards smartphone rather than desktop technologies (Tofel 2012) there is a need to understand how mobile technologies fit within the Digital Humanities remit. We believe we are one of the first teams to build, from scratch, a stand-alone app that brings Digital Humanities techniques to a wider, mobile based, audience. (Previous apps, do exist, such as the DH2012 conference app (<ref type="url" target="https://itunes.apple.com/app/dh2012/id536290090?mt=8">https://itunes.apple.com/app/dh2012/id536290090?mt=8</ref>), which is an app based version of the conference programme. Geostoryteller is a platform for history walking tours that allow smartphone users to interact with multimedia historical information as they move around a neighbourhood (<ref type="url" target="http://www.geostoryteller.org/index.php">http://www.geostoryteller.org/index.php</ref>, see Rabina and Cocciolo 2012.). Others have used augmented reality viewers for historical and archaeological sites (see <ref type="url" target="http://www.dead-mens-eyes.org">http://www.dead-mens-eyes.org/</ref>), often built on existing commercial platforms. We don’t believe, however, that others have built smartphone apps that allow the user to do much data analysis or processing in the way we describe).</p>
+    <p>We are building Textal from the ground up using our own server infrastructure, with the app programmed in house in Objective-C. Textal will be available for iOS only, with a plan to build a stand-alone application for use with Apple laptop and desktops. Depending on reception, we may then build an app for other operating systems. Given that we own the infrastructure, we will be able to view and analyse how, why and when people are using text analysis: we will be tracking use and users, including geo-locating text analysis, to ascertain the potential audience for this type of service and to understand more about the kind of texts people want to analyse, allowing us to undertake a reception study into Textal’s uptake, which will be of great interest to the wider Digital Humanities audience.</p>
+    <p>Although the app will not be launched until Summer 2013 this is not a promissory abstract: most of the development, including both technical infrastructure, server architecture, and design-work on the app, is now complete and at time of submission we are moving into alpha-testing with a core group of users interested in text analysis. This poster will be an up-to-the-minute account of a very recent development in Digital Humanities: what ramifications do apps hold for Digital Humanities as a discipline or a field of practice? We will report using up-to-date statistics generated from Textal as a case study, and demonstrate Textal at the poster session.</p>
+</div>
+    
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+<bibl><hi rend="bold">Harris, J.</hi> (2011). Word Clouds Considered Harmful. <hi rend="italic">Nieman Journalism Lab.</hi> <ref type="url" target="http://www.niemanlab.org/2011/10/word-clouds-considered-harmful/">http://www.niemanlab.org/2011/10/word-clouds-considered-harmful/</ref> (accessed 13 October 2011.)</bibl>
+    
+<bibl><hi rend="bold">Meeks, E.</hi> (2012). Using Word Clouds for Topic Modeling Results. <hi rend="italic">Digital Humanities Specialist blog</hi> <ref type="url" target="https://dhs.stanford.edu/algorithmic-literacy/using-word-clouds-for-topic-modeling-results/.">https://dhs.stanford.edu/algorithmic-literacy/using-word-clouds-for-topic-modeling-results/.</ref>  (accessed 15 August 2012).</bibl>
+    
+<bibl><hi rend="bold">Rabina, D. L., and A. Cocciolo</hi> (2012). <hi rend="italic">Uncovering lost histories through GeoStoryteller: A digital GeoHumanities project.</hi> Digital Humanities 2012, Hamburg. <ref type="url" target="http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/uncovering-lost-histories-through-geostoryteller-a-digital-geohumanities-project/">http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/uncovering-lost-histories-through-geostoryteller-a-digital-geohumanities-project/</ref></bibl>
+    
+<bibl><hi rend="bold">Tofel, K. C.</hi> (2012). Uh-Oh, PC. Half of Computing Device Sales are Mobile. <hi rend="italic">Gigaom blog,</hi> <ref type="url" target="http://gigaom.com/mobile/uh-oh-pc-half-of-computing-device-sales-are-mobile/">http://gigaom.com/mobile/uh-oh-pc-half-of-computing-device-sales-are-mobile/</ref> (accessed 16 January 2012.)</bibl>
+    
+</listBibl>
+</div>
+</back>
+</text>
+</TEI> 
+    
+  
+    
+                

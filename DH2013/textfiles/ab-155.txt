@@ -1,0 +1,205 @@
+
+
+
+
+
+Introduction
+
+
+There is a long tradition of artistic practices that have tried to reduce or remove the role of the author. Text generators produce poems according to algorithmic recipes; Oulipo procedures shuffle existing texts into new, unanticipated combinations; and collaborative processes produce collages, mash-ups, and other hybrid formats that combine a collection of individual voices into a single work. These author-reducing practices often take the form of rebellions against the “false prophets of genius and inspiration” (Motte, 203; qtd. Ramsay, 28), efforts to transcend the unity and rationality of single-author works and create new forms that “could not be created by one brain alone” (Breton, qtd. Waldberg, 95).
+
+
+
+I ask the opposite question: Is it possible to create an “authorless” text that nonetheless looks and acts exactly like a single-author work? Drawing inspiration from the “Exquisite Corpse,” a Surrealist parlor game, I present Exquisite Haiku, a real-time, interactive web application that makes it possible for groups of people to compose short poems. The software enables an extremely granular form of literary collaboration in which the intentions of the individual players are scrambled beyond recognition “into” or “below” the individual word selections. By pushing the register of collaboration down to an extended process of deliberation that takes place for each word, I argue that the resulting texts lack authors in the sense that they are completely 
+unattributable
+ — no individual person is responsible for any addressable part of the text. And yet they emerge from a completely deterministic, human-willed process and exhibit an “aura of sensefulness” (Ramsay, 30) and “closure in meaning” (Laxon, 30) that makes them indistinguishable from single-author texts.
+
+
+
+
+
+
+The Exquisite Corpse and the “Fold”
+
+
+First played by the friends of André Breton in Paris in the 1920’s, the Exquisite Corpse
+1
+  was one of the most influential of the Surrealist parlor games. A group sits at a table and passes around a sheet of paper — each player writes or sketches a new bit of material onto the page, and then folds the paper to conceal all but a small portion of the composite image. The end result is a phantasmagorical mash-up of the individual contributions, all highly individuated but bound together by a web of associations emerging from each player's partial knowledge of the whole. For Breton and the Surrealists, this disjointedness was a feature, not a bug — these “chain games” were efforts to invent new modes of artistic praxis that abandoned the constraints of single-author rationalism and moved towards a collaborative engagement with the 
+sur
+-reality of Freudian free-association, a hop-scotching movement among images and motifs (Kern, 3-28). To achieve this fragmentation, the “links” of the chain needed to be blocky, rough, and obviously collaborative.
+
+
+
+Interestingly, though, these theoretical goals start to unravel as the Corpse becomes more “competent” from a technical standpoint. Susan Laxon describes a variation of the game introduced in the mid-1930’s by Valentine Hugo that tried to combine the energies of the individual players into a more unbroken, continuous form of collaboration. The physical “folds” were replaced with a system of discreet markings that protected the physical purity of the page, and the contour of the final image was traced over in an effort to conceal discontinuities and standardize the shading tech-nique (Laxon, 41). For Laxon, this essentially an artistic error, at least when held up against the intellectual goals of the movement — the effort to “smooth” or “improve” the collaboration has the paradoxical effect of pushing the final product back in the direction of single-author unity. The Corpse stakes its claim to originality on the abruptness and defamiliarization brought on by the juxtaposition of the separate sec-tions. As they bleed together and start to reassemble towards cohesion, the Corpse cedes its 
+raison d'être
+.
+
+
+
+The altered rule set never caught on; before long, the fold was reinstated and the error reversed. But what if the “mistake” had been allowed to continue? Hugo’s modified game points to an intriguing proposition: What if the collaboration actually became so granular — the individual contributions so completely pulverized into the text — that it would be impossible to draw a line between any discrete unit of meaning in the work and an intending consciousness? Is it really true that a 
+complete
+ fragmentation of single authorship would, paradoxically, look almost identical to single authorship? Could this be achieved in a real artistic praxis? What kind of system or a game could actually reach this hypothetical endpoint? 
+
+
+
+
+
+
+Exquisite Haiku and Literary Consensus
+
+
+In an effort to explore this question, I built Exquisite Haiku, a real-time web application written in JavaScript using Node.js that makes it possible for groups of people — as few as two, and theoretically as many as about 1,000 — to work together in an interactive, synchronous environment to compose three-line English haiku in a 5-7-5 syllable pattern. The words in the poem are selected one-by-one and in-order by a series of “word rounds,” structurally identical cycles of play that last for a fixed amount of time (1-10 minutes). At the end of each round, the word that emerges with the most points from a game-like process in which the group collectively evaluates the proposals of individual players is locked into the next position in the poem, and the process restarts for the next word.
+
+
+
+At the start of each round, players are presented with the words that have already been selected, a countdown timer that shows the amount of time left for the current word selection, and a “points” counter (all players get the same number of points, replenished at the start of each round). Players submit words by typing into a box at the top of the screen, and the words are pushed onto a continuously updated stack of unique possibilities. Starting immediately, and continuing as more proposals are submitted, players can influence the ordering of the stack by spending out little bursts of positive or negative points, of variable size, onto individual words by clicking and dragging up or down.
+
+
+
+As soon as a vote is cast, the software immediately propagates the player’s activity to all of the other players in the poem, all of whom see a millisecond-current interface designed to communicate a constant stream of information about the individual and aggregate sentiments of the players. The interface becomes a field of shifting, dilating, recoloring, reordering words that assembles the activity of the group into a single visual representation and sets the stage for an ongoing process of conversation, experimentation, and brinksmanship. Words are floated to the top and floated back down, tried out and then abandoned in favor of other ideas. A new submission or a large vote can trigger a sudden flurry of agreement or dissent. Competing factions form around words, the players tactically pacing their point expenditures to protect or bolster the position of a word in the stack.
+
+
+
+Unlike other computer-assisted forms of writing, though, the software doesn’t actually 
+do
+ anything at all — it doesn’t pick words, inject any element of randomness or chance, or 
+do
+ anything else to materially impact the outcome of the process. It is essentially an elaborate scorekeeper or referee, a set of rules and processes according to which the sentiments of the players are collected, tallied, and redisplayed, with the final effect of distilling a single course of action from the divergent energies of the group. In this sense, the software becomes an exercise in applied political philosophy. It is a microcosmic legal or economic system, a legislative process for word selection, an artistic social contract that transplants the lowest-level mechanics of literary meaning-making — the raw, semiotic process of selecting signifiers and linking them together into syntagms — into a system of democratic governance.
+
+
+ 
+
+
+Figure 1: 
+A screenshot of Exquisite Haiku in the middle of the second line of a poem, near the end of a word round. In three seconds, “white,” the top word in the main ranking stack below the poem, will get locked and the process will restart for the next word: “tell me about clouds / what white _____.”
+
+
+
+
+Authorless authorship
+
+
+In the way that 
+e
+-x
+ approaches 0 as x increases, I argue that the texts that emerge from this process approach complete 
+unattributability
+ as the number of players increases and the contribution of any individual becomes increasingly marginal. Unlike other “authorless” texts, though, the democratic nature of the game causes the poems to gyroscopically evolve in the direction of highly specific, concrete meanings. At any given point in the composition process, there is a strong social tendency for the players to form a majority consensus around words that are semantically coherent in the context of the words that have already been selected, and that set the stage for future word choices that will result in poems that hold together overall
+2
+:
+
+
+
+
+winter’s color is
+a clanging echo of some
+distant summer song
+electrical days
+arrive without incident
+pass without pleasure
+in all shades of love
+some element of hazard
+glows forever pale
+despite quiet thought
+quote roaring ideas that
+compel agreement
+Although far from unequivocal (especially the fourth example, with the idiomatic strangeness of “quote” and “roaring”), there is an unmistakable structural firmness at play. At the level of pragmatic, ordinary-language interpretation, specific “theses” or “statements” are advanced.
+3
+  Compare to some of the classic outputs of the original Corpse, which, quite deliberately on the part of their creators, almost provide negative definitions of this notion of sensefulness:
+
+
+
+The exquisite corpse will drink the young wine.
+The dormitory of friable little girls puts the odious box right.
+The Senegal oyster will eat the tricolor bread. 
+ (Rubin, 278)
+
+I will argue that this tension between how the Exquisite Haiku are 
+produced
+ and how they 
+behave
+ as literary objects make them highly peculiar from a theoretical standpoint. They possess characteristics that seem to satisfy all of our intuitive requirements for “authored-ness” in the strong sense of the concept: They are formed exclusively by the volitional actions of human agents; there is no element of randomness or chance involved; they bear well-formed “sentence meanings” that say specific things. And yet they emerge from a radically collaborative process that in fact destroys exactly this concept of authorship.
+
+
+
+                
+
+
+
+
+
+
+
+
+Dowling, W. C.
+ (1983). Intentionless Meaning. 
+Critical Inquiry
+. 9.4 (June, 1983): 784-789. 
+Fish, S. E.
+ (1980). 
+Is There a Text In This Class? : The Authority of Interpretive Communities
+. Cambridge, MA: Harvard University Press. 
+Gadamer, H.-G.
+ (1975). 
+Truth and Method
+, trans. Garrett Burden and John Cumming. New York: Crossroad.
+Hayles, N. K.
+ (2008). 
+Electronic Literature: New Horizons for the Literary
+. Notre Dame: University of Notre Dame Press. 
+Iser, W.
+ (1972). The Reading Process: A Phenomenological Approach. 
+New Literary History
+. 3.2 (Winter, 1972): 279-299. 
+Kern, A. M.
+ (2009). From One Exquisite Corpse (in)to Another: Influences and Transformations from Early to Late Surrealist Games. 
+The Exquisite Corpse: Chance and Collaboration in Surrealism's Parlor Game
+. Katana Kockhar-Lindgren, Davis Schneiderman and Tom Denlinger. Lincoln: University of Nebraska Press. 3-28. 
+Knapp, S., and W. B. Michaels
+ (1982). Against Theory. 
+Critical Inquiry
+. 8.4 (Summer, 1982): 723-742. 
+Laxon, S.
+ (2009). ‘This is not a drawing.’ 
+The Exquisite Corpse: Chance and Collaboration in Surrealism's Parlor Game
+. Katana Kockhar-Lindgren, Davis Schneiderman and Tom Denlinger. Lincoln: University of Nebraska Press. 29-48. 
+Mathews, H., and A. Brotchie.
+ (1998). 
+Oulipo Compendium
+. London: Atlas Press. 
+Motte, W. F.
+ (1998). 
+Oulipo : a Primer of Potential Literature
+. 1st Dalkey Archive ed. Normal, IL: Dalkey Archive Press.
+Ramsay, S.
+ (2011). 
+Reading Machines: Toward an Algorithmic Criticism
+. Urbana: University of Illinois Press. 
+Rubin, W. S.
+ (1968). 
+Dada and Surrealist Art
+. New York: H. N. Abrams.
+Searle, J. R.
+ (1994). Literary Theory and Its Discontents. 
+New Literary History
+. 25.3, 25th Anniversary Issue (Part 1) (Summer, 1994): 637-667.
+Waldberg, P. 
+ (1997).
+Surrealism
+. New York: Thames and Hudson.
+
+
+
+
+
+  The name comes from the sentence that was produced the first time the game was played: “
+Le ca-davre exquis boira le vin nouveau
+” (“The exquisite corpse will drink the new wine”).
+  No doubt these group dynamics reflect culturally informed values about what poetry should look like. It would be interesting to see if groups of players with different cultural backgrounds approach the game in different ways – both in terms of the types of poetry that the group attempts to produce, and in terms of how players engage with the political (and even ethical) process of choosing words.
+  This is not always the case; sometimes the process “fails” in this regard. For example: “
+who told god that we / are capable of seeing / shapes in dead leaves that
+” – in this case, the players (I was one of them) miscounted the syllables in the last line, bringing the poem to a logical conclusion with “leaves,” even though there was still one syllable remaining on the line. The group basically just gave up, the final “that” perhaps a gesture towards an idea that the phrase could continue beyond the boundaries of the poem. This is a technical error – remove the last word, and the poem is actually quite well-formed. In other cases, though, the poem just fails to close towards any immediately obvious, top-level meaning: “
+we intend just what / you would fear nothing at the / hour of meaning
+.”
+
+

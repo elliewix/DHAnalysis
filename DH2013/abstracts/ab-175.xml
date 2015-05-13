@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-175">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Markup Beyond XML</title>
+<author>
+<name><surname>Piez</surname>, <forename>Wendell</forename></name>
+<affiliation>Piez Consulting Services, United States of America</affiliation>
+<email>wapiez@wendellpiez.com</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">If one uses a markup syntax with looser rules than XML&#039;s, it becomes more straightforward to represent certain kinds of phenomena, for example overlapping spans or hierarchies in texts. *LMNL*, the Layered Markup and Annotation Language, offers a markup syntax and a data model to go with it. Because of the relaxed definition of its data model - essentially a set of annotated ranges over a text, in no particular relation to one another except as processing may assume or infer -- LMNL offers a great deal of freedom in modeling and description. Nevertheless, because it is defined formally and generically, it is possible to build generic processing pipelines for LMNL, to support operations such as filtering, indexing, renaming and transformation. XML can be extracted from LMNL; diagrams can be drawn representing marked up features. With live demonstration of a LMNL processing pipeline, *Luminescent*.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP19</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>LMNL</term>
+<term>markup</term>
+<term>overlap</term>
+<term>data modeling</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>encoding - theory and practice</term>
+<term>data modeling and architecture including hypothesis-driven modeling</term>
+<term>knowledge representation</term>
+<term>information architecture</term>
+<term>xml</term>
+<term>concording and indexing</term>
+<term>content analysis</term>
+<term>visualisation</term>
+<term>standards and interoperability</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-29"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+<head>Markup Beyond XML</head>
+
+<p>A review of the limitations of XML is not necessary here, as they have been debated as long as XML, and SGML before it, have been applied to data in the humanities. (For example, see Barnard et al. 1988, Huitfeldt 1994, Barnard et al. 1995.) Nor is it necessarily helpful, inasmuch as dwelling on the difficulties (while ignoring the considerable strengths) of XML is not in itself a constructive activity.</p>   
+
+<p> However, even when conceptualizing a markup technology that does not face these particular limitations, we can also learn from XML's strengths. In particular, from the concept of generic and “descriptive” markup (Coombs 1987) we have learned that document markup need not be strongly bound to application semantics, but can be declarative and oriented to the information and problem domain (rather than the particular platform and toolset in use), providing many advantages both for modeling and for long-term application independence. Similarly, XML's fairly clean separation of <hi rend="bold">syntax</hi> (the text-based format that constitutes XML formally &#8212; angle brackets delimiting markup and distinguishing it from text content) from <hi rend="bold">model</hi> (most commonly, but not necessarily, the W3C DOM or the related “tree”-shaped model of a document described by the Xpath/XSLT/XQuery family of specifications) has enabled the development of powerful standards-based tools &#8212; for both creating and maintaining XML syntax and for processing it &#8212; and helped ensure the platform independence and portability of XML technologies.</p>
+
+<p>LMNL, the Layered Markup and Annotation Language, borrows both of these fundamental concepts. LMNL was first described by Jeni Tennison and myself in 2002 (Tennison and Piez 2002). However, its model differs significantly from XML's in two important respects:</p>
+
+<p>I. Where XML stipulates a complete organization of a data set into discrete containers (elements), LMNL simply identifies <hi rend="bold">ranges</hi> over a text. Ranges, as sequences of characters (or more formally, of <hi rend="bold">atoms</hi>) may overlap with other ranges. In LMNL syntax, this is legal:
+<code>
+[poem}Et [red}l'unique [gold}cordeau{red]</code>
+<code>  des [green}trompettes{gold] marines{green]{poem]</code></p>
+
+<figure><graphic url="ab-175.001"/><head>Figure 1.</head></figure>
+
+<p>As identified (in the syntax) by start-tag/end-tag pairs, any range may overlap with any other. Indeed, any relations between ranges &#8212; whether one may or does “contain” or “overlap” another &#8212; are not conditioned by the rules of LMNL, but provided, when needed, by an application in process. (So an application may say “colors must not overlap”, or “red must not overlap with gold”, but LMNL itself does not.) Thus LMNL markup is like a set of crayons or markers (for marking a text) as opposed to a pair of scissors (for segmenting it).</p>
+</div>
+
+<div>
+<p>II. LMNL ranges may be annotated, in a way similar to attributes assigned to elements in XML, but also with significant differences. While in XML, attributes are provided as name-value pairs, any LMNL <hi rend="bold">annotation</hi> may have structure:
+<code>
+[poem [author}Guillaume [surn}Apollinaire{surn]{author]}Et 
+  l'unique cordeau des trompettes marines{poem]
+</code>
+
+Here, the author annotation has content that is marked up: <code>Guilliaume [surn}Apollinaire{surn].</code> Moreover, in LMNL, annotations may have annotations (as if XML attributes could have attributes), and indeed annotations may encapsulate, comprehend or subsume entire documents (perhaps stored out of line, elsewhere on the network).</p>
+<p>Draft specifications for the LMNL model and proposed syntax are at <ref type="url" target="http://www.lmnl-markup.org">http://www.lmnl-markup.org</ref>.</p>
+<p>The examples here use markup syntax, but the LMNL model by definition (and in this respect like the W3C XDM) requires no particular serialization format or no serialization at all. The LMNL model is defined in such a way that it can be represented using any capable syntax, or modeled directly in a database or object structure. XML may also be used, and indeed any of the documented XML-based approaches to representing overlap (including so-called milestone elements, or via segmentation and alignment, or using standoff; see TEI P5, chapter 20) may be mapped, usually straightforwardly, into the LMNL model. A simple transformation can rewrite any XML document as a LMNL document; by supplementing this with specialized logic for recognizing any XML-based conventions for representing overlap and expressing them directly as LMNL ranges, any XML that currently represents overlap can be rewritten automatically into LMNL and processed in a LMNL
+processor. (It is also possible to go back the other way.)</p>
+<p>The LMNL model itself is fairly simple. A LMNL instance is defined as a <hi rend="bold">text layer</hi> (a sequence of characters) with a set of <hi rend="bold">ranges</hi> over the text. A text layer is a sequence of atoms: an <hi rend="bold">atom</hi> can be represented using markup, but more commonly Unicode characters (each of which indicates a distince atom) are used. As noted, ranges have <hi rend="bold">annotations</hi>. Annotations can be anything, from nothing at all (both ranges and annotations can be anonymous in LMNL) to just a name, to entire documents: annotations have their own text layers, so they can marked up. Annotations, like ranges, may be annotated. And their annotations may be marked up (its content marked with ranges), its ranges annotated, etc. While annotations belong to ranges (or annotations), and ranges belong to text layers (in the documents or annotations over which they range), ranges have no necessary relations to one another except as specified in the application. This means that ranges may overlap even other ranges assigned the same (type) name — so single defined sets of tags may be used to indicate ranges in the text for indexing or annotation, even if these ranges sometimes (or often) overlap. Ranges may also be filtered or associated in ways that represent multiple concurrent hierarchies (not single hierarchies alone, one at a time).</p>
+<p><hi rend="bold">Luminescent</hi>, in combination with XSLT stylesheets developed to transform its (XML-based) output, is currently capable of all the following:
+
+<list type="ordered">
+
+<item>1. Automatically check for LMNL syntax well-formedness,
+outside an application.</item>
+
+<item>2. Extract XML dynamically from documents marked with
+LMNL, given a list of elements to represent as (in) the
+XML tree.</item>
+
+<item>3. Analyze the content for overlapping ranges.</item>
+
+<item>4. Generate formatted output.</item>
+
+<item>5. Generate alternative renditions and visualizations (e.g.
+SVG), showing structures of relations (and/or the lack
+thereof) in the marked up text.</item>
+
+<item>6. Filter and transform.</item></list>
+
+A few demonstrations of LMNL syntax with outputs from the Luminescent toolchain (implemented as a sequence of XSLT transformations in a pipeline as described in Piez 2012) are offered to supplement this presentation. See: http://www.piez.org/wendell/papers/dh2013/lmnl/ index.html</p>
+<p>These experiments demonstrate the potential of a model supporting overlap for the study of narrative structure (in which narrative and dialogic structures commonly overlap with the native structures of verse, prose or drama) and for prosody (in which verse structure and sentence structure overlap in interesting ways). In addition, many other uses for LMNL can be readily envisioned, whether for supporting indexing, arbitrary annotation, data retrieval and filtering across arbitrary semantic boundaries, or others.</p>
+<p>Finally, it must be noted that in a model that supports both overlapping structures and structured annotations, there are expressive opportunities for the representation of phenomena in literary texts (and any complex text) that are unavailable in XML. Consequently, it is suggestive of other models of text altogether — which can be more easily optimized, in many cases, for certain kinds of processing that are difficult, at best, in XML.</p>
+<p>Source code for Luminescent is maintained here on github: https://github.com/wendellpiez/Luminescent</p>
+<p>At DH2013 I will be demonstrating the pipeline; describing its design, operations, methods and capabilities; remarking on issues and work remaining to be done; and answering questions.</p>
+</div>
+
+<div>
+<head>Some LMNL source code</head>
+
+<ab>[octave}[quatrain}[line}[s}[phr}She is as in a field a silken tent{line]</ab>
+<ab>[line}At midday when the sunny summer breeze{line]</ab>
+<ab>[line}Has dried the dew and all its ropes relent,{phr]{line]</ab>
+<ab>[line}[phr}So that in guys it gently sways at ease,{phr]{line]{quatrain]</ab>
+<ab>[quatrain}[line}[phr}And its supporting central cedar pole,{phr]{line]</ab>
+<ab>[line}[phr}That is its pinnacle to heavenward{line]</ab>
+<ab>[line}And signifies the sureness of the soul,{phr]{line]</ab>
+<ab>[line}[phr}Seems to owe naught to any single cord,{phr]{line]{quatrain]{octave]</ab>
+<ab>[sestet}[quatrain}[line}[phr}But strictly held by none,{phr] [phr}is loosely bound{line]</ab>
+<ab>[line}By countless silken ties of love and thought{line]</ab>
+<ab>[line}To every thing on earth the compass round,{phr]{line]</ab>
+<ab>[line}[phr}And only by one's going slightly taut{line]{quatrain]</ab>
+<ab>[couplet}[line}In the capriciousness of summer air{line]</ab>
+<ab>[line}Is of the slightest bondage made aware.{phr]{s]{line]{couplet]{sestet]</ab>
+
+<p>In an application (in which this document is parsed and transformed into an SVG representation), a graphical view shows how cleanly nested the sentence/phrase structure is with the verse structure of this sonnet. The only case of overlap is at the end of line 9 (at the start of the sestet), where it enjambs with line 10 after the only mid-line caesura in the poem:</p>
+
+<figure><graphic url="ab-175.002"/><head>Figure 2:</head></figure>
+
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Barnard, D., R. Hayter, M. Karababa, G. Logan, and J. McFadden</hi> (1988). SGML-Based Markup for Literary Texts: Two Problems and Some Solutions. <hi rend="italic">Computers and the Humanities</hi>. 22(4): 265-276.</bibl>
+
+<bibl><hi rend="bold">Barnard, D., L. Burnard, J. P. Gaspart, L. A. Price, C. M. Sperberg-McQueen, and G. B. Varile</hi> (1995). Hierarchical Encoding of Text: Technical Problems and SGML Solutions. The Text Encoding Initiative: Background and Context. <hi rend="italic">Computers and the Humanities.</hi> 29(3). <hi rend="italic">The Text Encoding Initiative: Background and Context</hi>. 211-231.</bibl>
+
+<bibl><hi rend="bold">CATMA: Computer Aided Textual Markup and Analysis.</hi> <ref type="url" target="http://www.catma.de/">http://www.catma.de/</ref>.</bibl>
+
+<bibl><hi rend="bold">Coombs, J. H., A. H. Renear, and S. J. DeRose</hi> (1987). Markup Systems and The Future of Scholarly Text Processing. <hi rend="italic">Communications of the ACM</hi>. 30(11): 933-947</bibl>
+
+<bibl><hi rend="bold">Huitfeldt, C.</hi> (1994). Multi-Dimensional Texts in a One-Dimensional Medium. <hi rend="italic"> Computers and the Humanities</hi>, <hi>28(4-5)</hi>. <hi rend="italic">Humanities Computing in Norway</hi>. 235-241.</bibl>
+
+<bibl><hi rend="bold">Tennison, J., and W. Piez</hi> (2002). The Layered Markup and Annotation Language (LMNL). In <hi rend="italic">Extreme Markup Languages 2002</hi>.</bibl>
+
+<bibl><hi rend="bold">Piez, W.</hi> (2004). Half-steps toward LMNL. In <hi rend="italic">Proceedings of Extreme Markup Languages</hi>. <ref type="url" target="http://conferences.idealliance.org/extreme/html/2004/Piez01/EML2004Piez01.html">http://conferences.idealliance.org/extreme/html/2004/Piez01/EML2004Piez01.html</ref>.</bibl>
+
+<bibl><hi rend="bold">Piez, W.</hi> (2008). <hi rend="italic">LMNL in Miniature: An introduction.</hi> <hi rend="italic">Amsterdam Goddag Workshop</hi> held December 2008 <ref type="url" target="http://piez.org/wendell/LMNL/Amsterdam2008/presentation-slides.html">http://piez.org/wendell/LMNL/Amsterdam2008/presentation-slides.html</ref>.</bibl>
+
+<bibl><hi rend="bold"> Piez, W.</hi> (2010). <hi rend="italic">Towards Hermeneutic Markup: an Architectural Outline.</hi> <hi rend="italic">Digital Humanities 2010</hi> held July 2010 at King's College. London  <ref type="url" target="http://piez.org/wendell/dh2010/index.html">http://piez.org/wendell/dh2010/index.html</ref>.</bibl>
+
+<bibl><hi rend="bold"> Piez, W. </hi>(2012). “Luminescent: parsing LMNL by XSLT upconversion.” Presented at <hi rend="italic">Balisage: The Markup Conference 2012 (Montréal, Canada), August 2012. In Proceedings of Balisage: The Markup Conference 2012. Balisage Series on Markup Technologies</hi>, 8. doi:10.4242/BalisageVol8.Piez01.</bibl>
+
+<bibl><hi rend="bold">Schmidt, D.</hi> (2010). The inadequacy of embedded markup for cultural heritage texts. <hi rend="italic">Literary and Linguistic Computing</hi> 25(3): 337-356. doi: 10.1093/llc/fqq007.</bibl>
+
+<bibl><hi rend="bold">Sperberg-McQueen, C. M.</hi> (1991). Text in the Electronic Age: Textual Study and Text Encoding, with Examples from Medieval Texts. <hi rend="italic">Literary and Linguistic Computing</hi> 6(1).</bibl>
+
+<bibl><hi rend="bold">Text Encoding Initiative (TEI)</hi>.  <hi rend="italic">P5: Guidelines for Electronic Text Encoding and Interchange</hi>, chapter 20, “Non-hierarchical Structures”. <ref type="url" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html</ref>.</bibl>
+
+<bibl><hi rend="bold">St&#252;hrenberg, M., and D. Goecke</hi> (2008). SGF &#8212; An integrated model for multiple annotations and its application in a linguistic domain. Presented at <hi rend="italic">Balisage: The Markup Conference 2008 (Montréal, Canada), August 2008. In Proceedings of Balisage: The Markup Conference 2008. Balisage Series on Markup Technologies</hi>, 1. doi: 10.4242/BalisageVol1.Stuehrenberg01.</bibl>
+
+<bibl><hi rend="bold">St&#252;hrenberg, M., and D. Jettka</hi> (2009). A toolkit for multi-dimensional markup &#8212; The development of SGF to XStandoff. Presented at Balisage: The Markup Conference 2009 (Montréal, Canada), August 2009.  In <hi rend="italic">Proceedings of Balisage: The Markup Conference 2009. Balisage Series on Markup Technologies</hi>, 3. doi: 10.4242/BalisageVol3.Stuhrenberg01.</bibl>
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

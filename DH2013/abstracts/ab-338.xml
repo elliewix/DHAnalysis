@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-338">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Joint and multi-authored publication patterns in the Digital Humanities</title>
+<author>
+<name><surname>Nyhan</surname>, <forename>Julianne</forename></name>
+<affiliation>University College London, United Kingdom</affiliation>
+<email>julianne.nyhan@gmail.com</email>
+</author>
+<author>
+<name><surname>Duke-Williams</surname>, <forename>Oliver</forename></name>
+<affiliation>University College London, United Kingdom</affiliation>
+<email>o.duke-williams@ucl.ac.uk</email>
+</author>
+</titleStmt>
+    
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+<notesStmt><note type="abstract">A frequently claimed hallmark of Digital Humanities is its emphasis on collaborative work and joint publication(see, for example, Moulin, Nyhan et al 2012; Koh 2012; and Deegan and McCarty 2012). Is there any mismatch between the way that the field describes itself and what we find when we examine the evidence of publication patterns and practices? . In essence, looking to the scholarly literature in both Digital Humanities and the wider Humanities context relatively few studies have been undertaken based on the empirical data that exists about joint publication patterns. This short paper will take a first step towards remedying this.</note></notesStmt>          
+   
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">SP13</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>publishing</term>
+<term>patterns</term>
+<term>joint publication</term>
+<term>connectivity index</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>digital humanities &#8212; nature and significance</term>
+<term>other</term>
+<term>networks</term>
+<term>relationships</term> 
+<term>graphs</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div> 
+    
+<div>
+<head>Introduction</head>
+
+    <p>A frequently claimed hallmark of Digital Humanities is its emphasis on collaborative work and joint publication (see, for example, Moulin, Nyhan et al 2012; Koh 2012; and Deegan and McCarty 2012). Is there any mismatch between the way that the field describes itself and what we find when we examine the evidence of publication patterns and practices? Furthermore, have publication patterns changed since the first journal of the field, <hi rend="italic">Computers and the Humanities,</hi> was established in 1966? Has joint publication become more or less common or have the proportions of jointly published articles remained the same? Also, how do such patterns compare with other disciplines of the Humanities?</p>
+</div>
+
+<div>
+<head>Research context</head>    
+    
+    <p>To the best of our knowledge the empirical evidence of publication practices of Digital Humanities scholars has not, until our research, been systematically investigated. In order to make a first contribution towards addressing this gap in the research literature we focused our research on publication patterns in the leading Digital Humanities journals since 1966. We hope to extend our analysis to other Digital Humanities journals (for example <hi rend="italic">Computing in the Humanities Working Papers</hi>), identify and analyse publications in non-specialist Digital Humanities journals and contributions to e.g. book collections in a future iteration of this research. We began by harvesting all bibliographical metadata from <hi rend="italic">Computers and the Humanities</hi> (1966-2004), <hi rend="italic">Literary and Linguistic Computing</hi> (1986-2011) and <hi rend="italic">Digital Humanities Quarterly</hi> (2007-2011) and then analysed it in order to explore the following questions:</p>
+    
+    <list type="unordered">
+        <item>What can we observe about patterns of joint publication?</item>
+        
+        <item>What percentage of articles per issue and per journal was jointly published?</item>
+        
+        <item>What kinds of joint publication patterns existed? What percentage of joint publications had 2 authors? What percentage had 3, 4, 5 or more?</item>
+        
+        <item>How many authors contributed to more than one joint publication?</item>
+        
+        <item>Of those who published jointly what patterns can be observed? Did they tend to contribute to papers authored by two or more authors?</item>
+        
+        <item>Did authors tend to publish with predominately the same people over their careers or do we see a number of shifting constellations?</item>
+        
+        <item>What percentage of people published only one article in the journals listed above and based on this do we see large portions of people dropping in and out of the field at particular times?</item></list>
+</div>
+
+<div>
+<head>Methodology</head>  
+    
+    <p>Using Zotero we extracted bibliographical metadata from <hi rend="italic">Computers and the Humanities</hi> (Chum)(1966–2004); <hi rend="italic">Literary and Linguistic Computing</hi>(LLC) (1986-2011); and <hi rend="italic">Digital Humanities Quarterly</hi> (DHQ) (2007-2011) and then exported this to Excel for initial viewing. As far as possible the data was cleaned and regularised e.g. a canonical form of personal names chosen where slight differences existed such as E.G. Wills and Edward G. Wills. The cleaned data were then imported into an SQL database and sorted into groups based on the number of authors. The annual observed frequencies of papers with <hi rend="italic">n</hi> authors were then calculated. For each group, a linear regression was calculated in order to determine within a given journal whether the incidence of <hi rend="italic">n-</hi>authored papers had changed over time.</p>
+    <p>For each journal the data were also processed so that dual-authored papers could be analysed using a connectivity index (Bell et al 2002)to determine the extent to which the pool of authors contributing to a given journal were interconnected. A connectivity index was constructed both on a journal-wide basis and on a per-author basis, allowing the distribution of ‘well-connected’ authors to be compared within and between journals.</p>
+</div>
+
+<div>
+<head>Findings related to Chum</head>    
+    
+    <p>The diagram below shows the key findings in relation to <hi rend="italic">Chum;</hi> space will not allow the findings in relation to <hi rend="italic">LLC</hi> and <hi rend="italic">DHQ</hi> to be presented, and all three journals to be compared and contrasted, so this will be done in the full paper. In relation to <hi rend="italic">Chum</hi>, contrary to what one might expect given digital humanities emphasis on collaborative work, the highest incidence is of single-authored papers, but the frequency of this is variable. We should also remember that this does not necessarily mean that the research was done by a single scholar &#8212; all we can say is that publications were predominately by a single scholar. Considering trends over the lifetime of <hi rend="italic">Chum</hi> we see that single authored papers are flat, whereas frequency of 2 and 3 authored papers increases over time. The strength of this association was examined using regression analysis. For <hi rend="italic">Chum</hi>, the observed frequency of 2 and 3 authored papers increased over time, and this was significant at the 1% level. The frequency of 5 authored papers decreased over the observed time period, and this relationship was significant at the 5% level. However the overall number of 5 authored papers was low throughout.</p>
+    
+<figure><graphic url="ab-338.001"/><head>Frequency of <hi rend="italic">n-</hi>authored papers, by year</head></figure>
+</div>
+
+<div>
+<head>Findings related to LLC</head>   
+    
+    <p>The same analysis was conducted for LLC (graphs to be shown in the full presentation). Again, the most common form of contribution was of sole-authored papers. However, regression analysis highlighted some notable trends. The frequency of sole-authored papers was found to be decreasing over time, and this relationship was significant at the 5% level. As with <hi rend="italic">Chum</hi>, the frequency  of 3-authored papers was found to be increasing, significant at the 1% level. The frequency of papers with 2, 4 and 5 authors showed some increase over time, but these relationships were not significant.</p>
+</div>
+
+<div>
+<head>Conclusion</head>    
+    
+    <p>In relation to <hi rend="italic">Chum</hi> we have found that single-author publications were predominant for much of the lifetime of the journal. However, this does not necessarily mean that Digital Humanities does not have a higher occurrence of joint publications than other disciplines of the Humanities. Therefore, it is important to not only examine the empirical evidence that exists for publication practices in the Digital Humanities since 1966 at the aggregate level but to attempt also to situate such findings in a wider comparative context.</p>
+    <p>It should be noted that authorship as reflected in publication credits does not necessarily reflect actual contribution to research: a range of alternative practices might occur, from papers that only carry a single name despite substantial contributions from others, to papers that include ‘gift’ attributions to persons who have had little or no input(Cronin et al 2003).</p>
+    <p>The stereotype of the Humanities lone scholar is well known, even if it is increasingly recognised as being an impoverished model(Bulger et al 2011). The rate of publication and productivity in the Humanities has been looked at by Muffo et al(1987); Ramsden(1994); Wanner, Lewis &amp; Gregorio (1981) and Stone (1982) examined, inter alia, “the way humanities scholars work and the materials of their research”. Changing publication patterns in the Humanities in Flanders and Belgium have been analysed by Engels et al who found that in the period 2000-09 “The overall growth rate in number of publications is over 62.1%, but varies across disciplines between 7.5 and 172.9%. Publication output grew faster in the Social Sciences than in the Humanities.”(2012). In 2003 Kyvik found that in Norwegian Universities co-Authorship has become more common but it is difficult to determine from the article to what degree this applies to the Humanities. Lariviere et al used data from the CD-ROM versions of the <hi rend="italic">Science Citation Index,</hi> <hi rend="italic">Social Sciences Citation Index</hi> and the <hi rend="italic">Arts &amp; Humanities Citation Index</hi> from 1980 to 2002, to argue that “contrary to a widely held belief, researchers in the social sciences and the humanities do not form a homogeneous category. In fact, collaborative activities of researchers in the social sciences are more comparable to those of researchers in the [natural sciences and engineering] than in the humanities”(2006).</p>
+    <p>In essence, looking to the scholarly literature in both Digital Humanities and the wider Humanities context relatively few studies have been undertaken based on the empirical data that exists about joint publication patterns. This short paper will take a first step towards remedying this.</p>
+</div>
+</div>
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+
+    
+    <bibl><hi rend="bold">Bell, M., M. Blake, P. Boyle, O. Duke-Williams, P. Rees, J. Stillwell, and G. Hugo</hi> (2002). Cross-national comparison of internal migration: issues and measures. <hi rend="italic">Journal of the Royal Statistical Society: Series A (Statistics in Society)</hi> 165: 435–464. doi: 10.1111/1467-985X.t01-1-00247</bibl>
+    
+    <bibl><hi rend="bold">Bulger, Monica, et al. Research Information Network</hi> (2011). <hi rend="italic">Reinventing research? Information practices in the humanities.</hi> Research Information Network, UK.</bibl>
+    
+    <bibl><hi rend="bold">Cronin, B., D. Shaw, and K. La Barre</hi> (2003). A cast of thousands: Coauthorship and subauthorship collaboration in the 20th century as manifested in the scholarly journal literature of psychology and philosophy. <hi rend="italic">Journal of the American Society for Information Science</hi> <hi rend="bold">54</hi> 855–871. doi: 10.1002/asi.10278</bibl>
+    
+    <bibl><hi rend="bold">Deegan, M., and W. McCarty</hi> (2012.) <hi rend="italic">Collaborative research in the digital humanities: a volume in honour of Harold Short, on the occasion of his 65th birthday and his retirement, September 2010.</hi> Farnham: Ashgate.</bibl>
+    
+    <bibl><hi rend="bold">Engels, T. C. E., T. L. B. Ossenblook, and E. H. J. Spruyt</hi> (2012). Changing publication patterns in the Social Sciences and Humanities, 2000-2009. <hi rend="italic">Scientometrics.</hi></bibl>
+    
+    <bibl><hi rend="bold">Koh, A.</hi> (2012.) The Challenges of Digital Scholarship. <hi rend="italic">ProfHacker,</hi>  <ref type="url" target="http://chronicle.com/blogs/profhacker/the-challenges-of-digital-scholarship/38103">http://chronicle.com/blogs/profhacker/the-challenges-of-digital-scholarship/38103</ref> (accessed 25 January 2012).</bibl>
+        
+    <bibl><hi rend="bold">Moulin, C., J. Nyhan, et al.</hi> (2011) ESF: Science Policy Briefing. <hi rend="italic">Research Infrastructures in the Digital Humanities</hi></bibl>
+    
+    <bibl><hi rend="bold">Kyvik, S.</hi> (2003). Changing trends in publishing behaviour among university faculty, 1980-2000. <hi rend="italic">Scientometrics,</hi> <hi rend="bold">58:1</hi>.</bibl>
+        
+    <bibl><hi rend="bold">Lariviere, V., Y. Gingras, and Archambault, E.</hi> (2006). Collaboration networks: A comparative analysis of the natural science, social sciences and the humanities. <hi rend="italic">Scientometrics,</hi> 68(3): 519-533.</bibl>
+    
+    <bibl><hi rend="bold">Muffo, J. A., S.V. Mead, and A.E. Bayer</hi> (1987). Using faculty publication rates for comparing “peer” institutions. <hi rend="italic">Research in Higher Education,</hi> <hi rend="bold">27.2</hi> 163-175.</bibl>
+    
+    <bibl><hi rend="bold">Ramsden, P.</hi> (1994). Describing and explaining research productivity. <hi rend="italic">Higher Education,</hi> 28(2): 207-226.</bibl>
+    
+    <bibl><hi rend="bold">Stone, S.</hi> (1982). Humanities Scholars: Information Needs and Uses. <hi rend="italic">Journal of Documentation,</hi> 38(4): 292–313.</bibl>
+    
+    <bibl><hi rend="bold">Wanner, R. A.,  L.S. Lewis, and D.I. Gregorio</hi> (1981). Research Productivity in Academia: A Comparative Study of the Sciences, Social Sciences and Humanities. <hi rend="italic">Sociology of Education,</hi> 54: 238-253.</bibl>
+      
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+    
+    
+    

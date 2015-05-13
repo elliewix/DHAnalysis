@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-301">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>A Digital Humanities Approach to the Design of Gesture-Driven Interactive Narratives</title>
+<author>
+<name><surname>Harrell</surname>, <forename>D. Fox</forename></name>
+<affiliation>Massachusetss Institute of Technology, United States of America</affiliation>
+<email>fox.harrell@mit.edu</email>
+</author>
+<author>
+<name><surname>Chow</surname>, <forename>Kenny K. N.</forename></name>
+<affiliation>The Hong Kong Polytechnic University</affiliation>
+<email>knchow@polyu.edu.hk </email>
+</author>
+<author>
+<name><surname>Loyer</surname>, <forename>Erik</forename></name>
+<affiliation>Song New Creative</affiliation>
+<email>erik@song.nu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Technologies allowing for gestural input and output have become more prevalent, e.g. the iPhone/iPad, Nintendo Wii and 3DS, and laptops with multi-touch-screen input and accelerometers to measure motion. However, there is a need to develop theory and technology for incorporating gestural technologies into expressive digital humanities systems applications. Toward addressing this need, we have developed new interdisciplinary theory and technology for expressive gestural interfaces based on insights from media studies, semiotics, psychology, human-computer interaction. In particular, we produced a platform for building interactive narrative systems that change emotional tone, theme, perspective, and other content elements in response to embodied user input on multi-touch devices. We have also produced scholarship that examines the philosophical implications and impacts of the use of these emerging technologies.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP10</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>gesture</term>
+<term>interactive narrative</term>
+<term>user-interface design</term>
+<term>mobile devices</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>audio</term>
+<term>video</term>
+<term>multimedia</term>
+<term>interface and user experience design</term>
+<term>games and meaningful play</term>
+<term>creative and performing arts, including writing</term>
+<term>mobile applications and mobile design</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-13"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<div>
+<head>Abstract </head>
+<p>Technologies allowing for gestural input and output have become more prevalent, e.g. the iPhone/iPad, Nintendo Wii and 3DS, and laptops with multi-touch-screen input and accelerometers to measure motion. However, there is a need to develop theory and technology for incorporating gestural technologies into expressive digital humanities systems. Toward addressing this need, we have developed interdisciplinary theory and technology for expressive gestural interfaces. In particular, we produced a platform for building interactive narrative systems that change emotional tone, theme, perspective, and other content elements in response to embodied user input on multi-touch devices. We have also produced scholarship that examines the implications and impacts of these emerging technologies<ref type="note" target="n01">1</ref>. </p> </div>
+
+<div>
+<head>Overview</head>
+<p>The digital humanities include the development of computing technologies to create and better understand subjective expression and narrative, topics usually studied in fields such as literary and cultural studies. Our open-source platform, the GeNIE system, implemented in Objective C, allows authors to create and better understand culturally salient, effective, gesture-driven interactive stories. Three primary outcomes of this project are described below.</p></div>
+
+<div>
+<head>Theoretical Framework</head>
+
+<p>Our new models conceptually build upon: 
+
+<list type="unordered">
+<item>Theory and Technology for Interactive Narrative (Harrell, 2007)</item>
+<item>Studies of human gesture (Ekman &amp; Friesen, 1972; McNeil, 1992)</item>
+<item>Studies of human-computer gestural input (Wexelblat, 1994)</item>
+<item>Semiotics (Peirce, 1965)</item>
+<item>Study of narrative (Goguen, 2001; Labov, 1972)</item>
+<item>Study of conceptual metaphor (Lakoff &amp; Johnson, 1980; Lakoff &amp; Turner, 1989)</item>
+</list>
+On this basis, we developed our own synthesizing process and framework discussed below.</p>
+</div>
+
+<div>
+<head>Results</head>
+<p>Our research resulted in:
+<list type="unordered">
+<item><hi rend="italic">New Theory</hi>: We created a taxonomy of relationships between gestures performed by users as input to devices and narrative meanings in digital stories.</item>
+<item><hi rend="italic">New Technology</hi>: We built an engine for implementing gesture-driven interactive narratives for mobile devices featuring touchscreens and a sample interactive narrative to instantiate and assess our outcomes.</item>
+</list></p>
+
+<div>
+<head>New Theory</head>
+<p>Our expansive definition of “gesture” encompasses a range of non-verbal communication types including hand gestures, posture, facial expression, and other forms of embodied meaning expression. When it comes to digital storytelling, there are two meanings of gesture that are likely to be used. These are:
+<list type="unordered">
+<item>Input Gesture: Gesture as a user input mechanism on specific device (such as a user clicking and dragging using a touchscreen)</item>
+<item>Storyworld Gesture: Gesture as narrative act/expression <hi rend="italic">within</hi> a particular media experience (such as a character in a game pointing at another character)</item>
+</list>
+In C.S. Peirce’s classic work in semiotics, he describes multiple types of relationships that representations can have to meanings (Peirce, 1965). One of these types of relationships is termed “indexical.” It describes a function between the representation (representamen) and a meaning (object). The indexical relationship describes a function between these, i.e. how they (often indirectly) relate to one another. For example, “smoke” can be an index for “fire” when the presence of smoke indicates the presence of fire. This is relevant here, because when gestures performed by a user, such as moving a finger up and down (Input Gesture), causes gestures to be performed by a character, such as nodding her head (Storyworld Gesture), then we can say that the two gestures have an indexical relationship to one another.</p>
+
+<p>So, the task of a gesture-driven interactive narrative system is to <hi rend="italic">implement a set of indexical relationships suited for effective interactive narrative</hi>.</p>
+
+<p>There are many such indexical relationships. Based on the references in our theoretical framework, some of the most useful in developing interactive narrative works were:
+
+<list type="unordered">
+<item><hi rend="bold">Pantomimic</hi>: user action is echoed as an avatar action<lb/>
+Example: swinging a device to swings a storyworld tennis racket</item>
+<item><hi rend="bold">Iconic</hi>: user action depicts the form of an avatar action<lb/>
+Example: a “&lt;&gt;” motion with fingers makes a character place its hands on hips</item>
+<item><hi rend="bold">Metonymic or Metaphoric</hi>: user action is associated with the same meaning as an avatar action<lb/>
+Examples: <hi rend="italic">Metonymic </hi>– shaking the device makes a character angry; <hi rend="italic">Metaphoric </hi>&#8212;downward swiping makes a character appear emotionally down (SAD is DOWN)</item>
+<item><hi rend="bold">Manipulative</hi>: user action tightly manipulates an object<lb/>
+Example: Dragging flips a light switch on/off</item>
+<item><hi rend="bold">Semaphoric (non-diegetic)</hi>: user action controls something outside of the storyworld<lb/>
+Example: double-clicking pauses</item>
+</list>
+</p>
+</div>
+
+<div>
+<head>New Technology</head>
+<p>GeNIE consists of two components, one structures narrative events and the other renders them using animated graphical images and text.</p>
+
+<p>Narrative system component:<lb/>
+The narrative event-structuring component allows authors to represent stories based on a model of sociolinguist William Labov (see <hi rend="bold">Figure 1</hi>). We chose this venerable model as an initial test case since it is empirically-based, easily extensible, and, most importantly, since oral narratives of personal experience are the bases for many more complex forms of storytelling.</p>
+
+ 
+<figure>
+<graphic url="ab-301.001"/>
+<head>Figure 1:</head> <p>Labov’s model of narratives of personal experience (Labov, 1972)</p></figure>
+
+<p>Story specifications use the well-known XML format to make it easily usable by non-expert programmers.</p>
+</div>
+
+<div>
+<head>Graphical System Component:</head>
+<p>The graphical rendering system uses appropriate animated illustrations to express underlying narrative content (<hi rend="bold">Figure 2</hi> shows a screenshot of a prototype narrative). </p>
+
+<figure>
+<graphic url="ab-301.002"/>
+<head>Figure 2:</head> <p>Screenshots from a test narrative implemented on a mobile “smartphone.” Gestural input causes events to occur in a storyworld and drives the narrative forward.</p>
+</figure>
+
+<p>In a sample narrative, we used these to affect important aspects of storytelling such as emotional tone. For example, the metaphoric gesture of pinching in or pinching out can be used to express introverted or outgoing feelings (see <hi rend="bold">Figure 3</hi>).</p>
+
+<figure>
+<graphic url="ab-301.003"/>
+<head>Figure 3:</head> <p>Pinching in or pinching out affects the character’s emotional state.</p>
+</figure>
+
+<p>In our prototype, we implemented emotional states resonating with James A. Russell’s idea of core affect (Russell, 2003) by representing both the sense of <hi rend="italic">arousal</hi> and the degree of <hi rend="italic">pleasure</hi> characters felt as shown in <hi rend="bold">Figure 4</hi> (illustration by Chow):</p>
+ 
+<figure>
+<graphic url="ab-301.004"/>
+<head>Figure 4:</head> <p>A character’s emotional state is displayed via storyworld gestures. The vertical axis shows how the character’s facial expression changes to represent the degree of pleasure. The horizontal axis shows how the character’s body language changes to represent the sense of arousal. Combinations of two dimensions result in emotions such as “tense” or “ebullient.”</p>
+</figure>
+
+<p>Furthermore, the system utilized conventions from cinema in order to shift between gestures of different types that affect storytelling differently (see <hi rend="bold">Figures 5</hi> and <hi rend="bold">6</hi>). For example, a close-up shot allows the user to alter the character’s facial expressions and reactions in greater detail, while still keeping an eye on the actions and reactions of the other characters. Dialogue balloons appear to indicate character speech.</p>
+
+
+<figure>
+<graphic url="ab-301.005"/>
+<head>Figure 5:</head> <p>A semaphoric gesture: touching a hotspot for the first time causes an explanation of the related interaction to appear. An iconic gesture: dragging in a "U" shape causes the character to smile (an inverted "U" causes the character to frown).</p>
+</figure>
+
+<figure>
+<graphic url="ab-301.006"/>
+<head>Figure 6:</head> <p>Manipulative gestures: closing the character’s eyes reveals the character’s thoughts (other gestures can then change the character’s emotions toward objects the character is thinking about); eye-opening exits the thoughts.</p>
+</figure>
+
+<p>Similarly, the medium shot allows the user to get a sense of the environment, and allows for manipulation of the player character’s overall posture (<hi rend="bold">see Figure 7</hi>).</p>
+
+<figure>
+<graphic url="ab-301.007"/>
+<head>Figure 7:</head> <p>Manipulative gestures: swiping up and down causes the character to agree with a statement by another character, while swiping left and right causes the character to disagree.</p></figure>
+</div>
+
+<div>
+<head>Culturally Specific Expressive Interfaces</head>
+<p>We were also interested in implementing culturally diverse gestural models and how culturally-specific gestures can be conveyed via digital media. For example, in some speakerly texts (Gates Jr., 1988), actions such as eye-rolling or placing one’s hands on her/his hips have served as markers for a self-possessed “attitude.” Gestural walk cycles can convey culturally meaningful differences such as a “cool strut” or “uptight stride.” In our sample narrative demo, we implemented a specifically Japanese anime-based gestural model explicitly to exploit the notion of cultural discomfort felt between two characters.</p></div>
+ 
+<div>
+<head>Intuitive Interfaces</head>
+<p>At the same time, gestures can also implement relatively universal forms of communication such as the intuitively aggressive act of shaking a device. As another example, tilting a device from side to side can be used as in intuitive way to switch between two characters.</p>
+
+<p>Harrell has developed evaluation methods for games and interactive narratives based on grounded theory analysis augmented by metaphor-based analyses from cognitive science. After assessing early prototypes, we began user-testing the first complete interactive narrative produce using the system called <hi rend="italic">Mimesis</hi>, which is used to educate users about social discrimination. To summarize early observations, users found the test demo to be effective in conveying our core aims: the system has been found to be intuitive and users conceive of themselves as “puppeteers” for characters. Another outcome is that the system design holds implications that would be a fruitful interaction mechanism for videogames at a diverse user-set. Computer scientists found the gestural input taxonomy to be informative for developing interfaces.</p></div>
+</div>
+
+<div>
+<head>Conclusion</head>
+
+<p>Better understanding and designing digital storytelling systems, as they fit within the broader purview of storytelling in media at large, is a digital humanities endeavor. Our theory helps with better understand digital storytelling systems and enables development of systems that are culturally and technically grounded in a greater diversity of cultural models than most current systems.</p></div>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Ekman, P., and W. V. Friesen</hi> (1972). Hand Movements. <hi rend="italic">Journal of Communication</hi>, 22:353-374.</bibl>
+
+<bibl><hi rend="bold">Gates Jr., H. L.</hi> (1988). <hi rend="italic">The Signifying Monkey: A Theory of African-American Literary Criticism</hi>. New York: Oxford.</bibl>
+
+<bibl><hi rend="bold">Goguen, J.</hi> (2001). Notes on Narrative, from <ref type="url" target="http://www.cse.ucsd.edu/~goguen/papers/narr.html"> http://www.cse.ucsd.edu/~goguen/papers/narr.html</ref> (accessed 8/31/2011)</bibl>
+
+<bibl><hi rend="bold">Harrell, D. F.</hi> (2007). <hi rend="italic">Theory and Technology for Computational Narrative: An Approach to Generative and Interactive Narrative with Bases in Algebraic Semiotics and Cognitive Linguistics</hi>. Ph.D. Dissertation, University of California, San Diego, La Jolla.</bibl>
+
+<bibl><hi rend="bold">Labov, W.</hi> (1972). The Transformation of experience in narrative syntax. <hi rend="italic">Language in the Inner Cit</hi>y 354-396. Philadelphia, PA: University of Pennsylvania Press.</bibl>
+
+<bibl><hi rend="bold">Lakoff, G., and M. Johnson</hi> (1980). <hi rend="italic">Metaphors We Live By</hi>. Chicago, IL: University of Chicago Press.</bibl>
+
+<bibl><hi rend="bold">Lakoff, G., and M. Turner</hi> (1989). <hi rend="italic">More Than Cool Reason &#8212; A Field Guide to Poetic Metaphor</hi>. Chicago, IL: University of Chicago Press.</bibl>
+
+<bibl><hi rend="bold">McNeil, D. </hi>(1992). <hi rend="italic">Hand and Mind: What Gestures Reveal about Thought</hi>. Chicago, IL: University of Chicago Press.</bibl>
+
+<bibl><hi rend="bold">Peirce, C. S.</hi> (1965). <hi rend="italic">Collected Papers of Charles Saunders Peirce</hi>. Cambridge, MA: The Belknap Press of Harvard University Press</bibl>
+
+<bibl><hi rend="bold">Russell, J. A. </hi>(2003). Core Affect and the Psychological Construction of Emotion. <hi rend="italic">Psychological Review</hi>, 110:1, 145-172.</bibl>
+
+<bibl><hi rend="bold">Wexelblat, A.</hi> (1994). <hi rend="italic">A feature-based approach to continuous-gesture analysis</hi>. Massachusetts Institute of Technology.</bibl>
+
+</listBibl>
+</div>
+<div>
+
+<head>Notes</head>
+
+<note xml:id="n01">This material is based upon work supported by a National Endowment for the Humanities Digital Humanities Start-Up Grant.</note>
+
+</div>
+</back>
+</text>
+</TEI>
+

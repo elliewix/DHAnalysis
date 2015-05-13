@@ -1,0 +1,105 @@
+
+
+The widespread adoption of digital media and technologies in almost every facet of humanities research and scholarly communications, including discovery and repurposing of information, writing, publication, peer review, curation, and dissemination, has brought with it both great opportunities and significant challenges. Medievalists were among the first humanities scholars to adapt digital tools for their work; indeed, Father Roberto Busa’s 
+Index Thomasticus
+, a digital index begun in 1949 that comprises more than 11 million words of medieval Latin found in the works of St. Thomas Aquinas, is widely acknowledged as the first digital humanities project. Since that time medievalists have a strong record of building a wide array of digital repositories, using electronic tools and textual encoding to advance new methods for editing texts and constructing scholarly editions, and building tools for the analysis of textual and visual data (Unsworth 2011). 
+
+
+
+Despite such progress, the community still faces significant needs in the area of discoverability of digital scholarship. Many scholarly initiatives that take advantage of the possibilities of digital media are not indexed or discoverable via traditional library and information sciences resources, or even via mainstream search engines such as Google. In recent years two federations of electronic scholarly projects, the Networked Infrastructure for Nineteenth-Century Electronic Scholarship (NINES) and 18thConnect, have made significant progress towards addressing this problem in the fields of 18th- and 19th-cenutry Anglo-American literary studies. Together they provide aggregated searching of more than 1.6 million digital objects from 128 member projects, and users of the web portals provided by each federation may search the content of both federations individually or simultaneously. 
+
+
+
+In 2010, Dot Porter and Timothy Stinson were awarded a planning grant by the Andrew W. Mellon Foundation to explore the feasibility of and need for establishing a similar federation in the field of medieval studies. In May 2011, we organized a planning meeting held in Baltimore, MD in order to take the first steps towards a dialogue with this community. In order to learn from our peers in other disciplinary areas, as well as to explore potential avenues of collaboration with them, we also invited representatives from NINES, and 18thConnect. The outcomes of this meeting included the formation of a steering committee to direct its creation.
+1
+
+
+
+After evaluating possibilities for achieving aggregation, including adapting known software or building our own, there was unanimous support from the steering committee for creating an implementation of MESA utilizing Collex, the open-source collections builder that facilitates collecting, tagging, analyzing, and annotating digital sources and provides the framework upon which both NINES and 18thConnect are built (Nowviskie 2007). Collex already has a proven track record in meeting the goals identified by MESA, as evidenced by both of these extant federations. Furthermore, adoption of Collex is efficient because it avoids duplication of tools and facilitates not only aggregation within our field, but also aggregation between fields and between extant aggregators. This has already been demonstrated by NINES and 18thConnect, which are currently linked and may be searched either separately or in tandem. In addition, Laura Mandell, director of 18thConnect, is currently organizing the Advanced Research Consortium (ARC), a meta-federation that will span disciplinary areas from the medieval era through the twentieth century, and MESA has joined NINES and 18thConnect as a member of ARC. More recently, REKn (focused on Renaissance studies) and ModNets (focused on modernist studies) have also joined ARC (Robideau 2011). Thus, all our decisions about how to develop MESA must be informed by, and take into account, the needs of our partner “nodes” in ARC.
+
+
+
+The Mellon Foundation awarded MESA an implementation grant in June 2012. We knew, even as we wrote the implementation proposal, that a number of adaptations to Collex and the underlying metadata schemas would be necessary due to the fact that, unlike NINES and 18thConnect, projects in MESA will have medieval and modern languages, as well as a variety of objects including manuscripts, maps, architectural drawings and images, and statuary. In the months since funding was awarded the MESA team has been focusing primarily on the specifics of how to aggregate the first twelve projects into the MESA Collex instance.
+2
+  Aggregation of metadata from member projects is achieved by generating Resource Description Framework (RDF) files from extant metadata (e.g., transcriptions, catalogue records, or descriptions of images) and making these RDF files discoverable and cross-searchable within Collex. 
+
+ 
+
+Modifications to MESA RDF have been determined primarily by the MESA co-directors, with significant input from the Steering Committee. Over several meetings and through email correspondence, the Steering Committee developed a list of what they saw as the most important, most basic, metadata requirements for a medieval digital federation to include. We were aware of the metadata requirements already defined for NINES and 18thConnect (detailed on the Collex wiki: 
+http://wiki.collex.org/index.php/Submitting_RDF
+), which include Dublin Core Metadata Terms, RDF terms, and custom Collex terms. However, rather than use the existing Collex metadata as our starting point, we first brainstormed (from our own extensive experience as scholars and project developers) by what fields and terms users of MESA would expect to be able to search in the federation.  We also had to take into account the practicalities of the first twelve projects, and future projects to be accepted into the federation (what metadata these projects have, how is it formatted, and would it be practical for us to request additional metadata of them before they are aggregated into MESA). 
+
+
+
+In addition to Title, Author, and Date of Creation, we discussed the need to be able to include descriptions of people responsible for creating objects (scribe, artist, etc.); the format of the objects (for example manuscript codex, printed sheet, sculpture, painting, stained glass window, etc.); the provenance of the objects (including where they were created, and where they are now); languages inscribed in and on objects, as well as cultures reflected in objects. 
+
+
+
+In some cases, NINES and 18thConnect did include the fields we needed, notably a flexible field for Author, <role:***>, where *** can equal one of several roles (AUT for author, ART for Visual Artist, EDT for Editor, etc.) and a very flexible system for noting dates. We added <dc:type> for describing the general format of objects (defined as “The nature or genre of the resource.”).
+3
+  Although the formal definition of <dc:format> seems better (“The file format, physical medium, or dimensions of the resource.”),
+4
+  we discovered that in practice other projects that we are federating or hope to federate (including e-codices and Europeana Regia) use <dc:type> for describing the general format of objects, and <dc:format> for more specific information (including medium and measurements), so we decided to follow their practice. We do plan to include only general format in MESA fields, and not detailed information on medium or measurements of objects.
+
+
+
+As neither NINES nor 18thConnect have needed a field for describing provenance, we have added <dc:provenance> as a recommended field in the MESA RDF specifications.
+5
+  At one point we discussed requiring projects to further specify data within <dc:provenance> — for example, one <dc:provenance> for each change in status to the object, and each <dc:provenance> must have one <dc:date>, one <dc:name>, and one <dc:event> defined within it. However it became clear, once we started mapping actual project metadata, that the more highly specified metadata was simply not going to be realistic. 
+
+
+
+As of November 2012, we are still finalizing our methods for specifying languages and cultures of objects, but we hope to have those finalized soon. 
+
+
+
+Although NINES and 18thConnect had well-developed RDF specifications and workflows, we knew coming into the project that MESA would need to make changes, some slight and some more radical, in order to ensure that the federation would be usable and useful for an audience of scholars and students in medieval studies. This abstract has detailed some of those modifications, and a full paper at the conference would detail all the changes, the argumentation for including the fields we include, and discussion of how the changes required by MESA have influenced the development of the metadata specifications for the whole of ARC. Indeed, while we knew that MESA would require changes to the existing specifications, what we did not expect was that so many of our requested changes would be welcome, and adopted by, the larger group of ARC nodes. Although our relationship with ARC is ongoing MESA has already made substantial contributions and we look forward to more years of fruitful collaboration.
+
+
+
+
+                
+
+
+
+
+
+
+
+
+Dublin Core Metadata Terms
+http://dublincore.org/documents/dcmi-terms/
+Eighteenth Century Scholarship Online
+www.18thconnect.org
+Medieval Electronic Scholarly Alliance Blog
+http://www.dlib.indiana.edu/projects/mesa/
+Nineteenth Century Scholarship Online
+www.nines.org
+Nowviskie, B.
+ (2007). A Scholar’s Guide to Research, Collaboration, and Publication in NINES, Romanticism and Victorianism on the Net. 
+47
+. 
+http://www.erudit.org/revue/ravon/2007/v/n47/016707ar.html
+Resource Description Framework
+http://www.w3.org/RDF/
+Robideau, R.
+ Texas A&M’s College of Liberal Arts to house digital literary research consortium, Texas A&M College of Liberal Arts (press release)  
+http://liberalarts.tamu.edu/html/news-texas-a-m-s-college-of-liberal-arts-to-house-digital-literary-research-consortiu.html
+Unsworth, J.
+ (2011). Medievalists as Early Adopters of Information Technology. 
+Digital Medievalist Journal
+7
+http://www.digitalmedievalist.org/journal/7/unsworth/
+
+
+
+
+
+  Members of the Steering Committee: Dot Porter, co-chair (Indiana University), Timothy Stinson, co-chair (North Carolina State University), James Cummings (University of Oxford), Christoph Flüeler (Institut d'études médiévales, University of Fribourg and e-codices), Will Noel (University of Pennsylvania), Dan O’Donnell (University of Lethbridge), Lynn Ransom (University of Pennsylvania), 
+Peter Robinson (University of Saskatchewan), Torsten Schaßan (Herzog August Bibliothek Wolfenbüttel), and Stephen Shepherd (Loyola Marymount University).
+ The projects to be aggregated into MESA during the first year of the project are: Digital Image Archive of Medieval Music (DIAMM), e-codices: Virtual Manuscript Library of Switzerland, Gothic Ivories Project, InteLex, Online Froissart, Parker Library on the Web, Petrus Plaoul, Roman de la Rose Digital Library, St. Gall Monastery Plan, sermones.net, University of Pennsylvania Libraries Penn in Hand, Walters Art Museum
+http://dublincore.org/documents/dcmi-terms/#terms-type
+http://dublincore.org/documents/dcmi-terms/#terms-format
+http://dublincore.org/documents/dcmi-terms/#terms-provenance
+
+

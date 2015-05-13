@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-159">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>A Case Study of Integration of Services and Resources on a Web Service</title>
+<author>
+<name><surname>Nagasaki</surname>, <forename>Kiyonori</forename></name>
+<affiliation>International Institute for Digital Humanities, Japan</affiliation>
+<email>nagasaki@dhii.jp</email>
+</author>
+<author>
+<name><surname>Tomabechi</surname>, <forename>Toru</forename></name>
+<affiliation>International Institute for Digital Humanities, Japan</affiliation>
+<email>tomabechi@dhii.jp</email>
+</author>
+<author>
+<name><surname>Muller</surname>, <forename>A. Charles</forename></name>
+<affiliation>University of Tokyo</affiliation>
+<email>acmuller@l.u-tokyo.ac.jp</email>
+</author>
+<author>
+<name><surname>Shimoda</surname>, <forename>Masahiro</forename></name>
+<affiliation>University of Tokyo</affiliation>
+<email>shimoda@l.u-tokyo.ac.jp</email>
+</author>
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">This submission will describe a new version of a Buddhist Web service as an example of integration of services and resources in a poster presentation. The service which has been released since June 2012 integrates its legacy data with a result of our collaborative project which was presented in the DH2011 and various related services such as bibliographical databases and character databases so that users can research Buddhist scriptures efficiently. We hope we can have the opportunity to discuss any aspects of this new Web service with participants.</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="15:30:00"></time>
+</p>
+<p n="session">Poster</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Buddhist studies</term>
+<term>Web resources</term>
+<term>Web database</term>
+                    
+</keywords>
+<keywords scheme="original" n="topic">
+<term>interface and user experience design</term>
+<term>literary studies</term>
+<term>asian studies</term>
+<term>internet/world wide web</term>
+                    
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+
+    <p>The SAT Daiz&#333;ky&#333;  text database committee has released a new version of its integrated Web service that has been offering a series of Buddhist scriptures <ref type="note" target="n01">1</ref> since June 2012 in order to provide more convenient and powerful digital resources for the field of Buddhist studies. Since August, the number of accesses is over 200,000 per month on an average (not counting accesses by Googlebot and several other automated indexerss). In this paper, we will describe the integration of various services and resources in this Web service.</p>
+    <p>First of all, we will explain the function of retrieving and displaying of English translations which has been published as a series of Buddhist scriptures rendered into English by the Bukky&#333;  Dend&#333;  Ky&#333; kai (BDK) <ref type="note" target="n02">2</ref>. This function is an implementation of a result that was produced by 18 young researchers using a web collaboration system described in Nagasaki (2011). The collaboration system allows users to easily link a fragment of a text to another fragment of a resource. As a result, a parallel corpus including over 29,000 pairs of English and classical Chinese Buddhist texts has been published on the web service so that users can easily check the English translation of words or phrases in various contexts by dragging a sequence of the text. Moreover, the parallel texts can be shown on the text which was translated sentence-by-sentence. Thus, not only is the English translation provided, but also an interpretation is given for each division of the classical Chinese texts that are not clearly separated by any kind of punctuation. It also continues to provide the function of retrieving terms contained in the Digital Dictionary of Buddhism (DDB) <ref type="note" target="n03">3</ref> including over 58,000 entries so that users can easily look up the English renderings of terms. We also continue to provide the function of translating an English term into a Chinese term in the input form of keyword search of the whole text, whereby users can search the Chinese text by using an English term.</p>
+    <p>The Web service has added a function of retrieving two bibliographical databases:  SARDS3 <ref type="note" target="n04">4</ref> and CiNii <ref type="note" target="n05">5</ref>. SARDS3 includes over 60,000 bibliographical records of western books and papers published in the field of Indology. The SAT Web service provides automatic translation from selected Chinese words or phrases to English or Sanskrit terms using DDB as a support function of retrieval so that user can easily find related western secondary resources. In the previous version, a function of a Web API of the CiNii (the largest academic bibliographical database in Japan, managed by the National Institute of Informatics) was included via Indian and Buddhist Studies Treatise Database (INBUDS) in order to indicate whether or not a PDF file is available on the Web. However, in the new version, the additional function of retrieving the CiNii itself in order to easily search related resources in other fields such as history and linguistics was added according to user requests.</p>
+    <p>All digital facsimiles of the Taish&#333;  Shinsh&#363; Daiz&#333; ky&#333;  &#8212; approximately 80,000 files &#8212; are scanned in 600 DPI and made available on the web site. When a user clicks an image button embedded in the lines of the text, an image is displayed inside a window on the left in the page corresponding with the paragraph and lines of the text. The image can be zoomed in and out by use of slider in order to examine its details, which allows users to confirm whether or not the encoded texts are accurate, and whether or not the slight differences in ideographs were unified in the process of text encoding.</p>
+    <p>In the case of classical Chinese, the distinction and unification of ideographs has been an important topic which often provokes heated discussion in East Asia<ref type="note" target="n06">6</ref>. As the Taish&#333;  Shinsh&#363; Daiz&#333; ky&#333;  is one of the important materials for such discussion, we provide a function to research information about each ideographic character by linking to several character databases such as CHISE, Unihan, and so on.</p>
+    <p>Finally, we will explain our method of implementation of the above functions. Most of them are implemented by Linux, PostgreSQL, Apache, PHP, jQuery, and JavaScript. Most of the interfaces are implemented by jQuery and jQuery-ui, but partly by plain JavaScript because of insufficient functionality in the former. The above functions are provided in each window of jQuery-ui, which can be arbitrarily opened and closed so that users can use only necessary functions. We hope we can have the opportunity to discuss any aspects of this new Web service with those who visit our booth.</p>
+</div>
+
+
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Muller, A. C., and K. Nagasaki</hi> (2012). Request to add Unencoded  Characters in the Taish&#333;  Shinsh&#363; Daiz&#333; ky&#333;  (Taish&#333;  edited series of Buddhist scriptures). <ref type="url" target="http://appsrv.cse.cuhk.edu.hk/~irg/irg/irg38/IRGN1858_ProposalSATgaiji.pdf">http://appsrv.cse.cuhk.edu.hk/~irg/irg/irg38/IRGN1858_ProposalSATgaiji.pdf</ref> (Accessed 28 Oct 2012).</bibl>
+
+<bibl><hi rend="bold">Nagasaki, K., T. Tomabechi, and M. Shimoda</hi> (2011). Toward a Digital Research Environment for Buddhist Studies. <hi rend="italic">Digital Humanities 2011</hi>. 342-343.</bibl>
+
+</listBibl>
+</div>
+<div>
+
+<head>Notes</head>
+
+<note xml:id="n01" n="1"><ref type="url" target="http://21dzk.l.u-tokyo.ac.jp/SAT/ddb-bdk-sat2.php">http://21dzk.l.u-tokyo.ac.jp/SAT/ddb-bdk-sat2.php</ref> Accessed 28 Oct 2012.</note>
+<note xml:id="n02" n="2"><ref type="url" target="http://www.bdkamerica.org/default.aspx?MPID=81"> http://www.bdkamerica.org/default.aspx?MPID=81</ref> Accessed 28 Oct 2012.</note>
+<note xml:id="n03" n="3"><ref type="url" target="http://www.buddhism-dict.net/ddb/">http://www.buddhism-dict.net/ddb/</ref> Accessed 28 Oct 2012.</note>
+<note xml:id="n04" n="4"><ref type="url" target="http://www.indologie.uni-halle.de/sards/">http://www.indologie.uni-halle.de/sards/ </ref> Accessed 28 Oct 2012.</note>
+<note xml:id="n05" n="5"><ref type="url" target="http://ci.nii.ac.jp/en">http://ci.nii.ac.jp/en </ref> Accessed 28 Oct 2012.</note>
+<note xml:id="n06" n="6">Regarding unencoded approximately over 6,000 characters in the text, we are addressing to encode them in the Universal Character set. See Muller (2012).</note>
+</div>
+</back>
+</text>
+</TEI>

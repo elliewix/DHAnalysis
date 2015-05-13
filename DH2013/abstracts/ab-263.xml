@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-263">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Ontology and collaborative knowledge environment in Digital Humanities: the Cardano Case</title>
+<author>
+<name><surname>Luzzi</surname>, <forename>Damiana</forename></name>
+<affiliation>Fondazione Rinascimento Digitale, Italy</affiliation>
+<email>luzzi@rinascimento-digitale.it</email>
+</author>                
+<author>
+<name><surname>Baldi</surname>, <forename>Marialuisa</forename></name>
+<affiliation>Università degli Studi di Milano, Italy</affiliation>
+<email>marialuisa.baldi@unimi.it</email>
+</author>             
+</titleStmt>
+<publicationStmt>
+<authority></authority><publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+    <notesStmt><note type="abstract">The <hi rend="italic">Girolamo Cardano Project: the Knowledge and the Arts of the Renaissance</hi> is devoted to a major author in Renaissance philosophy and science, although not yet fully studied. We focus on our experiment on one of his work in medicine, the <hi rend="italic">Contradicentia medica,</hi> according to the methodological approach of the semantic web ontology. The multidisciplinary nature of the text, its encyclopedic references and citations, its many sources, ancient and modern, explicit and implicit, make the <hi rend="italic">Contradicentia</hi> a significant case study for the methodology adopted. Our aims are:
+  <list type="unordered">
+    <item> making available online the digital edition of the Contradicentia and its transcription together with other texts related to it</item>
+        
+    <item> providing a collaborative environment for editing, reading, studying, researching, and posting annotations and comments.</item></list>
+An ontology has been designed to tackle the complexity of the <hi rend="italic">Contradicentia</hi>, reconstructing Cardano’s ideas in medicine and philosophy of nature, and capturing knowledge about significant contextual information.</note></notesStmt>     
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">SP05</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>ontology</term>
+<term>semantic web</term>
+<term>annotation</term>
+<term>knowledge representation</term>
+<term>collaborative environment</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>ontologies</term>
+<term>software design and development</term>
+<term>renaissance studies</term>
+<term>semantic web</term>
+<term>linking and annotation</term>
+                   
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>   
+  
+<head>1. Introduction</head>  
+    
+    <p>The <hi rend="italic">Girolamo Cardano Project: the Knowledge and the Arts of the Renaissance</hi><ref type="note" target="n01">1</ref> is devoted to a major author in Renaissance philosophy and science, although not yet fully studied. Girolamo Cardano(1501-1576) was a polymath, philosopher, mathematician, physician, astrologer, encyclopedist and autobiographer<ref type="note" target="n02">2</ref>. In this paper we focus on our experiment on one of his most important works in medicine, the <hi rend="italic">Contradicentia medica <ref type="note" target="n03">3</ref>,</hi> according to the methodological approach of the semantic web ontology(Kotis, et al. 2010; Domingue, et al. 2011). The multidisciplinary nature of the text, its encyclopedic references and citations, its many sources, ancient and modern, explicit and implicit, make the <hi rend="italic">Contradicentia</hi> a significant case study for the methodology adopted. Our aims are:
+        <list type="unordered">
+            <item>making available online the digital edition of the <hi rend="italic">Contradicentia</hi> and its transcription, together with other texts related to it</item>    
+            <item>providing a collaborative environment for editing, reading, studying, researching, and posting annotations and comments.</item></list></p>
+
+    <p>A semantic web ontology has been designed to tackle the complexity of the <hi rend="italic">Contradicentia,</hi> reconstructing Cardano’s ideas in medicine and in the philosophy of nature, and capturing knowledge about significant contextual information. Its application to the text of Cardano is an absolute novelty in Renaissance studies. The semantic web ontology is an excellent choice for representing Cardano’s encyclopedic knowledge. The main characteristics of an ontology are:
+        <list type="unordered">
+            <item>flexibility</item>
+            <item>extensibility</item>  
+            <item>portability</item></list> 
+        it is shared and persistent over time, too.</p>   
+    
+    <p>The ontology and the semantic approach allow us to express the concepts drawn from the text and create links between them favoring the development, sharing, reuse, and updating of knowledge. The semantic web ontology can be published in the form of Linked Data (Eero, 2012; Heath et al., 2011) to facilitate sharing, interoperability and reuse of information.</p>
+    <p>Cardano himself, were he alive today, would be very interested in ICT and semantic web technologies, as he thought knowledge was a network<ref type="note" target="n04">4</ref>  and that philosophers had to find hidden relationships between things and concepts.</p>
+</div>    
+
+<div>
+<head>2. Cardano's ontology</head>    
+    
+    <p>According to the OWL 2 (Motik, et al. 2009):
+    <list type="unordered">
+        <item>the core classes represent Cardano’s thought</item>    
+        <item>the “general” classes represent the knowledge base designed to express the information about the temporal and spatial aspects, the persons and groups, the cataloging of the texts and bibliography references. To manage this information we have implemented classes and predicates, taking into account the standards<ref type="note" target="n05">5</ref>, in order to make an open and flexible system available in which information, with a different granularity, can be integrated and continuously updated by the users themselves, once enabled.</item></list></p>
+    <p>As an example (Fig. 1), we represent a significant portion of the ontological model which describes the evolution of Cardano’s thought over time, as it is expressed in some portions of the text.</p>
+    
+    <figure><graphic url="ab-263.001"/><head>Fig. 1:</head><p>Basic description in UML (Unified Modeling Language); in brackets the Latin term used by Cardano.</p></figure>
+    
+    <p>Cardano’s concepts (e.g. “Elementum”) are contained in the superclass <hi rend="italic">CardanoThought.</hi> The “lifespan” of any concept is defined by the class <hi rend="italic">TemporalEntity</hi> linked by the property <hi rend="italic">hasTemporalReference.</hi> The class <hi rend="italic">TemporalEntity</hi> can be aligned by equivalence relation to the class with the same name within Time ontology <ref type="note" target="n06">6</ref>. To express the evolution of Cardano’s concepts in time, related to a specific part of the text, the class <hi rend="italic">CardanoThought</hi> is linked by the property <hi rend="italic">changes</hi> with the class <hi rend="italic">Change,</hi> and the property <hi rend="italic">hasTextualReference</hi> with the class <hi rend="italic">Text.</hi> In addition, to define when, where and which concept has changed, the class <hi rend="italic">Change</hi> has been defined and linked by property:
+    <list type="unordered">
+        <item><hi rend="italic">when</hi> to the class <hi rend="italic">TemporalEntity</hi></item>
+        <item><hi rend="italic">where</hi> to the class <hi rend="italic">Text</hi></item>
+        <item><hi rend="italic">which</hi> to the class <hi rend="italic">CardanoThought.</hi></item></list>
+        The class <hi rend="italic">Work</hi> can be aligned by equivalence relation to the class with the same name within FRBR-oo standard<ref type="note" target="n07">7</ref>.</p>
+</div>
+
+<div>
+<head>3. Web Application</head>  
+
+    <p>Reperio<ref type="note" target="n08">8</ref>, a collaborative knowledge environment for Digital Humanities and Science, indicates a technological solution to meet the needs of specific scholarly projects. It takes advantage of experience gained during the experimental project Pinakes <ref type="note" target="n09">9</ref>, of which it is an evolution; Reperio is used in some national and international projects<ref type="note" target="n10">10</ref>. Its vision and mission is to help eliminate isolation within different research communities by facilitating collaborative ways of working and sharing content and resources, while respecting the intellectual property of the individual scholar. Reperio is a multi-user, modular, collaborative, flexible and customizable web work environment consisting of two modules:
+    <list type="unordered">
+        <item>Ontology Editor to edit classes and properties, and to insert instance in the ontology</item>
+        <item>Text to edit and manage texts and images, which provides specialized tools:
+<list type="unordered">        <item>text editor</item>
+        <item>digital image manager</item>
+        <item>automatic importer of texts/images</item>
+        <item>metadata, full-text and semantic search</item>
+        <item>annotation editor</item>
+        <item>comparison and collation manager</item>
+        <item>textual and linguistic analysis</item></list></item></list>
+The Ontology Editor and Text modules communicate in a dynamic way: any changes made to the ontology schema (such as the addition, modification, cancellation of a class or a predicate) is “instantly” visualized in Text. The text is thus connected to the ontological schema that it uses for the different types of annotations.</p>
+        <p>The markup is stored and can be displayed as XHTML, XML, RDF. The data is stored in a Sesame Triple Store. A user-friendly interface allows the user to perform SPARQL queries. The URI <ref type="note" target="n11">11</ref> identifies digital resources, too. Reperio’s source code will be open-source.</p>
+</div>
+
+<div>
+<head>4. Annotation</head>
+    
+    <p>The Annotation Tool, developed on the basis of the standard Open Annotation Collaboration<ref type="note" target="n12">12</ref>, enables making various types of annotations on the text (and/or image): comments, links or cross-references to other resources, ontological annotations, etc. Users are allowed to select portions of the text and associate the tags proposed by the system or that they themselves enter.</p> 
+        <p>In this context we present the collaborative Ontological Annotation Tool of Reperio, because it is the most widely used tool for the studies of <hi rend="italic">Contradicentia</hi> and annotating is a core practice to scholars, too (Corcho, 2006). The expressive power hidden in the texts can be further maximized by combining ontology and annotation: annotation expresses, in a formal manner, the meaning of a text using the “terminology” provided by the ontology. Thanks to this type of annotation, users can study and analyze the text in different ways, philological, syntactic, morphological, grammatical. They can even comment on physical materials, inks, colors, etc.</p>
+    <p>Particularly, the semantic annotation (Agosti et al., 2007) helps to bridge the ambiguity of natural language in expressing notions and their computational representation in a formal language. The annotation operation can be performed:
+        <list type="ordered">
+            <item>1. through concepts associating classes to the selected term/s. If the class relating to the concept on the text is not in the ontology, it can be easily inserted (by user with appropriate permission) opening the ontology editor.</item>
+            <item>2. through instances:<list>
+                <item>a. the instances are already in the ontology: selecting (Fig. 2) <hi rend="italic">“Philosophus”</hi> and connecting it to the instance <hi rend="italic">“Aristotle”</hi> of the class Person and its subclass Philosopher(i.e. search for <hi rend="italic">“Aristotle”</hi> shows the results where Aristotle is appointed <hi rend="italic">“Philosophus”</hi> too, and a search for person or philosopher shows Aristotle in the result). Another example: Cardano writes "calor animalium secundum Philosophum est calor non igneus, sed coelestis" <ref type="note" target="n13">13</ref>: by semantically linking Cardano’s citation with the instance <hi rend="italic">De longitudine et brevitate vitae</hi> of the Title class of the ontology, you get the reference to Aristotle's text and its bibliographic information. Therefore a portion of the ontological schema is based on FRBR-oo standard. In addition, if Aristotle’s book is present in a digital edition in Reperio or in another digital library, through a URI connection, you could read the page to which Cardano refers.</item>
+               <item> b. directly populating the ontology: selecting <hi rend="italic">"aquae"</hi> and inserting it as instance of the class Elementum.</item></list></item></list></p>
+    <p>Annotation operations and/or the ontology population may be performed manually or in a semi-automatic manner by text parsing performed on the basis of the classes and/or instances.</p> 
+    
+        <figure><graphic url="ab-263.002"/><head>Fig. 2:</head><p>Reperio: Semantic Annotation</p></figure>
+  <p>      
+The semantization of knowledge significantly improves accuracy and relevance of search results. The annotation ontological tool also allows you to write additional information on the annotation, and then to perform a search on them, too.</p>
+</div>
+
+<div>
+<head>5. Conclusion</head>   
+    
+    <p>Ontology and an environment system like Reperio can be considered an evolving open ecosystem, that offers scholars the freedom to search and explore. On the experience of the project, the process of designing the ontology has been very useful, because it offers different views and perspectives on texts and the concepts they have, and will open new ways for further study and analysis. Such an “enhanced” search allows you to infer and deduce new knowledge based on what is available.</p>
+</div>
+
+    
+</body>
+    
+<back>
+<div type="References">
+<listBibl>  
+    
+    <bibl><hi rend="bold">Agosti, M., G. Bonfiglio-Dosio, and N. Ferro</hi> (2007). A historical and contemporary study on annotations to derive key features for systems design. <hi rend="italic">International Journal on Digital Libraries,</hi> 8(1): 1-19.</bibl> 
+    
+    <bibl><hi rend="bold">Corcho, O.</hi> (2006). Ontology based document annotation: trends and open research problems. <hi rend="italic">International of Journal Metadata, Semantics and Ontologies.</hi> 1: 47-57.</bibl> 
+    
+    <bibl><hi rend="bold">Domingue, J., D. Fensel, and J.A. Hendler (eds.)</hi> (2011). <hi rend="italic">Handbook of Semantic Web Technologies.</hi> Berlin Heidelberg: Springer-Verlag.</bibl> 
+    
+    <bibl><hi rend="bold">Eero, H.</hi> (2012). <hi rend="italic">Publishing and Using Cultural Heritage Linked Data on the Semantic Web,</hi> Palo Alto, CA: Morgan &amp; Claypool.</bibl> 
+    
+    <bibl><hi rend="bold">Heath, H., and C. Bizer.</hi> (2011). <hi rend="italic">Linked Data: Evolving the Web into a Global Data Space.</hi> Palo Alto, CA: Morgan &amp; Claypool.</bibl> 
+    
+    <bibl><hi rend="bold">Kotis, K., and G. Vouros</hi> (2010). Ontological Tools: Requirements, Design Issues and Perspectives. In Poli, R., M. Healy, and A. Kameas (eds.) <hi rend="italic">Theory and Applications of Ontology,</hi> Netherlands: Springer, 155 -173.</bibl> 
+    
+    <bibl><hi rend="bold">Motik, B., P.F. Patel-Schneider, and B. Parsia</hi> (2009). OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax. In <hi rend="italic">W3C Recommendation,</hi> <ref type="url" target="http://www.w3.org/TR/owl2-syntax/">http://www.w3.org/TR/owl2-syntax/</ref> (accessed 5 March, 2013).</bibl> 
+
+</listBibl>
+</div>
+    <div>
+        <head>Notes</head>
+        
+        <note xml:id="n01" n="1">The project is coordinated by the University of Milan-Department of Philosophy <ref type="url" target="http://dipartimento.filosofia.unimi.it/">http://dipartimento.filosofia.unimi.it/</ref> (accessed 5 March, 2013) in collaboration with the Digital Renaissance Foundation (FRD, <ref type="url" target="http://www.rinascimento-digitale.it">http://www.rinascimento-digitale.it</ref> (accessed 5 March, 2013).</note>
+        <note xml:id="n02" n="2">Cardano G. (1663). <hi rend="italic">Opera Omnia: tam hactenus excusa, </hi>cura Caroli Sponi, 10 vols, Huguetan J. A., Ravaud M. A., Lyon, henceforth OO. The volume is available at: <hi rend="italic">Girolamo Cardano. Strumenti per la storia del Rinascimento in Italia settentrionale,</hi> Baldi M., Canziani G. (edited by): <hi rend="italic">Opera Omnia,</hi> <ref type="url" target="http://www.cardano.unimi.it/testi/opera.html">http://www.cardano.unimi.it/testi/opera.html.</ref></note>
+        <note xml:id="n03" n="3">Cardano G. (1565). <hi rend="italic">Contradicentium Medicorum. Libri duo, quorum primus centum &amp; octo, alte vero totidem disputationes continet,</hi> Macaeus I., Parisiis.</note>
+        <note xml:id="n04" n="4">Cardano G.: <hi rend="italic">De vita propria liber, </hi>XLI, OO, I.</note>
+        <note xml:id="n05" n="5">  <hi rend="italic">The conceptual models used are: Time ontology in OWL to express the information about the temporal aspects</hi><ref type="url" target="http://www.w3.org/TR/owl-time/"> http://www.w3.org/TR/owl-time/</ref> (accessed 5 March, 2013); Friend of a Friend (FOAF) to express information about persons and groups), <ref type="url" target="http://www.foaf-project.org/">http://www.foaf-project.org/</ref> (accessed 5 March, 2013); Functional Requirements for Bibliographic Records-object oriented (FRBR-oo) to catalogue texts and bibliography references, <ref type="url" target="http://www.ifla.org/publications/functional-requirements-for-bibliographic-records">http://www.ifla.org/publications/functional-requirements-for-bibliographic-records</ref> (accessed 5 March, 2013).</note>
+        <note xml:id="n06" n="6">Cfr. note 5.</note>
+        <note xml:id="n07" n="7">Cfr. note 5.</note>
+        <note xml:id="n08" n="8">Developed by the FRD in collaboration with the Institute of Computational Linguistics “Antonio Zampolli”  (ILC-CNR), <ref type="url" target="http://www.reperio.it">http://www.reperio.it</ref> (accessed 5 March 2013).</note>
+        <note xml:id="n09" n="9">It was developed from 2004 to 2011 by the FRD and the ILC-CNR, in collaboration with the MiBAC and the Galileo Museum.</note>
+        <note xml:id="n10" n="10">See, for example: <hi rend="italic">Cataloging and Management of Digital Documents (Transcript of Texts and Images, Manuscripts, Books, Lectures, etc.)</hi> of the Pontifical Gregorian University Archives in Rome; <hi rend="italic">DiTMAO: Information System for Old Occitan Medical Terminology; Bulletin (1893 - 1923) of the Società Dantesca Italiana.</hi></note>
+        <note xml:id="n11" n="11">Uniform Resource Identifier, the same identifier at the basis of Linked Data.</note>
+        <note xml:id="n12" n="12">OAC, <ref type="url" target="http://www.openannotation.org">http://www.openannotation.org </ref>(accessed 5 March, 2013) and Open Annotation Data Model (W3C draft, <ref type="url" target="http://www.openannotation.org/spec/core/">http://www.openannotation.org/spec/core/</ref> (accessed 5 March, 2013).</note>
+        <note xml:id="n13" n="13">G. Cardano,<hi rend="italic"> Contradicentium medicorum libri,</hi> cit., I, I, XI.</note>
+    </div>
+</back>
+</text>
+</TEI>
+        
+    
+    
+    
+    
+    
+  
+    

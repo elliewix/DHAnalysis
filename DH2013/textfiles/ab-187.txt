@@ -1,0 +1,195 @@
+
+
+    1. Introduction
+
+    
+‘If it is drawn it must be true.’ Most people have the tendency to treat visualized data as facts and are much less prone to question visualizations than written words. Incorporating ways of conveying the notions of uncertainty and imprecision within visualizations is therefore a critical issue. This presentation will address this problem and consider what possible steps can be taken to visualize uncertainty and imprecision within the constraints of diagrams whose shapes and appearance are necessarily dictated by those of the objects that they represent.
+
+    
+Amongst the disciplines devoted to the study of books, bookbinding history is young, lacking a well-established vocabulary and a stable description system (Szirmai 1999). Bookbinding descriptions are often inaccurate, and difficult to communicate especially to international audiences.
+
+    
+Verbal descriptions are inadequate and are usually accompanied by drawings, which do not comply with any standard. Different authors employ different styles and conventions, and sometimes a number of conventions are used within one publication.
+
+    
+Recent work at the Ligatus Research Centre addresses the bookbinding vocabulary and classification problem. We have developed a descriptive schema and glossary for bookbinding structures utilizing eXtensible Markup Language (XML) technologies. This has been used to survey the bookbinding structures of the books from the St. Catherine’s Monastery Library, Mount Sinai, Egypt. The records are combined with freehand drawings of the binding structures (Velios 2008; Velios and Pickwoad 2005). More recently, we have been working towards a methodology to automatically transform the XML descriptions of bookbinding structures into Scalable Vector Graphics (SVG) diagrams. The advantages of the automated transformations are: (i) standardized output; (ii) production speed as they save significant time during the survey, and (iii) better accuracy as they function as verification of the surveyed data during the survey. However, the data produced during the survey is often uncertain (when features are obscured), imprecise (when surveyors have limited capacity to interpret evidence), and incomplete (when the available time is limited). Uncertain data is so flagged within the XML records, and also the imprecision and the absence of certain elements can be inferred from the records. Therefore, it is possible and appropriate to communicate imprecise and uncertain data within the visualizations. These should be drawn clearly and without affecting the overall meaning of the diagram.
+
+
+   
+    
+
+
+    2. Uncertainty and Imprecision of Data
+    
+When dealing with historical bookbinding structures, one has to accept that a degree of uncertainty, imprecision and incompleteness is inevitable for the following reasons.
+
+    
+
+
+
+
+
+    2.1 Uncertainty
+    
+    
+As in the case of quantitative and geographical data visualizations (Wilkinson 2005; Wainer 2009; Gethin Powell 2012), factors of uncertainty can be found in (i) inherent problems with the definition of the object of study, i.e. the limitations of current knowledge regarding bookbinding structures and their description; (ii) the sources of information and their interpretation, i.e. the books being described and the interpretation of their binding structures; (iii) issues with the categorization and representation of certain complex features, i.e. undetermined complex shapes for highly decorative and non-functional elements. Uncertainty can arise in all of these areas. One of the main problems faced by bookbinding historians lays in the young age of the discipline. Goldschmidt, in 1928, pointed out that ‘far fewer people [could] give a reasoned opinion on the country of origin and the approximate date of an old bookbinding, than a piece of pottery or furniture’ (Goldschmidt 1928). Unfortunately, almost a century later, the situation has not changed and often bookbinding descriptions are still inaccurate. Moreover, a book is sometimes too damaged to show clear evidence of its origin, or else, elements of the binding, especially decorative ones like metal furniture, are so complex that it is difficult to categorize and describe them.
+
+
+
+    
+    
+
+        2.2 Imprecision  
+        
+        
+The automated visualizations of binding structures, based upon their XML verbal descriptions, do not aim at a naturalistic representation of the item being described. But rather at conveying its general form in a highly prototypified representation, thus making it possible and easier for it to be compared with similar structures found in other books. Similarity of shapes depends on the preservation of certain particular features, referred to as 
+prägnant
+ features, e.g. symmetry, orientation in space, etc., while 
+non-prägnant
+ features, e.g. precise measurements, can be substantially changed without psychologically affecting the overall impression for the observer (Goldmeier 1972). Precise measurements are therefore not essential for the prototypification of shape, and for this reason only few precise measurements are required from the bookbinding record. Nonetheless, we feel that imprecisions in measurement-dependent elements should still be identifiable because they indicate scale, which may be a critical aspect of the description.
+
+    
+
+    
+    
+
+        2.3 Human Error
+        
+        
+When inaccuracy is objectively determinable, it can be expressed as error (MacEachren, et al. 2005). As it is often the case with human generated data, input problems and errors do occur. However, these are not easily identifiable through automated means and, considering that our transformations are also thought of as a possible step in ensuring data correctness by part of the surveyors, ambiguities due to human error are not being considered here.
+
+    
+
+    
+    
+
+        3. Representation of Uncertainty and Imprecision 
+        
+        
+Uncertainty and its representation have been studied in the scientific and geographical visualization communities (Wilkinson 2005). Bertin's (Bertin 1981; Bertin 1983) basic graphic variables — location/position, size, value, texture, colour, orientation, shape/form — with the addition of colour saturation, transparency/opacity, and sharpness/blurring (MacEachren 1992) have been used to build graphic representations and depict uncertainty. Interestingly, all these graphical features correspond to the basic feature channels in our primary visual cortex (V1), being thus perceptually distinct features (Ware 2012).
+
+        
+Cultural heritage visualizations are constrained by the shapes, spatial relationships, and relative sizes of the objects being portrayed. Therefore, only a limited set of graphic variables can be used to depict uncertainty. While uncertainty depiction needs to be perceptually salient, understanding the overall meaning of the diagram should not be precluded. Transparency has been used in archaeological reconstructions (Zuk and Carpendale 2006); however, lacking a distinct background, the use of transparency on its own can be problematic. Further, automated visualizations need a flexible system to apply a higher or lower degree of uncertainty to its elements.
+
+    
+
+    
+    
+
+        3.1 Uncertainty
+        
+        
+Out of the possible graphic variables, we have identified blurring as the best option to express uncertainty in our diagrams. People can easily interpret less sharp details as uncertainty (MacEachren 1992), while blurring can be applied to single lines without affecting the diagram's overall appearance. SVG provides a Gaussian-blur filter applicable to any shape and allows for different standard deviation values for the 
+x
+ and 
+y
+ axes. This grants the preservation of the overall shape of uncertain elements (see fig. 1) and permits to visualize different degrees of uncertainty through a flexible and universally applicable system. Uncertain elements are drawn in the configuration deemed most probable, while the degree of blurring can be determined by the number of possible variations.
+
+        
+        
+Figure 1
+Example of uncertainty of a sewing pattern
+Once identified, uncertainty can be resolved by providing the user with a set of 'small multiples' (Tufte 1990), i.e. alternative possible visualizations, allowing for immediate comparison within the scope of the eye span (see fig. 2).
+
+        
+        
+Figure 2
+Example of small multiples for a sewing pattern
+
+    
+    
+
+        3.2 Imprecision
+        
+        
+To indicate imprecision we need a graphical variable that could make the element identifiable without affecting the overall outline of the diagram, thus allowing for uninterrupted contour realization by part of the user. While colour labelling could be an option, we need a V1 feature channel that could make the element perceptually distinct leaving the contour unaffected. We find that this could be achieved with a surround colour (see fig. 3).
+
+        
+        
+Figure 3
+Figure 3 Examples of a board thickness diagram with and without imprecision highlight
+A coloured halo is a perceptual distinction feature (Ware 2012) that can be universally applied to graphics through SVG filters. The reduced contrast with the background makes the feature perceptually less salient, while the shape contour is left unaltered.
+
+    
+
+    
+    
+
+        4. Conclusions
+        
+        
+Visualizations within scholarly research projects should convey uncertainty and imprecision where needed. Depicting uncertainty has been the object of study of many scholars, however, its application to diagrams whose shapes are dictated by those of the objects being represented, like in the case of cultural heritage objects, poses particular issues and constraints. Even more so in the case of automatically generated diagrams within a large-scale project as our bookbinding structure visualizations.
+
+        
+This presentation is intended to serve as an example of the kind of perceptually salient graphical variables that can be used to successfully depict uncertainty and imprecision within cultural heritage prototypical diagrams.
+
+    
+
+    
+    
+
+    
+
+
+
+Bertin, J.
+ (1981). 
+Graphics and Graphic Information Processing.
+ Berlin: Walter de Gruyter & Co.
+Bertin, J.
+ (1983). 
+Semiology of Graphics.
+ Madison: University of Wisconsin Press.
+Gethin Powell, R.
+ (2012). Uncertain Date, Uncertain Place: Interpreting the History of Jewish Communities in the Byzantine Empire using GIS. In 
+Digital Humanities 2012 Conference Abstracts.
+ Hamburg: Hamburg University Press. 329-331.
+Goldmeier, E.
+ (1972). 
+Similarity in Visually Perceived Forms.
+ Madison, CT: International Universities Press. 
+Goldschmidt, E. P.
+ (1928). 
+Gothic & Renaissance Bookbindings, Exemplified and Illustrated from the Author's Collection.
+ London: Ernest Benn, Houghton Mifflin Co.
+MacEachren, A. M.
+ (1992). Visualizing Uncertain Information. 
+Cartographic Perspective.
+ 13: 10-19.
+MacEachren, A. M., et al.
+ (2005). Geospatial Information Uncertainty, What We Know and What We Need to Know. 
+Cartography and Geographic Information Science
+ 32(3): 139-160.
+Szirmai, J. A.
+ (1999). 
+The Archaeology of Medieval Bookbinding.
+ Brookfield, VT: Ashgate Publishing.
+Tufte, E. R.
+ (1990). 
+Envisioning Information.
+ Cheshire, CT: Graphic Press.
+Velios, A.
+ (2008). Hierarchical Recording of Binding Structures. 
+The Book and Paper Group Annual
+ 27: 97.
+Velios, A., and N. Pickwoad.
+ (2005). Current Use and Future Development of the Database of the St. Catherine’s Library Conservation Project. 
+The Paper Conservator
+ 29: 39-53.
+Wainer, H. 
+(2009). 
+Picturing the Uncertain World, How to Understand, Communicate, and Control Uncertainty through Graphical Display.
+ Princeton, NJ: Princeton University Press.
+Ware, C.
+ (2012). 
+Information Visualization, Perception for Design.
+ 3rd edn. Waltham, MA: Morgan Kaufmann.
+Wilkinson, L.
+ (2005). 
+The Grammar of Graphics.
+ 2nd edn. New York: Springer.
+Zuk, T., and S. Carpendale
+ (2006). Theoretical Analysis of Uncertainty Visualizations. in 
+Visualization and Data Analysis. Proceedings of SPIE-IS&T Electronic Imaging 2006;
+ SPIE. held in Bellingham, WA. 66-79.
+

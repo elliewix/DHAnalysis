@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-305">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>The Advanced Identity Representation (AIR) Project: A Digital Humanities Approach to Social Identity Pedagogy</title>
+<author>
+<name><surname>Harrell</surname>, <forename>D. Fox</forename></name>
+<affiliation>Massachusetss Institute of Technology, United States of America</affiliation>
+<email>fox.harrell@mit.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">I have initiated the NSF-supported (NSF CAREER Award # 1064495) Advanced Identity Representation (AIR) project to develop theory and technology for expressive and empowering self-representations (profiles, player characters, avatars) in social networks, games, and related technologies. Here, I report on development processes and pedagogy informing new theory and technology, a platforms called the AIR Toolkit and a critical pedagogy game built with it called Mimesis that increases awareness of covert forms of social discrimination. This work has emerged from from integrated research and pedagogy aims that are based upon an integrated sociology and cognitive science framework for classification/categorization and present early results with applications to computer gaming and educational software (with foci upon critique of disempowering social identity constructions). As I develop theory and platforms, those are then used in the classroom resulting in new projects each term that have been accepted into peer-reviewed conferences with students and co-authors.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP09</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>social identity</term>
+<term>social networking</term>
+<term>gaming</term>
+<term>virtual worlds</term>
+<term>pedagogy</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>interface and user experience design</term>
+<term>games and meaningful play</term>
+<term>digital humanities - pedagogy and curriculum</term>
+<term>cultural studies</term>
+<term>social media</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-18"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>Abstract</head>
+<p>The Advanced Identity Representation (AIR) Project<ref type="note" target="n01">1</ref>  develops theory and technology for expressive and empowering self-representations (profiles, player characters, avatars) in social networks, games, and related technologies. Here, I report on the development processes and pedagogy of the AIR Project. In particular, I describe two systems implemented as a part of the AIR Project: (1) <hi rend="italic">Mimesis</hi>, a critical pedagogy game that increases awareness of covert forms of social discrimination, and (2) <hi rend="italic">Chimeria</hi>, a system that computationally models social group membership phenomena and narrates them via a social networking interface. These systems emerged from integrated research and pedagogical aims based upon a unique interdisciplinary theoretical framework and have been published on in peer-reviewed conference proceedings with students as co-authors.</p>
+</div>
+
+<div><head>Introduction</head>
+<p>Over the past several years, I have run a course at MIT on Advanced Identity Representation in which students use software platforms developed in my lab<ref type="note" target="n02">2</ref>  to implement empowering computational systems allowing users to better understand social identity phenomena. In particular, we have explored topics such as microaggression (covert discrimination studied in critical race theory and clinical psychology) and modeling social group membership and naturalization.</p>
+
+<p>Most computational identity systems incorrectly <hi rend="italic">reify</hi> identity categories by implementing them as simple data fields (e.g., selecting gender from a brief drop down menu) or collections of attributes (e.g., races represented as modifiers to numerical statistics and constrained graphical characteristics in computer games). In contrast, the AIR Project results in computational models of <hi rend="italic">subjective</hi> identity phenomena related to categorization such as specific forms of marginalization that are often overlooked in engineering. Simply put, we intervene in engineering practice by replacing conventional narrow categorization models with systems informed by more critically-aware humanities/social science research. </p>
+
+<p>The AIR Project approach allows us to construct systems, for example, simulating phenomena such as systematic patterns of discrimination or experiences of moving between social groups. These systems cannot express the nuances of real world identities, yet they provide <hi rend="italic">advances<ref type="note" target="n03">3</ref>  over current systems</hi> in their foci on phenomena shown by humanities scholars and social scientists to be important for understanding issues such as oppression and supporting user empowerment. The resultant systems are often necessarily reductive (from real life experience to data structures and algorithms) in order to be implementable, yet this reduction is done knowingly with the benefit of expanding the expressive capacity of computational systems to address social identity phenomena.</p>
+</div>
+
+<div>
+<head>Theoretical Framework</head>
+<div>
+<p>Our systems are based on a theoretical framework including the following areas:</p>
+</div>
+
+<div>
+<head><hi rend="italic">Digital Humanities/Game Studies</hi></head>
+<p>Current user representations in digital media are inadequate for capturing complex phenomena involving subjective experience of social identity.  Current character creation tools allow for user representations to be customized on the basis of attributes associated with models of race, class, profession, and similar classifications, along with physical choice and construction of character models, skin tone, gender characteristics, and the like. Many popular current games duplicate and amplify many disempowering existing social structures. Such games hardcode stereotypes into their infrastructures. They reduce social constructs such as race to sets of numerical variables, abstract data structures and cosmetic changes to avatar appearance (Harrell, 2010).</p>  </div>
+
+<div>
+<head><hi rend="italic">Cognitive Science of Categorization</hi></head>
+<p>Results from cognitive science have revealed that there are many basic, entrenched metaphors that inform everyday cognitive categorization, including social stereotyping. (Lakoff, 1987)  These concepts are often structured by image schemas, “skeletal patterns” that recur in our motor-sensory experiences such as “Center-Periphery” or “More is Up” as expressed respectively by everyday cognitive metaphors such as “marginalized peoples” or “upper-class.” (Lakoff, 1987)</p>
+</div>
+
+<div>
+<head><hi rend="italic">Sociology of Classification</hi></head>
+<p>A great deal of personal suffering has been identified in cases where individuals exist at the interstices and boundaries between social classifications, for example individuals of ambiguous racial classification in Apartheid South Africa (Bowker &amp; Star, 1999), or the classification of “mixed-race” individuals in the United States Census recordings.  Such situations, in which there are conflicts between individual biographies, identity self-perception, and social metrification of identity, result in the experience of what Bowker and Star term <hi rend="italic">torque</hi>. AIR project systems take up the challenge to computer scientists posed by Bowker and Star by implementing models of social identity that are dynamic, imaginative, and explicitly socially-constructed.</p></div>
+</div>
+<div>
+<head>Pedagogy and Development </head>
+<p>Building upon the theoretical framework above, my repeatable lab/seminar course CMS.628/828 Advanced Identity Representation is populated by MIT Ph.D. students in Electrical Engineering and Computer Science, S.M. students in Comparative Media Studies, a small number of undergraduates from a range of departments, and occasional cross-registered students such as from the Graduate School of Education at Harvard University. My teaching approach draws upon critical pedagogy research and theories of computational literacy (diSessa, 2000; Freire, 1973; Street, 1993). A brief account of two projects developed in the course follows.</p> </div>
+
+<div>
+<head><hi rend="italic">Mimesis</hi></head>
+<p><hi rend="italic">Mimesis</hi> is an interactive narrative system exploring a particular social discrimination phenomenon via metaphor. As illustrated in <hi rend="bold">Figure 1</hi>, in <hi rend="italic">Mimesis</hi> the player character encounters others (sea creatures) who perform discriminatory microaggressions. We use metaphor to convey a generalized notion of microaggression from the definition of racial microaggression as “brief and commonplace daily verbal, behavioral and environmental indignities, whether intentional or unintentional, that communicate hostile, derogatory, or negative racials slights and insults to the target person or group.” (Sue, et al., 2007) Racial microaggressions have been clinically found to have strong cumulative effects on health and happiness, and restrict understandings between groups. (ibid.) <hi rend="italic">Mimesis</hi> aims to explore the efficacy of computational identity representation systems as tools for bringing awareness of microaggression at large. In Mimesis, each encounter between the player and a non-player character progresses according to a conversational narrative schema in which moods such <hi rend="italic">oblivious</hi>, <hi rend="italic">confused</hi>, <hi rend="italic">suspicious</hi>, or <hi rend="italic">aggressive</hi> are mapped to strategies of conversationally responding to microaggressions. We aim for <hi rend="italic">Mimesis</hi> to be an effective tool for increasing awareness of this subtle form of social discrimination.</p>
+ 
+<figure>
+<graphic url="ab-305.001" />
+<head>Figure 1:</head> <p>This screen shot shows the player’s character (left) in a microaggressive encounter in which a non-player character (right) metaphorically represents the theme of stereotypical ascription of skill (e.g., assuming someone is good at mathematics because of her ethnicity).</p>
+</figure>
+</div>
+<div>
+<head><hi rend="italic">Chimeria</hi></head>
+<p><hi rend="italic">Chimeria</hi> consists of: (1) the <hi rend="italic">Chimeria Engine</hi>: a dynamic algorithmic model of users’ degrees of membership in multiple social groups, and (2) the <hi rend="italic">Chimeria Social Narrative Interface (Chimeria­SN)</hi>: a narrative social networking interface for expressing experiences of membership and marginalization in social groups (see <hi rend="bold">Figure 2</hi>). The <hi rend="italic">Chimeria Engine’s</hi> model of users’ dynamic gradient category memberships in relation to central members enables more nuance than binary statuses of member/non­member. (Bowker &amp; Star, 1999; Harrell, 2010; Lakoff, 1987)</p>
+
+<p><hi rend="italic">Chimeria­SN</hi> is a streamlined, aestheticized social networking interface. The screen is dominated by a photowall: a dynamic collage of photos representing the user’s musical taste preferences. A feed of recent updates, posts, and invitations appear in an adjacent vertical timeline. One initial application of <hi rend="italic">Chimeria</hi> attends to the phenomenon of <hi rend="italic">passing</hi>&#8212;<hi rend="italic">presenting</hi> oneself as a member of another group to gain social acceptance (e.g., a multiracial person passing for white or a rock fan passing as a jazz fan). Music is our initial test domain since people often identify with groups based on musical preferences. We generate categories of social groups using music data (e.g., genres, artists, moods) from the Rovi Cloud Services API.</p>
+ 
+<figure>
+<graphic url="ab-305.002" />
+<head>Figure 2:</head> <p>This screenshot shows the Chimeria social-networking/interactive narrative interface.</p></figure>
+
+<p><hi rend="italic">Chimeria­SN</hi> begins by initializing a set of musical preferences from the user’s Facebook music likes or by manual entry. A <hi rend="italic">Chimeria</hi> profile is then generated, initiating a hybrid real/fictitious simulation presented via narrative structured posts by the user’s friends. The user may click “like,” “dislike,” or simply ignore these posts, resulting in group membership changes illustrated by alterations to the photowall and subsequent posts. The resulting narrative may tell of passing as a member of a new group, reinforcing a prior group affiliation, or even being marginalized in every group. Furthermore, some groups are deemed oppositional, privileged, or marginalized relative to others.</p>
+
+<p>Novel aspects of <hi rend="italic">Chimeria</hi> include:</p>
+
+<list type="unordered">
+<item>a compelling interface that is familiar and accessible to most users who have used a social networking application,</item>
+<item>the combining of real world data with authored data, comprising a new type of <hi rend="italic">alternate reality narrative</hi> (blending fact and fiction to convey social themes), and</item>
+<item>generalizability to a wide range of applications.</item>
+</list>
+</div>
+
+<div>
+<head>Conclusion</head>
+<p>The AIR project looks at the underlying data structures and algorithms and how they implement cultural identity effects, and posits a technical framework for more deeply engaging identity semantics of classification and categorization.  Additionally, a primary application of our project is educational software such as <hi rend="italic">Mimesis</hi> and <hi rend="italic">Chimeria</hi> that utilize digital humanities technology and theory to allow students to represent themselves as learners and doers within subject domains. Digital humanities approaches to identity such as this, we feel, are especially attuned to the pedagogical needs of today’s students. </p>
+
+
+</div>
+
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Bowker, G. C., and S. L. Star</hi> (1999). <hi rend="italic">Sorting Things Out: Classification and Its Consequences</hi>. Cambridge, MA: MIT Press.</bibl>
+<bibl><hi rend="bold">diSessa, A. A. </hi> (2000). <hi rend="italic">Changing minds: Computers, learning, and literacy</hi>. Cambridge, MA: The MIT Press.</bibl>
+<bibl><hi rend="bold">Freire, P. </hi> (1973). <hi rend="italic">Pedagogy of the oppressed</hi>. New York: Seabury Press (Originally 1968).</bibl>
+<bibl><hi rend="bold">Harrell, D. F.</hi> (2010). Toward a Theory of Critical Computing: The Case of Social Identity Representation in Digital Media Applications. <hi rend="italic">CTheory</hi>.</bibl>
+<bibl><hi rend="bold">Lakoff, G.</hi> (1987). <hi rend="italic">Women, Fire, and Dangerous Things: What Categories Reveal about the Mind</hi>. Chicago, IL: University of Chicago Press.</bibl>
+<bibl><hi rend="bold">Street, B. V.</hi> (1993). Introduction: The new literacy studies. In B. V. Street (Ed.), <hi rend="italic">Cambridge studies in oral and literate culture: Cross-cultural approaches to literacy</hi>. Cambridge, UK: Press Syndicate of the University of Cambridge.</bibl>
+<bibl><hi rend="bold">Sue, D. W., C. M. Capodilupo, G. C. Torino, J. M. Bucceri, A. M. B. Holder, K. L. Nadal, et al.</hi> (2007). Racial Microaggressions in Everyday Life: Implications for Clinical Practice. <hi rend="italic">American Psychologist</hi>, 62(4), 271-286.</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">This material is based upon work supported by the National Science Foundation under Grant No. 1064495.</note>
+<note xml:id="n02" n="2">My research group is called the Imagination, Computation, and Expression Laboratory (ICE Lab).</note>
+<note xml:id="n03" n="3">The meaning of “advanced” in the AIR acronym refers to advances over the limitations of many current identity categorization systems that are unengaged with theories of identity from the humanities and social sciences.</note>
+
+</div>
+
+</back>
+</text>
+</TEI>
+

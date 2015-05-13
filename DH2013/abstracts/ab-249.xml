@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-249">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Inferring Social Rank in an Old Assyrian Trade Network</title>
+<author>
+<name><surname>Bamman</surname>, <forename>David</forename></name>
+<affiliation>Carnegie Mellon University</affiliation>
+<email>dbamman@cs.cmu.edu</email>
+</author>
+<author>
+<name><surname>Anderson</surname>, <forename>Adam</forename></name>
+<affiliation>Harvard University</affiliation>
+<email>aganders@fas.harvard.edu </email>
+</author>
+<author>
+<name><surname>Smith</surname>, <forename>Noah A.</forename></name>
+<affiliation>Carnegie Mellon University</affiliation>
+<email>nasmith@cs.cmu.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">We present work in jointly inferring the unique individuals as well as their social rank within a collection of letters from an Old Assyrian trade colony settled by merchants from the ancient city of Assur for approximately 200 years between 1950-1750 BCE, the height of the Middle Bronze Age. Using a probabilistic latent-variable model, we leverage pairwise social differences between names in cuneiform tablets to infer a single underlying social order that best explains the data we observe. Evaluating our output with published judgments by domain experts suggests that our method may be used for building informed hypotheses that are driven by data, and that may offer promising avenues for directed research by Assyriologists.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP20</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Old Assyrian studies</term>
+<term>probabilistic latent variable models</term>
+<term>social networks</term>
+<term>social hierarchy</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>text analysis</term>
+<term>near eastern studies</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-11"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<div>
+<head>1.  Introduction</head>
+
+<p>In the early 20th century, the attention of Assyriologists and archaeologists was directed to a number of cuneiform tablets coming from a remote archaeological tell in <hi>K&#252;ltepe</hi>, Turkey. After the first series of excavations, archaeologists discovered a large collection of texts and the remains of a Bronze Age trade colony, referred to in the texts as <hi>k&#257;rum Kane&#353;</hi>. Once these initial ca. 5,000 texts were deciphered, the field of Old Assyrian studies was born. In 1948 official Turkish excavations began at <hi>K&#252;ltepe</hi> and added over 17,000 tablets to the Old Assyrian text corpus, which now totals ca. 23,000 cuneiform tablets (Michel, 2008). These texts document the intricacies of thriving Bronze Age trade networks, comprised of Old Assyrian merchants from the ancient city of Assur approximately 4,000 years ago (ca. 1950-1750 BCE) (Barjamovic et al., 2012). The texts further show how the merchants acted as the middle-men in a large series of inter-connected networks which, among other things, linked the natural resources of tin (in Iran and Afghanistan) and copper (in Turkey) in order to produce bronze in Anatolia.</p>
+
+<p>However, one thing the texts do not make clear is the scope and structure of the colonial trade network, in terms of the people involved and their organization. Although the high degree of literacy among the inhabitants of the colony at <hi>Kane&#353;</hi> helped create an extremely rich source of texts illustrating the daily life of the people involved, the practice of paponomy (naming a son after his grandfather) has obscured the identities of the merchants for modern scholarship. Thus, due to the density and ambiguity of the names mentioned in these texts, it has been too difficult to gain an understanding of the scope of the colonial society on the basis of the textual record at <hi>K&#252;ltepe</hi>.</p>
+
+<p>Our work therefore focuses on jointly inferring the unique individuals as well as their social rank within the Old Assyrian trade network, using a novel probabilistic latent-variable model that exploits partial rank information contained in the texts.</p>
+</div>
+
+
+<div>
+<head>2.  Data</head>
+<p>Of the 23,000 tablets unearthed at <hi>K&#252;ltepe</hi> (<hi>Kane&#353;</hi>), 5,691 published texts (known as the “old texts” (Veenhof and Eidem, 2008)) have been digitized and transcribed into machine-actionable text as part of the Old Assyrian Text Project (Old Assyrian Project). While these tablets include mostly economic and legal transactions, 2,094 of them are letters between merchants. Along with the body of the Akkadian text, each of these letters includes a highly stylized introductory formula (an “epistolary formula”) which lists the senders and recipients using strict dominance rules concerning the order of the names. For example:</p>
+ 
+<figure><graphic url="ab-249.t01"/></figure>
+
+
+<p>These formulae have a consistent internal structure from which we can draw relative social ranks among the individuals involved. Each formula can be divided into two parts (a <hi rend="italic">receiving</hi> rank and a <hi rend="italic">sending</hi> rank), and an individual placed linearly after another <hi rend="italic">within</hi> one of these ranks cannot be socially higher than any mentioned before (whether the first is higher or equal is ambiguous). Additionally, one individual (who may be either among the senders or recipients) is mentioned first in the letter, a marked position signifying the highest social status of those mentioned in either rank.</p>
+ 
+<figure><graphic url="ab-249.t02"/></figure>
+
+<p>These partial orderings provide a rich source of evidence for the global social structure; from this example, we can extract seven pairwise partial social orderings: <hi>Amur-I&#353;tar &#8805;Al&#257;hum and A&#353;&#353;ur-takl&#257;ku; Al&#257;hum &#8805; A&#353;&#353;ur-takl&#257;ku; and A&#353;&#353;ur-id&#299;  &#8805;</hi> all four of the others.</p>
+
+<p>If all such partial orderings were to be trusted, if each observed name in such a formula were unambiguous, and if social power were a stationary quality that remained constant over time, inferring a consistent global rank over all individuals would be easy (though more than one such rank may be possible). Unfortunately, however, none of these assumptions are true. The rank we observe in one letter is a subjective judgment by the author, and we can easily imagine that complex social dynamics are involved in the choice of who to rank highest (which can vary by author); names are indeed ambiguous with one name potentially referring to multiple people, and the same person can be known by several names; and the letters span a period of ca. 200 years, over which time a young individual with low social rank can age and accrue power<ref type="note" target="n01">1</ref>.</p> </div>
+
+<div>
+<head>3.  Technical Approach</head>
+<p>Our goal is to find the social ranking over individuals (possibly not in a one-to-one relation with names) that best explains the observed data. To illustrate the intuition behind our approach, consider a simple example. Suppose we are trying to establish the temporal rank of a set of individuals with the names ADAMS, JEFFERSON and MADISON, and we have the following evidence (where > indicates “was president before”).</p>
+
+<list type="unordered">
+<item>ADAMS > JEFFERSON </item>
+<item>JEFFERSON > MADISON </item>
+</list>
+
+<p>Assuming transitivity, a sound global rank among these three is: ADAMS > JEFFERSON > MADISON; while we never directly witness a statement of the sort ADAMS > MADISON, we can infer it through intermediary relations. Now suppose we observe an additional piece of evidence:</p>
+
+<list type="unordered"><item>MADISON > ADAMS </item></list>
+
+<p>If we assume that the three names only refer to three distinct individuals, transitivity breaks down: putting all three statements together results in a circular rank, leading to the contradiction that ADAMS > JEFFERSON while at the same time JEFFERSON > ADAMS. However, we can establish a sound global order if we allow the three names to refer to four individuals (e.g., two people both have the name ADAMS), resulting in the rank: ADAMS1 > JEFFERSON > MADISON > ADAMS <ref type="note" target="n02">2</ref>.  In fact, given the inconsistency of the evidence under the assumption of only three people, the existence of four underlying people is in fact more likely. Here, our method offers an informed hypothesis&#8212;that Adams refers to two distinct individuals rather than one&#8212;that can be verified (or refuted) in consultation with the data. In this simple case, the hypothesis is supported by the fact that Adams can refer to both JOHN ADAMS and JOHN QUINCY ADAMS.</p>
+
+<p>In the case of our Old Assyrian dataset, the evidence takes the form of 4,191 pairwise observed ranks of 717 individual names in 1,657 letters, along with the Akkadian text of those letters. Our task is to find the most likely overall social rank of a fixed set of actors that best explains the pairwise ranks in letters that we see. In casting the problem in this way, we are building a <hi rend="italic">probabilistic generative model</hi> of the data. Latent Dirichlet allocation (Blei et at., 2003) is a familiar example of a generative model that seeks to explain data in text documents by inferring latent topic assignments to individual words. In our case, the latent variables are a.) the identities of the people named in each letter; and b.) the social rank of those people, represented as continuous values.</p>
+
+<p>Figure 1 illustrates the graphical model in detail using standard notation alongside our inference algorithm. In brief, we use a randomized algorithm known as Monte Carlo Expectation Maximization (Wei and Tanner, 1990). The algorithm alternately a.) samples a value of the latent entity <hi rend="italic">z</hi> for each instance of a name <hi rend="italic">x</hi> in a given letter, conditioned on current values of all other latent variables and parameters, cycling through the name instances, and b.) uses those accumulated samples to optimize the values of the social rank &#946; that generated the pairwise ranks <hi rend="italic">y</hi> in evidence. In this way, we alternate between picking probable latent individuals referred to in letters (given some fixed social rank), and determining the best social rank given that estimate of who those names refer to.</p>
+ 
+
+<figure><graphic url="ab-249.001"/><head>Figure 1:</head> <p>Graphical model and MCEM algorithm. Shaded circles represent observed or fixed variables, empty circles are latent variables, dotted circles represent variables that are integrated out via collapsed Gibbs sampling, and the double-circled &#946; is optimized via MCEM. &#966;, &#952; - Dir; <hi rend="italic">z</hi> - Categorical; <hi rend="italic">x</hi> - Multinomial; <hi rend="italic">y</hi> - Logistic; and &#946; - Normal. In our case, we fix the hyperparameters &#945; = 100, &#947;  = 0.01, &#956; = 0, &#963;<ref type="note" target="n02">2</ref> = 1, and the number of possible latent entities to 1000. </p></figure>
+
+</div>
+
+
+<div>
+<head>4.  Results</head>
+<div>
+<p>The input to our algorithm is a set of pairwise ranks between names mentioned in a letter (of the form <hi>A&#353;&#353;ur-id&#299;  ≥ A&#353;&#353;ur-n&#257; d&#257;</hi> , as above), along with an upper bound on the number of the latent entities we expect (<hi rend="italic">K</hi>); the output is twofold: a.) a global rank of those <hi rend="italic">K</hi> latent entities, along with the names in letters associated with them most often; and b.) a distribution over all possible latent entities for each name mentioned in each letter.</p>
+
+<p>We apply our model to <hi rend="italic">hypothesis generation</hi>: given a set of evidence, the algorithm offers hypotheses it finds likely, which a domain expert can then validate according to established methods in the field. One such lead generated by our method about a well-studied individual concerns the name of Inn&#257;ya.</p>
+</div>
+
+<div>
+<head>4.1 Inn&#257;ya</head>
+<p>In 1991, C&#233;cile Michel produced a two-volume work on two merchants in the colony of <hi>Kane&#353;</hi>  named <hi>Inn&#257;ya</hi> (Michel, 1991a, 1991b) . On the basis of two attested patronyms it was apparent that there were at least two individuals who were known by this name. By charting their family trees and the structure of their respective businesses, she reconstructed the separate archives and identities of these two merchants. The first and best attested individual is <hi>Inn&#257;ya</hi> son of <hi>El&#257;li</hi> with 142 texts, who appears to have a more complete textual record. The second individual, <hi>Inn&#257;ya</hi> son of <hi>Amur&#257;ya</hi>, is only attested in 74 texts; while these two merchants overlapped chronologically, the latter appears to have been a minor figure in the colony (Michel, 1991, 48). While there were a number of texts which Michel was unable to determine (ca. 57), her study illustrated the complexity involved in the Old Assyrian archives due to an active use of homonyms at that time. While the work on <hi>Inn&#257;ya</hi> is in no way complete, Michel provided a basis on which future scholarship might build, and will serve as a proving ground for the purpose of this study.</p>
+
+<p>Figure 2 shows the overall distribution for latent ranks associated with the name <hi>Inn&#257;ya</hi> in all of the letters, as learned by our model. Given the evidence that we have seen, our algorithm has learned that this name is generally associated with a very high-ranking individual (in this, and all other plots, the highest rank is 1, with 1000 being the lowest). </p>
+  
+<figure><graphic url="ab-249.002"/><head>Figure 2:</head> <p>Overall distribution of latent ranks for the name Inn&#257;ya. The highest rank is 1; 1000 is the lowest.</p></figure>
+
+<p>If we look at the individual letters themselves, however, a more nuanced picture emerges. Figure 3 plots the distribution of latent entities for a set of 6 of the 190 letters in which <hi>Inn&#257;ya</hi> is mentioned. While the majority of letters in this set recapitulate the overall distribution shown above, several letters are noticeable outliers. For example, in letter TC1,33 and BIN6,109, our model has high belief that the real person associated with the name <hi>Inn&#257;ya</hi> is not in fact the high-ranking individual at all, but rather a much lower ranked one. Consulting these letters, we see that <hi>Inn&#257;ya</hi> is dominated by one or more individuals with a relatively low rank, which is not consistent with a high-ranking individual. If we look at the intersection of the publicly available letters in our collection and those inspected by Michel (a total of 142 texts), we find that our method agrees with Michel’s assessment of the identity of <hi>Inn&#257;ya</hi> in each specific letter 80.9% of the time (discounting the level of agreement due to chance, this leads to a Cohen’s κ of 0.435). These results clearly support the conclusions Michel has drawn for <hi>Inn&#257;ya</hi> – two individuals, at least, each with differing social networks and hierarchical ranks – and provide evidence for the validity of our approach.</p>
+ 
+<figure><graphic url="ab-249.003"/><head>Figure 3:</head> <p>Distribution over latent ranks associated with the name <hi>Inn&#257;ya</hi> in various letters. The highest rank is 1; 1000 is the lowest.</p></figure>
+
+</div>
+</div>
+
+<div>
+<head>5.  Conclusion</head>
+<p>The case of <hi>Inn&#257;ya</hi> illustrates one of the greatest obstacles facing the field of Old Assyrian studies to date. Before any definitive statements can be made about the organization and makeup of the Old Assyrian trade network on the basis of the texts found in <hi>K&#252;ltepe</hi>, we must first determine the scope and structure of the Old Assyrian colonial society. Unfortunately, due to an active use of homonyms in the textual record, the scope of this colonial society has been obscured by a level of ambiguity too complex for any single specialist, or for that matter any group of specialists, to untangle.</p>
+
+<p>As part of a solution, we present a method for aggregating small, local pieces of information&#8212;pairwise social differences between names in a cuneiform tablet&#8212;into a single underlying social order that offers the best explanation for the data we have. The latent variable model that we design allows us to be clear about our assumptions (the relationship between variables is encoded in the structure of the model; whether or not one variable is allowed to exert a direct effect on another is transparent). These kinds of generative models also allow us to add other forms of evidence; one possible extension would tie the choice of latent entity for each name in a letter with all of the other text observed (so that, for example, if one <hi>Inn&#257;ya</hi> is often associated with letters mentioning <hi rend="italic">tin</hi> while another trafficks in <hi rend="italic">textiles</hi>, we have further evidence that the two are different individuals).</p>
+
+<p>In applying this method to our Old Assyrian dataset, we are engaging in exploratory data analysis, offering informed hypotheses that are driven by data, and that our model believes are the most promising avenues for directed research by Assyriologists. Grounding these hypotheses in the data allows us to return to the source of our induction&#8212;the letters themselves&#8212;and validate whether or not we have sufficient evidence to support our claims. In our particular case, the agreement between our model’s beliefs and those in the published literature are encouraging. We leave to future work to explore the differences that remain.</p></div>
+
+<div>
+<head>6.  Acknowledgments</head>
+<p>We would like to thank Mogens Larsen, Thomas Hertel, and other contributors to the Old Assyrian Text Project for providing the digitized texts we analyze. The research reported in this article was supported in part by Google (through the Worldly Knowledge Project at CMU) and by an ARCS scholarship to D.B.  An extended version of this paper can be found at: <ref type="url" target="http://arxiv.org/abs/1303.2873">http://arxiv.org/abs/1303.2873</ref>.</p></div>
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+
+
+
+
+<bibl><hi rend="bold">Barjamovic, G., T. Hertel, and M. T. Larsen</hi> (2012). <hi rend="italic">Ups and Downs at Kanesh: Chronology, History and Society in the Old Assyrian Period</hi>. PIHANS (Publications de l’institut historique-arch&#233;ologique n&#233;erlandais de Stamboul), vol. 120. Nederlands Instituut voor het Nabije Oosten, Leiden.</bibl>
+<bibl><hi rend="bold">Blei, D. M., A. Y. Ng, and M. I. Jordan</hi> (2003). Latent Dirichlet allocation. <hi rend="italic">J. Mach. Learn. Res.</hi>, 3:993–1022, March.</bibl>
+<bibl><hi rend="bold">Michel, C.</hi> (1991). <hi rend="italic"><hi>Inn&#257;ya</hi> dans les Tablettes <hi>pal&#233;o-assyriennes</hi> I: Analyse</hi>. Editions Recherche sur les Civilisations, Paris, France.</bibl>
+<bibl><hi rend="bold">Michel, C.</hi> (1991). <hi rend="italic"><hi>Inn&#257;ya</hi> dans les Tablettes pal&#233;o-assyriennes II: Edition des textes</hi>. Editions Recherche sur les Civilisations, Paris, France.</bibl>
+<bibl><hi rend="bold">Michel, C.</hi> (2008).The <hi>Al&#257;hum and A&#353;&#353;ur-takl&#257;ku</hi> Archives found in 1993 at K&#252;ltepe Kani&#353;. <hi rend="italic">Altorientalische Forschungen</hi>, 35:53–67, May 2008.</bibl>
+<bibl><hi rend="bold">Old Assyrian Text Project.</hi> <ref type="url" target="http://oatp.ku.dk">http://oatp.ku.dk</ref>.</bibl>
+<bibl><hi rend="bold">Veenhof, K. R.,  and J. Eidem</hi> (2008).<hi rend="italic">Mesopotamia: The Old Assyrian Period</hi>. Orbis Biblicus Et Orientalis 160/5. Academic Press (Fribourg), Vandenhoeck and Ruprecht (Göttingen).</bibl>
+<bibl><hi rend="bold">Wei, G. C. G.,  and M. A. Tanner</hi> (1990). A Monte Carlo implementation of the EM algorithm and the poor man’s data augmentation algorithms. <hi rend="italic">Journal of the American Statistical Association</hi>.</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">  Most of the letters in our corpus have not been dated to a finer level of granularity than century; a potential extension to the model described here would exploit this information when available.</note>
+<note xml:id="n02" n="2">  Alternatively, JEFFERSON1 > ADAMS > MADISON > JEFFERSON2 is also valid, as is MADISON1 > JEFFERSON > ADAMS > MADISON2. In data where the orderings are not strict (i.e., ADAMS ≥ JEFFERSON), global ranks involving equalities are also possible.</note>
+
+
+</div>
+
+
+</back>
+</text>
+</TEI>
+

@@ -1,0 +1,217 @@
+   
+
+
+Abstract
+Research in body language with use of gesture recognition and speech analysis has gained much attention in the recent times, influencing disciplines related to image and speech processing. 
+
+    
+This study aims to design the Media Query Language (MQL) (Lenkiewicz, et al. 2012) combined with the Linguistic Media Query Interface (LMQI) for Elan (Wittenburg, et al. 2006). The system integrated with the new achievements in audio-video recognition will allow querying media files with predefined gesture phases  (or motion primitives) and speech characteristics as well as combinations of both. For the purpose of this work the predefined motions and speech characteristics are called 
+patterns
+ for atomic elements and 
+actions
+ for a sequence of 
+patterns.
+  The main assumption is that a user-customized library of patterns and actions and automated media annotation with LMQI will reduce annotation time, hence decreasing costs of creation of annotated corpora. Increase of the number of annotated data should influence the speed and number of possible research in disciplines in which human multimodal interaction is a subject of interest and where annotated corpora are required.
+
+
+
+
+
+
+    
+    
+Introduction
+The development in the area of audio-visual-recording devices leads to increase of the number of high performance hardware, enabling studies based on media recordings. In order to analyze a recording, the corpus needs to be annotated. The ideal solution would be an automated annotation system, which is a challenge for software developers. The algorithms need to not only retrieve points of interest from 2D and 3D recordings, but also to interpret them and to allow users to add extra interpretation, depending on the subject of study.
+
+
+    
+The work on the MQL and the LMQI is trying to meet the expectations of researchers. The system design assumes no previous knowledge of any query or programing language, nor query interface. The query syntax is similar to the syntax of a natural language with assumption that the data output goes into the Elan tier.
+
+    
+The main requirement of the MQL is that the data received from the recording contains time information, allowing alignment of the tier with the recording. The assumption is that any software retrieving information form the recording may be integrated with the MQL. At the current stage, the algorithms integrated with the system are the recognizers (Lenkiewicz, et al. 2011) delivering time aligned coordinates from 2D video recordings.
+
+    
+The LMQI was built to simplify the work with the MQL.
+
+    
+
+
+    
+The Media Query Language
+Recently several automated annotation tools and techniques for deriving metadata (Hansen, et al. 2007; Park, et al. 2007;  Chia-Han, et al. 2001; Crestani, et al. 2004; Rui Peng, et al. 2010) have been developed.  The study often concentrates on joining syntactic and semantic levels of analyzed recordings. The work on the MQL is based on the premise that in order to lead research, the researchers themselves need to decide whenever a given phenomenon carries semantic meaning. To meet this requirements, there has to be a tool able to formulate a query describing elements of a tested theory, and use it on recordings obtained during experiments.
+
+    
+The structure and the syntax of the MQL are already defined. To build a compiler for the language, “SableCC compiler — compiler“ has been chosen. According with the SableCC (Gagnon and Hendren 1998) requirements, the syntax is written using context free grammar rules and a parser is created, which is a Look-Ahead LR (1)(LALR) with one token of look ahead (Puntambekar 2010). SableCC was chosen as a tool to implement the language as it separates syntax and semantic actions of the new created language, shortening development time and significantly simplifying changes, thus improving maintainability of the system.
+
+    
+The hardware used to obtain the linguistic recording determines the software, which may be used to identify the human body parts in 2D or 3D space, further determining the number of elements that may be described. The MQL is designed in such a way that modification of parts of the syntax is possible and relatively easy. Adding new data source algorithms and new body or speech tokens is possible; the only requirement is that obtained data needs to provide:
+    
+body token: spatio-temporal information of points of interest (2D or 3D coordinates of new detected body part in the time domain)
+speech token: the data relevant to the element in a time domain.
+ 
+The interaction with the MQL is done thought the LMQI.
+   
+    
+Thanks to its expressiveness, the MQL allows identifying movement and speech characteristics. The work with the MQL starts from “building” 
+patterns
+. The MQL allows creating universal patterns out of motion and speech primitives; including elements such as e.g.: left and right hand, head, joins retrieved by Kinect(like neck, elbow), eye(s), mouth,   preparation, stroke, fingers, loudness, peak, range, utterance, prosodic unit and silence, etc. In the level of pattern creation, each of them can be specified accordingly:
+
+    
+motion: direction of movement, angle, speed, relation of body parts and distance between them(example left hand > 20 pixels from eye; left hand <50 pixels from right hand; LH stroke 30 pixels from mouth), duration, and one body part and/or other body part described by mentioned descriptors
+speech: range, mean, duration and behaviour of sound wave (e.g. falling, level, raising with numerical description).
+The choice of such elements was done after research carried out two fields:
+        
+body language study with focus on gestures, mimic and sign language
+the study of available and promised tools for human movement detection in 2D and 3D recordings. Only open source software was taken in consideration.
+ 
+    
+On the level of 
+action
+, the user will be given the possibility to “advance” created 
+patterns
+ and query them on the recording (in case when atomic element of human behaviour is the subject of interest) or join more than one pattern in a set. The set of 
+patterns
+ can also be describe with more specific conditions:
+        
+General: one can assign a person detected in the recording and the action will be found only if done by the person; relation between patterns can be described in detail (example: 
+pattern1 after min 20 ms pattern2
+), duration of the whole action, etc.,
+For motion: speed, place of the gesture in a gesture space.
+ To query the recordings, the 
+action
+ should be used. The query has a form 
+        
+QUERY {ANNOTATE A.Hand_up by Carl.Smith to (tier1,childTier) WRITE "This is annotation" direction duration;}
+
+        where only 
+ANNOTATE A.Hand_up to (tier1); 
+is the obligatory part and the other descriptors are optional.
+
+    
+
+
+
+
+    
+Linguistic Media Query Interface
+The LMQI is an interface allowing working with the MQL.  At the current stage of the development characteristics of the LMQI are:
+   
+Window of the query environment is divided into parts displaying a main query window, a library preview, an info text, an syntax error tracker, and the MQL options panel
+The MQL options panel contains fields for:
+
+Inserting into main query window fixed parts of the code.
+Selection of the source data (indication of hardware, possibility of selection of new/additional data capturing algorithm).
+Selection of format in time domain (frames, milliseconds, seconds or minutes).
+Place where new created library of elements needs to be saved and the place from which existing should be added to the library preview.
+Advanced options allowing to add to the MQL syntax new tokens.
+
+At the current phase of development the system checks the syntax of the language and advises correct tokens in case of syntax errors.
+
+    
+For pattern matching simple algorithm for numerical interval matching with a tolerance for match is used. The tolerance may be changed by the user and specified for each single query.
+
+  
+  
+
+
+
+    
+Future Work
+Currently the research is concentrated around new methods of data retrieval and new ways of data matching. The Kinect data retrieving algorithms and available software are under implementation and integration. For speech recognition the usage of Praat is considered. The Hidden Markov Model is studied as an option for the pattern-matching algorithm.
+
+    
+
+
+    
+Conclusions
+Although the research and the algorithms is in its early phase the development of the MQL and LMQI may change the way humanities researcher may carry their work on media resources. The system can find it usage in:
+        
+so-called motor theory of speech perception, co-speech gesture
+sign language (place of gesture in body space and in relation to other body elements, speed, etc.)
+language acquisition studies
+variation in speech and gesture
+
+    
+The information conveyed by gesture can be in a visuo-spatial form even when the speaker’s message is not visuo-spatial, therefore the interface could be used by non linguistic researchers in order to simplify research like:
+        
+emotional state: Recognizing Human Emotions from Body Movement and Gesture Dynamics (Castellano 2007)
+teaching: Video Annotation Tools Technologies to Scaffold, Structure, and Transform Teacher Reflection (Rich and Hannafin 2009),
+events monitoring Automatic Annotation of Humans in Surveillance Video (Miyamori 2003) .
+
+    
+
+
+
+
+    
+Acknowledgement(s)
+This research has received support from the EU 7th Framework Program under a Marie Curie ITN, project CLARA.
+
+    
+
+
+       
+
+    
+
+
+
+Lenkiewicz, A., M. Lis, and P. Lenkiewicz
+ (2012). Linguistic concepts described with Media Query Language for automated annotation. in 
+Digital Humanities 2012
+. Hamburg.
+Wittenburg, P., H. Brugman, A. Russel, A. Klassmann, and H. Sloetjes
+ (2006). ELAN: a Professional Framework for Multimodality Research. in 
+The International Conference on Language Resources and Evaluation (LREC).
+. GENOA — ITALY.
+Lenkiewicz, P., P. Wittenburg, O. Schreer, S. Masneri, D. Schneider, and S. Tschöpel
+ (2011). Application of audio and video processing methods for language research. in 
+Supporting Digital Humanities 2011 [SDH 2011].
+. Copenhagen, Denmark.
+Hansen, D.M., et al.
+ (2007). Automatic Annotation of Humans in Surveillance Video, in 
+Proceedings of the Fourth Canadian Conference on Computer and Robot Vision
+, IEEE Computer Society. 473-480.
+Park, K.-W., et al.
+ (2007). OLYVIA: Ontology-based Automatic Video Annotation and Summarization System Using Semantic Inference Rules, in 
+Proceedings of the Third International Conference on Semantics, Knowledge and Grid
+, IEEE Computer Society. 170-175.
+Chia-Han, L., and A.L.P. Chen
+ (2001). 
+Motion event derivation and query language for video databases.
+ Vol. 4315, Bellingham, WA, ETATS-UNIS: Society of Photo-Optical Instrumentation Engineers. 208-218.
+Crestani, F., J. Vegas, and P. D. L. Fuente
+ (2004). 
+A graphical user interface for the retrieval of hierarchically structured documents.
+ Inf. Process. Manage. 40(2): 269-289.
+Rui Peng, A.J. Aved, Kien A. Hua,
+ (2010). 
+Real-Time Query Processing on Live Videos in Networks of Distributed Cameras.
+ IJITN. 2(1): 27-48.
+Gagnon, E. M. and L. J. Hendren.
+(1998). 
+SableCC, an Object-Oriented Compiler Framework.
+ in 
+Proceedings of the Technology of Object-Oriented Languages and Systems.
+. IEEE Computer Society.
+Puntambekar, A. A.
+ (2010).
+Compiler Design
+: Technical Publications.
+Castellano, G., S. D. Villalba, and A. Camurri
+ (2007). 
+Recognising Human Emotions from Body Movement and Gesture Dynamics,
+ in 
+Proceedings of the 2nd international conference on Affective Computing and Intelligent Interaction
+, Springer-Verlag: Lisbon, Portugal. 71-82.
+Rich, P. J., and M. Hannafin.
+(2009). 
+Video Annotation Tools: Technologies to Scaffold, Structure, and Transform Teacher Reflection.
+ Journal of Teacher Education. 60(1): 52-67.
+Miyamori, H.
+ (2003). 
+Automatic annotation of tennis action for content-based retrieval by integrated audio and visual information,
+ in 
+Proceedings of the 2nd international conference on Image and video retrieval
+, Urbana-Champaign, IL, USA: Springer-Verlag. 331-341.
+

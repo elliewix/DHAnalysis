@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-234">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>The FAST-CAT: Empowering Cultural Heritage Annotations</title>
+<author>
+<name><surname>Munnelly</surname>, <forename>Gary</forename></name>
+<affiliation>Trinity College Dublin, Ireland</affiliation>
+<email>munnelg@scss.tcd.ie</email>
+</author>
+<author>
+<name><surname>Hampson</surname>, <forename>Cormac</forename></name>
+<affiliation>Trinity College Dublin, Ireland</affiliation>
+<email>cormac.hampson@scss.tcd.ie </email>
+</author>
+<author>
+<name><surname>Ferro</surname>, <forename>Nicola</forename></name>
+<affiliation>University of Padua, Italy</affiliation>
+<email>ferro@dei.unipd.it</email>
+</author>
+<author>
+<name><surname>Conlan</surname>, <forename>Owen</forename></name>
+<affiliation>Trinity College Dublin, Ireland</affiliation>
+<email>owen.conlan@scss.tcd.ie</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">LP22</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Annotation</term>
+<term>document linking</term>
+<term>recommender system</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>teaching and pedagogy</term>
+<term>software design and development</term>
+<term>user studies / user needs</term>
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-09"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>Introduction</head>
+
+<p>The role of annotations in digital humanities is well known and documented (Agosti et al., 2004, 2007) (B&#233;langer, 2010). Subsequently, many different tools which allow for the annotation of digital humanities content have been developed. Unfortunately, tools designed specifically for an individual portal are typically only compatible with that system. More general solutions, which can be easily distributed across various sites, have been produced, but these systems often have limited functionality (only annotating a single content type, no sharing features etc.) (Okfn) (TILE, 2011). </p>
+
+<p>FAST-CAT (Flexible Annotation Semantic Tool &#8212; Content Annotation Tool) is a generic annotation system that directly addresses this challenge by implementing a convenient and powerful means of annotating digital content. It provides a reliable, portable manner of annotating both textual and image content in documents. The annotations are stored remotely by the FAST service which means that they may be shared across different sites maintaining the same data without the need for modification.</p>
+
+<p>FAST-CAT has been developed as a module for the Drupal 7 content management system making it extremely easy to add to an existing Drupal site. </p>
+
+<p>This paper introduces FAST, the backend service providing powerful annotation functionalities, and CAT, the frontend Web annotation tool, and discusses how its features are tackling important challenges within the Digital Humanities field.</p>
+</div>
+
+<div>
+<head>Features of FAST</head>
+
+<p>The FAST annotation service adopts and implements the formal model for annotations proposed by (Agosti and Ferro, 2008). Since then, FAST has been completely reengineered with added functionality such as provenance, logging and extended searching. According to this model, an annotation is a compound multimedia object which is constituted by different signs of annotation. Each sign materializes part of the annotation itself; for example, a textual sign would contain the textual content of the annotation, an image sign would contain images, etc. Each sign is characterized by one or more meanings of annotation, which specify the semantics of the sign, e.g. a sign whose meaning corresponds to the “title” field in the Dublin Core (DC) metadata schema or a sign carrying a question from the author whose meaning may be “question” or similar.</p>
+
+<p>The flexibility inherent in the annotation model allows us to create a connective structure, which is superimposed to the underlying documents managed by digital libraries. This can span and cross the boundaries of different digital libraries and the Web, allowing the users to create new paths and connections among resources at a global scale.</p>
+
+<p>FAST defines three different scopes which determine the visibility of an annotation &#8212; private, public and group. With FAST-CAT, the scope of an annotation is set to private by default, meaning that only the person who created the annotation can see it. These annotations may serve as reminders or notes within the document for the user, akin to writing in the margin of a page. </p>
+
+<p>The user can choose to make an annotation public, allowing other users to read their comments on a document. This has numerous applications for users of all levels of expertise. For instance, experienced users may choose to create public notes and annotations which can expand on the text of the document, helping less experienced users to comprehend the content. Less experienced users may indicate parts of the document which they would like to be explained further. </p>
+
+<p>Group annotations allow users to provide viewing and editing permissions on an annotation to specific users. This means that a team of people working towards a similar goal could communicate directly through the medium of annotation. In this way, it can be seen that FAST-CAT can play a crucial role in collaboration.</p>
+</div>
+
+<div>
+<head>Features of CAT</head>
+
+<p>CAT is a web annotation tool whose development began in July 2012. It has been developed with the goal of being able to annotate multiple forms of document content and assist in collaboration in the field of digital humanities. At present, CAT allows for the annotation of both text and images. The current granularity for annotation of text is at the level of the letter. For image annotations, the granularity is at the level of the pixel. This allows for extremely precise document annotation, which is very relevant to the Digital Humanities domain due to the variety of different assets that prevail. </p>
+<p>There are two types of annotation which may be created using CAT; a targeted annotation and a note. A targeted annotation is a comment which is associated with a specific part of the document. This may be a paragraph, a picture or an individual word, but the defining feature is that the text is directly associated with a specific entity. Conversely, a note is simply attached to the document. It is not associated with a specific item therein. Typically, this serves as a general comment or remark about the document as a whole. Further to allowing a user to comment on document text, the annotations created using CAT allow a user to link their annotations to other, external sources. Hence CAT can be used to construct a narrative through a number of documents. This is hugely beneficial for teachers using digital cultural collections and for students from primary to university level. For example, using these links a teacher can construct a predetermined path for their students to follow through a series of sites relevant to their chosen topic. Importantly, each link has comment text associated with it, allowing an educator to explain why this specific link is important or what the student should seek to gain from following this particular path.</p>
+
+<p>While CAT is beneficial for researchers and educators, it is also being used as an important source of user data for the content provider. Websites such as Amazon and YouTube are able to provide increasingly accurate recommendations for their individual users. These recommendations are facilitated by a user model which is driven by a combination of ratings, recently viewed items and numerous other factors. For a digital humanities site, annotations provide an insight into which entities are of interest to a user. If a user is frequently annotating a document, it is likely that this document is of interest to them. Furthermore, if the text being annotated is analysed, it may be possible to discern specific items of interest within the document. A digital humanities site which can determine what a user is attempting to study, then anticipate and recommend sources that may be of use to them in the future is profoundly useful. If well implemented, curators of digital humanities portals will see a dramatic improvement in the effectiveness with which researchers interact with their domain.</p>
+</div>
+
+<div>
+<head>FAST-CAT and CULTURA</head>
+
+<p>At present, FAST-CAT is being developed as part of the CULTURA project (Hampson et al., 2012a, 2012b). A key aspect of CULTURA is the production of an online environment that empowers users, of various levels of expertise, to investigate, comprehend and contribute to digital cultural collections. FAST-CAT is a key component of this environment and is currently being trialled with the help of three different user groups.</p>
+
+<p>A team of MPhil students and professional researchers will use the tool as part of their teaching, collaboration and research into the 1641 depositions. These users will be testing FAST-CAT in a free form manner. How they choose to annotate and what content they label is entirely determined by their own needs. The 1641 depositions are text only content, so these students will serve only to evaluate the text annotation aspect of the tool.</p>
+
+<p>Providing an alternative insight is a group of secondary school students from Lancaster whose teacher will use the annotations to guide them through a lesson. These students will also be working with the 1641 depositions.</p>
+
+<p>Masters students in Padua will test the image annotation functionality of FAST-CAT as part of their research into the IPSA collections of illuminated manuscripts. Similarly to the MPhil students, their approach to annotating documents will be determined by their own research methodology.</p>
+
+<p>The various features offered by FAST-CAT and its user interface will be evaluated in detail and comparisons will be drawn between the manner in which different user groups availed of annotations depending on their level of expertise and document content. Furthermore, FAST-CAT will also help to drive CULTURA’s comprehensive user model by providing the site with updates on the user’s behaviour regarding document annotation.</p>
+
+</div>
+<div>
+<head>Future Work</head>
+
+<p>Much of the further enhancement of FAST-CAT will be based on the feedback given by the user groups mentioned in the previous section. However there are already plans to expand and improve the system for future versions.</p>
+
+<p>While FAST-CAT is supported by modern browsers, to improve portability, implementations for older web browsers will be developed.</p>
+
+<p>FAST-CAT is a Drupal 7 module which means that, at present, it is only available for the annotation of websites which are built using the Drupal content management system. However, it only utilises a small amount of Drupal functionality to relay messages from the client computer to FAST. This dependency is easily removed as the majority of functionality is either client side or independent of Drupal. Designing and implementing a more server agnostic php script will allow FAST-CAT to be deployed on any website. This is one of the main items for future development of the system and will help to ensure that FAST-CAT can be utilised by as wide a range of content based websites as possible.</p>
+
+</div>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Agosti, M., G. Bonfiglio-Dosio, and N. Ferro</hi> (2007). A Historical and Contemporary Study on Annotations to Derive Key Features for Systems Design. <hi rend="italic">International Journal on Digital Libraries (IJoDL)</hi>. 8.1. 1-19.</bibl>
+
+<bibl><hi rend="bold">Agosti, M., &amp; N. Ferro</hi> (2008). A formal model of annotations of digital content. <hi rend="italic">ACM Transactions on Information Systems (TOIS)</hi>. 26.1. 3:1-3:57.</bibl>
+
+<bibl><hi rend="bold">Agosti and Ferro, I. Frommholz, &amp; U. Thiel</hi> (2004). Annotations in Digital Libraries and Collaboratories &#8212; Facets, Models and Usage. In <hi rend="italic">Proc. 8th European Conference on Research and Advanced Technology for Digital Libraries (ECDL 2004)</hi>, 244-255. LNCS 3232, Springer: Heidelberg.</bibl>
+
+<bibl><hi rend="bold">B&#233;langer, M.-E.</hi> (2010). <hi rend="italic">Ideals</hi>. <ref type="url" target="https://www.ideals.illinois.edu/bitstream/handle/2142/15035/belanger.pdf?sequence=2">https://www.ideals.illinois.edu/bitstream/handle/2142/15035/belanger.pdf?sequence=2</ref> (accessed October 25, 2012)</bibl> 
+
+<bibl><hi rend="bold">Hampson, C., M. Agosti, N. Orio, E. Bailey, S. Lawless, and O. Conlan</hi> (2012). <hi rend="italic">The CULTURA Project: Supporting Next Generation Interaction with Digital Cultural Heritage Collections.</hi> Limassol, Cyprus.</bibl>
+
+<bibl><hi rend="bold">Hampson, C., S. Lawless, E. Bailey, S. Yogev, N. Zwerdling, and D. Carmel</hi> (2012). <hi rend="italic">CULTURA: A Metadata-Rich Environment to Support the Enhanced Interrogation of Cultural Collections</hi>. Cádiz, Spain.</bibl>
+
+<bibl><hi rend="bold">Okfn.</hi> <hi rend="italic">Okfn Annotator</hi>.  <ref type="url" target="http://okfnlabs.org/annotator/">http://okfnlabs.org/annotator/</ref>(accessed June 2012).</bibl> 
+
+<bibl><hi rend="bold">TILE.</hi> (2011). <hi rend="italic">TILE: text-image linking environment</hi>. <ref type="url" target="http://mith.umd.edu/tile/">http://mith.umd.edu/tile/</ref> (accessed July 2012).</bibl> 
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

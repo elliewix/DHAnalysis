@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-434">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>An Environment to Support User-Structured Digital Humanities Sources</title>
+<author>
+<name><surname>Teehan</surname>, <forename>Aja</forename></name>
+<affiliation>An Foras Feasa, Ireland</affiliation>
+<email>aja.teehan@nuim.ie</email>
+</author>
+<author>
+<name><surname>Keating</surname>, <forename>John</forename></name>
+<affiliation>An Foras Feasa, Ireland</affiliation>
+<email>john.keating@nuim.ie</email>
+</author>
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">In this paper we describe a hosting environment,CRADLE, that is configurable and generalisable. At An Foras Feasa we repeatedly faced the same meta-Use Cases; researchers wished to create digital versions of their source-system (which might either be a single source represented by components within the system e.g. a manuscript of page-components, or multiple sources connected together, e.g. an archive of diverse materials1) that were reflective of their own, personal theoretical opinions, provided tools for investigation of those sources, and permitted re-use of many types such as teaching and learning. It was desirable that other researchers would be able to reinterpret and repurpose hosted digital source-systems to create a digital version consistent with their own theoretical position. This implied that any solution would need to be able to handle multiple, configurable, versions of a digital source-systems, and multiple metadata descriptions of any single component within the source-system.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">SP12</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Hosting environment</term>
+<term>systems modelling</term>
+<term>source management</term>
+               
+</keywords>
+<keywords scheme="original" n="topic">
+<term>music</term>
+<term>literary studies</term>
+<term>user studies/user needs</term>
+<term>information architecture</term>
+<term>digitisation &#8212; theory and practice</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+
+<body>
+<div>
+
+    <p>When building digital environments that provide suitable tools for scholarly research, there is a design tension between being generalisable and configurable: purpose-tailored tools only work with specific subjects and objects, while generalised tools can be difficult to use for a specific subject and object.  However, there are meta-Use Cases that traverse many disciplines, and it is possible to build tools to support these within in a single hosting environment. In this paper we describe a hosting environment, CRADLE, that is configurable and generalisable.</p>
+    <p>At An Foras Feasa we repeatedly faced the same meta-Use Cases; researchers wished to create digital versions of their <hi rend="italic">source-system</hi> (which might either be a single source represented by components within the system e.g. a manuscript of page-components, or multiple sources connected together, e.g. an archive of diverse materials<ref type="note" target="n01" n="1">1</ref>) that were reflective of their personal theoretical perspective, provided tools for investigation, and permitted personal and community re-use. This extended to researchers who wished to use the digital source-system to support their teaching remit and to others; allowing them to reinterpret and repurpose hosted digital source-systems to create a digital version consistent with their own theoretical position. This implied that any solution would need to be able to handle multiple, configurable, versions of a digital source-system, and multiple metadata descriptions of any single component within the source-system.</p>
+    <p>CRADLE (collaborate, research, archive, discuss, learn, engage) was designed as a general software solution to support the hosting of multi-modal Humanities sources, discourse and learning resources. CRADLE has been designed to provide support for a variety of theories and interpretations of source collections. In particular, the general, but sophisticated, creator-user can configure multiple structures for their collections, and also describe multiple versions of each source-object within the collection. Furthermore, it is possible for other users to repurpose and reconfigure those source-objects to suit their own perspective upon them.</p>
+    <p>In the following fictionalised scenarios, we provide an example of how CRADLE supports this multiplicity of representation. A post-doctoral fellow with the Institute, Jane, is a professional editor, researcher and lecturer. She wanted to create a digital critical edition of an old Irish tale, originally extant in three manuscripts, so that she and her students could undertake research upon them. The digital surrogate object was composed of high-quality images of the manuscripts, their diplomatic transcriptions in XML documents, her edited best-version critical edition in XML, and an english translation of the critical edition. CRADLE provides a comparison panel to show any two of the three versions at a time(figure 1). When examining text, the XML versions are rendered, and equivalent passages across image or text versions can be located. Other tools are available to her and are briefly described further on within this paper.</p>
+
+<figure><graphic url="ab-434.001"/><head><hi>Figure 1.</hi></head><p><hi>The CRADLE comparison panel for digital critical edition components.</hi></p></figure>
+
+    <p>Let us now examine the multiplicity of the structures and descriptions that underlie Jane’s version of her Irish Tale. Importantly, Jane self-consciously considers herself to be building a Digital Critical Edition, not a representation of the real work, within CRADLE. She holds that the XML diplomatic transcriptions are inherited from the extant manuscript, not an abstract <hi rend="italic">work</hi>. As such, they are less <hi rend="italic">authentic</hi> than the manuscripts.  Furthermore, she does not consider the images of the manuscripts to be surrogates for the original manuscripts because they have different materiality.  Each of the objects is described in metadata, but the images have two descriptions: one for their manuscript-self (in TEI), and one for the digital-image-self(in VRA). Thus, she would describe and arrange all of these objects in a hierarchy as shown below.</p>
+
+<figure><graphic url="ab-434.002"/><head><hi>Figure 2.</hi></head><p><hi>Jane's personal view of the structure of her source-system, a digital critical edition.</hi></p></figure>
+
+    <p>Another researcher and lecturer wants to (re-)use the source-system. Contrary to Jane, Steven believes that all extant versions, including the XML and the translation, have the same scholarly merit and that no single one is more <hi rend="italic">authentic</hi> than another. For him, all of the versions, including the XML documents, are children of a single, parent, abstract <hi rend="italic">work.</hi>  Steven wants to use CRADLE to describe this actual <hi rend="italic">work</hi>, not the digital version of it. Therefore, he wants the manuscripts to be fully represented by their digital images.  Steven wants to be able to explain this to his students, and then to examine the tale from his own scholarly perspective. In CRADLE it is possible dynamically redefine the spring-graph-displayed relationships between the components of the digital critical edition in a personalised user space ("My Collection"). He can also redefine the metadata description associated with the images &#8212; while Jane had associated two metadata descriptions with the images (VRA for the image and TEI for the original manuscript page), he only wants to describe the manuscript page because he is using the system as if it really were the <hi rend="italic">work</hi>. The structure of this system follows:</p>
+
+<figure><graphic url="ab-434.003"/><head><hi>Figure 3.</hi></head><p><hi>Steven’s personal view of the structure of Jane’s original source-system.</hi></p></figure>
+
+    <p>This configuration and reconfiguration of editions, in particular, along previously undefined lines and based on personal interpretation is a direct response to calls from Eggert (2009) and Burnard (1999), among others, for what Burnard terms “an uncritical edition”, and while operating at a higher level of abstraction than that to which he referred, it nonetheless allows for user-driven and defined editions. In this way, it extends the conceptual work already started in projects such as Wittgenstein's Nachlass: The Bergen Electronic Edition (BEE), which allows users to manipulate the edition within the online environment, but through predefined and encoded versions. Gabler’s recent call for a means to navigate the “pyre of humanities objects” using the tools of digital humanities to “allow us to relate, or to model, their relationships &#8212; to inscribe the relations and correlations into the materials we digitise” (Gabler, 2012) is also answered with this type of approach. It is possible to use it as a direct model of the source or system, where the reader-user suspends their disbelief and operates within the collection as if it really were the real-world collection, or as an indirect model, where the difference between the real-world collection and digital collection is made obvious and described in detail.</p>
+    <p>Existing repository solution software, such as FEDORA or Hydra, support the hosting of sources and the many configurations such a system would demand, but they require significant expertise to operate. Other digital library solutions could support multiple representations of sources, but do not supply source-specific tools for detailed investigation, such as the comparison panel; nor do they support dynamic source structural re-configuration in a way that is open to general Users to manage. As far as the authors are aware, no existing systems allow for the direct association of discussion forums or learning resources with sources within a single environment. CRADLE was therefore designed to sit on top of existing repository software(currently FEDORA), provide an intuitive front-end to users wishing to create complex digital versions of their source systems, and provide tools for the research-driven interrogation of those, along with teaching and learning support.</p>
+    <p>Below it is possible to see the configurable relationships within the test collection used during development of CRADLE; the 1950s newsreel Amharc Eireann Archive, held in the Irish Film Institute.</p>
+
+ <figure><graphic url="ab-434.004"/><head><hi>Figure 4.</hi></head><p><hi>Examining the relationships between the newsreel sources within an archive collection.</hi></p></figure>
+
+    <p>Metadata describing structure, such as TEI or VRA, can be interpreted by CRADLE and used to generate the relationship graphs. Here, two sample newsreels have been configured as a collection, and that collection is a child of the parent digital Amharc Eireann Archive object. On the left, the source is depicted.  On the right, its relationships are viewed in a spring-graph of objects, showing their associated learning resources (a single annotation) and discourse (35 discussions). Once the new user’s personal collection has been created (using the ‘Create New Collection’ option, in the top right of the image), it is the relationships within these graphs that can be clicked and edited to redefine the relationships. The creator-user can then control permission on the new collection to share it with colleagues, students or teachers.</p>
+    <p>Multiple perspectives on the nature and structure of humanities sources can be accommodated within CRADLE, even for the same real-world objects.  Using CRADLE to create models that not only describe our sources, but represent their structure in a manner that is manipulable, reconfigurable and shareable allows researchers to define their own understanding of their material, while also making that material usable to a much wider community. Along with the many source-specific tools, and the provision of a hosting environment for learning resources and discourse associated directly with the humanities sources, this provides a valuable solution to those active in the area of digital humanities research.</p>
+</div>
+
+</body>
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Burnard, L.</hi> (1999). <hi rend="italic">Is Humanities Computing an Academic Discipline? or, Why Humanities Computing Matters.</hi> IATH Seminar. <ref type="url" target="http://www.iath.virginia.edu/hcs/burnard.html">http://www.iath.virginia.edu/hcs/burnard.html</ref>. (Accessed 31 October 2012)</bibl>
+
+<bibl><hi rend="bold">Eggert, P.</hi> (2009). Text-encoding, Theories of the Text, and the “Work-Site”. <hi rend="italic">Literary and Linguistic Computing</hi> 20(4). 25. Oxford: Oxford University Press.</bibl>
+
+<bibl><hi rend="bold">Gabler, H.</hi> (2012). <hi rend="italic">The Importance of Digital Humanities.</hi> Panel 1. Digital Repository Ireland Conference: Realising the Opportunities of Digital Humanities. held 23-25 October 2012 in Dublin, Ireland.</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+
+<note xml:id="n01" n="1">These distinctions are loosely based on the VRA view of collections, objects and images.</note>
+
+</div>
+
+
+
+</back>
+</text>
+</TEI>
+
+

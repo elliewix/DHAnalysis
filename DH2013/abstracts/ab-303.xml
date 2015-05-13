@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+ <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-303"
+   xmlns:m="http://www.w3.org/1998/Math/MathML"
+   >
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Document classification based on what is there and what should be there</title>
+<author>
+<name><surname>Levy</surname>, <forename>Noga</forename></name>
+<affiliation>Tel-Aviv University, Israel</affiliation>
+<email>nogaor@gmail.com</email>
+</author>
+<author>
+  <name><surname>Wolf</surname>, <forename>Lior</forename></name>
+  <affiliation>Tel-Aviv University, Israel</affiliation>
+  <email>wolf@cs.tau.ac.il </email>
+</author>
+<author>
+  <name><surname>Stokes</surname>, <forename>Peter</forename></name>
+  <affiliation>King&#039;s College London, UK</affiliation>
+  <email>peter.stokes@kcl.ac.uk</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">In the context of digital paleography, we consider the key classification questions: when and where a given manuscript was written, and&#8212;if possible&#8212;by whom.
+
+A key challenge, given any system of descriptors, is that of attribute repeatability among documents of the same category. A descriptor that is marked as existing in a document is likely to exist; However, a descriptor might be unmarked due to an omission or simply because it is not present in the part of the manuscript that is available for inspection.
+
+In order to overcome this challenge, we suggest a new statistical tool that allows us to hypothesize which attributes should be turned-on and then perform classification on the augmented data.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP28</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Digital paleography</term>
+<term>Document classification</term>
+<term>Descriptor-based representations</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>other</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-18"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>Introduction</head>
+
+<p>Some of the key questions in paleography are those of classification, namely trying to ascertain when and where a given manuscript was written, and &#8212; if possible &#8212; by whom. Paleographers bring many skills and tools to bear on these questions in what is often a complicated and laborious task requiring reference to paleographic, linguistic and archaeological data, among others. Because it is difficult to quantify the degree of certainty in the final readings and assessments, or even to articulate the arguments underlying these readings, experts have begun to develop computer-based methods for paleographic research in which the description of the various findings is made explicit (Ciula, 2005; Stokes, 2008; Aussems and Brink, 2009; Hofmeister et al., 2009).</p>
+
+<p>Some of these computer-based approaches involve little or no human intervention. However, others require manual selection of regions in the image or manual recording of descriptors, that is, of features in the handwriting which are considered significant (Ciula, 2005; Stokes, 2008). Evaluating the significance of the features can be improved using statistical analysis (Levy et al., 2012). Such manual selection raises a key challenge in any system of descriptors, namely that of attribute repeatability among documents of the same category. Would two different people necessarily record the same descriptors for a given sample of writing? Surely some significant features would then be overlooked? If so then what are the implications, both for the accuracy of the results and for the perceived “objectivity” of the method. A descriptor that is marked as existing in a document is likely to exist; however, a descriptor might be unmarked due to an omission or simply because it is not present in the part of the manuscript that is available for inspection. Moreover, even very discriminative descriptors (those which are very important for distinguishing date, location or scribe) might not be present where expected due to scribal variance within the same location and date.</p>
+
+<p>In order to overcome this challenge, we suggest a new statistical tool that allows us to hypothesize which attributes should be turned on &#8212; in other words, which attributes are likely to have been omitted due to the limits of selection &#8212; and then to perform classification on the augmented data. Our results demonstrate that this tool is effective in computer-based document classification.</p>
+</div>
+
+<div>
+<head>Overview and results</head>
+
+<p>A dataset consisting of scribal hands in English Vernacular minuscule, ca. 990 – ca. 1035, is used, where “scribal hand” here refers to a single stint or block of writing by one person (Stokes, 2005; Stokes et al., 2013). These samples are spread across some 198 manuscripts and range from the main text of the book to later additions and notes or glosses between the lines or in the margins; they therefore can include anything from hundreds of pages to just one or two words.</p>
+
+<p>The hands were described using 289 descriptors (Stokes, 2008), where each descriptor indicates whether a certain letter-form is present; more precisely, whether a grapheme (or group of similar graphemes) written as specific allograph(s) appear in the manuscript, as well as forms of certain parts of letters such as ascenders, descenders, and pen-angle. Every sample of handwriting is described by its known or predicted place of writing (where possible) and the estimated range of dates of writing. The date and localisation is based on external evidence wherever possible, or otherwise by an expert assessment of paleographical judgment (Stokes, 2005). </p>
+
+<p>We focus on the samples whose place of writing is unknown but there is an educated guess to their origin, and try to verify their assumed place of writing. Overall, there are 67 such samples. The samples for which the place of writing is known, totaling 120 documents, serve as the training set. There are seven categories, such as Canterbury, Sherborne, and Worcester.</p>
+
+<p>The baseline classifier we employ is the popular Support Vector Machine (SVM) classifier (Cortes and Vapnik, 1995) since it is known to be robust and to provide results that are often very close to the best obtainable, and because it outperformed other classifiers which we tried such as adaBoost (Freund and Schapire, 1995) and classification trees (Breiman et al., 1984). For each location-based category a model is learned by considering all documents which are known to belong to this location as the positive training set, and all other labeled documents as the negative training set.</p>
+
+<p>Given a handwriting of an unknown origin, we apply all location-based models and compare the model producing the highest classification score with the assessment of the human paleographer (PAS). The obtained accuracy is 36%.</p>
+
+<p>Next, building on our intuition that an unmarked descriptor might actually be present in a given handwriting, we employ a matrix-based method often used for imputing missing data. The method approximates the observation matrix (in our case, the size equals the number of descriptors times the number of documents) as a low-rank matrix using Singular Value Decomposition (SVD). The missing elements are taken directly from the corresponding elements of the approximation (Hastie et al., 1999). Retraining and employing SVM to the obtained descriptor vectors yields only a slight improvement in performance to 37%.</p>
+
+<p>The imputed values are real-valued. We aim to choose an appropriate cut-off threshold for each of the categories. To this end, for every class, we rank all documents by the classification score obtained by the specific SVM model. Then, for each descriptor, we ask what would be the threshold least likely to occur by chance (see “Technical details” below).</p>
+
+<p>Applying all the per-descriptor thresholds, a new set of binary exists/does-not-exist representations is obtained for each handwriting, and SVM-based classification is applied as before. This new method shows a remarkable increase in performance, and 49% of the documents are classified correctly. Examples of augmented representations are presented in Fig.1.</p>
+
+<p>To further illustrate the effectivness of the method, we consider not just the first classification provided by the system, but the top three. SVM on the original descriptor vectors provides the correct answer as one of the top-three classes 78% of the time. Using the SVD based imputation method, the performance remains 78%. Finally, using the new method, the performance improves to 84%.</p>
+</div>
+<div>
+<head>Technical details</head>
+
+<p>The underlying method compares two ranked lists and returns the pair of thresholds which are the least likely to occur by chance. In our case, one list is a list of classification scores for a specific category, and the other contains imputed scores for a given descriptor. Both ranked lists are of the same length – <hi rend="math">n</hi> – which is the number of handwritings.</p>
+
+<p>Let <hi rend="italic">x </hi>and <hi rend="italic">y</hi> be two vectors in <hi rend="math"><hi rend="math_alt_font">&#8477;</hi><hi rend="superscript">n</hi></hi>. Applying a threshold to either vector divides the elements of this vector into two groups. A natural association between x and y would capture whether there exist thresholds such that the sets of obtained indices significantly overlap.</p>
+
+  <p>The hypergeometric distribution <hi rend="math">f(k;n,i,j)</hi> captures the probability of obtaining a certain intersection size <hi rend="math">k</hi> between two sets <hi rend="math">X</hi> and <hi rend="math">Y</hi> of given sizes <hi rend="math">i:=|X|</hi>, and <hi rend="math">j:=|Y|</hi>, where the elements of the two sets are drawn randomly from the set <hi rend="math">1…n: P(| X <hi rend="math_alt_font">&#8745;</hi> Y|= k) = f(k;n,i,j)</hi>.</p>
+
+  <p>To evaluate the statistical significance of a certain intersection size, we consider the probability of obtaining an intersection at least as large by random drawing from <hi rend="math">1…n</hi> two sets of sizes <hi rend="math">i</hi> and <hi rend="math">j</hi>. To that end we employ the hypergeometric cumulative distribution function <hi rend="math">F(k;n,i,j)</hi>, which measures the probability of obtaining an intersection size of up to <hi rend="math">k: F(k;n,i,j)= <hi rend="math_alt_font">&#931;</hi><hi rend="superscript">k</hi><hi rend="subscript">c = 0</hi> f(c;n,i,j)</hi>. The statistical significance we consider (probability of an intersection size of at least <hi rend="math">k</hi>) is therefore given by the tail probability: <hi rend="math">G(k;n,i,j)=1-F(k-1;n,i,j)</hi>.</p>
+
+  <p>Given a vector <hi rend="math">x <hi rend="math_alt_font">&#8712;</hi> <hi rend="math_alt_font">&#8477;</hi><hi rend="superscript">n</hi></hi> of unique values, there are <hi rend="math">n + 1</hi> possible threshold-based subsets of the indices <hi rend="math">1…n</hi>, i.e., sets <hi rend="math">X</hi> such that for every <hi rend="math">p <hi rend="math_alt_font">&#8712;</hi> X</hi>, <hi rend="math">x<hi rend="subscript">q</hi> &lt; x<hi rend="subscript">p</hi></hi> implies <hi rend="math">q <hi rend="math_alt_font">&#8712;</hi> X</hi>. Each such subset is uniquely identified by its size. Denote these subsets by <hi rend="math">X<hi rend="subscript">0</hi>, X<hi rend="subscript">1</hi>, . .,X<hi rend="subscript">n</hi></hi> such that <hi rend="math">|X<hi rend="subscript">i</hi>|= i.</hi></p>
+
+  <p>Considering also the vector <hi rend="math">y</hi>, ordered in a similar manner and giving rise to the ordered subsets of indices <hi rend="math">Y<hi rend="subscript">0</hi>,…, Y<hi rend="subscript">n</hi></hi>. Let <hi rend="math">I <hi rend="math_alt_font">&#8712;</hi> <hi rend="math_alt_font">&#8477;</hi><hi rend="superscript">n <hi rend="math_alt_font">&#215;</hi> n</hi></hi> be the matrix such that <hi rend="math">I<hi rend="subscript">i,j</hi> =|X<hi rend="superscript">i</hi> <hi rend="math_alt_font">&#8745;</hi> Y<hi rend="superscript">j</hi>|.</hi> </p>
+
+<p>We define the matrix <hi rend="math">P</hi> where <hi rend="math">P<hi rend="subscript">i,j</hi></hi> is the probability of obtaining an intersection size of at least <hi rend="math">I<hi rend="subscript">i,j</hi></hi> for sets of sizes <hi rend="math">i</hi> and <hi rend="math">j</hi>, when randomly drawing indices from <hi rend="math">1…n : P<hi rend="subscript">i,j</hi> = G(I<hi rend="subscript">i,j</hi>,n,i,j).</hi></p>
+
+<p>We seek thresholds whose values produce the minimal value of <hi rend="math">P</hi>, i.e., they produce the subsets of sizes <hi rend="math">I</hi> and <hi rend="math">j</hi> for which the following minimum is obtained: <hi rend="math">min<hi rend="subscript">i,j</hi> P<hi rend="subscript">i,j</hi>.</hi></p>
+
+  <p>For <hi rend="math">n</hi> documents, a naive computation of the matrix <hi rend="math">I</hi> requires <hi rend="math">O(n<hi rend="superscript">3</hi>)</hi>. This can be improved to <hi rend="math">O(n<hi rend="superscript">2</hi>)</hi> by considering the lists of indices obtained by sorting <hi rend="math">x</hi> and <hi rend="math">y</hi>.</p>
+
+  <p>Let <hi rend="math">C</hi> be the matrix defined such that <hi rend="math">C<hi rend="subscript">i,j</hi> = 1</hi> if the	<hi rend="math">j</hi>th sorted index of <hi rend="math">y</hi> is in the first <hi rend="math">i</hi> sorted indices of <hi rend="math">x</hi>. <hi rend="math">C</hi> can be computed from <hi rend="math">x,y <hi rend="math_alt_font">&#8712;</hi> <hi rend="math_alt_font">&#8477;</hi><hi rend="superscript">n</hi></hi> in time and storage complexity of <hi rend="math">O(n<hi rend="superscript">2</hi>)</hi>. The following lemma shows that <hi rend="math">I</hi> can be computed from <hi rend="math">C</hi> in a similar time complexity by performing cumulative sum over the rows of <hi rend="math">C.</hi></p>
+
+  <p><hi rend="bold">Lemma 1.</hi> <hi rend="math">For every x,y <hi rend="math_alt_font">&#8712;</hi> <hi rend="math_alt_font">&#8477;</hi><hi rend="superscript">n</hi>, and for C and I as above, I<hi rend="subscript">i,j</hi> = <hi rend="math_alt_font">&#931;</hi><hi rend="superscript">k</hi><hi rend="subscript">c = 0</hi>C<hi rend="subscript">i,k</hi> .</hi></p>
+
+<p>Once <hi rend="math">I</hi> is computed,	<hi rend="math">P</hi> is readily evaluated based on the hypergeometric cumulative distribution function. An efficient algorithm is given in (Berkopec, 2007), which has as many iterations as <hi rend="math">min(n &#8211; i, n &#8211; j)</hi>. Using the identity <hi rend="math">F(k;n,i,j)=1 &#8211; F(n &#8211; k &#8211; 1;n,m &#8211; i,j) </hi>(Riordan, 1968), the number of iterations can be further reduced to <hi rend="math">min(n &#8211; i, n &#8211; j, i, j)</hi>. Still, considering that <hi rend="math">P<hi rend="subscript">i,j</hi></hi> is evaluated for all <hi rend="math">i=1…n</hi> and <hi rend="math">j=1…n</hi> this is computationally demanding for large <hi rend="math">n.</hi></p>
+
+<p>The following lemma can be used to reduce the number of evaluations of the hypergeometric cumulative distribution function. It states that by examining the elements of the matrix <hi rend="math">C</hi> around the location <hi rend="math">i, j,</hi> we are able to determine whether <hi rend="math">P<hi rend="subscript">i,j</hi></hi> can potentially obtain the minimal value out of all elements of <hi rend="math">P</hi>.</p>
+
+  <p><hi rend="bold">Lemma 2.</hi> <hi rend="math">Given any vectors x and y, let C, I, and P be defined as above, then if P<hi rend="subscript">i,j</hi> is a minimal value of the matrix P the following two conditions hold: (a) C<hi rend="subscript">i,j</hi>= 1; and (b) j &lt; n <hi rend="math_alt_font">&#8658;</hi> C<hi rend="subscript">i,j+1</hi> = 0.</hi></p>
+
+<p>Experimentally it is found that using lemma 2, between 75% and 85% of the entries of the matrix <hi rend="math">P</hi> need not be computed, where the larger n is, the higher the ratio of discarded entries. </p>
+</div>
+<div>
+<head>Discussion</head>
+
+<p>Descriptor-based approaches are a key component in shifting paleography from an authoritative discipline to an evidence-based one in which expert rulings can be explained. In an evidence-based approach, decisions should be based on descriptors in the manuscript which can be readily verified by other experts. It should be noted that the ability to rely on concrete evidence does not mean that classification accuracy is improved. The classification of the authoritative expert who is free from the need to explain herself would probably be at least as accurate, if not very much more. Thus, in order to achieve high levels of performance, it is crucial to have accurate decision rules and models on top of the descriptors. </p>
+
+<p>It is also worth observing that none of these systems are truly objective. The premise of the approach taken here is that different people will inevitably make different decisions when selecting and recording descriptors: that the input data in any system is necessarily the result of selection and human decisions with everything that this entails. Indeed, the method outlined in this paper relies on an initial set of descriptors which have themselves been selected by experts, and so any bias in that original selection will necessarily be reﬂected in the descriptors which it predicts. Nevertheless, it does help to reduce the degree of variation when different people are entering data into a system, as normally happens in large projects in the Digital Humanities. As well as improving classification, it can also suggest descriptors that have been overlooked, and so project members who are entering the data can then go and check their work. In this respect the method applies much more widely than simply to paleography, since the problem of consistency in selection across a team is widespread.</p> 
+
+<p>Building on the observation that unmarked descriptors are occasionally missing for the “wrong” reasons, we are able to improve classification accuracy significantly. The method relies on several underlying assumptions that should be considered. First, by means of the low-rank approximation, the prediction of the missing descriptors is based on past correlations between the various descriptors. Therefore, a unique configuration of descriptors would be augmented to become a more conventional one, possibly losing valuable information. Second, by means of examining the correlations between descriptors and class memberships, our method assumes that the descriptors are discriminative. As a future direction we can apply our method more selectively, only to descriptors that appear (on the training data) to be informative.</p>
+
+</div>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Aussems, J. F. A., and A. Brink</hi> (2009). Digital palaeography. In Rehbein et al., 293–308.</bibl>
+
+<bibl><hi rend="bold">Berkopec, A.</hi> (2007). Hyperquick algorithm for discrete hypergeometric distribution. <hi rend="italic">Journal of Discrete Algorithms</hi>, 5(2):341–347.</bibl>
+
+<bibl><hi rend="bold">Breiman, L., J. Friedman, R. Olshen, and C. Stone</hi> (1984). Classification and Regression Trees. Monterey, CA: Wadsworth and Brooks.</bibl>
+
+<bibl><hi rend="bold">Ciula, A. </hi>(2005). Digital palaeography: Using the digital representation of medieval script to support palaeographic analysis. <hi rend="italic">Digital Medievalist</hi>, 1(1). </bibl>
+
+<bibl><hi rend="bold">Cortes, C., and V. Vapnik</hi> (1995). Support-vector networks. <hi rend="italic">Machine Learning</hi>, 20(3):273–297.</bibl>
+
+<bibl><hi rend="bold">Freund, Y., and R.  Schapire</hi> (1995). A desicion-theoretic generalization of on-line learning and an application to boosting. In <hi rend="italic">Computational learning theory ,</hi> 23–37). Springer Berlin/Heidelberg.‏</bibl>
+
+<bibl> <hi rend="bold">Hastie, T., R. Tibshirani, G. Sherlock, M. Eisen, P. Brown, and D. Botstein</hi> (1999). Imputing missing data for gene expression arrays. Technical report, Division of Biostatistics, Stanford University.</bibl>
+
+<bibl><hi rend="bold">Hofmeister, W., A. Hofmeister-Winter, and G. Thallinger</hi> (2009). Forschung am rande des palographischen zweifels: Die edv-basierte erfassung individueller schriftzge im projekt damals. In Rehbein et al. (eds.), 261–92.</bibl>
+
+<bibl><hi rend="bold">Levy, N., L. Wolf, N. Dershowitz, and P. Stokes</hi> (2012). Estimating the distinctiveness of graphemes and allographs in palaeographic classification.  <hi rend="italic">Digital Humanities</hi> (DH), 2012.</bibl>
+
+<bibl><hi rend="bold">Rehbein, M., P. Sahle, and T. Schaßan (eds.) </hi>(2009). Kodikologie und Palographie im Digitalen Zeitalter - Codicology and Palaeography in the Digital Age. <hi rend="italic">Schriften des Instituts fr Dokumentologie und Editorik.</hi> Books on Demand, Norderstedt.</bibl>
+
+<bibl><hi rend="bold">Riordan, J.</hi> (1968). Combinatorial identities. <hi rend="italic">Wiley series in probability and mathematical statistics</hi>. Wiley, New York [u.a.].</bibl>
+
+<bibl><hi rend="bold">Stokes, P.</hi> (2005). English vernacular script ca 990 – ca 1035. Unpublished Ph.D. dissertation.</bibl>
+
+<bibl><hi rend="bold">Stokes, P. </hi>(2007-2008). Palaeography and image-processing: some solutions and problems. <hi rend="italic">Digital Medievalist</hi>, 3.</bibl>
+
+<bibl><hi rend="bold">Stokes, P. A., S. Brookes, J. M. Vieira, S. Hugel, P. Caton, B. Caballero,  R. Mullett, and N. Jakeman</hi> (2011-2013). Digipal: Digital resource and database of palaeography, manuscripts and diplomatic.</bibl>
+
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">  LW was supported by a personal research grant from Google Inc.</note>
+<note xml:id="n02" n="2">  The research leading to these results has received funding from the European Union Seventh Framework  Programme (FP7) under grant agreement no. 263751.</note>
+
+
+</div>
+
+
+</back>
+</text>
+</TEI>
+

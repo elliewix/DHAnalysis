@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-258">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>eResearch Tools to Support the Collaborative Authoring and Management of Electronic Scholarly Editions</title>
+<author>
+<name><surname>Osborne</surname>, <forename>Roger</forename></name>
+<affiliation>University of Queensland, Australia</affiliation>
+<email>r.osborne@uq.edu.au</email></author>
+<author>
+<name><surname>Gerber</surname>, <forename>Anna</forename></name>
+<affiliation>University of Queensland, Australia</affiliation>
+<email>a.gerber@uq.edu.au </email>
+</author>
+<author>
+<name><surname>Hunter</surname>, <forename>Jane</forename></name>
+<affiliation>The University of Queensland</affiliation>
+<email>j.hunter@uq.edu.au</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">The aim of the Australian Electronic Scholarly Editing Project (AustESE) is to develop a set of interoperable services to support the production of electronic scholarly editions by distributed collaborators in a Web 2.0 environment. One of the fundamental challenges faced by the project is the development of an interoperable data model. In this paper we describe the project’s overall objectives and the ontology that we are using to support the AustESE Workbench. We also discuss the practical and theoretical implications of an integrated workbench as it relates to several case studies.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP27</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>digital editions</term>
+<term>ontologies</term>
+<term>workflow</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>ontologies</term>
+<term>scholarly editing</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-12"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<div>
+<head>1. Introduction</head>
+
+<p>The <hi rend="italic">Australian Electronic Scholarly Editing</hi> project is a collaboration between the University of Queensland, University of NSW, Curtin University, University of Sydney, Queensland University of Technology, Loyola University, Chicago and the University of Saskatchewan. The aim of the project is to develop a set of interoperable services to support the production of electronic scholarly editions by distributed collaborators in a Web 2.0 environment.</p>
+
+<p>One of the fundamental challenges faced by the AustESE project is the development of an interoperable data model. In recent years, research focussed on the production and use of electronic scholarly editions has increasingly involved the development and employment of ontologies (Robinson and Meschini 2010; Romanello et al. 2009). The Text Encoding Initiative has provided the necessary elements to describe the textual and material character of documents, but TEI has addressed neither the naming of components of an edition nor the relationships between these components (Robinson &amp; Meschini 2010). Such frameworks are necessary to support the interoperability of the electronic edition and to facilitate and coordinate greater levels of user engagement with annotations.</p>
+
+<p>One of the most significant contributions that ontologies can make to electronic scholarly editions is to more precisely model and capture the dynamic nature of the ‘work’. This provides a more stable framework onto which metadata and annotations can be accurately attached, and also facilitates the efficient execution of workflows that support scholarly editing practices. The importance of acknowledging the complexity and the contingency of the work has been made clear in recent years (Shillingsburg 1997, Eggert 2009). In order to logically integrate the elements of a work into a knowledge-site (Shillingsburg 2006) or a work-site (Eggert 2005), and, at the same time, protect the integrity of transcriptions and images, our approach enables the augmentation of images and transcriptions with stand-off mark-up in the form of annotations. Such an approach contributes not only to theories of scholarly textual editing, but also to theories of knowledge representation in computation (Clement 2011). In this paper we describe the project’s overall objectives and the ontology that we are using to underpin the AustESE Workbench, and we will discuss the practical and theoretical implications of the delivery of an integrated workbench that promises to re-invigorate scholarly editing in Australia.</p>
+</div>
+
+
+<div>
+<head>2. Project Objectives and Ontology</head>
+
+<div>
+<p>The specific objectives of the AustESE project are to provide the Australian scholarly editing community with an online integrated Workbench that provides:</p>
+
+<list type="unordered">
+<item><hi rend="italic">collation tools</hi> for automatically detecting, identifying and highlighting variations between different versions of a work and that allow the relationship between texts to be visualized, authored or edited</item>
+<item><hi rend="italic">annotation tools</hi> that:
+<list type="unordered">
+<item>enable scholars to create and reply to scholarly commentary attached to texts, variants and images;</item>
+<item>capture the annotations as stand-off markup that is discoverable, shareable, and re-usable;</item>
+<item>provide search, browse and visualisation interfaces for annotations;</item>
+<item>enable both manual and automated migration of annotations between transcriptions and facsimiles.</item>
+</list>
+</item>
+<item>a <hi rend="italic">workflow engine</hi> that captures the sequence of tasks and decision-making steps as well as the provenance of generating an electronic scholarly edition;</item>
+<item><hi rend="italic">publishing tools</hi> that automatically compile electronic scholarly editions into standard publication formats;</item>
+<item>and a <hi rend="italic">repository</hi> that supports the discovery, search, retrieval, exploration and re-use of texts and electronic editions.</item>
+</list>
+</div>
+
+<div>
+<head>AustESE Workbench</head>
+
+<p>The AustESE workbench coordinates the scholarly editing workflow and provides access to online tools that support scholarly editing tasks. For the AustESE project, we have adopted a Service-Oriented Architecture, illustrated in Figure 1, with the aim of developing modular, reusable, and potentially distributed components that can be assembled and substituted according to the requirements of each scholarly edition project. To implement this architecture, we are extending existing scholarly editing tools with REST APIs to enable their integration with our content repository and workflow engine, and implementing new open source software to bridge the gaps between existing tools.</p>
+
+<figure>
+<graphic url="ab-258.001" />
+<head>FIGURE 1:</head> <p>AUSTESE TECHNICAL ARCHITECTURE</p></figure>
+</div>
+
+<div>
+<head>Ontologies</head>
+
+<p>The AustESE ontology includes key classes Work, Version, Artefact, Agent and Event, and provides the data model used to organise the metadata and conceptual entities represented within the repository.  The AustESE ontology can be mapped onto the IFLA FRBR to link with entities from related databases such as AustLit: The Australian Literature Resource, however it provides additional concepts to those defined by FRBR, to make it easier to model and analyse manuscript materials and fine-grained differences at the level of ‘impressions’ and ‘states’.</p>
+
+<p>The Open Annotation W3C Community Group provides a common data model (Sanderson, Ciccarese &amp; Van de Sompel, 2012) for representing annotations across tools, architectures and collections. The model, which is expressed as an OWL ontology, is intended to be extensible, so that it can be refined to meet the annotation requirements of specific communities. To support the production of apparatus and commentary within electronic editions, we build on the OA core data model with specialised annotation <hi rend="italic">Motivations</hi>, as illustrated in Figure 2. We categorise annotations as <hi rend="italic">ExplanatoryNotes</hi>, providing commentary or <hi rend="italic">TextualNotes</hi>, which provide support for editorial decisions. <hi rend="italic">VariationAnnotations</hi> are a type of <hi rend="italic">TextualNote</hi> that describe textual variation between versions of a work. These annotation <hi rend="italic">Motivations</hi> can be used in search queries and for filtering and sorting annotations to enable selective display and inclusion for print or electronic publication.</p> 
+ 
+<figure>
+<graphic url="ab-258.002" />
+<head>Figure 2:</head> <p>AustESE Open Annotation Motivation subclasses</p></figure>
+
+
+<p>We have defined additional properties that may be used within the body of a <hi rend="italic">VariationAnnotation</hi>, (as shown in the example in Figure 3), to record metadata about the agent, date or cause of the variation as well as documentary evidence including links to manuscript facsimiles. Within our RDF-based annotation tool and annotation repository, we have adopted a Linked Data approach of using HTTP URIs to identify entities that may be referenced within annotations, including <hi rend="italic">Agents</hi> (<hi rend="italic">people</hi> or <hi rend="italic">organisations</hi>) and conceptual entities (<hi rend="italic">Works, Versions, Artefacts, Events</hi>). We use FOAF and Dublin Core to record annotation provenance, and we apply properties from the AustESE ontology to relate the transcriptions and corresponding facsimile images that are being annotated.</p> 
+
+<p>Such a conceptual framework necessarily directs attention to the material artefacts it aims to describe, ‘making the archives talk’ through the arguments of editors and readers (West 2011). A ‘virtual archive’ of artefact images provides a foundation upon which transcription and commentary can be overlaid, satisfying the archival impulse of scholarship, and providing a space for multiple, and, perhaps, competing views about how works could and should be represented (Shillingsburg 2010). With the Workbench, the AustESE project aims to facilitate such processes and to support collaborative editorial models that contribute to the development of social editions (Siemens et al 2012).</p>
+ 
+<figure>
+<graphic url="ab-258.003" />
+<head>Figure 3:</head> <p>Annotating Textual Variation</p></figure>
+
+</div>
+</div>
+
+<div>
+<head>3. Practical and Theoretical Implications</head>
+
+<p>The development of the AustESE Workbench has been informed by several case-studies, particularly the requirements of Paul Eggert’s Charles Harpur Critical Archive and Roger Osborne’s electronic edition of Joseph Furphy’s <hi rend="italic">Such is Life</hi>. The complex textual and material situations faced by these projects require the type of infrastructure provided by the AustESE Workbench in order to efficiently store, describe, organise and analyse large numbers of image files and their related transcriptions. Projects such as these can still argue for a particular editorial rationale and contribute new, critically established texts to the system.  But with the facility to support solitary and collaborative interpretation in the form of annotations across the archive, the editor’s version can be critiqued or ignored if readers object to the editorial approach.  Hans Walter Gabler has recently described the emerging phase of electronic scholarly editions as a ‘paradigm of a relational interplay of discourses, dynamically correlated both among themselves and with an edition’s readers and users: that is, to a paradigm once again of text and ongoing commentary.’ (Gabler 2010) While granting due attention to the integrity of the images and transcriptions within the archive, such a paradigm lends itself to the compilation of ‘revision narratives’ (Bryant 2002) and general commentary that will help to reinvigorate and sustain research on literary works into the future. The AustESE Workbench will achieve this by drawing on Web 2.0 technologies and the Semantic Web to support collaborative social editions and/or finely argued editions produced by solitary editors.</p>
+</div>
+
+<div>
+<head>Acknowledgements</head>
+<p>The University of Queensland is proud to be in partnership with the National eResearch Collaboration Tools and Resources (NeCTAR) project to create a unique opportunity to develop eResearch Tools that support the Collaborative Authoring and Management of Electronic Scholarly Editions.</p>
+</div>
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Australian Electronic Scholarly Editing Project</hi> <ref type="url" target="http://itee.uq.edu.au/~eresearch/projects/austese/services.html">http://itee.uq.edu.au/~eresearch/projects/austese/services.html</ref></bibl>
+
+<bibl><hi rend="bold">Bryant, J.</hi> (2002). <hi rend="italic">The Fluid Text: A Theory of Revision and Editing for Book and Screen</hi>. Ann Arbor: The University of Michigan Press, 157-161.</bibl>
+
+<bibl><hi rend="bold">Clement, T.</hi> (2011). Knowledge Representation and Digital Scholarly Editions in Theory and Practice.  <hi rend="italic">Journal of the Text Encoding Initiative</hi> 1. http://jtei.revues.org/203</bibl>
+
+<bibl><hi rend="bold">Eggert, P.</hi> (2005). Text-encoding, Theories of the Text, and the “Work-site.” <hi rend="italic">Literary and Linguistic Computing</hi>. 20. 425-35.</bibl>
+
+<bibl><hi rend="bold">Eggert, P.</hi> (2009). The Editorial Gaze and the Nature of the Work, in <hi rend="italic">Securing the Past: Conservation in Art, Architecture, and Literature</hi>. Cambridge: Cambridge University Press. 214-40</bibl>
+
+<bibl><hi rend="bold">Gabler, H. W.</hi> (2010). Theorizing the Digital Scholarly Edition. <hi rend="italic">Literature Compass</hi> <hi>7 (2)</hi>. 43.</bibl>
+
+<bibl><hi rend="bold">Robinson, P., and F. Meschini</hi> (2010). Works, Documents, Texts and Related Resources for Everyone, DH 2010, <ref type="url" target="http://dh2010.cch.kcl.ac.uk/academic-programme/abstracts/papers/html/ab-816.html">http://dh2010.cch.kcl.ac.uk/academic-programme/abstracts/papers/html/ab-816.html</ref></bibl>
+
+<bibl><hi rend="bold">Romanello, M. et al.</hi> Rethinking Critical Editions of Fragmentary Texts by Ontologies, Elpub, Milano, Italy, <ref type="url" target="http://conferences.aepic.it/index.php/elpub/elpub2009/paper/view/158">http://conferences.aepic.it/index.php/elpub/elpub2009/paper/view/158</ref></bibl>
+
+<bibl><hi rend="bold">Sanderson, R., P. Ciccarese, and H. Van de Sompel</hi> (2012). ‘Open Annotation Core Data Model’, <ref type="url" target="http://openannotation.org/spec/core">http://openannotation.org/spec/core</ref></bibl>
+
+<bibl><hi rend="bold">Shillingsburg, P.</hi> (1997). Text as Matter, Concept and Action. In <hi rend="italic">Resisting Texts: Authority and Submission in Constructions of Meaning</hi>, Ann Arbor: The University of Michigan Press. 49-103</bibl>
+
+<bibl><hi rend="bold">Shillingsburg, P.</hi> (2006). An Electronic Infrastructure for representing Script Acts. In <hi rend="italic">From Gutenberg to Google</hi>. Cambridge: Cambridge University Press. 80-125.</bibl>
+
+<bibl><hi rend="bold">Shillingsburg, P.</hi> (2010). How Literary Works Exist: Implied, Represented, and Interpreted. In McCarty, W. (ed).  <hi rend="italic">Text and Genre in Reconstruction: Effects of Digitalization on Ideas, Behaviours, Products and Institutions</hi>. Cambridge: OpenBook Publishers. 165-182.</bibl>
+
+<bibl><hi rend="bold">Siemens, R., et al.</hi> (2012). Toward modeling the <hi rend="italic">social</hi> edition: An approach to understanding the electronic scholarly edition in the context of new and emerging Media. <hi rend="italic">Literary and Linguistic Computing</hi> <hi>27 (4)</hi>. 445-61.</bibl>
+
+<bibl><hi rend="bold">West, J. L. W.</hi> (2011). <hi rend="italic">Making the Archives Talk</hi>. Pennsylvania University Press.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

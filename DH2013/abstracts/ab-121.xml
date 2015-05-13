@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-121">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Collaborative Authorship: Conrad, Ford and Rolling Delta</title>
+<author>
+<name><surname>Rybicki</surname>, <forename>Jan</forename></name>
+<affiliation>Jagiellonian University, Krakow, Poland</affiliation>
+<email>jkrybicki@gmail.com</email>
+</author>
+<author>
+<name><surname>Hoover</surname>, <forename>David L.</forename></name>
+<affiliation>New York University, USA</affiliation>
+<email>david.hoover@nyu.edu </email>
+</author>
+<author>
+<name><surname>Kestemont</surname>, <forename>Mike</forename></name>
+<affiliation>University of Antwerp, Belgium</affiliation>
+<email>mike.kestemont@gmail.com</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper deals with &quot;Rolling Delta&quot;, a method of identifying collaborators in a literary work based on a comparison of the frequencies of most frequent words between the collaborative work in question and several individual works by each of the collaborators. This method is then applied to analyze works written jointly by Joseph Conrad and Ford Madox Ford.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP11</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Rolling Delta</term>
+<term>most frequent words</term>
+<term>collaborative writing</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>literary studies</term>
+<term>stylistics and stylometry</term>
+<term>authorship attribution / authority</term>
+<term>english studies</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-02"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<p>Burrows’s “Delta” is a popular authorship attribution algorithm (Burrows 2002). Suppose that we have an anonymous text which has to be attributed to one of a series of candidate authors for whom we have a number of reference samples as training material. Delta computes a dissimilarity score between the test item and all reference samples and attributes the anonymous text to the author of the sample to which it is most similar. We propose a procedure called “Rolling Delta”, reminiscent of a number of earlier applications (e.g. Van Dalen-Oskam &amp; Van Zundert 2007; Burrows 2010; Van Zundert &amp; Van Dalen-Oskam 2012; Hoover 2012). The general goal is to visualize stylistic shifts in texts, for instance, in order to pinpoint authorial takeovers in the case of collaborative authorship. An implementation of Rolling Delta is freely available (Eder, Kestemont &amp; Rybicki 2012).</p>
+
+<p>First, each reference text is segmented into equal-sized, partially overlapping samples. If we specify a ‘window size’ of 5,000 and a ‘step size’ of 100, for example, the first sample of a text contains words 1-5,000, the second 101-5,101, etc. The procedure uses the relative frequencies of the <hi rend="italic">n</hi> most frequent words in the reference collection. Subsequently, we compute a centroid (<hi rend="italic">C</hi>) for each reference text, containing the mean relative frequency for each word in its windows, and the standard deviation. Then we divide the test text into windows and compute the ‘Delta’ between each test window <hi rend="italic">W</hi> and each reference centroid, using the following formula&#8212; see Argamon (2008) for more details:</p>
+
+ <figure><graphic url="ab-121.m01"/></figure>
+
+<p>After “rolling” through the test text, we plot the resulting Delta series for each reference text. The lower the Deltas for a reference text, the more similar the style in the test windows &#8212; and vice versa. If the curve for a text shows a sudden drop, this may indicate a stylistic change in the test text, caused, for instance, by one author taking over from another. One can use vertical lines in the plot to mark the position of certain events in the test text as an aid in interpretation (e.g. chapter beginnings).</p>
+
+<p>This method seems the perfect tool to study the notable literary collaboration between Joseph Conrad (1857-1924) and Ford Madox Ford (1873-1939): their three joint works, <hi rend="italic">The Inheritors</hi> (1901), <hi rend="italic">Romance</hi> (1903) and <hi rend="italic">The Nature of a Crime</hi> (1909, 1924), and the various authorship claims by Ford, including that concerning a fragment of <hi rend="italic">Nostromo</hi> (1904). The Conrad/Ford controversy was enhanced by the two authors’ neurotic behavior that eventually took its toll on their collaboration and friendship. Physical evidence about authorship is complicated by the fact that Ford (and others, including John Galsworthy) took Conrad’s dictation when he was sick or indisposed or could not make a deadline.</p>
+
+<p><hi rend="italic">The Inheritors</hi> is Ford’s second published novel, coming out nine years after <hi rend="italic">The Shifting of the Fire</hi>. He did most of the writing himself, though he discussed it extensively with Conrad, whose role, he said, was “to give each scene a final tap” (Saunders 1996: 135-36). For <hi rend="italic">Romance</hi>, based on Ford’s earlier unfinished <hi rend="italic">Seraphina</hi>, however, the consensus seems to be that it is about two thirds Conrad and one third Ford. According to Conrad:
+
+<quote>We collaborated right through, but it may be said that the middle part of the book is mainly mine with bits by F.M.H. &#8212; while the first part is wholly out of “Seraphina”: the second part is almost wholly so. The last part is certainly three quarters MS. F.M.H. with here and there a par. by me.</quote>
+</p>
+
+<p>According to Ford, “parts one, two, three and five are a mosaic of alternately written passages while part four is entirely Conrad’s work” (Karl 1997: 147). Najder further comments that “the change in numbering the parts of <hi rend="italic">Seraphina</hi> has caused some trouble for Conrad’s and Ford’s biographers. As late as the summer of 1901, the novel consisted of four parts, but ended, as it does now, with Kemp’s trial. While continuing to write part 3, Conrad expanded it into another, which became part 4, and the last, part 5, written by Ford” (Najder 2007: 317). The third collaborative work, <hi rend="italic">The Nature of a Crime</hi>, was written almost exclusively by Ford and heavily edited by Conrad.</p>
+
+<p>Ford’s possible contribution to <hi rend="italic">Nostromo</hi> &#8212; mostly based on the one large part of the manuscript in his hand &#8212; is limited to the novel’s second part. Brice quotes a letter from Ford to Keating (1923 or 1925) saying he wrote 10,000 words of <hi rend="italic">Nostromo</hi> that he remembers and that he “could place my finger on fairly substantial passages” (Brice 2004: 79), and another 20,000 that he only faintly remembers and would find difficult to trace. Later, in <hi rend="italic">Return to Yesterday</hi>, Ford himself minimizes his contribution, saying that what he “wrote into Conrad’s books was by no means great in bulk” (Brice 2004: 78) and was “so frequently emended out of sight that they could not make as much difference to the completion and glory of his prose as three drops of water poured into a butt of Malmsey” (Brice 2004: 79). This study tries to find the drops of Ford’s water in Conrad’s Malmsey.</p>
+
+<p>Figure 1 shows a bootstrap consensus tree of works and collaborations by Conrad and Ford, produced from multiple cluster analyses of the most frequent word frequencies for this collection of texts (Eder &amp; Rybicki 2011). It places <hi rend="italic">Romance</hi> decisively among works by Conrad, but the two other collaborative texts among those by Ford.</p>
+
+<figure>
+<graphic url="ab-121.001" />
+<head>Figure 1.</head>
+ </figure>
+
+<p>Figure 2 is a ‘Rolling Delta’ diagram produced for <hi rend="italic">The Inheritors</hi>, which is compared to four novels by Conrad (<hi rend="italic">The Nigger of the Narcissus</hi> 1897, <hi rend="italic">Lord Jim</hi> 1900, <hi rend="italic">Chance</hi> 1913, and <hi rend="italic">Victory</hi> 1915) and four by Ford (<hi rend="italic">The Fifth Queen</hi> 1906, <hi rend="italic">Privy Seal</hi> 1907, <hi rend="italic">The Fifth Queen Crowned</hi> 1908, and <hi rend="italic">The Good Soldier</hi> 1915). The analysis was performed for the 1,000 most frequent words appearing in all the texts with a ‘rolling window’ of 5000 words, stepping by 1,000. Throughout the collaborative novel, Ford’s style (part that of <hi rend="italic">The Benefactor</hi>, part that of <hi rend="italic">Privy Seal</hi>) dominates over that of Conrad’s &#8212; except for a short fragment that coincides very closely with Chapters 16 and 17 of <hi rend="italic">The Inheritors</hi> (contained within vertical lines <hi rend="italic">a</hi> and <hi rend="italic">b</hi>); here, the greatest similarity is to <hi rend="italic">Chance</hi> and <hi rend="italic">Heart of Darkness</hi>. Interestingly, however, Conrad’s earliest work among the four used for comparison, <hi rend="italic">The Nigger of the Narcissus</hi>, is the outlier almost invariably in <hi rend="italic">The Inheritors</hi>.</p>
+
+<figure>
+<graphic url="ab-121.002" />
+<head>Figure 2</head>
+</figure>
+
+<p>Figure 3 presents the same comparison for <hi rend="italic">Romance</hi>. This novel, in good agreement with Figure 1, exhibits a domination of Conradian style (mostly that of <hi rend="italic">Lord Jim</hi>, <hi rend="italic">Heart of Darkness</hi> and <hi rend="italic">Chance</hi>). Ford’s idiom (this time, in its <hi rend="italic">The Benefactor</hi> variety) makes itself seen in a single long fragment:  Part 1, Chapter 5 (between lines <hi rend="italic">a</hi> and <hi rend="italic">b</hi>) and in a much shorter one (Part 2, Chapter 7: <hi rend="italic">c</hi>).</p>
+
+<figure>
+<graphic url="ab-121.003" />
+<head>Figure 3</head>
+</figure>
+
+<p>Figure 4 shows the same results for <hi rend="italic">The Nature of a Crime</hi>, which strongly diverge from the previous collaboration. Ford’s style (mostly that of <hi rend="italic">The Good Soldier</hi>) dominates the final joint effort of the two writers, with two minor and non-decisive interventions of Conrad’s style (esp. <hi rend="italic">Under Western Eyes</hi>).</p>
+
+<figure>
+<graphic url="ab-121.004" />
+<head>Figure 4</head>
+</figure>
+
+<p>Figure 5 tests the hypothesis that Ford did indeed contribute to Conrad’s <hi rend="italic">Nostromo</hi>, but provides little to support it: Conrad’s style dominates Ford’s throughout.</p>
+
+<figure>
+<graphic url="ab-121.005" />
+<head>Figure 5</head>
+</figure>
+
+<p>The application above of Rolling Delta produces interesting results. Chief among them is a confirmation of the usual (if uncertain) consensus about the proportions of the styles of both writers in their three collaborations. The decisive domination of Ford’s style over Conrad’s in <hi rend="italic">The Inheritors</hi> and <hi rend="italic">The Nature of A Crime</hi> is interesting, as it seems to have survived Conrad’s extensive editing, confirmed by biographical evidence. A similar stylometric visibility of the underlying authorial personality that persists despite subsequent editing has been reported in a study of an edited translation (Heydel &amp; Rybicki 2012). From a methodological point of view, “Rolling Delta” for <hi rend="italic">R</hi> (devised by Kestemont) is a welcome addition to the latest stylometric tools, with its potential to pinpoint the change(s) from author to author in collaborative works. Further experiment are required to explain why, in some cases, the Rolling Delta curves tend to rise and fall in unison. It is possible that these fluctuations are simply indicative of minor stylistic fluctuations in the reference text, or, when these differences are larger, indeed its “originality” or rather its “deviation” with respect to the rest of the texts.</p>
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Argamon, S.</hi> (2008). Interpreting Burrows’s Delta: Geometric and probabilistic foundations. <hi rend="italic">Literary and Linguistic Computing</hi>. 23. 131-147.</bibl>
+<bibl><hi rend="bold">Brice, X.</hi> (2004). Ford Madox Ford and the Composition of Nostromo. <hi rend="italic">The Conradian: the Journal of the Joseph Conrad Society</hi> (Autumn) 75-95.</bibl>
+<bibl><hi rend="bold">Burrows, J.</hi> (2002). 'Delta': A measure of stylistic difference and a guide to likely authorship. <hi rend="italic">Literary and Linguistic Computing</hi>. 17. 267-287.</bibl>
+<bibl><hi rend="bold">Burrows, J.</hi> (2010). Never Say Always Again: Reflections on the Numbers Game. In McCarty, W. (ed), <hi rend="italic">Text and Genre in Reconstruction. Effects of Digitalization on Ideas, Behaviours, Products and Institutions</hi>. Cambridge: Open Book Publishers. 13-36. </bibl>
+<bibl><hi rend="bold">Eder, M. and J. Rybicki</hi> (2011). Stylometry with R. In <hi rend="italic">Digital Humanities 2011: Conference abstracts</hi>, Stanford University. 308-311.</bibl>
+<bibl><hi rend="bold">Eder, M., M. Kestemont, and J. Rybicki</hi> (2012). <hi rend="italic">Computational Stylistics</hi>. <ref type="url" target="https://sites.google.com/site/computationalstylistics/">https://sites.google.com/site/computationalstylistics/</ref></bibl>
+<bibl><hi rend="bold">Heydel, M., and J. Rybicki</hi> (2012). The Stylometry of Collaborative Translation. Woolf’s <hi rend="italic">Night and Day</hi> in Polish. <hi rend="italic">Digital Humanities 2012 Conference Abstracts</hi> 212-217.</bibl>
+<bibl><hi rend="bold">Hoover, D. </hi> (2004). Testing Burrows’s Delta. <hi rend="italic">Literary and Linguistic Computing</hi> 19. 453-475.</bibl>
+<bibl><hi rend="bold">Hoover, D.</hi> (2012). <hi rend="italic">The Tutor's Story</hi>: A Case Study of Mixed Authorship. <hi rend="italic">English Studies</hi> 93. 324-339.</bibl>
+<bibl><hi rend="bold">Karl, F.</hi> (1997). <hi rend="italic">A Reader's Guide to Joseph Conrad</hi>, Syracuse, NY: Syracuse University Press.</bibl>
+<bibl><hi rend="bold">Najder, Z.</hi> (2007) <hi rend="italic">Joseph Conrad: A Life</hi>. trans. by Najder, H. New York: Camden
+House.</bibl>
+<bibl><hi rend="bold">Saunders, M.</hi> (1996). <hi rend="italic">Ford Madox Ford: A Dual Life</hi>.  1. New York: Oxford University Press.</bibl>
+<bibl><hi rend="bold">Van Dalen-Oskam, K., and J. Van Zundert</hi> (2007). Delta for Middle Dutch &#8212; Author and copyist distinction in <hi rend="italic">Walewein</hi>. <hi rend="italic">Literary and Linguistic Computing</hi>. 22. 345-362.</bibl>
+<bibl><hi rend="bold">Van Dalen-Oskam, K., and J. Van Zundert</hi> (2012). Delta in 3D: Copyist distinction by Scaling Burrows’s Delta. <hi rend="italic">Digital Humanities 2012 Conference Abstracts</hi>. 402-404.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

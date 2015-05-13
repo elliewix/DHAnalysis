@@ -1,0 +1,233 @@
+
+
+
+Commodification of words
+Displaying relevant ads next to non-paid relevant search results is part of Google's original, highly successful business model (Kaplan, 2011). Advertisers bid on certain keywords they want their ad associated with and pay only if Google displays 
+1
+ their ad. Which ads are displayed thus does not solely depend on the query keywords, but also on the bidding price advertisers have been willing to pay for the association of their ads to these keywords, as well as the quality score Google has attributed to their ad (Google, 2012a; Kaplan 2011; Lee 2011, p. 439). Advertising accounts for 97% of Google's revenues, which represented about 3 billion dollars per months in 2012/2011 (Singel 2011). By making advertisers bid on certain keywords to advertisers, Google has commodified words (Lee 2011).
+
+    
+The value of keywords change over time. Keywords are traded within Google's Second Price Auction (Edelman et al. 2007). Google's Diane Tang, creator of the Keyword Pricing Index, illustrates the different trading values of various keywords with the following examples: there are generally “very competitive keywords, like 'flowers' and 'hotels'”, whereas other keywords may cost generally little or — such as “snowboarding”, more expensive in winter — vary seasonally (Levy 2009). As a result, there exist different bidding strategies for advertisers (cf. D'Avanzo et al. 2011, p. 143-147 for a discussion of the most common strategies). However, Lee (2011) points out that — although online marketing literature about possible and recommended bidding strategies is abundant — “none of the studies found in advertising journals adopted a critical perspective” (p. 438).
+
+
+
+
+
+
+
+Google-ese, Googlais and Googlisch
+The fact that words have become a commodity with different monetary values and can be “bought” from Google implies that there is commodified language, which can be represented in a lexicon containing all the words and expressions which are actually “bought”. The lexicon of the commodified derivate of the English language is 
+Google-ese.
+2
+ (Analogical to the English language, 
+Googlais
+ is Google's commodified derivate of the French language, 
+Googlisch
+ its German equivalent etc.; other ad-selling search engines with potentially different algorithms are associated with different lexica, leading to e.g. 
+Bingese
+, 
+Bingais
+ and 
+Bingisch
+ for Bing.) 
+Google-ese
+ therefore consists of a certain proportion of the roughly 500''000 dictionary entries (McCrum et al. 2001), some non-dictionary English words like names and places, foreign language expressions and “non-words” such as acronyms, misspelled and mistyped words etc.
+
+
+
+
+
+
+
+Search engine biases
+The very existence of 
+Google-ese
+, 
+Googlais
+, 
+Googlisch
+ and the like — i.e. specific keywords bought by advertisers and marketers — account for the company's financial success. Therefore, the “importance of pleasing the advertisers and marketers who support Google and other search engines can hardly be underestimated”, underlines Hinman (2008, p. 70). There is “potential for abuse” (p. 73 ff.), notably in the form of “subtle biases” when it comes to search results and search in general (p. 71). Since commodified language is the baseline for a search engine's revenue, there is reason to explore potential biases when it comes to the treatment of words.
+
+    
+Many scholars from different fields have demonstrated the existence of search engine bias empirically (e.g. Edelman 2011), analytically and (e.g. Diaz 2008) conceptually (e.g. Hinman 2008), overall adopting a critical viewpoint (cf. also Lawrence 2009, Zimmer 2009 p.7, Pariser 2011). Studies addressing search engine bias refer mostly to issues of information access, i.e. search engines as gatekeepers (cf. also Gasser 2006), as well as issues of knowledge shaping (Grimmelman 2009, Hinman 2008). But although that there is general acknowledgement of search engines' impact on access to and classification of knowledge, researchers agree that there has been little to no research focus on search engines' impact on society (Hargittai 2007, p.769; Lewandowski 2012, p.5; Spink and Zimmer 2008, p.344; Zimmer 2009, p. 516-517), let alone search engine's impact on language itself.
+
+
+
+
+
+
+
+Linguistic Prosthesis
+Certain functions of Google search are visibly impacting language by transforming the initial search query: “related searches”, for instance, associates our initial keyword to other keywords we might not have thought of; “Did you mean” suggests alternatives to our initial keyword, which was either not correctly spelled or not popular (Google 2012b); auto-completion suggests ways of finishing our initial keywords on our behalf while we are typing according to “purely algorithmic factors (including popularity of search terms)” (Google 2012c). These functions act as a mediation between our thoughts (i.e. the initially intended query) and its expression. We suggest to call them linguistic prosthesis (Kaplan 2011). If search engine biases manifest in linguistic prosthesis, the expression of our thoughts is seamlessly transformed by Google's algorithms.
+
+
+
+
+
+
+
+Modeling of linguistic prosthesis and corresponding commercial value
+To progress in the understanding of the effects of these linguistic prosthesis, we have started a systematic and periodic modeling of two important functions. The fist function A(
+x) -> {s}
+ models the association between a string 
+x 
+(a partial word or sentence) in the search engine query field and a set of string 
+{s}
+ (autocompletion). The second function V(
+s
+) evaluates the suggested bidding value for a given string 
+s
+. We would like to measure whether the value V(
+s
+) is influencing the suggested set of strings given by the function A(x). Both functions may, of course, vary over time, and we have to measure A(
+x
+) and V(
+s
+) as time-dependent in order to document their relation at a given time t and, potentially, their evolution and possible correlation.
+
+    
+One obvious difficulty is the size of the space we need to monitor and the scale of all measurements: it is nearly impossible to test all the possible x entries at regular intervals over time. However, this scalability issue is very similar to a well-documented problem in the field of optimal experiment design (Fedorov 1972), addressed by artificial intelligence researchers for at least 20 years (Schmidhuber 1991). When a space is too big to explore in its entirety and when, in addition, each trial is costly – which is exactly our situation – one needs to choose smartly what query to test. In the context of their research in open-ended learning systems, Oudeyer and Kaplan have designed a optimal experiment design algorithm that performs precisely this task (details can be found in Oudeyer et al 2007, Kaplan and Oudeyer 2009): instead of trying random configuration, the algorithm detects situations in which its predictions progress maximally, and it then chooses the input signal in order to optimize its own progress. Following this principle, the algorithm running the measurements of the functions A(x) and V(s) avoids "uninteresting" subspaces in order to focus on the actions which are most likely to bring progress. Typically, it will focus its “attention” on subspaces of query strings with significant change in return value as measured by V(s). A daily script thus selects a set Q of n queries each day based on the optimal design algorithm. This produces a set S of results suggestions. For each s of S, we re-test the Value V(s).
+
+    
+Our ongoing experiment, focusing on the commodified lexicon 
+Google-ese
+, derivated from the English language, is being conducted during one year. In that timeframe we hope to elaborate — at least on certain subspaces — a sufficiently good model of the two functions and their evolution over time to test various possible correlations between the two. These models will then be made public in form of a structured corpus, enabling long-time analysis and further studies by other research groups.
+
+    
+This preliminary study will not permit to assess whether or not — and if so: how — Google's linguistic economy is impacting natural languages. It will, however, allow us to make first educated guesses on the linguistic effects of autocompletion algorithms and keyword bidding. In a broader context, this research is an example of how academia can study technological "black boxes", such as search engines' algorithms, without accessing their inner workings. We believe that by their properties (i.e. enabling us to explore big, costly spaces) optimal experiment design algorithms are of great pertinence for this kind of "reverse engineering" modeling, and such research is likely to become of crucial societal relevance within the coming years.
+
+
+
+
+
+    
+
+
+
+
+Byrne, J.
+ (2009). “Do You Speak Google-ese?” 
+Jodybyrne.com,
+ May 31 2009. 
+http://www.jodybyrne.com/1312.
+ (accessed October 31, 2012)
+D’Avanzo, E., T. Kuflik, and A. Elia
+ (2011). “Online Advertising Using Linguistic Knowledge.” In 
+D'Atri, A., Ferrara, M., George, J. F., and Spagnoletti, P.
+ (eds), 
+Information Technology and Innovation Trends in Organizations.
+ 143–150. Physica-Verlag HD.
+Diaz, A.
+ (2008). Through the Google Goggles: Sociopolitical Bias in Search Engine Design. In Spink, A. and Zimmer, M. (eds), 
+Web search multidisciplinary perspectives.
+  Berlin: Springer.
+Edelman, B. H.
+ (2011). “Bias in Search Results?: Diagnosis and Response.” 
+The Indian Journal of Law and Technology
+7
+: 16–32.
+Edelman, M., M. Ostrovsky, and M. Schwarz
+ (2007). “Internet Advertising and the Generalized Second-Price Auction: Selling Billions of Dollars Worth of Keywords.” 
+American Economic Review
+97.1
+: 242–259.
+Fedorov, V. V.
+ (1972). 
+Theory of Optimal Experiment.
+ New York: Academic Press.
+Gasser, U.
+ (2006). “Regulating Search Engines: Taking Stock and Looking Ahead.” 
+Yale Journal of Law & Technology
+: 124–157.
+Google.
+ (2012a). “Quality Score — AdWords Help”. 
+http://support.google.com/adwords/bin/answer.py?hl=en&answer=2454010.
+ (accessed October 31, 2012)
+Google.
+ (2012b). “‘Did You Mean’ — Web Search Help”. 
+http://support.google.com/websearch/bin/answer.py?hl=en&answer=1723.
+ (accessed October 31, 2012)
+Google.
+ (2012c). “Autocomplete — Web Search Help”. 
+http://support.google.com/websearch/bin/answer.py?hl=en&answer=106230.
+ (accessed October 31, 2012)
+Grimmelmann, J.
+ (2009). “The Google Dilemma.” 
+New York Law School Law Review
+ 53, no. 939.
+Hargittai, E.
+ (2007). “The Social, Political, Economic, and Cultural Dimensions of Search Engines: An Introduction.” 
+Journal of Computer-Mediated Communication
+12.3
+: 769–777.
+Hinman, L. M.
+ (2008). “Searching Ethics: The Role of Search Engines in the Construction and Distribution of Knowledge.” In Spink, A. and M. Zimmer, (eds). 
+Web search multidisciplinary perspectives
+. Berlin: Springer.
+Kaplan, F.
+ (2009). Quand Les Mots Valent De L’or. 
+Le Monde Diplomatique
+, November. 
+http://www.monde-diplomatique.fr/2011/11/KAPLAN/46925.
+ (accessed October 31, 2012)
+Lee, M.
+ (2011). “Google Ads and the Blindspot Debate.” 
+Media, Culture & Society
+ 33(3) (April 1, 2011): 433–447.
+Levy, S. 
+ (2009).“Secret of Googlenomics: Data-Fueled Recipe Brews Profitability.” 
+WIRED,
+ 22 2009. 
+http://www.wired.com/culture/culturereviews/magazine/17-06/nep_googlenomics?currentPage=all.
+ (accessed October 31, 2012)
+McCrum, R. M., W. Cran, and R. MacNeil
+ (2001). “The Story of English.” 
+Number of Words in the English Language,
+. 
+http://hypertextbook.com/facts/2001/JohnnyLing.shtml
+. (accessed October 31, 2012)
+Miller, D.
+ (2012). “Google Voice Search Coming to iOS | Macworld.” 
+Macworld,
+ August 8, 2012. 
+http://www.macworld.com/article/1168078/google_voice_search_coming_to_ios.html
+. (last accessed: October 31, 2012)
+Oudeyer, P.-Y., and F. Kaplan
+ (2009). “Stable Kernels and Fluid Body Envelopes.” 
+SICE Journal of Control, Measurement, and System Integration
+48.1
+Oudeyer, P.-Y., F. Kaplan, and V. V. Hafner
+ (2007). “Intrinsic Motivation Systems for Autonomous Mental Development.” 
+IEEE Transactions on Evolutionary Computation
+11.2
+: 265–286.
+Pariser, E.
+ (2011). 
+The Filter Bubble. What the Internet Is Hiding from You.
+ London: Penguin Books Ltd.
+Schmidhuber, J.
+ (1991). “Curious Model-building Control Systems.” 2:1458–1463. Singapore: IEEE.
+Singel, R. 
+ (2011). “How Does Google Make the Big Bucks? An Infographic Answer  Wired Business Wired.com.” 
+Wired Business,
+ 19 2011. 
+http://www.wired.com/business/2011/07/google-revenue-sources/
+. (accessed October 31, 2012)
+Spink, A., and M. Zimmer
+ (2008). “Conclusions and Further Research.” In Spink, A. and Zimmer, M., 
+Web search multidisciplinary perspectives
+. Berlin: Springer.
+Zimmer, M.
+ (2009). “Renvois of the Past, Present and Future: Hyperlinks and the Structuring of Knowledge from the Encyclopédie to Web 2.0.” 
+New Media & Society
+11
+: 95–113.
+
+
+
+
+Notes
+
+Advertisers choose between two options: display or pay per view (PPV — by thousands) or pay per click (PPC). Differentiating the two options is not necessary at this point, and we therefore use “display” without referring specifically to the PPV option, since PPC also requires the ad to be displayed.
+Please note that the expression “Google-ese” has previously occurred in different contexts, notably in two different blogposts describing (1) the language entered in Google's search query field (Miller 2012); (2) machine-generated translation text by Google Translate (Byrne 2009) — none of which we are referring to here.
+

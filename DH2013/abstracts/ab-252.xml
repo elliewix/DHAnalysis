@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-252">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>MapServer for Swedish Language Technology</title>
+<author>
+<name><surname>Dann&#233;lls</surname>, <forename>Dana</forename></name>
+<affiliation>University of Gothenburg, Sweden</affiliation>
+<email>dana.dannells@svenska.gu.se</email>
+</author>
+<author>
+<name><surname>Borin</surname>, <forename>Lars</forename></name>
+<affiliation>University of Gothenburg, Sweden</affiliation>
+<email>lars.borin@svenska.gu.se</email>
+</author>
+<author>
+<name><surname>Olsson</surname>, <forename>Leif-J&#246;ran</forename></name>
+<affiliation>University of Gothenburg, Sweden</affiliation>
+<email>leif-joran.olsson@svenska.gu.se</email>
+</author>
+</titleStmt>
+            
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">The MapServer application at the Swedish Language Bank provides new opportunities for visualizing geographical information found in its large pool of written natural language texts. The application is capable of performing coordinate search on the basis of recognized place-names and rendering both static and dynamic maps that point to their geographical locations.</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>GIS</term>
+<term>MapServer</term>
+<term>place-name recognition</term>
+                    
+</keywords>
+<keywords scheme="original" n="topic">
+<term>natural language processing</term>
+<term>other</term>
+                   
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="poster">
+<body>
+<div>
+<div>
+
+<head>Introduction</head>
+
+      <p>Digital maps can today ensure a convenient and efficient rendering of geographical information
+in real time. Perhaps the best-known source for providing a search interface to the contents of
+tens of millions of computers on the internet, together with free of charge digital maps for anyone
+to use, is the Google Map server. The development of digital maps supported by Google is to a
+large extent driven by the needs of the industry whose requirements range from weather maps to
+driving instructions obtained from GPS information. Because of this focus, geographical
+locations which are found in literary texts &#8212; e.g. no longer existing places or older name variants
+– are not guaranteed to be available in this pool of modern digital maps. Moreover, freely
+available digital maps are naturally not optimized for all kinds of applications. The maps
+available on the internet are often copyright-protected. This lack of flexibility and the need to
+point to geographical locations of places that are found in literary texts are two of the main
+reasons why our group at <hi rend="italic">Spr&#229;kbanken</hi> ‘the Swedish Language Bank’<ref type="note" target="n01" n="1">1</ref> have decided to
+investigate an alternative open-source solution, a platform called MapServer (Kropla 2005).<ref type="note" target="n02" n="2">2</ref></p>
+</div>
+
+<div>
+<head>Spr&#229;kbanken</head>
+
+     <p>The Swedish Language Bank is a research unit which focuses on developing linguistic resources
+and tools for use by researchers and online visitors from different research fields such as
+linguistics, language technology, and language learning (Borin et al., 2012a; 2012b). It offers
+access to a vast amount of written natural language text resources including historical and literary
+texts. Recently, we have recognized the need of combining place-name recognition with
+geographical information systems as an alternative source of valuable information about the texts
+and a way to increase text understanding. The role of geographic visualization in the language
+learning and usage has been explored in various projects (Lieberman, et al. 2010; Gregory and
+Hardie 2011; Bibiko 2012).</p>
+</div>
+
+<div>
+<head>MapServer at Spr&#229;kbanken</head>
+
+<p>MapServer is an open source Geographic Information System (GIS) development environment
+for producing maps from geographic data on the Web.<ref type="note" target="n03" n="3">3</ref> Its overall architecture is depicted in
+figure 1. The user interface provides two different ways to render geographic information: (1)
+static maps to present a small number of places that appear within the same geographical location
+and (2) dynamic maps that allow the user to change the amount of data appearing on the map in
+real time. The geographical dataset consists of both spatial and attribute data and is acquired from
+Geofabrik.<ref type="note" target="n04" n="4">4</ref> It contains raw data (Open Street Map format) and shape files (Haklay and Weber,
+2008).<ref type="note" target="n05" n="5">5</ref></p>
+
+<figure><graphic url="ab-252.001"/><head>Figure 1.</head><p>The client-server architecture of MapServer.</p></figure>  
+
+<p>MapServer accesses an MySQL database to perform coordinate place-name search. This database
+is automatically maintained by accessing and extracting place-names from the GeoNames
+database.<ref type="note" target="n06" n="6">6</ref> Because the GeoNames database contains redundant information about place locations,
+disambiguation is performed. The disambiguation algorithm calculates the Euclidian distance
+(using the Pythagorean theorem) between places with the same name. If two or more places with
+the same name occur within three kilometers of each other, only one of these occurrences is
+added to the database, the one with the most recent modification date. In the case of modification
+date ties, the place with the highest latitude value is kept.</p>
+</div>
+
+<div>
+<head>Visualization of automatically recognized place-names</head>
+
+<p>The named entity recognizer (NER) and annotator used for annotating place names from Swedish
+literature (Borin et al., 2007; Borin and Kokkinakis 2010) automatically extracts names across
+large collections of texts with very high precision. In the kind of texts we are dealing with, the
+distribution of place entities across the whole document is quite common. The reader may
+sometimes lose track of where the story takes place, in particular if the plot of the story ranges
+over a wide geographical area. For example, in classical Swedish author Selma Lagerl&#246;f’s famous
+two-part work <hi rend="italic">The wonderful adventures of Nils</hi> more than 50 place names are mentioned. A
+reader interested in learning more about these places will benefit from a visualization of their
+locations.</p>
+
+<p>With the NER tool it is possible extract the place names mentioned in the text and formulate a
+query with these names to the MapServer application which will render a dynamic map pointing
+to the geographical locations corresponding to the names. An example is provided in figure 2.</p>
+
+<figure><graphic url="ab-252.002"/><head>Figure 2.</head><p>A dynamic map of the place names mentioned in <hi rend="italic">The wonderful adventures of Nils.</hi></p></figure> 
+</div>
+
+<div>
+<head><hi>Summary</hi></head>
+
+<p>The MapServer application used by the Swedish Language Bank provides new opportunities for
+visualizing geographical information found in its large repository of written texts, in particular
+literary texts. The application is capable of performing coordinate search on the basis of
+recognized place names and rendering both static and dynamic maps that display their
+geographical locations.</p>
+</div>
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Bibiko, H. J.</hi> (2012). Visualization and online presentation of linguistic data. In Frank Seifart,
+Geoffrey Haig, Nikolaus P. Himmelmann, Dagmar Jung, Anna Margetts, and Paul
+Trilsbeek (eds), <hi rend="italic">Potentials of Language Documentation: Methods, Analyses, and
+Utilization.</hi> 105–110. Honolulu: University of Hawaii Press.</bibl>
+
+<bibl><hi rend="bold">Borin, L., and D. Kokkinakis</hi> (2010). Literary onomastics and language technology. In Willie van
+Peer, Sonia Zyngier, and Vander Viana (eds), <hi rend="italic">Literary Education and Digital Learning:
+Methods and Technologies for Humanities Studies.</hi> 53–78. Hershey/New York:
+Information Science Reference.</bibl>
+
+<bibl><hi rend="bold">Borin, L., D. Kokkinakis, and  L. J. Olsson</hi> (2007). <hi rend="italic">Naming the past: Named entity and
+animacy recognition in 19th century Swedish literature. ACL 2007 Workshop on
+Language Technology for Cultural Heritage Data (LaTeCH 2007).</hi> 1–8</bibl>
+
+<bibl><hi rend="bold">Borin, L.,  M. Forsberg, and J. Roxendal</hi> (2012a). <hi rend="italic">Korp &#8212; the corpus infrastructure of
+Språkbanken. Proceedings of the Eighth International Conference on Language
+Resources and Evaluation (LREC’12),</hi> Istanbul, Turkey, May 2012.</bibl>
+
+<bibl><hi rend="bold">Borin, L.,  M. Forsberg, L. J. Olsson, and J.Uppström</hi> (2012b). <hi rend="italic">The open lexical
+infrastructure of Språkbanken. Proceedings of the Eighth International Conference on Language
+Resources and Evaluation (LREC’12),</hi> Istanbul, Turkey, May 2012.</bibl>
+
+<bibl><hi rend="bold">Gregory, I. N. and A. Hardie</hi> (2011). Visual GISting: bringing together corpus linguistics and
+geographical information systems. <hi rend="italic">Literary and Linguistic Computing,</hi> <hi rend="bold">3</hi>:297–314.</bibl>
+
+<bibl><hi rend="bold">Haklay, M. and P. Weber</hi>(2008). Open street map: User generated street maps. <hi rend="italic">IEEE Pervasive
+Computing,</hi> 7: 12-18.</bibl>
+
+<bibl><hi rend="bold">Kropla, B.</hi> (2005). <hi rend="italic">Beginning MapServer: Open source GIS development (expert’s voice in open
+source).</hi> Berkely, CA: Apress.</bibl>
+
+<bibl><hi rend="bold">Lieberman, M. D., H. Samet, and J. Sankaranarayanan</hi> (2010). <hi rend="italic">Geotagging with local lexicons
+to build indexes for textually-specified spatial data.</hi> <hi rend="italic">Proceedings of the 26th
+International Conference on Data Engineering,</hi> California, USA. 201-212.</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1"><ref type="url" target="http://spraakbanken.gu.se">http://spraakbanken.gu.se</ref></note>
+<note xml:id="n02" n="2">There are other open-source GIS alternatives, such as GeoServer and PostGIS, that presumably would
+serve these needs equally well.</note>
+<note xml:id="n03" n="3"><ref type="url" target="http://www.mapserver.org">http://www.mapserver.org</ref></note>
+<note xml:id="n04" n="4"><ref type="url" target="http://www.geofabrik.de/data/download.html">http://www.geofabrik.de/data/download.html</ref></note>
+<note xml:id="n05" n="5"><ref type="url" target="http://wiki.openstreetmap.org/wiki/Sv:Map_Features">http://wiki.openstreetmap.org/wiki/Sv:Map_Features</ref></note>
+<note xml:id="n06" n="6"><ref type="url" target="http://download.geonames.org/export/dump/">http://download.geonames.org/export/dump/</ref></note>
+
+
+</div>
+
+
+</back>
+</text>
+</TEI>
+
+
+
+
+
+
+
+
+

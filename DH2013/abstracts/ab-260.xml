@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-260">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>The Digitized Divide: Mapping Access to Subscription-Based Digitized Resources</title>
+<author>
+<name><surname>Gooding</surname>, <forename>Paul Matthew</forename></name>
+<affiliation>University College London, United Kingdom</affiliation>
+<email>paul.gooding.10@ucl.ac.uk</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper will present the findings from a PhD Case study into the use and users of the British Library Nineteenth Century Newspapers collection (BNCN) , and demonstrate that, instead of providing universal access, subscription-based digitized collections in fact mimic and reinforce the existing digital divide. Using data gathered from web analytics and user surveys, it will show that, although digitization has clearly benefitted users who operate in an information-rich environment, these benefits do not extend evenly across society, or even academia. As a result, I have created an alternative geographical visualization to demonstrate this problem, based upon the location of subscribing institutions rather than individual users. In combination, these will back up the main argument of this paper: that the subscription-based model of digitization does not ensure universal access to valuable content, but instead reinforces the divide between information-rich and information-poor communities.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP09</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Digitisation</term>
+<term>Digital Divide</term>
+<term>User studies</term>
+<term>GIS</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>geospatial analysis</term>
+<term>interfaces and technology</term>
+<term>user studies / user needs, digitisation - theory and practice</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-17"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>Introduction</head>
+<p>This paper will present the findings from a PhD case study into the use and users of the British Library Nineteenth Century Newspapers Collection (BNCN).<ref type="note" target="n01">1</ref> Using data gathered from web analytics and user surveys, it will show that although digitization provides clear benefits to users who operate in an information-rich environment, these benefits are distributed unequally. I will therefore present an alternative geographical visualization based upon the location of subscribing institutions rather than individual users. This, combined with university rankings data and relative poverty measures, backs up the main argument of this paper: that the subscription-based model of digitization severely undermines the rhetorical embracement of universal access, and instead reinforces existing divides between information-rich and information-poor communities.</p>
+</div>
+
+<div>
+<head>Addressing the Digital Divide</head>
+
+<p>Web analytics services such as Google Analytics<ref type="note" target="n02">2</ref>  provide map overlays that automatically visualize user locations. This important data provides web analysts with important insight into their user base. These automated mapping tools lack, though, a consideration of how user location is influenced by variations in access to digitized resource. The internet, and by extension, digitized collections, are generally viewed as an opportunity to widen participation and improve education (Norris 2001, 7; Bell 2005), but this paper will demonstrate that they can provide these benefits unevenly across society. Norris identifies that the digital divide is multifaceted; it is a global and democratic divide, but also a social divide between different groups in society (Norris 2001, 4).</p>
+
+<p>This is important when considered alongside a common problem in the literature: increased quantities of digitized content have brought with them inflated expectation levels. Everett, for instance, wrongly conflates the digitization of large collections with the concept of universal access: “the problem for the twenty-first century scholar will be to limit inquiry to a manageable subset of data; because all scholars will have immediate access to all archives in the world” (Everett 2005). Commercial reality, though, makes this utopian outlook seem na&#239;ve. The social and professional environment in which users operate remains vital in deciding access to digitized content. This mirrors the wider context of the digital divide, which is increasingly manifested as an indicator of the differentiated uptake of important digital resources (Hargittai &amp; Walejko 2008; Hassani 2006; Norris 2001; Castells 2002). Existing research into this “second-level digital divide” (Hassani 2006) suggests that those from higher socioeconomic backgrounds generally benefit most from technological developments. As a result, mapping the location of individual users may show nothing more than high levels of connectivity in a particular demographic (Hassani 2006, 251). Similarly, in academia it appears that a ‘digitized divide’ could emerge between those with access to digitized content in large quantities and those without, one strongly related to social and geographical status. </p>
+</div>
+
+<div>
+<head>Methods</head>
+<p>While Geographical Information Systems (GIS) have the potential to answer innovative research questions (Bodenhamer et al. 2010), the automated nature of default web analytics visualizations does not allow us to interrogate this problem.</p> 
+
+<p>In order to study the impact of BNCN, web data was analysed for a period of one calendar year using reports generated by Google Analytics, including the referral analysis (Madsen 2010)<ref type="note" target="n03">3</ref>  which influenced this paper; the results demonstrated that many users located outside Europe and the USA were in fact linked to institutions within these two regions. A survey was also mounted, which showed that many BNCN users still found access difficult; indeed some were forced to travel in order to access the collection digitally. The GIS was therefore created to test concerns about potential inequalities in access.</p>
+
+<p>The visualization is based upon a list of institutions with current subscriptions to BNCN, including educational institutions, UK public libraries, and national libraries. This list was collated using online subscriber lists,<ref type="note" target="n04">4</ref> manual searching and referrer lists derived from web analytics. These were then mapped to a web-based GIS using Google Maps Fusion Tables,<ref type="note" target="n05">5</ref> and combined with demographic information and university ranking data. A separate layer was created for English public libraries which combined access information with UK Government measures of relative deprivation, population, and public spend on libraries.</p>
+</div>
+
+<div>
+<head>Findings</head>
+<p>The findings demonstrate that the divide in access correlates strongly with the status of a university: more highly ranked institutions were more likely to have current subscriptions. Additionally, English public library authorities were far more likely to have access if they were in less deprived regions, or served a relatively large population. This backs up qualitative data from the survey; some respondents were worried about the impact of working at institutions without appropriate subscriptions, and the prospect of losing access when fixed-term academic posts expire. This mirrors Hargittai’s assertion that “the societal position that users inhabit influences aspects of their digital media use such as the technical equipment to which they have access” (Hargittai 2008, 940). As digitized content proliferates, the expectation that scholars will use it also increases. The idea of democratized access to digital content (Bell 2005) can therefore become a damaging myth for those left behind. Unequal access to resources has been a longstanding problem for researchers, but the rhetorical shift towards universal access has ignored it. Technological inequality never entirely disappears, as Castells points out: “as one source of technological inequality seems to be diminishing, another one emerges” (Castells 2002, 256).</p>
+
+<p>Second, rather than facilitating the disintermediation of information, the current glut of commercially digitized content increases the importance of library services in relation to access. In the wake of the Google Books project, Roush questioned “the ‘value proposition’ they [libraries] offer in a digital future” (Roush 2005)., These findings suggest that this value proposition will centre on the library’s ability to supply relevant subscriptions to its users in a timely manner, for as long as access is too costly to maintain at an individual level.</p>
+</div>
+
+<div>
+<head>Conclusion</head>
+<p>The study of web impact would benefit from a more realistic appraisal of the digital divide in relation to digitized content. Commercial digitization, while an effective way to fund projects, has implications for scholars working outside information-rich institutions, or indeed outside institutional frameworks entirely. Similar case studies should therefore be done with other digitized resources to discover whether these patterns are replicated elsewhere. Additionally, we must consider how project developers and library services can work to address the inequalities discovered by this project. In keeping with the conference’s theme, this paper provides an analysis of how far digitization truly provides researchers with freedom to explore the content being produced.</p>
+</div>
+   
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Bell, D. </hi> (2005). The Bookless Future: What the Internet is Doing to Scholarship. <hi rend="italic">The New Republic</hi>. <ref type="url" target="http://www.tnr.com/article/books-and-arts/the-bookless-future">http://www.tnr.com/article/books-and-arts/the-bookless-future</ref> (accessed March 27, 2012).</bibl>
+
+<bibl><hi rend="bold">Bodenhamer, D. J., J. Corrigan, and T. M. Harris</hi> (eds.) (2010). <hi rend="italic">The Spatial Humanities: GIS and the Future of Humanities Scholarship</hi>, Bloomington: Indiana University Press.</bibl>
+
+<bibl><hi rend="bold">Castells, M. </hi> (2002). <hi rend="italic">The Internet Galaxy: Reflections on the Internet, Business, and Society</hi>, Oxford: Oxford University Press.</bibl>
+
+<bibl><hi rend="bold">Everett, G. </hi> (2005). Electronic Resources for Victorian Researchers &#8212; 2005 and Beyond. <hi rend="italic">Victorian Literature and Culture</hi>. 33. 601–614.</bibl>
+
+<bibl><hi rend="bold">Hargittai, E.</hi> (2008). The Digital Reproduction of Inequality. In Grusky, D. (ed). <hi rend="italic">Social Stratification</hi>. Boulder, CO: Westview Press.</bibl>
+
+<bibl><hi rend="bold">Hargittai, E. &amp; G. Walejko.</hi> (2008). The Participation Divide: Content Creation and Sharing in the Digital Age. <hi rend="italic">Information, Communication &amp; Society</hi>. 11(2). 239–256.</bibl>
+
+<bibl><hi rend="bold">Hassani, S. N.</hi> (2006). Locating Digital Divides at Home, Work, and Everywhere Else. <hi rend="italic">Poetics</hi>. <hi>34(4-5)</hi>.</bibl>
+
+<bibl><hi rend="bold">Madsen, C.</hi> (2010). What is Referrer Analysis? <hi rend="italic">Toolkit for the Impact of Digitised Scholarly Resources (TIDSR)</hi>. <ref type="url" target="http://microsites.oii.ox.ac.uk/tidsr/kb/45/what-referrer-analysis">http://microsites.oii.ox.ac.uk/tidsr/kb/45/what-referrer-analysis</ref> (accessed June 11, 2012).</bibl>
+
+<bibl><hi rend="bold">Norris, P.</hi> (2001). <hi rend="italic">Digital Divide: Civic Engagement, Information Poverty and the Internet Worldwide</hi>, Cambridge: Cambridge University Press.</bibl>
+
+<bibl><hi rend="bold">Roush, W.</hi> (2005). The Infinite Library. <hi rend="italic">Technology Review</hi>. <hi>108(5)</hi> 54–59.</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+
+<note xml:id="n01" n="1">  <ref type="url" target="http://newspapers.bl.uk/blcs/">newspapers.bl.uk/blcs/</ref></note>
+
+<note xml:id="n02" n="2">  <ref type="url" target="http://www.google.com/analytics/">www.google.com/analytics/</ref></note>
+
+<note xml:id="n03" n="3">  See the Toolkit for the Impact of Digitized Scholarly Resources: http://microsites.oii.ox.ac.uk/tidsr/.</note>
+
+<note xml:id="n04" n="4">  <ref type="url" target="http://gdc.gale.com/products/19th-century-british-library-newspapers-part-i-and-part-ii/evaluate/customer-list/"> http://gdc.gale.com/products/19th-century-british-library-newspapers-part-i-and-part-ii/evaluate/customer-list/</ref> and <ref type="url" target="http://www.bl.uk/reshelp/findhelprestype/news/database.pdf"> http://www.bl.uk/reshelp/findhelprestype/news/database.pdf</ref></note>
+
+<note xml:id="n05" n="5"> <ref type="url" target="https://developers.google.com/maps/"> https://developers.google.com/maps/</ref></note>
+
+</div>
+
+</back>
+</text>
+</TEI>
+

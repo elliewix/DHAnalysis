@@ -1,0 +1,96 @@
+
+
+
+
+At a recent meeting, the head of Intersect, the New South Wales eResearch agency, argued that, since academics are not professional software engineers, eResearch software might be prototyped by academics but development should then be turned over to professionals. I believe this IT-centric viewpoint is based on flawed assumptions about the aims of Humanities computing, and that the potential benefits in good design, documentation and QA (assuming IT-managed projects to be superior in this respect) are generally far outweighed by the loss of flexibility which requirements gathering and structured development impose. An engineering approach may be suitable for well-defined deliverables (with commensurate funding), but research-driven and lightly funded projects will generally be far more productive under the control of a Scholar Programmer (Reside 2011, Welsh 2011) who can optimise the outcomes as opportunities present and rely on the goodwill of colleagues for bug identification and testing. Such an approach does not preclude the involvement of professional programmers in the development process (beyond a certain small scale such involvement is essential) nor equal partnership with IT professionals bringing multi-disciplinary perspectives.
+
+ 
+
+I will use as example our development of Heurist, a database abstraction which allows non-technical researchers to rapidly build and incrementally modify — using a (fairly) simple web interface and researcher-centric concepts — complex multi-user web database applications with many entity types and rich relationships. Effective use of Heurist depends not on technical skill but on the decomposition of research data into a clear conceptual structure — an exercise which imposes a valuable sanity check on the quality of a researcher's conceptual model — and then allows them to pass almost directly to a fully functioning database, bypassing the plumbing of implementation (including programmer-centric abstractions such as UML and application frameworks). Over 30 projects are now running in Heurist, from individual research to public resources such as the Dictionary of Sydney (
+http://dictionaryofsydney.org
+), and it has also been used in undergraduate classes. Yet Heurist has encountered opposition from software engineers who believe it could be ‘faster’ or ‘better’ if rewritten (in a variety of alternative technologies, mostly post-dating its design), ignoring the fact that it is stable, extensible and fulfils the needs of its users better than any alternative they can propose.
+
+ 
+
+Over the last few years, there have been significant shifts in data modelling towards object-relational models, XML databases, triple stores and so called NoSQL databases. Digital Humanists have embraced these techniques with varying degrees of success. However these technologies lie outside the knowledge or skills of most Humanities researchers — Excel, Access and Filemaker remain the bread and butter of many who venture into the digital domain; more ambitious projects may commission or develop custom applications backended on MySQL or PostGres. Some of these (eg. Kora) evolve into capable adaptable systems, or are conceived as such from the outset (eg. Zotero and Omeka).
+
+ 
+
+While Heurist uses MySQL as its backend, it uses it to build an agnostic datastore along NoSQL principles. The majority of the code is then devoted to managing a user view of the structure based on entities, attributes and relationships which requires no understanding of the underlying methods. The structure is itself stored within the database, allowing on-the-fly modifications and providing a fully internally documented database (which can be easily — one click — exported to a fully documented XML dump of both the database structure and its content for archiving or transfer to another system). A key strength of this approach is that database structure can be developed incrementally and modified throughout the life of a project as the researcher's understanding of the domain (and software) evolves, without the need for programmers or the loss of existing data.
+
+ 
+
+In this paper I will review the design principles underpinning Heurist and show how its flexible and user-modifiable approach to data structure allows the database to evolve with a scholar's needs. Heurist development has been research-driven and informal, responding to the needs of the many projects that use it, while developing new capabilities as generic tools rather than project-specific additions. I will particularly focus on the advantages of a pragmatic approach to development, driven by a Scholar-Programmer and based on evolving user needs, rapid prototyping and 'permanent beta'. I will contrast this with an 'engineering' approach based on pinning down a set of user requirements and rigorous development and testing within a framework which — even if notionally using an Agile program development methodology — discourages revision and innovation in favour of QA.
+
+ 
+
+My argument will be supported by looking specifically at two mobile applications which were developed as core functions of Heurist. These applications were never envisaged in the original design of the system, but have been added with minor effort, extending the functionality of the system for all users.
+
+ 
+
+First, as part of research into community engagement for the Dictionary of Sydney (
+dictionaryofsydney.org
+) we developed a mobile heritage tour application which runs off the Dictionary's underlying Heurist database. The application adopts TourML (TAP Into Museums 2012) but unlike standalone tour applications it is simply designed as a viewer with offline data caching, and can therefore run off any Heurist database containing appropriate data. No additional database design or programming was required to support data entry, storage of TourML data or the import of schemas or data, since these are already an intrinsic part of the Heurist model. With the addition of an appropriate XSL template to transform Heurist's native XML output, we also now have a web-based tour view which will work across all Heurist databases. 
+   
+  
+
+My second example is the handling of data schemas for the recently funded FAIMS (Federated Archaeological Information Management System) research infrastructure project funded by the Australian government's NeCTAR program. With trivial programming we were able to add a function to Heurist which exports record schemas as W3C standard XForms which can be loaded onto tablet devices for use in the field. Data is collected using these forms with Open Data Kit (Open Data Kit 2012) and synced back into the Heurist database from which the forms were exported.  The field application is thus simply an extension of the Heurist database, rather than a separate application, allowing any Heurist database to become 'mobile' on a tablet — archive and library information gathering are an obvious spin-off acquired at no extra cost. This paradigm is further extended by exposing the database on the web, allowing any other Heurist database to import and reuse the schemas. Using this capability we were able to set up a schema clearinghouse for the FAIMS project and populate it with an initial set of schemas in a matter of hours. The other major components of the FAIMS project are following a formal engineering methodology and will provide useful comparative material by the time this paper is presented.
+
+ 
+
+Through this paper I hope to stimulate a discussion in two areas:      
+
+ 
+
+First, on the appropriateness of the concept of the Scholar Programmer, picking up on recent debates on the need for Digital Humanists to embrace programming skills. I will propose an alternative concept of Scholar Analyst — a scholar who might or might not have programming skills, but mostly brings conceptual skills informed by a knowledge of what can be achieved (without necessarily being technically capable, even if time permitted). In that sense the Scholar Analyst is an Architect, who understands what different materials can achieve without being able to so much as lay a brick. I am not convinced that the Architect needs to be able to lay bricks, although they must know the limits of brick structures and of the bricklaying process.
+
+ 
+
+Secondly I hope to stimulate some discussion about the dangers of development for, rather than by, the Academy. While this may not be an issue of concern to current projects with momentum, the centralisation of resources in relatively well-funded and science-dominated eResearch agencies and IT centres plays to the dominance of engineering-driven approaches and loss of capacity to develop applications aligned with Humanities research needs.
+
+ 
+
+
+
+                
+
+
+
+
+
+
+
+
+Date, C. J.
+ (2004). 
+An Introduction to Database Systems
+. Boston: Pearson/Addison Wesley. 8th edn.
+Open Data Kit
+ (2012). 
+Magnifying human resources through technology
+.
+ 
+http://opendatakit.org/
+ Accessed 30/10/12
+Reside, D.
+ (2011). 
+On Ant-Lions and Scholar-Programmers
+. 
+
+http://mediacommons.futureofthebook.org/alt-ac/pieces/ant-lions-and-scholar-programmers
+  Accessed 30/10/2012
+TAP Into Museums
+ (2012). 
+TourML Overview
+. 
+
+http://tapintomuseums.org/TourML
+ Accessed 30/10/12
+Welsh, T.
+ (2011). 
+To Code, or Not to Code
+. 
+
+http://hastac.org/blogs/twelsh/code-or-not-code
+. Accessed 30/10/2012
+

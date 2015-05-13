@@ -1,0 +1,111 @@
+
+
+
+
+
+
+Space is important in literary studies. This was true even before postmodernism’s spatial turn a generation ago, and our collective interest in spatial issues has only grown in recent years. Of course, what we mean by space varies widely across the discipline. We have studies — some historically oriented, some not — of the relationship between literature and geography at scales ranging from the local to the global. We’re also interested in the somewhat smaller scales of built space and the lived environment. And then there’s the long-standing problem of mapping between space and time as organizing principles of narrative and other forms of cultural production (Giles; Hsu; Heise; Orvell and Meikle; Jameson).
+
+
+
+We now have methods by which to work with large bodies of text and to extract at least some types of spatial information from them. These methods, which involve computational data mining of hundreds or thousands of books, make it possible for us to address large-scale spatial questions, questions of the type that once seemed unthinkable, in new and robust ways. This is especially true because in many cases we can then combine the evidence produced through these new approaches with our well-established critical judgments.
+
+
+
+What follows is an example of such hybrid scholarship. It begins with a question: How can we define and assess the “geographic imagination” of American fiction around the Civil War, and how did the geographic investments of American literature change across that sociopolitical event? To preview quickly the most important results, we find that there is significant national and international dispersion of geographic reference in American novels written between 1851 and 1875; that the distribution of place references tracks closely but not perfectly with population; that changes in literary investment in specific places and regions tends to lag changes in population; and that although there are important shifts in the geographic distribution of literary interest occasioned by the Civil War, such shifts are smaller than established theories would lead us to expect, emphasizing the need to rethink the contours of large-scale cultural change in light of more inclusive textual analysis.
+
+
+
+
+
+
+Technical Details
+
+
+The literary corpus is based on the volumes catalogued by Lyle Wright in his 
+American Fiction
+, 1851-1875. Of the 2,925 titles listed by Wright, 1,050 have been digitized, thoroughly hand-corrected, and contain firmly established dates of publication between 1851 and 1875. The present work is based on these 1,050 volumes, which together contain over 80 million words. The research corpus thus comprises 36% of all known American long-form fiction produced during the generation spanning the Civil War. Of these, 489 volumes (36 million words) were published before 1861; 561 volumes (44 million words) were published in 1861 or later.
+
+
+
+Text strings representing named locations in the corpus were identified using the named entity recognizer of the Stanford Core NLP package (Finkel et al.) with supplied training data. To reduce errors and to narrow the results for human review, only those named-location strings that occurred at least five times in the corpus and were used by at least two different authors were accepted. The remaining unique strings were reviewed by hand against their context in each source volume. After corrections were applied, there remained 143,499 occurrences of 1,577 unique location strings in the corpus.
+The location strings extracted from the corpus texts were then associated with geospatial information via Google’s geocoding API. Geocoding results were further reviewed and a small number of errors corrected.
+
+
+
+Precision and recall measures were calculated on a small sample of the data. With the above corrections, precision was 0.60, while recall was 0.85; F
+1
+ was 0.70. This is a good result, given the complexity of the problem and the state of the art (Leidner).
+
+
+
+
+
+
+Results
+
+
+What did the literary-geographic imagination of mid-nineteenth-century American fiction look like? It was global, certainly, making use of international locations nearly as often as domestic ones. It was also surprisingly and disproportionately urban; although the twenty largest American cities by population made up only about 10% of the national headcount at the time, the twenty most frequently occurring US cities in the corpus accounted for well over a third of all US place-name occurrences. Literary attention was most heavily concentrated along the eastern seaboard, but not especially so in New England and not to the exclusion of the rest of the nation. While literary attention generally lagged the large and growing populations of the Midwest, it did not by any means ignore that region, nor did it overlook the South (especially — but not only — after 1861) nor the West. On the whole, the use of US place names in the fiction of the period correlated reasonably well with population; large places occurred more frequently than small ones to roughly the same degree as the population of the larger location exceeded that of the smaller. But this relationship, while strong, was interestingly imperfect, yielding numerous cases of under- and overrepresentation relative to population.
+
+
+
+There exist mixed signals concerning the emergence of American literary regionalism in the years before 1875. The period’s strong investment in urban locations suggests that there was at no point a marked preference for the types of rural locales generally associated with the regionalist impulse, nor was there a large-scale shift away from heavily populated regions in the years immediately following the Civil War, when one might have expected to find the early signs of emerging regionalism. Modest changes toward wider distribution of literary attention, especially at the city level, did occur following the war, however, and it remains the case that both before and after 1861 there existed widespread literary use of locations outside the northeast corridor. Whether or not these facts point toward an earlier or later emergence of regional writing — or indeed toward any regionalist flowering at all — remains an open question in the absence of a broader historical extension of the current research, but they provide important contextual information concerning the distribution of literary-geographic attention in the generation leading up to what we have long considered the regionalist era.
+
+
+
+The American Renaissance as a phenomenon rooted primarily in New England is also only partially supported by the data. While New England locations were overrepresented relative to the population of the region both before and after the Civil War, the extent of their overrepresentation actually increased after 1861, a trend that’s difficult to reconcile with standard periodizations derived from Matthiessen, which associate the phenomenon with the first half of the 1850s. At the same time, the fraction of all US location uses that fell within New England was hardly overwhelming at around 15%, a figure that indicates the breadth and depth of literary investment elsewhere in the nation and world at the time.
+
+
+
+Finally, the literary-geographic imagination of the period was largely — perhaps surprisingly — stable over time. True, there were small overall shifts toward greater diversity of locations used after the Civil War and away, on a percentage basis, from some of the largest cities, but these and other changes were on the order of single percentage points in most cases. They were potentially important, but they were not overwhelmingly large. This fact doesn’t necessarily suggest that significant shifts weren’t taking place over the 25 years in question; indeed it’s hard to imagine that the Civil War didn’t result in meaningful cultural reconfigurations that are traceable through the period’s literary output. But it does suggest that at least in the literary-geographic cases studied here, intellectual significance and the absolute magnitude of the observed effect may be best measured on separate scales.
+
+
+
+The work presented here represents the first broadly inclusive survey of American literary-geographic usage in the mid-nineteenth-century, one that casts light on — and complicates — our long-standing narratives concerning two of the most important periods of American literary history. Increased focus on the international, urban, and slowly evolving nature of the literary-geographic imagination in the United States around the Civil War is warranted by the current results, which plot a significant path for future work in both conventional and computationally assisted American literary studies.
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+Finkel, J. R., T. Grenager, and C. Manning
+ (2005). Incorporating Non-Local Information into Information Extraction Systems by Gibbs Sampling. 
+Proceedings of the 43nd Annual Meeting of the Association for Computational Linguistics
+. held 2005. 363-370.
+Giles, P. 
+ (2011). 
+The Global Remapping of American Literature
+. Princeton: Princeton UP.
+Heise, T.
+ (2010). 
+Urban Underworlds: A Geography of Twentieth-Century American Literature and Culture
+. New Brunswick, NJ: Rutgers University Press.
+Hsu, H.
+ (2010). 
+Geography and the Production of Space in Nineteenth-Century American Literature
+. Cambridge: Cambridge University Press.
+Jameson, F.
+ (2003). The End of Temporality. 
+Critical Inquiry
+ 29.4. 695-718.
+Leidner, J. L.
+ (2006). Toponym Resolution: A First Large-Scale Comparative Evaluation. 
+Institute for Communicating and Collaborative Systems
+: n. pag.
+Orvell, M., and J. L. Meikle.
+ (eds), (2009). 
+Public Space and the Ideology of Place in American Culture
+. New York: Rodopi.
+Wright, L. H.
+ (1965). 
+American Fiction, 1851-1875: A Contribution Toward a Bibliography
+. 2nd edn. San Marino, CA: Huntington Library.
+

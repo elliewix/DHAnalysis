@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-316">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Scholarly Open Access Research in Philosophy: Limits and Horizons of a European Innovative Project.</title>
+<author>
+<name><surname>Cristina</surname>, <forename>Marras</forename></name>
+<affiliation>National Research Council: Institute for European Intellectual Lexicon and History of Ideas (CNR-ILIESI)</affiliation>
+<email>cristina.marras@cnr.it</email>
+</author>
+<author>
+<name><surname>Antonio</surname>, <forename>Lamarra</forename></name>
+<affiliation>National Research Council: Institute for European Intellectual Lexicon and History of Ideas (CNR-ILIESI)</affiliation>
+<email>agora.coordinator@iliesi.cnr.it </email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">At present, it is unusual for researchers in Humanities and Social Sciences to have access to interrelated infrastructures offering large data sets so arranged and encoded to allow easy comparative research as well as to encourage the online publication of its results for scholarly and learning purposes.
+
+Our paper concerns the development and achievement of the European project Agora: Scholarly Open Access Research in European Philosophy – http://www.project-agora.eu –. This project aims at improving the spread of European research results in the field of philosophy, while advancing new paradigms of Open Access (OA) publishing, peer-reviewing, and rendering thanks to the interlinking, connecting, and commenting of digital versions of primary sources (manuscripts, original printed editions, critical editions) and secondary literature (articles, monographs, audio and video contributions).</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP18</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Philosophy</term>
+<term>digital humanities</term>
+<term>open access</term>
+<term>semantic linking</term>
+<term>peer-review</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>ontologies</term>
+<term>philosophy</term>
+<term>digital humanities - facilities</term>
+<term>digitisation - theory and practice</term>
+<term>semantic web</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-23"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+<div>
+<head>Abstract</head>
+<p>The paper concerns the development and achievement of the European project <hi rend="italic">Agora:
+Scholarly Open Access Research in European Philosophy</hi>. This project aims at improving the
+spread of European research results in the field of philosophy, while advancing new
+paradigms of Open Access (OA) publishing, peer-reviewing, and rendering thanks to the
+interlinking, connecting, and commenting of digital versions of primary sources (manuscripts,
+original printed editions, critical editions) and secondary literature (articles, monographs,
+audio and video contributions). In particular, the paper presents and discusses the experiments
+on semantic linking and the open peer review experiment, their results and some critical
+aspects and open issues.</p>
+</div>
+
+<div>
+<head>1 Introduction</head>
+<p>At the present time, in the Humanities and the Social Sciences it is still unusual to have access
+to networks of interrelated infrastructures offering large datasets so arranged and encoded to
+allow easy comparative research as well as to encourage the online publication of its
+outcomes for scholarly and learning purposes.<ref type="note" target="n01">1</ref> This paper deals with developments and
+achievements of the European project <hi rend="italic">Agora: Scholarly Open Access Research in European
+Philosophy</hi>,<ref type="note" target="n02">2</ref> which aims at improving the spread of European research results in the field of
+philosophy, while advancing new paradigms of Open Access (OA) publishing, peerreviewing,
+and rendering thanks to the interlinking, connecting, and commenting of digital
+versions of primary sources (manuscripts, original printed editions, critical editions) and
+secondary literature (articles, monographs, audio and video contributions).</p>
+
+<p>In this presentation we will first offer an overview of the semantically structured digital
+libraries set up by the Agora consortium of partners, which include extensive and coherent
+collections of high quality OA contents from classical to contemporary European philosophy
+and a large selection of the related critical literature. We will then concentrate on some
+innovative aspects of the OA archiving and publishing which characterize the Agora project
+as regards the rendering of texts (in fac-simile as well as in transcription) and the need of
+ensuring the requested scholarly credibility of their digital editions.</p>
+
+<p>After a description of the federation of textual archives, which constitute the Agora portal,
+we will briefly present the five experiments envisaged in the project, namely: 1. Semantic
+linking; 2. Linked Open Data (LOD); 3. Advanced Scholarly linking and rendering; 4. Open
+peer review; and 5. OA business models in the field of European philosophy. We will focus,
+in particular, on the experiments on semantic linking and on the open peer review experiment,
+on their results and some of their critical aspects.<ref type="note" target="n03">3</ref></p>
+</div>
+
+<div>
+<head>2 The Portal Federation</head>
+<p>The digital libraries (Portal Federation) created thanks to the Agora project (in continuity with
+the previous project <hi rend="italic">Discovery</hi>)<ref type="note" target="n04">4</ref> represent a coherent collection of philosophical datasets both complementary and fully interoperable with general-purpose European-wide digital libraries
+and other content aggregators. These datasets offer the basis for the scholarly output and
+include, among others, testimonies about Socrates and Socratics, texts by Pre-Socratics,
+Diogenes Laertius, and Sextus Empiricus, Giordano Bruno, René Descartes, John Locke,
+Gottfried Wilhelm Leibniz, Giambattista Vico, Alexander Gottlieb Baumgarten, Immanuel
+Kant, Friederich Nietzsche, and Ludwig Wittgenstein. These philosophers are mostly studied
+in the Philosophy departments, although many of them are also widely studied by researchers
+working on history of science and epistemology.</p>
+
+<p>The collections of texts are organized in several platforms managed by open source
+software; four of them are dedicated to primary sources namely: <hi rend="italic">Ancient Philosophy</hi> and
+<hi rend="italic">Modern Philosophy</hi> (both available within the portal <hi rend="italic">Daphnet</hi>, i.e. <hi rend="italic">Digital Archives of
+PHilosophical Texts on the NET</hi>), <hi rend="italic">NietzscheSource</hi> and <hi rend="italic">WittgensteinSource</hi>.<ref type="note" target="n05">5</ref> Moreover, large collections of selected secondary literature concerning these primary sources are stored in
+additional OJS (Open Journal System) platforms, and finally two online journals for newly
+produced scholarly literature are also included in the Portal: <hi rend="italic">Lexicon Philosophicum:
+International Journal for the History of Texts and Ideas</hi> and <hi rend="italic">The Nordic Wittgenstein Review</hi>
+(see <hi rend="italic">infra</hi> Section 4).<ref type="note" target="n06">6</ref></p>
+
+<p>The Agora collection can really be seen as one of the most extensive and freely available
+collection of primary and secondary source for scholars and students in the field of
+philosophy.</p>
+
+<p>The software infrastructure, built up according to the semantic web standards, coherently
+integrates the functions of an <hi rend="italic">archive</hi> for the consultation of primary sources (which in the
+Humanities is equivalent to raw data), a <hi rend="italic">library</hi> for the consultation of research output, and a
+<hi rend="italic">publisher</hi> for peer review and publication of new research in dedicated digital journals and
+monographs.</p>
+
+<p>All scholarly information made accessible by the Agora project is first marked up in order
+to establish links to the underlying data sources, which are available in the federation, and
+subsequently published in the three new online OA journals created by the Agora consortium
+partners. The above mentioned functions (i.e. that of archive, library, and publisher) together
+provide the critical mass of content which is required to propose an innovative set of solutions
+for the Humanities and also to carry out experiments to test these solutions.</p>
+</div>
+
+<div>
+<head>3 The semantic linking experiment</head>
+
+<p>In general, the goal of semantic linking experiment of the project Agora<ref type="note" target="n07">7</ref> is to test the
+possibility of a novel way of building up, querying, and browsing a knowledge network in
+relation to a given set of primary and secondary scholarly sources and to assess its suitability
+as a collaborative research tool as well as a learning device. More specifically, this
+experiment aims at analysing and testing procedures, protocols and tools to enrich with
+semantic information the textual corpora (or collections of texts) included in the various
+platforms of the portal. To this aim, any individual document can be put in relation either with
+another document (internal or external to a given platform), or with an element belonging to a
+class as defined in the reference ontology.<ref type="note" target="n08">8</ref></p>
+
+<p>The experiment will focus on two main cases: the relations between primary and secondary
+sources, and the tagging of primary sources with reference to a selected list of the most
+relevant philosophical subjects. In the first case, a subset of the critical literature (scholarly
+articles, monographs) included in a specific OJS platform is semantically linked to a related
+dataset (manuscripts or editions of primary sources), which is already available online (and
+can be either internal or external to the portal). We will call this kind of relationship a ‘Text-to-Text interlinking’, whereas we will call a ‘Text-to-Subject interlinking’ the case of a
+semantic connection between a document and a specific subject included in one of the
+subclasses which constitute the class of philosophical subjects in the reference ontology of the
+portal.</p>
+
+<p>As a matter of fact, such a vast research area will be covered in different but
+complementary ways by three partners of the project. Indeed, while the CNRS-ITEM team in
+Paris will work only on Text-to-Text relations, the UIB-WAB team in Bergen as well as the
+CNR-ILIESI one in Rome will consider both the Text-to-Text and the Text-to-Subject
+interlinking. In the specific perspective of the CNRS-ITEM team, the relationship between
+secondary and primary sources will be envisaged and a dedicated software will be developed &#8212; called <hi rend="italic">Contexta</hi> &#8212; aiming at establishing and managing bi-univocal correspondences
+between them, so that, given a document (primary source), it will be possible to know at the
+same time not only the list of the quoted external sources but also the list of the external
+sources quoting it. As mentioned above, the Norwegian and the Italian teams will also
+consider the Text-to-Subject interlinking but, in their turn, they will use different
+methodological approaches. Whereas WAB will go on with making use of <hi rend="italic">SWickyNotes</hi> (a
+software developed in the framework of the previous European project Discovery), CNRILIESI
+will test a novel semantic annotation tool, called <hi rend="italic">Pundit</hi>.<ref type="note" target="n09">9</ref></p>
+
+<p>We will now focus on the CNR-ILIESI contribution to the semantic linking experiment.<ref type="note" target="n10">10</ref>
+A result of another European project, called <hi rend="italic">SemLib</hi>,<ref type="note" target="n11">11</ref> <hi rend="italic">Pundit</hi> is a newly produced
+software specifically dedicated to establishing relations between texts and semantic
+information with reference to a domain ontology. It will be tested on a selected corpus of
+philosophical writings covering both the ancient and the early modern philosophy and
+belonging to the <hi rend="italic">Daphnet</hi> portal, which includes works by the Greek sceptical philosopher
+Sextus Empiricus and the German philosopher and mathematician G. W. Leibniz. In this case,
+the experiment will aim at semantically interlinking these texts with a number of scholarly
+contributions stored in the same portal as well as at semantically enriching them with
+reference to a number of philosophical subjects (or themes) offered by the domain ontology.
+The basic strategy of this tool consists in creating a triple for each individual information that
+has to be recorded and stored, each triple consisting in its turn of two terms (a subject and an
+object) connected by a relation. In the case of a Text-to-Text relation, both subject and object
+of the relation are texts (or better, portions of texts), while in the case of a Text-to-Subject
+relation its object is an element of the list of philosophical subject included in the appropriate
+class of the portal ontology.</p>
+
+<p>Having set up our sample of texts, the second step has been to define a number of relations,
+which would be useful for the creation of the two types of triples we were looking for, i.e. the
+triples expressing relations between texts and those classifying texts according to the most
+relevant philosophical subjects. Clearly, in the meantime two lists of philosophical subjects
+were also needed: one including the most relevant subjects for tagging Sextus’ writings,
+another one for tagging Leibniz’s writings. At the present moment, a list of eleven relations
+(and their inverse) has been selected and defined to classify Text-to-Text relationships, which
+includes: ‘quotes’, ‘paraphrases’, ‘refutes’, ‘argues for’, ‘explains’, ‘criticizes’, ‘agrees with’,
+‘interprets’, ‘is similar to’, ‘makes a reference to’, ‘makes an internal reference to’.</p>
+
+<p>By means of the <hi rend="italic">Pundit</hi> software it is then possible to annotate, for instance, a given
+passage of a monograph dealing with a specific paragraph of Leibniz’s <hi rend="italic">Monadology</hi>, simply
+by selecting on the screen both the texts to be related and choosing the most appropriate
+relation in the list. In this way, the user might for instance create a triple of this kind:
+‘&lt;lmonograph A, p. n&gt; <hi rend="italic">explains</hi> &lt;Monadology, &#167; n&gt;’. This and its inverse relation
+(‘&lt;Monadology, &#167; n &gt; <hi rend="italic">is explained by</hi> &lt; monograph A, p. n &gt;’) would be stored among the
+annotations connecting the primary source <hi rend="italic">Monadology</hi> and a given monograph dealing with
+it.</p>
+
+<p>As regards philosophical subjects, two lists were necessary, since we decided that it would
+be preferable to express them in the same language of the primary sources. Consequently, we
+selected a preliminary list of ancient Greek subjects for the works of Sextus (including
+approximately 200 subjects), and a preliminary list of French subjects for Leibniz’s works
+(including approximately 650 subjects). On these basis, two small teams will be at work in
+order respectively to annotate both Sextus’ and Leibniz’s texts and to edit the final lists of
+relations and subjects; in this respect in particular, the merging is expected of the two lists of
+subjects into only one, which would contain pairs of Greek-French subjects, when a semantic
+equivalence can be stated. In addition, a list of relations possibly connecting texts and subjects
+has been set up, which includes the following five relations (and their inverse): ‘defines’,
+‘indirectly defines’, ‘extensional instantiation’, ‘intensional instantiation’, ‘dealings’. Also in
+the case of the Text-to-Subject interlinking, semantic annotation would require the creations
+of triples connecting a given text with a subject by means of the appropriate relation. Thus, 
+for instance, the user might select a paragraph of Leibniz’s <hi rend="italic">Monadology</hi> and connect it to the
+subject ‘action’ thanks to the triple: ‘&lt;Monadology, &#167; n &gt; <hi rend="italic">defines</hi> &lt; action &gt;’, which is
+equivalent to the inverse triple ‘&lt;action &gt; <hi rend="italic">is defined by</hi> &lt; Monadology, &#167; n &gt;’.</p>
+
+<p>As a result, once the texts annotated, it will be possible: (a) to move from primary sources
+to the relevant secondary sources (and vice-versa) according to the different relations
+connecting a philosophical texts to their relevant scholarly literature, and (b) to locate and
+select passages from the annotated texts according to their relevance for the main
+philosophical subjects contained in the reference domain ontology either by using a Greek or
+a French key-subject indifferently. Insofar as the experiment will provide satisfactory results,
+we will enlarge both the textual dataset and the list of subjects, our final goal being to set up a
+multilingual structured thesaurus of philosophical subjects in seven languages, namely ancient
+Greek, Latin, Italian, French, Spanish, English, and German.</p>
+</div>
+
+<div>
+<head>4 The peer review experiment</head>
+<p>Especially in Europe, peer reviewing in the <hi rend="italic">narrow</hi> sense is not largely used in the Human
+and Social Sciences (SSH), because the book (monograph, edition) is, with some exceptions
+in local and specialized communities, the main publishing tool, while journals represent a
+minimal fraction of the whole amount of scientific publications, since articles account for
+only 20% to 35% in the Humanities, depending on the discipline (Simba Information, 2010).
+When eatablishing editorial series, the initiators (usually the publisher) establish scientific
+committees, whose members carry out an initial quality control; most of the time it is the
+author, who generally pays for the printing of the book with funds granted by his/her
+institution or other funds. Journals are mainly funded through subscriptions; usually, in
+philosophy the Impact Factor is not calculated, and bibliometric techniques are not used;
+niche journals in foreign languages (academic communities being national) are very
+numerous, and there is a wide discretion in assessing their relevance.</p>
+
+<p>Scientific journals have been in existence for over 400 years and since the appearance of
+the first learned journals, as for example the <hi rend="italic">Journal des S&#231;avans</hi> which first issue is dated 5
+January 1665, or the <hi rend="italic">Philosophical Transactions of the Royal Society</hi>, first issue dated 6
+March 1665, some level of peer review were set in place (Harcourt, 1972; Biagioli, 2002;
+Johns, 1998). Nevertheless, some journals do not use peer reviewing in the true sense of the
+expression, but rather directly request articles from authors. In many cases, peer review in the
+Humanities is realized ex post (after publication), and often through reviews.</p>
+
+<p>Various forms of “open review” has been advocated and experimented by scholarly
+journals most of them in medicine, biomedicine, hard science. In the last decade the benefits
+and the advantages as well as the limits and defects of the open peer review as been largely
+discussed.<ref type="note" target="n12">12</ref></p>
+
+<p>The discussion on the changing nature and role of peer review in SSH is almost absent and
+only recently started to be an issue (British Academy, 2007). The debate grows along with the
+impact and the influence of electronic journals and the use of internet in conducting peer
+review. The electronic procedures respond to the necessity of more flexibility, transparency,
+and non-expensive, fast, and more reliable and objective evaluation (Salomon, 2007).</p>
+
+<p>The “Open Collaborative Peer Review Experiment”<ref type="note" target="n13">13</ref> conducted by the project Agora
+wants to contribute to this debate and investigate whether the quality and the credibility of a
+journal and its authors can be assured also by an articulated peer review process under the
+“responsibility” of the scientific community and not by quantitative evaluation criteria.</p>
+
+<p>The experiment combines traditional double-blind peer review with different modes of
+open peer review and post-review comments by other scholars. The goal of the experiment is
+to enhance and determine standards for open peer-reviewing in Humanities and Social 
+Sciences. The experiment is designed to contribute to the current discussion concerning the
+value of the peer review and the different ways to approach it. The experiment is conducted
+on two new OA international Journals: <hi rend="italic">Lexicon Philosophicum: International Journal for the
+History of Texts and Ideas</hi> and <hi rend="italic">The Nordic Wittgenstein Review</hi>.<ref type="note" target="n14">14</ref> The first, published by the CNR-ILIESI, focuses on the history of philosophy and the history of ideas, with a special
+attention to textual and lexical data (the journal also includes a specific section devoted to
+Digital Humanities). The second one, is published by the Nordic Wittgenstein Society (NWS)
+and is dedicated to all aspects of Wittgenstein’s thought and work.</p>
+
+<p>The peer review procedure followed by the two journals consists in two main phases:
+<hi rend="italic">refereeing</hi> and <hi rend="italic">reviewing</hi>, and is based on a four-stages process. During the first stage, the
+submitted manuscripts go to the general eligibility and quality check made by the editors. The
+editorial procedure is designed to follow best practice concerning excellence, impartiality,
+transparency, purposefulness, efficiency, confidentiality and integrity. The general eligibility
+is followed by the acknowledgement of the results to the authors, and in case of ineligibility
+sufficient information describing the decision is communicated. In the same case
+resubmission is encouraged.</p>
+
+<p>During the second stage, eligible articles go through a double-blind peer review process in
+which the identity of reviewers and authors is kept confidential from each other.
+During the third stage, accepted articles for publication go in pre-print form for one-month
+of open peer-reviewing or commentary, during which registered users are asked to comment
+on and to discuss the accepted papers. Discussions are moderated by editors and editors-inchief.
+Authors are therefore able to take benefit from suggestions, comments and discussions
+from the open peer review in addition to the comments received by the reviewers when
+finalizing their paper for publication.</p>
+
+<p>During the fourth stage (the post-peer review), published articles are available in the
+appropriate Agora platform for ranking and commenting. Such a process is designed to
+improve the quality of the review and the peer review process but it also wishes to contribute
+as much as possible useful suggestions to the authors in the final preparation of their
+publications.</p>
+
+<p>This procedure would probably present less elements of originality if it were not
+accompanied by a constant activity of monitoring and analysis. The Agora project in fact
+includes a Work Package (WP2) specifically dedicated to “Monitoring and evaluating
+Agora’s experiments”.<ref type="note" target="n15">15</ref> An accurate analysis and evaluation of the open peer review for the
+first two issues of the two journals, including the double-blind phase, is carried out and
+reported to the Consortium and the EU officers and reviewers<ref type="note" target="n16">16</ref> by a dedicated team of experts
+who closely works with the editorial boards of the journals. One aspect of this evaluation
+involves the various parties who plays a role in the reviewing process such as authors,
+reviewers, editorial boards, and editors-in-chief via interviews and a survey, which aims not at
+detecting only positive comments but at identifying critical aspects to reflect upon in order to
+undertake remedial actions.</p>
+
+<p>The results of the first phase of the evaluation stressed the following points: editors had
+realised that the peer reviewers needed more guidance concerning how to conduct and
+complete the review process and to remedy the situation; in addition, they agreed that
+instructions for reviewers and review forms needed to be clear and very detailed. The
+scholarly community is somehow reticent to comment openly and in most of the cases
+preferred to do it via email directly addressing the authors.</p>
+
+<p>The Editorial Boards of the two journals considered also implementing a triple-blind
+review, in which even the editors would not know the identity of the authors, but in practice,
+it was not possible to test such an hypothesis. Very often the authors contacted the editors in
+advance with questions; on the other hand, a triple-blind review would require an editorial
+apparatus heavier than the one a journal of small dimensions can handle.</p>
+
+<p>The Agora Open Collaborative Peer Review Experiment is to some extent still
+problematic, because of some cultural resistances still active in the field, not to mention the
+intrinsic limits inherent to the search for an objective evaluation. On the other hand, it is a
+possible answer to some of the questions emerging in the European (and international) debate
+concerning peer review and research evaluation to be transferred in the SSH, and especially
+an answer to the need of integrating policies <hi rend="italic">and</hi> practices <hi rend="italic">into</hi> coherent procedures by
+involving in a transparent and constructive way the scientific community in the process of
+building up knowledge (Marras, Ranjbaran, 2011).</p>
+
+<p>The open collaborative peer review experiment is a way of engaging communities in
+reflecting on and refining the peer review process, even if it does not always result into open
+peer review. Nevertheless, it contributes to a better understanding of what a good peer review
+can be in philosophy and, more broadly, in the Humanities.</p>
+
+<p>Moreover, the open collaborative peer review experiment and its evaluation want to
+contribute to frame peer review as an intellectual subject and to activate research on it by
+promoting empirical analysis (practices) as well as philosophical reflection about the
+conditions of possibility of the academic knowledge (Biagioli, 2002, cit.)</p></div>
+
+<div>
+<head>5 Conclusion</head>
+<p>In drawing the conclusions we would like to stress a few points and some open issues.</p>
+
+<p>1. The synergy between the solutions developed for the Agora project (based on OA and
+interoperability) as well as the variety of perspectives and approaches it supports are key for
+ensuring that platforms are not simply content aggregators but mostly rich and attractive
+collaborative environments capable of managing exchanges between languages and traditions.</p>
+
+<p>2. The multilingual Agora portal will serve as a unique access point to the philosophical
+content of the federation and will expose its metadata to the LOD cloud. This integrated pilot
+will serve as a model for establishing and accessing a growing open research archive for
+scholarly publications in Humanities and Social Sciences as a whole.</p>
+
+<p>3. The integrate infrastructure would enable scholars, university students and teachers to
+improve knowledge transfer and sharing, to promote remote learning and distance
+collaboration, thus fostering the development of critical thinking skills and autonomous
+production of scientific contributions. In the meantime, the associated research publication
+system would enable a de-localized community of specialists to work in a cooperative way, to
+publish the results of this work on the Internet, and to establish collaborative initiatives with
+colleagues based in other universities and research centres.</p>
+
+<p>It will therefore be useful to investigate limits and potentiality of the model proposed by
+Agora, and see in which way it can still improve the spread of research results in the field of
+Humanities and Social Sciences and advance new paradigms of knowledge and knowledge
+organization.</p>
+
+<p>Basing on the results achieved in the project, we can summarize a few issues, which are
+still open:</p>
+
+<p>1. The sustainability of particular publishing practices in philosophical research,</p>
+<p>2. The economic dimension of philosophical journals and publications in Humanities <hi rend="italic">vis-&#225;vis</hi>
+that in the hard sciences,</p>
+<p>3. While peer review and edition costs are extremely high in the hard sciences, there
+remains a strong tradition of voluntary work in the Humanities, which can be easily
+transferred to the digital world in order to contribute to a viable economic model.</p>
+
+<p>In conclusion, we would like to stress that what inspired the construction of the Agora
+federation portal is not simply the creation of a digital library but the desire to set up and offer
+to the scholarly community a digital environment designed for research. Users should access
+not only classical philosophical texts (primary and secondary sources, journals) but a very
+large set of the available features and tools (tags, annotations, interlinking, advanced search,
+<hi rend="italic">etc</hi>.), which are needed to foster improvements and advancements in the analysis and
+interpretation of philosophical problems.</p>
+</div>
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Biagioli, M. </hi>(2002). From Book Censorship to Academic Peer Review. <hi rend="italic">Emergences: Journal
+for the study of media &amp; composite culture</hi>. 12(1): 11–45.
+DOI:10.1080/1045722022000003435.</bibl>
+
+<bibl><hi rend="bold">British Academy </hi>(2007). <hi rend="italic">Peer Review: The Challenges for the Humanities and Social
+Sciences</hi>. <ref type="url" target="http://www.britac.ac.uk/policy/peer-review.cfm">http://www.britac.ac.uk/policy/peer-review.cfm</ref> (accessed 13 March 2013).</bibl>
+
+<bibl><hi rend="bold">ESF </hi>(2011). <hi rend="italic">Research Infrastructures in the Digital Humanities. Science Policy Briefing</hi>,
+n. 42. European Science Foundation, September 2011. Available at:
+<ref type="url" target="http://www.esf.org/research-areas/humanities/publications.html">http://www.esf.org/research-areas/humanities/publications.html</ref> (accessed 13 March 2013).</bibl>
+
+<bibl><hi rend="bold">ESFRI</hi> (2010). <hi rend="italic">Road Map</hi>. <ref type="url" target="http://ec.europa.eu/research/infrastructures/pdf/esfristrategy_report_and_roadmap.pdf">http://ec.europa.eu/research/infrastructures/pdf/esfristrategy_report_and_roadmap.pdf</ref> (accessed 13 March 2013).</bibl>
+
+<bibl><hi rend="bold">Garshol, L. M. </hi>(2004). <hi rend="italic">Metadata? Thesauri? Taxonomies? Topic Maps! Making sense of it
+all</hi>. <ref type="url" target="http://www.ontopia.net/topicmaps/materials/tm-vs-thesauri.html#N773">http://www.ontopia.net/topicmaps/materials/tm-vs-thesauri.html#N773</ref> (accessed 14
+March 2013).</bibl>
+
+<bibl><hi rend="bold">Grenon, P., Smith, B.</hi> (2009). Foundations of an ontology of philosophy, <hi rend="italic">Synthese</hi> 182,
+2011:185–204.</bibl>
+
+<bibl><hi rend="bold">Harcourt, B. </hi>(1972). History and the Learned Journal. <hi rend="italic">Journal of the History of Ideas</hi>, 33(3):
+365-378.</bibl>
+
+<bibl><hi rend="bold">Johns, A. </hi>(1998). <hi rend="italic">The Nature of the Book. Print and Knowledge in the Making</hi>. Chicago: Chicago
+University Press.</bibl>
+
+<bibl><hi rend="bold">Marras, C., Ranjbaran, F. </hi>(2011). ESF Member Organisation Forum on Peer Review,
+<hi rend="italic">European Peer Review Guide – Integrating Policies and Practices into Coherent Procedures</hi>,
+Strasbourg. http://www.esf.org/activities/mo-fora/peer-review.html (accessed 13 March 2013)</bibl>
+
+<bibl><hi rend="bold">Salomon, D. </hi>(2007). The role of peer review for scholarly journals in the information age.
+<hi rend="italic">Journal of electronic publishing</hi>, 10:1, Winter 2007:
+<ref type="url" target="http://dx.doi.org/10.3998/3336451.0010.107">http://dx.doi.org/10.3998/3336451.0010.107</ref> (accessed 13 March 2013).</bibl>
+
+<bibl><hi rend="bold">Simba Information </hi>(2010). <hi rend="italic">Social Science and Humanities Publishing 2009–2010</hi>, Market
+Research, Simba Information.</bibl>
+
+<bibl><hi rend="bold">Su X., Gulla J. A.</hi> (2004). Semantic Enrichment for Ontology Mapping. <hi rend="italic">Natural Language
+Processing and Information System</hi>. Lecture Notes in Computer Science. Ed. by Meziane and
+M´etais, vol. 3136: 217-228, Springer Verlag, Berlin-Heidelberg.
+<ref type="url" target="http://link.springer.com/chapter/10.1007%2F978-3-540-27779-8_19">http://link.springer.com/chapter/10.1007%2F978-3-540-27779-8_19</ref> (accessed 14 March
+2013).</bibl>
+
+
+
+</listBibl>
+</div>
+
+<div type="Notes">
+
+<note xml:id="n01" n="1">An interesting document reflecting on the centrality of Research Infrastructures to the Humanities and drawing
+on a number of case studies has been published by the European Strategy Forum on Research Infrastructures
+(ESF, 2011). See also: ESFRI, 2010.</note>
+
+<note xml:id="n02" n="2">The project is a CIP-project co-funded by the European Commission under the “Information and
+Communication Technologies Policy Support Programme” (ICT PSP); on this regard see:
+<ref type="url" target="http://ec.europa.eu/information_society/activities/ict_psp/index_en.htm">http://ec.europa.eu/information_society/activities/ict_psp/index_en.htm</ref>. The Project reference number is 270904,
+CIP-ICT-PSP.2010.2.5 - Open access to scientific information; see:
+<ref type="url" target="http://ec.europa.eu/information_society/apps/projects/factsheet/index.cfm?project_ref=270904">http://ec.europa.eu/information_society/apps/projects/factsheet/index.cfm?project_ref=270904</ref>. The ICT PSP
+program aims at stimulating a wider uptake of innovative ICT-based services and the exploitation of digital
+content across Europe by citizens, governments and businesses. Details of the project are available in the project
+web site: <ref type="url" target="http://www.project-agora.org">http://www.project-agora.org</ref>. The Agora’s consortium involves six European countries, and some of
+their major research institutions and leading software companies including the Institut des Textes et Manuscripts
+Modernes of the Centre National de la Recherche Scientifique (ITEM-CNRS), France; The Wittgenstein Archives
+at the University of Bergen (UIB-WAB), Norway; the Åbo Akademi University, Finland; the University of
+Copenhagen (KU), Danemark; the Net7 company, Italy; the Istituto per il Lessico Intellettuale Europeo e Storia
+delle Idee of the Consiglio Nazionale delle Ricerche (CNR-ILIESI), Italy, which also coordinates the project.
+Antonio Lamarra is the project coordinator.</note>
+
+<note xml:id="n03" n="3">In writing this paper we took benefit from consulting a number of documents and reports prepared by the
+partners of the consortium. We are grateful to all of them and in particular to Anna Maria Carusi (KU), Paolo
+D’Iorio (CNRS-ITEM), Yrsa Neuman (Åbo Akademi University), Alessio Piccioli (Net7), Alois Pichler (UIBWAB).</note>
+
+<note xml:id="n04" n="4">For more details conserning the <hi rend="italic">Discovery</hi> project see: <ref type="url" target="http://www.discovery-project.eu/home.html">http://www.discovery-project.eu/home.html</ref>.</note>
+
+<note xml:id="n05" n="5">See: www.daphnet.org (which includes two platforms of primary sources: <ref type="url" target="http://modernsource.daphnet.org/">http://modernsource.daphnet.org/</ref>,
+under the responsibility of Roberto Palaia (ILIESI-CNR), and <ref type="url" target="http://ancientsource.daphnet.org/">http://ancientsource.daphnet.org/</ref>, under the
+responsibility of Emidio Spinelli (University of Rome, <hi rend="italic">Sapienza</hi>); <ref type="url" target="http://www.nietzschesource.org">www.nietzschesource.org</ref>, under the
+responsibility of Paolo D’Iorio (CNRS-ITEM) and <ref type="url" target="http://www.wittgensteinsource.org">www.wittgensteinsource.org</ref>, under the responsibility of Alois
+Pichler (UIB-WAB). A platform dedicated to the French philosopher J.J. Rousseau (<hi rend="italic">Rousseausource</hi>) is currently
+under preparation. The platforms are built under open source software: <hi rend="italic">Daphnet</hi> and <hi rend="italic">Wittgesteinsource</hi> are
+managed by MURUCA (<ref type="url" target="http://muruca.netseven.it">http://muruca.netseven.it</ref>), a framework for building digital libraries that allows to edit
+and enhance digital material and it can be used also as a research tool. The “Nietzsche facsimile edition”
+(www.nietzschesource.org/DFGA) is managed by TALIA (<ref type="url" target="http://net7sviluppo.com/trac/talia/wiki/TaliaTutorial">http://net7sviluppo.com/trac/talia/wiki/TaliaTutorial</ref>),
+and the “Nietzsche critical edition” is managed (<ref type="url" target="http://www.nietzschesource.org/eKGWB">www.nietzschesource.org/eKGWB</ref>) by a combination of MySQL
+and PHP.</note>
+
+<note xml:id="n06" n="6">A third journal, <hi rend="italic">Studia Nietzscheana</hi>, is currently in preparation.</note>
+
+<note xml:id="n07" n="7">The Semantic Linking Experiment is carried out within the activities of the Work Package 5: “Scholarly
+interlinking &amp; rendering experiment”, leaded by Paolo D’Iorio (CNRS-ITEM). This experiment, semantically
+linking primary and secondary source takes into account the specific needs of researchers working in the field of
+philosophy and it is conducted by CNR-ILIESI, and by UIB-WAB, in collaboration with ONTOS Verlag.</note>
+
+<note xml:id="n08" n="8">On semantic enrichment and discussion about ontologies you can see: Garshol, 2004; Grenon, Barry, 2009; Su,
+Gulla, 2004.</note>
+
+<note xml:id="n09" n="9">For more details and demos on Pundit see: <ref type="url" target="http://thepund.it">http://thepund.it</ref>.</note>
+
+<note xml:id="n10" n="10">The experiment is carried out in collaboration with Andrea Costa, Michela Tardella and Francesco Verde.</note>
+
+<note xml:id="n11" n="11">More details on <hi rend="italic">SemLib</hi> are available at: <ref type="url" target="http://www.semlibproject.eu">http://www.semlibproject.eu</ref></note>
+
+<note xml:id="n12" n="12">See for example the debate carried out in <hi rend="italic">Nature</hi>: <ref type="url" target="http://www.nature.com/nature/peerreview/debate/">http://www.nature.com/nature/peerreview/debate/</ref> (accessed
+13 March 2013).</note>
+
+<note xml:id="n13" n="13">The Open Peer Review Experiment is the focus of the Work Package 6, which is carried out by ILIESI and
+UIB-WAB and leaded by Cristina Marras (CNR-ILIESI).</note>
+
+<note xml:id="n14" n="14">The <hi rend="italic">Nordic Wittgenstein Review</hi> (editors-in-chief: Yrsa Neuman of Åbo Akademi University, Simo Säätelä and
+Alois Pichler of the University of Bergen) and <hi rend="italic">Lexicon Philosophicum</hi> (editors-in-chief Antonio Lamarra and
+Roberto Palaia, (CNR-ILIESI) are built in OJS and semantically linked to the primary sources published in the
+federation portal (see above, Sections 2 and 3). Both journals are open access and share the same policy: the
+
+individual contributions are made available under the Creative Commons General Public License Attribution,
+Non-Commercial, Share-Alike version 3 (CCPL BY-NC-SA). The first issue of the <hi rend="italic">Nordic Wittgenstein Review</hi> is
+available in print (published by the ONTOS Verlag) and online, whereas <hi rend="italic">Lexicon Philosophicum</hi> is published only
+online. See: <ref type="url" target="http://www.lexicon.cnr.it">http://www.lexicon.cnr.it</ref>; <ref type="url" target="http://www.nordicwittgensteinreview.com">http://www.nordicwittgensteinreview.com</ref>.</note>
+
+<note xml:id="n15" n="15">The WP2 is leaded by Anna Maria Carusi (KU).</note>
+
+<note xml:id="n16" n="16">See: Agora Project Deliverable D2.3 <hi rend="italic">Interim Evaluation Report</hi> (June 2012) compiled by Anna Maria Carusi
+and Giovanni De Grandis (KU), document for internal use of the Consortium available upon request.</note>
+</div>
+
+</back>
+</text>
+</TEI>
+

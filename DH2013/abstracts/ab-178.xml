@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-178">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>On Our Own Authority: Crafting Personographic Records for Canadian Gay and Lesbian Liberation Activists</title>
+<author>
+<name><surname>Crompton</surname>, <forename>Constance</forename></name>
+<affiliation>University of British Columbia, Okanagan Campus, Canada</affiliation>
+<email>constance.crompton@ubc.ca</email>
+</author>
+<author>
+<name><surname>Schwartz</surname>, <forename>Michelle</forename></name>
+<affiliation>Ryerson University</affiliation>
+<email>michelle.schwartz@ryerson.ca</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">This paper reports on the Lesbian and Gay Liberation in Canada (LGLC) project&#039;s use of TEI and RDF in the representation of the personhood. An infrastructure pilot project of the Canadian Research Writing Collaboratory (CWRC) at the University of Alberta, the LGLC project chronicles the events of the Canadian gay liberation movement from 1964 to 1975. After introducing the LGLC project, the issues that underpin our TEI encoding, and CWRC&#039;s extension of existing personographic records, we demonstrate the stakes in producing authority records for the online recuperation and discoverability of, in this case, Canadian gay and lesbian activism. The LGLC project contributes to existing online feedback, citation, and authority models in a manner that supports the LGBT community and improves online access to often overlooked histories. We offer our code and our data modeling principles as methods to overcome the limitations of extant authority records.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">SP07</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>TEI</term>
+<term>RDF</term>
+<term>encoding</term>
+<term>queer history</term>           
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>encoding &#8212; theory and practice</term>  
+<term>gender studies</term>  
+<term>digitisation</term>  
+<term>resource creation</term>  
+<term>discovery</term>
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+
+<div>    
+<p>Reflecting on her life, Jane Rule suspected that so far as the media was concerned in she was “the only lesbian in Canada” (Martin) the year her novel, <hi rend="italic">Desert of the Heart</hi>, Canada’s first English-language literary lesbian novel was published. Online she is one of the best-represented figures in the Canadian gay and lesbian liberation movement, a movement captured by <hi rend="italic">Lesbian and Gay Liberation in Canada</hi> (LGLC), an infrastructure pilot project of the Canadian Research Writing Collaboratory (CWRC) at the University of Alberta. After introducing the LGLC project, the issues that underpin our TEI encoding, and the CWRC project’s extension of existing personographic records, we, the LGLC project’s co-directors, demonstrate the stakes in producing authority records for the online recuperation and discoverability of underrepresented gay and lesbian activism.</p>
+</div>
+
+<div>
+<head>Starting Out: A Single and Singular Source Text</head>
+
+<p>The LGLC project reconfigures Donald McLeod’s remarkable monograph, <hi rend="italic">Lesbian and Gay Liberation In Canada: A Selected Annotated Chronology, 1964-1975</hi>, as a TEI-encoded resource within CWRC. The chronology is organized by date and then by location, with each entry neatly summarizing a small moment in history, followed by a bibliography of sources. The book focuses primarily on “self-declared lesbians and gay men and their activities in regard to the forging of lesbian and gay communities and liberation in Canada,” and therefore, dedicates most attention to demonstrations, political actions, lobbying, and legal reforms (McLeod viii). As a secondary and supplementary focus, the book notes “artistic and cultural contributions with significant lesbian or gay content” as part of the chronology, and includes three appendices listing lesbian and gay organizations, periodicals, bars, and clubs (McLeod viii-ix). Heterosexuals who were instrumental either in supporting or opposing the gay liberation movement are included, and foreign events are noted if they either had a direct impact on the Canadian gay liberation movement, or featured prominent involvement by gay Canadians. The start date of the chronology corresponds with the formation of the Vancouver-based Association for Social Knowledge (ASK), the first large-scale homophile organization in Canada. The end date coincides with the founding of the National Gay Rights Coalition/Coalition national pour les droits des homosexuels (NGRC/CNDH), the “first truly national coalition of Canadian lesbian and gay groups” (McLeod viii).</p>
+ 
+<p>We originally planned the LGLC project as a straightforward and independent representation of Donald McLeod’s book in HTML and KML, both underpinned by TEI, to be housed on the Canadian Lesbian and Gay Archives website. The LGLC’s inclusion within CWRC allows us to capitalize on their infrastructure: a repository and suite of tools dedicated to preserving and showcasing Canadian history and writing. The CWRC infrastructure will cast the LGLC project as an online research and social space &#8212; visitors will be able to plot the events of the Canadian gay liberation movement on maps and timelines; read and annotate the text; converse with one another; and contribute their own images and reflections.</p>
+</div>
+
+<div>
+<head>The Problem of Representation: Modeling Personhood in TEI and RDF</head>
+
+<p>The LGLC project works within CWRC not solely to recover gay history, but to respond, at the level of code, to the debates that have shaped that history. The LGLC project’s initial personographic encoding has been motivated by the movement to recuperate lost lesbian and trans histories.  The debates may be familiar: in the 1980s there was a rush to claim biological females who lived as men, like surgeon James Barry, music hall performer Annie Hindle, and jazz pianist Billy Tipton, as lesbians who had not had access to “lesbian” as an identity marker. In the following decade the transgender community rejoined with competing claims that these historical actors are part of trans history (Halberstam). What ought the conscientious encoder do in the face of such temporal specificity? In building a reliable and ethically responsible code, we are mindful of Alan Galey and Stan Ruecker’s call to make “a virtue of the entanglement of past and future intentions in any artifact”(421); however, we have still experienced anxiety about TEI’s modes of expression. The standards, which for example, only allow four designations for categorizing sex <ref type="note" target="n01">1</ref>, facilitate interoperability, but limit our encoding’s expressiveness.</p>
+
+<p>Judicious customization that meets the needs of our host project helps us balance our twin goals of ethical representation of the queer community and conformance to digital humanities community practice. Our mid-term objective is to model the history of the queer community’s nonce naming practices through TEI, with the long-term goal of using the CWRC space to allow for user-added folksonomic tagging (Ornelas 231). In the meantime, our aim is to extend our event encoding without resorting to schema customization. CWRC is in the process of defining a wide range of RDF predicates to express the relationship between people in its aggregate data sets. Currently, within an event, encoders can tag time, places, agents of action, and recipients of action. CWRC draws on the TEI encoding to write out RDF triples representing the relationship between incidents, time, and people. CWRC allows encoders to draw from CWRC’s local authority records, authority records on the web, to offer alternate identifiers complete with name and URI, or to write a new personographic records. This opportunity for strategic customization certainly helps the LGLC project model personhood with more nuance, and, looking forward, will allow for a more fine-grained articulation of the relationships between all the people CWRC’s aggregate datasets.</p>
+</div>
+
+<div>
+<head>Authoritative Solutions: Dissemination and Discoverability Online</head>
+
+<p>In addition to our desire to integrate LGLC events with other events in Canadian literary history, we are anxious to make the LGLC records widely discoverable. The Canadian lesbian and gay liberation movement is a much-neglected part of Canadian history, one often overshadowed by Stonewall narratives. We aim to rectify the scarcity and relative invisibility of Canada’s gay and lesbian liberation movement online. It is challenging, even when doing traditional research, to draw out all the connections between the organizations, events, and people that make up Canadian LGBT history. The activists in the movement are underrepresented in Wikipedia, and often have only partial records in the Virtual International Authority Files (VIAF), Katalog der Deutsche National Bibliothek (DNB), Freebase, and the Library of Congress Authorities.</p>
+
+<p>CWRC houses its own authority records, which, using linked open data, are connected to VIAF, the DNB, and the Library of Congress, among other authorities. Encoders within CWRC can take their identification of a person further, and create a CWRC-specific authority record for that person, supplementing or even contesting the information housed in other authority records. The actors in LGLC dataset give us an opportunity to code for self-identification over time, correcting VIAF, LC Authorities, Freebase and DBpedia’s failure to account for activists’ changing identities and multiple names, outside of the prose descriptions that they link to or draw from Wikipedia. As legitimate authority records, CWRC’s personographies can serve as the basis for more accurate Wikipedia articles, thus feeding back into VIAF, DBpedia, and Freebase, all of which link to Wikipedia. Encoding practices within the CWRC framework offer a new way to comprehend the relationship between the gender performance, sexual practice, and cultural context embedded in identity naming practices, and provide a way to make those relationships discoverable online.</p>
+
+<p>Our paper shows how the <hi rend="italic">Lesbian and Gay Liberation in Canada</hi> project ensures the representation of historical queer Canadian experience in online resources. Ultimately, as co-directors of the LGLC project, we offer our code and our data modeling principles as methods to overcome the limitations of extant authority records.  In this way, LGLC contributes to the existing feedback, citation, and authority models in a manner that supports the LGBT community and improves online access to often overlooked histories &#8212; after all, Jane Rule was not the only lesbian in Canada in the 1960s.</p>
+</div>
+</div>
+    
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+                
+<bibl><hi rend="bold">Galey, A., and S. Ruecker</hi> (2010). How a Prototype Argues. <hi rend="italic">Literary and Linguistic Computing</hi> <hi>25.4</hi>: 405–424.</bibl>
+                
+<bibl><hi rend="bold">Ornelas, A.</hi> (2010). Queer as Folksonomies. In Greenblatt, E. (ed). <hi rend="italic">Serving LGBTIQ Library and Archives Users: Essays on Outreach, Service, Collections and Access.</hi> Jefferson, NC: McFarland. 229–239. </bibl>
+                
+<bibl><hi rend="bold">Halberstam, J. J.</hi> (1998). Transgender Butch: Butch/FTM Border Wars and the Masculine Continuum. <hi rend="italic">GQL: A Journal of Lesbian and Gay Studies</hi> <hi>4.2</hi>: 287–310.</bibl>
+                
+<bibl><hi rend="bold">Martin, S.</hi> (2007). 'B.C. Novelist Wrote a Cult Classic and Became a Lesbian Role Model'. <hi rend="italic">The Globe and Mail</hi>.</bibl>
+
+<bibl><hi rend="bold">McLeod, D. W.</hi> (1996). <hi rend="italic">Lesbian and Gay Liberation in Canada: A Selected Annotated Chronology, 1964-1975</hi>. Toronto: ECW Press/Homewood Books. </bibl>
+                
+</listBibl>
+</div>
+<div>
+
+<head>Notes</head>
+<note xml:id="n01" n="1">The four values permitted on the sex’s value attribute are <hi rend="italic">male, female, unknown,</hi> and <hi rend="italic">not applicable.</hi></note>
+</div>
+</back>
+</text>
+</TEI>
+
+
+
+            
+

@@ -1,0 +1,125 @@
+
+Introduction
+
+We propose an analysis of the social network composed of the characters appearing in Jean-Jacques Rousseau's autobiographic 
+Les Confessions
+, with existence of edges based on co-occurrences. This work consists of twelve volumes, that span over fifty years of his life. 
+
+
+
+Having a unique author allows us to consider the book as a coherent work, unlike some of the historical texts from which networks often get extracted, and to compare the evolution of patterns of characters through the books on a common basis. 
+Les Confessions
+, considered as one of the first modern autobiographies, has the originality to let us compose a social network close to the reality, only with a bias introduced by the author, that has to be taken into account during the analysis. Hence, with this paper, we discuss the interpretation of networks based on the content of a book as social networks. We also, in a digital humanities approach, discuss the relevance of this object as an historical source and a narrative tool.
+
+
+
+
+
+
+
+Literature review
+
+Prior to this work, comparable studies have been published (Elson et al. 2010; Elson 2012), with edges based on conversations. After presenting a model to build "conversational networks" from classic novels, the authors conduct a social network analysis from which they can conclude that "as the number of characters in a novel grows, so too do the cohesion, interconnectedness and balance of [its] social network". 
+
+
+
+In (Moretti 2011), the author proposes the use of network theory to analyse the plot of Shakespeare’s Hamlet. Finally, the study consists of re-telling the story via networks in order to sensitize the reader to this problematic, but doesn’t develop any tool or concrete methodology.
+
+
+
+Another recent paper (Carron, et al. 2012) proposes a statistical method invoking concepts of small-world, centrality and assortativity, with the objective of detecting real facts from fictional ones in mythological narratives.
+
+
+
+
+Methodology
+
+We propose a method that allows building a network from an index of names, and pages on which they occur (528 names on 672 in the selected – Slatkine, 2012 – edition). Vertices in the network represent the characters. To determine the existence of an edge between two characters, we have to deal with two constraints : the page is a restriction we have to get around, and some co-occurrences may be too weak to mean anything. Therefore, we take into account co-occurrences on same and adjacent pages (a name on last line of page n and a name on first line of page n+1 are closer than two names on first and last line of the same page), and then restrict the meaningful links to those reaching a certain level of significance. In this study, an edge with a coefficient of 1 means it links two adjacents nouns. An edge with a coefficient of 2 means two times adjacents nouns, or two names occuring on the same page. With that in mind, we choose to impose a threshold of 3 on links for them to be considered, so that no two characters are linked by error.
+
+
+
+The resulting network is composed of 435 vertices and 3572 edges situated in a single connected component instead of 528 vertices and 4138 edges without threshold (links incident to non-contemporary characters like Plato or Copernic, cited together by Rousseau because of the influence of their work on his, have disappeared). It is undirected, i.e. relations are reciprocal. For comparison, the network with co-occurrences per page only, without threshold, is composed of 528 vertices and 2047 edges.
+
+
+
+
+
+
+
+Analysis
+
+Average path length is 2.48 steps, a small number but equal to what is obtained from random graphs generated with same order and density. However, diameter is equal to 10, which is high compared to 4 in the random case. The fifty years of Rousseau’s life covered by 
+Les Confessions
+ lead to characters of the beginning and end of his life far away one from the other in terms of network distance. The comparison with random cases also yields an interesting result in the case of transitivity (closure of triplets of characters), which is equal to 0.299 against 0.038 in the random case, and global clustering coefficient equal to 0.724 against 0.038. These two results lead to assert that Rousseau links strongly characters between them in his narratives. According to (Watts et al., 1998), the network satisfies conditions to be considered as a “small-world” network (with possible discussion because of the high value of diameter).
+
+
+
+Minus some noise on both sides, distribution of degrees of vertices and weights of edges show obvious power-law shape. Distribution of degrees has mode equal to 6, which is an interesting result since such a shape is common with many networks, but not a known results for literary or narrative networks. This implies that the author usually cite characters at least a few times, or with many other characters at the same time.
+
+
+
+In (Newman et al. 2003), the authors define assortativity as the correlation of degrees of adjacent nodes. They conclude that social networks have positive assortativity, which is due to the frequent group structure observed on networks of this type. Assortativity of degrees computed on the network equals -0.114, while in the random case we obtain -0.006. In this work, we explore the potential explanations, from a possible bias introduced by the author, to a criticism of our method of creating the edges.
+
+
+
+In the rest of the work, we still plan to show how the roles of protagonists can be identified, followed and compared via centrality indices like eigenvector centrality (centrality measure of a character depends on the ones from his neighbours, as it does with theirs). The question of dynamics of a literary network, linked to the chronological way Rousseau wrote the book, will also be considered.
+
+
+                
+
+
+
+
+
+
+
+
+Barabási, A.-L., and R. Albert
+ (1999). Emergence of scaling in random
+networks. 
+Science
+, 286(5439): 509–512.
+Brandes, U., and T. Erlebach
+ (2005). Introduction. In 
+Network Analysis
+,
+volume 3418, pages 1–6. Berlin Heidelberg: Springer.
+
+Mac Carron, P., and R. Kenna
+ (2012). Universal properties of mythological
+networks. 
+EPL (Europhysics Letters)
+, 99(2): 28002, July 2012.
+Elson, D. K.
+ (2012). 
+Modeling narrative discourse
+. Ph.D. thesis, Columbia University,
+New York City.
+Elson, D. K., N. Dames, and K. R. McKeown
+ (2010). Extracting
+social networks from literary fiction. In 
+Proceedings of the 48th Annual Meeting
+of the Association for Computational Linguistics (ACL 2010)
+, Uppsala,
+Sweden.
+Marina, H.,  B. Ulrik, P. Jürgen, and M. Ines
+ (2012). Studying Social Networks: A Guide to Empirical Research. Campus Verlag.
+Moretti, F.
+ (2011). Network theory, plot analysis.  
+http://litlab.stanford.edu/?page_id=255
+Newman, M. E. J.,  and J. Park
+ (2003). Why social networks are different from
+other types of networks. 
+Phys. Rev. E
+, 68(3): 036122, September 2003.
+Wasserman, S.,  and K. Faust
+ (1994). 
+Social Network Analysis: Methods
+and Applications
+. Cambridge University Press, November 1994.
+Watts, D. J.,  and S. H. Strogatz
+ (1998). Collective dynamics of ‘smallworld’
+networks. 
+Nature
+, 393:440–442, June 1998.
+

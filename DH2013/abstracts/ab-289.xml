@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-289">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Documentary Social Networks: Collective Biographies of Women</title>
+<author>
+<name><surname>Booth</surname>, <forename>Alison</forename></name>
+<affiliation>University of Virginia, United States of America</affiliation>
+<email>ab6j@virginia.edu</email>
+</author>
+<author>
+<name><surname>Martin</surname>, <forename>Worthy</forename></name>
+<affiliation>University of Virginia, United States of America</affiliation>
+<email>wnm@virginia.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">This short paper presents new capabilities of Collective Biographies of Women (CBW), a UVA/IATH project with a database of over 1200 volumes, comprising more than 13,000 biographies of more than 8000 women. We introduce the phrase, “documentary social network,” to refer to prosopographical representations rather than actual social networks; the books published 1830-1940 collect short versions of many persons and types, documenting trends in representation across periods and nations. The paper examines various radial and columnar graphs of &quot;siblings&quot; and &quot;cousins&quot; (degrees of separation among 1,2, or more books) of famous and obscure women of differing roles. CBW&#039;s documentary networks, along with our innovative markup schema, open a field of ramifying versions of female biography defying gender norms; our findings enrich studies in biography, model new approaches to &quot;personography,&quot; and display on both micro and macro scales a digital historiography beyond time and period, place and nationality.</note></notesStmt>
+            
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">SP07</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>prosopography</term>
+<term>women</term>
+<term>biography</term>
+<term>social network</term>
+<term>visualisation</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>gender studies</term>
+<term>historical studies</term>
+<term>literary studies</term>
+<term>text analysis</term>  
+<term>networks</term>
+<term>relationships</term>
+<term>graphs</term>
+                    
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+
+    <p>Collective Biographies of Women (CBW) is a collaborative<ref type="note" target="n01">1</ref>, open-access<ref type="note" target="n02">2</ref> literary and prosopographical project focusing on published collections of biographies of women <ref type="note" target="n03">3</ref>. The literary focus of this interdisciplinary project (which also centers in women's history in Britain and the U.S.) concentrates on a popular genre that has received little critical attention. We study the narrative structure of short biographies of diverse women’s lives delineated through interpretive analysis captured in a stand-aside XML mark-up using the BESS schema<ref type="note" target="n04">4</ref>. Having presented the theoretical and literary aspects in multiple venues<ref type="note" target="n05">5</ref>,  in this short paper we will present emerging prosopographical interpretations of a database of over 1200 volumes, comprising more than 13,000 biographies of more than 8000 women. The women in this corpus come from all walks of life (not simply one occupation or nation, such as the women writers considered by Orlando or Brown's Women Writers Project<ref type="note" target="n06">6</ref>), and range from ancient and biblical figures to living contemporaries of the biographers.</p>
+    <p>In our proposed paper we introduce the phrase, “documentary social network,” as a label for our prosopographical interpretations because we are interested in social networks as discovered in biographical documents<ref type="note" target="n07">7</ref>. Yet these networks do not always resemble those that can be found in an investigation of Twitter feeds or Facebook “friends” or even of archival materials such as provided by SNAC<ref type="note" target="n08">8</ref>. The social networks evidenced through our collection of collections are those of documentary grouping and reference. In specialized collections, Christian missionaries in Africa or nurses in World War I may have interacted in historical time and place, but assorted tables of contents commonly link some individuals who never actually shared a "live" event or a relationship or communication. Thus, the relationships are as perceived and presented through printed volumes collecting short versions of biographies.</p>
+    <p>Let us consider one Mrs. John Livingstone. She appears in only three CBW collections and by way of those collections her immediate documentary social network has 37 other women<ref type="note" target="n09">9</ref>. To visualize this network, Figure 1 is centered on Mrs. Livingstone with the three collections positioned on the innermost circle and the other women of those collections around the second circle. Of her 37 collection “siblings,” nine also appear in these same three collections and nowhere else in CBW, confirming some consensus on the names that represent "Notable Women of the Scottish Reformation," a specific historical episode in one location. Other members of Livingstone's documentary “siblings” range into other collections and in Figure 2 those additional collections are positioned on the third circle. In more eclectic lists, some of the Scottish heroines of religious conflict intersect with a multi-national set of women widely recognized today, including writers such as Harriet Beecher Stowe and heroines of war such as Joan of Arc or the Countess of Montfort. Mrs. John Livingstone’s 267 documentary “cousins” are displayed on the fourth circle in Figure 3<ref type="note" target="n10">10</ref>.</p>
+    <p>CBW's first experiments in digital analysis of narrative structure using the BESS schema have focused on two sample archives that are also productive for this paper's claims about documentary social networks. (Each sample archive is a set of all female collective biographies that include a certain woman, as in Fig. 1.) The two sample archives are "Noble Workers," 20 books that include a biography of Sister Dora, who ran hospitals in the industrial Midlands, and "Women of the World," 14 books that include a biography of Lola Montez, a celebrity in Europe, New York, California, and Australia. These Victorian women never met and never appear in the same book. The mediated interconnections between Sister Dora and Lola Montez appear in Figure 4. Only two women, Marie Antoinette (presented as a victimized queen) and Jenny Lind (the celebrated, virtuous singer), appear with Sister Dora in one collection <hi rend="italic">and</hi> with Lola Montez in another (i.e., within one degree of separation of both Dora and Lola). The multiple versions of the lives of 141 women who "network" with Sister Dora in Noble Workers collections, compared to the versions of the 133 persons linked to Lola Montez in Women of the World books, will demonstrate the utility of our approach to analyze historical social networks and nonfiction narratives of many kinds. In spite of the vast differences between two Victorian women &#8212; one a saintly nurse, the other a notorious courtesan and performer &#8212; we discover patterns among their associates and their proximity in the CBW documentary social network.</p>
+    <p>These prosopographical networks reveal unexpected affiliations among different types of women, life stories, and collections; with the CBW tools for searching and visualization, we are now able to calibrate not only frequencies and proximities of persons and publications over time, but gradations of rhetorical assessment of women's roles and deeds, according to the perspectives of these publications<ref type="note" target="n11">11</ref>. Such multivalent interconnections not only cross categories but also historical periods in significant ways. An example is the connection between Sister Dora and Anne Boleyn, shown in Figure 5. This diagram reveals that the middle-class, now-forgotten Englishwoman, Sister Dora, appears with her contemporary queen, Victoria (in seven books), and in two collections with the martyred queen, Jane Grey (one of the latter, a186 <ref type="note" target="n12">12</ref>, is a book that Victoria also shares), but not with Henry VIII's second wife<ref type="note" target="n13">13</ref>. At sufficient scale, and integrated with other elements in our analysis, data on frequency or "distance" in networks can lead to productive interpretations. Anne Boleyn, unlike good Lady Jane in ambition and sexual notoriety , but like her in being executed because of the politics of English monarchy, features in 24 collections, including 11 dedicated to English queens and three focused on the English Reformation; the latter three collections include Lady Jane Grey but not one of the obscure Scotswomen of Mrs. Livingstone's ilk. To put it simply, Boleyn serves English and Protestant history, but not the promotion of feminine virtue, heroism, or social service.</p>
+    <p>More complex documentary interrelationships can be seen in Figure 6, associating the Gothic novelist Ann Radcliffe (dead before Sister Dora was born) with Sister Dora through a range of widely respected eighteenth-and nineteenth-century women writers; these lists also commend Jeanne d'Albret, the French queen regnant who championed the Calvinist Huguenots, as well as Lady Russell, Mme. Roland, and Lady Jane Grey, represented as good, highly educated women who played indelible parts in the history of their countries in revolutionary times.</p>
+    <p>Our proposed paper will present the methods and implications of prosopographical analyses afforded by the CBW documentary social network. Our demonstration of documentary social networks has implications for any "personography," as well as for historical studies of women and studies of biographical narrative. We argue, in this paper, that digital exploration of the persons, narratives, collections, and documentary social networks in the CBW genre opens a prolific field of ramifying versions of female biography impossible to decipher through an approach to individuals or single full-length biography, and invisible through the customary lenses of historiography, time and period, place and nationality.</p>
+
+<figure><graphic url="ab-289.001"/><head><hi rend="italic">Figure 1</hi>:</head><p>Mrs. John Livingstone and her 37 documentary siblings.</p></figure>
+
+<figure><graphic url="ab-289.002"/><head><hi rend="italic">Figure 2</hi>:</head><p>The 16 collections containing Mrs. John Livingstone and her documentary siblings.</p></figure>
+
+<figure><graphic url="ab-289.003"/><head><hi rend="italic">Figure 3</hi>:</head><p>Mrs. John Livingstone and her 267 documentary cousins.</p></figure>
+
+<figure><graphic url="ab-289.004"/><head><hi rend="italic">Figure 4</hi>:</head><p>Connections between Sister Dora and Lola Montez.</p></figure>
+
+<figure><graphic url="ab-289.005"/><head><hi rend="italic">Figure 5</hi>:</head><p>Connections between Sister Dora and Anne Boleyn.</p></figure>
+
+<figure><graphic url="ab-289.006"/><head><hi rend="italic">Figure 6</hi>:</head><p>Connections between Sister Dora and Ann Radcliffe.</p></figure>
+
+</div>    
+
+<div>
+<head>Notes</head>
+
+<note xml:id="n01" n="1">The collaboration is among the UVa English Department (Booth and numerous graduate students) and the Institute for Advanced Technology in the Humanities (Martin, Pitti, Ross, Girard, Brandon, and Bingler), building on earlier work with the UVa Library’s Scholars’ Lab (Gilbert and others).</note>
+<note xml:id="n02" n="2">To access the complete bibliography and “featured subjects” pages go to <ref type="url" target="http://womensbios.lib.virginia.edu/">http://womensbios.lib.virginia.edu/</ref> and to access a prototype interface to the database go to <ref type="note" target="http://cbw.iath.virginia.edu/cbw_db/">http://cbw.iath.virginia.edu/cbw_db/</ref> .</note>
+<note xml:id="n03" n="3">The volumes are English-language collections published primarily between 1830 and 1940 (though publications of earlier and later dates are included), each containing biographies of from three to 150 women.</note>
+<note xml:id="n04" n="4">Biographical Elements and Structure Schema (BESS) is designed to reveal narrative structure and other elements in the short biographies, for measurable comparison of versions of one woman's life over many collections, and for analysis of the forms within a single collection or category of collections.</note>
+<note xml:id="n05" n="5">These include invited keynote lectures, e.g. Feminist Narrative Theories (a Project Narrative symposium, Ohio State), Life-Writing (a conference at Huntington Library), and British Women Writers Conference, as well as papers at North American Victorian Studies Association, Narrative, and Modern Language Association conferences (2009-2012).</note>
+<note xml:id="n06" n="6">See Susan Brown, Clements, Grundy, et al. <hi rend="italic">Orlando: Women’s Writing in the British Isles from the Beginnings to the Present.</hi> Cambridge: Cambridge University Press, 2006. <ref type="url" target="http://orlando.cambridge.org/">http://orlando.cambridge.org/</ref>, University of Alberta <ref type="url" target="http://www.arts.ualberta.ca/~orlando">www.arts.ualberta.ca/~orlando</ref>; and 
+Julia Flanders, Encoding Names for Contextual Exploration in Digital Thematic Research Collections.  NEH ODH Level II Final Report, 30 April 2010. <ref type="url" target="http://www.wwp.brown.edu.">http://www.wwp.brown.edu. </ref></note>
+<note xml:id="n07" n="7">For innovative digital work with literary biographical networks, see Alan Liu, Research Oriented Social Environment (RoSE) <ref type="url" target="http://rose.english.ucsb.edu/">http://rose.english.ucsb.edu/</ref>.  Unlike CBW, most digital prosopography projects <hi rend="italic">reconstruct</hi> data about groups of lives in eras that predate printed documentation.  See John Bradley and Harold Short, “Using Formal Structures to Create Complex Relationships: The Prosopography of the Byzantine Empire—A Case Study,” in K. S. B. Keats-Rohan (ed.), <hi rend="italic">Resourcing Sources Prosopographica et Genealogica</hi>, vol. 7., Oxford, 2002.  Susan Brown, Alan Liu, John Bradley and others have committed to participate in a proposed NEH Level-I Startup Grant workshop to be held at University of Virginia in 2013.</note>
+<note xml:id="n08" n="8">The Social Networks and Archival Context Project, see: <ref type="url" target="http://socialarchive.iath.virginia.edu/">http://socialarchive.iath.virginia.edu/</ref></note>
+<note xml:id="n09" n="9">Janet Fleming Livingstone or Mrs. John Livingstone surfaces in a cohort of late-seventeenth-century Scottish Protestant Dissenters; many are wives of Presbyterian ministers or widows of martyrs or exiles.  The relatively coherent group includes noblewomen, but most are historically obscure (life dates or first names unknown).  Two collections have versions of the same list of persons: a029, Anderson, Rev. James [of Edinburgh], <hi rend="italic">The Ladies of the Covenant: Memoirs of Distinguished Scottish Female Characters, Embracing the Period of the Covenant and the Persecution</hi> (London: Blackie, 1850), with reprints through 1880; a157, Chapman, William, <hi rend="italic">Notable Women of the Covenant: Their Lives and Times </hi> (London: Swan Sonnenschein, 1883).  The third book including Mrs. Livingstone is a068, Beaton, Rev. Donald, <hi rend="italic">Scottish Heroines of the Faith: Being Brief Sketches of Noble Women of the Reformation and Covenant Times</hi> (London and Glasgow: Catt; Adshead, 1909).</note>
+<note xml:id="n10" n="10">One near relation (two degrees of separation) of Livingstone is Sister Dora, who illustrates the exponential possibilities: she appears in 20 collections with 141 “siblings” and then a prodigious 3560 “cousins.”</note>
+<note xml:id="n11" n="11">One near relation (two degrees of separation) of Livingstone is Sister Dora, who illustrates the exponential possibilities: she appears in 20 collections with 141 “siblings” and then a prodigious 3560 “cousins.”</note>
+<note xml:id="n12" n="12">This is the identifying “key” for this collection in the CBW bibliography for the genre.</note>
+<note xml:id="n13" n="13">Queen Victoria, who boasts 60 biographical chapters in the CBW books, shares 10 books with Lady Jane Grey, but only five with Anne Boleyn.  Lady Jane's 48 chapters include 12 in books that also represent Anne Boleyn.</note>
+
+
+</div>
+</body>
+</text>
+</TEI>

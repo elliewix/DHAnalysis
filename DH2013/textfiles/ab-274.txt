@@ -1,0 +1,141 @@
+
+
+
+
+
+The digitization of nineteenth-century texts offers us the opportunity of asking new research questions that could transform our historical understanding of Victorian culture. Digital access to the breadth of nineteenth-century print culture, which included books, periodicals, and newspapers published for an ever-increasing reading audience, puts pressure on traditional configurations of the literary canon, which examines only a limited number of authors and texts. As Dan Cohen asks, ‘Should we be worrying that our scholarship might be anecdotally correct but comprehensively wrong? Is 1 or 10 or 100 or 1000 books an adequate sample to know the Victorians?’ (Cohen).  In developing 
+VisualPage
+, a software application for the large-scale identification and analysis of the graphical elements of digitized printed books, we will enable researchers to identify unique or representative examples across very large data sets of digitized texts. Such computational analysis will reveal new ways of thinking about both the printed book and its digitized forms.  This paper presents the current development of this proof-of-concept software (funded in 2012 by a Level II NEH Digital Humanities Start-Up Grant) and some findings from the analysis of our initial data set.
+
+
+
+
+
+ 
+Large Scale Analysis and Victorian Books
+
+
+As Franco Moretti notes, the traditional Victorian canon includes only a ‘minimal fraction of the literary field’ constituted by all the texts published in the period. He calls for new methods of analysis because ‘a field this large cannot be understood by stitching together separate bits of knowledge about individual cases, because it isn't a sum of individual cases: it's a collective system’ (3-4).  To understand the literary field as a system requires examining what Pierre Bourdieu calls ‘position-takings’ — all of the actions, persons, and objects that produce a work of art and its cultural value, including those ‘which, because they were part of the self-evident givens of the situation, remain unremarked and are therefore unlikely to be mentioned in contemporary accounts’ (30-31).  The structures of cultural value that surrounded Alfred Tennyson's 
+In Memoriam
+, Christina Rossetti's 
+Goblin Market and Other Poems
+, or any other volume of Victorian poetry were partly created by all the other books of poetry, including what Bourdieu calls the ‘unremarked’ ones that were overlooked by both Victorian critics and scholars in our own day.
+
+
+
+Digitization offers us the possibility of expanding our study of Victorian literature to include previously ‘unremarked’ texts. However, most tools for large-scale research focus on the linguistic content of texts, through either syntactic or semantic analysis. But printed texts simultaneously convey meaning through both linguistic and graphic signs. As Jerome McGann suggests, ‘text documents, while coded bibliographically and semantically, are all marked graphically’ and a ‘page of printed or scripted text should thus be understood as a certain kind of graphic interface’ (138, 199).  We’ve taken poetry as our starting point for 
+VisualPage
+ because the visual appearance of the printed page contributes to the reader’s understanding of the poem’s form and meaning through the conventions of line capitalization, punctuation, and indentation.
+
+
+
+Printed poems are typically framed by the white space created by line endings, creating a distinctive visual signal of the genre on the printed page. Experienced readers evaluate the graphical codes of printed texts quickly, often subconsciously; as Johanna Drucker suggests, ‘we see before we read and the recognition thus produced predisposes us to reading according to specific graphic codes before we engage with the language of the text’ (242). In Victorian books of poetry, for example, rhymed lines were frequently indented the same distance from the left margin to visually indicate the poem’s form and structure. Rhyme is thus simultaneously a linguistic, poetic, and graphic feature of many Victorian books.  
+
+
+
+Scholars have long realized that ‘Typographic transcriptions . . . abstract texts from the artifacts in which they are versioned and embodied’ (Viscomi 29). Although full bibliographical analysis of a book is not available from a digital surrogate, digital images of a book’s pages offer researchers more information about ‘the interaction of its physical characteristics with its signifying strategies’ than can text alone (Hayles 103).  Accordingly, most scholarly digital archive projects today recognize the value of this graphical meaning and provide users access to both digitized page images and plain text versions. But until now, researchers have been limited to only what their human eyes can see or recognize in those page images. Developing tools for the large scale graphical analysis of digitized books will contribute to a broader understanding of literature’s circulation, consumption, and function within Victorian culture.
+
+
+
+   		 
+
+
+Overview of the 
+VisualPage
+ Application
+
+
+In order to make the visual structure of document images explicit and available to both computational processing and interactive human analysis, the 
+VisualPage
+ application is designed around three inter-related tasks. The Feature Extraction module analyzes the digitized page images in order to translate pixels into the language of visual features used to design and analyze page layout: typeface size; margin size; width, height and spacing of text lines; and more. These features are then organized in relation to bibliographic categories, such as volumes, poems, and pages, in order to enable questions such as ‘how much variability is there in the length of lines in poems from two different publishers?’ or ‘how does the visual density of a page change for this publisher over time?’ 
+VisualPage
+ is designed so that the specific set of features extracted from a collection can be changed in response to new analytical needs and new technical capabilities.
+
+
+
+Once these features have been extracted and stored in an attribute-relation file (ARFF), the next task is to discover relationships within the data. This is the responsibility of the Pattern Recognition module. The pattern recognition module will support basic queries such as ‘find all poems that use dropped capital letters’ or ‘find poems whose line length is in the bottom 25% of poems from this publisher.’ It will also enable more sophisticated data mining based on machine-learning techniques. Simple examples include the ability to cluster documents based on a set of features such as margin width and line height or to find documents that are ‘visually similar’ to a set of known documents.
+
+
+
+Finally, the Analysis module presents data visualization and exploration interfaces. This is the outward-facing portion of the application that allows scholars to interact with the documents and to harness the pattern recognition tools in order to pose new questions and discover new relationships within the collection.
+
+
+
+During the start-up phase of this project, we are focusing software development work toward two main objectives. First, we are designing the main structure of each module and implementing an initial set of features that can be extended and enhanced through future work. Second, we are performing an initial proof-of-concept prototyping for the more technically complex components of the system. Notably, this includes:
+
+
+
+recognition of the low-level image features
+understanding the higher-level structure in terms of both poetry (e.g., titles, epigraphs, stanzas as they are found within a single page and across multiple pages) and page layout (margins, running heads, page numbers, footnotes, etc.)
+analyzing these structures using pattern recognition and machine learning techniques
+This proof-of-concept work addresses questions about which approaches hold the most promise for scholarly research in addition to demonstrating the technical feasibility of our approach. In order to ensure that the techniques we develop are appropriate to collections beyond that which can be easily analyzed and comprehended by a single scholar, our initial data set consists of 300 single-author books of poetry published between 1860-1880, or approximately 60,000 page images. 
+
+
+
+
+
+
+Initial Research Findings
+
+
+In presenting research findings from our initial data set of single-author books of poetry, we will focus on three main areas of research:
+
+
+
+identifying historical changes correlated with particular publishers in the printing of poetry during the period 1860-1880
+analyzing line indenting and line length to understand Victorian rhyme and poetic form across a varied set of authors and texts  
+identifying computationally significant patterns or trends in the graphical design of Victorian books  
+Our 
+VisualPage
+ software enables researchers to move beyond our human capacity to view, compare, and understand only a limited number of texts at one time. Large-scale analysis of the graphical dimensions of previously ‘unremarked’ books offers us the possibility of understanding the cultural field of Victorian poetry in all its historical complexity.
+
+
+
+
+
+
+Funding
+
+This work was supported by the National Endowment for the Humanities [HD5156012].
+
+ 
+
+
+
+
+
+
+
+
+
+Bourdieu, P.
+ (1993). The Field of Cultural Production, or: The Economic World Reversed. In Johnson, R. (ed). 
+The Field of Cultural Production: Essays on Art and Literature
+. New York: Columbia University Press.
+Cohen, D.
+ (2010). Searching for the Victorians. 
+Dan Cohen
+, 
+http://www.dancohen.org/2010/10/04/searching-for-the-victorians
+ (accessed 4 October 2010).  
+Drucker, J.
+ (2009). 
+SpecLab: Digital Aesthetics and Projects in Speculative Computing
+. Chicago: University of Chicago Press.
+Hayles, N. K.
+ (2005). 
+My Mother was a Computer: Digital Subjects and Literary Texts
+. Chicago: University of Chicago Press.
+McGann, J.
+ (2001). 
+Radiant Textuality: Literature after the World Wide Web
+.  New York: Palgrave Macmillan. 
+Moretti, F.
+ (2005). 
+Graphs, Maps, Trees: Abstract Models for a Literary History
+. London: Verso. 
+Viscomi, J.
+ (2002). Digital Facsimiles: Reading the William Blake Archive. 
+Computers and the Humanities
+ 36(1). 27-48.
+

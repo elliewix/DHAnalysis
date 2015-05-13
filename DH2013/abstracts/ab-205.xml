@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-205">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Rebuilding Civil War Washington</title>
+<author>
+<name>
+<surname>Lorang</surname>, 
+<forename>Elizabeth M.</forename>
+</name>
+<affiliation>University of Nebraska-Lincoln, United States of America</affiliation>
+<email>liz.lorang@gmail.com</email>
+</author>
+
+<author>
+<name>
+<surname>Dalziel</surname>, 
+<forename>Karin</forename>
+</name>
+<affiliation>University of Nebraska-Lincoln, United States of America</affiliation>
+<email>kdalziel2@unl.edu </email>
+</author>
+
+</titleStmt>
+<publicationStmt>
+<authority/>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace>
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p/>
+</availability>
+</publicationStmt>
+
+<notesStmt>
+<note type="abstract">In April 2012, the Center for Digital Research in the Humanities at the
+University of Nebraska-Lincoln launched version 2.0 of Civil War Washington (civilwardc.org). This
+poster presentation will document the evolution of Civil War Washington from version 1.0 to version
+2.0, including technologies used, changing aims of the project, and the intellectual rationale
+underlying these decisions. Changes made for version 2.0 included a revamping of the overall design
+and underlying framework of the site and the development of three major sections, Texts, Data, and
+Maps. This poster will emphasize the structure and design of the site and the Texts section.</note>
+</notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>web design</term>
+<term>text encoding</term>
+<term>TEI</term>
+<term>HTML</term>
+<term>CSS</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>encoding - theory and practice</term>
+<term>historical studies</term>
+<term>interface and user experience design</term>
+<term>project design</term>
+<term>organization</term>
+<term>management</term>
+<term>information architecture</term>
+<term>xml</term>
+<term>internet / world wide web</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-01"/>
+<name>Matthew Lavin</name>
+<desc>initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="poster">
+<body>
+<div>
+<p>In April 2012, the Center for Digital Research in the Humanities at the University of
+Nebraska–Lincoln launched version 2.0 of <hi rend="italic">Civil War Washington</hi>
+(<ref type="url" target="http://civilwardc.org">civilwardc.org</ref>). This poster presentation will document the evolution of <hi rend="italic">Civil War Washington</hi> (CWW) from version 1.0 to version 2.0, including the technologies used, the
+changing aims of the project, and the intellectual rationale underlying these decisions. Changes
+made for version 2.0 included a revamping of the overall design and underlying framework of the site
+and the development of three major sections, Texts, Data, and Maps. This poster will emphasize the
+structure and design of the site, as well as the Texts section.</p>
+
+<p>Although the site maintained a similar but updated visual look from version 1.0 to version 2.0,
+nearly everything on the back end was rewritten, including the HTML and CSS. The technology in the
+intervening three years had changed so much that we were able to streamline the HTML and employ CSS3
+elements for features such as drop shadows and embedded fonts. At the same time, we chose to abandon
+a CSS framework used in the first version of the site because the framework made it too easy to
+accidentally break the layout. We are now using heavily commented descriptive classes on HTML
+elements. </p>
+<p>The Texts section of <hi rend="italic">CWW</hi> changed significantly from the first version of
+the site to the second. Most visibly, the amount of available material expanded. Originally, <hi
+rend="italic">CWW</hi> included six HTML pages of cases from the <hi rend="italic">Medical and
+Surgical History of the War of the Rebellion</hi> and a number of issues of a single hospital
+newspaper. With the relaunch of the site, we added 200 petitions filed in response to the DC
+Emancipation Act of 1862 (more petitions are added on a regular basis), separated the medical cases
+into their own files (more than 1,400 and counting), and posted nearly complete runs of three
+newspapers. Each of these different types of texts required specific encoding choices that were
+rooted in our scholarly commitments and were necessarily influenced by more pragmatic concerns. </p>
+
+<p>Throughout the history of the project, all documents represented in the Texts section have been
+encoded in TEI. Working toward version 2.0 of the site, we determined that the initial encoding for
+the medical cases—in which all cases from a particular volume of the <hi rend="italic">Medical and Surgical History</hi>
+were represented in a single TEI file, transformed to HTML &#8212; did not adequately model our
+understanding of the cases or how we thought they most usefully told the story of Civil War DC. We
+used XSLT to separate all of the cases into individual files, drawing on existing metadata to
+generate new TEI headers and keywords for the cases. We also modified our approach to encoding
+personal, place, and organization names and references to dates. For the petitions, we recognized
+that the key features to be encoded were form and handwritten text; personal, place, and
+organizational names; and the structure of the documents. In addition, part of our editorial work
+was rejoining documents separated into two record groups at the U.S. National Archives. Therefore,
+our encoding practices needed to be able to accurately describe and reconstruct this quality of the
+documents. </p>
+
+<p>One goal of the revamped Texts section was to make use of this new deep encoding. For version 2.0
+of the site, we made use of the CSS element @font-face, which allowed for considerable typographic
+choices. This change required further discussion and raised potential problems, however, as many
+free fonts support only limited character sets, and many of the project documents included Unicode
+characters such as ligatures. In addition, the encoding and new site infrastructure allowed us to
+link cases to one another by drawing on the encoded keywords and utilizing SOLR as the search
+engine. Likewise, we utilized the encoding to visually mark the handwritten text of petitions in the
+browser. Users have the option to toggle on the highlighting of handwritten text, thereby calling
+attention to the parts of documents unique across petitions. These examples illustrate just a few
+the many problems confronted and decisions made during the redesign. </p>
+
+<p>The poster will include examples of the old code and content and the new code and content, noting
+the differences between them and providing screenshots that demonstrate the evolution of the site.
+In addition, the poster will document the technical and humanistic reasons for the changes, as part
+of the larger rationale of <hi rend="italic">Civil War Washington</hi>. </p>
+
+</div>
+
+</body>
+
+</text>
+</TEI>

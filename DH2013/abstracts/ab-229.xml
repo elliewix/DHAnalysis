@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-229">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Introducing GeoBib: An Annotated and Geo-referenced Online Bibliography of Early German and Polish Holocaust and Camp Literature (1933–1949)</title>
+<author>
+<name><surname>Entrup</surname>, <forename>Bastian</forename></name>
+<affiliation>Universität Gießen, Germany</affiliation>
+<email>bastian.entrup@zmi.uni-giessen.de</email>
+</author>
+<author>
+<name><surname>Bärenfänger</surname>, <forename>Maja</forename></name>
+<affiliation>Universität Gießen, Germany</affiliation>
+<email>Maja.Baerenfaenger@germanistik.uni-giessen.de</email>
+</author>
+<author>
+<name><surname>Binder</surname>, <forename>Frank</forename></name>
+<affiliation>Universität Gießen, Germany</affiliation>
+<email>Frank.Binder@zmi.uni-giessen.de</email>
+</author>
+<author>
+<name><surname>Lobin</surname>, <forename>Henning</forename></name>
+<affiliation>Universität Gießen, Germany</affiliation>
+<email>Henning.Lobin@germanistik.uni-giessen.de</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+    
+<notesStmt><note type="abstract">The Holocaust&#039;s aftermath on memory discourses still represents an important research field. Almost 70 years after the end of the Second World War, there will soon be no direct witnesses of the Nazi crimes anymore. What will remain are texts bearing witness to the crimes. The goal of the GeoBib project is to build a systematic and geo-referenced online bibliography of the early Holocaust and camp literature: the first complete, bilingual, i.e. with respect to texts written both in German and Polish, research platform for information on the texts.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Poster</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term></term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Holocaust literature</term>
+<term>online bibliography</term>
+<term>geo-spatial annotations</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>sustainability and preservation</term>
+<term>historical studies</term>  
+<term>teaching and pedagogy</term>
+<term>literary studies</term>
+<term>german studies</term>
+                
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+<div>
+    
+<head>1 Introduction and Goals</head>    
+    
+    <p>The Holocaust's aftermath on memory discourses still represents an important research field. Almost 70 years after the end of the Second World War, there will soon be no direct witnesses of the Nazi crimes anymore. What will remain are texts bearing witness to the crimes. These texts are to be collected, preserved, and made accessible in a systematic manner. Especially the early texts are of great interest: texts written or published between 1933 and 1949, particularly in the years 1944/1945. In this context Germany, bearing the guilt for the Holocaust, and Poland, as a Nazi-occupied country where large parts of the Holocaust took place, are of special relevance.</p>
+    
+<figure><graphic url="ab-229.001"/><head>Figure 1:</head><p><hi rend="italic">Outline of the GeoBib project workflow</hi></p></figure>
+    
+    <p>Unfortunately, the early texts on the Holocaust were soon forgotten or suppressed. With the formation of the two German states (1949), a process of suppression of the texts of the victims began (Cf. Hickethier 1986, p. 578). The official artistic doctrine in the GDR and Soviet Poland excluded certain authors, themes, and forms of presentation.</p>
+    <p>The goal of the interdisciplinary<ref type="note" target="n02">2</ref>  GeoBib project is to build a systematic and geo-referenced online bibliography of the early German and Polish Holocaust and camp literature: the first complete, bilingual, i.e. with respect to texts written both in German and Polish, research platform for information on the texts. On these, GeoBib seeks to collect annotations and metadata. This includes short summaries, keywords, biographical information on the authors, reviews, scientific literature, information on persons, geographical data, as well as time periods mentioned in the texts. The goal is to make information on these widely unknown texts accessible and searchable for a broad and interdisciplinary audience of researchers. Due to legal restrictions, the project does not, however, aim at annotating the whole texts. The focus lies on the collection and integration of these various kinds of information.</p>
+    
+
+    
+    <p>The combination of literary and geo-temporal annotations, as well as the implementation of different (geographical) search mechanisms, enables scholars to conduct innovative research in different scientific domains like literature or history, but is also intended to suit the needs of students, teachers, and the interested public. Maps and other visualizations of geo-temporal information are expected to reveal “historical relations that might otherwise go unasked” (White 2010, p.6).</p>
+</div>
+
+<div>
+<head>2 Workflow and Technical Implementation</head>   
+   
+    <p>Since various research areas are involved, we need to aggregate a multitude of different information from the fields of literature, history, and geography &#8212; a challenge in data management and text technology. An adaptation of the TEI standard, using an ODD file, is being used to build a schema that serves to integrate the intended collection of the different kinds of metadata mentioned above.</p>
+        <p>Starting with the texts, annotation data is collected in TEI files that will be used as input for different processing steps (see Fig. 1): Bibliographical, biographical, and other metadata on the text need to be saved in a database and will be linked to the annotated geo-temporal data. Places need to be mapped to coordinates and annotated with the corresponding timestamp. The geographical data will be used in a <hi rend="italic">geographic information system</hi> (GIS) and in an online database to support search queries across all relevant annotation data (see Fig. 2). The combination of time and space, extracted from the texts, will be used to display the data in form of geographical maps.</p>
+
+
+    <figure><graphic url="ab-229.002"/><head>Figure 2:</head><p><hi rend="italic">Exemplary queries that the GeoBib system is expected to support by returning a list of relevant bibliographic references.</hi></p></figure>
+</div>
+<div>
+<head>3 Context and Outlook</head>    
+    
+    <p>The Holocaust was a traumatic event that has recently been examined with increasing focus on space and time. Or as <hi rend="italic">Beorn et. al.</hi> (2009, p. 563) put it: the “Holocaust was a profoundly geographical event, rooted in specific physical spaces, times, and landscapes”. Their project ‘Geographies of the Holocaust’ is actively working on analyzing the Holocaust from a geo-spatial point of view.</p>
+        <p>Others are looking at how geography is represented in texts (cf. Eide 2012, Appadurai 2010). Specialized software projects were developed to make the representation of, or the work with, geographical information in the humanities easier, e.g. Neatline (Nowviskie et. al. 2012).</p>
+        <p>Geo-spatial information extracted from literary texts, e.g. Google Ancient Places (GAP), can play a “vital role in improving efficiency for researchers” (Isaksen 2011, p. 82).</p>
+        <p>Hence, the GeoBib project is active in a growing field of interdisciplinary geo-spatial research as well as the European Holocaust research community (cf. Kahn 2011).</p>
+        <p>The GeoBib team is looking forward to collaborate in this context.</p>
+</div> 
+    
+</div>
+
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+    
+<bibl><hi rend="bold">Appadurai, A.</hi> (2010).  How Histories Make Geographies: Circulation and Context in a Global Perspective, Transcultural Studies. 1: 4–13.</bibl>
+    
+    <bibl><hi rend="bold">Beorn, W., T. I. M. Cole, S. Gigliotti, et al.</hi> (2009). Geographies of the Holocaust, <hi rend="italic">Geographical Review.</hi> 99(4): 563–574.</bibl>
+    
+<bibl><hi rend="bold">Eide, &#216;.</hi> (2012). <hi rend="italic">Underspecified, Ambiguous or Formal. Problems in Creating Maps Based on Texts.</hi> <ref type="url" target="http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/underspecified-ambiguous-or-formal-problems-in-creating-maps-based-on-texts/">http://www.dh2012.uni-hamburg.de/conference/programme/abstracts/underspecified-ambiguous-or-formal-problems-in-creating-maps-based-on-texts/</ref> (acessed 10 April 2012).</bibl>
+    
+<bibl><hi rend="bold">Hickethier, K.</hi> (1986). Biographie, autobiographie, Memoirenliteratur. In  Fischer, L. (ed.), <hi rend="italic">Literatur in der Bundesrepublik bis 1967.</hi> München 574–584.</bibl>
+    
+    <bibl><hi rend="bold">Isaksen, L., E. Barker, E. Kansa, et. al.</hi> (2011). <hi rend="italic">GAP: a NeoGeo approach to classical resources,</hi> <hi rend="italic">Leonardo</hi>, 45(1): 82–83.</bibl>
+    
+<bibl><hi rend="bold">Kahn, R.</hi> (2011). The EHRI Project: building an online archive for European Holocaust research. SCONUL Focus. (52). 21–22.</bibl>
+    
+    <bibl><hi rend="bold">Nowviskie, B., W. Graham, D. McClure, et al.</hi> (2012). Geo-Temporal Interpretation of Archival Collections Using Neatline. Digital Humanities 2012. <hi rend="italic">Conference Abstracts</hi>. 299–302.</bibl>
+    
+<bibl><hi rend="bold">White, R.</hi> (2010). What is Spatial History? <ref type="url" target="http://www.stanford.edu/group/spatialhistory/cgi-bin/site/pub.php?id=29">http://www.stanford.edu/group/spatialhistory/cgi-bin/site/pub.php?id=29</ref>. (acessed 10 April 2012).</bibl>
+    
+</listBibl>
+</div>
+
+<div type="Notes">
+<note xml:id="n01" n="1">Funded by the German <hi rend="italic">Federal Ministry of Education and Research / Bundesministerium für Bildung und Forschung (BMBF)</hi> for three years, starting July 2012 (FKZ: 01UG1238A).</note>
+
+<note xml:id="n02" n="2">Participating institutions:  the Arbeitsstelle Holocaustliteratur,  the Center for Media and Interactivity (ZMI), Applied and Computational Linguistics, Geoinformatics and Remote Sensing  (all Justus-Liebig-Universität Gießen), and the Herder-Institut (Philipps-Universität Marburg).</note>
+</div>
+
+</back>
+</text>
+</TEI>
+    
+    
+    
+                
+            

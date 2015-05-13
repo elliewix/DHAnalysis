@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-248">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Expanding and connecting the annotation tool ELAN</title>
+<author>
+<name><surname>Sloetjes</surname>, <forename>Han</forename></name>
+<affiliation>The Language Archive &#8212; Max Planck Institute for Psycholinguistics, The Netherlands</affiliation>
+<email>han.sloetjes@mpi.nl</email>
+</author>                
+<author>
+<name><surname>Somasundaram</surname>, <forename>Aarthy</forename></name>
+<affiliation>The Language Archive &#8212; Max Planck Institute for Psycholinguistics, The Netherlands</affiliation>
+<email>aarthy.somasundaram@mpi.nl</email>
+</author>             
+<author>
+<name><surname>Drude</surname>, <forename>Sebastian</forename></name>
+<affiliation>The Language Archive &#8212; Max Planck Institute for Psycholinguistics, The Netherlands</affiliation>
+<email>sebastian.drude@mpi.nl</email>
+</author>
+<author>
+<name><surname>Stehouwer</surname>, <forename>Herman</forename></name>
+<affiliation>The Language Archive &#8212; Max Planck Institute for Psycholinguistics, The Netherlands</affiliation>
+<email>herman.stehouwer@mpi.nl</email>
+</author>
+<author>
+<name><surname>van de Looij</surname>, <forename>Kees Jan</forename></name>
+<affiliation>The Language Archive &#8212; Max Planck Institute for Psycholinguistics, The Netherlands</affiliation>
+<email>keesjan.vandelooij@mpi.nl</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+            
+<notesStmt><note type="abstract">The annotation tool ELAN allows for adding time-linked textual annotations to digital audio and video recordings. It is applied in various disciplines within the humanities, with linguistics, sign language and gesture research represented most prominently in its user base. This paper highlights new developments in ELAN with an emphasis on those features that introduced new technological and methodological approaches to analysing both audio/video and derived textual data. We focus on improvements to the workflow of researchers as a result of the introduction of task oriented modes and on how the scope of the program has been expanded by implementing a framework for computational annotation creation modules and by connecting to web services that apply computational techniques for the same purpose.</note></notesStmt>          
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130719"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">SP16</p>
+</sourceDesc>
+</fileDesc>
+        
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>annotation</term>
+<term>multimedia</term>
+<term>NLP</term>
+<term>interlinear text</term>
+<term>web services</term>
+</keywords>
+
+<keywords scheme="original" n="topic">
+<term>corpora and corpus activities</term>
+<term>audio</term>
+<term>video</term>
+<term>multimedia</term>
+<term>natural language processing</term>
+<term>content analysis</term>
+<term>programming</term>
+<term>spatio-temporal modeling</term>
+<term>analysis and visualisation</term>
+<term>linking and annotation</term>
+<term>standards and interoperability</term>
+<term>scholarly editing</term>
+</keywords>
+</textClass>
+</profileDesc>
+        
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div> 
+
+<head>Abstract</head>
+
+      <p>The annotation tool ELAN allows for adding time-linked textual annotations to digital audio and video recordings. It is applied in various disciplines within the humanities, with linguistics, sign language and gesture research represented most prominently in its user base. This paper highlights new developments in ELAN with an emphasis on those features that introduced new technological and methodological approaches to analysing both audio/video and derived textual data.</p>
+</div>
+
+<div>
+<head>1. Introduction</head>
+
+     <p>Annotation of audio and video recordings, be it manual or (semi-)automatic, is a crucial step in many areas of research within the humanities. ELAN<ref type="note" target="n01">1</ref>, developed at The Language Archive (TLA)<ref type="note" target="n02">2</ref>/Max Planck Institute for Psycholinguistics, is a tool for manual annotation that is already available for more than a decade and that is applied in various types of projects: language documentation, sign language and gesture studies, psychological and educational behaviour studies etc. ELAN enables users to create multi-levelled, multi-participant, time-linked annotations to one or more media streams, including timeseries streams. Both qualitative and quantitative research is supported; arguably the qualitative oriented use is predominant but the quantitative application is gaining popularity. In this paper we focus on recent developments that improve the workflow of researchers by introducing task oriented modes, expand the scope of the program by implementing a framework for computational annotation creation modules and by connecting to web services that, in a similar way, apply computational techniques to create annotations. ELAN is free and open source software and runs on Windows, MacOS and Linux.</p>
+</div>
+
+<div>
+<head>2. The Interlinearization mode and text processing modules in Lexan</head>
+
+    <p>One of the recent and still ongoing developments concerns the introduction of the Interlinearization mode. This mode, on the one hand, provides a user interface optimized for the task of adding linguistically relevant layers to an orthographical transcription of the media. Layers for morphological break down, part of speech tags and glossing are part of the common repertoire of documentary linguists (Bow 2003). On the other hand this mode is the hub to Lexan, the extensible framework for annotation and text processing modules. Such modules can perform a variety of tasks, from simple to complex, from word segmentation to interlinearization based on machine learning algorithms. Some modules are expected to produce multiple suggestions for new annotation layers and to improve their suggestions based on interactive user feedback accommodated by the user interface of, primarily, the interlinearization mode. The name "Lexan" indicates that this framework interconnects ELAN with the TLA multimedia lexicon tool LEXUS<ref type="note" target="n03">3</ref>. This architecture allows to build and enrich a lexicon while annotating and at the same time to use information in the lexicon in the annotation suggestions process. This combination of NLP (Natural Language Processing) techniques with manual media annotation marks a new line of development in ELAN and brings together technologies that usually seem to develop apart.</p> 
+    <p>For this sort of work other tools are and have been around for a long time and providing interoperability with these tools (often implemented on the level of file format conversion) is highly important for many users.</p>
+</div>
+
+<div>
+<head>3. Interoperability with FLEx</head>
+
+    <p>The FieldWorks Language Explorer<ref type="note" target="n04">4</ref>  is a prominent example of such tools, therefore import and export facilities for the FLEx format have been implemented and revised with the goal to make repeated transfer of data ("round-tripping") between the tools as seamless as possible. Importing FLEx files was possible since ELAN version 3.8 (2009) but because the FLEx format at that time did not support time alignment and speaker information, an export function was not implemented simultaneously. That has been added recently, after the introduction of the "begin-time-offset", "end-time-offset" and "speaker" attributes at the phrase level of the flextext format (2012, FLEx 7). The import has been updated such that per speaker a group of tiers is created. Additionally efforts are made to retain punctuation and font information where possible. Punctuation elements are on import linked to an ISOcatdata category so that on export these elements receive the correct attribute again. Exporting an ELAN document that is the result of a FLEx import is fairly straightforward. Exporting just any ELAN document to FLEx remains a challenge; where ELAN is very flexible and allows to have any number of tiers without predefined content designation, there is FLEx much more rigid, providing a fixed set of layers of known categories. Resolving the mapping from one to the other is not (always) possible without user intervention.</p>
+</div>
+
+<div>
+<head>4. Connecting to web services and online resources</head>
+
+<p>ELAN is a standalone desktop application that in principle works with locally available (local hard drive, local network) resources. Audio and video files are (more and more) often very large, up to several Gb. per file, and high accuracy annotation is still problematic when using media streaming, even in situations with high speed internet connections. For the vast majority of features of ELAN an internet connection is not required, but recently several options have been added that allow the user to connect to online services and resources. In 2008 association of tiers and annotations with ISOcat<ref type="note" target="n05">5</ref>  data categories was introduced and this feature has recently been improved and made more relevant. By default tiers are generic annotation "containers", oblivious of the type of content of the annotations; there are no predefined tiers, e.g. "translation tier" or "gesture phases tier". By associating a tier with a concept registered and described in ISOcat it acquires an explicit content designation.</p>
+    <p>In the CLARIN-NL SignLin<ref type="note" target="n06">6</ref>  project support for external controlled vocabularies was added, enabling collaborators to share vocabularies over the network (Crasborn and Sloetjes 2010). This feature improves consistency within a team and prevents team members from making (unchecked) changes to the vocabularies.
+In the context of several CLARIN<ref type="note" target="n07">7</ref>  projects and of the AVATecH<ref type="note" target="n08">8</ref>  project extensions were developed that call web services which produce segmentations and/or annotation content taking audio, video or text, or a combination thereof, as input. The WebLicht <ref type="note" target="n09">9</ref> tool chaining framework is a core service in CLARIN-D<ref type="note" target="n10">10</ref> (Hinrichs, et al. 2010) and preliminary support for calling services registered with this framework is now available to users of ELAN. Tiers can be uploaded (in the required XML format, TCF) in order to be processed by well known parsers and taggers; the results are added as new tiers and thus enrich the annotation document.</p>
+    <p>No matter how useful these web services are or will become, for many field linguists, and other researchers who are working offline a lot, these provisions will not be available. Therefore the core functions will always be independent of online services. For some services, like ISOcat, it is possible to work with a local cache; a selection of categories is stored on the local machine for use while offline.</p>
+
+<figure><graphic url="ab-248.001"/><head>Figure 1</head><p>Preparing a web service call</p></figure>
+
+   <p>Most parsers and taggers are only available for a small number of major languages, linguists who study lesser described, let alone, endangered languages usually don't have similar mature, well tested and well trained systems at their disposal. The Lexan approach, stepwise building up "personalized" computational assistance based on the input and feedback of the user, can come to their rescue.</p>
+</div>
+
+<div>
+<head>5. Local corpus enrichment and exploration</head>
+
+   <p>Though ELAN has been a multiple document application almost from the start, most functions of ELAN allow the user to interact with one, the current active, document. But in recent years more and more functions have been introduced that operate on multiple files e.g. on an entire local corpus. The urge for such functions emerged with the growing number of recordings and transcriptions research teams nowadays are working on (Johnston 2010).</p>
+  <p>A shortlist of multiple files functions contains creation of transcriptions for a set of recordings, editing the collection of tiers in transcriptions, creating annotations by applying logical operations (AND, OR, XOR) on annotations of selected tiers (Lausberg and Sloetjes 2009), extracting information by executing search queries, generating simple statistics, converting multiple files to and from specific formats etc.</p>
+  <p>For some types of research assessing the quality of the annotations and the skills of the annotators is crucial. How the inter-annotator reliability best is assessed is still under discussion (Gut 2004; Holle and Rein 2012; Lücking 2011) and the best approach can differ depending on the properties of the data and the focus of the research. A few algorithms for calculating the inter-annotator agreement have been implemented in ELAN and are available for application on multiple files. Especially concerning time-alignment (the segmentation step of the annotation process) there seems to be no generally accepted algorithm for assessing agreement. By offering several alternatives, the choice remains to the user while some of the hassle of exporting data to other tools is taken away from her/him.</p>
+</div>
+
+<div>
+<head>6. Conclusion</head>
+
+   <p>In this paper we show how researchers working with digital audio/video materials across disciplines can apply new technologies as a result of connections established between ELAN and local or online modules and services. Features that allow to enrich and explore a local corpus are introduced and briefly discussed.</p>
+</div>
+
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Bow, C., B. Hughes, and S. Bird</hi> (2003). Towards a general model of interlinear text. In <hi rend="italic">Proceedings of EMELD Workshop 2003: Digitizing and Annotating Texts and Field Recordings.</hi> Lansing: MI</bibl>
+
+<bibl><hi rend="bold">Crasborn, O., and H. Sloetjes</hi> (2010). Using ELAN for annotating sign language corpora in a team setting. In <hi rend="italic">Proceedings of the 4th Workshop on the Representation and Processing of Sign Languages: Corpora and Sign Language Technologies.</hi> Paris: ELRA, 137-142.</bibl>
+
+<bibl><hi rend="bold">Gut, U., and P. Bayerl</hi> (2004). Measuring the Reliability of Manual Annotations of Speech Corpora. In <hi rend="italic">Proceedings of Speech Prosody,</hi> Nara.</bibl>
+
+<bibl><hi rend="bold">Hinrichs, M., T. Zastrow, and E. Hinrichs</hi> (2010). WebLicht: Web-based LRT Services in a Distributed eScience Infrastructure. In <hi rend="italic">Proceedings of the Seventh conference on International Language Resources and Evaluation (LREC'10).</hi> Valletta, Malta.</bibl>
+
+<bibl><hi rend="bold">Holle, H., R. Rein</hi> Assessing interrater agreement of movement annotations.  In Lausberg, H. (ed.), <hi rend="italic">Neuroges: The Neuropsychological Gesture Coding System.</hi> Berlin: Peter Lang.</bibl>
+
+<bibl><hi rend="bold">Johnston, T.</hi> (2010). Adding value to, and extracting of value from, a signed language corpus through secondary processing: implications for annotation schemas and corpus creation. In <hi rend="italic">Proceedings of the 4th Workshop on the Representation and Processing of Sign Languages: Corpora and Sign Language Technologies</hi>. Paris: ELRA, 137-142. </bibl>
+
+<bibl><hi rend="bold">Lausberg, H., and H. Sloetjes</hi> (2009). Coding gestural behavior with the NEUROGES-ELAN system. <hi rend="italic">Behavior Research Methods, Instruments, &amp; Computers</hi> 41(3):841-849.</bibl>
+
+<bibl><hi rend="bold">L&#252;cking, A., Ptock, S., and Bergmann, K.</hi> (2011). Staccato: Segmentation Agreement Calculator. <hi rend="italic">Proc. of the 9th International Gesture Workshop</hi> held 25-27 May in Athens, Greece.</bibl>
+
+</listBibl>
+</div>
+<div>
+
+<head>Notes</head>
+
+<note xml:id="n01" n="1"><ref type="url" target="http://tla.mpi.nl/tools/tla-tools/elan">http://tla.mpi.nl/tools/tla-tools/elan</ref></note>
+<note xml:id="n02" n="2"><ref type="url" target="http://tla.mpi.nl">http://tla.mpi.nl</ref></note>
+<note xml:id="n03" n="3"><ref type="url" target="http://tla.mpi.nl/tools/tla-tools/lexus">http://tla.mpi.nl/tools/tla-tools/lexus</ref></note>
+<note xml:id="n04" n="4"><ref type="url" target="http://fieldworks.sil.org/flex">http://fieldworks.sil.org/flex</ref></note>
+<note xml:id="n05" n="5"><ref type="url" target="http://www.isocat.org">http://www.isocat.org</ref></note>
+<note xml:id="n06" n="6"><ref type="url" target="http://www.ru.nl/sign-lang/@673229/pagina/">http://www.ru.nl/sign-lang/@673229/pagina/</ref></note>
+<note xml:id="n07" n="7"><ref type="url" target="http://www.clarin.eu">http://www.clarin.eu</ref></note>
+<note xml:id="n08" n="8"><ref type="url" target="http://www.mpi.nl/avatech">http://www.mpi.nl/avatech</ref></note>
+<note xml:id="n09" n="9"><ref type="url" target="http://www.clarin-d.de/language-resources/weblicht-en.html">http://www.clarin-d.de/language-resources/weblicht-en.html</ref></note>
+<note xml:id="n10" n="10"><ref type="url" target="http://www.clarin-d.de">http://www.clarin-d.de</ref></note>
+
+
+</div>
+</back>
+</text>
+</TEI>
+  

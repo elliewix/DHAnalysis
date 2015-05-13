@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-412">
+    
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Developing a virtual research environment for scholarly editing. <hi rend="italic">Arthur Schnitzler: Digitale Historisch-Kritische Edition</hi></title>
+<author>
+<name><surname>Buedenbender</surname>, <forename>Stefan</forename></name>
+<affiliation>Universität Trier, Germany</affiliation>
+<email>bued2101@uni-trier.de</email>
+</author>
+<author>
+<name><surname>Burch</surname>, <forename>Thomas</forename></name>
+<affiliation>Universität Trier, Germany</affiliation>
+<email>burch@uni-trier.de</email>
+</author>
+<author>
+<name><surname>Fink</surname>, <forename>Kristina</forename></name>
+<affiliation>Bergische Universität Wuppertal, Germany</affiliation>
+<email>kfink@uni-wuppertal.de</email>
+</author>
+<author>
+<name><surname>Lukas</surname>, <forename>Wolfgang</forename></name>
+<affiliation>Bergische Universität Wuppertal, Germany</affiliation>
+<email>wlukas@uni-wuppertal.de</email>
+</author>
+<author>
+<name><surname>Queens</surname>, <forename>Frank</forename></name>
+<affiliation>Universität Trier, Germany</affiliation>
+<email>queens@uni-trier.de</email>
+</author>
+<author>
+<name><surname>Sirajzade</surname>, <forename>Joshgun</forename></name>
+<affiliation>Universität Trier, Germany</affiliation>
+<email>sirajzad@uni-trier.de</email>
+</author>
+</titleStmt>
+    
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unlnotes.unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">Arthur Schnitzler: Digitale Historisch-Kritische Edition is a long-term project founded by the Nordrhein-Westfälische Akademie der Wissenschaften with a runtime of 18 years. The aim is to create a digital historical-critical edition of both the works published during Schnitzler's lifetime and his literary estate. As an integrated hybrid edition, it will provide scholars with an up-to-date, philologically dependable textual basis. To this end, the team of editors at Bergische Universität Wuppertal closely cooperates with computer scientists at Trier Center for Digital Humanities who are developing a customized virtual research environment. Based upon a unified data model, it will support all editorial steps from entering the meta data through transcribing the textual witnesses to preparing the online and print publication. This paper shall outline the philological challenges of the project and show how the projected platform is to meet them.</note></notesStmt>
+    
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="10:30:00"></time>
+</p>
+<p n="session">SP04</p>
+</sourceDesc>
+</fileDesc>
+    
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Short Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>german studies</term>
+<term>scholarly editing</term>
+<term>software design and development</term>
+<term>data modeling</term>
+                
+</keywords>
+<keywords scheme="original" n="topic">
+<term>archives</term>
+<term>repositories</term>
+<term>databases &amp; dbms</term>
+<term>encoding &#8212; theory and practice</term>
+<term>literary studies</term>
+<term>metadata</term>
+<term>data modeling and architecture including hypothesis-driven modeling</term>
+<term>digitisation</term>
+<term>resource creation, and discovery</term>
+<term>scholarly editing</term>
+<term>software design and development</term>
+<term>xml</term>
+<term>internet/world wide web</term>
+<term>german studies</term>
+<term>digitisation &#8212; theory and practice</term>
+<term>linking and annotation</term>
+
+</keywords>
+</textClass>
+</profileDesc>
+    
+<revisionDesc>
+<change>
+<date when="2013-03-29"></date>
+<name>Erin Pedigo</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+    
+<text type="paper">
+<body>
+<div>
+<div>
+
+<head><hi rend="underline">Introduction</hi></head>
+
+    <p><hi rend="italic">Arthur Schnitzler: Digitale historisch-kritische Edition. Werke 1904-1931</hi> is a long-term project founded by the <hi rend="italic">Nordrhein-Westfälische Akademie der Wissenschaften</hi> with a runtime of 18 years. The aim is to create a digital critical edition of both the majority of works published during Schnitzler's lifetime and his literary estate, providing scholars with an up-to-date, philologically dependable textual basis.</p>
+    <p>The first project phase (2012-14) is primarily about conceptional groundwork and focuses on two texts, <hi rend="italic">Fräulein Else</hi> and <hi rend="italic">Komödie der Verführung</hi> which were chosen both for their literary value and their usefulness as a testbed. Editing them will go hand in hand with finalizing the editorial principles and establishing the digital workflow.</p>
+    <p>To this end, the team of editors at <hi rend="italic">Bergische Universität Wuppertal</hi> closely cooperates with computer scientists at <hi rend="italic">Trier Center for Digital Humanities</hi> who are developing a customized virtual research environment. Based upon a unified data model, it will support all editorial steps from entering the meta data through transcribing the textual witnesses to preparing the online publication and printouts. This paper shall outline the philological challenges of the project and show how the projected platform is to meet them.</p>
+</div>
+
+<div>
+<head><hi rend="underline">Initial Situation and Objectives</hi></head>
+
+    <p>For scholars working on Schnitzler’s writings, the availability of a philologically well founded textual basis is currently a key desideratum. Arthur Schnitzler is probably the only German-language author of literary world rank of whom there are to this day neither a commented student edition nor a (historical) critical edition. The project seeks to remedy this situation by:
+
+    <list type="unordered">
+        <item>Providing the first edition of most of the works published during Arthur Schnitzler‘s lifetime with an authentic, critically constituted text.</item>
+        <item>Providing a genetic edition of the major part of the literary estate (belonging to both published and unpublished work).</item>
+        <item>Making the whole edited material accessible by text-critical comments and contextualizing its literary-historical background</item></list>
+
+The underlying material is just as comprehensive as manifold. Beyond the printed work, there are extensive preliminary works and sketches, as well as numerous unpublished dramatic, narrative, lyrical, aphoristic and essayistic texts. In addition to this literary estate material (which is complemented by film scripts and screenplays) there is a sizable number of non-literary writings. These can be either scientific (e.g. medical) treatises, literary criticisms and other comments, self-criticisms and records about the history of his own works &#8212; or, on the other hand, “ego-documents”: autobiography, diaries, dream journaling, correspondences. Thus, the catalogue of the <hi rend="italic">Literaturarchiv Marbach</hi> lists about 28,000 letters and the estate material archived at <hi rend="italic">Cambridge University Library</hi> comprises approximately 40,000 sheets.</p>
+    <p>Given this constellation, the integral approach of the projected edition has to be emphasized: The edited material in its diversity is to be united within a homogeneous central data pool, allowing for different types of output. Following the principle of single-source publishing, the projected public online edition could be completed in the future by an annotated student edition or even a critical edition.</p>
+</div>
+
+<div>
+<head><hi rend="underline">Challenges in Scholarly Editing</hi></head>
+
+    <p>The new edition of Schnitzler’s &#8212; published as unpublished &#8212; oeuvre is rich in philological challenges. It presents itself as a dynamic yet coherent system of most diverse transformation processes, branchings and cross-links. The individual literary "work" proves to be an unreliable unit; Schnitzler used to work for several years or even decades on a text. In this process, not only the genre would occasionally change, but there also may occur genetic bifurcations (one draft becoming multiple works) or fusions (several drafts being merged into one work).The project thus chooses the text witness in its materiality as a basis, prioritizing the categories of topography, genesis and intertextuality. Hence, the individual witness has to be described not only in its semantics, but also in its physical form and its processuality (writing stages). Moreover, the cross-links and correspondences of sequences and fragments between text witnesses are of particular interest.</p>
+</div>
+
+<div>
+<head><hi rend="underline">Literary Computing and Software Development</hi></head>
+
+    <p>In terms of literary computing, two aspects are to be emphasized:
+Firstly, the various requirements in scholarly editing (meta data capture, transcription, annotation, linking text and facsimile, linking text sequences with each other, collation, preparation of indices and critical apparatus) can only be met with a series of appropriate tools.</p>
+        <p>Secondly, these tools must be coordinated. In practical terms, this means above all that they have to fit into a unified philological workflow. This brings to the fore a facet that is often considered of minor interest in digital editorial projects: the aspect of the data format.</p>
+
+        <p>It is essential to determine a data model which can serve as a basis for the whole philological process, possibly without laborious intermediate conversions. From meta data collection through transcription and annotation to topography, networking and publication, all editorial stages need to be supported. This is complicated all the more by a set of overlapping hierarchies:</p>
+        <p>Firstly, there is the documentary view (with reference to the material witness, i.e. the single sheet), secondly the semantic-textual view (the text in its philological structure), thirdly sequences of any size have to be linked. This is not a trivial constellation for the XML-format, and the project currently evaluates how different standards deal with this problem. The benchmark are both the guidelines of the TEI and their concrete implementation in current projects (such as the digital <hi rend="italic">Faust</hi>-edition). However, some of the proposed strategies, such as a splitting up into multiple files with different markup or the breaking up of subsidiary hierarchy levels, may add great complexity to the editor’s work. So we currently test if the workflow could alternatively build on a database system, out of which the current processing status can be exported or archived any time into an international, platform-independent standard.</p>
+</div>
+
+<div>
+<head><hi rend="underline">Virtual Research Environment</hi></head>
+
+    <p>The tools needed for the project are currently being developed and made interoperable at the <hi rend="italic">Trier Center for Digital Humanities</hi>. As for the meta data management, an adapted module of the <hi rend="italic">Forschungsnetzwerk und Datenbanksystem</hi> FuD is used which allows the physical description of textual witnesses and their often complex tradition via specially customized input masks. For some other tasks (see below), currently existing solutions will be evaluated and tested in terms of usability. However, the core functionality is to be covered largely by <hi rend="italic">Transcribo</hi>, an entirely new transcription, topography and edition software.</p>
+</div>
+
+<div>
+<head><hi rend="italic">Transcribo</hi></head>
+
+    <p><hi rend="italic">Transcribo</hi> is developed in close collaboration between computer scientists and philologists of the project partners. The graphical user interface is centered around the digital facsimile, i.e. usually the scanned witness. Units of varying extent (e.g. words, lines or paragraphs) can be marked by means of a rectangle-or polygon-tool, and then be transcribed and annotated. Each image file is displayed twice: the original can be examined on the left while the view on the right is used as a work space, where the transcribed text is placed topographically exact on top of the slightly attenuated facsimile. Where the spatial arrangement does not match the textual word order, words can be combined into sequences to preserve the semantic relationships in the transcript. As a central feature, the program further allows to mark genetic and philologically relevant phenomena in each transcribed unit and add annotations to them. This is done by a context menu with a selection of project-specific options. These include so far different variants of corrections (such as immediate corrections or late corrections with single, double or multiple strikethroughs and overwritings), the marking of highlightings, uncertain readings and non-identifiable graphs. This selection, however, can be extended and will be adjusted over the entire course of the project to meet the requirements of the underlying material.</p>
+
+
+<figure><graphic url="ab-412.001"/><head>Fig. 1:</head><p>Transcription and annotation in <hi rend="italic">Transcribo</hi>.</p></figure>
+</div>
+
+<div>
+<head><hi rend="underline">Further Extensions</hi></head>
+
+    <p><hi rend="italic">FuD</hi> and <hi rend="italic">Transcribo</hi> lay the basis for scholarly editing in an online environment by covering the key requirements: meta data management, transcription, topography description and basic annotations. This nucleus will be expanded over the next years to a virtual research environment that supports the entire project-specific workflow in a unified interface. This implies the integration of a number of additional features:
+
+    <list type="unordered">
+        <item>Collation; here it has to be stressed that we will not only have to compare fixed texts, but also to identify similar sequences in a large data pool.</item>
+
+        <item>The linking of freely definable sequences within or between text witnesses.</item>
+
+        <item>The identification of dependencies between witnesses, in particular the creation of genetic paths.</item>
+
+        <item>A publishing program for printouts.</item></list>
+
+While in the domain of publishing and collation, there are programs that can be adapted (we evaluate at present: XML-Print and CollateX, Juxta, TUSTEP), the remaining tools are to be developed. The result will be a research environment that &#8212; due to its platform-independent and modular design &#8212; can be adapted to meet the needs of numerous other editorial projects. Concrete interest in using this environment or individual modules of it has already been expressed by several projects such as:
+
+        <list type="unordered">
+            <item><hi rend="italic">August Wilhelm Schlegel "Kritische Ausgabe der Vorlesungen“ Band IV–VI</hi></item>
+            
+            <item><hi rend="italic">Digitalisierung und elektronische Edition der Korrespondenz August Wilhelm Schlegels</hi></item>
+
+            <item><hi rend="italic">Wolfgang Koeppens „Jugend“</hi></item></list></p>
+</div>
+</div>
+
+
+</body>
+    
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold"><hi rend="italic">Arthur Schnitzler: Digitale Historisch-Kritische Edition.</hi></hi> <ref type="url" target="http://www.buw-output.uni-wuppertal.de/ausgabe4/lukas/">http://www.buw-output.uni-wuppertal.de/ausgabe4/lukas/</ref>.</bibl>
+
+<bibl><hi rend="bold"><hi rend="italic">Trier Center for Digital Humanities.</hi></hi> <ref type="url" target="http://kompetenzzentrum.uni-trier.de.">http://kompetenzzentrum.uni-trier.de.</ref></bibl>
+    
+<bibl><hi rend="bold"><hi rend="italic">Digitale Faustedition.</hi></hi> <ref type="url" target="https://faustedition.uni-wuerzburg.de/dev/project/about/">https://faustedition.uni-wuerzburg.de/dev/project/about/</ref>.</bibl>
+    
+<bibl><hi rend="bold"><hi rend="italic">TEI guidelines.</hi></hi> <ref type="url" target="http://www.tei-c.org/Guidelines/P5/.">http://www.tei-c.org/Guidelines/P5/.</ref></bibl>
+    
+<bibl><hi rend="bold"><hi rend="italic">FuD.</hi></hi> <ref type="url" target="http://fud.uni-trier.de/.">http://fud.uni-trier.de/.</ref></bibl>
+    
+<bibl><hi rend="bold"><hi rend="italic">XML-Print.</hi></hi> <ref type="url" target="http://fud.uni-trier.de/.">http://kompetenzzentrum.uni-trier.de/de/projekte/projekte/xml-print/.</ref></bibl>
+    
+<bibl><hi rend="bold">Schlegel, A. W.</hi>  <hi rend="italic"> Kritische Ausgabe der Vorlesungen“ Band IV–V:I.</hi> <ref type="url" target="http://www.uni-tuebingen.de/fakultaeten/philosophische-fakultaet/fachbereiche/neuphilologie/deutsches-seminar/abteilungen/neuere-deutsche-literatur/mitarbeitende/lehrstuhl-braungart/projekte/august-wilhelm-schlegel.html">http://www.uni-tuebingen.de/fakultaeten/philosophische-fakultaet/fachbereiche/neuphilologie/deutsches-seminar/abteilungen/neuere-deutsche-literatur/mitarbeitende/lehrstuhl-braungart/projekte/august-wilhelm-schlegel.html</ref>.</bibl>
+    
+<bibl><hi rend="bold"><hi rend="italic">Digitalisierung und elektronische Edition der Korrespondenz August Wilhelm Schlegels.</hi></hi> <ref type="url" target="http://www.slub-dresden.de/ueber-uns/projekte/erschliessung-und-digitalisierung/edition-schlegel/">http://www.slub-dresden.de/ueber-uns/projekte/erschliessung-und-digitalisierung/edition-schlegel/</ref>.</bibl>
+    
+<bibl><hi rend="bold">Koeppens, W.</hi> <hi rend="italic">„Jugend“.</hi> <ref type="url" target="http://www.phil.uni-greifswald.de/philologien/deutsch/forschung-kooperation/wka/dfg-projekt-jugend.htm.">http://www.phil.uni-greifswald.de/philologien/deutsch/forschung-kooperation/wka/dfg-projekt-jugend.html</ref>.</bibl>
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       

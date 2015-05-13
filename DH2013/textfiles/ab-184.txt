@@ -1,0 +1,118 @@
+
+
+
+
+There  are two broad  approaches to machine  plot analysis: annotation-based systems (Lendvai  et al. 2010) and formal models of plot (Lakoff and Narayanan 2010).  Annotation-based systems  are  inspired  by  markup   languages  such  as XML, while formal models of plot are offshoots of artificial intelligence research. This  paper  proposes  a new approach, based  on gene sequencing,  and  derives a model of plot  directly  from a very large corpus  of novels without training or a pre-defined model. The technique  reduces novels to their narrative components, classifies these components  according to type, then recombines these constituent elements  to typify the plots of a group of texts.  This technique  is applied  to an entire  genre, the category  romance  imprint 
+Harlequin Presents
+.
+
+
+
+Harlequin Presents
+  publishes roughly eight books every month,  and is probably  the  most  commercially  successful  fiction  genre  in  the  world  (
+Harlequin Company  History
+).  The  genre  can  be  characterized by  recourse  to  a  limited number  of types  of plot,  although there  are  distinct sub-categories. Most  importantly, the genre is available  as an ebook, so each novel in the imprint has a definitive  edition  that is easily subjected  to machine  analysis.  This  study  uses 1500 novels — over 15 years of 
+Harlequin Presents
+.  This is one of the first studies of popular  culture  to use machine  analysis  on an entire  genre.
+
+
+
+Although  the  conscription  of machines  to the  task  is relatively  recent,  the study  of narrative is not. Traditional narratology can be traced  back to Propp’s work on folklore in the  early twentieth  century  (Propp 1968). Propp  collected a  set  of functions  that described  all  possible  actions  in  his  collection  of folk tales.  The  plot  of any  single folk tale  could be described  as a subset  of these functions  laid end-to-end. Propp’s  work was rejected  (Lévi-Strauss 1976a), integrated  (Dundes  1997, 47) and then  conflated  with that of the structuralists, whose work with myths  extended  Propp’s  ideas to cover much more than folklore.
+
+
+
+Romance  novels  have  two  important parallels  with  Propp’s  folk tales  and Lévi-Strauss’ myths.  Firstly,  all three genres are, or were, contemporary. Propp’s folk tales  were a living art  form  in the  early  twentieth  century  (Haney  2009, xiii). Lévi-Strauss recorded  many  of the  oral myths  that he later  integrated into his theories (Lévi-Strauss 1976b, 35-65). While stretching back 15 years, the  most  recent  Harlequin  Presents  novels in our sample  have  been published this  month.   Secondly,  all  three  genres  are  curated by  others.  Propp   used  a standard edition  of folktales  and  Lévi-Strauss  tapped indigenous  traditions to define his myths. In our case, 
+Harlequin Presents
+  has been categorized by the publisher.  Yet, unlike either  folk tales or myths,  romance  novels have never had an oral form — which makes them  ideal for machine  analysis.
+
+
+
+The  technique  itself is a modified version of Weighted  Gene Co-Expression Network  Analysis (Zhang and  Hovarth 2005).  This  technique  has  been  developed to allow mining of gene sequencing  information, although the application to written language  is a natural extension.  Like words,  genes are typically  redundant, in that many  genes signal at  once to achieve a desired  effect, similar to the  manner  in which words are collocated  when expressing  an idea. Natural language data  is transformed to resemble gene sequencin information by seg- menting  novels into bins and counting  the words in each segment.  A correlation matrix  is then  computed, giving the strength of relationship between each word to  each  other.  Words  are  then  clustered  together  into  
+co-expression  networks
+ based on their  frequency of co-occurrence.
+
+
+
+
+Networks  of genes that frequently  co-occur are known as modules,  and this terminology is used here to describe collocated words. The behaviour  of a module throughout the genre is then  typified, giving a cardinal  behaviour  for all words in the module. External factors, such as author and date of publication can then be related  to the modules, to see how they effect the genre. It is this relationship between  modules  and  external  data  that reveals  the  most  interesting patterns within  the  genre.  Some  modules,  such  as  those  relating  to  the  status of the hero,  are  correlated with  the  beginning  of the  novel.  Other  modules,  such  as those  relating  to pregnancy  or marriage,  are strongly  correlated with  the  final segments  of a novel. Other  modules  are related  to authorship, and  others  can be used to classify the entire  genre according  to narrative strategy.
+
+
+
+Unlike  purely  stylometric studies,  modules  are  typically  closely related  to theme  and  incident  - concerns  directly  under  the  control  of an author. Corre- lation  of modules  to  individual  authors is not  truly  useful for authorship  dis- crimination, but  reflects preferences  that an author can be expected  to show as they specialise in particular narrative forms or explore certain  themes. Similarly, changes in a genre over time can be seen as a direct  reaction  to external  events rather than  changes in an author’s  internal  mental  state.
+
+
+
+One criticism  of traditional narratology is the  difficulty  it has relating  abstract categories  back  to  the  mechanics  of the  writing  (Shen  2005, 146). Machine  analysis  based  on annotations or artificial  intelligence  research  both go some way  to  alleviating  this  problem.  Deriving  a model  directly  from the text  eliminates  this  problem  entirely,  although it introduces  another:  modules of words do not always tie closely into our received notions  of narrative. In particular,  the abstract categories  structuralists leveraged to study  the similarities between cultures  (Lévi-Strauss 1981, 64-66) are not found by this technique. While modules are illustrative of the texts and genres at hand, they do not really generalize beyond them,  providing  an insight that is deep but  not broad.
+
+
+
+Broad  insights  are the specialty  of mark-up  based and artificially  intelligent narrative systems.  These other  systems  have recourse to categories  not derived from the texts  at hand,  and are much more able to draw links between different groups  of texts.  Mark-up  based  systems,  although they  cannot  easily scale to working with thousands of novels as we do here, are able to leverage the (often formidable)  skills and intelligence  of their  users. The more formalistic  systems, with  their  pre-programmed categories  are also able to generalize from a single genre. This  reflects the  very different design goals of these  approaches: we are concerned here with mere analysis, whereas markup tools are often a form of scholastic augmentation and artificially intelligent systems typically have plot generation  as an ultimate aim (Gervás 2012).
+
+
+
+Stylometry has typically focused on high-frequency  function  words to show the mechanics of language at work. Techniques  derived from computational biology allow the extraction of thematic and narrative components, and allows these to be related  to authorship, date  of publication or other  external  factors.  Other approaches to modeling narrative structure have their  strengths, but  frequently have broader  objectives  than  the analysis  of the texts  at hand.  Weighted  Gene Co-Expression  Networks sacrifice these goals but provide a flexible method of unsupervised learning  of narrative structure.
+
+ 
+
+
+
+                
+
+
+
+
+
+
+
+
+Dundes,  A.
+  (1997).  Binary  Opposition   in  Myth:  The  Propp/Lévi-Strauss Debate  in Retrospect. English.  In: 
+Western Folklore
+ 56.1, 39–50. issn: 0043373X. url: 
+http://www.jstor.org/stable/1500385
+.
+Gervás, P.
+ (2012). From  the  Fleece of Fact  to Narrative Yarns:  a Computational Model of Composition. In: 
+Workshop  on Computational Models of Narrative, 2012 Language Resources and Evaluation Conference  (LREC’2012)
+. Istanbul, Turkey.
+Haney,  J.
+ (2009).  
+An  Anthology  of  Russian   Folk  Tales
+. New  York:  M.  E. Sharpe.
+Harlequin Company History
+. url: 
+http://tinyurl.com/4mwtts
+ (visited  on 08/18/2011).
+Lakoff, G., and  S. Narayanan 
+(2010).  Toward  a Computational Model of Narrative. In: 
+Proceedings  of the AAAI Fall Symposium 2010
+. Istanbul, Turkey.
+Lendvai, P.  et al.
+ (2010). Propp Revisited:  Integration of Linguistic Markup  into Structured Content Descriptors  of Tales.  
+Digital Humanities 2010
+. Oxford University  Press.
+Lévi-Strauss,  C.
+ (1976a).  Structure and  Form:  Reflection  on a Work  by Vladimir  Propp. 
+Structural  Anthropology
+  2. Trans. by Monique  Lane. London: Allen Lane.
+Lévi-Strauss,  C.
+ (1976b).  
+The  Raw and the Cooked
+. Trans.  by Claude  Levi-Strauss. London: Harper  & Row.
+Lévi-Strauss,  C.
+ (1981). Structuralism and Myth.  
+Kenyon  Review
+  3.2, 64–88. 
+Propp,  V.
+ (1968). 
+Morphology of the Folk Tale
+. Trans.  by The American Folklore Society. Austin:  University  of Texas  Press.
+Shen, D.
+(2005). What Narratology and  Stylistics  Can  Do for Each  Other. 
+A  Companion to Narrative  Theory
+.   Phelan, J.,  and  P.  J. Rabinowitz, (eds). Blackwell Publishing, 136–150.
+Zhang,  B.,  and  S.  Hovarth
+ (2005).  A  General  Framework   for Weighted Gene  Co-expression  Network  Analysis.  
+Statistical  Applications in  Genetics  and Molecular Biology
+  4.
+

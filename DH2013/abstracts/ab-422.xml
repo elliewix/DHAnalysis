@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-422">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>A Comparative Kalendar: Building a Research Tool for Medieval Books of Hours from Distributed Resources</title>
+<author>
+<name><surname>Albritton</surname>, <forename>Benjamin</forename></name>
+<affiliation>Stanford University Library, United States of America</affiliation>
+<email>blalbritton@gmail.com</email>
+</author>
+<author>
+<name><surname>Sanderson</surname>, <forename>Robert</forename></name>
+<affiliation>Los Alamos National Laboratory, United States of America</affiliation>
+<email>azaroth42@gmail.com </email>
+</author>
+<author>
+<name><surname>Ginther</surname>, <forename>James</forename></name>
+<affiliation>Saint Louis University, United States of America</affiliation>
+<email>ginthej@slu.edu</email>
+</author>
+<author>
+<name><surname>Bradshaw</surname>, <forename>Shannon</forename></name>
+<affiliation>Drew University, United States of America</affiliation>
+<email>sbradsha@drew.edu</email>
+</author>
+<author>
+<name><surname>Foys</surname>, <forename>Martin</forename></name>
+<affiliation>Drew University, United States of America</affiliation>
+<email>mfoys@drew.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">The Book of Hours is perhaps the most ubiquitous type of surviving medieval manuscripts. Each unique book contains a wealth of information about liturgical practices, social and private use of books, manuscript production and decoration, and personal and local choices for the creation of private devotional collections. Each Book of Hours contains a Kalendar that lists feast days for the entire year. These document the standard days for liturgical celebration, but are filled with local and temporal variants that paint a picture of the ways in which practices change according to regional interests over the centuries.
+
+This paper describes the design and implementation of a comparative Kalendar built from distributed resources served from multiple participating tools and repositories.</note></notesStmt>
+
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="08:30:00"></time>
+</p>
+<p n="session">LP03</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>Calendar, Book of Hours, Annotation, Transcription</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>historical studies, medieval studies, project design, organization, management, theology, bibliographic methods / textual studies, interdisciplinary collaboration, linking and annotation, standards and interoperability</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-05-02"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<p>The Book of Hours is perhaps the most ubiquitous type of surviving medieval manuscripts.  Each unique book contains a wealth of information about liturgical practices, social and private use of books, manuscript production and decoration, and personal and local choices for the creation of private devotional collections.  Each Book of Hours contains a Kalendar that lists feast days for the entire year. These document the standard days for liturgical celebration, but are filled with local and temporal variants that paint a picture of the ways in which practices change according to regional interests over the centuries.  Any attempt to curate and control a project devoted to cataloging Kalendar variants in a single team or location suffers from the sheer volume of potential inputs to the project.  Further, the standard form of the Kalendar invites widespread contributions from interested scholars and the broader public.  This paper describes a comparative Kalendar built from distributed resources served from multiple participating tools and repositories.</p>
+
+<p>This distributed environment relies on repository/tool interactions to share image data in multiple tool environments, and harvest the tool output to build a discovery and viewing environment that can grow as more data is added from any participating tool or repository.  These interactions rely on two principle interchange protocols:  the SharedCanvas data model, used to aggregate distributed resources; and the International Image Interoperability Framework image API for standardized image resource access.</p>
+
+<p>The SharedCanvas data model (<ref type="url" target="http://www.shared-canvas.org">http://www.shared-canvas.org</ref>) specifies a mechanism for representing a real-world manuscript object as a collection of two or more blank “canvases” each with a URI and an aspect ratio.  Information, including digital image surrogates, is then associated with this canvas using the OpenAnnotation specification.  This approach decouples information “about” the real-world object from the digital surrogate that could be used to illustrate that object on the web.  Because it is quite possible that a single real-world resource will have multiple digital surrogates all purporting to represent the same thing, this approach makes it possible to build a digital facsimile utilizing a choice of digital surrogates without affecting the other information associated with the object (like transcriptions, scholarly commentary, or other metadata).</p>
+
+<figure>
+<graphic url="ab-422.001"/>
+</figure>
+
+<p>The International Image Interoperability Framework’s image API (<ref type="url" target="http://lib.stanford.edu/iiif">http://lib.stanford.edu/iiif</ref>) specifies a RESTful web service to deliver a requested image with a number of specified parameters.  These include: image format, size, rotation, cropping, and color.  The API allows standardized image retrieval from disparate repositories, leading to the ability of tool developers to pull content in an efficient way from any participating host repository.  More importantly, this API allows contributors to the Kalendar project to work with from a number of different interfaces and use image data served from a number of different repositories, allowing scholars with a regional or temporal focus to compare books held in different modern repositories.</p>
+ 
+<figure>
+<graphic url="ab-422.002"/>
+</figure>
+
+<p>The participating repositories in this effort are the Stanford University Libraries (serving content from the Walters Art Museum manuscript collection, the Parker Library, Corpus Christi College, Cambridge manuscript collection, and Stanford’s own collection), along with other participants of the Digital Manuscript Technical Council (<ref type="url" target="http://dms.stanford.edu/">http://dms.stanford.edu/</ref>).  This selection of content offers a variety of geographically and chronologically diverse Books of Hours, leading to an initial dataset that highlights both the consistency of some Kalendar elements over three centuries (13th, 14th, and 15th centuries), and the variants that provide insight into localized practices.</p>
+
+<p>The tools used for this project are T-PEN (<ref type="url" target="http://t-pen.org/TPEN">http://t-pen.org/TPEN</ref>) and DM (<ref type="url" target="http://ada.drew.edu/dmproject/">http://ada.drew.edu/dmproject/</ref>), specialized tools for transcription and annotation of medieval manuscript content.  A user of either tool has full access to any of the manuscripts served from the participating repositories, and can add transcriptions of Kalendars while also adding structured data to help organize the material for further analysis and display.  Both tools produce outputs that link user-generated information about the Kalendars to a region-constraint on the canvas that represents the page of the real-world manuscript.  The tools provide a web service for exposing user-generated information that is then aggregated into a discovery and display interface.  </p>
+
+<p>This approach reduces the need for any one institution or project to host and serve every image that might be used in the Comparative Kalendar, to provide the user interface tools for transcription, commentary, and analysis, or to control and curate the input and output.  The mechanism for user-interaction allows a user in any of the participating tools to choose content from any of the participating repositories.  This allows a user to choose the working environment that most suits the tasks they wish to pursue, and do their analytical work within that tool.  Since the tools allow standardized extraction of data for additional display, data management, navigation, or additional analysis and commentary, a user can move from tool environment to tool environment to achieve separate tasks (transcription, addition of structured metadata, commentary and notes, etc.).</p>
+
+<p>The end result of this project is a user interface that draws image resources from the participating repositories and user-generated data produced by the participating tools, hosted by each respective participant.  New data from any participating node will be automatically added to the interface without the need for human-mediated interaction, leading to a dynamically growing resource.  This resource will allow a user to browse a Kalendar and see image, transcription, and commentary data about each entry, or compare across Kalendars to observe clusterings of continuity and variance over the liturgical year depending on location of book use and production, or chronological period.  The distributed approach to a standardized text, where variants are of great interest across a large number of disciplines, and which benefits from a broad array of participants providing small bits of detailed data to build up a useful dataset, could serve as a model for further work on other parts of the Book of Hours, or other medieval texts that were copied frequently an reflect changing social, political, or liturgical practices across Western Europe over a period of several hundred years.</p>
+
+                
+</div>
+
+</body>
+
+</text>
+</TEI>
+

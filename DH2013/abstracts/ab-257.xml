@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-257">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Centre and Circumference: Modelling and Prototyping Digital Knowledge Environments as Social Sandboxes</title>
+<author>
+<name><surname>Saklofske</surname>, <forename>Jon</forename></name>
+<affiliation>Acadia University, Canada; INKE</affiliation>
+<email>jon.saklofske@acadiau.ca</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">INKE’s Modelling and Prototyping group is currently motivated by the following research questions: How do we model and enable context within the electronic scholarly edition? How do we engage knowledge-building communities and capture process, dialogue and connections in and around the electronic scholarly edition? NewRadial is a prototype scholarly edition environment developed to address such queries. However, its unification of primary texts, secondary scholarship and related knowledge communities, and its re-presentation of the digital scholarly edition as a social edition, an open work and a shared space where users collaboratively explore, sort, group, annotate and contribute to secondary scholarship creation, makes it both a model and prototype for alternative ways of working with and contributing to data-centric humanities research online. Its unique lens &#8212; through which a diverse collection of digital humanities objects can be re-imagined, freely explored and iteratively prototyped &#8212; is also an argument advocating for evolutions in humanities theory and praxis.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130717"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP07</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>prototype, scholarly edition, environment, visualization, intervention</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>interface and user experience design, ontologies, scholarly editing, software design and development, knowledge representation, information architecture, visualisation, crowdsourcing, networks, relationships, graphs, linking and annotation, standards and interoperability</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-30"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<p>This past year, the Modeling and Prototyping team within INKE (Implementing New Knowledge Environments), a SSHRC Major Collaborative Research Initiative headed by Dr. Ray Siemens (UVic), has focused its research efforts on modeling the digital scholarly edition by producing a number of prototype editing environments.  One such environment, NewRadial, is a reimagining of a 2009 Java-based data visualization prototype that was designed by Jon Saklofske and Jean-Marc Giffin for the purposes of reimagining the ways that scholars could work with William Blake’s composite art in an electronic environment.  As stated in articles published in the <hi rend="italic">Poetess Archive Journal</hi> and <hi rend="italic">European Romantic Review</hi>, the 2009 single-user version of NewRadial was intended to facilitate perceptual encounters with Blake’s work that were not bound by the technology and formal constraints of the traditional book, and to provide the opportunity to centralize a user’s secondary scholarship and commentary on Blake’s work in a space that included the original archival material but did not directly alter that material.  In an effort to adapt these ideas and arguments to INKE’s focus on digital edition spaces, Saklofske and Jake Bruce have recreated NewRadial as browser-based software that makes use of an HTML5 frontend, an adapter system to ensure compatibility with a variety of database types, and a server-based backend.  This new prototype has allowed INKE’s Modeling and Prototyping team to engage with some of the larger questions that have motivate this year’s digital scholarly edition research:
+
+<list type="ordered">
+<item>1. How do we model and enable context, such as prosopography and placeography, within the electronic scholarly edition?</item>
+<item>2. How do we engage knowledge-building communities within the space of the electronic edition, and capture process, dialogue, and connections in and around such editions?</item>
+</list>
+</p>
+
+<p>Material print editions are records, artifacts that efface the process of their formation, version-objects that assert an argument and establish a historical position through the printed finality of their collation and production.  If digital editions are to take full advantage of their environments (rather than simply emulating print traditions) they need to visibly include both process and product, and offer opportunities for editorial diligence, contribution, perspective, control and debate to their users.  Top-down forms of authoritative and exclusive editorial selectivity become ironic and anachronistic in dynamic digital environments which privilege “a new kind of scholarly discourse network that eschews traditional institutionally-reinforced hierarchical structures” (Siemens 2011).  </p>
+
+<p>NewRadial’s collaborative space is a reimagining of the digital scholarly edition as a transparent workspace layer in which established primary objects from existing databases can be gathered, organized, correlated, annotated, and augmented by multiple users in a dynamic environment that also features centralised margins for secondary scholarship and debate.  It performs Jerome McGann’s idea that “the fundamentally dynamical character of the textual condition can be digitally realized: the dialectic of the field relations between the history of the text’s transmission and the history of its reception” (para. 34).</p>
+
+<p>The INKE NewRadial prototype is being designed as an effective way for knowledge communities to work with all types of media objects, to aggregate search results from multiple databases using meta-adapters, and to share RDF-based secondary scholarship and annotation data over HTTP for use in other tools and workspaces. Currently, our prototype installation has successfully used adapters to import NINES/ARC data, the Archbook image repository, Google image search results and other scholarly database holdings. </p> 
+
+<p>This INKE prototype re-presents database material in a sandbox environment, encouraging iterative experimentation, hosting methodological and interpretative debate and supporting innovative combinations and connections.  These opportunities can serve as the raw processes, the activated complex from which more traditional scholarly print projects (collaborative or otherwise) can precipitate.  In summary, NewRadial is a social edition space that encourages three types of work:
+<list type="ordered">
+<item>1. A simple search, sorting and manipulation of database objects in a visual field for the purposes of early scholarly inquiry and curiosity-based research.</item>
+<item>2. Initial, raw and in-process commentary on connections and associations between database objects.  Within the database’s visual field, scholars can add comments on such correlations, thus starting conversations, discussions and debates relating to such ideas.  These discussions are hosted and archived by the NewRadial server.</item>
+<item>3. Larger edition projects in which a community is able to centralize and sort specific selections from a larger database.  NewRadial can be used to construct these edition environments, browse such environments, and (if desired) encourage secondary scholarship to proliferate in and around such projects.</item>
+</list>
+</p>
+
+<p>NewRadial is thus an example of Stuart Moulthrop’s idea of “intervention,” which is “a practical contribution to a media system (e.g., some product, tool or method) intended to challenge underlying assumptions or reveal new ways of proceeding” (212).   Its affordances introduce a dynamic multiplicity of vision into what has traditionally been a reductive, oppositional and snail’s pace process of inter-edition debate and evolution.  The development of this digital edition environment prototype is the first step towards creating inclusive editorial workspaces which draw from broad data foundations and which encourage knowledge-building communities to actively reimagine edition-building processes.</p>
+
+<p>Neil Fraistat recognizes the importance and potential impact of digital textuality’s massive addressability on the future of editing, and acknowledges the potential for interactivity that digital environments facilitate.  Drawing on his own edition work, he suggests that digital editions should be interoperable, layered and modular, multimodal, dynamic, scalable, curatable, everted and sustainable (331-32).  NewRadial prototypes these characteristics in a manner that is distinct from Fraistat’s own work on the Shelley-Godwin Archive project, and in doing so, offers an alternative and comparative environment in which such ideas can be implemented, and participates (prototypically and argumentatively) in a larger, theoretical discussion about the nature of new knowledge environments and their impact on traditional ideas of editing.  </p>
+
+<p>If we agree with Alan Galey and Stan Ruecker that a prototype is, in essence, an argument (405), then one of NewRadial’s main arguments arises from its reimagining the space of an edition as an inclusive, virtual, visual environment.  It builds on Jan Holmevik’s recognition  that “visual/auditory modes of delivery of knowledge….[allow] philosophy to divest itself of literate shackles, of narrow-minded thinking, and print-based archives where philosophy feels most at home” (10).  Further, by promoting the idea of the social edition through its affordances, NewRadial prototypically engages with the possibility raised by Gregory Ulmer that “while the entire administrative superstructure of literate specialized knowledge will be translated into cyberspace, once there much of it will evaporate” (5).  In 2003, Ulmer anticipated that “the practices that will replace specialized knowledge remain to be invented” (5).  Jerome McGann reiterated this idea in 2006, suggesting that “at some point books and their technology will cease to be our encompassing informational environment; they will get incorporated into the digital network of artifacts and information” (McGann, para. 19).  Ten years after Ulmer’s observation and seven years after McGann’s confirmation of this potential trajectory, in the midst of tools and applications that &#8212; for the most part &#8212; continue to sustain the dominant paradigms of literacy, NewRadial’s incorporation of the networked inventiveness of INKE’s collaborative practices into its own developmental situation answers Ulmer’s invitation to invent new, digitally-situated practices of knowledge acquisition, creation and exchange. </p>
+
+<p>In the particular context of the INKE project, NewRadial is becoming what it beholds, and is primarily emerging as a social edition prototype.  However, beyond the specific implementations within the INKE frame, NewRadial raises broader questions and offers possible directions involving  relational data models, scalable data browsing, and crowd-sourced descriptive frameworks in humanities research and scholarship.  NewRadial’s knowledge environment both models and prototypes alternative ways of working with and contributing to data-centric humanities research online.  It offers a unique lens through which a diverse collection of digital humanities objects can be re-imagined, freely explored and iteratively prototyped.</p>
+
+                
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+
+<bibl><hi rend="bold">Fraistat, N.</hi> (2012). Textual Addressability and the Future of Editing. <hi rend="italic">European Romantic Review</hi>.  <hi>23 (3)</hi>.  329-333.</bibl>
+
+<bibl><hi rend="bold">Galey, A., and S. Ruecker</hi> (2010). How a Prototype Argues. <hi rend="italic">LLC</hi> <hi>25 (4)</hi>.  405-424.</bibl>
+
+<bibl><hi rend="bold">McGann, J.</hi> (2006). From Text to Work: Digital Tools and the Emergence of the Social Text. In <hi rend="italic">Romanticism on the Net.</hi>  41-42. (2 November 2013.)</bibl>
+
+<bibl><hi rend="bold">Moulthrop, S.</hi> (2005). After the Last Generation: Rethinking Scholarship in the Days of Serious Play.  In <hi rend="italic">Proceedings of Digital Arts and Culture Conference.</hi>  held at IT-University. Copenhagen, Denmark.  208-215.</bibl>
+
+<bibl><hi rend="bold">Saklofske, J.</hi> (2011). Remediating William Blake: Unbinding the Narrative Architectures of Blake’s Songs. European Romantic Review <hi>22 (3)</hi>. 381-88.</bibl>
+
+<bibl><hi rend="bold">Saklofske, J.</hi> (2010). NewRadial: Re-visualizing the Blake Archive. In <hi rend="italic">Poetess Archive Journal.</hi> 2 (1).</bibl>
+
+<bibl><hi rend="bold">Saklofske, J., and J. M. Giffin</hi> (2009).   <hi rend="italic">NewRadial</hi>.  2 November 2012.  <ref type="url" target="http://sourceforge.net/projects/newradial/">http://sourceforge.net/projects/newradial/</ref></bibl>
+
+<bibl><hi rend="bold">Saklofske, J. and J. Bruce</hi>  (2012). <hi rend="italic">NewRadial</hi> (INKE) . 2012.  2 November 2012. <ref type="url" target="http://sourceforge.net/projects/newradial-inke/">http://sourceforge.net/projects/newradial-inke/</ref>  and   <ref type="url" target="http://inke.acadiau.ca/newradial/">http://inke.acadiau.ca/newradial/</ref></bibl>
+
+<bibl><hi rend="bold">Siemens, R., et al.</hi> (2012). Toward Modelling the Social Edition: An Approach to Understanding the Electronic Scholarly Edition in the Context of New and Emerging Social Media. Accepted for publication in <hi rend="italic">Literary and Linguistic Computing.</hi> 70.</bibl>
+
+<bibl><hi rend="bold">Ulmer, G.</hi> (2003). <hi rend="italic">Internet Invention: From Literacy to Electracy.</hi>  New York: Longman.</bibl>  
+
+</listBibl>
+</div>
+</back>
+</text>
+</TEI>
+

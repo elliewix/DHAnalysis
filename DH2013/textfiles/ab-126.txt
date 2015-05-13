@@ -1,0 +1,200 @@
+
+
+
+Hildegard of Bingen (1098–1179) is one of the most influential female authors of the Middle Ages (Newman, 1998). The numerous texts attributed to this prophetess are versatile, with topics ranging from her visionary works, over medical issues, to music. Recent decades have seen an increase in the scholarly interest in Hildegard’s works and persona. From the point of view of computational stylistics, the oeuvre attributed to Hildegard is fascinating, because of the exceptionally complex authorship underlying it. Hildegard dictated her texts to secretaries in Latin, a language of which she did not master all grammatical subtleties (Ferrante, 1998; Deploige, 1998). She therefore allowed her scribes to correct her spelling and grammar. A number of manuscripts survive, produced under Hildegard’s supervision. Fig. 1 shows a detail of fol. 77 in the most important manuscript of Hildegard’s 
+Liber operum divinorum
+ (Ghent, University Library, MS 241) with a sample of the numerous adjustments made by Hildegard’s scribes. From these it is evident that multiple scribes have polished Hildegard’s original texts (Derolez, 1972; Derolez & Dronke, 1996). Many of Hildegard’s assistants are known by name, including Volmar, Ludwig of Saint Eucharius and Godfrey of Disibodenberg (Ferrante, 1998).
+
+
+ 
+
+Fig. 1
+
+The extent to which these copy-editors have interfered with Hildegard’s style has been the subject of intense scholarly debate. Especially Hildegard’s last collaborator, Guibert of Gembloux (Moens, 2010), seems to have heavily reworked her works during his secretaryship. Whereas her other scribes were only allowed to make superficial linguistic changes, Hildegard would have permitted Guibert to render her language stylistically more elegant. This is at least what can be deduced from the 
+Visio ad Guibertum missa
+. Deploige and Moens are currently finalizing an edition (fortcoming in Brepols’s 
+Corpus Christianorum
+) of the 
+Visio ad Guibertum missa
+ (
+MISSA
+) and the lesser known 
+Visio de sancto Martino
+ (
+MART
+), both of which Hildegard allegedly authored during Guibert’s secretaryship. Guibert’s interventions in these texts nevertheless seem so far-reaching that one could wonder to what extent they are still attributable to Hildegard (Newman, 1987).
+
+
+
+In this paper we will focus on Guibert’s role. At the same time, this case study carries wider relevance for stylometry, especially because medieval Latin prose has been rarely studied in the stylometric community. Stylometrists typically focus on high-frequency function words: as opposed to content words, these function words only carry a bleak, grammatical meaning (Pennebaker, 2011). In the case of Hildegard, it were exactly these grammatical words that were often corrected by her scribes. It would be interesting to assess whether Hildegard’s oeuvre is still a stylistically coherent corpus that is distinguishable from that of contemporary authors or from the stylistically more ornate body of works which she published during Guibert’s secretaryship.
+
+
+
+We researched a corpus provided by Brepols’s 
+Corpus Christianorum Library & Knowledge Centre
+, including works by Hildegard, Guibert and Bernard of Clairvaux. Medieval Latin, like other historical languages, is characterized by spelling variation. We therefore had to normalize the orthography in the corpus using lemmatization. We have trained the 
+Morfette
+ lemmatizer (Chrupala et al. 2008) on the annotated 
+Index Thomisticus Treebank
+ (Passarotti & Dell’Orletta 2010). All experiments described below were carried out on the lemmatized corpus, some using the script suite ‘Stylometry for R’ (Eder & Rybicki, 2011). All content words and personal pronouns were manually “culled” from the set of most frequent lemmas. All analyses were thus restricted to a set of 65 lemmas of high-frequency function words.
+
+
+
+A first analysis (Fig. 2) was performed on the 
+epistolaria
+ in the corpus, using 
+Principal Components Analysis
+ (
+PCA
+; Kestemont 2012). This analysis excludes the letters by Hildegard which were probably reworked by Guibert. The resulting scatterplot yields an excellent authorial separation (samples of 10,000 lemmas), with Guibert’s samples (
+GUI_EP
+) clustering in the top-right corner, Hildegard’s in the left part (
+HILD_EPNG
+) and Bernard’s in the lower-right area (
+BERN_EP
+). The component loadings (lightgrey) draw attention to Hildegard’s extravagant use of the preposition 
+in
+ (‘in’) or Guibert’s exorbitant use of 
+et
+ (‘and’). The latter remark is in line with earlier observations by philologists, noting Guibert’s clear preference of 
+et
+ to the alternative conjunctions 
+ac
+ or enclitic –
+que
+, esp. in compound sentences (Derolez, 1972). To test how long samples from these authors should be for a correct attribution, we carried out a leave-one-out validation using Burrows’s Delta for different samples sizes (Fig. 3). Samples sizes of 2,000 lemmas or more generally lead to reliable attributions (> 95% accuracy).
+
+
+ 
+
+Fig.2
+
+Fig. 3
+
+In Fig. 4 we have focused on the differences in writing style between Hildegard and Guibert. In this PCA, we have included Guibert’s letters (
+GUI_EP
+), Hildegard’s letters during Guibert’s secretaryship (
+HILD_EPG
+), as well as Hildegard’s letters unrelated to Guibert (
+HILD_EPNG
+). There is a firm horizontal separation between both authors. Apart from the 
+et-in
+ opposition, we also see a marked contrast with respect to the use of 
+e
+ (‘out’) or 
+cum
+ (‘with’). The samples from letters that result from their “collaboration” (
+HILD_EPG
+) cluster in the lower-left corner: they appear to be on Hildegard’s side of the stylistic spectrum, but interestingly, their position is rather isolated from the other Hildegard samples. This result is reminiscent of the Synergy Hypothesis, suggesting that texts resulting from collaboration can display a style markedly different from that of the (average of the) collaborating authors (Pennebaker 2011).
+
+
+
+
+Fig. 4
+
+These results demonstrate the general validity of the stylometric approach for the present corpus. It would therefore be interesting to assess how stylometric methods would react to the authorship in the two texts which were our point of departure. Fig. 5 shows the results of a PCA that confronts the 
+epistolaria
+ (Figs. 2 & 3) with the text pair of dubious authorial signature (
+MART
+ and 
+MISSA
+, prefixed “
+D(UBIOUS
+)”.
+
+
+ 
+Fig. 5
+
+Fig. 5 offers a clear-cut confirmation of the previously voiced doubts concerning Hildegard’s authorship for 
+MART
+ and 
+MISSA
+ (sample size=3,304). If indeed anything of Hildegard’s authorial style was ever present in these texts, Guibert seems to have reworked them to such an extent that style-oriented computational procedures are far more inclined to attribute the texts to Guibert than to Hildegard. This result thus yields a quantitative affirmation of the opinion asserted in previous Hildegard scholarship about Guibert’s stylistic reworkings of Hildegard’s oeuvre (Klaes, 1993; Newman, 1987), as well as fresh evidence regarding the Synergy hypothesis with respect to collaborative authorship in general (cf. the “co-authored” 
+H2_EP
+ samples in Figs. 4 & 5).
+
+
+
+The results reported in this paper obviously only scratch the tip of the iceberg in Hildegard scholarship. We nevertheless hope to have illustrated the huge potential of stylometric methods in dealing with medieval Latin text collections and similar historical corpora. Quantitative techniques can be used as a refreshing means to falsify or strengthen hypotheses formulated in traditional scholarship (e.g. Guibert’s stylistic influence). Future research will have to consider in what other respects stylometry could advance the traditional Hildegard scholarship, e.g. by isolating the more subtle linguistic influence of her other scribes on her works.
+
+                
+
+
+
+
+
+
+
+
+Burrows, J. 
+ (2002). ‘Delta’: a measure of stylistic difference and a guide to likely authorship, 
+Literary and Linguistic Computing
+, 
+17 (3)
+. 267–87.
+Chrupala, G. et al.
+ (2008). 'Learning Morphology with Morfette'. in 
+Proceedings of LREC 2008
+. held in Marrakech, Morocco.  2362–7.
+Deploige, J.
+ (1998). 
+In nomine femineo indocta. Kennisprofiel en ideologie van Hildegard van Bingen (1098-1179)
+. Hilversum: Verloren.
+Derolez, A.
+ (1972). The genesis of Hildegard of Bingen’s 
+Liber divinorum operum
+. The codicological evidence. In Gumbert, J. P. et al. (eds), 
+Litterae Textuales. Essays Presented to Gerard I. Lieftinck. II: Texts & Manuscripts
+. Amsterdam: Van Ghent. 23–33.
+Derolez, A. and P. Dronke
+ (eds.)(1996). 
+Hildegardis Bingensis Liber Divinorum Operum
+. Turnhout: Brepols.
+Eder, M. and J. Rybicki
+ (2011). Stylometry with R. In 
+Digital Humanities 2011. Conference Abstracts
+. Stanford. 308–11.
+Ferrante, J.
+ (1998), 
+Scribe quae vides et audis
+. Hildegard, Her Language, and Her Secretaries. In Townsend, D. 
+et al
+. (eds), 
+The Tongue of the Fathers. Gender and Ideology in Twelfth-Century Latin
+. Philadelphia: University of Pennsylvania Press. 102–35.
+Kestemont, M.
+ (2012). Stylometry for Medieval Authorship Studies. An Application to Rhyme Words, 
+Digital Philology: A Journal of Medieval Cultures
+, 
+1 (1)
+: 42-72.
+Klaes, M.
+ (1993), 
+Vita sanctae Hildegardis
+. Turnhout: Brepols.
+Moens, S.
+ (2010). Twelfth-century epistolary language of friendship reconsidered. The case of Guibert of Gembloux, 
+Revue belge de philologie et d’histoire
+, 
+88 (4)
+. 983–1017.
+Newman, B. 
+(1987). 
+Sister of wisdom. St. Hildegard’s theology of the feminine
+. Los Angeles: University of California Press.
+Newman, B. 
+(1998). 
+Voice of the Living Light: Hildegard of Bingen and Her World
+. Los Angeles: University of California Press.
+Passarotti, M., and F. Dell’Orletta
+ (2010). Improvements in Parsing the 
+Index Thomisticus
+ Treebank. Revision, Combination and a Feature Model for Medieval Latin. In 
+Proceedings of LREC 2010
+. Valetta, Malta. 1694–71.
+Pennebaker, J.
+ (2011). 
+The Secret Life of Pronouns. What Our Words Say About Us
+. New York: Bloomsbury.
+

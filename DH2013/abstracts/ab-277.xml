@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?oxygen RNGSchema="http://jetson.unl.edu/cdrh/schemas/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ab-277">
+
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Counting Words with Henry James: Towards a Quantitative Hermeneutics</title>
+<author>
+<name><surname>Fyfe</surname>, <forename>Paul</forename></name>
+<affiliation>Florida State University, United States of America</affiliation>
+<email>pfyfe@fsu.edu</email>
+</author>
+</titleStmt>
+<publicationStmt>
+<authority></authority>
+<publisher>University of Nebraska-Lincoln</publisher>
+<distributor>
+<name>Center for Digital Research in the Humanities</name>
+<address>
+<addrLine>319 Love Library</addrLine>
+<addrLine>University of Nebraska&#8211;Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+<addrLine>cdrh@unl.edu</addrLine>
+</address>
+</distributor>
+<pubPlace>Lincoln, Nebraska</pubPlace> 
+<address>
+<addrLine>University of Nebraska-Lincoln</addrLine>
+<addrLine>Lincoln, NE 68588-4100</addrLine>
+</address>
+<availability>
+<p></p>
+</availability>
+</publicationStmt>
+
+<notesStmt><note type="abstract">“Counting Words with Henry James” undertakes text analysis and topic modelling to demonstrate how the digital humanities participates in the recent turn in literary theory from the “hermeneutics of suspicion” to what Rita Felski calls post-critical or “reflective reading.” I argue that critiques of the digital humanities as being anti- or even non-theoretical fundamentally misrecognize its alliance with such recent theoretical initiatives. Instead, the self-critical methodologies of digital humanities also manifest the “the intricate play of perception, interpretation, and affective orientation” that characterizes critical reading after suspicion. Thus, I ultimately hope to move beyond the unfortunate associations of quantitative literary analysis with “not reading” or data crunching by offering a different theoretical vocabulary for its continuing work in partnership with literary theory. At the same time, I propose that the emerging theoretical program of “reflective reading” can address methodological insufficiencies in how quantitative analysts move from data to interpretation or from signal to concept.</note></notesStmt>
+
+<sourceDesc>
+<p>No source: created in electronic format.</p>
+<p>
+<date when="20130718"></date>
+<time when="13:30:00"></time>
+</p>
+<p n="session">LP16</p>
+</sourceDesc>
+</fileDesc>
+
+<profileDesc>
+<textClass>
+<keywords scheme="original" n="category">
+<term>Paper</term>
+</keywords>
+<keywords scheme="original" n="subcategory">
+<term>Long Paper</term>
+</keywords>
+<keywords scheme="original" n="keywords">
+<term>text analysis</term>
+<term>distant reading</term>
+<term>hermeneutics</term>
+<term>telegraphy</term>
+<term>Henry James</term>
+</keywords>
+<keywords scheme="original" n="topic">
+<term>corpora and corpus activities</term>
+<term>historical studies</term>
+<term>digital humanities - nature and significance</term>
+<term>text analysis</term>
+<term>english studies</term>
+<term>cultural studies</term>
+<term>history of Humanities Computing/Digital Humanities</term>
+<term>data mining/ text mining</term>
+</keywords>
+</textClass>
+</profileDesc>
+
+<revisionDesc>
+<change>
+<date when="2013-04-17"></date>
+<name>Laura Weakly</name>
+<desc>Initial encoding</desc>
+</change>
+</revisionDesc>
+</teiHeader>
+
+<text type="paper">
+<body>
+<div>
+
+
+<quote>Her function was to sit there with two young men&#8212;the other telegraphist and the counter-clerk; to mind the ‘sounder,’ which was always going, to dole out stamps and postal-orders, weigh letters, answer stupid questions, give difficult change and, more than anything else, count words as numberless as the sands of the sea […]<ref target="n01">1</ref></quote>
+
+<p>The anonymous telegrapher in Henry James 1898 London-based novella <hi rend="italic">In the Cage</hi> has drawn significant attention in recent decades from literary critics and media historians. These scholars have read her story&#8212;of projecting herself into the domestic drama of the aristocrats who use her office&#8212;for its lessons about the anxieties of surveillance, the instability of public and private domains, the regulation of gendered information workers, and the impact of telegraphic mediation on discourse including James’s own style.<ref target="n02">2</ref>  But while <hi rend="italic">In the Cage</hi> is rich with possible readings for the work of media and cultural history, our own critical reflex to do ‘readings’&#8212;to suspect the text for what aesthetic, cultural, and historical lessons it encodes or conceals&#8212;overlooks the story’s own emphasis on a very different mode of textual encounter: counting words. By the light of recent interest in quantitative literary analysis, we can see the textual transactions of <hi rend="italic">In the Cage</hi> from other angles: as a historical signal for when ‘distant reading’ (as we now call it) may have become necessary, and as a provocation to leave our conventional hermeneutics for the reflective reading that counting words might actually facilitate.</p>
+
+<p>‘Counting Words with Henry James’ undertakes to demonstrate how the digital humanities participates in the recent turn in literary theory from the ‘hermeneutics of suspicion’ to what Rita Felski calls post-critical or ‘reflective reading.’<ref target="n03">3</ref>  I argue that critiques of the digital humanities as being anti- or even non-theoretical fundamentally misrecognize its alliance with such recent theoretical initiatives. Instead, the self-critical methodologies of digital humanities also manifest the ‘the intricate play of perception, interpretation, and affective orientation’ that characterizes critical reading after suspicion.<ref target="n04">4</ref>  Thus, I ultimately hope to move beyond the unfortunate associations of quantitative literary analysis with ‘not reading’ or data crunching by offering a different theoretical vocabulary for its continuing work in partnership with literary theory. At the same time, I propose that the emerging theoretical program of ‘reflective reading’ can address methodological insufficiencies in how quantitative analysts move from data to interpretation or from signal to concept.<ref target="n05">5</ref></p>
+
+<p>My paper will share the results of ongoing text analysis and topic modeling trials of the works of Henry James at multiple levels of address. Using off-the-shelf tools like the text analysis suite Voyeur and the topic modeling toolkit MALLET, I undertake a series of experiments at an increasing scale, beginning with the text of <hi rend="italic">In the Cage</hi> and scaling up through James’s entire collected works and prefaces. Quantitative approaches to James are not new, nor are these tools necessarily cutting edge, but my argument is instead about the appropriateness and timeliness of their application for ongoing critical discussions: about <hi rend="italic">In the Cage</hi> as well as possible affiliations of surface and distant reading. <ref target="n06">6</ref> <hi rend="italic">In the Cage</hi> uniquely warrants such treatment, in two senses: first, because of its own conspicuous thematics of textual abundance, word counting, and interpretation; and second, because of James’s own editorial efforts to control interpretations of <hi rend="italic">In the Cage</hi> as the story soon joins another massive textual corpus: his collected works for the New York edition.</p>
+
+<p>Throughout his novella, James describes late-nineteenth-century telegraphy with an arithmetical lexicon; the telegrapher is constantly counting, figuring, adding, calculating, working out meaning in the margins, and building a hypothesis about the relations of Captain Everard and Lady Bradeen from her process. Because, in the story, the telegrapher ultimately misreads these relations, James seems to deprecate her quantitative methods compared with his own elaborate narrative procedures. In his later preface to <hi rend="italic">In the Cage</hi>, James describes its interest in the ‘wonderment’ of the telegraph office’s cacophonous information field, its investigation into ‘the question of what it might ‘mean’.’ In other words, the story is about challenges to reading practices and, more abstractly, about the methodologies of information processing that might lead to ‘meaning.’ And as the telegraphist tries to deal with the problem of texts at scale, she occupies a similar position of alienated curiosity with respect to digital humanists and large data sets.<ref target="n07">7</ref></p>
+
+<p>How would the telegrapher-as-quantitative-analyst read her own story? Or all of James’s works? The telegraphist is faced with proliferating telegraphic fragments and ‘words as numberless as the sands of the sea.’ These messages are more than merely fragments to reconstruct: they are also units of scalable information. Their textual compression and transcoding make possible the ‘massive addressability’ that characterizes large collections of digitized text.<ref target="n08">8</ref> Text analysis and topic modeling lets us further identify different levels by which to approach meaning in the text&#8212;e.g. the word, the genre, the topic cluster, the historical trend&#8212;as well as in larger corpora in which the text signifies. Those methods have reinvigorated questions familiar to the telegraphist of how to read, count, and interpret.</p>
+
+<p>In addition to thematizing problems of literary interpretation across different textual scales, <hi rend="italic">In the Cage</hi> invites them through its own revision history. Shortly after completing the novella, James began collecting his texts into a massive New York edition, revising his works and writing new prefaces which aim to direct our readings of their individual and collective significance. While James writes in his prefaces about what scale of textual address we should use to find meaning, this novella&#8212;from its oral composition and transcription, to its narrative about fragments and questions of meaning, to its tenuous status relative to James’s oeuvre&#8212;also invites us to reconsider the interpretive possibilities of words and clusters at scale. In a sense, <hi rend="italic">In the Cage</hi> embodies the problem of textual addressability.</p>
+
+<p>My reading of the novella aims to link the telegraphist’s wonderment, the ‘hypothesis-testing mode’ characteristic of recent work in quantitative literary analysis, and emergent forms of post-critical reading in literary theory.<ref target="n09">9</ref>  In effect, post-critical reading offers a recuperative vocabulary for counting words, rescuing the telegrapher from Jamesian suspicion and perhaps bolstering the claims of quantitative literary analysis. Its recursive processes, I suggest, likewise draws upon what Felski calls ‘the intricate play of perception, interpretation, and affective orientation that constitutes aesthetic response.’<ref target="n10">10</ref> Ultimately, this paper argues that the digital humanities are not post-theoretical, but they may be productively post-critical in generating a reflexive, quantitative hermeneutics. </p>
+
+</div>
+
+</body>
+
+<back>
+<div type="References">
+<listBibl>
+<bibl><hi rend="bold">Anon. </hi> (2013). <hi rend="italic">Surface Reading/ Machine Reading: New Approaches to Texts and Data</hi> Available from: <ref type="url" target="http://raley.english.ucsb.edu/wp-content/surface-reading_flyer.jpg">http://raley.english.ucsb.edu/wp-content/surface-reading_flyer.jpg</ref> (Accessed 5 March 2013).</bibl>
+
+<bibl><hi rend="bold">Clayton, J. </hi> (1997). The Voice in the Machine: Hazlitt, Hardy, James, in <hi rend="italic">Language Machines: Technologies of Literary and Cultural Production</hi>. New York: Routledge. 209–232.</bibl>
+
+<bibl><hi rend="bold">Felski, R.</hi> (2009). After Suspicion. <hi rend="italic">Profession</hi>. 28–35.</bibl>
+
+<bibl><hi rend="bold">Flanders, J.</hi> (2009). The Productive Unease of 21st-century Digital Scholarship. <hi rend="italic">Digital Humanities Quarterly</hi>. 3(3). Available from: <ref type="url" target="http://digitalhumanities.org/dhq/vol/3/3/000055.html">http://digitalhumanities.org/dhq/vol/3/3/000055.html</ref> (Accessed 10 December 2009).</bibl>
+
+<bibl><hi rend="bold">Heuser, R. &amp; L. Le-Khac</hi> (2011) Learning to Read Data: Bringing out the Humanistic in the Digital Humanities. <hi rend="italic">Victorian Studies</hi>. 54(1). 79–86.</bibl>
+
+<bibl><hi rend="bold">Hoover, D.</hi> (2007) Corpus Stylistics, Stylometry, and the Styles of Henry James. <hi rend="italic">Style</hi>. 41 (2). 174–203.</bibl>
+
+<bibl><hi rend="bold">James, H.</hi> (2002) 'In the Cage', in Wegelin, C., &amp; H. B. Wonham (eds.) <hi rend="italic">Tales of Henry James</hi>. 2nd edn. New York: W. W. Norton &amp; Company.</bibl>
+
+<bibl><hi rend="bold">Keep, C.</hi> (2011) Touching at a Distance: Telegraphy, Gender, and Henry James’s <hi rend="italic">In the Cage</hi>, in <hi rend="italic">Media, Technology, and Literature in the Nineteenth Century: Image, Sound, Touch</hi>. Surrey, England: Ashgate. 239–255.</bibl>
+
+<bibl><hi rend="bold">Liu, A.</hi> (2009) Digital Humanities and Academic Change. <hi rend="italic">English Language Notes</hi>. <hi>47(1)</hi>. 17–35.</bibl>
+
+<bibl><hi rend="bold">Marvin, C.</hi> (1988). <hi rend="italic">When Old Technologies Were New: Thinking About Electric Communication in the Late Nineteenth Century</hi>. New York: Oxford University Press.</bibl>
+
+<bibl><hi rend="bold">Menke, R.</hi> (2000). Telegraphic Realism: Henry James’s <hi rend="italic">In the Cage.</hi> <hi rend="italic">PMLA: Publications of the Modern Language Association of America</hi>. 115(5). 975–990.</bibl>
+
+<bibl><hi rend="bold">Stauffer, A.</hi> (2011) Introduction: Searching Engines, Reading Machines. <hi rend="italic">Victorian Studies</hi>. 54.1. 63–68.</bibl>
+
+<bibl><hi rend="bold">Witmore, M.</hi> (2010) Text: A Massively Addressable Object. Wine Dark Sea [online]. Available from: <ref type="url" target="http://winedarksea.org/?p=926">http://winedarksea.org/?p=926</ref> (Accessed 8 August 2011).</bibl>
+
+</listBibl>
+</div>
+
+<div type="Notes">
+
+<note xml:id="n01" n="1">  James, 2002, p.229.</note>
+<note xml:id="n02" n="2">  Notable examples include Clayton, 1997; Keep, 2011; Menke, 2000; Marvin, 1988.</note>
+<note xml:id="n03" n="3">  Felski, 2009.</note>
+<note xml:id="n04" n="4">  2009, p.31.</note>
+<note xml:id="n05" n="5">  For an accessible review of this problem, see Stauffer, 2011.</note>
+<note xml:id="n06" n="6"> For an example of a quantitative approach, see Hoover, 2007. A recent conference at New York University was devoted to such issues: ‘Surface Reading / Machine Reading: New Approaches to Texts and Data’, 2013.</note>
+<note xml:id="n07" n="7">  For reports of this phenomenon, see Liu, 2009; Flanders, 2009; Heuser and Le-Khac, 2011.</note>
+<note xml:id="n08" n="8">  Witmore, 2010.</note>
+ <note xml:id="n09" n="9"> Heuser and Le-Khac, 2011, p.85.</note>
+ <note xml:id="n10" n="10"> 2009, p.31.</note>
+
+
+</div>
+
+
+</back>
+</text>
+</TEI>
+
