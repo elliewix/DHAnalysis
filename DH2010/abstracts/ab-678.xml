@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-678">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>"Any more Bids?": Automatic Processing and Segmentation of Auction
+                    Catalogs</title>
+                <author>
+                    <name>West, Kris</name>
+                    <affiliation><orgName>JSTOR</orgName>, <country>USA</country></affiliation>
+                    <email>Kris.West@gmail.com</email>
+                </author>
+                <author>
+                    <name>Llewellyn, Clare</name>
+                    <affiliation><orgName>JSTOR</orgName>, <country>USA</country></affiliation>
+                    <email>Clare.Llewellyn@ithaka.org</email>
+                </author>
+                <author>
+                    <name>Burns, John</name>
+                    <affiliation><orgName>JSTOR</orgName>, <country>USA</country></affiliation>
+                    <email>John.Burns@ithaka.org</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-26</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                <p>This paper details work that has been conducted through a collaborative project
+                    between JSTOR, the Frick Collection and the Metropolitan Museum of Art. This
+                    work, funded by the Andrew W. Mellon Foundation, was to understand how auction
+                    catalogs can be best preserved for the long term and made most easily accessible
+                    for scholarly use. Auction catalogs are vital for provenance research as well as
+                    for the study of art markets and the history of collecting. Initially a set of
+                    1604 auction catalogs, over 100,000 catalog pages, was digitised – these
+                    catalogs date from the 18<hi rend="sup">th</hi> through the early 20<hi
+                        rend="sup">th</hi> century.</p>
+                <p>An auction catalog is a structured set of records describing items or lots
+                    offered for sale at an auction. The lots are grouped into sections – such as
+                    works by a particular artist, each of the sections are then grouped into a
+                    particular sale – this is the actual event that happened in the sale room, and
+                    then these sales are grouped together in the auction catalog. The auction
+                    catalog document also generally includes handwritten marginalia added to record
+                    other details about the actual transaction such as the sale price and the
+                    buyer.</p>
+                <p>A repository was constructed – this holds and provides access to page images,
+                    optical character recognition (OCR) text and database records from the digitised
+                    auction catalogs. In addition a website was created that provides public access
+                    to the catalogs and automatically generated links to other collections. This
+                    site offers the ability to search and browse the collection and allows users to
+                    add their own content to the site.</p>
+                <p>When searching a user may only be interested in a single item within a larger
+                    catalog, therefore, to facilitate searching the logical structure of the catalog
+                    needs to be determined in order to segment the catalog into items. The catalogs
+                    are extremely variable in structure, format and language, and there are no
+                    standard rules that can divide the catalog into the lots, sections and sales.
+                    Therefore, machine-learning techniques are used to generate the segmentation
+                    rules from a number of catalogs that have been marked up by hand. These rules
+                    are then applied to classify and segment the remaining catalogs.</p>
+                <p>The focus of this paper is the research and creation of a system to automatically
+                    process digitised auction catalog documents, with the aim to automatically
+                    segment and label entities within and create a logical structure for each
+                    document. The catalogs processed are in an XML format produced from physical
+                    documents via an OCR process. The segmentation and assignment of entity types
+                    will facilitate, deep searching, browsing, annotation and manipulation
+                    activities over the collection. The ability to automatically label previously
+                    unseen documents will enable the production of other large scale collections
+                    where the hand labelling of the collection content is highly expensive or
+                    unfeasible.</p>
+                <p>The catalog, sale, section, lot model requires that the content of the document
+                    be distributed between these entities, which are themselves distributed over the
+                    pages of the document. Each line of text is assigned to a single entity, whole
+                    entities may be contained within other entities (a logical hierarchy), and a
+                    parent entity may generate content both before and after its child entities in
+                    the text sequence. This hierarchical organisation differentiates the problem of
+                    automatically labelling auction catalog document content from other semantic
+                    labelling tasks such as Part of Speech labelling (<ref type="internal"
+                        cRef="bibl2">Lafferty et al., 2001</ref>) or Named Entity Recognition (<ref
+                        type="internal" cRef="bibl4">McCallum and Li, 2003</ref>). In these tasks
+                    the classes or states can be thought of as siblings in the text sequence, rather
+                    than as having hierarchical relationships. Hence, the digitisation of auction
+                    catalog documents may require a different set of procedures to that applied to,
+                    for example, the digitisation of Magazine collections (<ref type="internal"
+                        cRef="bibl7">Yacoub et al., 2005</ref>) or scholarly articles (<ref
+                        type="internal" cRef="bibl3">Lawrence et al., 1999</ref>).</p>
+                <p>Although a particular document model is assumed throughout this work, the theory
+                    and tools detailed can be applied to arbitrary document models that incorporate
+                    hierarchical organisation of entities.</p>
+                <p>Techniques that are successfully applied to other Natural Language Processing and
+                    document digitisation tasks may be applied to this problem. Specifically, we
+                    have developed task appropriate feature extraction and normalisation procedures
+                    to produce parameterisations of catalog document content suitable for use with
+                    statistical modelling techniques. The statistical modelling technique applied to
+                    these features, Conditional Random Fields (CRFs) (<ref type="internal"
+                        cRef="bibl6">Sutton and McCallum, 2007</ref>), models the dependence
+                    structure between the different states (which relate to the logical entities in
+                    the document) graphically. A diagrammatic representation of the auction
+                    catalogue document model is given in figure 1a and an example of a model
+                    topology that might be derived from it is given in figure 1b. It should be noted
+                    that CRFs are discriminative models, rather than generative models like HMMs, a
+                    property that may be advantageous when such models are applied to NLP tasks
+                        (<ref type="internal" cRef="bibl2">Lafferty et al., 2001</ref>).</p>
+                <p>
+                    <figure xml:id="fig1">
+                        <head>(a) Document data</head>
+                        <graphic url="678_Fig1a.jpg" rend="left" mimeType="image/jpeg" width="60mm"/>
+                    </figure>
+                    <figure>
+                        <head>(b) FST transition grammar</head>
+                        <graphic url="678_Fig1b.jpg" rend="center" mimeType="image/jpeg" width="40mm"/>
+                        <head>Figure 1: Document model for an auction catalog and a Simple Finite
+                            State Transducer topology derived from it</head>
+                    </figure>
+                </p>
+                <figure xml:id="fig2">
+                    <head>Figure 2: FST transition grammar extended to incorporate start and
+                        continue states for each entity type</head>
+                    <graphic url="678_Fig2.jpg" xmt:type="full" rend="center" width="50mm"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <p>The application of such techniques to hierarchically structured documents
+                    requires the logical structure of a document to be recoverable from a simple
+                    sequence of state labels. The basic transition grammar shown in figure 1b is not
+                    appropriate for this task as it is impossible to differentiate concurrent lines
+                    of a single entity from concurrent lines from two entities of the same type and
+                    relationships between a single ‘parent’ entity and multiple ‘child’ entities.
+                    These issues may be addressed by using two states, a start and a continuation
+                    state, in the model, to represent content relating to each entity, as shown in
+                    figure 2. This modification allows the full logical structure to be recovered by
+                    post-processing the sequence of state labels.</p>
+                <p>In order to train any automated statistical learning procedure, a suitable sample
+                    of the data set must be labeled, usually by hand, to provide a target for
+                    learning or a ground-truth for evaluation. Hand labelling an XML-based
+                    representation of a document, produced via an OCR process, can be a difficult
+                    and frustrating task. To facilitate the fast labelling of documents, and thereby
+                    maximise the quantity of ground-truth data that could be produced, a
+                    cross-platform document segmentation user application was developed, shown in
+                    figure 3, that is able to format the OCR data for display and allow the user to
+                    simply and rapidly mark-up each document. This application could easily be
+                    adapted for use with other data sets and is a useful output of this work that
+                    can be used independently.</p>
+                <p>Initial experiments with the segmentation and labelling system were conducted on
+                    a hand labeled collection of 266 auction catalogs, comprising just less than
+                    400,000 lines of text content. A detailed breakdown of the content of these
+                    documents <figure xml:id="fig3">
+                        <head>Figure 3: Document segmentation user application</head>
+                        <graphic url="678_Fig3.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                     is provided in table 1. These experiments compare a number of variants
+                    of the system and analyses are provided to aid in the selection of parameters
+                    for the system. The experiments are evaluated using both the retrieval statistic
+                    F-measure (<ref type="internal" cRef="bibl1">Baeza-Yates and Ribeiro-Neto,
+                        1999</ref>) and an adaption of the WindowDiff metric (<ref type="internal"
+                        cRef="bibl5">Pevzner and Hearst, 2002</ref>). The system has been found to
+                    produce a satisfactory level of performance to facilitate the automated
+                    processing of auction catalog content. A breakdown of the results achieved by
+                    the system is given in table 2. </p>
+                <table xml:id="table1">
+                    <head>Table 1: Number of lines corresponding to each entity type</head>
+                    <row role="label">
+                        <cell><hi rend="bold">Entity</hi></cell>
+                        <cell><hi rend="bold">Number of lines</hi></cell>
+                    </row>
+                    <row>
+                        <cell>start-Catalog</cell>
+                        <cell>266</cell>
+                    </row>
+                    <row>
+                        <cell>cont-Catalog</cell>
+                        <cell>41,275</cell>
+                    </row>
+                    <row>
+                        <cell><hi rend="bolditalic">Catalog</hi></cell>
+                        <cell><hi rend="bolditalic">41,541</hi></cell>
+                    </row>
+                    <row>
+                        <cell>start-Sale</cell>
+                        <cell>556</cell>
+                    </row>
+                    <row>
+                        <cell>cont-Sale</cell>
+                        <cell>3,469</cell>
+                    </row>
+                    <row>
+                        <cell><hi rend="bolditalic">Sale</hi></cell>
+                        <cell><hi rend="bolditalic">4,025</hi></cell>
+                    </row>
+                    <row>
+                        <cell>start-Section</cell>
+                        <cell>4,109</cell>
+                    </row>
+                    <row>
+                        <cell>cont-Section</cell>
+                        <cell>19,415</cell>
+                    </row>
+                    <row>
+                        <cell><hi rend="bolditalic">Section</hi></cell>
+                        <cell><hi rend="bolditalic">23,524</hi></cell>
+                    </row>
+                    <row>
+                        <cell>start-Lot</cell>
+                        <cell>91,240</cell>
+                    </row>
+                    <row>
+                        <cell>cont-Lot</cell>
+                        <cell>229,051</cell>
+                    </row>
+                    <row>
+                        <cell><hi rend="bolditalic">Lot</hi></cell>
+                        <cell><hi rend="bolditalic">320,291</hi></cell>
+                    </row>
+                    <row role="label">
+                        <cell><hi rend="bold">Total</hi></cell>
+                        <cell><hi rend="bold">389,381</hi></cell>
+                    </row>
+                </table>
+                <p>Analysis of the errors produced by the system show that, owing to the
+                    hierarchical nature of the document model, a small number of errors at critical
+                    points in the content can lead to a large number of subsequent, concurrent
+                    errors. Unfortunately, these critical points in the ground-truth sequences are
+                    represented by the smallest quantities of content in the collection and
+                    therefore may form the weakest parts of the model. However, this also means that
+                    a small number of corrections at these key points could enable the correction of
+                    a much larger number of errors in the output. This is a useful property, as one
+                    of the design goals of this system is to facilitate the integration of feedback
+                    from users of the digitised documents into the statistical model and thereby
+                    allow the segmentations produced to improve over time.</p>
+                <p>The feedback is used to improve the model by preserving any confirmations or
+                    corrections, made by users, of the segmentation output from CRF model. This
+                    preservation is achieved by reapplying the model to the document, which has been
+                    partially labeled by users, and forcing it to pass through the user indicated
+                    states as it determines a new sequence of state labels. This allows a user to
+                    supply corrections of major segmentation errors, such as a missing high-level
+                    entity (e.g. a sale), or minor errors, such as a single mislabeled line
+                    belonging to a lot. A user supplied correction to a major segmentation error
+                    could correct the labelling of many lines, for example by opening the Sale at
+                    the correct point and allowing the model to  estimate weights for Sections and Lots thereafter, whereas minor
+                    corrections may be simply preserved so that they don't need to be reapplied to
+                    the re-segmented document. </p>
+                <table xml:id="table2">
+                    <head>Table 2: Results achieved by the CRF-based system calculated over
+                        5-fold cross-validation of the hand-labelled dataset</head>
+                    <row role="label">
+                        <cell><hi rend="bold">Metric</hi></cell>
+                        <cell><hi rend="bold">Score</hi></cell>
+                    </row>
+                    <row role="label">
+                        <cell>WindowDiff</cell>
+                        <cell>0.103</cell>
+                    </row>
+                    <row>
+                        <cell>F1 cont-Catalog</cell>
+                        <cell>0.709</cell>
+                    </row>
+                    <row>
+                        <cell>F1 start-Lot</cell>
+                        <cell>0.870</cell>
+                    </row>
+                    <row>
+                        <cell>F1 cont-Lot</cell>
+                        <cell>0.934</cell>
+                    </row>
+                    <row>
+                        <cell>F1 start-Sale</cell>
+                        <cell>0.444</cell>
+                    </row>
+                    <row>
+                        <cell>F1 cont-Sale</cell>
+                        <cell>0.347</cell>
+                    </row>
+                    <row>
+                        <cell>F1 start-Section</cell>
+                        <cell>0.483</cell>
+                    </row>
+                    <row>
+                        <cell>F1 cont-Section</cell>
+                        <cell>0.548</cell>
+                    </row>
+                </table>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl xml:id="bibl1">
+                        <author>Baeza-Yates, R.</author>
+                        <author>Ribeiro-Neto, B.</author>
+                        <date>1999</date>
+                        <title level="m">Modern Information Retrieval</title>
+                        <publisher>Addison-Wesley Publishing Company</publisher></bibl>
+                    <bibl xml:id="bibl2"><author>Lafferty, J.</author>
+                        <author>McCallum, A.</author>
+                        <author>Pereira, F.</author>
+                        <date>2001</date>
+                        <title level="a">Conditional random fields: Probabilistic models for
+                            segmenting and labeling sequence data</title>
+                        <title level="m" type="proceedings">Machine Learning-International Workshop
+                            then Conference</title>
+                        <publisher>Citeseer</publisher>
+                        <biblScope type="pp">282–289</biblScope></bibl>
+                    <bibl xml:id="bibl3"><author>Lawrence, S.</author>
+                        <author>Giles, C.</author>
+                        <author>Bollacker, K.</author>
+                        <date>1999</date>
+                        <title level="a">Digital libraries and autonomous citation indexing</title>
+                        <title level="j">IEEE computer</title>
+                        <biblScope type="issue">32(6)</biblScope>
+                        <biblScope type="pp">67–71</biblScope></bibl>
+                    <bibl xml:id="bibl4"><author>McCallum, A.</author>
+                        <author>Li, W.</author>
+                        <date>2003</date>
+                        <title level="a">Early results for named entity recognition with conditional
+                            random fields, feature induction and web-enhanced lexicons</title>
+                        <title level="m" type="proceedings">Seventh Conference on Natural Language
+                            Learning (CoNLL)</title></bibl>
+                    <bibl xml:id="bibl5">
+                        <author>Pevzner, L.</author>
+                        <author>Hearst, M.</author>
+                        <date>2002</date>
+                        <title level="a">A critique and improvement of an evaluation metric for text
+                            segmentation</title>
+                        <title level="j">Computational Linguistics</title>
+                        <biblScope type="issue">28(1)</biblScope>
+                        <biblScope type="pp">19–36</biblScope></bibl>
+                    <bibl xml:id="bibl6"><author>Sutton, C.</author>
+                        <author>McCallum, A.</author>
+                        <date>2007</date>
+                        <title level="m">An Introduction to Conditional Random Fields for Relational
+                            Learning. Introduction to statistical relational learning</title>
+                        <biblScope type="pp">93</biblScope></bibl>
+                    <bibl xml:id="bibl7"><author>Yacoub, S.</author>
+                        <author>Burns, J.</author>
+                        <author>Faraboschi, P.</author>
+                        <author>Ortega, D.</author>
+                        <author>Peiro, J.</author>
+                        <author>Saxena, V.</author>
+                        <date>2005</date>
+                        <title level="a">Document digitization lifecycle for complex magazine
+                            collection</title>
+                        <title level="m" type="proceedings">Proceedings of the 2005 ACM symposium on
+                            Document engineering</title>
+                        <name type="venue">ACM New York, NY, USA</name>
+                        <biblScope type="pp">197–206</biblScope></bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

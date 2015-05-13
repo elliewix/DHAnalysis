@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-803">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Structured and Unstructured: Extracting Information from Classics Scholarly
+                    Texts</title>
+                <author>
+                    <name>Romanello, Matteo</name>
+                    <affiliation><orgName>King's College London</orgName> <reg><country>UK</country></reg></affiliation>
+                    <email>matteo.romanello@kcl.ac.uk</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-26</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>The poster presents an ongoing PhD research project that applies Digital Humanities
+                to Classics. The project is focussed on the extraction of information from modern
+                scholarly texts (i.e. “secondary sources”), namely all the modern publications about
+                ancient works written in Greek or Latin (being our so-called “primary sources”). The
+                project addresses both the problem of extracting information fom scholarly texts in
+                an automatic and scalable way, and that of providing users (i.e. scholars) with
+                advanced and meaningful entry points to information rather than just search
+                engine-like functionalities over an electronic corpus of texts.</p>
+            <div>
+                <head>Background</head>
+                <p>A currently ongoing project such as the Million Book Library drew considerable
+                    attention to the characteristic features of the next generation of digital
+                    libraries and to the consequences of a change of scale on the practice and the
+                    results of the research itself (<ref type="internal" cRef="bibl3">Crane
+                        2006</ref>). This is a big chance for Humanities and Classics particularly
+                    given the extended “shelf-life” of humanities relative to scientific
+                    publication. However, once those secondary sources are digitized this does not
+                    mean that information contained within them will be immediately accessible.
+                    Issues that we need to address concern the accuracy of our electronic resources,
+                    such as encoding of Greek text, inaccurate OCR transcription due to low image
+                    quality, problem of missing pages (<ref type="internal" cRef="bibl2">Boschetti
+                        2009</ref>), as well as the scalability of ways to provide access to
+                    information, given that we cannot afford to correct manually every scanned
+                    page.</p>
+            </div>
+            <div>
+                <head>Motivations</head>
+                <p>Secondary sources are without any doubt intrinsically valuable for Classicists,
+                    as they shape the scholarly discourse of the discipline. Printed citations and
+                    references – and even mentions of names or geographical places – can be
+                    considered as being already a form of hypertext as they virtually create links
+                    between texts. However in the currently available digital libraries – except for
+                    the Perseus Digital Library<note><ref type="external"
+                            target="http://www.perseus.tufts.edu/hopper/"
+                            >http://www.perseus.tufts.edu/hopper/</ref></note> – primary and
+                    secondary sources are scarcely interconnected, despite the fact that one of the
+                    main advantages of digital libraries is the way in which they represent the
+                    hypertextual nature of text collections.</p>
+                <p>In particular, Classics scholars are interested in named entity mentions inside
+                    texts, as is reflected by the widespread use of different kinds of indexes and
+                    concordances in this field that basically organize in a systematic manner
+                    references to text passages when a given entity is mentioned. Translating the
+                    problem into computational terms, we are faced with the task of automatic entity
+                    extraction from a corpus of unstructured texts to develop a discipline-specific
+                    system of semantic information retrieval.</p>
+            </div>
+            <div>
+                <head>Related Work</head>
+                <p>In addition to all the unstructured information being made available on the web,
+                    several projects in the Humanities have produced over the last decade an
+                    increasing amount of structured information that was then stored in a wide range
+                    of data formats (i.e. databases, XML fles, etc.). The approach we undertake is
+                    to reuse information contained within those structured data sources as training
+                    data for a supervised system that extracts semantic information fom an
+                    unstructured corpus of texts. A likely approach is suggested for instance by a
+                    research recently conducted by IBM to investigate the automatic creation of
+                    links between structured data sources (i.e. database containing product
+                    information) and unstructured texts (i.e. emails of complaint about products)
+                        (<ref type="internal" cRef="bibl1">Bhide et al. 2008</ref>). More generally,
+                    the problem implied by our approach of determining when two bits of information
+                    refer to the same entity has been thoroughly explored in the AI (Artifcial
+                    Intelligence) field (<ref type="internal" cRef="bibl5">Li et al.
+                    2005</ref>).</p>
+            </div>
+            <div>
+                <head>Method</head>
+                <p>The very first phase of the project is devoted to the task of building our corpus
+                    of unstructured texts. So far we considered two corpora of texts: the papers
+                    contained in the open archive Princeton/Stanford Working Papers in
+                            Classics<note><ref type="external"
+                            target="http://www.princeton.edu/~pswpc/"
+                            >http://www.princeton.edu/~pswpc/</ref></note> (<ref type="internal"
+                        cRef="bibl4">Josiah Ober et al. 2007</ref>) and the articles published by
+                    the journal Lexis<note>
+                        <ref type="external" target="http://lexisonline.eu/"
+                            >http://lexisonline.eu/</ref></note> available online under an open
+                    access policy. Although the texts are already available in electronic format,
+                    some pre-processing is needed – particularly for the sequences of Greek text
+                    contained – before we can start extracting information.</p>
+                <p>In the second phase we integrate different structured data sources into a single
+                    knowledge base. As far as this task is concerned, it is possible to observe at
+                    least two main categories of lack of interoperability. The first category
+                    consists of cases where entities that are similar from an ontological
+                    perspective (e.g. a geographical place name) are encoded using different data
+                    structures (i.e. the same place name could be encoded using elements belonging
+                    to diferent XML dialects). The second category covers cases where chunks of
+                    information common to more than one collection are described with different
+                    degrees of depth and precision. For instance, the name “Alexandria” inside an
+                    inscription is just marked up as a place name where instead a collection of
+                    geographical data offers many details for the city of Alexandria such as
+                    coordinates, orthographical variants of the name, denomination in diferent
+                    languages etc. For this purpose we mean to apply high level ontologies to
+                    aggregate information related to the same entity but spread over diferent data
+                    sources. Among the most suitable ontology vocabularies are worth to be mentioned
+                            FOAF,<note><ref type="external" target="http://www.foaf-project.org/"
+                            >http://www.foaf-project.org/</ref></note> CIDOC CRM,<note><ref
+                            type="external" target="http://cidoc.ics.forth.gr/"
+                            >http://cidoc.ics.forth.gr/</ref></note> FRBRoo<note><ref
+                            type="external" target="http://cidoc.ics.forth.gr/frbr_inro.html"
+                            >http://cidoc.ics.forth.gr/frbr_inro.html</ref></note> and
+                            YAGO.<note><ref type="external"
+                            target="http://www.mpi-inf.mpg.de/yago-naga/yago/"
+                            >http://www.mpi-inf.mpg.de/yago-naga/yago/</ref></note></p>
+                <p>At a further stage we are taking into account how to automatically extract
+                    information from the corpus. We are mainly interested in extracting: 1) named
+                    entities; 2) bibliographic references; 3) canonical references, namely
+                    references to ancient texts expressed in a concise form and characterized by a
+                    logical reference scheme (e.g. based on references to books or lines of a work
+                    instead of page numbers).</p>
+                <p>The very first step in named entities processing is the recognition and
+                    identification of named entities within texts. Once identified the named
+                    entities should be classified and then disambiguated on the basis of the
+                    context. This task will be accomplished through the comparison of semantic
+                    spaces using methods and algorithms developed in the field of Latent Semantic
+                    Analysis (LSA) (Rubenstein &amp; Goodenough 1965; Sahlgren 2006). In particular
+                    the semantic spaces of all the contexts where a given named entity appear will
+                    be compared with each other in order to determine which resources are really
+                    referring to the same entity.</p>
+                <p>For the information extraction task we use mainly tools based on machine learning
+                    methods, such as Conditional Random Fields (CRF) or Support Vector Machine
+                    (SVM). Some of them are already available as open source sofware and just need
+                    to be trained to work with our data, while others are being specifcally
+                    developed such as a Canonical Reference Extractor (<ref type="internal"
+                        cRef="bibl6">Romanello et al. 2009</ref>). Information contained in the
+                    knowledge base is meant to be used as training material for those sofware
+                    components.</p>
+            </div>
+            <div>
+                <head>Further Work</head>
+                <p>This ongoing project is expected to prove a scalable approach to extract entity
+                    references from unstructured corpora of texts, such as OCRed materials. In
+                    addition to this, it will prove how to reuse several data sources of structured
+                    information to train text mining components and it will show to what extent
+                    those data sources can be made interoperable with each other. Finally we plan to
+                    evaluate with some experts how effective such an information retrieval system is
+                    in helping Classicists with their research.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <p><hi rend="bold">Acknowledgement</hi><lb/>This research project is supported by an
+                    AHRC (Arts and Humanities Research Council) award.</p>
+            </div>
+            <div>
+                <listBibl>
+                    <bibl xml:id="bibl1">
+                        <author>Bhide, M. et al.</author><date>2008</date>
+                        <title level="a">Enhanced Business Intelligence using EROCS</title><title
+                            level="m" type="proceedings">Data Engineering, 2008. ICDE 2008. IEEE
+                            24th International Conference on Data Engineering, 2008</title>
+                        <biblScope type="pp">1616-1619</biblScope>
+                        <ptr
+                            target="http://ieeexplore.ieee.org/iel5/4492792/4497384/04497635.pdf?tp=&amp;arnumber=4497635&amp;isnumber=4497384"
+                        /></bibl>
+                    <bibl xml:id="bibl2"><author>Boschetti, F.</author>
+                        <date>2009</date>
+                        <title level="a">Improving OCR Accuracy for Classical Critical
+                            Editions</title>
+                        <title level="m" type="proceedings">Proceedings of the 13th European
+                            Conference on Research and Advanced Technology for Digital Libraries
+                            (ECDL 2009)</title>
+                        <date>2009</date>
+                        <publisher>Springer</publisher></bibl>
+                    <bibl xml:id="bibl3"><author>Crane, G.</author>
+                        <date>2006</date>
+                        <title level="a">What Do You Do with a Million Books?</title>
+                        <title level="j">D-Lib Magazine</title>
+                        <biblScope type="issue">12(3)</biblScope>
+                        <ptr target="http://www.dlib.org/dlib/march06/crane/03crane.html"/><date
+                            type="visited">March 19, 2009</date></bibl>
+                    <bibl xml:id="bibl4"><author>Josiah Ober et al.</author>
+                        <date>2007</date>
+                        <title level="a">Toward Open Access in Ancient Studies: The
+                            Princeton-Stanford Working Papers in Classics</title>
+                        <ptr target="http://www.atypon- link.com/ASCS/doi/abs/10.2972/hesp.76.1.229"/>
+                        <date type="visited">July 15, 2009</date></bibl>
+                    <bibl xml:id="bibl5"><author>Li, X.</author>
+                        <author>Morie, P.</author>
+                        <author>Roth, D.</author>
+                        <date>2005</date>
+                        <title level="a">Semantic integration in text: from ambiguous names to
+                            identifiable entities</title>
+                        <title level="j">AI Mag</title>
+                        <biblScope type="issue">26(1)</biblScope>
+                        <biblScope type="pp">45-58</biblScope>
+                        <ptr target="http://portal.acm.org/citation.cfm? id=1090494"/>
+                        <date type="visited">March 12, 2010</date></bibl>
+                    <bibl xml:id="bibl6"><author>Romanello, M.</author>
+                        <author>Boschetti, F.</author>
+                        <author>Crane, G.</author>
+                        <date>2009</date>
+                        <title level="a">Citations in the digital library of classics: extracting
+                            canonical references by using conditional random fields</title>
+                        <title level="m" type="proceedings">NLPIR4DL '09: Proceedings of the 2009
+                            Workshop on Text and Citation Analysis for Scholarly Digital
+                            Libraries</title>
+                        <name type="venue">Morristown, NJ, USA</name>
+                        <publisher>Association for Computational Linguistics</publisher><biblScope
+                            type="pp">80–87</biblScope>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

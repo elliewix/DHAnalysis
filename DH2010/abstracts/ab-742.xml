@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-742">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Codifica digitale e semiotica della cultura: un esperimento</title>
+                <author>
+                    <name>Fiormonte, Domenico</name>
+                    <affiliation><orgName>Università Roma Tre</orgName> <reg><country>Italy</country></reg></affiliation>
+                    <email>fiormont@uniroma3.it</email>
+                </author>
+                <author>
+                    <name>Guadalupi, Laura</name>
+                    <affiliation><orgName>Università Roma Tre</orgName> <reg><country>Italy</country></reg></affiliation>
+                    <email>laura.17@libero.it</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-16</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                <head>Inquadramento teorico</head>
+                <p>L'incontro fra semiotica e teoria della rappresentazione del testo digitale è
+                    stato più volte annunciato (Andersen, 1997; Piez, 2007), ma fino ad oggi non si
+                    è mai concretizzato in analisi e proposte concrete. È tempo di riprendere in
+                    mano la questione e in questo contributo lo faremo partendo da alcuni
+                    presupposti teorici per poi illustrare un caso di studio: la traduzione
+                    inglese-italiano e poi la codifica XML di una ballata folk irlandese. Come
+                    vedremo nell'esempio la pratica delle traduzione interlinguistica e quella della
+                    rappresentazione digitale presentano vari punti in comune. </p>
+                <p>La codifica, al pari della traduzione, è un atto interpretativo (vedi schema
+                    sotto). Se tradurre interlinguisticamente significa dare forma alla realtà
+                    attraverso una lingua naturale che è, nelle parole di Lotman, un 'sistema
+                    modellizzante primario' (Lotman, 1970), codificare è un'attività analoga, che
+                    coinvolge un altro sistema di segni. Nel caso da noi preso in esame allora il
+                    linguaggio di markup può essere considerato un 'sistema modellizzante
+                    secondario' (cf. Fiormonte, 2008: 294-295). L'XML, metalinguaggio descrittivo e
+                    dichiarativo, si affranca quindi dalla tradizionale concezione semiotica che
+                    relega il medium di comunicazione a un ruolo marginale, per diventare anch'esso
+                    strumento produttore di senso. Il documento digitale infatti, e ancora di più un
+                    insieme strutturato di documenti digitali – biblioteca, mediateca, ecc. –, si
+                    inscrive nel dominio delle auto-descrizioni di una cultura: 'La differenza
+                    essenziale tra l'evoluzione culturale e l'evoluzione naturale sta nel ruolo
+                    attivo delle autodescrizioni, nell'influenza esercitata sull'oggetto dalle
+                    rappresentazioni dello stesso' (Lotman and Uspenskij, 2006: 152). Ciò vuol dire,
+                    nel nostro caso, che il documento digitale svolge un doppio ruolo di testimone
+                    attivo: sia come 'documento' (che può incarnarsi in diversi formati (PDF, HTML,
+                    ecc.) sia in quanto 'rappresentazione' (cf. Buzzetti, 2006: 55). Ci sembra
+                    chiaro quali siano le influenze di una siffatta procedura, giacché la codifica
+                    digitale è un tipo di auto-descrizione che è in grado di 'definire' la natura di
+                    un documento nel momento in cui lo 'descrive'. </p>
+                <p>Riassumendo dunque la codifica digitale di un documento può essere considerata un
+                        <hi rend="italic">knowledge-shaping process</hi> costituito da quattro
+                    dimensioni interagenti: <xmt:uList>
+                        <item><hi rend="bold">Trascrizione</hi>; processo di selezione 'relying on
+                            conventions and reflecting theoretical goals and definitions' (Duranti,
+                            2006: 302);</item>
+                        <item><hi rend="bold">Traduzione</hi>; processo di appropriazione e
+                            adattamento al sistema semiotico di arrivo (Lotman, 1985:
+                            113-129);</item>
+                        <item><hi rend="bold">Interpretazione</hi>; processo ermeneutico di
+                            creazione di nuova conoscenza attraverso strumenti di esplicitazione
+                            formale (Orlandi, 1990: 26-27);</item>
+                        <item><hi rend="bold">Modellizzazione</hi>; qui il termine può essere inteso
+                            in una duplice accezione: a) in senso semiotico-culturale come processo
+                            di costruzione di <hi rend="italic">device</hi> meta culturali (Lotman
+                            and Uspenskij 2006); b) come processo di costruzione di un modello
+                            euristico del documento, operazione preliminare a qualsiasi trattamento
+                            informatico (Gigliozzi, 1997).</item>
+                    </xmt:uList>
+                </p>
+                <p>Nessuno di questi livelli può essere considerato a sé e l'ordine di questa lista
+                    risponde solo a una comodità espositiva.</p>
+            </div>
+            <div>
+                <head>Traduzione e codifica come processi culturali</head>
+                <p>Lingue e testi interagiscono all'interno di quel delicato processo generatore di
+                    senso che è la traduzione e che nella prospettiva indicata da Lotman
+                    consideriamo come concetto di 'confine', luogo di trasmissione e di
+                    trasformazione della memoria. Come scrive Lotman, l'attività culturale consiste
+                    nel 'tradurre un certo settore della realtà in una delle lingue della cultura,
+                    trasformarlo in un testo, cioè in una informazione codificata in un certo modo,
+                    introdurre questa informazione nella memoria collettiva' (Lotman, 1970; trad.
+                    it. 1975, 25-35). </p>
+                <p>Partendo da tali premesse, abbiamo sviluppato l' analisi in due prospettive
+                    convergenti. </p>
+                <p>La prima ci ha portato a elaborare una traduzione interlinguistica dall'inglese
+                    all'italiano di una ballata folk irlandese sull'Easter Rising (cfr. frammento in
+                    Tabella 1), la rivolta del 1916 contro il dominio britannico. Al livello
+                    macro-strutturale dei rapporti fra i due sistemi-lingua, abbiamo optato per una
+                    traduzione <hi rend="italic">source oriented</hi>, che conservasse le differenze
+                    culturali, senza quindi incorrere in distorsioni. Sottoscriviamo l'idea di Jurj
+                    Lotman e Peter Torop (Lotman, 1984; trad. it. 1985; Torop, 1995) sulla
+                    traduzione come appropriazione di una cultura altra, come processo di
+                    arricchimento, di integrazione, piuttosto che di assorbimento livellante. Al
+                    livello micro-strutturale dell'analisi semiotica del prototesto abbiamo
+                    applicato le nozioni della semiotica culturale, in particolare i concetti di
+                    'semiosfera' e 'confine', mettendo in luce le dinamiche conflittuali che possono
+                    scaturire quando due culture entrano in concorrenza per affermare ciascuna il
+                    proprio sistema di senso. La semiosfera irlandese (vedi Fig. 1; tag 'sem-irl') e
+                    quella britannica (Fig. 1; tag 'sem-brit') sono cerchi dalla cui intersezione
+                    scaturisce la sfera semiotica della guerra Anglo-Irlandese, delimitata dalle
+                    figure di confine che sono i protagonisti della <hi rend="italic">ballad</hi>,
+                    ossia i rivoluzionari che combatterono per l'indipendenza. </p>
+                <table>
+                    <head>Tabella 1. Frammento della ballata Easter Rising con relativa
+                        traduzione.</head>
+                    <row>
+                        <cell role="label">Ritornello tratto dalla versione originale della ballad
+                                <hi rend="italic">Freedom's Sons</hi></cell>
+                        <cell role="label">Versione tradotta <hi rend="italic">I Figli della
+                                Libertà</hi></cell>
+                    </row>
+                    <row>
+                        <cell><hi rend="italic">They were the men with a vision, the men with a
+                                cause The men who defied their oppress's laws The men who traded
+                                their chains for guns Born into slav'ry, they were Freedom's Sons
+                            </hi></cell>
+                        <cell>Erano uomini con un sogno, uomini con un motivo per combattere Uomini
+                            che sfidarono le leggi dei loro oppressori Uomini che barattarono le
+                            loro catene con le pistole Nati schiavi, erano i Figli della Libertà
+                        </cell>
+                    </row>
+                </table>
+                <p>Il secondo passaggio è consistito nella traduzione metalinguistica, ovvero la
+                    codifica della ballata usando lo schema XML-TEI (Burnard and Sperberg-McQueen
+                    1995). A monte del lavoro del filologo digitale stanno le scelte pragmatiche
+                    circa gli elementi testuali da marcare, e il linguaggio di markup obbliga a
+                    esplicitare tali scelte, motivandole. In virtù di tali analogie, per indicare il
+                    processo di digitalizzazione, possiamo adoperare l'etichetta di <hi
+                        rend="italic">traduzione di secondo livello</hi>. Al posto della codifica
+                    delle fasi di stesura, con tanto di analisi critica alle modifiche operate
+                    dall'autore della canzone, si è optato per una codifica della canzone che
+                    marcasse le nostre interpretazioni del testo. Abbiamo così adattato la DTD della
+                    TEI inserendo all' interno dei tag che descrivono la struttura sintattica un
+                    valore che rimanda alla funzione narrativa dell'occorrenza e alla semiosfera cui
+                    essa appartiene. Per esempio nella Fig. 1., rigo 15, 'ana= fig-enf sem-irl
+                    sem-rising ref-prot', riferito a <hi rend="italic">the men</hi>, dichiara la
+                    natura retorico-enfatica dell' occorrenza e la sua funzione narrativa di
+                    protagonista della diegesi. Inoltre, il valore 'sem-irl' rimanda alla semiosfera
+                    di appartenenza irlandese, mentre 'sem-rising' sta ad indicare che i
+                    rivoluzionari sono i promotori della lotta (la terza sfera di senso) e al
+                    contempo agiscono da traduttori sul confine poroso delle due macro-sfere
+                    intersecanti. Per converso, al rigo 17, troviamo il riferimento agli <hi
+                        rend="italic">oppressors</hi>, antieroi e protagonisti della semiosfera
+                    britannica. In conclusione dunque si modifica il ruolo del codificatore: da
+                    traduttore delle scelte autoriali nell'ambito del processo di scrittura, a
+                    co-artefice del testo, poiché nella codifica immette la sua personale
+                    interpretazione del brano. </p>
+                <p>
+                    <figure>
+                        <head>Figura 1</head>
+                        <graphic url="742_Fig1.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Sezione dell' esperimento di codifica semiotico-culturale della
+                            ballata Easter Rising. In verde, blu e giallo i tag che traducono le
+                            strutture di senso soggiacenti a entrambe le versioni (vd. traduzione
+                            Tab. 1). </figDesc>
+                    </figure>
+                </p>
+                <p>È questa solo una prima ipotesi, utile nel caso in cui di un oggetto di studio si
+                    intendano offrire tante codifiche quante sono le prospettive di analisi
+                    adoperate, le figure di specialisti coinvolte, ecc. A una digitalizzazione del
+                    processo compositivo tradizionalmente diacronica, verrebbe quindi accostata una
+                    resa metalinguistica delle sue molteplici interpretazioni sull' asse sincronico.
+                    Ciò per sottolineare, ancora una volta, la natura poliedrica, extrasemiotica ed
+                    intersemiotica di qualsiasi proto- e meta-testo (cfr. Bachtin, 1979; trad. it.
+                    1988, 292-293). </p>
+            </div>
+            <div>
+                <head>Conclusioni. La pluridimensionalità semiotica della codifica</head>
+                <p>La trascrizione e codifica di un documento in XML produce un proprio e
+                    indipendente 'strato' semiotico che si affianca e sovrappone alla fonte.
+                    Realizzare tali strati attraverso un linguaggio formale implica delle scelte da
+                    parte del codificatore-traduttore-interprete che, non differentemente da un
+                    parlante di una lingua naturale, si trova continuamente di fronte a diverse
+                    possibilità di 'interpretare' e 'rappresentare' lo stesso oggetto. Ma come
+                    avviene questo slittamento e insieme 'incremento' semiotico? XML, in
+                    particolare, costituisce un ulteriore passo avanti verso il concetto di
+                    metalinguaggio (un linguaggio che 'parla' di un altro linguaggio), ma anche un
+                    potente strumento in grado di generare, a partire da una medesima sintassi,
+                    altri linguaggi fratelli, nonché diverse ipostatizzazioni espressive dello
+                    stesso contenuto. </p>
+                <p>Il computer è un 'symbolic tool' (Andersen, 1997: 1) ed è dunque tempo di
+                    iniziare ad analizzare in termini semiotici tanto i prodotti che i processi
+                    della digitalizzazione. I linguaggi di codifica, nel caso analizzato lo schema
+                    XML-TEI, possono essere considerati vere e proprie 'metalingue' capaci di
+                    rappresentare e tradurre la conoscenza. In accordo con la visione della <hi
+                        rend="italic">cultural informatics</hi> proposta da Crane et al. (2008) la
+                    semiotica può esserci di aiuto per definire le basi di una teoria culturale
+                    della codifica digitale, ovvero dei modi e delle procedure in cui gli strumenti
+                    di digitalizzazione sviluppano, traducono e modificano i meccanismi della
+                    memoria e delle identità culturali. </p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Andersen, P.B.</author>
+                        <date>1997</date>
+                        <title level="m">A Theory of Computer Semiotics. Semiotic Approaches to
+                            Construction and Assessment of Computer Systems</title>
+                        <publisher>Cambridge University Press</publisher>
+                        <pubPlace>Cambridge</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Bachtin, M.</author>
+                        <date>1979</date>
+                        <title level="m">Estetika slovesnogo tvorcestva, Izdatel´stvo
+                            «Iskusstvo</title>
+                        <edition> [trad. it. 1988, L'autore e l'eroe. Teoria letteraria e scienze
+                            umane]</edition>
+                        <publisher>Einaudi</publisher>
+                        <pubPlace>Torino</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Buzzetti, D.</author>
+                        <date>2006</date>
+                        <title level="a">Biblioteche digitali e oggetti digitali complessi.
+                            Esaustività e funzionalità nella conservazione</title>
+                        <title level="m">Archivi informatici per il patrimonio culturale</title>
+                        <publisher>Bardi Editore</publisher>
+                        <pubPlace>Roma</pubPlace>
+                        <biblScope type="pp">41-75</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Crane, G., Bamman, D. and Jones, A.</author>
+                        <date>2008</date>
+                        <title level="a">ePhilology: When the Books Talk to Their Readers</title>
+                        <title level="m">A Companion to Digital Literary Studies</title>
+                        <editor>Siemens, R., Schreibman, S.</editor>
+                        <publisher>Blackwell</publisher>
+                        <pubPlace>Oxford</pubPlace>
+                        <ptr target="http://www.digitalhumanities.org/companionDLS"/>
+                    </bibl>
+                    <bibl>
+                        <author>Duranti, A.</author>
+                        <date>2006</date>
+                        <title level="a">Transcripts, Like Shadows on a wall</title>
+                        <title level="j">Mind, Culture, Activity</title>
+                        <biblScope type="issue">13(4)</biblScope>
+                        <biblScope type="pp">301-310</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Fiormonte, D.</author>
+                        <date>2008</date>
+                        <title level="a">Il testo digitale: traduzione, codifica, modelli
+                            culturali</title>
+                        <title level="m">Italianisti in Spagna, ispanisti in Italia: la traduzione.
+                            Atti del Convegno Internazionale</title>
+                        <editor>Piras, P. R., Alessandro, A., Fiormonte, D.</editor>
+                        <publisher>Edizioni Q</publisher>
+                        <pubPlace>Roma</pubPlace>
+                        <biblScope type="pp">271-284</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Gigliozzi, G.</author>
+                        <date>1997</date>
+                        <title level="m">Il testo e il computer. Manuale di informatica per gli
+                            studi letterari</title>
+                        <publisher>Bruno Mondadori</publisher>
+                        <pubPlace>Milano</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Lotman, J. M.</author>
+                        <date>1984</date>
+                        <title level="a">O semiosfere</title>
+                        <title level="j">Töid märgisüsteemide alalt / Sign Systems Studies /Trudy po
+                            znakovym sistemam</title>
+                        <biblScope type="issue">17</biblScope>
+                        <biblScope type="pp">5-23</biblScope>
+                        <edition>[trad. it. 1985, <hi rend="italic">La semisfera. L’asimmetria e il
+                                dialogo nelle strutture pensanti</hi>, a cura di S. Salvestroni,
+                            Venezia, Marsilio]</edition>
+                    </bibl>
+                    <bibl>
+                        <author>Lotman, J. M.</author>
+                        <date>1985</date>
+                        <title level="a">Una teoria del rapporto reciproco fra le culture</title>
+                        <title level="j">La semiosfera. L'asimmetria e il dialogo nelle strutture
+                            pensanti</title>
+                        <biblScope type="pp">113-129</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Lotman, J. M. and Uspenskij, B. A. </author>
+                        <date>1970</date>
+                        <title level="a">Kul'tura i informacija</title>
+                        <title level="m">Stat'i po tipologii kul'tury. Materialy k kursu teorii
+                            literatury</title>
+                        <edition> [trad. it. 1975, Tipologia della cultura, Milano, Bompiani, pp.
+                            25-35]</edition>
+                        <pubPlace>Tartu</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Lotman, J.M. and Uspenskij, B. A.</author>
+                        <date>2006</date>
+                        <title level="a">Eterogeneità e omogeneità delle culture. Postscriptum alle
+                            tesi collettive</title>
+                        <title level="m">Tesi per una semiotica della cultura</title>
+                        <editor>Lotman, J.M.</editor>
+                        <publisher>Meltemi</publisher>
+                        <pubPlace>Roma</pubPlace>
+                        <biblScope type="pp">149-153</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Orlandi, T.</author>
+                        <date>1990</date>
+                        <title level="m">Informatica umanistica</title>
+                        <publisher>La Nuova Italia Scientifica</publisher>
+                        <pubPlace>Roma</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Piez, W.</author>
+                        <date>2007</date>
+                        <title level="a">Form and Format: Towards a Semiotics of Digital Text
+                            Encoding</title>
+                        <title level="m">Digital Humanities 2007 Conference Abstracts</title>
+                        <ptr
+                            target="http://www.digitalhumanities.org/dh2007/abstracts/paper_188_piez.pdf"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Sperberg-McQueen, C. M. and Burnard, L.</author>
+                        <date>1995</date>
+                        <title level="a">TEI Lite: An Introduction to Text Encoding for
+                            Interchange</title>
+                        <title level="m">TEI U5</title>
+                        <publisher>Text Encoding Initiative</publisher>
+                        <ptr target="http://www.tei-c.org/TEI/Lite"/>
+                    </bibl>
+                    <bibl>
+                        <author>Torop, P.</author>
+                        <date>1995</date>
+                        <title level="m">Total'nyj perevod</title>
+                        <edition> [trad. it., 2000, La traduzione totale, a cura di B. Osimo,
+                            Rimini, Guaraldi]</edition>
+                        <publisher>Tartu Ulikooli Kirjastus</publisher>
+                        <pubPlace>Tartu</pubPlace>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

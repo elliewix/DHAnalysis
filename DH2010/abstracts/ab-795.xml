@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-795">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Mapping the World of an Ancient Greek Historian: The HESTIA Project</title>
+                <author>
+                    <name>Barker, Elton</name>
+                    <affiliation><orgName>Open University</orgName>, <country>UK</country></affiliation>
+                    <email>e.t.e.barker@open.ac.uk</email>
+                </author>
+                <author>
+                    <name>Pelling, Chris</name>
+                    <affiliation><orgName>University of Oxford</orgName>, <country>UK</country></affiliation>
+                    <email>chris.pelling@chch.ox.ac.uk</email>
+                    <email/>
+                </author>
+                <author>
+                    <name>Bouzarovski, Stefan</name>
+                    <affiliation><orgName>University of Birmingham</orgName>, <country>UK</country></affiliation>
+                    <email>BuzarS@adf.bham.ac.uk</email>
+                    <email/>
+                </author>
+                <author><name>Isaksen, Leif</name>
+                    <affiliation><orgName>University of Southampton</orgName>, <country>UK</country></affiliation>
+                    <email>l.isaksen@soton.ac.uk</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-20</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                <p><hi rend="bold">HESTIA</hi> (the <hi rend="bold">Herodotus Encoded
+                        Space-Text-Imaging Archive</hi>) is an interdisciplinary project, sponsored
+                    by the AHRC and involving the collaboration of academics from Classics,
+                    Geography and Archaeological Computing, that aims to enrich contemporary
+                    discussions of space by developing an innovative methodology to the study of an
+                    ancient narrative, Herodotus’ <hi rend="italic">Histories</hi>. Using the latest
+                    ICT, it investigates the ways in which space is represented in the <hi
+                        rend="italic">Histories</hi>, and develops visual tools to capture the
+                    ‘deep’ topological structures of the text, extending beyond the usual
+                    two-dimensional Cartesian maps of the ancient world. In addition to exploring
+                    the network culture that Herodotus represents, one of its stated outcomes is to
+                    introduce Herodotus’ world to new audiences via the internet. This paper will
+                    set out in more detail that methodology, paying particular attention to the
+                    decisions that we have made and the problems that we have encountered, in the
+                    hope that our project can contribute not only to offering a more complex picture
+                    of space in Herodotus but also to establishing a basis for future digital
+                    projects across the humanities which deal with large text-based corpora.</p>
+                <p>For the purposes of a twenty minute presentation, we address three key areas of
+                    interest: <xmt:oList rend="arabic">
+                        <item>To provide the background to the data capture and digital mark-up of
+                            the <hi rend="italic">Histories</hi>. Our project differs from many by
+                            utilizing a digital resource already in the public domain: the text of
+                            Herodotus freely available from Perseus (<ref type="external"
+                                target="http://www.perseus.tufts.edu/hopper/"
+                                >http://www.perseus.tufts.edu/hopper/</ref>). Though the capture of
+                            the digital text from Perseus (version P4) gave our project a welcome
+                            initial boost, a number of issues have had to be overcome including
+                            procedural conversion, which involves handing back a P5 text to
+                            Perseus.</item>
+                        <item>To sketch out the the type, structure and categorization of our
+                            spatial database. A PostgreSQL database was chosen because its PostGIS
+                            extension provides excellent functionality for spatial data and is
+                            widely supported by other applications: one key principle of HESTIA has
+                            been to use open source software in order to maximize its potential
+                            dissemination and reusability of its data. By storing information about
+                            references, locations and the text in the database, it has been possible
+                            to provide it to both a Desktop GIS system and Webmapping server
+                            simultaneously (<ref type="internal" cRef="fig1">see figure 1</ref>). </item>
+                        <item>To present a sample set of results of the maps that we have been able
+                            to generate using the geo-referenced database. While sections 1 and 2
+                            will be of particular concern to anyone wishing to understand how one
+                            may interrogate spatial data using the digital resources available, this
+                            last stage holds the greatest interest for the non ICT expert since it
+                            demonstrates the use to which data in this form can be employed: hence
+                            the main focus of this paper will be on explaining the five kinds of map
+                            that we have been able to generate: <xmt:oList rend="lower_roman">
+                                <item xml:id="i"><hi rend="italic">Geographical Information System
+                                        (GIS) maps</hi>. The most basic maps that are generated
+                                    simply represent a ‘flat’ image of the spatial data: that is to
+                                    say, they mark all the places that Herodotus mentions over the
+                                    course of his work with a single point, thereby providing a
+                                    snapshot of the huge scope of his enquiry. In this way one is
+                                    able to gain an overview of the places mentioned in Herodotus
+                                    and divide them according to three different kinds of spatial
+                                    category: settlement, territory and physical feature (<ref
+                                        type="internal" cRef="fig2">see figure 2</ref>). A variation
+                                    on this basic model depicts places according to the number of
+                                    times they are mentioned (<ref type="internal" cRef="fig3">see
+                                        figure 3</ref>).</item>
+                                <item xml:id="ii"><hi rend="italic">GoogleEarth</hi>. In order to
+                                    start experimenting with public dissemination it was decided to
+                                    expose the PostGIS data as KML: a mark-up format that can be
+                                    read by a variety of mapping applications including GoogleEarth.
+                                    With this ‘Herodotus Earth’ application, users will be able to
+                                    construct ‘mashups’ of visual and textual data. So, for example,
+                                    since all places are linked to entries in the database, when one
+                                    clicks on a particular location in GoogleEarth, it will be
+                                    possible to bring up a dialog box containing Herodotus’ text (in
+                                    both English and Greek) for that particular location for every
+                                    occasion when it is mentioned in the narrative (<ref
+                                        type="internal" cRef="fig4">see figure 4</ref>).</item>
+                                <item xml:id="iii"><hi rend="italic">TimeMap</hi>. Whilst it is
+                                    possible to visualise narrative change using graphs, and static
+                                    differences using GIS, it is more difficult to visualize spatial
+                                    changes throughout the narrative; GIS does not have useful
+                                    functionality in this regard except for the ability to turn
+                                    layers on and off, a process which becomes impractical beyond
+                                    book level. The most likely candidate to provide this kind of
+                                    functionality is an Open Source JavaScript project called
+                                    TimeMap, developed by Nick Rabinowitz, which draws on several
+                                    other technologies in order to allow data plotted on GoogleMaps
+                                    to appear and disappear as a timeline is moved. In collaboration
+                                    with the project’s IT consultant Leif Isaksen, Nick Rabinowitz
+                                    has adapted his schema in order to represent the book structure
+                                    of Herodotus’ narrative in a similar way (<ref type="internal"
+                                        cRef="fig4">see figure 5</ref>).</item>
+                                <item xml:id="iv"><hi rend="italic">Database-generated network
+                                        maps</hi>. Since the GIS maps outlined in <ref
+                                        type="internal" cRef="i">i.</ref> have little to say per se
+                                    regarding Herodotus’ organization of space, a key next step has
+                                    been to explore rapidly-generated networks based on the simple
+                                    co-presence of terms within sections of the text. The purpose of
+                                    producing networks of this kind is to start exploring the
+                                    connections that Herodotus himself makes between places, seeing
+                                    how strongly the narrative is bound to geographical regions, and
+                                    flagging up potential links between particular locations (<ref
+                                        type="internal" cRef="fig6">see figure 6</ref>). <ref
+                                        type="internal" cRef="fig7">Figure 7</ref> illustrates one
+                                    such simple network, that for “territories” across the entire
+                                        <hi rend="italic">Histories</hi>. It shows a series of links
+                                    connecting Greece to other areas within the Mediterranean world:
+                                    but the territory that has the strongest connections in this
+                                    basic network culture is Egypt. While surprising, it does make
+                                    sense on reflection, since for a better part of one book
+                                    Herodotus uses Egypt as the touchstone against which other
+                                    cultures, including Persia and his own, Greece, are compared. It
+                                    is as a tool of comparison, then, that Egypt appears to be the
+                                    centre of Herodotus’ network picture of the Mediterranean. <ref
+                                        type="internal" cRef="fig8">Figure 8</ref> complements this
+                                    picture by presenting the networks of physical features, which
+                                    envelop the comparison between Greece and Egypt.</item>
+                                <item xml:id="v"><hi rend="italic">Manual network maps</hi>. The
+                                    automated maps outlined in <ref type="internal" cRef="iv"
+                                        >iv.</ref> rely on ‘counting’ the number of times two or
+                                    more places are connected to each other: they have little to say
+                                    about the kind of connection being drawn. We end our
+                                    presentation, then, with a brief comparison to text-based
+                                    qualitative analysis, which attempts to categorize relationships
+                                    according to fundamental geographical concepts of movement or
+                                    transformation, based on the close reading of one book (<ref
+                                        type="internal" cRef="fig5">5</ref>). Our different
+                                    approaches are intended to complement, challenge and inform each
+                                    other with a view also to suggest ways by which the automated
+                                    process may be extended, such as by adopting text-mining
+                                    procedures. </item>
+                            </xmt:oList></item>
+                    </xmt:oList>
+                </p>
+                <p>In sum, this paper aims to meet three outcomes: <xmt:oList rend="arabic">
+                        <item>To outline a methodology for dealing with digital data that may be
+                            transferred, adapted and improved upon in other fields of digital
+                            humanities.</item>
+                        <item>To demonstrate the value of digital projects within the humanities for
+                            helping to achieve ‘impact’ by bringing the world of a fifth-century BC
+                            Greek historian into everyone’s home.</item>
+                        <item>To show the potential for the digital manipulation of data in posing
+                            new kinds of research questions.</item>
+                    </xmt:oList>
+                </p>
+            </div>            <div>
+                <figure xml:id="fig1">
+                    <head>Fig. 1</head>
+                    <graphic url="795_Fig1.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <figure xml:id="fig2">
+                    <head>Fig. 2</head>
+                    <graphic url="795_Fig2.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <figure xml:id="fig3">
+                    <head>Fig. 3</head>
+                    <graphic url="795_Fig3.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <figure xml:id="fig4">
+                    <head>Fig. 4</head>
+                    <graphic url="795_Fig4.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <figure xml:id="fig5">
+                    <head>Fig. 5</head>
+                    <graphic url="795_Fig5.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <figure xml:id="fig6">
+                    <head>Fig. 6</head>
+                    <graphic url="795_Fig6.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <figure xml:id="fig7">
+                    <head>Fig. 7</head>
+                    <graphic url="795_Fig7.jpg" xmt:type="full" rend="left-img"
+                       mimeType="image/jpeg"/>
+                </figure>
+                <figure xml:id="fig8">
+                    <head>Fig. 8</head>
+                    <graphic url="795_Fig8.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+            </div>
+        </body>
+        <back>
+
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Berman, M. L.</author>
+                        <title level="a">Boundaries or Networks in Historical GIS: Concepts of
+                            Measuring Space and Administrative Geography in Chinese History</title>
+                        <title level="j">Historical Geography</title>
+                        <date>2005</date>
+                        <biblScope type="issue">33</biblScope>
+                        <biblScope type="pp">118-33</biblScope>
+                    </bibl>
+                    <bibl><author>Crampton, J.W.</author>
+                        <author>Krygier, J.</author>
+                        <title level="a">An introduction to critical cartography</title>
+                        <title level="j">ACME: An International E-Journal for Critical
+                        Geographies</title>
+                        <date>2006</date>
+                        <biblScope type="issue">4</biblScope>
+                        <biblScope type="pp">11-33</biblScope></bibl>
+                    <bibl><author>Harley, J.B.</author>
+                        <title level="a">Deconstructing the map</title>
+                        <title level="j">Cartographica: The International Journal for Geographic
+                        Information and Geovisualization</title>
+                        <date>1989</date>
+                        <biblScope type="issue">26.2</biblScope>
+                        <biblScope type="pp">1-20</biblScope></bibl>
+                    <bibl><author>Horden, J.</author>
+                        <author>Purcell, N.</author>
+                        <title level="m">The Corrupting Sea</title>
+                        <pubPlace>Oxford</pubPlace>
+                        <date>2000</date></bibl>
+                    <bibl><author>Jackson, P.</author>
+                        <title level="m">Maps of Meaning: An Introduction to Cultural
+                            Geography</title>
+                        <pubPlace>London</pubPlace>
+                        <date>1994</date></bibl>
+                    <bibl>
+                        <author>Janni, P.</author>
+                        <title level="m">La Mappa e il Periplo. Cartografia antica e spazio
+                            odologico</title>
+                        <pubPlace>Marcerata</pubPlace>
+                        <date>1984</date></bibl>
+                    <bibl><author>Kwan, M.-P.</author>
+                        <author>Ding, G.</author>
+                        <title level="a">Geo-Narrative: Extending Geographic Information Systems for
+                            Narrative Analysis in Qualitative and Mixed-Method Research</title>
+                        <title level="j">The Professional Geographer</title>
+                        <date>2008</date>
+                        <biblScope type="issue">60.4</biblScope>
+                        <biblScope type="pp">443-65</biblScope></bibl>
+                    <bibl><author>Lefebvre, H.</author>
+                        <title level="m">The Production of Space</title>
+                        <pubPlace>Chicago</pubPlace>
+                        <date>1991</date></bibl>
+                    <bibl>
+                        <author>Lloyd, C. D.</author>
+                        <author>Lilley, K. D.</author>
+                        <title level="a">Cartographic Veracity in Medieval Mapping: Analyzing
+                            Geographical Variation in the Gough Map of Great Britain</title>
+                        <title level="j">Annals of the Association of American Geographers</title>
+                        <date>2009</date>
+                        <biblScope type="issue">99.1</biblScope>
+                        <biblScope type="pp">27-48</biblScope></bibl>
+                    <bibl><author>Purves, A. C. </author>
+                        <title level="m">Telling Space: Topography, Time and Narrative from Homer to
+                            Xenophon</title>
+                        <publisher>University of Pennsylvania</publisher>
+                        Ph.D. Dissertation<date>2002</date></bibl>
+                    <bibl><author>Romm, J.S.</author>
+                        <title level="m">The Edges of the Earth in Ancient Thought: Geography,
+                            Exploration, and Fiction</title>
+                        <pubPlace>Princeton</pubPlace>
+                        <date>1994</date></bibl>
+                    <bibl><author>Sheppard, E.</author>
+                        <title level="a">Knowledge Production through Critical GIS: Genealogy and
+                            Prospects</title>
+                        <title level="j">Cartographica: The International Journal for Geographic
+                        Information and Geovisualization</title>
+                        <date>2005</date>
+                        <biblScope type="issue">40.4</biblScope>
+                        <biblScope type="pp">5-21</biblScope></bibl>
+                    <bibl><author>Tuan, Y.-F. </author>
+                        <title level="a">Literature and geography: implications for geographical
+                            research</title>
+                        <editor>Ley</editor>
+                        <editor>Samuels</editor>
+                        <title level="m">Humanistic Geography</title>
+                        <pubPlace>London</pubPlace>
+                        <date>1978</date>
+                        <biblScope type="pp">194-206</biblScope>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

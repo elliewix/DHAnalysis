@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-692">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Historical Interpretation through Multiple Markup: The Case of Horatio Nelson
+                    Taft's Diary, 1861-62</title>
+                <author>
+                    <name>Garfinkel, Susan</name>
+                    <affiliation><orgName>Library of Congress</orgName>, Washington DC,
+                            <country>USA</country></affiliation>
+                    <email>sgarfinkel@loc.gov</email>
+                </author>
+                <author>
+                    <name>Heckscher, Jurretta Jordan</name>
+                    <affiliation><orgName>Library of Congress</orgName>, Washington DC,
+                            <country>USA</country></affiliation>
+                    <email>jhec@loc.gov</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-09</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <div>
+                <head>Background</head>
+                <p>Now fifteen years old, the still-growing American Memory Web site at the Library
+                    of Congress (<ref type="external" target="http://memory.loc.gov/"
+                        >http://memory.loc.gov/</ref>) offers more than 130 separate and diverse
+                    multi-media collections — comprising more than a million digitized library items
+                    — to a vast base of virtual patrons across the Internet. Yet despite radical
+                    changes in the ways that people have come to use the World Wide Web, the
+                    fundamental conception of American Memory and its collections remains much as
+                    envisaged fifteen years ago. What happens next to such established but largely
+                    static digital resources? Aside from implementing obvious upgrades such as
+                    higher-resolution image scans, cleaned-up OCR, fleshed-out metadata, or faceted
+                    search capabilities, how might cultural repositories more fundamentally enhance
+                    their existing online content? Can we fully (re)imagine a second iteration, a
+                    next generation, for already digitized historical materials? </p>
+
+                <p>Our demonstration project works to consider this question for a single American
+                    Memory collection, purposely setting aside issues of scale or interoperability
+                    in favor of exploring effective and compelling ways to convey to users the
+                    particular character of specific historical resources. Starting with the
+                    unpublished manuscript diary of Horatio Nelson Taft (1861-62), already digitized
+                    (as textual transcription with page images) at <ref type="external"
+                        target="http://memory.loc.gov/ammem/tafthtml/tafthome.html"
+                        >http://memory.loc.gov/ammem/tafthtml/tafthome.html</ref>, we have chosen to
+                    explore the implications of creating several alternate and explicitly
+                    interpretive frameworks by applying multiple XML markup to this bounded but
+                    compellingly dense and historically significant text.</p>
+
+                <p>American Memory patrons bring unusually diverse research needs to the same body
+                    of historical materials: typical users include everyone from elementary school
+                    students and hobbyists to lawyers, librarians, college professors and members of
+                    Congress. Our project’s concerns stem from this diversity as well as from our
+                    own role as scholars of American culture working with historical materials in a
+                    library setting. Traditional library practice treats sources as analytically
+                    separate from their interpretation, even while the most basic interventions of
+                    librarianship are fundamentally interpretive. Historians, by contrast, well
+                    recognize their own work with sources as interpretive, but still tend to view
+                    textual sources as fully fixed in meaning. </p>
+
+                <p>Textual analysis is an underdeveloped tool in American historical study, and
+                    history as a discipline has lagged behind literature in imagining computing as a
+                    threshold for innovative research. Historians’ traditional use of computing has
+                    trended quantitative rather than qualitative, while recent innovations emphasize
+                    creating tools to assist the mechanics of research or scholarly interaction
+                    rather than transforming them. Explorations of how computing might fundamentally
+                    change the practices of history or the outcomes of historical interpretation are
+                    still needed.</p>
+
+                <p>Against this background the Taft Diary project takes on several related goals:
+                    (1) to visibly demonstrate a historical text’s accessibility to multiple
+                    simultaneous interrogations enacted through digital scholarship; (2) to more
+                    fully explore the multidimensionality of a significant historical text; (3) to
+                    introduce the methods and questions of digital humanists more centrally into a
+                    library context (making them better known to library practitioners and more
+                    widely available to diverse library audiences); and (4) to meld the questions
+                    and methods of historians with the advances in digital textual scholarship
+                    arising among literary scholars. With our project we hope to establish a model
+                    for text-based scholarship — literary and ethnographic as well as historical —
+                    that foregrounds the individual user’s interpretative needs while also conveying
+                    that interpretation to the broad variety of the diary's potential users. </p>
+            </div>
+            <div>
+                <head>The artifact and its text</head>
+                <p>The Horatio Nelson Taft Diary commands wide historical interest. When it was
+                    introduced to the public on the Library’s Web site in 2001, it offered the first
+                    new information about the events of Abraham Lincoln’s death to come to light in
+                    half a century. In fact the diary emerges from the confluence of multiple
+                    transformative historical developments: not only the American Civil War and
+                    Lincoln’s presidency, but profound long-term changes including the rise of the
+                    American middle class; the nation’s industrial, technological, and consumer
+                    revolutions; the decisive expansion in the size and influence of the federal
+                    government; and the maturation of Washington, DC, as a complex urban community
+                    of national and international importance.</p>
+
+                <p>An exceptional historical record on many levels, the Taft Diary is also unusually
+                    well suited to an experiment in simultaneous multidimensional interpretive
+                    markup. Its contents are rich in the overlap of ordinary life and significant
+                    events, people, and places, thereby appealing both to specialized historians and
+                    to a broad general audience. Its limited size offers definite boundaries to the
+                    range, though not the depth, of interpretive markup. Moreover, the formulaic
+                    pattern underlying most of its daily entries invites ready comparison while
+                    ensuring an organizing degree of structural regularity.</p>
+
+                <p>Taft’s three-volume manuscript diary consists of daily entries from January 1,
+                    1861, through April 11, 1862 (the end of vol. 1), and less frequent entries
+                    through May 30, 1865. The current phase of our project deals only with vol. 1,
+                    which contains in total 466 entries. Because Taft used a printed blank diary
+                    book for vol. 1, each 1861 entry is eleven handwritten lines long, or typically
+                    ninety to one hundred words (<ref type="internal" cRef="fig1">fig. 1</ref>).
+                    (The volume’s 1862 entries, written into pages intended for back matter, vary
+                    more in length.) Beyond the consistency of the entries’ length, certain content
+                    elements recur so frequently as to be almost formulaic: information about the
+                    weather, illnesses within and beyond the family circle, political and military
+                    news about the Civil War, and the people and locations that populate Taft’s
+                    daily life. <figure xml:id="fig1">
+                        <head>Figure 1: Taft Diary vol. 1, entries for Sept. 19-21, 1861;
+                            transcription of Sept. 20 entry</head>
+                        <graphic url="692_Fig1.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+            </div>
+            <div>
+                <head>Implementation</head>
+                <p>In selecting markup schemas, we considered and discarded a number of interpretive
+                    typologies, including Library of Congress Subject Headings (LCSH) (<ref
+                        type="external" target="http://www.loc.gov/aba/cataloging/subject/"
+                        >http://www.loc.gov/aba/cataloging/subject/</ref>) and the Library of
+                    Congress Classification Outline (<ref type="external"
+                        target="http://www.loc.gov/catdir/cpso/lcco/"
+                        >http://www.loc.gov/catdir/cpso/lcco/</ref>), because they turn out to lack
+                    a consistent level of granularity across cultural and historical domains.
+                    Seeking to demonstrate applicability and variety, for phase one we selected
+                    three schemas for their breadth as well as depth, their flexibility, and their
+                    inherent relevance to the content of our text: <xmt:oList rend="arabic">
+                        <item>TEI, <ref type="external" target="http://www.tei-c.org/"
+                                >http://www.tei-c.org/ </ref></item>
+                        <item>Outline of Cultural Materials (OCM), <ref type="external"
+                                target="http://www.yale.edu/hraf/outline.htm"
+                                >http://www.yale.edu/hraf/outline.htm</ref></item>
+                        <item>Scholar-defined “webs of significance” such as: <xmt:oList
+                                rend="lower_roman">
+                                <item>Taft’s recurring concerns <xmt:oList rend="arabic">
+                                        <item>weather</item>
+                                        <item>places</item>
+                                        <item>illness</item>
+                                    </xmt:oList>
+                                </item>
+                                <item>networks <xmt:oList rend="arabic">
+                                        <item>of social relationships</item>
+                                        <item>how news is conveyed</item>
+                                    </xmt:oList></item>
+                            </xmt:oList></item>
+                    </xmt:oList></p>
+
+                <p>These three schemas together provide for theoretical and well as methodological
+                    diversity, representing a variety of approaches to the analysis of historical
+                    texts. TEI is a widely used standard for the representation of texts in digital
+                    form, with well-developed editorial standards and an established community of
+                    users. The OCM is anthropological, deriving from attempts to develop
+                    comprehensive categorizations of human cultural phenomena. Scholar-defined “webs
+                    of significance” follow from our own close readings of the text. In the future
+                    we anticipate exploring additional markup typologie based in the Thesaurus for
+                    Graphic Materials (<ref type="external"
+                        target="http://www.loc.gov/pictures/collection/tgm/"
+                        >http://www.loc.gov/pictures/collection/tgm/</ref>), GIS, and data
+                    visualizations, so as to demonstrate the diversity and versatility of
+                    interpretation that simultaneous multiple markup can sustain. </p>
+
+                <p>Our baseline text for markup is the transcription of Taft’s vol. 1, which was
+                    originally provided in SGML mapped to the American Memory DTD. Our own markup
+                    reverses normalizations in transcription in favor of a diplomatic version, and
+                    strips out the older SGML tags. </p>
+
+                <p> Implementation raises methodological and technical challenges. In our process we
+                    must move from theoretical issues to the development of standards for each tag
+                    category, exploring the dilemmas that intensive and self-created markup entails:
+                    for example, whether phrases or sentences should be the unit of markup with OCM
+                    tags (<ref type="internal" cRef="fig2">fig. 2</ref>). Resolving such questions
+                    requires us to confront the practical challenges of creating markup conventions
+                    originally based in theory rather than established practice. Theoretical
+                    language about multiplicity is inspiring — and even starts to get at the truth
+                    of lived experience — but in practice we must also make sound choices about how
+                    to complete the markup with reasonable consistency so that others may use and
+                    rely on it. Further, do we mark the same text multiple times, or invest
+                    ourselves in some version of a standoff markup (see the XStandoff toolkit, for
+                    example)? How do we best present multiple interpretive options to our audience?
+                    At this level, the Taft Diary project is still a work in progress. <figure
+                        xml:id="fig2">
+                        <head>Figure 2: Text of Taft Diary vol. 1, Sept. 20 entry showing conceptual
+                            phrase-level OCM markup</head>
+                        <graphic url="692_Fig2.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure></p>
+            </div>
+            <div>
+                <head>Conclusion</head>
+                <p>We anticipate that simultaneous multiple markup will render the text dynamic,
+                    surfacing its performative and ritualized aspects; and that it will invite new
+                    attention to its literary and linguistic aspects. Markup can also foreground key
+                    aspects of worldview of which the writer himself was unaware. In these and other
+                    ways, simultaneous multiple markup becomes a new instrument of historical
+                    interpretation, reimagining analysis beyond the realm of narrative prose.</p>
+
+                <p>While our technical questions are not yet fully answered, and the project itself
+                    is ongoing, we seek to share important methodological and theoretical questions,
+                    and our conclusions so far, with our colleagues in digital humanities. </p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Cohen, Daniel J.</author>
+                        <author>Rosenzweig, Roy</author>
+                        <title level="m">Digital History: A Guide to Gathering, Preserving, and
+                            Presenting the Past on the Web</title>
+                        <pubPlace>Philadelphia</pubPlace><publisher>University of Pennsylvania
+                            Press</publisher>
+                        <date>2006</date>
+                        <ptr target="http://chnm.gmu.edu/digitalhistory/"/></bibl>
+
+                    <bibl><author>Geertz, Clifford</author>
+                        <date>1973</date><title level="a">Thick Description</title>
+                        <title level="m">The Interpretation of Cultures: Selected Essays</title>
+                        <pubPlace>New York</pubPlace>
+                        <publisher>Basic Books</publisher><biblScope type="pp"
+                        >3-30</biblScope></bibl>
+
+                    <bibl><author>McGann, Jerome</author>
+                        <title level="a">Marking Texts of Many Dimensions</title>
+                        <title level="m">A Companion to Digital Humanities</title>
+                        <editor>Schreibman, Susan</editor>
+                        <editor>Siemens, Ray</editor>
+                        <editor>Unsworth, John</editor><biblScope type="pp">198-217</biblScope>
+                        <pubPlace>Oxford</pubPlace>
+                        <publisher>Blackwell</publisher>
+                        <date>2004</date>
+                        <ptr target="http://www.digitalhumanities.org/companion/"/>
+                    </bibl>
+
+                    <bibl><author>Milligan, Frank D.</author>
+                        <title level="a">A City in Crisis: The Wartime Diaries of Horatio Nelson
+                            Taft</title>
+                        <title level="j">President Lincoln’s Cottage</title>
+                        <biblScope type="issue">entry of August 1</biblScope>
+                        <date>2007</date>
+                        <ptr
+                            target="http://lincolncottage.wordpress.com/2007/08/01/a-city-in-crisis-the-wartime-diaries-of-horation-nelson-taft/"
+                            /><edition>blog</edition></bibl>
+
+                    <bibl><author>Sellers, John</author>
+                        <title level="a">Washington in Crisis, 1861-1865: Library Acquires the Diary
+                            of Horatio Nelson Taft</title>
+                        <title level="j">Library of Congress Information</title>
+                        <biblScope type="issue">Bulletin 61, no. 2</biblScope>
+                        <date>February 2002</date>
+                        <ptr target="http://www.loc.gov/loc/lcib/0202/cw-diarist.html"/></bibl>
+
+                    <bibl><author>Stührenberg, Maik</author>
+                        <author>Jettka, Daniel </author>
+                        <title level="a">A Toolkit for Multi-Dimensional Markup: The Development of
+                            SGF to XStandoff</title>
+                        <title level="m">Proceedings of Balisage: The Markup Conference 2009</title>
+                        <title level="s">Balisage Series on Markup Technologies</title>
+                        <biblScope type="vols">3 vols</biblScope>
+                        <date>2009</date>
+                        <ptr
+                            target="http://www.balisage.net/Proceedings/vol3/html/Stuhrenberg01/BalisageVol3-Stuhrenberg01.html"
+                        />
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

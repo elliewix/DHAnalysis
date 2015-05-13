@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-708">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Extracting domain knowledge from tables of contents</title>
+                <author>
+                    <name>Harald Lüngen</name>
+                    <affiliation><orgName>Justus-Liebig-Universität Gießen</orgName>
+                        <reg><country>Germany</country></reg></affiliation>
+                    <email>luengen@uni-giessen.de</email>
+                </author>
+                <author>
+                    <name>Henning Lobin</name>
+                    <affiliation><orgName>Justus-Liebig-Universität Gießen</orgName>
+                        <reg><country>Germany</country></reg></affiliation>
+                    <email>henning.lobin@germanistik.uni-giessen.de</email>
+                </author>
+            </titleStmt>
+
+
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-05-05</date>
+                <name>JL</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+            <change>
+                <date>2010-06-14</date>
+                <name>JL</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <div>
+                <head>Introduction</head>
+                <p>Knowledge in textual form is always presented as visually and hierarchically
+                    structured units of text, which is particularly true in the case of academic
+                    texts. One research hypothesis of the ongoing project <hi rend="italic"
+                        >Knowledge ordering in texts—text structure and structure visualisations as
+                        sources of natural ontologies</hi><note>funded within the framework of
+                        LOEWE, the excellence initiative of the state of Hesse, as part of the <hi
+                            rend="italic">LOEWE-Schwerpunkt Kulturtechniken und ihre
+                            Medialisierung</hi>, cf. <ptr
+                            target="http://www.zmi.uni-giessen.de/projekte/projekt-36.html"/>
+                        .</note> is that the textual structure of academic texts effectively mirrors
+                    essential parts of the knowledge structure that is built up in the text. The
+                    structuring of a modern dissertation thesis (e.g. in the form of an
+                    automatically generated table of contents - <hi rend="italic">tocs</hi>), for
+                    example, represents a compromise between requirements of the text type and the
+                    methodological and conceptual structure of its subject-matter. The aim of the
+                    project is to examine how visual-hierarchical structuring systems are
+                    constructed, how knowledge structures are encoded in them, and how they can be
+                    exploited to automatically derive ontological knowledge for navigation,
+                    archiving, or search tasks. The idea to extract domain concepts and semantic
+                    relations mainly from the structural and linguistic information gathered from
+                    tables of contents represents a novel approach to ontology learning.</p>
+            </div>
+            <div>
+                <head>Data and annotations</head>
+                <p>In the present phase, we examine German academic text books, in later phases,
+                    dissertations, research articles and historical scientific texts will also be
+                    taken into account. A corpus of digital versions of 32 text books from 12
+                    different academic disciplines has been compiled,<note> We would like to thank
+                        the publishers <hi rend="italic">Facultas</hi>, <hi rend="italic"
+                        >Haupt</hi>, <hi rend="italic">Narr/Francke/Attempto</hi>, <hi rend="italic"
+                            >Springer</hi>, <hi rend="italic">UTB</hi>, <hi rend="italic">Vandenhoek
+                            &amp; Ruprecht</hi>, and <hi rend="italic">Wissenschaftliche
+                            Buchgesellschaft</hi> for kindly making available digital versions of
+                        textbooks for us.</note> the textual content and an XML document structure
+                    markup was subsequently extracted (e.g. using the Adobe Pro software). Using a
+                    series of XSLT style sheets, the initial XML was converted to XML encoding of
+                    the document structure according to the TEI P5 guidelines. At the same time, the
+                    texts were annotated with morphological analyses and phrase chunking markup
+                    using the Tree Tagger and Chunker software from Stuttgart University<note><ptr
+                            target="http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/"
+                        /></note> and converted to a suitable XML representation, and also with
+                    dependency-syntactic analysis using the Machinese Syntax Parser by Connexor
+                            Oy,<note><ptr target="http://www.connexor.eu/"/></note> resulting in XML
+                    markup as well. Further linguistic annotation levels (such as domain terms and
+                    lexical-semantic relations) will be added and combined in XStandoff documents
+                    representing multi-layer annotations that can be queried using XML standards and
+                    tools as described in Stührenberg &amp; Jettka (2009).</p>
+                <p>Presently, all available annotation layers are stored in an eXist native XML
+                            database<note><ptr target="http://exist-db.org/"/></note> and are
+                    queried using the Oxygen XML editor<note><ptr target="http://www.oxygenxml.com/"
+                        /></note> as a database client.</p>
+                <p>The corpus infrastructure is used to explore the document applying the method of
+                    toc fragment analysis as described in the following section, and to implement
+                    functions for concept extraction and semantic relation analysis.</p>
+                <div>
+                    <head>Analysis of toc fragments</head>
+                    <p>Our method of analysing toc fragments consists of the following steps:
+                            <xmt:oList rend="arabic">
+                            <item>Identification of a toc fragment</item>
+                            <item>Representation of the fragment meaning as a MultiNet</item>
+                            <item>Identification of the configuration of elements on different
+                                structural levels that induce the fragment meaning</item>
+                            <item>Hypothesis about the generalisation of a toc fragment, a
+                                structuring schema</item>
+                            <item>Corpus research to verify the generalisation hypothesis</item>
+                        </xmt:oList>
+                    </p>
+                    <figure>
+                        <code xml:space="preserve">
+[booktitle] Einführung Pädagogik
+[5.] Ausgewählte Subdisziplinen und Fachrichtungen 
+	[5.1.] Literatur 
+	[5.2.] Erlebnispädagogik 
+		[5.2.1.] Begrifflichkeit 
+			[5.2.1.1.] Erlebnis als prioritäre Kategorie 
+		[5.2.2.] Historie 
+		[5.2.3.] Theoretische Fundierungen und Menschenbilder 
+		[5.2.4.] Ziele und Funktionen der Erlebnispädagogik 
+			[5.2.4.1.] Ziele 
+			[5.2.4.2.] Subjektbezogene Funktionen und mögliche Wirkungsweisen 
+			[5.2.4.3.] Gesellschaftliche Funktionen 
+		[5.2.5.] Merkmale und Modelle der Erlebnispädagogik 
+		[5.2.6.] Beispiele erlebnispädagogischer Angebote 
+			[5.2.6.1.] Outward Bound-Konzeption 
+			[5.2.6.2.] Outdoor Management Development 
+		[5.2.7.] Kritikpunkte 
+		[5.2.8.] Einführungsliteratur (zum Weiterlesen) 
+	[5.3.] Erwachsenenbildung 
+		[5.3.1.] Begriffsklärung 
+		[5.3.2.] Geschichtliche Entwicklung 
+		[5.3.3.] Struktur und Funktionsperspektiven in der Erwachsenenbildung 
+		[5.3.4.] Theoretische Orientierungen der Erwachsenenbildung 
+		[5.3.5.] Forschungsfelder 
+		[5.3.6.] Einführungsliteratur (zum Weiterlesen) 
+	[5.4.] Gesundheitspädagogik                        
+                    </code>
+                        <head>Figure 1: Section from the table of contents of Raithel et al.
+                            (2007)</head>
+                    </figure>
+
+                    <p>Consider the section of the generated table of contents of the text book <hi
+                            rend="italic">Einführung Pädagogik</hi> by Raithel et al. (2007) shown
+                        in Figure 1. By choosing the heading 5. <hi rend="italic">Ausgewählte
+                            Subdisziplinen und Fachbereiche</hi> and its immediately superordinated
+                        heading (in this case the title of the book) as well as its immediately
+                        subordinated headings, we arrive at the toc fragment (or “window”) shown in
+                        Figure 2. In the toc fragment, four terms from the domain are contained, <hi
+                            rend="italic">Pädagogik</hi>, <hi rend="italic">Erlebnispädagogik</hi>,
+                            <hi rend="italic">Erwachsenenbildung</hi>, and <hi rend="italic"
+                            >Gesundheitspädagogik</hi>.<note>We consider terms to be linguistic
+                            expressions that refer to domain concepts.</note> The terms
+                        identification component must distinguish such expressions denoting
+                        domain-specific concepts from relational nouns commonly found in academic
+                        and scientific discourse (such as <hi rend="italic">Einführung</hi>, <hi
+                            rend="italic">Subdisziplin</hi> and <hi rend="italic">Fachrichtung</hi>)
+                        and from terms denoting text-type structural categories of academic texts
+                        such as <hi rend="italic">Literatur</hi>).</p>
+                    <p>We employ the semantic network approach <hi rend="italic">Multilayered
+                            Extended Semantic Networks</hi> (acronym: MultiNets) by Helbig (2006) to
+                        represent the domain concepts and semantic relations between them </p>
+                    <figure>
+                        <code xml:space="preserve">
+[booktitle] Einführung in die Pädagogik
+[5.] Ausgewählte Subdisziplinen und Fachrichtungen
+[5.1.]  Literatur 
+[5.2.]  Erlebnispädagogik
+[5.3.]  Erwachsenenbildung 
+[5.4.]  Gesundheitspädagogik
+                       </code>
+                        <head>Figure 2: Toc fragment</head>
+                    </figure>
+                    <p>expressed in a toc fragment. The MultiNet approach is a fully-fledged
+                        semantic theory and provides a rich and consistent inventory of semantic
+                        entity types, features, relations and functions, and has been previously
+                        employed in the syntactic-semantic analysis components of QA systems
+                        (Hartrumpf 2005). Using the graphical MWR editor for designing
+                            MultiNets,<note>which was kindly made available for us by Professor
+                            Helbig’s group in Hagen.</note> we represent the semantics of the above
+                        toc fragment as shown in Figure 3.</p>
+
+                    <p>
+                        <figure>
+                            <graphic url="708_Fig3.png" xmt:type="full" rend="left-img"
+                                mimeType="image/png"/>
+                            <head>Figure 3: MultiNet analysis of toc fragment</head>
+                        </figure>
+                    </p>
+                    <p>In the semantic network in Figure 3, the concepts
+                            <eg>a3_erlebnispädagogik.1.1</eg>, <eg>a3_erwachsenenbildung.1.1</eg>,
+                        and <eg>a3_gesundheitspädagogik.1.1</eg> are related to
+                            <eg>a3_pädagogik.1.1</eg> by the SUBS relation denoting subordination of
+                        (abstract) situations; <eg>a3_pädagogik.1.1</eg> is in turn related to
+                            <eg>fach.1.2</eg> and <eg>a3_disziplin.1.1</eg> by the SUB relation
+                        denoting the subordination of concepts representing objects.<note>An
+                                <eg>a3_</eg> prefix in a concept name indicates that the concept was
+                            not found in the required reading in the semantic lexicon HagenLex
+                            (Glöckner et al. 2007) which is consulted by the MWR tool.</note>
+                        Furthermore, the semantic decompositions of the three compounds are analysed
+                        using the relations MCONT (mental or informational content), BENF
+                        (beneficiary) and METH (method), and the relation between the concept
+                            <eg>c2</eg> representing the textbook as such and
+                            <eg>a3_pädagogik.1.1</eg> is specified as MCONT, the relation between
+                            <eg>c2</eg> and its authors as ORIG (mental of informational origin, cf.
+                        Helbig 2006). </p>
+                    <p> On account of this analysis, the following hypothesis is formed: </p>
+                    <p> Given a potential structuring schema, consisting of an initial expression N,
+                        and an expression N-1 related to N by a <hi rend="italic">heading_of</hi>
+                        relation on the document structure level, and an expression N+1 to which N
+                        is related by the <hi rend="italic">heading_of</hi> relation on the document
+                        structure level (cf. Figure 4), if <!-- figure four should go in here; but image not provided -->
+                        <figure>
+                            <code xml:space="preserve">
+                    N-1
+                     N
+                      N+1
+                        </code>
+                            <head>Figure 4: Toc Schema</head>
+                        </figure>
+                        <figure>
+                            <head>Figure 5: MultiNet Schema</head>
+                            <graphic url="708_Fig5.png" rend="center" mimeType="image/png"
+                                width="40mm"/>
+                        </figure>
+                        <xmt:uList>
+
+                            <item> N contains the lexeme Subdisziplin or a synonym on the lexical
+                                level</item>
+                            <item>and N-1 contains the domain concept A </item>
+                            <item>and N+1 contains the domain concept B,</item>
+                        </xmt:uList> then, by multiple application, construct a MultiNet-Schema as
+                        represented by the graph in Figure 5. </p>
+                    <figure>
+                        <code xml:space="preserve">
+&lt;result doc=&quot;schruender-lenzen_schriftspracherwerb_2007&quot; docID=&quot;i72&quot;&gt;
+     &lt;head level=&quot;n-1&quot;&gt;9. Schwierigkeiten des Schriftspracherwerbs rechtzeitig erkennen und gezielt helfen&lt;/head&gt;
+     &lt;head level=&quot;n&quot;&gt;9.2 Zentrale Wahrnehmungsbereiche und ihr Risikopotential&lt;/head&gt;
+     &lt;head level=&quot;n+1&quot;&gt;9.2.1 Visuelle Wahrnehmung&lt;/head&gt;
+     &lt;head level=&quot;n+1&quot;&gt;9.2.2 Auditive Wahrnehmung&lt;/head&gt;
+&lt;/result&gt; 
+&lt;result doc=&quot;brosius_kommunikationsforschung_2008&quot; docID=&quot;i137&quot;&gt;
+     &lt;head level=&quot;n-1&quot;&gt;8. Kapitel: Inhaltsanalyse I: Grundlagen&lt;/head&gt;
+     &lt;head level=&quot;n&quot;&gt;8.4 Anwendungsgebiete und typische Fragestellungen&lt;/head&gt;
+     &lt;head level=&quot;n+1&quot;&gt;8.4.1 Inhaltsanalysen auf dem Feld der politischen Kommunikation&lt;/head&gt;
+     &lt;head level=&quot;n+1&quot;&gt;8.4.2 Inhaltsanalysen in der Gewaltforschung&lt;/head&gt;
+     &lt;head level=&quot;n+1&quot;&gt;8.4.3 Inhaltsanalysen in der Minderheitenforschung&lt;/head&gt;
+&lt;/result&gt;      
+&lt;result doc=&quot;raithel_paedagogik_2007&quot; docID=&quot;i180&quot;&gt;
+     &lt;head level=&quot;n-1&quot;&gt;BOOKTITLE: Einführung Pädagogik&lt;/head&gt;
+     &lt;head level=&quot;n&quot;&gt;D Ausgewählte Subdisziplinen und Fachrichtungen&lt;/head&gt;
+     &lt;head level=&quot;n+1&quot;&gt; Literatur&lt;/head&gt;
+     &lt;head level=&quot;n+1&quot;&gt;Erlebnispädagogik&lt;/head&gt;
+     &lt;head level=&quot;n+1&quot;&gt;Erwachsenenbildung&lt;/head&gt; 
+	...     
+                    </code>
+                        <head>Figure 6: Query Result Document</head>
+                    </figure>
+                    <!-- figure six should go in here; but image not provided -->
+                    <p> The Hypothesis is verified by formulating the potential structuring schema
+                        as a query to the corpus using the XQuery query language. The query result
+                        document then contains a set of toc fragments that can now be inspected as
+                        to whether their semantics conform to the hypothesis or not, leading to a
+                        small statistic about the validity of the hypothesis. Sometimes the
+                        inspection may also lead to a modification of the original query. In the
+                        first result fragment in Figure 6, for instance, the superordinate concept
+                            <hi rend="italic">Wahrnehmung</hi> is not contained in N-1, but as the
+                        compound modifier of <hi rend="italic">Bereich</hi> (a synonym of <hi
+                            rend="italic">Subdisziplin</hi>).<note>Other titles from our corpus
+                            cited in Figure 6 are Brosius (2008), and Schründer-Lenzen
+                            (2008).</note>
+                    </p>
+                    <p>In this example it becomes clear that analyses on the morphological and
+                        lexical-semantic level interact with the analyses of the structuring
+                        information in that both levels provide conditions or constraints when
+                        building the semantic analysis of a toc fragment. Our corpus infrastructure
+                        is designed such that information from multiple linguistic and structural
+                        levels can be taken into account.</p>
+                </div>
+                <div>
+                    <head>Conclusion</head>
+                    <p>We presently inventorise sets of complex conditions connecting a structuring
+                        schema with a MultiNet Schema as <hi rend="italic">constructions</hi> in the
+                        sense of Construction Grammar (CxG). Construction Grammar (Kay 1995, Östman
+                        &amp; Fried 2004) is a theory of grammar which is not based on phrase
+                        structure rules operating on lexical elements, but as combinations of
+                        constructions in which form schemata are associated with meaning schemata
+                        and is therefore appropriate for the description task at hand. The inventory
+                        of constructions will then be employed in ontology learning, particularly
+                        for the task of automatically extracting domain concepts and semantic
+                        relations between them. Constructions describing document structuring
+                        schemata as described above play a role similar to the lexico-syntactic
+                        “Hearst Patterns” described in Hearst (1992), which have been employed for
+                        extracting semantic relations from running text.</p>
+                </div>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+
+                    <bibl><author>Brosius, Hans-Bernd</author><author>Koschel, Friederike</author>
+                        <author>Haas, Alexander</author>
+                        <date>2008</date>
+                        <title level="m">Soziologie. Methoden der empirischen
+                            Kommunikationsforschung. 4. Aufl</title>
+                        <pubPlace>Wiesbaden</pubPlace></bibl>
+                    <bibl><author>Glöckner, Ingo</author><author>Hartrumpf,
+                            Sven</author><author>Helbig, Hermann</author>
+                        <author>Leveling, Johannes</author>
+                        <author>Osswald, Rainer</author>
+                        <date>2007</date>
+                        <title level="a">Automatic semantic analysis for NLP applications</title>
+                        <title level="j">Zeitschrift für Sprachwissenschaft</title>
+                        <biblScope type="issue">Jg. 26, H. 2</biblScope>
+                        <biblScope type="pp">241–266</biblScope></bibl>
+                    <bibl><author>Hartrumpf, Sven</author>
+                        <date>2005</date>
+                        <title level="a">University of Hagen at QA@CLEF 2005: Extending knowledge
+                            and deepening linguistic processing for question answering.</title>
+                        <editor>Peters, Carol</editor>
+                        <title level="m">Results of the CLEF 2005 Cross-Language System Evaluation
+                            Campaign, Working Notes for the CLEF 2005 Workshop</title>
+                        <pubPlace>Vienna</pubPlace><publisher>Centromedia</publisher></bibl>
+                    <bibl><author>Hearst, Matti A.</author>
+                        <date>1992</date>
+                        <title level="a">Automatic acquisition of hyponyms from large text
+                            corpora</title><title level="m" type="proceedings">Proceedings of the
+                            14th International Conference on Computational Linguistics</title>
+                    </bibl>
+                    <bibl><author>Helbig, Hermann</author>
+                        <date>2006</date>
+                        <title level="m">Knowledge Representation and the Semantics of Natural
+                            Language</title>
+                        <pubPlace>Heidelberg</pubPlace>
+                        <publisher>Springer</publisher>
+                        <title level="s">Cognitive Technologies</title></bibl>
+                    <bibl><author>Kay, Paul</author>
+                        <date>1995</date>
+                        <title level="a">Construction Grammar</title>
+                        <editor>Verschueren, Jef</editor><editor>Östman, Jan-Ola</editor>
+                        <editor>Blommaert, Jan</editor>
+                        <title level="m">Handbook of Pragmatics Manual</title>
+                        <pubPlace>Amsterdam</pubPlace>
+                        <publisher>John Benjamins</publisher>
+                        <biblScope type="pp">171–177</biblScope></bibl>
+                    <bibl><editor>Östman, Jan-Ola</editor>
+                        <editor>Fried, Mirjam</editor>
+                        <date>2004</date>
+                        <title level="m">Construction Grammars: Cognitive grounding and theoretical
+                            extensions</title>
+                        <pubPlace>Amsterdam</pubPlace>
+                        <publisher>John Benjamins</publisher></bibl>
+                    <bibl><author>Raithel, Jürgen</author>
+                        <author>Dollinger, Bernd</author>
+                        <author>Hörmann, Georg</author>
+                        <date>2007</date>
+                        <title level="m">Einführung in die Pädagogik. Begriff - Strömungen -
+                            Klassiker - Fachrichtungen. 2. Aufl.</title><pubPlace>
+                            Wiesbaden</pubPlace>
+                        <publisher>Springer</publisher>
+                        <title level="s">VS Verlag für Sozialwissenschaften</title></bibl>
+                    <bibl><author>Schmid, Helmut</author>
+                        <date>1994</date>
+                        <title level="a">Probabilistic Part-of-Speech Tagging using Decision
+                            Trees</title><title level="m" type="proceedings">Proceedings of the
+                            International Conference on New Methods in Language Processing</title>
+                        <name type="venue">Manchester, UK</name><biblScope>44–49</biblScope></bibl>
+
+                    <bibl><author>Schründer-Lenzen, Agi</author>
+                        <date>2007</date>
+                        <title level="m">Schriftspracherwerb. Bausteine professio-nellen
+                            Handlungswissens. 2. Aufl</title>
+                        <pubPlace>Wiesbaden</pubPlace>
+                        <publisher>Springer</publisher>
+                        <title level="s">VS Verlag für Sozialwissenschaften</title></bibl>
+                    <bibl><author>Stührenberg, Maik</author>; <author>Jettka, Daniel</author>
+                        <date>2009</date>
+                        <title level="a">A tookit for multi-dimensional markup: the development of
+                            SGF to XStandoff</title>
+                        <title level="m" type="proceedings">Proceedings of Balisage: The Markup
+                            Conference 2009</title>
+                        <title level="s">Balisage Series on Markup Technologies</title>
+                        <biblScope type="vols">3 vols</biblScope>
+                    </bibl>
+                    <bibl><author>Tapanainen, Pasi</author>; <author>Järvinen, Timo</author>
+                        <date>1997</date>
+                        <title level="a">A non-projective dependency parser</title>
+                        <title level="m" type="proceedings">Proceedings of the fifth conference on
+                            Applied natural language processing</title>
+                        <name type="venue">Washington D.C</name></bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

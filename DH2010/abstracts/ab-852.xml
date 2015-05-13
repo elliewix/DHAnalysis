@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-852">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>No Representation Without Taxonomies: Specifying Senses of Key Terms in
+                    Digital Humanities</title>
+                <author>
+                    <name>Caton, Paul</name>
+                    <affiliation><orgName>INKE Project</orgName> <reg><country>Canada</country></reg></affiliation>
+                    <email>pncaton@gmail.com</email>
+                </author>
+                <respStmt>
+                    <name>INKE Research Group</name>
+                    <resp><affiliation><orgName>INKE Project</orgName> <reg><country>Canada</country></reg></affiliation>
+                        <email>inke.project@gmail.com</email></resp>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-30</date>
+                <name>AC</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                <p>Digital humanities practitioners typically deal with polysemous terms by
+                    specifying the intended sense of a term in accompanying documentation (when it
+                    is one of the set of terms in a schema) or by giving a localized qualification
+                    (when the term is being used in a scholarly article). Granted, practitioners do
+                    interrogate their use of ubiquitous terms: 'theory,' 'model,' and 'text,' for
+                    example, have all been critically examined.<note>As a representative selection
+                        from the existing literature, see Caton "Theory"; Caton "Text Encoding", <hi
+                            rend="italic">passim</hi>; DeRose et al; Eggert; McCarty, <hi
+                            rend="italic">passim</hi>; Robinson; Renear "Out of Praxis"; Renear
+                        "Theory Restored"; Renear, Durand, and Mylonas.</note> These discussions,
+                    however, have not visibly affected the prevailing ad hoc, localized approach to
+                    sense disambiguation.</p>
+                <p>In ordinary language use multiple senses are the norm: we might hope for greater
+                    precision in an academic field, but cannot assume it. "After all," writes Allen
+                    Renear apropos of conflicting views on the essential characteristics of
+                    textuality, "there is not even a univocal sense of 'text' within literary
+                    studies: Barthes's 'text' can hardly be Tanselle's 'text'" ("Out" Note 1 124).
+                    The more finely senses are distinguished, though, the greater the need for
+                    documentation to point to, the greater the amount of documentation there must
+                    be, and the greater the requirement that digital resources make all the
+                    necessary pointers available.</p>
+                <p>There is a case, then, for relieving the polysemous burden carried by terms like
+                    'text'. This could be done either by shifting some senses onto different terms
+                    or by adding an agreed upon set of clearly defined qualifiers to the original
+                    term. One example of different terms being available is the FRBR Group One
+                    entity types (IFLA Study Group 3.2). It may not have been the <hi rend="italic"
+                        >intention</hi> of the IFLA Study Group to provide alternatives for 'text',
+                    but unquestionably each Group 1 entity type - work, expression, manifestation,
+                    and item - corresponds to an existing sense of 'text' and can therefore be used
+                    in place of it. However, while these types do capture some broad distinctions,
+                    the set is very small.</p>
+                <p>More ambitious is the taxonomy of texts proposed by Shillingsburg as part of his
+                    overall concept of a 'script act.'<note>See <hi rend="italic">Resisting</hi> ch.
+                        3. This is a revised version of his "Text" where the term originally used
+                        was 'write act.'</note> Here the semantic burden is shifted to a qualifying
+                    phrase and 'text' has the constant sense of a sign sequence (in material or
+                    immaterial state), whose existence is established by at least one material
+                    instantiation, and which is intended as a unitary communication (whether
+                    actually finished or not). Extrapolating from this, we can say that--in relation
+                    to this taxonomy--'textuality' is the exhibiting of such properties, and 'text'
+                    as a general phenomenon (that is, as a mass noun rather than a count noun) is
+                    some quantity of that which exhibits 'textuality'.</p>
+                <p>These definitions are ours and not Shillingsburg's, but derive from his
+                    definitions and are consistent with the principles upon which his taxonomy is
+                    based. Furthermore, they accord with common senses of those terms. We emphasize
+                    this both because it has methodological implications and because it helps us
+                    rethink a notion of 'text' that is well-known in the digital humanities
+                    community and to see its proper relation to the senses just described.</p>
+                <p>The quote from Renear given earlier comes from his discussion of "theory about
+                    the nature of text" coming out of the electronic text processing and text
+                    encoding localities ("Out" 107). The view Renear himself
+                    espouses--"Pluralism"--developed as a refinement of the earlier
+                    view--"Platonism"--associated with the assertions made by de Rose et al in the
+                    paper "What is Text, Really?" This line of thinking has presented itself as <hi
+                        rend="italic">definitional</hi>, offering a sense to associate with 'text.'
+                    Also, by emphasizing its origins in work on automated document processing, it
+                    presents this sense of 'text' as <hi rend="italic">fundamental</hi>: that is, a
+                    more universal sense of 'text' than any sense coming from the traditional
+                    humanities localities, because it is as applicable to tax forms, memos, and
+                    technical manuals as to novels, plays, and poems. The third thing to note is
+                    that this approach has used 'text' in both mass noun and count noun senses
+                    interchangeably, and so whatever is said about one applies equally to the other.
+                    In the Pluralist view, what defines text is the presence of one or more
+                    structures of content objects. We believe this view actually has the opposite
+                    effect of what it originally intended because, despite its avowedly universal
+                    scope, it actually imposes a greater restriction on what qualifies as a text
+                    than Shillingsburg's taxonomy does. Shillingsburg's categories have the form
+                    QualifyingLabel+'text', where 'text' has the sense of a sign sequence as
+                    described earlier. The sentence "Call me Ishmael." clearly counts as 'text' in
+                    Shillingsburg's sense, and equally clearly does not count as 'text' in the
+                    Pluralist sense - unless we dilute the sense of the phrase 'content object'
+                    until it includes standard linguistic structural units such as the clause, in
+                    which case the Pluralist sense simply becomes the same as Shillingsburg's
+                    sense.</p>
+                <p>What that line of thinking about text, texts, and textuality that runs from "What
+                    is Text, Really?" through "Out of Praxis" actually describes is a property that
+                    many--indeed most--texts exhibit, but that is not an <hi rend="italic"
+                        >essential</hi> property of a text. In a footnote to the discussion in "Out
+                    of Praxis" Renear acknowledges that the various meanings 'text' has in the
+                    various disciplinary localities do share a common ground, namely that "they all
+                    are efforts to understand textual communication." But he continues "I think that
+                    taxonomies of sense are best deferred until after we have a better understanding
+                    of actual theory and practice" (124). We think the conceptual help afforded by
+                    the clarity of Shillingsburg's distinctions shows the opposite is true: having
+                    taxonomies in place first betters our theoretical understanding.</p>
+                <p>That last statement brings out the 'chicken and egg' nature of this problem with
+                    terminology, as many scholars would doubtless argue that specifying a taxonomy
+                    like Shillingsburg's <hi rend="italic">presupposes</hi> one's holding to a
+                    particular theory of text/textuality. Debating that, however, would in turn be
+                    helped by having a taxonomy of 'theory' available, because what that term means
+                    in digital humanities is itself hotly contested.</p>
+                <p>As helpful as we believe Shillingsburg's taxonomy to be, it only clarifies a few
+                    items of the "essential vocabulary," and while we think his overall 'script act'
+                    framework a good place to start, it needs adding to--for example, in the area
+                    that Shillingsburg calls "reception performance" (<hi rend="italic"
+                        >Resisting</hi> 77-80). Though he emphasizes his debt to McGann he doesn't
+                    attempt a taxonomy of the bibliographic codes that McGann considers such an
+                    important feature of production texts (<hi rend="italic">Textual</hi> passim).
+                    Nor does he really say what happens to the notion of illocutionary point when we
+                    move from speech act to script act.<note>On illocutionary point see Searle 2. We
+                        find no treatment of it by Shillingsburg in either <hi rend="italic"
+                            >Resisting</hi> or <hi rend="italic">From Gutenberg</hi>.</note> This is work still to be
+                    done.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Caton, Paul</author>
+                        <date>2003</date>
+                        <title level="a">Theory in Text Encoding</title>
+                        
+                        <title level="m" type="proceedings">ACH/ALLC Annual Conference</title>
+                        <name type="venue">University of Georgia, Athens, Georgia</name>
+                        <date type="conference">May 2003</date>
+                    </bibl>
+                    <bibl>
+                        <author>Caton, Paul</author>
+                        <date>2004</date>
+                        <title level="m">Text Encoding, Theory, and English: A Critical
+                            Relation</title>
+                        <title level="s">Dissertation</title>
+                        <publisher>Brown University</publisher>
+                        <pubPlace>Providence, RI</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>DeRose, Steven J.</author>
+                        <author>et al.</author>
+                        <date>1990</date>
+                        <title level="a">What is Text, Really?</title>
+                        <title level="j">Journal of Computing in Higher Education</title>
+                        <biblScope type="vol">1</biblScope>
+                        <biblScope type="issue">2</biblScope>
+                        <biblScope type="pp">3-26</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Eggert, Paul</author>
+                        <date>2005</date>
+                        <title level="a">Text-Encoding, Theories of the Text, and the
+                            Work-Site</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="vol">20</biblScope>
+                        <biblScope type="issue">4</biblScope>
+                        <biblScope type="pp">425-435</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>IFLA Study Group on the Functional Requirements for Bibliographic
+                            Records</author>
+                        <date>2009</date>
+                        <title level="m">Functional Requirements for Bibliographic Records: Final
+                            Report</title>
+                        
+                        <publisher>International Federation of Library Associations and
+                            Institutions</publisher><edition>Amended and corrected version</edition>
+                    </bibl>
+                    <bibl>
+                        <author>McCarty, Willard</author>
+                        <date>2009</date>
+                        <title level="m">Humanities Computing</title>
+                        <publisher>Palgrave Macmillan</publisher>
+                        <pubPlace>Basingstoke, Hampshire</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>McGann, Jerome</author>
+                        <date>1988</date>
+                        <title level="m">Social Values and Poetic Acts: The Historical Judgment of
+                            Literary Work</title>
+                        <publisher>Harvard University Press</publisher>
+                        <pubPlace>Cambridge, Mass.</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>McGann, Jerome</author>
+                        <date>1991</date>
+                        <title level="m">The Textual Condition</title>
+                        <publisher>Princeton University Press</publisher>
+                        <pubPlace>Princeton, New Jersey</pubPlace>
+                        <title level="s">Princeton Studies in Culture/Power/History</title>
+                    </bibl>
+                    <bibl>
+                        <author>Renear, Allen</author>
+                        <date>1997</date>
+                        <title level="a">Out of Praxis: Three (Meta)Theories of Textuality</title>
+                        <title level="m">Electronic Text: Investigations in Method and
+                            Theory</title>
+                        <editor>Sutherland, Kathryn</editor>
+                        <publisher>Clarendon Press</publisher>
+                        <pubPlace>Oxford</pubPlace>
+                        <biblScope type="pp">107-126</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Renear, Allen</author>
+                        <date>1997</date>
+                        <title level="a">Theory Restored: A Response to Caton</title>
+                       
+                        <title level="m" type="proceedings">ACH/ALLC Annual Conference</title>
+                        <name type="venue">University of Gothenburg, Gothenburg, Sweden</name>
+                        <date type="conference">June 2004</date>
+                    </bibl>
+                    <bibl>
+                        <author>Renear, Allen</author>
+                        <author>Durand, David</author>
+                        <author>Mylonas, Elli</author>
+                        <date>1996</date>
+                        <title level="a">Refining our Notion of What Text Really Is</title>
+                        <title level="m">Research in Humanities Computing</title>
+                        <editor>Ide, Nancy</editor>
+                        <editor>Hockey, Susan</editor>
+                        <publisher>Oxford University Press</publisher>
+                        <pubPlace>Oxford</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Robinson, Peter</author>
+                        <date>2009</date>
+                        <title level="a">What Text Really Is Not, and Why Editors Have to Learn to
+                            Swim</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="vol">24</biblScope>
+                        <biblScope type="issue">1</biblScope>
+                        <biblScope type="pp">41-52</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Searle, John</author>
+                        <date>1979</date>
+                        <title level="m">Expression and Meaning</title>
+                        <publisher>Cambridge University Press</publisher>
+                        <pubPlace>Cambridge</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Shillingsburg, Peter</author>
+                        <date>2006</date>
+                        <title level="m">From Gutenberg to Google: Electronic Representations of
+                            Literary Texts</title>
+                        <publisher>Cambridge University Press</publisher>
+                        <pubPlace>Cambridge</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Shillingsburg, Peter</author>
+                        <date>1997</date>
+                        <title level="m">Resisting Texts: Authority and Submission in Constructions
+                            of Meaning</title>
+                        <publisher>University of Michigan Press</publisher>
+                        <pubPlace>Ann Arbor, Michigan</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Shillingsburg, Peter</author>
+                        <date>1991</date>
+                        <title level="a">Text as Matter, Concept, and Action</title>
+                        <title level="j">Studies in Bibliography</title>
+                        <biblScope type="issue">44</biblScope>
+                        <biblScope type="pp">32-83</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Tanselle, G. Thomas</author>
+                        <date>1995</date>
+                        <title level="a">The varieties of scholarly editing</title>
+                        <title level="m">Scholarly Editing: A Guide to Research</title>
+                        <editor>Greetham, D.C.</editor>
+                        <publisher>The Modern Language Association of America</publisher>
+                        <pubPlace>New York</pubPlace>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

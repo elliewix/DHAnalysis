@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-643">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Text Encoding and Ontology – Enlarging an Ontology by Semi-Automatic
+                    Generated Instances</title>
+                <author>
+                    <name>Amélie Zöllner-Weber</name>
+                    <affiliation><orgName>University of Bergen</orgName>, <country>Norway</country></affiliation>
+                    <email>amelie.zoellnerweber@gmail.com</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-19</date>
+                <name>JL</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+            <change>
+                <date>2010-05-17</date>
+                <name>JL</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>In this contribution, we present an application that supports users when working with
+                ontologies in literary studies. Thereby, semi-automatic suggestions for including
+                information in an ontology are generated. This application is meant for users, who
+                are familiar with annotation and markup and are interested in topic of literary
+                studies.</p>
+            <p>When reading literature we can identify literary phenomena but we cannot prove them
+                directly in the text. Our ability is to puzzle sentences together so that they form
+                a meaning. But this process happens in our mind not in texts. However, these
+                interpretations are individual and can differ from reader to reader since they are
+                influenced by our cultural and social background. It is therefore a challenge to
+                create a model of these interpretations to be able to have a more general and formal
+                description, e.g. of a character.</p>
+            <p> In computer philology, one can detect several applications when modeling texts: 1)
+                by using mark up languages like XML (meta) information can be marked in texts (e.g.
+                Jannidis et al. 2006, Meister 2003), 2) one can model theories in literary studies
+                that try to represent mental representations (Jannidis 2004, Schneider 2000).
+                However, text structures and mental representations can differ from each other so
+                that we are not able to model them in the same way.</p>
+            <p> In Zöllner-Weber 2007, mental representations have been modelled by an ontology. It
+                tried to regard a character as a complex cognitive entity in the reader’s mind.
+                Here, the description of literary characters has been realised as an ontology. For
+                manipulating this ontology, users have to extract information manually about
+                characters from literary texts and add them to the ontology. This process might be
+                time-consuming, and users who are not familiar with the structure of an ontology
+                might need even more time to become familiar with the application. We want to solve
+                this problem by combining text encoding and the ontology. Therefore, an annotation
+                system has been developed, which takes the mark up from the text and generates
+                semi-automatically suggestions of instances be included into the ontology. </p>
+            <div>
+                <head>Methods</head>
+                <p>For the description of literary characters, an ontology that models characters by
+                    their mental representations was used (Zöllner-Weber 2006). Briefly, an ontology
+                    is a hierarchy of classes. In addition, the classes contain instances that
+                    represent individuals. Properties, which contain additional information, are
+                    attached to the individuals (Noy et al. 2001). By using this kind of structure,
+                    information is described formally. We chose an ontology because its structure
+                    corresponds to the mostly hierarchical structures of proposed theories to
+                    describe or analyse literary characters (Jannidis 2004, Lotman 1977). Several
+                    theories of literary characters are combined to create a base of a formal
+                    description using an OWL ontology (Grigoris and Harmelen 2003, Jannidis 2004,
+                    Nieragden 1995). The frame of mental representations is presented by the main
+                    classes of the ontology, e.g. inner and outer features, actions on other
+                    characters and objects. The sub classes contain characteristics of special
+                    characters (special features or groups of characters). We decided to include
+                    single pieces of information gained from literary texts into instances of the
+                    ontology. In addition, so-called instances of the classes represent individual
+                    and explicit objects of the domain of literary characters. Here, direct
+                    information about a character given in a text is assigned to an instance.
+                    Properties contain additional information, e.g. type of narrator, author,
+                    annotation information or reference to literature. Together with the information
+                    of the class hierarchy, instances and their properties, a single mental
+                    representation of a character is modelled (cf. Figure 1). In this approach,
+                    individual description, the pre-step of interpretation, is focused. The main
+                    description categories secure a general classification so that it is also
+                    possible to compare two different interpretations of one character, which might
+                    be spread over different categories of the ontology.</p>
+                <p>In order to fill the aforementioned ontology of literary characters in a more
+                    automated fashion an encoding scheme has been developed. For the annotation, we
+                    selected tags of the TEI-DTD (Text Encoding Initiative 2003, <ptr
+                        target="http://www.tei-c.org/" type="external"/>), which were developed for
+                    marking interpretation sections in texts. Thereby, the encoding scheme had to be
+                    exploited and rearranged so that it is usable for literary studies. This means
+                    that the usage of elements was enlarged. By using this special markup, a user
+                    can directly add interpretive pieces of information about a literary character
+                    to a text. Here, the annotation scheme is based on four main categories, <hi
+                        rend="italic">description</hi>, <hi rend="italic">statement</hi>, <hi
+                        rend="italic">action</hi>, and <hi rend="italic">speech</hi>, which classify
+                    pieces of information. All descriptions about a character that are stated by a
+                    narrator are subsumed under <hi rend="italic">description</hi>. The category <hi
+                        rend="italic">statement</hi> depicts commentaries of a character about
+                    another character. To mark non-verbal and verbal actions of a character, the
+                    categories <hi rend="italic">action</hi> and <hi rend="italic">speech</hi>
+                    should be used. In addition, a user should add e.g. information about the type
+                    of narrator, the name of a character and depending on the chosen category
+                    additional information to complete the annotation. After the process of
+                    annotation, a user sends the marked texts via a web form to a server where the
+                    annotations are evaluated by an in-house developed programming algorithm (cf.
+                    Fig 1). The pre-sorting of encoded information about a character is based on the
+                    four categories, which match the main classes of the ontology. If further
+                    encoded information is given by the markup, the algorithm tries to generate a
+                    further sub-classification. Figure 1 depicts an example of this process. After
+                    successful processing, a user is presented with a list for all processed
+                    annotations that probably form instances. Additionally, for all of these
+                    suggestions a class assignment is also given.</p>
+                <figure>
+                    <head>Figure 1</head>
+                    <graphic url="643_fig1.png" rend="left" mimeType="image/png"/>
+                    <figDesc>Fig. 1: Scheme of decision algorithm for adding instances to the
+                        classes of the ontology. The different nodes of the tree reflect the tags
+                        used in the encoding scheme, the bold marked leafs of the tree depict
+                        possible matching classes; here the most right one (“act_on_oneself”) will
+                        be the final assignment.</figDesc>
+                </figure>
+                <p>In addition, we present surrounding classes by showing an extracted list of
+                    classes of the ontology so that a user is able to inspect the environment of the
+                    new instance and its class. Whether a class that should include a new instance
+                    does not exist yet, a user can also add a new class. Afterwards, (s)he can
+                    include the instance in the new class.</p>
+            </div>
+            <div>
+                <head>Results</head>
+                <p>The application has been tested by using an extract of the novel “Melmoth the
+                    Wanderer” (1820), written by Charles Robert Maturin. We encoded the text with
+                    the mentioned TEI-DTD and afterwards, by using the programming algorithm, we
+                    obtained suggestions for new instances. In figure 2, the process of generating
+                    an instance from a text passage is shown as an example. For the main character
+                    Melmoth 72 instances were generated and assigned to the ontology.</p>
+                <figure>
+                    <head>Figure 2</head>
+                    <graphic url="643_fig2.png" rend="left" mimeType="image/png"/>
+                    <figDesc>Fig. 2: Process of generating an instance for the ontology from an
+                        encoded text: a) original part of the text, b) encoded text, and c) derived
+                        instance with the class assignment.</figDesc>
+                </figure>
+            </div>
+            <div>
+                <head>Conclusion</head>
+                <p>In this contribution, a system has been presented that includes information into
+                    an ontology, which is generated from markup. We tested this application by using
+                    an ontology for literary characters. In comparison to the manual manipulation of
+                    the ontology, the application comprises a semi-automatic generation of ontology
+                    instances and supports the user when assigning this information about a
+                    character to classes of the ontology. In addition, it is not only possible to
+                    add information about a single character to the ontology, but the application
+                    can simultaneously process annotations of several characters. Thereby, time and
+                    work can be saved, as the whole text can be annotated at once and will then be
+                    transferred to the ontology. There is no need to go back and forth between text
+                    and ontology as for the pure manual insertion of character information into an
+                    ontology.</p>
+                <p>Ontologies and their applications are often linked to logical reasoning. However,
+                    incorporating such techniques into the present application might be difficult,
+                    especially for untrained users, as shown elsewhere (Zöllner-Weber 2009).</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Grigoris, A.</author>
+                        <author>Harmelen, F. V.</author>
+                        <date>2003</date>
+                        <title level="a">Web ontology Language: OWL</title>
+                        <editor>Staab, S.</editor>
+                        <editor>Studer, R.</editor>
+                        <title level="m">Handbook on Ontologies</title>
+                        <pubPlace>Berlin</pubPlace><publisher>Springer</publisher><biblScope
+                            type="pp">67-92</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Jannidis, F.</author>
+                        <date>2004</date>
+                        <title level="m">Figur und Person - Beitrag zur historischen
+                            Narratologie</title>
+                        <pubPlace>Berlin</pubPlace><publisher>Gruyter</publisher>
+                    </bibl>
+                    <bibl><author>Jannidis, F.</author><author>Lauer, G.</author><author>Rapp,
+                            A.</author>
+                        <date>2006</date>
+                        <title level="a">Hohe Romane und blaue Bibliotheken. Zum Forschungsprogramm
+                            einer computergestützten Buch- und Narratologiegeschichte des Romans in
+                            Deutschland (1500-1900)</title><title level="m">Literatur und
+                            Literaturwissenschaft auf dem Weg zu den neuen
+                            Medien</title><editor>Lucas, M. G.</editor><editor>Loop,
+                            J.</editor><editor>Stolz, M.</editor>
+                        <pubPlace>Bern</pubPlace>
+                        <date>2006</date></bibl>
+                    <bibl><author>Lotman, J. M.</author>
+                        <date>1977</date><title level="m">The Structure of the Artistic Text</title>
+                        <pubPlace>Michigan</pubPlace><publisher>University of Michigan
+                            Press</publisher></bibl>
+                    <bibl><author>Meister, J. C.</author><date>2003</date>
+                        <title level="m">Computing Action. A Narratological
+                            Approach</title><pubPlace>Berlin/New York</pubPlace>
+                        <publisher>Gruyter</publisher></bibl>
+                    <bibl><author>Noy, N. F.</author><author>McGuinness, D. L.</author>
+                        <date>2001</date><title level="a">Ontology Development 101: A Guide to
+                            Creating Your First ontology</title>
+                        <title level="s">Stanford Knowledge Systems Laboratory Technical Report
+                            KSL-01-05 and Stanford Medical Informatics Technical Report
+                            SMI-2001-0880</title>
+                    </bibl>
+                    <bibl><author>Schneider, R.</author><date>2000</date>
+                        <title level="m">Grundriß zur kognitiven Theorie der Figurenrezeption am
+                            Beispiel des viktorianischen
+                            Romans.</title><pubPlace>Tübingen</pubPlace>
+                        <publisher>Stauffenburg</publisher></bibl>
+                    <bibl><author>Zöllner-Weber, A.</author><date>2006</date><title level="a"
+                            >Formale Repräsentation und Beschreibung von literarischen
+                            Figuren</title>
+                        <title level="j">Jahrbuch für Computerphilologie</title>
+                        <biblScope type="issue">7</biblScope><biblScope type="pp"
+                            >187–203</biblScope></bibl>
+                    <bibl><author>Zöllner-Weber, A.</author>
+                        <date>2007</date>
+                        <title level="a">Noctua literaria - A System for a Formal Description of
+                            Literary Characters</title>
+                        <editor>Rehm, G.</editor>
+                        <editor>Witt, A.</editor><editor>Lemnitzer, L.</editor><title level="m">Data
+                            Structures for Linguistic Resources and Applications</title>
+                        <pubPlace>Tübingen</pubPlace>
+                        <publisher>Narr</publisher><biblScope type="pp">113-121</biblScope></bibl>
+                    <bibl><author>Zöllner-Weber, A.</author><date>2009</date><title level="a"
+                            >Ontologies and Logic Reasoning as Tools in Humanities?</title>
+                        <title level="j">Digital Humanities Quarterly</title>
+                        <biblScope type="issue">3(4)</biblScope>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

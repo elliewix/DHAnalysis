@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-688">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Deeper Delta Across Genres and Languages: Do We Really Need the Most Frequent
+                    Words?</title>
+                <author>
+                    <name>Rybicki, Jan</name>
+                    <affiliation>Pedagogical University, Krakow, <reg><orgName>Pedagogical University of Krakow</orgName></reg> <country>Poland</country></affiliation>
+                    <email>jkrybicki@gmail.com</email>
+                </author>
+                <author>
+                    <name>Eder, Maciej</name>
+                    <affiliation>Pedagogical University, Krakow, <reg><orgName>Pedagogical University of Krakow</orgName></reg> <country>Poland</country></affiliation>
+                    <email>maciej_eder@poczta.onet.pl</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-07</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <p>In 2007, John Burrows identified three regions in word frequency lists of corpora
+                    in authorship attribution and stylometry. The first of these regions consists of
+                    the most frequent words, for which his Delta has become the best-known method of
+                    study. This is evidenced by a varied body of research with interesting
+                    modifications of the method (e.g. Argamon 2008; Hoover 2004, 2004a). At the
+                    other end of the frequency list, Iota deals with the lowest-frequency words,
+                    while &quot;the large area between the extremes of ubiquity and
+                    rarity&quot; (Burrows, 2007) is now the target of many studies employing
+                    Zeta (e.g. Craig, Kinney, 2009; Hoover, 2007).</p>
+                <p> Due to the popularity of the three methods it was only a matter of time before
+                    Delta (and, to a lesser extent, Zeta and Iota) were applied to texts in
+                    languages other than Modern English: Middle Dutch (Dalen-Oskam, Zundert, 2007),
+                    Old English (Garcìa, Martìn 2007) and Polish (Eder, Rybicki 2009). Delta has
+                    also been used in translation-oriented papers, including Burrowsís own work on
+                    Juvenal (Burrows, 2002) and Rybicki's attempts at translator attribution
+                    (2009).</p>
+                <p> It has been generally - and mainly empirically - assumed that the use of methods
+                    relying on the most frequent words in a corpus should work just as well in other
+                    languages as it did in English; this question was approached in any detail only
+                    very recently (Juola, 2009). We could not fail to observe that its success rates
+                    in Polish, although still high, fell somewhat short of its guessing rate in
+                    English (Rybicki 2009a). Also, the already-quoted study by Rybicki (2009) seemed
+                    to suggest that, in a corpus of translated literary texts, Delta was much better
+                    at recognising the author of the original than the translator. This justified a
+                    more in-depth look at the workings of Burrowsís method both in its
+                    &quot;original&quot; English and in a variety of other languages.</p>
+           <div>
+                <head>Methods</head>
+                <p>In this study, a single major modification has been applied to the usual Delta
+                    process. Each analysis was made for the top 50-5000 most frequent words in the
+                    corpus - but then the 50 most frequent words would be omitted and the next
+                    50-5000 words taken for analysis; then the first 100 most frequent words would
+                    be omitted, and so on. This was done with a single R script written by Eder; the
+                    script produced word frequency tables, calculated Delta and produced
+                    &quot;heatmap&quot; graphs of Delta&apos;s success rate for each of
+                    the frequency list intervals, showing the best combinations of initial word
+                    position in wordlist and size of window, including variations of pronoun
+                    deletion and culling parameters. Thus, in the resulting heatmap graphs, the
+                    horizontal axis presents the size of each wordlist used for one set of Delta
+                    calculations; the vertical axis shows how many of the most frequent words were
+                    omitted. Each of the runs of the script produced an average of ca. 3000 Delta
+                    iterations.</p>
+            </div>
+            <div>
+                <head>Material</head>
+                <p>The project included the following corpora (used separately); each contained a
+                    similar number of texts to be attributed.</p>
+                <table>
+                    <row role="label">
+                        <cell role="label" rend="1cm">Code</cell>
+                        <cell role="label">Language</cell>
+                        <cell role="label">Texts</cell>
+                        <cell role="label">Attribution</cell>
+                    </row>
+                    <row>
+                        <cell>E1</cell>
+                        <cell>English</cell>
+                        <cell>65 novels from Swift to Conrad</cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>E2</cell>
+                        <cell>English</cell>
+                        <cell>32 epic poems from Milton to Tennyson</cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>E3</cell>
+                        <cell>English</cell>
+                        <cell>35 translations of Sienkiewicz&apos;s novels</cell>
+                        <cell>Translator</cell>
+                    </row>
+                    <row>
+                        <cell>P1</cell>
+                        <cell>Polish</cell>
+                        <cell>69 19<hi rend="sup">th</hi>- and early 20<hi rend="sup"
+                            >th</hi>-century novels from Kraszewski to Øeromski</cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>P2</cell>
+                        <cell>Polish</cell>
+                        <cell>95 translations of 19<hi rend="sup">th</hi>- and 20<hi rend="sup"
+                                >th</hi>-century novels from Balzac to Eco</cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>P3</cell>
+                        <cell>Polish</cell>
+                        <cell>95 translations of 19<hi rend="sup">th</hi>- and 20<hi rend="sup"
+                                >th</hi>-century novels from Balzac to Eco</cell>
+                        <cell>Translator</cell>
+                    </row>
+                    <row>
+                        <cell>F1</cell>
+                        <cell>French</cell>
+                        <cell>71 19<hi rend="sup">th</hi>- and 20<hi rend="sup">th</hi>-century
+                            novels from Voltaire to Gide</cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>L1</cell>
+                        <cell>Latin</cell>
+                        <cell>94 prose texts from Cicero to Gellius </cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>L2</cell>
+                        <cell>Latin</cell>
+                        <cell>28 hexameter poems from Lucretius to Jacopo Sannazaro</cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>G1</cell>
+                        <cell>German</cell>
+                        <cell>66 literary texts from Goethe to Thomas Mann</cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>H1</cell>
+                        <cell>Hungarian</cell>
+                        <cell>64 novels from Kemèny to Bródy</cell>
+                        <cell>Author</cell>
+                    </row>
+                    <row>
+                        <cell>I1</cell>
+                        <cell>Italian</cell>
+                        <cell>77 novels from Manzoni to D&apos;Annunzio</cell>
+                        <cell>Author</cell>
+                    </row>
+                </table>
+            </div>
+            <div>
+                <head>Results</head>
+                <p>The English novel corpus (E1, <ref type="internal" cRef="fig1">Fig. 1</ref>) was
+                    the one with the best attributions for all available sample sizes starting at
+                    the top of the reference corpus word frequency list; it was equally easy to
+                    attribute even if the first 2000 most frequent words were omitted in the
+                    analysis - or even the first 3000 for longer samples. The English epic poems
+                    (E2, <ref type="internal" cRef="fig2">Fig. 2</ref>) had their area of best
+                    attributive success removed away from the top of the word frequency list, into
+                    the 1000<hi rend="sup">th</hi>-2000<hi rend="sup">th</hi> most-frequent-word
+                    region. Some successful attributions could also be made with a variety of
+                    wordlists around the 2000 mark, starting at the 1<hi rend="sup">st</hi> most
+                    frequent word.</p>
+                <p>
+                    <figure xml:id="fig1">
+                        <head>Figure 1. Heatmap of 65 English novels (percentage of correct attributions).
+                            Colour coding is from low (white) to high (black)</head>
+                        <graphic url="688_Fig1.jpg" rend="left" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig2">
+                        <head>Figure 2. Heatmap of 32 English epic poems</head>
+                        <graphic url="688_Fig2.jpg" rend="right" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>The final &quot;specialist&quot; corpus in the English section of the
+                    project - 32 works by Polish novelist Henryk Sienkiewicz, translated into
+                    English by a number of translators (<ref type="internal" cRef="fig3">Fig.
+                        3</ref>) - showed Delta's expected problems in translator attribution;
+                    however, for a variety of culling/pronoun deletion parameters, a small yet
+                    fairly consistent hotspot would appear for small samples if the first 2000-3000
+                    words were deleted from the frequency wordlist. The first Polish corpus, that of
+                    69 19<hi rend="sup">th</hi>- and early 20<hi rend="sup">th</hi>-century classic
+                    Polish novels (P1, <ref type="internal" cRef="fig4">Fig. 4</ref>), showed marked
+                    improvement in Delta success rate when the wordlist taken for attribution
+                    started at some 450 words down the frequency list; the most successful sample
+                    sizes were relatively small: no more than 1200 words long. </p>
+                <p>When the corpus of Polish translations was studied for original authorship (P2,
+                        <ref type="internal" cRef="fig5">Fig. 5</ref>), the results were quite
+                    accurate for many sample sizes up to 1800 from the very top of the frequency
+                    list. Delta was equally successful for samples of up to 1400 words beyond the
+                    800th most-frequent-word mark. The same corpus yielded lower attribution success
+                    when studied for translator recognition (P3, <ref type="internal" cRef="fig6"
+                        >Fig. 6</ref>). In fact, it resembled somewhat the graph for Polish
+                    classics: a small range of passable attributions, usually for samples below
+                    1000, and usually better when starting a hundred or so words down the frequency
+                    rank list.</p>
+                <p>
+                    <figure xml:id="fig3">
+                        <head>Figure 3. Heatmap of 35 English translations of Sienkiewicz&apos;s
+                            works</head>
+                        <graphic url="688_Fig3.jpg" rend="left" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig4">
+                        <head>Figure 4. Heatmap of 69 Polish novel classics</head>
+                        <graphic url="688_Fig4.jpg" rend="right" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>
+                    <figure xml:id="fig5">
+                        <head>Figure 5. Heatmap of 95 Polish translations from Balzac to Eco (autorship
+                            attribution)</head>
+                        <graphic url="688_Fig5.jpg" rend="left" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig6">
+                        <head>Figure 6. Heatmap of 95 Polish translations from Balzac to Eco (translator
+                            attribution)</head>
+                        <graphic url="688_Fig6.jpg" rend="right" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>The French corpus proved almost equally difficult (F1, <ref type="internal"
+                        cRef="fig7">Fig. 7</ref>): Delta was very successful mainly for small-sized
+                    samples from the top of the overall frequency wordlist. In contrast, the graph
+                    for the German corpus (G1, <ref type="internal" cRef="fig8">Fig. 8</ref>)
+                    presented a success rate akin to that for the English novels, with a
+                    consistently high correct attribution in most of the studied spectrum of sample
+                    size and for samples beginning anywhere between the 1<hi rend="sup">st</hi> and
+                    the 1000<hi rend="sup">th</hi> word in the corpus frequency list.</p>
+                <p>
+                    <figure xml:id="fig7">
+                        <head>Figure 7. Heatmap of 71 French novels</head>
+                        <graphic url="688_Fig7.jpg" rend="left" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig8">
+                        <head>Figure 8. Heatmap of 66 German texts</head>
+                        <graphic url="688_Fig8.jpg" rend="right" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>Of the two Latin corpora, the prose texts (L1, <ref type="internal" cRef="fig9"
+                        >Fig. 9</ref>) could serve as excellent evidence for a minimalist approach
+                    in authorship attribution based on most frequent words, as the best (if not
+                    perfect) results were obtained by staying close to the axis intersection point:
+                    no more than 750 words, taken no further than from the 50<hi rend="sup">th</hi>
+                    place on the frequency rank list.</p>
+                <p>
+                    <figure xml:id="fig9">
+                        <head>Figure 9. Heatmap of 94 Latin prose texts</head>
+                        <graphic url="688_Fig9.jpg" rend="left" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig10">
+                        <head>Figure 10. Heatmap of 28 Latin hexameter poems</head>
+                        <graphic url="688_Fig10.jpg" rend="right" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>The other Latin corpus, that of hexameter poetry (L2, <ref type="internal"
+                        cRef="fig10">Fig. 10</ref>), paints a much more heterogeneous picture: Delta
+                    was only successful for top words from the frequency list at rare small (150),
+                    medium (700) and large (1700) window sizes, and for a few isolated places around
+                    the 1000/1000 intersection point in the graph.</p>
+                <p>The corpus of 19<hi rend="sup">th</hi>-century Hungarian novels (H1, <ref
+                        type="internal" cRef="fig11">Fig. 11</ref>) exhibited good success for much
+                    of the studied spectrum and an interesting hotspot of short samples at ca. 4000
+                    words from the top of the word frequency list.</p>
+                <p>
+                    <figure xml:id="fig11">
+                        <head>Figure 11. Heatmap of 64 Hungarian novels</head>
+                        <graphic url="688_Fig11.jpg" rend="left" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig12">
+                        <head>Figure 12. Heatmap of 77 Italian novels</head>
+                        <graphic url="688_Fig12.jpg" rend="right" 
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>With the Italian novels (I, <ref type="internal" cRef="fig12">Fig. 12</ref>),
+                    Delta was at its best for a broad variety of sample sizes, but only when some
+                    1000 most frequent words were eliminated from the reference corpus.</p>
+            </div>
+            <div>
+                <head>Conclusions</head>
+                <p>
+                    <xmt:oList rend="arabic">
+                        <item> Standard Delta (i.e. applied to the most frequent words) provides the
+                            best results for authorial attribution in English and German
+                            prose.</item>
+                        <item> The same procedures still yield acceptable results in other languages
+                            and in translator attribution. The success here can be improved by
+                            manipulating the number of words taken for analysis and by selecting the
+                            reference wordlists at various distances from the top of the overall
+                            frequency rank list.</item>
+                        <item>The differences in attributive success could be partially explained by
+                            the differences in the degree of inflection/agglutination of the
+                            languages studied, the strongest evidence of this being the relatively
+                            highest success rate in English and German.</item>
+                    </xmt:oList>
+                </p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Argamon, S.</author>
+                        <date>2008</date>
+                        <title level="a">Interpreting Burrows&apos;s Delta: Geometric and
+                            Probabilistic Foundations</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">23(2)</biblScope>
+                        <biblScope type="pp">131-147</biblScope>
+                    </bibl>
+                    <bibl><author>Burrows, J.F.</author>
+                        <date>1987</date>
+                        <title level="m">Computation into Criticism: a Study of Jane Austen's Novels
+                            and an Experiment in Method</title>
+                        <pubPlace>Oxford</pubPlace>
+                        <publisher>Clarendon Press</publisher></bibl>
+                    <bibl>
+                        <author>Burrows, J.F.</author>
+                        <date>2007</date>
+                        <title level="a">All the Way Through: Testing for Authorship in Different
+                            Frequency Strata</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">22(1)</biblScope>
+                        <biblScope type="pp">27-48</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Burrows, J.F.</author>
+                        <date>2002</date>
+                        <title level="a">The Englishing of Juvenal: Computational Stylistics and
+                            Translated Texts</title>
+                        <title level="j">Style</title>
+                        <biblScope type="issue">36</biblScope>
+                        <biblScope type="pp">677-99</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Burrows, J.F.</author>
+                        <date>2002a</date>
+                        <title level="a">Delta: A Measure of Stylistic Difference and a Guide to
+                            Likely Authorship</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">17</biblScope>
+                        <biblScope type="pp">267-287</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.L.</author>
+                        <date>2003</date>
+                        <title level="a">Frequent Collocations and Authorial Style</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">18</biblScope>
+                        <biblScope type="pp">261-286</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.L.</author>
+                        <date>2004</date>
+                        <title level="a">Testing Burrows&apos;s Delta</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">19</biblScope>
+                        <biblScope type="pp">453-475</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.L.</author>
+                        <date>2004a</date>
+                        <title level="a">Delta Prime?</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">19</biblScope>
+                        <biblScope type="pp">477-495</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.L.</author>
+                        <date>2007</date>
+                        <title level="a">Corpus Stylistics, Stylometry, and the Styles of Henry
+                            James</title>
+                        <title level="j">Style</title>
+                        <biblScope type="issue">41(2)</biblScope>
+                        <biblScope type="pp">174-203</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Rybicki, J.</author>
+                        <date>2009</date>
+                        <title level="a">Translation and Delta Revisited: When We Read Translations,
+                            Is It the Author or the Translator that We Really Read?</title>
+                        <name type="venue">College Park</name>
+                        <title level="m" type="proceedings">Digital Humanities</title>
+                        <date type="conference">2009</date>
+                    </bibl>
+                    <bibl>
+                        <author>Rybicki, J.</author>
+                        <date>2009a</date>
+                        <title level="a">Liczenie krasnoludków. Trochę inaczej o polskich
+                            przekładach trylogii Tolkiena</title>
+                        <name type="venue">Warszawa</name>
+                        <title level="m" type="proceedings">Po co ludziom krasnoludki?</title>
+                        <date type="conference">2009</date>
+                    </bibl>
+                    <bibl>
+                        <title level="m">Shakespeare, Computers, and the Mystery of
+                            Authorship</title>
+                        <editor>Craig, H.</editor>
+                        <editor>Kinney, A.F.</editor>
+                       
+                        <date>2009</date>
+                        <pubPlace>Cambridge</pubPlace>
+                        <publisher>Cambridge University Press</publisher>
+                    </bibl>
+                    <bibl>
+                        <author> Dalen-Oskam, K. van</author>
+                        <author>Zundert, J. van</author>
+                        <date>2007</date>
+                        <title level="a">Delta for Middle Dutch–Author and Copyist Distinction in
+                            Walewein</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">22</biblScope>
+                        <biblScope type="pp">345-362</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Eder, M.</author>
+                        <author>Rybicki, J.</author>
+                        <date>2009</date>
+                        <title level="a">PCA, Delta, JGAAP and Polish Poetry of the 16th and the
+                            17th Centuries: Who Wrote the Dirty Stuff?</title>
+                        <name type="venue">College Park</name>
+                        <title level="m" type="proceedings">Digital Humanities</title>
+                        <date type="conference">2009</date>
+                    </bibl>
+                    <bibl>
+                        <author>Garcìa, A.M.</author>
+                        <author>Martìn, J.C.</author>
+                        <date>2007</date>
+                        <title level="a">Function Words in Authorship Attribution Studies</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">22</biblScope>
+                        <biblScope type="pp">49-66</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Jockers, M.L.</author>
+                        <author>Witten, D.M.</author>
+                        <author>Criddle, C.S.</author>
+                        <date>2008</date>
+                        <title level="a">Reassessing Authorship in the Book of Mormon Using Delta
+                            and Nearest Shrunken Centroid Classification</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">22</biblScope>
+                        <biblScope type="pp">465-491</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Mosteller, F.</author>
+                        <author>Wallace, D.L.</author>
+                        <date>1964</date>
+                        <title level="m">Inference and Disputed Authorship: The Federalist</title>
+                        <note>Reprinted with a new introduction by John Nerbonne</note>
+                        <publisher>CSLI Publications</publisher>
+                        <date>2007</date>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

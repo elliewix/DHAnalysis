@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-691">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Knowledge and Conservation - Creating the Digital Library of New Hispanic
+                    Thought</title>
+                <author>
+                    <name>Priani, Ernesto</name>
+                    <affiliation><orgName>Universidad Nacional Autónoma de México - UNAM</orgName>,
+                            <country>Mexico</country></affiliation>
+                    <email>epriani@gmail.com</email>
+                </author>
+                <author>
+                    <name>Galina, Isabel</name>
+                    <affiliation><orgName>Universidad Nacional Autónoma de México - UNAM</orgName>,
+                            <country>Mexico</country></affiliation>
+                    <email>igalina@unam.mx</email>
+                </author>
+                <author>
+                    <name>Martínez, Alí</name>
+                    <affiliation><orgName>Universidad Nacional Autónoma de México - UNAM</orgName>,
+                            <country>Mexico</country></affiliation>
+                </author>
+                <author>
+                    <name>Chávez, Guillermo</name>
+                    <affiliation><orgName>Universidad Nacional Autónoma de México - UNAM</orgName>,
+                            <country>Mexico</country></affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-09</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>This paper presents the Digital Library of New Hispanic Thought (Biblioteca Digital
+                del Pensamiento Novohispano). In Mexico, during the seventeenth century, two comets
+                were observed, leading to the publication of various texts on the meaning of this
+                astrological phenomenon (Trabulse 1994a). During this period relatively few books
+                were published due to high costs, the required approval of the Inquisition for
+                publication and the lack of potential buyers. This proliferation of publications on
+                the subject can be viewed as an indication of the importance of these events for the
+                Catholic Church, the colonial government and the intellectuals of the period
+                (Trabulse 1994b). The Heavens were, in Spanish colonial Mexico, a scientific,
+                religious, social, political and ideological battleground (Moreno 1998). </p>
+            <p> To this date most digitization projects for New Hispanic publications, namely Google
+                Books and Biblioteca Virtual Cervantes, have focused primarily on access and
+                preservation and although useful, do not constitute digital scholarly editions. The
+                original aim of this project was to provide the basis for a critical digital edition
+                through collaborative commentary of digital diplomatic transcriptions. The process
+                however, in particular during the migration of our tailor made DTD to using TEI,
+                also served as a research tool which enabled us to develop a conceptual framework to
+                formulate further research on these texts. </p>
+            <p>This is the first project from our university to use XML and TEI. </p>
+            <div>
+                <head>From single publication to digital library</head>
+                <p>The original aim of the project was to make available in digital format the first
+                    book by Fray Diego Rodríguez, published in 1652. However, this idea was quickly
+                    superseded as we realized that, taking into consideration the relatively large
+                    number of books on comets and astrology published in this period, it was more
+                    desirable to present all texts as a corpus. We therefore decided to focus on the
+                    common theme of astrology/astronomy with the main objective of not only
+                    gathering and creating a corpora and providing access but also developing and
+                    publishing a digital critical edition with tools to aid scholars in their
+                    research. The outcome is the publication of all known texts of the period, eight
+                    in total.<note>See References.</note> With the exception of one, none of these
+                    texts has ever been reedited. </p>
+                <p>Up to now, due to the fact that the ideas contained within these texts were no
+                    longer of any scientific value, the text itself has not been considered
+                    particularly important. Moreover, of the few studies that exist on these
+                    publications, the tendency is to view them as general testimonies rather than
+                    concentrating on the texts themselves (Cf. Navarro, 1959 and Cullen, 1984). This
+                    new edition of the texts in digital format gave us the opportunity to examine
+                    the text in detail and reconsider previous interpretations.</p>
+            </div>
+            <div>
+                <head>Textual processing</head>
+                <div>
+                    <head>Digitization of texts</head>
+                    <p>The eight texts were transcribed into plain text digital format and
+                        diplomatic transcriptions were produced. The only text that had been
+                        reedited previously had been updated for spelling and grammar as well as
+                        correcting original errors, in order to make it more readable for a modern,
+                        non-academic audience (Cf. Navarro 1959 and Cullen 1984). Other editions had
+                        been facsimiles (Trabulse 2001). As the BDPN is aimed mainly at specialists
+                        and we wished to both preserve the texts as faithfully as possible and to
+                        provide analytical tools, diplomatic transcriptions were considered the most
+                        adequate. </p>
+                </div>
+                <div>
+                    <head>Creating digital texts - DTD</head>
+                    <p>The texts were then marked up in XML. We wished to approach the text with no
+                        preexisting theory or structure –and as a part of pedagogical approach to
+                        the use of XML as a research tool-, allowing the text to speak for itself.
+                        In order to do this we set about producing categories as the text was
+                        analysed. These categories were then converted into tags which eventually
+                        formed the DTD for the XML mark up. The objective of this was that the
+                        analysis of the text for creating the DTD was in itself a critical analysis.
+                        Once our own DTD had been developed, we then began the process to migrate to
+                        TEI. In order to do so we sorted through our categories and found
+                        equivalents. This process helped us define a new conceptual framework for
+                        studying the texts. </p>
+                </div>
+            </div>
+            <div>
+                <head>Digital Library Tools</head>
+                <p>The main objectives of the BDPN web interface<note>Biblioteca Digital del
+                        Pensamiento Novohispano (<ref type="external"
+                            target="http://www.dbpn.unam.mx">www.dbpn.unam.mx</ref>)</note> were two
+                    fold: to present the marked up XML texts as a new digital edition and to offer
+                    tools to continue to carry out analytical work. Currently the system allows the
+                    user to view the published texts and consult them through indexes which are
+                    automatically generated from the XML tags (<ref type="internal" cRef="fig1">see
+                        Fig.1</ref>). An advanced search function allows the user to search
+                    specifically in over one hundred tags (<ref type="internal" cRef="fig2">see
+                        Fig.2</ref>) <figure xml:id="fig1">
+                        <head>Fig. 1 Index search interface</head>
+                        <graphic url="691_Fig1.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig2">
+                        <head>Fig. 2 Specific tag search interface</head>
+                        <graphic url="691_Fig2.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>Additionally the system includes expert commentary on the text (<ref
+                        type="internal" cRef="fig3">see Fig.3</ref>). Specialists in the subject may
+                    obtain a username and password that allows them to comment on the texts and
+                    these appear as part of the critical edition. This provides the framework for
+                    future national and international collaboration on these particular texts. The
+                    project is not conceived as a closed edition and it will hopefully continue to
+                    be expanded to permit new enquiries of research to be developed. <figure
+                        xml:id="fig3">
+                        <head>Fig. 3 Screenshot of expert commentary</head>
+                        <graphic url="691_Fig3.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+            </div>
+            <div>
+                <head>Discussion and Conclusions</head>
+                <div>
+                    <head>DTD categories to TEI</head>
+                    <p>The original DTD was used to identify all possible elements that could be of
+                        interest to the study; from classical mythology and Christian metaphysics to
+                        geographic and geospatial indicators. Almost one hundred categories were
+                        identified. Once the text was marked up using our DTD we then migrated to
+                        TEI Lite. In order to do so we needed to find equivalents for our elements.
+                        This migration process obliged us to refine our categories and interestingly
+                        to simplify our analytic framework. As we started using common TEI tags such
+                        as date, place, name, with the type attribute, we realized that we could
+                        eliminate many of our tailor made categories as they were redundant or too
+                        specific. </p>
+                    <p>This process helped us to identify the truly relevant categories for these
+                        texts. For example, source (citation, commentary, authors), geographical and
+                        geospatial terms, diseases associated with comets and old Spanish terms.
+                        Significantly, the migration to TEI allowed us to identify all the comets
+                        mentioned in the corpus using the element attribution date. Now that we have
+                        identified the thematic structure of theses texts using these categories, we
+                        now know that we wish to focus our research on astrological themes used,
+                        diseases commonly associated with comets, geographical areas affected by
+                        astrological predictions and the type of Spanish used in the period. </p>
+                </div>
+                <div>
+                    <head>Documentation and technical development</head>
+                    <p>A key issue in the development of this project was to produce enough
+                        documentation so that this can survive as an open ended project, allowing
+                        new texts to be incorporated when and if they are discovered. It is known
+                        many Humanities projects do not develop adequate documentation that allows
+                        text files to be reused (Warwick, et al. 2009). </p>
+                    <p>Our experience shows that creating adequate documentation is extremely
+                        difficult. One of the main problems was the frequent changes in the tags. As
+                        the text was analysed and marked up, this tended to produce new
+                        requirements. It proved difficult to maintain the documentation up to date
+                        in order to describe and explain all the considerations and changes. This is
+                        a very time consuming process. It is difficult to anticipate these changes
+                        and to contemplate them adequately in the project timeline. </p>
+                </div>
+            </div>
+            <div>
+                <head>Conclusion and future work</head>
+                <p>The work done thus far has initially helped us to view all these texts as a
+                    network. This had not been done previously. Additionally in order to develop the
+                    tags we approached the texts with no preconceived structure and this has allowed
+                    completely new concepts to emerge from the texts. The move to TEI helped us to
+                    identify with precision the framework with which to approach further research
+                    into the text and produce a new reading of this corpus. </p>
+                <p> In the future we hope to incorporate the facsimiles as images and mark them up
+                    so that specific parts of the image can be associated with the textual
+                    transcription. </p>
+                <p>We also hope to generate international interest in these documents that up to now
+                    have been hidden in specialized libraries, mainly in Mexico. There is currently
+                    little critical digital content in Spanish in general and of this period in
+                    particular. We aim ultimately to generate new research on the subject and we
+                    believe that this tool can contribute to the study of New Hispanic thought.
+                    Additionally we aim to generate research and publications that also reflect on
+                    the experience of producing pre-modern electronic textual editions. </p>
+            </div>
+            <div>
+                <head>Annex 1- Digitized works</head>
+                <listBibl>
+                    <bibl><author>Escobar Salemerón y Castro, José de</author>
+                        <date>1681</date>
+                        <title level="m">Discurso Cometológico y relación del nuevo cometa</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher></bibl>
+                    <bibl><author>Evelino, Gaspar Juan</author>
+                        <date>1682</date>
+                        <title level="m">Especulación astrologica y physica de la naturaleza de los
+                            cometas, y juizio del que este año de 1682 se ve por todo el
+                            mundo</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher>
+                    </bibl>
+                    <bibl>
+                        <author>Kino, Eusebio Francisco</author><date>1681</date>
+                        <title level="m">Exposicion astronomica de el cometa</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Francisco Rodríguez Luprecio</publisher></bibl>
+                    <bibl><author>López Bonilla, Gabriel</author><date>1675</date>
+                        <title level="m">Discurso y relación Cometographica</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher></bibl>
+                    <bibl><author>Rodríguez, Diego</author>
+                        <date>1652</date>
+                        <title level="m">Discurso etheorologico del nuevo cometa visto en aqueste
+                            hemisferio mexicano y generalmente en todo el mundo</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher></bibl>
+                    <bibl><author>Rodríguez, Diego</author>
+                        <title level="u">Modo de calcular qualquier eclipse de Sol y Luna según las
+                            tablas arriba puestas del mobimiento de Sol y Luna segun
+                            Tychon</title><edition>Manuscrito inédito</edition></bibl>
+                    <bibl><author>Rodríguez, Diego</author><title level="u">Tratado General de
+                            Reloxes de Sol</title><edition>Manuscrito inédito</edition></bibl>
+                    <bibl><author>Ruiz, Juan</author><date>1653</date>
+                        <title level="m">Discurso hecho sobre la significación de impresiones
+                            meteorológicas que se vieron el año pasado de 1652</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>imprenta de Juan Ruiz</publisher></bibl>
+                    <bibl>
+                        <author>Sigüenza y Góngora, Carlos de</author>
+                        <date>1690</date>
+                        <title level="m">Libra astronómica y philosophica</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher>
+                    </bibl>
+                </listBibl>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl><author>Carlos de Sigüenza y Góngora</author>
+                        <date>1984</date>
+                        <title level="m">Seis obras</title>
+                        <editor>Cullen Bryant, William</editor>
+                        <pubPlace>Caracas</pubPlace>
+                        <publisher>Biblioteca Ayacucho</publisher></bibl>
+                    <bibl><author>Moreno Corral, Arturo</author>
+                        <date>1998</date>
+                        <title level="m">Historia de la astronomía en México</title>
+                        <pubPlace>Mexico</pubPlace>
+                        <publisher>FCE</publisher></bibl>
+                    <bibl><author>Trabulse, Elías</author>
+                        <date>1994a</date>
+                        <title level="m">Historia de la ciencia en México</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>FCE</publisher></bibl>
+                    <bibl><author>Trabulse, Elías</author>
+                        <date>1994b</date>
+                        <title level="m">Los orígenes de la ciencia moderna en México.
+                            1630-1680</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>FCE</publisher></bibl>
+                    <bibl><author>Carlos de Sigüenza y Góngora</author>
+                        <date>2001</date>
+                        <title level="m">Libra astronómica y philosophica</title><editor>Trabulse,
+                            Elías</editor>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Sociedad Mexicana de Bibliófilos</publisher></bibl>
+                    <bibl><author>Carlos de Sigüenza y Góngora</author><date>1959</date>
+                        <title level="m">Libra astronómica y philosophica</title><editor>Navarro,
+                            Bernave</editor>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Universidad Nacional Autónoma de México</publisher></bibl>
+                    <bibl><author>Warwick, C.</author>
+                        <author>Galina, I.</author>
+                        <author>Rimmer, J.</author>
+                        <author>Terras, M.</author>
+                        <author>Blandford, A.</author>
+                        <author>Gow, J.</author>
+                        <author>Buchanan, G.</author>
+                        <date>2009</date>
+                        <title level="a">Documentation and the users of digital resources in the
+                            humanities</title>
+                        <title level="j">Journal of Documentation</title>
+                        <biblScope type="issue">65(1)</biblScope>
+                        <biblScope type="pp">33-57</biblScope></bibl>
+                    <!--<bibl><author>Escobar Salemerón y Castro, José de</author>
+                        <date>1681</date>
+                        <title level="m">Discurso Cometológico y relación del nuevo cometa</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher></bibl>
+                    <bibl><author>Evelino, Gaspar Juan</author>
+                        <date>1682</date>
+                        <title level="m">Especulación astrologica y physica de la naturaleza de los
+                            cometas, y juizio del que este año de 1682 se ve por todo el
+                            mundo</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher>
+                    </bibl>
+                    <bibl>
+                        <author>Kino, Eusebio Francisco</author><date>1681</date>
+                        <title level="m">Exposicion astronomica de el cometa</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Francisco Rodríguez Luprecio</publisher></bibl>
+                    <bibl><author>López Bonilla, Gabriel</author><date>1675</date>
+                        <title level="m">Discurso y relación Cometographica</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher></bibl>
+                    <bibl><author>Rodríguez, Diego</author>
+                        <date>1652</date>
+                        <title level="m">Discurso etheorologico del nuevo cometa visto en aqueste
+                            hemisferio mexicano y generalmente en todo el mundo</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher></bibl>
+                    <bibl><author>Rodríguez, Diego</author>
+                        <title level="u">Modo de calcular qualquier eclipse de Sol y Luna según las
+                            tablas arriba puestas del mobimiento de Sol y Luna segun
+                            Tychon</title><edition>Manuscrito inédito</edition></bibl>
+                    <bibl><author>Rodríguez, Diego</author><title level="u">Tratado General de
+                            Reloxes de Sol</title><edition>Manuscrito inédito</edition></bibl>
+                    <bibl><author>Ruiz, Juan</author><date>1653</date>
+                        <title level="m">Discurso hecho sobre la significación de impresiones
+                            meteorológicas que se vieron el año pasado de 1652</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>imprenta de Juan Ruiz</publisher></bibl>
+                    <bibl>
+                        <author>Sigüenza y Góngora, Carlos de</author>
+                        <date>1690</date>
+                        <title level="m">Libra astronómica y philosophica</title>
+                        <pubPlace>México</pubPlace>
+                        <publisher>Viuda de Bernardo Calderón</publisher>
+                    </bibl>-->
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

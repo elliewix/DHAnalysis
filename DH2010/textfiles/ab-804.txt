@@ -1,0 +1,198 @@
+The 
+École nationale des chartes
+ publishes a variety of
+                electronic corpora,
+http://elec.enc.sorbonne.fr/
+ focused on historical sources
+                (medieval, but also, modern and contemporary). A dictionary,
+http://ducange.enc.sorbonne.fr/
+ a collection of
+                        acts,
+http://elec.enc.sorbonne.fr/cartulaires/
+ or a
+                        manuscript
+http://elec.enc.sorbonne.fr/sanctoral/
+ are very different
+                types of documents, each requiring different structures and interfaces. A narrative
+                manuscript needs a table of contents, a dictionary, fast access to headwords, and
+                acts, the ability to sort by dates. Each editorial project should allow
+                customization, but efficient development requires that the tools and corpora are as
+                normalized as possible. New needs emerge, such as natural language processing
+                research, requiring large corpora with normalized metadata sets and word tagging.
+                For several months we have been working on a platform to address these needs: 
+Diple
+ is a collection of tools to organize modular
+                production, publication, and searching of electronic corpora.
+
+            
+
+                Modular schemas
+                
+The TEI guidelines (500 XML elements, 1500 pages of documentation) allow endless
+                    variations in encoding, even for identical objects. For example, 
+italic
+ in our corpora has been encoded with different
+                    combinations of <(hi|emph)
+                    rend="(italique|italic|ital.|i|itlaic|...)">. After several years
+                    of development, with different encoders, each electronic edition becomes an
+                    independent software, with its own encoding, mistakes, workarounds, with also
+                    different technologies for publication or fulltext searching.
+
+                
+Diple
+ starts with housekeeping. First, for all our tagged
+                    texts, we wrote a precise 
+document type definition
+ (in
+                    Relax-NG syntax) in order to define three main and shared schemas : 
+file metadatas (<teiHeader>)
+general text (blocks and inlines)
+structure for a specific type of text (ex: acts and charters,
+                            dictionaries)
+
+                
+The normalization of the corpora is a more sustainable investment than new
+                    software. These shared schemas are extremely helpful for normalizing and
+                    validating XML instances, and therefore allow us to take advantage of earlier
+                    TEI editions. Of course, the 
+Diple
+ TEI schema is modular,
+                    allowing customization for each editorial project.
+For example, 
+http://elec.enc.sorbonne.fr/cartulairesIdF/src/schema.htm
+
+                    An editor can then focus on the specificities of each edition. Are named
+                    entities sufficiently tagged to generate automatic indexes? Are the sentences
+                    chunked, the words lemmatized?
+
+                
+Moreover, this work of normalization of our XML corpora is a small price to pay
+                    to factorize our code, for instance to create a standard XSLT engine: the screen
+                    transformation of a new corpus conforming to those schemas is done by this
+                    engine, increasing our publication productivity. In the end, the XSLT of a
+                    specific edition is short, focusing on the very specific aspects of the corpus
+                    (its custom schema) related to a research project, the main part of the
+                    publication job being done by the 
+Diple
+ XSLT engine. The
+                    same logic applied for presentation CSS.
+
+            
+
+            
+
+                Shared interface components, documents driven
+                
+A publication system usually allows templating and plugins. A good software
+                    architecture should be conceived in this way, but scholarly editions don't
+                    function like a CMS. Templating systems are usually designed to effect easy
+                    change of colours, to deliver the same feature under different designs. In a
+                    scholarly collection, books could share a cover, but follow very different
+                    structures. Rather than constrain all corpora to a single template, the 
+Diple
+ system provides different components, allowing an
+                    electronic corpus editor to compose the interface best suited to his text.
+                    Headers or footers are easy to share, but beyond that, one project might require
+                    a fulltext search box, another a database query, another a sidebar table of
+                    contents. Design snippets or plugins are conceived of as portal bricks, easy to
+                    compose in a server page (PHP), and are kept as simple and light as possible. If
+                    a local variable, function or object could have a general interest, it should be
+                    shared.
+
+            
+
+            
+
+                Text engines for research, retrieving and concordances
+                
+Navigation, tables and indexes, should answer most of the user's needs; but a
+                    search box is also an important navigation tool. 
+Diple
+
+                    ensures a canonical electronic publication, with persistent addresses, so that
+                    different text engines can be plugged around the edition. Corpora may require
+                    different approaches. A collection of items, like a dictionary or cartularies,
+                    needs at first a retrieving engine to get an item conveniently, by a keyword in
+                    full-text, but also dates, headwords and other metadatas. There are also texts
+                    for which no divisions are relevant; a concordance report is much more
+                    informative, displaying all occurrences in context. Different tools offer
+                    different views, documented XML allows us to generate what an engine likes. We
+                    have successfully used MySQL full-text indexes
+http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html
+
+                    for navigation interfaces, PhiloLogic
+http://philologic.uchicago.edu/
+ for concordances,
+                            Lucene
+http://lucene.apache.org/java/
+ is very efficient to
+                    retrieve items, and we learned to use IMS Corpus Workbench (CWB)
+http://www.ims.uni-stuttgart.de/projekte/CorpusWorkbench/
+ for
+                    future lemmatized corpora. But sometimes we also simply use mixed scripts
+                    (shell, XSLT, SAX…) to run a specific experiment on a word or a semantic
+                    field.
+
+            
+
+            
+
+                Conclusion
+                
+Diple
+ grows and adapts with each new corpus, rapidly
+                    incorporating other corpora, an idea worth generalizing. All our code will soon
+                    be released under a free software license. Anyone can download, read, and try
+                        
+Diple
+. We don’t claim it will work for all your TEI
+                    documents, but if they conform to the schemas, you will quickly get nice results
+                    on the screen.
+
+            
+
+        
+        
+
+                
+Bourgain, Pascale
+Vieillard, Françoise (coord.)
+Conseils pour l'édition des textes médiévaux
+Fascicule III. Textes littéraires
+Éd. du CTHS, École des chartes
+Paris
+2002
+Guyotjeannin, Olivier
+Vieillard, Françoise (coord.)
+Conseils pour l'édition des textes médiévaux
+Fascicule I
+Conseils généraux
+Éd. du CTHS, École des chartes
+Paris
+2001
+Olivier Guyotjeannin (coord.)
+Conseils pour l'édition des textes médiévaux
+Fascicule II
+Actes et documents d'archives
+Éd. du CTHS, École des chartes
+Paris
+2001
+McCandless, Michael
+Hatcher, Erik
+Gospodnetić, Otis
+Lucene in action
+Manning Publications Co.
+2010
+2e
+                        ed.
+TEI Consortium
+TEI P5: Guidelines for Electronic Text Encoding and
+                            Interchange
+Wooldridge, Russon
+Les Débuts de la lexicographie française
+2e éd.
+EDICTA
+Toronto
+1997
+
+        

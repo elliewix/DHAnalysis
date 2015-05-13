@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-655">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>The Digital Ark: From Taxonomy to Ontology in 17th-century Collections of
+                    Curiosities</title>
+                <author>
+                    <name>Brent Nelson</name>
+                    <affiliation><orgName>University of Saskatchewan</orgName><reg><country>Canada</country></reg></affiliation>
+                    <email>brent.nelson@usask.ca</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2009-04-30</date>
+                <name>JL</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <div>
+                <p>When the famous seventeenth-century gardener John Tradescant named his home, with
+                    its collection of rarities and curiosities, “the Ark,” he was expressing his
+                    desire to compile a microcosm of a wide world of variety beyond common
+                    experience. Such collections represented the sum of early modern European
+                    experience of the world at a time of rapid scientific and geographical expansion
+                    and reflected fundamental epistemological shifts in attitudes toward curiosity,
+                    wonder, and credulity on the cusp of the modern age. The rapidly expanding world
+                    of exploration, colonization, and commerce in the seventeenth century
+                    proliferated with strange and bizarre creatures and artifacts that challenged
+                    the traditional limits of knowledge. To meet the need for a complete and
+                    accessible record of early modern collections, 'The Digital "Ark"' will
+                    accumulate a database of artifacts and natural specimens as represented by
+                    documentary records of early modern collections (inventories, diaries,
+                    correspondence, etc.), contemporary drawings and engravings, as well as digital
+                    images and curatorial records of extant remnants of these collections. It will
+                    be an extensive record of all known collections of rarities and curiosities in
+                    England and Scotland from 1580-1700 for which documentary evidence survives,
+                    comprising up to 10,000 specimens and artifacts. This information, both textual
+                    and visual, will be delivered in an open-access Web-based virtual museum that
+                    will collect and display artifacts and natural specimens drawing from a fully
+                    searchable database that will record and classify these items and their
+                    descriptions in some two dozen fields of information. </p>
+                <p>This poster will briefly introduce the project and then focus on the challenges
+                    this data poses for a computational process that involves naming data types and
+                    defining relationships between them. The principle challenge comes from two
+                    unique aspects of the project: <xmt:oList rend="arabic">
+                        <item>The need to accommodate in the user interface a wide range of source
+                            genres in a rationalized and consistent form, while representing the
+                            distinct epistemological modes of these diverse forms of
+                            representation;</item>
+                        <item>The need to respect and reflect the way the data was viewed and
+                            understood in this age of transition between humanistic and empirical
+                            ways of knowing as we interpret the data set and design a database
+                            structure to encode, store, and represent this data in all of its
+                            complex relationships.</item>
+                    </xmt:oList>
+                </p>
+                <p> The poster will have four sections: <xmt:oList rend="arabic">
+                        <item>An introduction providing a brief paragraph on the cultural background
+                            illustrated with a bulleted set of statistics and a 17th-century
+                            engraving of a typical cabinet of curiosities.</item>
+                        <item> A chart depicting the diverse data types that provide the content of
+                            the digital ark, including: letters; travel accounts; diaries,
+                            inventories and catalogues; discursive prose; poetry; contemporary
+                            engravings; drawings and paintings; modern photographs of extant
+                            objects; and secondary scholarly sources) along with the characteristics
+                            of these genres that complicates the process of defining data
+                            structures. Page facsimiles will illustrate these data types.</item>
+                        <item>A chart depicting the differences between a taxonomic and an
+                            ontological view of data. In brief, the taxonomic approach involves
+                            entry into a new body of data and the naming and categorizing process
+                            that occurs as one interprets and makes sense of this new data, while
+                            the ontological approach involves fixing categories and properties in a
+                            determined order of being. The seventeenth century represented a
+                            significant shift from ontology, where the nature of existence was
+                            received and commonly understood by all, to an age of taxonomy, where
+                            the new and strange demanded an open-ended reconsideration of the world
+                            of existence and a continual configuration of knowledge. In the computer
+                            age, we are experiencing a similar tension in the desire to explore and
+                            discover relationships between data, while at the same time thinking of
+                            data representation in terms of ontologies. This chart will represent
+                            this tension both in the context of the epistemology of the early modern
+                            collections and the context of computer processes that might be employed
+                            to represent them.</item>
+                        <item>The conclusion will outline two steps that will be taken to address
+                            these needs: <xmt:oList rend="lower_case">
+                                <item>The use of qualitative tagging as a means to interrogating the
+                                    source documents to find what is there, before determining the
+                                    tag set that will inform the final data structure, that is, to
+                                    infer a taxonomy rather than simply impose an assumed
+                                    ontology.</item>
+                                <item>The use of a combination of the TEI structure to represent
+                                    text-based sources with modified object-based ontologies to
+                                    represent the objects as depicted in these textual sources and
+                                    also as depicted in graphical sources, both contemporary
+                                    engravings and drawings, and modern photographs of extant
+                                    objects.</item>
+                            </xmt:oList>
+                        </item>
+                    </xmt:oList>
+                </p>
+            </div>
+            <div>
+                <p><hi rend="bold">Acknowledgments</hi><lb/>This project is funded by the Social
+                    Sciences and Humanities Council of Canada.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl><author>Bradley, John</author><title level="a">Documents and Data:
+                            Modelling Materials for Humanities Research in XML and Relational
+                            Databases</title>
+                        <title level="j">Literary and Linguistic Computing: Journal of the
+                            Association for Literary and Linguistic Computing</title>
+                        <biblScope type="issue">20.1</biblScope>
+                        <date>2005</date>
+                        <biblScope type="pp">133-51</biblScope>
+                    </bibl>
+                    <bibl><author>Corns, Thomas N.</author>
+                        <title level="a">The Early Modern Search Engine: Indices, Title Pages,
+                            Marginalia and Contents</title>
+                        <title level="m">The Renaissance Computer: Knowledge Technology in the First
+                            Age of Print</title><editor>Neil Rhodes</editor><editor>Jonathan
+                            Sawday</editor>
+                        <pubPlace>London,
+                            England</pubPlace><publisher>Routledge</publisher><date>2000</date>
+                        <biblScope type="pp">95-105</biblScope></bibl>
+                    <bibl><author>Daston, Lorraine</author>
+                        <date>2007</date><title level="m">Objectivity</title><editor>Peter
+                            Galison</editor><pubPlace>New York</pubPlace><publisher>Zone
+                            Books</publisher></bibl>
+                    <bibl><author>Daston, Lorraine</author><date>1989</date><title level="a">The
+                            Museum: Its Classical Etymology and Renaissance Genealogy</title>
+                        <title level="j">Journal of the History of Collections</title><biblScope
+                            type="issue">1.1</biblScope>
+                        <biblScope type="pp">59-78</biblScope>
+                    </bibl>
+                    <bibl><author>Gilbert, Neal Ward</author>
+                        <date>1960</date><title level="m">Renaissance Concepts of
+                            Method</title><pubPlace>New York</pubPlace>
+                        <publisher>Columbia University Press</publisher></bibl>
+                    <bibl><author>Grindle, Nick</author><title level="a">'No Other Sign Or Note than
+                            the very Order’: Francis Willughby, John Ray and the Importance of
+                            Collecting Pictures</title>
+                        <title level="j">Journal of the History of Collections</title>
+                        <biblScope type="issue">17</biblScope>
+                        <date>2005</date>
+                        <biblScope type="pp">15-22</biblScope></bibl>
+                    <bibl><author>Harmon, Margaret</author>
+                        <title level="m">Stretching Man’s Mind: A History of Data Processing</title>
+                        <pubPlace>New
+                            York</pubPlace><publisher>Mason/Charter</publisher><date>1975</date></bibl>
+                    <bibl><author>Leith, Philip</author>
+                        <title level="a">Postmedieval Information Processing and Contemporary
+                            Computer Science</title>
+                        <title level="m">Media, Consciousness, and Culture: Explorations of Walter
+                            Ong’s Thought</title><editor>Bruce E. Gronbeck</editor><editor>Thomas J.
+                            Farrell</editor><editor>Paul A. Soukup</editor><pubPlace>Newbury Park,
+                            CA</pubPlace><publisher>Sage
+                            Publications</publisher><date>1991</date><biblScope type="pp"
+                            >160-176</biblScope></bibl>
+                    <bibl><author>Liu, Yin</author><author>Jeff Smith</author><title level="a">A
+                            Relational Database Model for Text Encoding</title>
+                        <title level="j">Rept. Digital Studies/Le champ numérique</title><biblScope
+                            type="issue">0.11</biblScope>
+                        <date>2008</date></bibl>
+                    <bibl><author>MacGregor, Arthur</author>
+                        <title level="m">Curiosity and Enlightenment: Collectors and Collections
+                            from the Sixteenth to the Nineteenth Century</title>
+                        <pubPlace>New Haven, CT</pubPlace>
+                        <publisher>Yale University Press</publisher>
+                        <date>c2007</date>
+                    </bibl>
+                    <bibl><author>Marcus, Leah</author>
+                        <title level="a">The Silence of the Archive and the Noise of
+                            Cyberspace</title>
+                        <title level="m">The Renaissance Computer: Knowledge Technology in the First
+                            Age of Print</title><editor>Neil Rhodes</editor><editor>Jonathan
+                            Sawday</editor>
+                        <pubPlace>London,
+                            England</pubPlace><publisher>Routledge</publisher><date>2000</date>
+                        <biblScope type="pp">18-28</biblScope></bibl>
+                    <bibl><author>Obrst, Leo</author><author>Howard Liu</author>
+                        <title level="a">Knowledge Representation, Ontological Engineering, and
+                            Topic Maps</title>
+                        <title level="m">XML Topic Maps: Creating and using Topic Maps for the
+                            Web</title><editor>Sam
+                            Hunting</editor><pubPlace>Boston</pubPlace><publisher>Addison-Wesley</publisher><date>c2003</date>
+                        <biblScope type="pp">103-149</biblScope>
+                    </bibl>
+                    <bibl><author>Sowa, John F.</author>
+                        <title level="m">Knowledge Representation: Logical, Philosophical, and
+                            Computational Foundations</title><pubPlace>Pacific
+                            Grove</pubPlace><publisher>Brooks/Caole</publisher>
+                        <date>2000</date></bibl>
+                    <bibl><author>Stafford, Barbara Maria</author><title level="m">Good Looking:
+                            Essays on the Virtue of Images</title>
+                        <pubPlace>Cambridge, Ma.</pubPlace><publisher>MIT
+                            Press</publisher><date>1996</date></bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

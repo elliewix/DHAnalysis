@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-658">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Teasing Out Authorship and Style with T-tests and Zeta</title>
+                <author>
+                    <name>Hoover, David L.</name>
+                    <affiliation><orgName>New York University</orgName>, <country>USA</country></affiliation>
+                    <email>david.hoover@nyu.edu </email>
+                </author>
+
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2009-04-16</date>
+                <name>NG</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+
+                <p>Most computational stylistics methods were developed for authorship attribution,
+                    but many have also been applied to the study of style. Investigating Wilkie
+                    Collin&apos;s <hi rend="italic">Blind Love</hi> (1890), left unfinished at
+                    his death and completed by Walter Besant from a long synopsis and notes provided
+                    by Collins, requires both authorship attribution and stylistics. External
+                    evidence indicates that Besant took over after chapter 48 (Collins 2003), which
+                    provides an opportunity to test whether Besant was successful in matching
+                    Collins&apos;s style and to investigate the styles of Collins and Besant.
+                    This divided novel also facilitates the comparison of two computational methods:
+                    the T-test and Burrows&apos;s Zeta.</p>
+                <p>The t-test is a well-studied method for determining the probability of a
+                    difference between two groups arising by chance (a classic use in authorship and
+                    stylistics is Burrows 1992.) Here I use t-tests to identify words used very
+                    differently by Collins and Besant. After showing that those word frequencies
+                    accurately identify the change of authorship, I examine the words themselves for
+                    stylistically interesting characteristics.</p>
+                <p>I created a combined word frequency list for four novels by Besant and three by
+                    Collins, then deleted words occurring only once or twice, personal pronouns (too
+                    closely related to the number and gender of characters), all words with more
+                    than 90% of their occurrences in one text (almost exclusively proper names), and
+                    words limited to one author (required for t-testing). I divided the novels into
+                    167 4,000-word sections, and performed t-tests for the remaining 6,600 words
+                    (using a Minitab macro). I cleaned up the results and sorted them on the p value
+                    in Excel (with another macro), and retained only the 1719 words with p &lt;
+                    .05, about 1,000 for Collins and 700 for Besant (see <ptr type="external"
+                        target="https://files.nyu.edu/dh3/public/ClusterAnalysis-PCA-T-testingInMinitab.html"
+                    /> for detailed instructions and the macros).</p>
+                <p>I tested these words on six new texts for each author, a novel and five stories
+                    for Besant and six novels for Collins. Beginning with the 500 most distinctive
+                    words for each author, I deleted a few words that were absent from these texts
+                    and used the remaining 993 words to perform a cluster analysis (Fig. 1). (To
+                    keep the graph readable, I divided the novels into 10,000- word sections,
+                    retaining only half the sections.) Obviously, these marker words are quite
+                    characteristic of the authors.</p>
+                <p>
+                    <figure xml:id="fig1">
+                        <head>Fig. 1. <hi rend="italic">Besant versus Collins: Cluster
+                            Analysis</hi></head>
+                        <graphic url="658_Fig1.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/tif"/>
+                    </figure>
+                </p>
+                <p>When sections of <hi rend="italic">Blind Love</hi> are tested along with the
+                    texts above, the authorship change after chapter forty-eight is starkly apparent
+                    (Fig. 2). This graph is based on the sums of the frequencies of the 500 most
+                    distinctive words for each author in each section. (The texts are divided into
+                    1,000-word sections; only a few sections of the novels are shown; the
+                    frequencies of Collins's marker words are multiplied by -1 for clarity.)
+                    Although Besant was working from extensive notes, his style is distinctly
+                    different. Had we not known which was Besant&apos;s first chapter, these
+                    t-tested marker words would have easily located it.</p>
+                <p>
+                    <figure xml:id="fig2">
+                        <head>Fig. 2. <hi rend="italic">Besant, Collins, Blind Love: T-tested Marker
+                                Words</hi></head>
+                        <graphic url="658_Fig2.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/tif"/>
+                    </figure>
+                </p>
+                <p>Because the styles of Collins and Besant are so distinct, these marker words
+                    should also characterize them. Consider the twenty most distinctive words for
+                    each author:</p>
+
+                <p>Besant: <hi rend="italic">upon</hi>, <hi rend="italic">all</hi>, <hi
+                        rend="italic">but</hi>, <hi rend="italic">then</hi>, <hi rend="italic"
+                        >and</hi>,<hi rend="italic"> not</hi>, <hi rend="italic">or</hi>, <hi
+                        rend="italic">very</hi>, <hi rend="italic">so</hi>, <hi rend="italic"
+                        >because</hi>, <hi rend="italic">great</hi>, <hi rend="italic">thing</hi>,
+                        <hi rend="italic">things</hi>, <hi rend="italic">much</hi>, <hi
+                        rend="italic">every</hi>, <hi rend="italic">there</hi>, <hi rend="italic"
+                        >man</hi>, <hi rend="italic">everything</hi>, <hi rend="italic">is</hi>, <hi
+                        rend="italic">well</hi></p>
+                <p>Collins: <hi rend="italic">answered</hi>, <hi rend="italic">to</hi>, <hi
+                        rend="italic">had</hi>, <hi rend="italic">Mrs</hi>, <hi rend="italic"
+                        >on</hi>, <hi rend="italic">asked</hi>, <hi rend="italic">in</hi>, <hi
+                        rend="italic">Miss</hi>, <hi rend="italic">mind</hi>, <hi rend="italic"
+                        >suggested</hi>, <hi rend="italic">person</hi>, <hi rend="italic"
+                        >resumed</hi>, <hi rend="italic">excuse</hi>, <hi rend="italic">left</hi>,
+                        <hi rend="italic">at</hi>, <hi rend="italic">reminded</hi>, <hi
+                        rend="italic">creature</hi>, <hi rend="italic">inquired</hi>, <hi
+                        rend="italic">reply</hi>, <hi rend="italic">when</hi>
+                </p>
+
+                <p>Obviously, more of Besant&apos;s words are high frequency function words, and
+                    many Collins words are related to speech presentation (<hi rend="italic"
+                        >answered</hi>, <hi rend="italic">asked</hi>, <hi rend="italic"
+                        >inquired</hi>, <hi rend="italic">resumed</hi>, <hi rend="italic"
+                        >suggested</hi>, <hi rend="italic">reply</hi>, and <hi rend="italic"
+                        >reminded</hi>). The presence of <hi rend="italic">added</hi>, <hi
+                        rend="italic">begged</hi>, <hi rend="italic">declared</hi>, <hi
+                        rend="italic">exclaimed</hi>, <hi rend="italic">explained</hi>, <hi
+                        rend="italic">expressed</hi>, <hi rend="italic">muttered</hi>, <hi
+                        rend="italic">rejoined</hi>, and <hi rend="italic">said</hi> as likely
+                    speech markers among the other Collins marker words, but only <hi rend="italic"
+                        >gasped</hi>, <hi rend="italic">groaned</hi>, <hi rend="italic"
+                        >murmured</hi>, <hi rend="italic">replied</hi>, and <hi rend="italic"
+                        >stammered</hi> for Besant, suggests they have different ways of presenting
+                    speech.</p>
+                <p>Sorting all of each author&apos;s marker words alphabetically immediately
+                    reveals word families that each author favors, as <hi rend="italic">thing</hi>,
+                        <hi rend="italic">things</hi>, and <hi rend="italic">everything</hi> among
+                    the twenty most distinctive Besant words already suggests (<hi rend="italic"
+                        >anything</hi> and <hi rend="italic">nothing</hi> are also Besant markers).
+                    His <hi rend="italic">every</hi> and <hi rend="italic">everything</hi> are
+                    joined by <hi rend="italic">everybody</hi> and <hi rend="italic"
+                    >everywhere</hi>; <hi rend="italic">anything</hi> by <hi rend="italic">any</hi>
+                    and <hi rend="italic">anywhere</hi>; <hi rend="italic">nothing</hi> and <hi
+                        rend="italic">not</hi> by <hi rend="italic">never</hi>, <hi rend="italic"
+                        >no</hi>, <hi rend="italic">nobody</hi>, <hi rend="italic">none</hi>, and
+                        <hi rend="italic">nor</hi>; and <hi rend="italic">much</hi> by <hi
+                        rend="italic">more</hi>, <hi rend="italic">moreover</hi>, <hi rend="italic"
+                        >most</hi>, and <hi rend="italic">mostly</hi> among his markers.
+                    Collins&apos;s <hi rend="italic">answered</hi> is joined by <hi
+                        rend="italic">answer</hi>, <hi rend="italic">answering</hi>, and <hi
+                        rend="italic">unanswerable</hi>; and five of his twenty words are joined by
+                    two others: <hi rend="italic">ask</hi>, <hi rend="italic">asked</hi>, <hi
+                        rend="italic">asks</hi>; <hi rend="italic">inquired</hi>, <hi rend="italic"
+                        >inquiries</hi>, <hi rend="italic">inquiry</hi>; <hi rend="italic"
+                        >leave</hi>, <hi rend="italic">leaving</hi>, <hi rend="italic">left</hi>;
+                        <hi rend="italic">person</hi>, <hi rend="italic">personally</hi>, <hi
+                        rend="italic">persons</hi>; <hi rend="italic">suggest</hi>, <hi
+                        rend="italic">suggested</hi>, <hi rend="italic">suggestion</hi>.</p>
+                <p> About 600 of the 1,700 distinctive words form groups favored by one author, but
+                    only about 175 form split groups, many of which fall into intriguing patterns.
+                    Collins uses more contractions, so <hi rend="italic">didn&apos;t</hi>, <hi
+                        rend="italic">doesn&apos;t</hi>, and <hi rend="italic"
+                        >don&apos;t</hi> are Collins words, but <hi rend="italic">did</hi> and
+                        <hi rend="italic">does</hi> are Besant words, and similarly for <hi
+                        rend="italic">must</hi>, <hi rend="italic">need</hi>, <hi rend="italic"
+                        >should</hi>, and <hi rend="italic">would</hi> and their negative
+                    contractions. The singular and possessive forms of <hi rend="italic"
+                        >brother</hi>, <hi rend="italic">friend</hi>, <hi rend="italic">sister</hi>,
+                    and <hi rend="italic">son</hi> are Collins&apos;s words and the plural forms
+                    are Besant&apos;s; the singular vs. plural pattern continues almost without
+                    exception in split noun groups. Verbs in <hi rend="italic">-ing </hi>are Collins
+                    words and 3rd singular present forms Besant&apos;s. Finally, all nineteen
+                    cardinal number marker words are Besant&apos;s, including the numbers <hi
+                        rend="italic">one</hi> to <hi rend="italic">ten</hi> (note that
+                    Besant&apos;s preferred plural nouns often follow numbers). This
+                    extraordinary patterning may not seem particularly surprising, but, so far as I
+                    know, it has never been noticed before, and cries out for investigation.</p>
+                <p>Two problems with t-testing are its privileging of relatively uninteresting
+                    high-frequency words and its inability to cope with words absent from one
+                    author. John Burrows&apos;s Zeta addresses both of these problems (Burrows
+                    2006). (The specific form used here was developed by Hugh Craig (Craig and
+                    Kinney, 2009); for an automated spreadsheet and instructions for performing Zeta
+                    analysis see <ptr type="external"
+                        target="https://files.nyu.edu/dh3/public/ TheZeta&amp;IotaSpreadsheet.html"
+                    />).</p>
+                <p>Zeta&apos;s simple calculation begins with the same novels and the same word
+                    frequency list used for the t-test, except that personal pronouns and words
+                    present in only one author are now included. Zeta is simply the sum of the
+                    proportions of Collins sections in which each word occurs and Besant sections in
+                    which it does not. Here <hi rend="italic">answered</hi>, the most distinctive
+                    Collins word (as in the t-tests), has a Zeta score of 1.8, and is present in 89
+                    of 90 Collins sections and absent from 65 of 77 Besant sections. The most
+                    distinctive Besant word is again <hi rend="italic">upon</hi>, present in all 77
+                    Besant sections and absent from 25 of 90 Collins sections, with a Zeta of 0.28.
+                    Below are the twenty most distinctive Zeta words (those also identified by
+                    t-testing in bold):</p>
+
+                <p>Besant: <hi rend="bolditalic">upon</hi>, <hi rend="italic">fact</hi>, <hi
+                        rend="italic">presently</hi>, <hi rend="italic">therefore</hi>, <hi
+                        rend="italic">however</hi>, <hi rend="bolditalic">everything</hi>, <hi
+                        rend="italic">real</hi>, <hi rend="italic">whole</hi>, <hi rend="italic"
+                        >cannot</hi>, <hi rend="italic">though</hi>, <hi rend="italic">rich</hi>,
+                        <hi rend="italic">none</hi>, <hi rend="italic">thousand</hi>, <hi
+                        rend="italic">except</hi>, <hi rend="italic">fifty</hi>, <hi rend="italic"
+                        >ago</hi>, <hi rend="bolditalic">because</hi>, <hi rend="italic"
+                    >papers</hi>, <hi rend="italic">also</hi>, <hi rend="italic">twenty</hi></p>
+                <p>Collins: <hi rend="bolditalic">answered</hi>, <hi rend="bolditalic">Mrs</hi>, <hi
+                        rend="bolditalic">Miss</hi>, <hi rend="bolditalic">excuse</hi>, <hi
+                        rend="bolditalic">suggested</hi>, <hi rend="bolditalic">resumed</hi>, <hi
+                        rend="bolditalic">reminded</hi>, <hi rend="italic">doctor</hi>, <hi
+                        rend="bolditalic">inquired</hi>, <hi rend="bolditalic">creature</hi>, <hi
+                        rend="italic">notice</hi>, <hi rend="italic">circumstances</hi>, <hi
+                        rend="italic">tone</hi>, <hi rend="italic">idea</hi>, <hi rend="italic"
+                        >temper</hi>, <hi rend="italic">object</hi>, <hi rend="italic">sense</hi>,
+                        <hi rend="italic">feeling</hi>, <hi rend="italic">governess</hi>, <hi
+                        rend="italic">impression</hi></p>
+                <p>As noted above, Zeta marker words are less frequent than t-tested words. Only two
+                    Zeta marker words rank in the top 100 in the novels, compared to 20 of the
+                    t-tested words. About 3/4 of the 1000 t-tested marker words are also among the
+                    1000 Zeta markers. Among the 2000 Zeta words are 275 words occurring in only one
+                    author; 59 form new single-author families, 27 join existing single-author
+                    families, and only 21 form split families.</p>
+                <p>The Zeta words also effectively detect the change of authorship in <hi
+                        rend="italic">Blind Love</hi>. In the scatter graph in Fig. 3, the axes show
+                    the percentages of all the word types (unique words) in each section that are
+                    Besant or Collins marker words (longer texts are divided into 4000-words
+                    sections; the labels for even-numbered Collins sections of <hi rend="italic"
+                        >Blind Love</hi> are removed; only a few sections of other novels are
+                    included). Note how distinct Besant&apos;s chapters of <hi rend="italic"
+                        >Blind Love</hi> are from Collins’s, though many of them are pulled toward
+                    Collins. This graph also includes <hi rend="italic">The Case of Mr. Lucraft</hi>
+                    (Case in bold), jointly written by Besant and James Rice; it suggests, as has
+                    been argued (Boege 1956: 251-65), that Besant did most of the actual
+                    writing.</p>
+                <p>
+                    <figure xml:id="fig3">
+                        <head>Fig. 3. <hi rend="italic">Besant, Collins, Blind Love: Zeta
+                                Analysis</hi></head>
+                        <graphic url="658_Fig3.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/tif"/>
+                    </figure>
+                </p>
+                <p>T-tests and Zeta analysis are both effective authorship attribution methods that
+                    produce lists of characteristic vocabulary for the authors being compared. Both
+                    identify morphological and semantic families of words and uncover
+                    extraordinarily consistent patterns and puzzling inconsistencies that suggest
+                    new directions for literary and stylistic analysis.</p>
+
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Boege, F.</author>
+                        <date>1956</date>
+                        <title level="a">Sir Walter Besant: Novelist. Part One</title>
+                        <title level="j">Nineteenth-Century Fiction</title>
+                        <biblScope type="issue">10</biblScope>
+                        <biblScope type="pp">249-280</biblScope>
+
+                    </bibl>
+
+                    <bibl>
+                        <author>Burrows, J. F.</author>
+                        <date>1992</date>
+                        <title level="a">Not Unless You Ask Nicely: The Interpretative Nexus Between
+                            Analysis and Information</title>
+                        <title level="j">LLC</title>
+                        <biblScope type="issue">7</biblScope>
+                        <biblScope type="pp">91-109</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Burrows, J. F.</author>
+                        <date>2006</date>
+                        <title level="a">All the Way Through: Testing for Authorship in Different
+                            Frequency Strata</title>
+                        <title level="j">LLC</title>
+                        <biblScope type="issue">22</biblScope>
+                        <biblScope type="pp">27-47</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Collins, W.</author>
+                        <date>2003</date>
+                        <title level="m">Blind Love</title>
+                        <editor>Bachman, M.</editor>
+                        <editor>Cox, D.</editor>
+                        <publisher>Broadview Press</publisher>
+                        <pubPlace>Peterborough, Ont.</pubPlace>
+
+                    </bibl>
+                    <bibl>
+                        <author>Collins, W.</author>
+                        <date>2009</date>
+                        <title level="m">Blind Love</title>
+                        <publisher>Chatto &amp; Windus</publisher>
+                        <pubPlace>London</pubPlace>
+                        <ptr type="external"
+                            target="http://ia311528.us.archive.org/0/items/blindlove00colluoft/blindlove00colluoft.pdf"/>
+                        <date type="visited">18th March 2009</date>
+                    </bibl>
+                    <bibl>
+                        <editor>Craig, H.</editor>
+                        <editor>Kinney, A.,</editor>
+                        <date>2009</date>
+                        <title level="m">Shakespeare, Computers, and the Mystery of
+                            Authorship</title>
+                        <publisher>Cambridge University Press</publisher>
+                        <pubPlace>Cambridge</pubPlace>
+                    </bibl>
+
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

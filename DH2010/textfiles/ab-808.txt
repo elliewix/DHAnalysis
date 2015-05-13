@@ -1,0 +1,318 @@
+
+                Digitization is a sampling process
+                
+The act of papyrological interpretation is a continuous thought process that
+                    unravels non-linearly (
+Youtie, 1963
+; 
+Terras, 2006
+). Throughout this sense-making
+                    process, ancient and scarcely legible documents progress from the status of pure
+                    physical objects to that of meaningful historical artefacts. Within the
+                    e-Science and Ancient Documents project,
+Project website: 
+http://esad.classics.ox.ac.uk/
+ we aim to make explicit
+                    some of the implicit mechanisms that contribute to the development of hypotheses
+                    of interpretation by designing and implementing a web-based software offering
+                    digital support for the hermeneutic task. This tool aims to record the
+                    intermediary hypotheses of interpretation, thus keeping track of the rationale
+                    and allowing easier and better revision when required. The model we have adopted
+                    (
+Roued Olsen et al., 2009
+) is that of a network of percepts, where a percept is
+                    defined as a minor interpretation that stems from perception and cognition
+                    (
+Tarte, 2010
+). An understanding of expert knowledge and of how it is mobilised
+                    is required to identify the crucial steps that allow us to reconstruct a
+                    rationale. The level of the granularity at which we choose to provide support
+                    also is essential to the usability of the software. Further, each percept, each
+                    intermediary interpretation, each piece of evidence used either to support or to
+                    invalidate a claim is potentially mutable. The implementation of an
+                    Interpretation Support System (ISS) taking these considerations into account
+                    poses the question of how to digitize or record a thought process; it is an
+                    epitome of the ‘continuous-to-discrete’ (or ‘analogue-to-digital’) problem. In
+                    the theoretical and life sciences, measurement devices are developed to sample
+                    the signals of interest. Then, based on the discrete sampled signal, on an
+                    underlying model of the behaviour of the signal, and on more general knowledge
+                    of signal processing and information theory (e.g. the Nyquist-Shannon sampling
+                    theorem), the continuous signal can be reconstructed with minimal deviation from
+                    the original signal. Similarly, the ambition of our ISS is, based on an
+                    appropriate model of the papyrological hermeneutic task, to allow the user to
+                    capture the information necessary to the reconstruction of the rationale that
+                    yielded a given interpretation. Two difficulties in sampling the interpretive
+                    thought process are: (1) to take advantage and to beware of the sense of
+                    scientific rigour that digitization conveys; and (2) to allow the digital
+                    expression of uncertainty and mutability of percepts.
+
+                
+In this paper, we explain how, while attempting to digitize the papyrological
+                    interpretation act, we strive to avoid spurious exactitude and accommodate
+                    genuine uncertainty. 
+
+            
+
+            
+
+                Choosing what to digitize and how
+                
+The papyrological model of reading developed by Terras (
+Terras, 2006
+) identified
+                    ten levels of reading, corresponding to ten levels of granularity at which an
+                    interpretation in progress is discussed. Tools stemming from web-based
+                    technology (
+Bowman et al., 2010
+), image processing (
+Tarte et al., 2009
+) and
+                    artificial intelligence can help support the digitization of the hermeneutic
+                    task (
+see fig. 1
+). To illustrate how we
+                    negotiate between spurious exactitude and genuine uncertainty, we focus here on
+                    two specific stages of the digitization of the papyrological interpretation
+                    process: how artefact digitization is being performed; and how, by identifying
+                    the mechanisms that trigger the jumps between the ten levels of reading, we
+                    propose to address the representation of uncertainty.
+
+                
+Figure 1: Model of the act of interpretation detailing the various levels of reading
+                        based on (
+Terras, 2006
+) and the tools involved in the implementation of our
+                        ISS.
+                    
+Note the deliberate choice of representation of the ten levels of reading as
+                        star-shaped around a stylus tablet to convey the recursive nature of the
+                        hermeneutic process. Although the levels of reading are defined according to
+                        the granularity of the subject discussed, oscillations between levels of
+                        reading constantly occur, and these oscillations do not necessarily take
+                        place between adjacent levels of reading.
+
+                
+
+                    Digitizing the text-bearing artefact
+                    
+The problem of spurious exactitude is most prevalent at the stage where the
+                        text-bearing artefact is digitized. For stylus tablets, for example,
+                        high-resolution pictures are not enough. The materiality of the artefact
+                        needs to be taken into account in a similar way as the experts exploit it in
+                        the real-world. The guiding principle we choose to follow in this context is
+                        mimesis. Indeed, when the papyrologists have physical access to such an
+                        incised tablet, in order to see better the incised text, they lay the tablet
+                        flat on their hand, lift it at eye level and expose it to raking light while
+                        applying pitch-and-yaw motions to it. This signal enhancement strategy
+                        exploits the shadow-stereo principle by which stronger and more mobile
+                        shadows and highlights occur at the incisions than they do on the bare wood;
+                        the text is thereby accentuated. Digitally imitating this process, we
+                        capture series of images of incised tablets with varying light positions
+                        (
+Brady et al., 2005
+), allowing users to reproduce digitally the visual
+                        phenomenon they naturally exploit in the real-world. Note that, similarly to
+                        signal measurement devices, we adopt a digitization process that is already
+                        part of the interpretation process. And the intention behind artefact
+                        digitization, as well as the intention behind signal measurement, is always
+                        an implicitly set variable that affects downstream results.
+
+                
+
+                
+
+                    Digitizing the thought process
+                    
+When attempting to capture the milestones of the thought process that builds
+                        an interpretation of an ancient or damaged text, we need to capture the
+                        uncertainty of the intermediary percepts and their mutability. A numerical
+                        approach to uncertainty such as bayesian networks could have been adopted,
+                        but such a quantification of uncertainty usually presupposes that problems
+                        are complete, i.e. that all the alternatives to a given situation are known
+                        (
+Parsons & Hunter, 1998
+). Instead, we have decided to turn to
+                        argumentation theory (
+Parsons & Hunter, 1998
+) and theory of
+                        justification (
+Haack, 1993
+), and combine them to provide a formal, yet
+                        invisible, epistemological framework that will allow us to point out
+                        inconsistencies without forbidding them. Indeed, inconsistencies in an
+                        unravelling interpretation naturally occur and can be rooted either in the
+                        implicit expectations of the user or in the validity of the actual claims
+                        (see 
+Tarte, 2010
+ for an account of an inconsistency due to an implicit
+                        assumption and its resolution). The balance to be found here (
+Shipman III
+                        & Marshall, 1999
+) is between on the one hand the usefulness of a formal
+                        system as a backbone to support reasoning under uncertainty and make
+                        implicit mechanisms explicit, and on the other the excess of formalism and
+                        explicit formulation that can become a hindrance by creating for the user an
+                        overhead disruptive to the interpretation process. Here again, our design
+                        choice is based on the observation of the experts at work. We allow both
+                        palaeographical and philological approaches in combination, through the
+                        possibility of tracing the letters and of handling the text as a crossword
+                        puzzle (
+Roued-Cunliffe, 2010
+); these are both approaches that we have
+                        identified as the main strategies experts develop when interpreting
+                        documents (
+Tarte, 2010
+). The expression of uncertainty is then made inherent
+                        to the mode of interaction with the artefact, and the transposition of the
+                        real-world tasks of drawing and crossword puzzle solving allows us to keep
+                        the interface intuitive while, in the background, more formal mechanisms can
+                        run routines such as consistency checks and consultation and constitution of
+                        knowledge bases. In her doctoral work, Roued-Cunliffe (
+Roued-Cunliffe, 2010
+)
+                        is currently concentrating on the crossword puzzle approach and combining it
+                        to consultation of knowledge bases through web-services.
+
+                
+
+            
+
+            
+
+                Conclusion: digitization is also interpetation
+                
+Digital technologies can easily trick the mind into thinking that their use
+                    confers an exactitude on the results obtained with their support. It is however
+                    worth noting that in the sciences too, digitization is always made with an
+                    intention. When looking to sample a continuous signal, be it a temperature as a
+                    function of time, or a thought process as a function of time, the sampling
+                    strategy is always adopted in the light of an intention. Digitization is actually
+                    also an act of interpretation. To record digitally the continuous
+                    papyrological interpretation process, we have to identify clearly our final aim,
+                    and to adapt our sampling strategy accordingly. Here, our aim is to enable to
+                    record, reconstruct, back-track if necessary, the interpretation process by
+                    making explicit (some of) the epistemological evidence substantiating the
+                    interpretation in progress; an added benefit to the software is that it will
+                    also enable easier production of an edition of a text, as the evidence will have
+                    been laid out clearly. Capturing uncertainty is vital to the recording process,
+                    and being conscious that its very capture is also part of the hermeneutic task
+                    is crucial to allow the software design to take on board the elements that are
+                    core to the whole interpretation process.
+
+            
+Acknowledgements
+This work was supported by the joint AHRC-EPSRC-JISC Arts and Humanities
+                e-Science Initiative UK [grant AH/E00654X/1]. 
+The author wishes to thank Prof. Alan Bowman, Prof. Sir Michael Brady, Dr. Roger
+                    Tomlin, Dr. Melissa Terras, Dr. Charles Crowther and Henriette Roued-Cunliffe for
+                    their support, as well as the reviewers for their helpful comments.
+
+        
+        
+
+                
+Bowman, A. K.
+Crowther, C. V.
+Kirkham, R.
+Pybus, J.
+2010
+A virtual research environment for the study of documents
+                            and manuscripts
+Bodard, G.
+Mahony, S.
+Digital Research in the Study of Classical
+                            Antiquity
+Ashgate Press
+London
+Brady, M.
+Pan, X.
+Schenck, V.
+Terras, M.
+Robertson, P.
+Molton, N.
+2005
+Shadow stereo, image filtering and constraint
+                            propagation
+Bowman, A. K.
+Brady, M.
+Images and Artefacts of the Ancient World
+British Academy Occasional Paper
+Oxford University Press/British Academy
+Oxford
+4
+15–30
+Haack, S.
+1993
+Double-aspect foundherentism: A new theory of empirical
+                            justification
+Philosophy and Phenomenological Research
+53(1)
+113–128
+Parsons, S.
+Hunter, A.
+1998
+A review of uncertainty handling formalisms
+Carbonell, J. G.
+Siekmann, J.
+Applications of Uncertainty Formalisms
+Lecture Notes in Artificial Intelligence (Lecture Notes in
+                            Computer Science)
+Springer
+Berlin / Heidelberg
+1455
+8–37
+Roued-Cunliffe, H.
+2010: forthcoming
+Towards a Decision Support System for Reading Ancient
+                            Documents
+Literary and Linguistic Computing
+Roued Olsen, H.
+Tarte, S. M.
+Terras, M.
+Brady, J. M.
+Bowman, A. K.
+2009
+Towards an interpretation support system for reading
+                            ancient documents
+Digital Humanities’09
+2009
+237–39
+Shipman III, F. M.
+Marshall, C. C.
+1999
+Formality considered harmful: Experiences, emerging themes,
+                            and directions on the use of formal representations in interactive
+                            systems
+Computer Supported Cooperative Work
+8
+333–52
+Tarte, S. M.
+2010: forthcoming
+Papyrological investigations: Transferring perception and
+                            interpretation into the digital world
+Literary and Linguistic Computing
+Tarte, S. M.
+Wallom, D.
+Hu, P.
+Tang, K.
+Ma, T.
+2009
+An image processing portal and web-service for the study of
+                            ancient documents
+2009 Fifth IEEE International Conference
+                        on e-Science
+2009
+Terras, M.
+2006
+Image to Interpretation. An Intelligent System to Aid
+                            Historians in Reading the Vindolanda Texts
+Oxford University Press
+Oxford
+Youtie, H. C.
+1963
+The papyrologist: artificer of fact
+Greek, Roman and Byzantine Studies
+4(1)
+19–33
+
+        

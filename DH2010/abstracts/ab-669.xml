@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0" xml:id="ab-669">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Distant Reading and Mapping Genre Space via Conjecture-based Distance Measures</title>
+                <author>
+                    <name>Juola, Patrick</name>
+                    <affiliation><orgName>Duquesne University</orgName> <reg><country>USA</country></reg></affiliation>
+                    <email>juola@mathcs.duq.edu</email>
+                </author>
+              
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-05-01</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <div>
+                
+                <p>One of the key problems facing digital humanities today is the increasing
+                    number and size of digital repositories and the relative lack of tools
+                    for studying them. A collection of a million books (Crane, 2006) is no 
+                    more useful than a collection of ten thousand if you can&apos;t read more than a
+                    hundred of them in a realistic timeframe. Scholars like Moretti (2005)
+                    have proposed a new analysis method, termed &quot;distant reading,&quot; to enable
+                    computer-aided large-scale analysis of such collections. In previous
+                    work (Juola and Bernola, 2009), we have proposed using a
+                    conjecture generator (Conjecturator,
+                    see also <ref target="http://www.twitter.com/conjecturator" rend="newWindow"
+                            type="external">http://www.twitter.com/conjecturator</ref>) as another computer-aided
+                    analysis method.</p>
+                    
+                    <p>Underlying the Conjecturator is the idea that the the computer can be deployed 
+                    to autonomously generate &quot;facts&quot; about a given text repository. Like its 
+                    predecessor and inspiration <hi rend="italic">Graffiti</hi> (Fajtlowicz, 1988),
+                    the conjecturator generates template-based &quot;conjectures&quot; that might or 
+                    might not be true about the repository and the texts in it. A sample 
+                    conjecture might be something like:
+                    
+                        <xmt:uList>
+                            <item>The concept of &quot;archivist&quot; appears more in mid-Victorian novels than in 
+                                psychological realism novels or, more obviously,</item> 
+                            <item>The concept of &quot;femininity&quot; appears more in feminist novels than in novels
+                                with gothic elements. </item>
+                        </xmt:uList>
+                                       
+                    (Who would have thought, eh?)</p>
+                    
+                    <p>As discussed in (Juola and Bernola, 2009), these simple conjectures can
+                    be easily and quickly tested to refute or confirm their validity.  This
+                    enables the computer to quickly generate a pile of isolated &quot;facts&quot; about 
+                    the text repository, but does not provide a useful framework for
+                    interpretation, explanation, or understanding (which still requires human
+                    expertise).</p>
+                    
+                    <p>However, this &quot;pile of facts&quot; can provide useful source material for
+                    distant reading. In this paper, we demonstrate one way to extend this
+                    conjecture-based analysis to a large-scale &quot;distant reading&quot; and
+                    visualization of genre differences. Repeated generation of conjectures
+                    will create a large catalogue of potential differences between any
+                    particular category pair, some true/supported, and some false. 
+                    The number of &quot;true&quot; differences, or alternatively, the percentage of
+                    true differences, can be viewed as a distance between the categories,
+                    a distance measuring the degree of difference between the concepts
+                    commonly written about in those genres.  If, for instance, &quot;epistolary
+                    novels&quot; differ in 26 significant ways from &quot;tragic novels&quot;, but only
+                    in one significant way from &quot;fiction of manners,&quot; we can consider
+                    &quot;epistolary novels&quot; to be a closer genre in terms of expressed concepts
+                    to &quot;fiction of manners&quot; than to &quot;tragic novels.&quot; This high-order analysis
+                    gives us a large-scale conceptual grouping of genre categories.</p>
+                    
+                    <p>To aid in the study of such differences, we compile the differences into a
+                    matrix and apply multidimensional scaling (MDS) (Cox and Cox, 2001). This
+                    statistical technique takes a high-dimensional data set defined by interpoint
+                    distances and embeds/rescales it to fit a smaller number of
+                    dimensions (in this case, two) while minimizing distortion. The resulting
+                    two-dimensional coordinates can be plotted to give a visual &quot;map&quot; of the
+                    space of genres. We demonstrate this technique using an enlarged set
+                    of 136 novels representing 36 genres (including time period and authorial
+                    attributes as &quot;genres&quot;) and approximately 10,000 validated conjectures (culled
+                    from approximately 85,000 conjectures in total).</p>
+                    
+                    <p>The resulting images clearly indicate that this method is a new and viable way
+                    of performing large-scale distant reading.  As can be seen in Figure 1, the resulting &quot;map&quot; passes many obvious tests for rationality; for
+                    for example, mid-Victorian novels represent an intermediate stage between 
+                    early and late Victorian novels; similarly, &quot;male authored novels&quot; in
+                    general are an intermediate between &quot;American male authored novels&quot; and
+                    &quot;English male authored novels,&quot; reflected exactly what intuition suggests.
+                    We leave it to genre specialists to examine the map in detail and to see
+                    whether actual genres equally reflect our intuitions. It is easy and relatively
+                    efficient to apply and almost entirely document-agnostic; it can be applied
+                    as easily to journal articles (and map the space of scholarship) or to
+                    newspaper corpora (perhaps mapping the space of editorial policies and
+                    politics) as to novel genres.</p>
+                
+                <figure xml:id="fig1">
+                    <head>Figure 1</head>
+                    <graphic url="669_Fig1.jpg" xmt:type="thumb-caption" mimeType="image/jpeg"/>
+                </figure>
+            </div>
+            
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>
+                            Cox, T.F., Cox, M.A.A.</author>
+                        <date>2001</date>
+                        <title level="m">Multidimensional Scaling</title>
+                        <publisher>Chapman and Hall</publisher>
+                        
+                    </bibl>
+                    <bibl>
+                        <author>Crane, Gregory</author>
+                        <date>2006</date>
+                        <title level="a">What Do You Do With a Million Books?</title>
+                        <title level="j">D-Lib Magazine</title>
+                        <biblScope type="issue">12(3)</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Fajtlowicz, Siemion</author>
+                        <date>1988</date>
+                        <title level="a">On conjectures of Graffiti</title>
+                        <title level="j">Discrete Mathematics</title>
+                        <biblScope type="issue">72</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Juola, Patrick</author>
+                        <date>2009</date>
+                        <title level="a">Mapping Genre Space via Random Conjectures</title>
+                        <title level="m" type="proceedings">Presented at DHCS-2009, IIT</title>
+                        <name type="venue">Chicago, IL</name>
+                    </bibl>
+                    <bibl>
+                        <author>Juola, Patrick, Bernola, Ashley</author>
+                        <date>2009</date>
+                        <title level="a">Conjecture Generation in the Digital Humanities</title>
+                        <title level="m" type="proceedings">Proc. DH-2009</title>
+                        <date type="conference">2009</date>
+                    </bibl>
+                    <bibl>
+                        <author>Moretti, Franco</author>
+                        <date>2005</date>
+                        <title level="m">Graphs, Maps, Trees: Abstract Models for a Literary History</title>
+                        <publisher>Verso</publisher>
+                    </bibl>
+                    
+                    
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-690">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>The Person Data Repository</title>
+                <author>
+                    <name>Roeder, Torsten</name>
+                    <affiliation><orgName>Berlin-Brandenburgische Akademie der
+                            Wissenschaften</orgName>
+                        <reg><country>Germany</country></reg></affiliation>
+                    <email>roeder@bbaw.de</email>
+                </author>
+                <author><name>Fabian  Körner</name>
+                    <affiliation><orgName>Berlin-Brandenburgische Akademie der
+                        Wissenschaften</orgName>
+                        <reg><country>Germany</country></reg></affiliation>
+                </author>
+                <author>
+                    <name>Niels-Oliver Walkowski</name>
+                    <affiliation><orgName>Berlin-Brandenburgische Akademie der
+                        Wissenschaften</orgName>
+                        <reg><country>Germany</country></reg></affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-08</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+            <change><date>2010-05-13</date>
+                <name>CD</name>
+                <desc>Encoding of the bibliography corrected, german version added</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <group>
+            <text>
+                <body>
+                    <p>The <hi rend="italic">Berlin-Brandenburg Academy of Sciences and
+                            Humanities</hi> (Berlin-Brandenburgische Akademie der Wissenschaften,
+                        BBAW) is the largest non-university research institution in the region.
+                        TELOTA (<hi rend="italic">The Electronic Life of the Academy</hi>), an
+                        initiative for academically applied information technology, was launched
+                        here in 2002. The initiative supports the academy's projects by developing
+                        IT solutions for research work and digital publications.</p>
+                    <p>The project “Construction of a repository for biographical data on historical
+                        persons of the 19<hi rend="sup">th</hi> century” – short form: <hi
+                            rend="italic">Person Data Repository</hi> – enhances the existing
+                        approaches to data integration and electronically supported research in
+                        biographies. It investigates connecting and presenting heterogeneous
+                        information on persons of the “long nineteenth century” (1789–1914). The
+                        project's aim is to provide a de-central software system for research
+                        institutions, universities, archives, and libraries that allows combined
+                        access on biographic information from different data pools.</p>
+                    <p>The project is subdivided into three major fields: 1) conceptual design of an
+                        adequate data model, which embraces different methods and perspectives; 2)
+                        data exchange with national and international cooperation partners; and 3)
+                        development of a software solution based on an evaluated framework. The
+                        project is funded by the DFG (<hi rend="italic">Deutsche
+                            Forschungsgemeinschaft</hi>, German Research Foundation). The work began
+                        in July 2009 with three academic staff members and three student assistants,
+                        and will continue for two years.</p>
+                    <div>
+                        <head>Data Modelling</head>
+                        <p>To structure heterogeneous biographical data, the project pursues a novel
+                            approach, which was already presented in a talk at the workshop
+                            “Personendateien – Elektronisches Publizieren” in September 2009 in
+                            Leipzig (see link below). The approach does not define a person as
+                            single data record, but rather as compilation of all statements
+                            concerning that person. Thus, it is possible to display complementing as
+                            well as contradicting statements in parallel, which meets one of the
+                            basic challenges of biographic research.</p>
+                        <p>In the above lecture by Niels-Oliver Walkowski, he notes: “Biographic
+                            research, understood as the creation of identifying narrations, performs
+                            semantic constructions, which were caused by a human, but which are not
+                            identical to it. The consequences are concurring narrations, polysemy
+                            and contingency, which are not an expression of lacking knowledge, but
+                            are due to the conditions of biographic research.”</p>
+                        <p>In order to satisfy different research approaches and perspectives, the
+                            smallest entity of the Person Data Repository is not a person, but a
+                            single statement on a person, which is named “aspect” in the data model.
+                            An aspect bundles references to persons, places, dates and sources. By
+                            proper queries it will be possible to create further narrations, whose
+                            first dimension is not necessarily a person, but possibly also a time
+                            span or a certain location. Those attained insights can enhance the
+                            knowledge on persons in turn.</p>
+                        <p>Additionally, all aspects are connected to the corresponding source and
+                            to current identification systems respectively, like the LCCN or the
+                            German PND. Thus, scientific transparency and compatibility with
+                            existing and future systems is guaranteed.</p>
+                    </div>
+                    <div>
+                        <head>Cooperation</head>
+                        <p>As the Person Data Repository acquires data from partners, focusing on
+                            data organisation rather than conducting its own research, cooperation
+                            is an essential part of the project. The mission statement is guided by
+                            the Berlin Declaration on Open Access to Knowledge in the Sciences and
+                            Humanities, which has also been signed by the <hi rend="italic">Berlin
+                                Brandenburg Academy of Sciences and Humanities</hi>, and which
+                            promotes the exchange of scientific knowledge through digital media as
+                            well as transparency of sources and authors.</p>
+                        <p>Initially, several projects of the BBAW were invited to share their data
+                            on the Person Data Repository. Amongst them are the <hi rend="italic"
+                                >Marx-Engels-Gesamtausgabe</hi> (MEGA, Complete works by Marx and
+                            Engels), the <hi rend="italic"
+                                >Alexander-von-Humboldt-Forschungsstelle</hi>, the <hi rend="italic"
+                                >Protokolle des Preußischen Staatsministeriums</hi> (Protocols of
+                            the Prussian Ministry of State), the <hi rend="italic">Berliner
+                                Klassik</hi> (Classical Berlin) and the <hi rend="italic"
+                                >Altmitgliederverzeichnis</hi> (Index of Former Academy Members).
+                            Thus, an inventory of several thousand persons is already available;
+                            partnerships with further BBAW projects are planned in order to reach
+                            about 200,000 entries.</p>
+                        <p>Parallel to this, partnerships with external institutions are being
+                            formed. These cooperations will range from sharing unstructured data to
+                            data exchange with existing repositories. Contacts with edition
+                            projects, image databases and repository databases have already been
+                            formed and will be developed during the project's course. A basis for
+                            exchange and publication of the gathered person information should be
+                            delivered by Open Access oriented agreements, whereas individual
+                            arrangements can be made as well.</p>
+                        <p>As it is intended to provide not only the Person Data Repository's
+                            contents, but also its infrastructure, it is also of interest for
+                            projects whose historical scope is focused outside the 19th century. In
+                            this case, it is possible set-up an infrastructure of the same type with
+                            freely configurable contents, as it were a sister repository.</p>
+                    </div>
+                    <div>
+                        <head>Development</head>
+                        <p>During the preliminaries for the technical realisation of the Person Data
+                            Repository, a list of established software packets has been created. An
+                            evaluation shows which of these packets will constitute the core
+                            component of the repository. As the software is provided also to other
+                            institutions, key elements of the evaluation are documentation,
+                            configurability, scalability, expandability and availability of
+                            interfaces.</p>
+                        <p>A software which has already been utilized by BBAW projects for gathering
+                            person data is the “Archiv-Editor” (Archive Editor), which had been
+                            developed by the TELOTA initiative (see link below). This editor will
+                            play a central part as an editing tool in the Person Data Repository,
+                            and will be developed further according to the project's demands.</p>
+                        <p>Along with the work on the repository and archive software, also the
+                            conversion of data is a part of the development field. Manual and
+                            automated methods will be utilized in the process. The atomization in
+                            single aspects is conducted in three steps: syntax analysis, index based
+                            structuring, and manual correction. The first data pool to convert was
+                            the person index of the Protocols of the Prussian Ministry of State, a
+                            completed project which provides an excellent starting basis, containing
+                            over 22,000 person entries. As the second major source for data on
+                            persons of the 19<hi rend="sup">th</hi> century, the exhaustive indexes
+                            of the Complete Works of Marx and Engels have been chosen. Further
+                            projects at the academy, like the
+                            Alexander-von-Humboldt-Forschungsstelle and Classical Berlin, have
+                            placed their data pools at the disposal of Person Data Repository.</p>
+                    </div>
+                    <div>
+                        <head>Perspectives</head>
+                        <p>As the project aims at cooperation to a great extent, it is our wish to
+                            communicate with interested parties from all disciplines, in order to
+                            build up partnerships between our institutions. Also, we look forward to
+                            questions, remarks, proposals, and to exchanging theoretical and
+                            technical approaches. A cooperative workshop for partners and interested
+                            parties is planned for autumn 2010.</p>
+                    </div>
+                </body>
+            </text>
+            <text>
+                <body>
+                    <p>Die <hi rend="italic">Berlin-Brandenburgische Akademie der
+                            Wissenschaften</hi> (BBAW) ist die größte außeruniversitäre
+                        Forschungseinrichtung der Region. Im Jahr 2002 wurde hier TELOTA (<hi
+                            rend="italic">The Electronic Life Of The Academy</hi>), eine Initiative
+                        für akademisch angewandte Informationstechnologie, ins Leben gerufen. Diese
+                        unterstützt die Akademievorhaben mit der Entwicklung informationstechnischer
+                        Lösungen für Forschungsarbeit und digitale Publikation.</p>
+                    <p>Mit dem DFG-Projekt „Aufbau eines Repositoriums für biografische Daten
+                        historischer Personen des 19. Jahrhunderts“ – kurz: <hi rend="italic"
+                            >Personendaten-Repositorium</hi> – werden bisherige Ansätze der
+                        Datenvernetzung und elektronischen Biografik weiterentwickelt. Es erforscht
+                        anhand von Personeninformationen des „langen 19. Jahrhunderts“ (1789–1914),
+                        wie sich heterogene Datenbestände miteinander verbinden und präsentieren
+                        lassen. Ziel des Projektes ist die Bereitstellung eines dezentralen
+                        Softwaresystems, welches Lehr- und Forschungseinrichtungen, Archiven und
+                        Bibliotheken ermöglicht, biographische Informationen aus verschiedenen
+                        Beständen über einen gemeinsamen Zugang zu nutzen.</p>
+                    <p>Das Projekt untergliedert sich in drei Teile: 1) Der Entwurf eines geeigneten
+                        Datenmodells, welches unterschiedlichen Perspektiven und Forschungsmethoden
+                        gerecht wird, 2) der Datenaustausch mit Kooperationspartnern im In- und
+                        Ausland, und 3) die Entwicklung einer Software-Lösung auf der Basis eines zu
+                        evaluierenden Framework. Das Projekt wurde von TELOTA bei der DFG beantragt
+                        und ist für die Laufzeit von zwei Jahren bewilligt worden. Im Juli 2009
+                        wurde die Arbeit mit drei wissenschaftlichen Mitarbeitern und drei
+                        studentischen Hilfskräften aufgenommen.</p>
+                    <div>
+                        <head>Datenmodellierung</head>
+                        <p>Zur Strukturierung heterogener biographischer Daten verfolgt das Projekt
+                            einen neuartigen Ansatz, der bereits in einem Vortrag auf dem Workshop
+                            „Personendateien – Elektronisches Publizieren“ im September 2009 in
+                            Leipzig vorgestellt wurde (siehe Link unten). Eine Person wird darin
+                            nicht als einzelner Datensatz definiert, sondern vielmehr als die Menge
+                            aller Aussagen, die zu ihr getroffen werden. Damit ist es möglich,
+                            sowohl sich ergänzende als auch sich widersprechende Aussagen
+                            nebeneinander abzubilden, was grundlegenden Problemen biografischen
+                            Arbeitens Rechnung trägt.</p>
+                        <p>In dem erwähnten Vortrag von Niels-Oliver Walkowski hieß es:
+                            „Biografisches Arbeiten verstanden als Erzeugung von identifizierenden
+                            Narrationen vollzieht semantische Konstruktionsleistungen, zu denen ein
+                            Mensch den Anlass gab, der aber nicht mit ihm zusammenfällt. Eine Folge
+                            sind konkurrierende Narrationen, Polysemie und Kontingenz, die nicht
+                            Ausdruck mangelnder Kenntnis, sondern den Voraussetzungen biografischen
+                            Arbeitens an sich geschuldet sind.“</p>
+                        <p>Gerade also, um verschiedenen Forschungsansätzen und Perspektiven gerecht
+                            zu werden, ist die kleinste Dateneinheit des Personendaten-Repositoriums
+                            nicht eine Person, sondern eine einzelne Aussage zu einer Person, die in
+                            dem Datenmodell „Aspekt“ genannt wird. Ein Aspekt bündelt Bezüge zu
+                            Personen, Orten, Daten und einer Quelle. Dadurch wird es möglich sein,
+                            durch eine entsprechende Abfrage weitere Narrationen zu erzeugen, bei
+                            denen nicht unbedingt eine einzelne Person, sondern auch ein Zeitraum
+                            oder ein Ort die erste Dimension bilden könnte. Daraus gewonnene
+                            Erkenntnisse erweitern wiederum das Personenwissen.</p>
+                        <p>Zudem werden die Aspekte einerseits mit den jeweiligen Quellen,
+                            andererseits mit geläufigen Identifikationssystemen, etwa mit PND und
+                            LCCN, verknüpft. Dadurch bleibt die wissenschaftliche Transparenz und
+                            die Kompatibilität mit bestehenden und zukünftigen Systemen
+                            gewährleistet.</p>
+                    </div>
+                    <div>
+                        <head>Kooperationen</head>
+                        <p>Da das Personendaten-Repositorium die Daten über seine Partner bezieht
+                            und sich selbst auf die Organisation der Daten konzentriert, anstatt
+                            eigene Datenbestände zu erarbeiten, ist Zusammenarbeit ein essenzieller
+                            Bestandteil des Projektes. Von richtungweisender Bedeutung sind dabei
+                            die Ziele der <hi rend="italic">Berlin Declaration on Open Access to
+                                Knowledge in the Sciences and Humanities</hi>, die auch von der
+                            Berlin-Brandenburgischen Akademie der Wissenschaften unterzeichnet wurde
+                            und welche den wissenschaftlichen Austausch durch digitale Technik unter
+                            Gewährleistung von Quellen- und Autorentransparenz befördert.</p>
+                        <p>Zunächst wurden einige Vorhaben der Berlin-Brandenburgischen Akademie der
+                            Wissenschaften dazu eingeladen, ihre Daten auf der zukünftigen
+                            Repositorien-Plattform verfügbar und verknüpfbar zu machen. Darunter
+                            fallen die <hi rend="italic">Marx-Engels-Gesamtausgabe</hi>, die <hi
+                                rend="italic">Alexander-von-Humboldt-Forschungsstelle</hi>, die <hi
+                                rend="italic">Protokolle des Preußischen Staatsministeriums</hi>
+                            sowie das Altmitgliederverzeichnis aus dem Akademiearchiv. Damit liegen
+                            bereits Daten zu mehreren zehntausend Personen vor; weitere
+                            Kooperationen mit Akademievorhaben sind in Vorbereitung, um ca. 200.000
+                            Einträge zu erreichen.</p>
+                        <p>Parallel dazu werden externe Institutionen als Partner herangezogen. Die
+                            Kooperationsmöglichkeiten reichen von der Übernahme unstrukturierter
+                            Datenbestände bis hin zum Austausch mit anderen Repositorien. So sind
+                            bereits Kontakte mit mehreren Editionsprojekten, Bilddatenbanken und
+                            Verbund-Datenbanken geknüpft worden, die im weiteren Verlauf des
+                            Projektes zu vertiefen sind. Die Grundlage für Austausch und
+                            Veröffentlichung der Personendaten schafft im besten Falle eine
+                            Vereinbarung im Sinne des <hi rend="italic">Open Access</hi>, wobei auch
+                            individuell davon abweichende Verabredungen getroffen werden können.</p>
+                        <p>Da beabsichtigt ist, nicht nur die Daten, sondern auch die Infrastruktur
+                            des Personendaten- Repositoriums zur Verfügung zu stellen, ist das
+                            Projekt auch für solche Vorhaben interessant, deren historischer Rahmen
+                            das 19. Jahrhundert nicht berührt. In diesem Fall kann eine Abmachung
+                            über die Einrichtung einer gleichartigen Infrastruktur mit selbst
+                            bestimmbaren Inhalten, also eine Art „Schwester-Repositorium“,
+                            geschlossen werden.</p>
+                    </div>
+                    <div>
+                        <head>Entwicklung</head>
+                        <p>Im Rahmen der Vorbereitungen für die praktische Umsetzung des
+                            Personendaten-Repositoriums wurde eine Liste etablierter Software-Pakete
+                            erstellt. Eine Evaluation zeigt, welches die Kernkomponente der
+                            Datenhaltung des PDR bildet. Da die Software auch anderen Projekten zur
+                            Verfügung steht, gehören Dokumentation, Konfigurierbarkeit,
+                            Skalierbarkeit, Erweiterbarkeit und Schnittstellen zu den wesentlichen
+                            Anforderungen der Evaluation.</p>
+                        <p>Als bereits längerfristig genutzte Software zur Erfassung von
+                            Personendaten existiert innerhalb der BBAW der von der TELOTA-Initiative
+                            entwickelte Archiv-Editor (Link s. u.). Dieser wird im Rahmen des PDR
+                            eine zentrale Rolle als Werkzeug für die Eingabe von Personendaten
+                            spielen und wird entsprechend der veränderten Anforderungen
+                            weiterentwickelt.</p>
+                        <p>Neben der Arbeit an der Repositorien- und Archivsoftware fällt auch die
+                            Konvertierung von Datenbeständen in den Entwicklungsbereich. Dabei
+                            werden sowohl manuelle als auch automatische Verfahren eingesetzt. Die
+                            Zerlegung der Biogramme in Einzelaspekte erfolgt zunächst anhand einer
+                            einfachen Syntaxanalyse, wird dann über Abkürzungs-, Orts- und
+                            Personenverzeichnisse tiefstrukturiert und zum Abschluss manuell
+                            korrigiert. Begonnen wurde mit dem Personenregister der <hi
+                                rend="italic">Protokolle des Preußischen Staatsministeriums</hi>,
+                            welche sich als abgeschlossenes Projekt und mit über 22.000
+                            Kurzbiogrammen als hervorragende Ausgangsbasis anbot. Als zweite Quelle
+                            für Personendaten des 19. Jahrhunderts wurden die umfangreichen Register
+                            der <hi rend="italic">Marx-Engels-Gesamtausgabe</hi> ausgewählt. Weitere
+                            Akademienvorhaben, etwa die <hi rend="italic"
+                                >Alexander-von-Humboldt-Forschungsstelle</hi>, haben ihre Daten
+                            ebenfalls bereits zur Verfügung gestellt.</p>
+                    </div>
+                    <div>
+                        <head>Ausblick</head>
+                        <p>Da unser Projekt in großem Maße auf Kooperationen setzt, ist es unser
+                            Wunsch, mit interessierten Projekten aus allen denkbaren Fachgebieten
+                            ins Gespräch zu kommen und Partnerschaften zu schließen. Ebenso freuen
+                            wir uns auf Fragen, Hinweise und Anregungen sowie auf den Austausch von
+                            theoretischen und technischen Lösungsansätzen. Ein Workshop, zu dem
+                            sowohl ähnliche Projekte, Kooperationspartner und interessiertes
+                            Fachpublikum eingeladen werden, ist für Herbst 2010 geplant.</p>
+                    </div>
+                </body>
+            </text>
+        </group>
+        <back>
+            <div>
+                <head rend="bold">Further information</head>
+                <p>
+                    <xmt:uList>
+                        <item>Website of the Person Data Repository <ref type="external"
+                                target="http://pdr.bbaw.de">pdr.bbaw.de</ref></item>
+
+
+                        <item> The TELOTA Initiative of the BBAW <ref type="external"
+                                target="http://www.bbaw.de/telota">www.bbaw.de/telota</ref></item>
+
+                        <item> The "Archiv-Editor" (Introduction and Download) <ref type="external"
+                                target="http://www.bbaw.de/telota/projekte/personendatenbank-1/archiv-editor"
+                                >http://www.bbaw.de/telota/projekte/personendatenbank-1/archiv-editor</ref></item>
+
+
+                        <item>"Personendateien" Workshop in Leipzig <ref type="external"
+                                target="http://www.saw-leipzig.de/aktuelles/personendateien"
+                                >www.saw-leipzig.de/aktuelles/personendateien</ref></item>
+                    </xmt:uList></p>
+
+            </div>
+            <div>
+                <head rend="bold">Events</head>
+                <p><hi rend="italic">Workshop: Personen - Daten - Repositorien (Persons - Data -
+                        Repositories)</hi>, 27<hi rend="sup">th</hi> – 29<hi rend="sup">th</hi>
+                    September 2010 Berlin-Brandenburg Academy of Sciences and Humanities: <ref
+                        type="external" target="http://pdr.bbaw.de/workshop"
+                        >pdr.bbaw.de/workshop</ref>.</p>
+            </div>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author> Brase, J.</author>
+                        <author>Klump, J.</author>
+                        <title level="a">Zitierfähige Datensätze: Primärdaten-Management durch
+                            DOls</title>
+                        <title level="m">Rafael Ball, Wissenschaftskommunikation der Zukunft</title>
+                        <pubPlace>Jülich</pubPlace>
+                        <publisher>Forschungszentrum Jülich</publisher>
+                        <date>2007</date>
+                        <ptr
+                            target="http://books.google.com/books?id=kouJ09GQtbcC&amp;lpg=PA159&amp;ots=YuCzaRjSDM&amp;dq=Zitierf %20hige%20Datens%20tze%3A%20Prim%20rdaten-Management%20durch %20DOI&amp;lr=&amp;pg=PA159#v=onepage&amp;q=&amp;f=false"
+                        /></bibl>
+                    <bibl><author>Costa, Stefano</author>
+                        <title level="m">Open Data in Archaeology</title>
+                        <date>2010</date>
+                        <ptr target="http://blog.okfn.org/2010/02/25/open-data-in-archaeology/"
+                        /></bibl>
+                    <bibl><author>Dallmeier-Tiessen, S.</author>
+                        <author>Dobratz, S.</author>
+                        <author>Gradmann, S.</author>
+                        <author>Horstmann, W.</author>
+                        <author>Kleiner, E.</author>
+                        <author>Pampel, H. (et al.)</author>
+                        <title level="m">Positionspapier Forschungsdaten</title>
+                        <ptr target="http://edoc.gfz-potsdam.de/gfz/13230"/></bibl>
+                    <bibl><author>Dallmeier-Tiessen, Sunje</author>
+                        <author>Pfeiffen-berger, Hans</author>
+                        <title level="a">Umgang mit Forschungsdaten in den Geowissenschaften - Ein
+                            Blick in die Praxis</title>
+                        <title level="m">Bibliothekartag 2009</title>
+                        <pubPlace>Erfurt</pubPlace>
+                        <publisher>Berufsverband Information Bibliothek e.V.</publisher>
+                        <date>2009</date>
+                        <ptr
+                            target="http://www.opus-bayern.de/bib-info/volltexte/2009/699/pdf/dallmeier-tiessen_geowissenschaften.pdf"
+                        /></bibl>
+                    <bibl><author> DINI, Arbeitsgruppe "Elektronisches Publizieren"</author>
+                        <title level="m">Positionspapier Forschungsdaten</title>
+                        <pubPlace>Humboldt- Universität zu Berlin</pubPlace>
+                        <date>2009</date>
+                        <ptr
+                            target="http://edoc.hu-berlin.de/series/dini-schriften/2009-10/PDF/10.pdf"
+                        /></bibl>
+                    <bibl><author>Griese, B.</author>
+                        <author>Griesehop, H. R.</author>
+                        <title level="m">Biographische Fallarbeit</title>
+                        <pubPlace>Wiesbaden</pubPlace>
+                        <publisher>VS Verlag für Sozialwissenschaften</publisher>
+                        <date>2007</date>
+                        <ptr target="http://www.ulb.tu-darmstadt.de/tocs/177279664.pdf"/></bibl>
+                    <bibl><author>Hackländer-von der Way, Bettina</author>
+                        <title level="m">Biographie und Identität</title>
+                        <pubPlace>Berlin</pubPlace>
+                        <ptr target="http://dissertation.de"/>
+                        <date>2001</date></bibl>
+                    <bibl><author>Henning, Tim</author>
+                        <title level="m">Person sein und Geschichten erzählen, Quellen und Studien
+                            zur Philosophie</title>
+                        <pubPlace>Berlin u.a.</pubPlace>
+                        <publisher>de Gruyter</publisher>
+                        <date>2009</date></bibl>
+                    <bibl><author>Hermann, Elfriede</author>
+                        <title level="m">Lebenswege im Spannungsfeld lokaler und globaler Prozesse:
+                            Person, Selbst und Emotion in der ethnologischen
+                            Biografieforschung</title>
+                        <pubPlace>Münster</pubPlace>
+                        <publisher>LIT</publisher>
+                        <date>2003</date></bibl>
+                    <bibl><author>Hoerning, Erika</author>
+                        <title level="m">Pierre Bourdieu: Die biographische Illusion</title>
+                        <pubPlace>Stuttgart</pubPlace>
+                        <publisher>Lucius &amp; Lucius</publisher>
+                        <date>2000</date></bibl>
+                    <bibl><author>Hoerning, Erika</author>
+                        <title level="m">Biographische Sozialisation</title>
+                        <pubPlace>Stuttgart</pubPlace>
+                        <publisher>Lucius &amp; Lucius</publisher>
+                        <date>2000</date></bibl>
+                    <bibl><author>Hutto, Daniel D.</author>
+                        <title level="m">Narrative and understanding persons</title>
+                        <publisher>Cambridge University Press</publisher>
+                        <date>2007</date>
+                        <ptr target="http://books.google.de/books?id=peHYAAAAMAAJ"/></bibl>
+                    <bibl><author>Hutto, Daniel</author>
+                        <title level="m">Framing Narratives</title>
+                        <pubPlace>Cambridge/New York</pubPlace>
+                        <publisher>Cambridge University Press</publisher>
+                        <date>2007</date></bibl>
+                    <bibl><author>Key Perspectives Ltd.</author>
+                        <title level="m">Data Dimensions: Disciplinary Differences in Research Data
+                            Sharing, Reuse and Long term Viability</title>
+                        <ptr target="http://www.dcc.ac.uk/docs/publications/SCARP SYNTHESIS.pdf"
+                        /></bibl>
+                    <bibl><author>Kramer, Christine</author>
+                        <title level="m">Lebensgeschichte, Authentizität und Zeit</title>
+                        <pubPlace>Frankfurt am Main u.a</pubPlace>
+                        <publisher>Lang</publisher>
+                        <date>2001</date></bibl>
+                    <bibl><author>Kripke, Saul</author>
+                        <title level="m">Name und Notwendigkeit</title>
+                        <pubPlace>Frankfurt a.M.</pubPlace>
+                        <publisher>Suhrkamp</publisher>
+                        <date>1981</date></bibl>
+                    <bibl><author>Mackenzie, Catriona</author>
+                        <title level="m">Practical identity and narrative agency</title>
+                        <pubPlace>New York</pubPlace><publisher>Routledge</publisher>
+                        <date>2008</date></bibl>
+                    <bibl><author>Marotzi, Winfried</author>
+                        <title level="m">Methodologie und Methoden der Biographieforschung</title>
+                        <pubPlace>Hohengehren</pubPlace>
+                        <publisher>Schneider</publisher>
+                        <date>2001</date></bibl>
+                    <bibl><author>Moore-Gilbert, B.</author>
+                        <title level="m">Postcolonial life-writing: culture, politics and
+                            self-representation</title>
+                        <pubPlace>London/New York</pubPlace>
+                        <publisher>Routledge</publisher>
+                        <date>2009</date></bibl>
+                    <bibl><author>NESTOR Arbeitsgruppe Grid/e-science und
+                            Langzeitarchivierung</author>
+                        <title level="m">nestor-bericht - Digitale Forschungsdaten bewahren und
+                            nutzen - für die Wissenschaft und die Zukunft</title>
+                        <pubPlace>Frankfurt am Main</pubPlace>
+                        <date>2009</date>
+                        <ptr target="http://nbn-resolving.de/nbn:de:0008-2009071031"/></bibl>
+                    <bibl><author>Neuroth, Heike</author>
+                        <author>Jannidis, Fotis</author>
+                        <author>Rapp, Andrea</author>
+                        <author>Lohmeier, Felix</author>
+                        <title level="a">Virtuelle Forschungsumgebungen für e-Humanities. Maßnahmen
+                            zur optimalen Unterstützung von Forschungsprozessen in den
+                            Geisteswissenschaften</title>
+                        <title level="j">Bibliothek, Forschung und Praxis</title>
+                        <biblScope type="issue">33 (2)</biblScope>
+                        <date>2009</date>
+                        <biblScope type="pp">161-169</biblScope>
+                        <ptr target="http://www.reference-global.com/doi/abs/10.1515/bfup.2009.017"
+                        /></bibl>
+                    <bibl><author>Schwiegelsohn, U.</author>
+                        <title level="a">Grids als neue Komponenten des Integrierten
+                            Informationsmanagements</title>
+                        <title level="j">Praxis der Informationsverarbeitung und
+                            Kommunikation</title>
+                        <biblScope type="issue">32 (1)</biblScope>
+                        <date>2009</date>
+                        <biblScope type="pp">29-32</biblScope>
+                        <ptr
+                            target="http://www.reference-global.com/doi/pdfplus/10.1515/piko.2009.006"
+                        /></bibl>
+                    <bibl><author>Wettlaufer, Jörg</author>
+                        <title level="a">Personendateien. Workshop der Arbeitsgruppe Elektronisches
+                            Publizieren der Union der deutschen Akademien der Wissenschaft -
+                            H-Soz-u-Kult / Tagungsberichte</title>
+                        <title level="j">H-Soz-u- Kult</title>
+                        <ptr
+                            target="http://hsozkult.geschichte.hu- berlin.de/tagungsberichte/id=2806&amp;count=126&amp;recno=9&amp;sort=datum&amp;order=down&amp;search=presse&amp; epoche=22"
+                        />
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

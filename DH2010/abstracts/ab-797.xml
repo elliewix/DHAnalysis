@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-797">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Generation of Emotional Dance Motion for Virtual Dance Collaboration
+                    System</title>
+                <author>
+                    <name>Seiya, Tsuruta</name>
+                    <affiliation>Graduate School of Science and Engineering, <orgName>Ritsumeikan University</orgName>,
+                        <country>Japan</country></affiliation>
+                    <email>seiya@img.is.ritsumei.ac.jp</email>
+                </author>
+                <author>
+                    <name>Woong, Choi</name>
+                    <affiliation>Global Innovation Research Organization, <orgName>Ritsumeikan University</orgName>,
+                        Shiga, <country>Japan</country></affiliation>
+                    <email/>
+                </author>
+                <author>
+                    <name>Kozaburo, Hachimura</name>
+                    <affiliation>Department of Media Technology, College of Information Science and
+                        Engineering, <orgName>Ritsumeikan University</orgName>, Shiga, <country>Japan</country></affiliation>
+                    <email/>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-23</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+            <change>
+                <date>2010-05-13</date>
+                <name>CD</name>
+                <desc>Equations added as images, encoding of the bibliography corrected</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>Measurement of body motion using motion capture systems has become widespread in the
+                fields of entertainment, medical care, and biomechanics research.</p>
+            <p>In our laboratory, we are undertaking research on the application of digital
+                archiving and information technology to dancing [<ref type="internal" cRef="bibl2"
+                    >Hachimura, 2006</ref>]. For example, quantitative analysis of traditional dance
+                motion [<ref type="internal" cRef="bibl4">Yoshimura et al., 2006</ref>] and 3D
+                character animations of traditional performing arts using virtual reality [<ref
+                    type="internal" cRef="bibl1">Furukawa et al., 2006</ref>]. Recently, we have
+                measured many kinds of dance motion, not only Japanese traditional dances, but also
+                contemporary street dances.</p>
+            <p>Dance collaboration system is one of the typical collaboration systems based on body
+                motion. In our laboratory, we are developing a Virtual Dance Collaboration System
+                    [<ref type="internal" cRef="bibl3">Tsuruta et al., 2007</ref>]. Live dancer’s
+                motion is captured by optical motion capture system, and the dance collaboration
+                system recognizes it in real-time. A virtual dancer responds to the live dancer’s
+                motion. The live dancer performs a dance to the music, and a virtual dancer reacts
+                with a dance by using the motion data stored in a motion database. It is desirable
+                to generate a virtual dancer’s motion according to the live dancer’s emotion or
+                music emotion.</p>
+            <p>In this paper, we describe a method to generate emotional dance motions by modifying
+                a standard dance motion which is stored in a database.</p>
+            <div>
+                <head>Overview of the Virtual Dance Collaboration System</head>
+                <p>A configuration of the system is shown in <ref type="internal" cRef="fig1">Figure
+                        1</ref>. Our proposed system provides users with collaboration with virtual
+                    dancers through dancing. The collaboration system consists of an optical
+                    real-time motion capture and an immersive virtual environment system. An optical
+                    motion capture system is able to measure body motion precisely and in real-time.
+                    Immersive virtual environment provides users stereoscopic display and feeling of
+                    immersion.</p>
+                <p>The system has three sections: “Motion processing section”, “Music processing
+                    section” and “Graphics processing section”.</p>
+                <p> In the “Motion processing section”, the system recognizes a live dancer’s motion
+                    in real-time, and determines a virtual dancer’s reactive motion. In the “Music
+                    processing section”, the system extracts emotional information from music in
+                    real time. In the “Graphics processing section”, the system regenerates a
+                    virtual dancer’s motion by using extracted emotional information from music, and
+                    the system displays 3DCG character animation by using immersive virtual
+                    environment.</p>
+                <figure xml:id="fig1">
+                    <head>Fig. 1. Configuration of Virtual Dance Collaboration System</head>
+                    <graphic url="797_Fig1.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+            </div>
+            <div>
+                <head>Generation of Emotional Dance Motion</head>
+                <p>For our system, it is necessary to generate a virtual dancer’s emotional motion
+                    in real-time. We developed a system named Emotional Motion Editor (EME).</p>
+                <figure xml:id="table1">
+                    <head>Table 1 - Motion features appeared on each human emotion</head>
+                    <graphic url="797_Table1.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <figure xml:id="table2">
+                    <head>Table II - Parameters used for modifying motion data</head>
+                    <head>(<hi rend="italic">α</hi>: coefficient <hi rend="italic"
+                        >β</hi>:bias)</head>
+                    <graphic url="797_Table2.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                </figure>
+                <!--<table xml:id="table1">
+                    <head>Table 1 - Motion features appeared on each human emotion</head>
+                    <row role="label">
+                        <cell>Emotion \ Feature</cell>
+                        <cell>Speed of Motion</cell>
+                        <cell>Height of Waist</cell>
+                        <cell>Vertical Motion Range of Waist</cell>
+                        <cell>Body Space</cell>
+                    </row>
+                    <row>
+                        <cell>Neutral (Standard)</cell>
+                        <cell>STD</cell>
+                        <cell>STD</cell>
+                        <cell>STD</cell>
+                        <cell>STD</cell>
+                    </row>
+                    <row>
+                        <cell role="label">Passionate</cell>
+                        <cell>Fast (++)</cell>
+                        <cell>Little low (-)</cell>
+                        <cell>Wide (++)</cell>
+                        <cell>Large (++)</cell>
+                    </row>
+                    <row>
+                        <cell role="label">Cheerful</cell>
+                        <cell>A little fast (+)</cell>
+                        <cell>Little high (+)</cell>
+                        <cell>Same as STD</cell>
+                        <cell>A little large (+)</cell>
+                    </row>
+                    <row>
+                        <cell role="label">Calm</cell>
+                        <cell>A little slow (+)</cell>
+                        <cell>Same as STD</cell>
+                        <cell>Little small (-)</cell>
+                        <cell>Small (- -)</cell>
+                    </row>
+                    <row>
+                        <cell role="label">Dark</cell>
+                        <cell>Slow (- -)</cell>
+                        <cell>Low (- -)</cell>
+                        <cell>A little wide (+)</cell>
+                        <cell>A little large (+)</cell>
+                    </row>
+                </table>-->
+                <!--<table xml:id="table2">
+                    <head>Table II - Parameters used for modifying motion data</head>
+                    <head>(<hi rend="italic">α</hi>: coefficient <hi rend="italic"
+                        >β</hi>:bias)</head>
+                    <row role="label">
+                        <cell rows="2">Emo-tion \ Feat-ure</cell>
+                        <cell rows="2">Speed of Motion</cell>
+                        <cell cols="2">Height of Waist</cell>
+                        <cell/>
+                        <cell cols="2">Vertical Motion Range of Waist</cell>
+                        <cell/>
+                        <cell cols="3">Body Space</cell>
+                        <cell/>
+                        <cell/>
+                    </row>
+                    <row role="label">
+                        <cell/>
+                        <cell/>
+                        <cell>joint</cell>
+                        <cell><hi rend="italic">β</hi></cell>
+                        <cell>joint</cell>
+                        <cell><hi rend="italic">α</hi></cell>
+                        <cell>joint</cell>
+                        <cell><hi rend="italic">α</hi></cell>
+                        <cell><hi rend="italic">β</hi></cell>
+                    </row>
+                    <row>
+                        <cell role="label">Passio-nate</cell>
+                        <cell>1.1</cell>
+                        <cell>knee</cell>
+                        <cell>-25.0</cell>
+                        <cell>knee</cell>
+                        <cell>3.0</cell>
+                        <cell>waist<lb/>elbow</cell>
+                        <cell>2.0<lb/>3.0</cell>
+                        <cell>5.0<lb/>—</cell>
+                    </row>
+                    <row>
+                        <cell role="label">Cheer-ful</cell>
+                        <cell>1.1</cell>
+                        <cell>knee</cell>
+                        <cell>10.0</cell>
+                        <cell>knee</cell>
+                        <cell>1.0</cell>
+                        <cell>waist<lb/>elbow</cell>
+                        <cell>1.5<lb/>3.0</cell>
+                        <cell>3.0<lb/>—</cell>
+                    </row>
+                    <row>
+                        <cell role="label">Calm</cell>
+                        <cell>0.8</cell>
+                        <cell>—</cell>
+                        <cell>—</cell>
+                        <cell>knee</cell>
+                        <cell>-1.0</cell>
+                        <cell>waist<lb/>—</cell>
+                        <cell>1.0<lb/>—</cell>
+                        <cell>-3.0<lb/>—</cell>
+                    </row>
+                    <row>
+                        <cell role="label">Dark</cell>
+                        <cell>0.7</cell>
+                        <cell>knee</cell>
+                        <cell>-30.0</cell>
+                        <cell>knee</cell>
+                        <cell>1.5</cell>
+                        <cell>waist<lb/>elbow</cell>
+                        <cell>1.5<lb/>2.0</cell>
+                        <cell>3.0<lb/>—</cell>
+                    </row>
+                </table>-->
+                <div>
+                    <head>Emotional Motion Editor</head>
+                    <p>The EME generates emotional dance motions by modifying the original motion
+                        data by changing the speed of motion or altering the joint angles
+                        interactively. To generate an emotional motion, a function of changing the
+                        size of motion is implemented within the EME.</p>
+                    <p>To generate virtual dancer’s emotional motions in real-time, we need a simple
+                        method which can calculate with few order. For this purpose, we employ a
+                        method altering the interior angle of two connecting body segments as shown
+                        in <ref type="internal" cRef="fig2">Figure 2</ref>.</p>
+                    <figure xml:id="fig2">
+                        <head>Fig. 2. Altering the joint angle</head>
+                        <graphic url="797_Fig2.jpg" xmt:type="full" width="40mm" rend="center"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <p><hi rend="italic">Q<hi rend="sub">i</hi></hi> and <hi rend="italic">Q′<hi
+                                rend="sub">i</hi></hi> is an original vector and a vector after
+                        rotating respectively. Where <hi rend="italic">θ<hi rend="sub">i</hi></hi>
+                        is an original angle, and <hi rend="italic">θ'<hi rend="sub">i</hi></hi> is
+                        an after rotating angle respectively. The rotation matrix is calculated by
+                        using equation (1).</p>
+                    <figure>
+                        <graphic url="797_Fig7.jpg" xmt:type="full" rend="img-left"
+                            mimeType="image/jpeg"/>
+                        <graphic url="797_Fig8.jpg" xmt:type="full" rend="img-left"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <p>Where <hi rend="italic">R<hi rend="sub">N</hi></hi> (<hi rend="italic">θ'<hi
+                                rend="sub">i</hi>− θ<hi rend="sub">i</hi>
+                        </hi>) matrix for rotation about vector <hi rend="italic">N</hi> . <hi
+                            rend="italic">N</hi> is a normal vector represented by equation (2).
+                        Where × means outer product.</p>
+                    <p>Change the size of the motion is indicated by equation (3).</p>
+                    <figure>
+                        <graphic url="797_Fig9.jpg" xmt:type="full" rend="img-left"
+                            mimeType="image/jpeg"/>
+                        <graphic url="797_Fig10.jpg" xmt:type="full" rend="img-left"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig3">
+                        <head>Fig. 3. Screen shot of Emotional Motion Editor</head>
+                        <graphic url="797_Fig3.jpg" xmt:type="full" rend="img-left"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <p>Constant <hi rend="italic">α</hi> and <hi rend="italic">β</hi> are
+                        coefficient for amplification and bias respectively. Where <hi rend="italic"
+                                >θ′<hi rend="sub">i</hi></hi> is amplified angle, <hi rend="italic"
+                                    ><foreign><hi rend="small">θ</hi>&#x305;</foreign><hi rend="sub"
+                                >i</hi></hi> is average of angles in sliding window at frame <hi
+                            rend="italic">i</hi> as shown in equation (4). <hi rend="italic">k</hi>
+                        is a half of the size of the sliding window.</p>
+                    <p>A screen shot of the EME is displayed in <ref type="internal" cRef="fig3"
+                            >Figure 3</ref>. A character model on the left shows an original dance
+                        motion. A model on the right shows generated emotional motion after
+                        modification.</p>
+                </div>
+                <div>
+                    <head>Relation between Emotion and Body Motion</head>
+                    <p>We examine the correlation between emotion and body motion in dancing by
+                        interviewing the dancer. We employ 5 kinds of emotions (Neutral, Passionate,
+                        Cheerful, Calm, Dark). “Neutral” is a standard motion. Motion features
+                        appeared on each human emotional motion are shown in <ref type="internal"
+                            cRef="table1">Table I</ref>. We then obtained parameters empirically
+                        with a dancer. Parameters used for generating emotional motions are shown in
+                            <ref type="internal" cRef="table2">Table II</ref>. <ref type="internal"
+                            cRef="fig4a">Figure 4(a)</ref> shows an example of motion modification.
+                        A thin line in <ref type="internal" cRef="fig4b">Figure 4(b)</ref> shows an
+                        original graph of angle variation of the right knee. The thick line shows a
+                        modified graph. In this case, <hi rend="italic">α</hi> and <hi rend="italic"
+                            >β</hi> was given 3.0 and -25.0 respectively.</p>
+                    <figure xml:id="fig4">
+                        <head>Fig. 4. An Example of motion modification (as "passionate").</head>
+                        <figure xml:id="fig4a">
+                            <head>(a) Snap shots of motions</head>
+                            <graphic url="797_Fig4a.jpg" xmt:type="full" rend="left-img"
+                                mimeType="image/jpeg"/>
+                        </figure>
+                        <figure xml:id="fig4b">
+                            <head>(b) Angle variation of right knee</head>
+                            <graphic url="797_Fig4b.jpg" xmt:type="full" rend="left-img"
+                                mimeType="image/jpeg"/>
+                        </figure>
+                    </figure>
+                </div>
+            </div>
+            <div>
+                <head>Experiments</head>
+                <p>We generate 4 kinds of emotional motions by using EME according to <ref
+                        type="internal" cRef="table2">Table II</ref>.</p>
+                <p>To evaluate generated emotional motions, we conducted 2 types of assessment
+                    experiment by using questionnaire survey.</p>
+                <div>
+                    <head>Method of Experiment</head>
+                    <p><hi rend="bold">Experiment 1</hi><lb/> Experiment 1 is a comparison between
+                        neutral standard motion and artificially generated emotional motions.<lb/>
+                        </p>
+                    <p><hi rend="bold">Experiment 2 </hi><lb/> Experiment 2 is a comparison between
+                        motion-captured emotional motions and artificially generated emotional
+                        motions.</p>
+                    <p>For the experiment, we used 9 kinds of motions as the following: <xmt:uList>
+                            <item>4 Emotional motions (performed by dancer)</item>
+                            <item>1 Standard motion (performed by dancer)</item>
+                            <item>4 Artificial emotional motions (generated by EME)</item>
+                        </xmt:uList></p>
+                </div>
+                <div>
+                    <head>Result of Experiments</head>
+                    <p>The results of Experiment 1 are shown in <ref type="internal" cRef="fig5"
+                            >Figure 5</ref>. This figure shows score averages, standard deviations
+                        and significant differences by the t-test. Black circles show standard
+                        motions, triangles show generated artificial emotional motions. As shown in
+                            <ref type="internal" cRef="fig5">Figure 5</ref>, all kinds of scores
+                        except "Calm" are higher than standard motion. We found that the respondents
+                        receive an impression of each emotion through artificial emotional
+                        motion.</p>
+                    <p><ref type="internal" cRef="fig6">Figure 6</ref> indicates the results of
+                        Experiment 2. White circles show motion-captured emotional motions, and
+                        triangles show generated artificial emotional motions by using EME. As a
+                        result of the t-test, there is no significant difference. We found that
+                        respondents received similar impressions of emotional motions from generated
+                        artificial emotional motions. We verified that our EME system is effective
+                        in generating emotional motions.</p>
+                    <figure xml:id="fig5">
+                        <head>Fig. 5. Experimental result 1</head>
+                        <graphic url="797_Fig5.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                    <figure xml:id="fig6">
+                        <head>Fig. 6. Experiment result 2</head>
+                        <graphic url="797_Fig6.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </div>
+            </div>
+            <div>
+                <head>Conclusion and future works</head>
+                <p>In this paper, we described a method to generate emotional dance motions by
+                    modifying the standard dance motion.</p>
+                <p>To generate emotional motions, we developed the Emotional Motion Editor. We
+                    conducted two experiments to evaluate generated emotional motions. As a result,
+                    we confirmed that EME can generate emotional motions by altering motion speed
+                    and joint angles.</p>
+                <p>As future work, implementation of the motion processing section and the motion
+                    modification function is necessary in the Virtual Dance Collaboration
+                    System.</p>
+            </div>
+            <div>
+                <p><hi rend="bold">Acknowledgements</hi><lb/>This research has been partially
+                    supported by the Global COE Program “Digital Humanities Center for Japanese Arts
+                    and Cultures”, the Grant-in-Aid for Scientific Research No.(B)16300035, all from
+                    the Ministry of Education, Science, Sports and Culture. We would like to give
+                    heartfelt thanks to Prof. Y. Endo, Ritsumeikan Univ. whose comments and
+                    suggestions were of inestimable value for our research. We would also like to
+                    thank Ms. Gotan and Mr. Morioka who support many experiments.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl xml:id="bibl1">
+                        <author>Furukawa, K.et al.</author><date>2006</date>
+                        <title level="u">CG Restoration of Historical Noh Stage and its use for
+                            Edutainment</title>
+                        <title level="m" type="proceedings">Proc. VSMM06</title>
+                        <biblScope type="pp">358-367</biblScope></bibl>
+                    <bibl xml:id="bibl2"><author>Hachimura, K.</author>
+                        <date>2006</date>
+                        <title level="a">Digital Archiving of Dancing</title>
+                        <title level="j">Review of the National Center for Digitization (Online
+                            Journal)</title>
+                        <biblScope type="vol">Vol.8</biblScope>
+                        <biblScope type="pp">51-66</biblScope>
+                        <ptr target="http://www.ncd.matf.bg.ac.yu/casopis/08/english.html"/>
+                        <date type="visited">12 March 2010</date></bibl>
+                    <bibl xml:id="bibl3"><author>Tsuruta, S. et al.</author>
+                        <date>2007</date>
+                        <title level="a">Real-Time Recognition of Body Motion for Virtual Dance
+                            Collaboration System</title>
+                        <title level="m" type="proceedings">Proceedings of 17th International
+                            Conference on Artificial Reality and Telexistence (ICAT 2007)</title>
+                        <date type="conference">2007</date>
+                        <biblScope type="pp">23-30</biblScope></bibl>
+                    <bibl xml:id="bibl4"><author>Yoshimura, M. et al.</author>
+                        <date>2006</date>
+                        <title level="a">Analysis of Japanese Dance Movements Using Motion Capture
+                            System</title>
+                        <title level="j">Systems and Computers in Japan</title>
+                        <biblScope type="vol">Vol.37</biblScope>
+                        <biblScope type="issue">No.1</biblScope>
+                        <biblScope type="pp">71-82</biblScope>
+                        <edition>Translated from Densi Joho Tsushin Gakkai Ronbunshi, Vol. J87-D-
+                            II, No.3</edition></bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

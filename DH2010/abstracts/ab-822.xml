@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-822">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>“You don't have to be famous for your life to be history”: The Dusenbery
+                    Journal and img2xml</title>
+                <author>
+                    <name>Smith, Natasha</name>
+                    <affiliation><orgName>University of North Carolina at Chapel Hill</orgName>, <country>USA</country></affiliation>
+                    <email>nsmith@email.unc.edu</email>
+                </author>
+                <author>
+                    <name>Cayless, Hugh</name>
+                    <affiliation><orgName>New York University</orgName>, <country>USA</country></affiliation>
+                    <email>hugh.cayless@nyu.edu</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-27</date>
+                <name>AC</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>This poster presentation will describe a project currently underway under the
+                auspices of the Documenting the American South digital publishing program. It has
+                been funded by grants from the US National Endowment for the Humanities (Digital
+                Humanities Start-Up Grants program) and UNC Chapel Hill. The project is centered
+                around the journal of a 19th century student at UNC named James Dusenbery and aims
+                to use innovative web-based technology to present the journal and to create modules
+                of supplementary material around it to provide insight into Dusenbery's world.</p>
+            <div>
+                <head>Background</head>
+                <p>The journal that forms the basis of our project was written by James Lawrence
+                    Dusenbery (1821-86) during the 1841-42 academic year. Dusenbery, the son of
+                    Lydia Davis (1797-1857) and planter Henry Rounsaville Dusenbery (1794-1852) of
+                    Lexington, North Carolina, entered the University of North Carolina (UNC) in
+                    1839. Sometime before graduating, he began copying out poems and lyrics to
+                    popular songs that he admired, and in July 1841 he began “Records of My Senior
+                    Year at the University of North Carolina,” a series of 44 weekly entries
+                    describing his activities as a University student. He graduated in 1842,
+                    received his MD from the University of Pennsylvania's Medical Department in
+                    1845, and returned to Lexington to practice medicine. During the Civil War, he
+                    served with the Fourteenth Battalion, Rowan County Home Guard. Though he
+                    survived the conflict, three brothers, two brothers-in-law, and a niece died
+                    during the war years. After the war Dusenbery resumed his medical practice in
+                    Lexington and served as a UNC trustee from 1874 until 1877. He died on 24
+                    February 1886 and was buried in the Lexington City Cemetery. He never
+                    married.</p>
+                <p>Dusenbery&apos;s journal, the centerpiece of this new digital collection,
+                    provides multiple opportunities to extend his text by creating a multimedia
+                    scholarly apparatus that, when combined with an array of interpretive essays,
+                    will illuminate the academic, social, political, economic, and religious forces
+                    that shaped his world. Though Dusenbery was not “famous” in the ways that our
+                    culture assigns such prominence, like many students today he enjoyed his senior
+                    year in college. He appreciated his friends; enjoyed sports, music, and dance;
+                    and despite an active social life, completed his studies successfully and spent
+                    his life as a physician in Lexington, North Carolina. The journal is a valuable
+                    source of information for those interested in antebellum culture, antebellum
+                    literary life, and the day-to-day events that ordinarily fall through the cracks
+                    of history. Edward L. Ayers, southern historian and one of the pioneers of
+                    digital libraries, points out that new forms of digitization and spatial display
+                    enable scholars and students alike to “see things that are invisible
+                        otherwise”.<note>The Chronicle of Higher Education, 10 November 2006:
+                        33</note> The Dusenbery Journal&apos;s multimedia apparatus will allow users
+                    to both see and hear a slice of American history. All of the materials included
+                    on the site will be accompanied by scholarly annotations, biographies, and
+                    essays that will provide an analytical framework for the project and forge
+                    connections between the disparate materials (and disciplines) represented. When
+                    it is completed, The Dusenbery Journal will be a fully realized, searchable,
+                    multimedia, scholarly edition consisting of manuscript materials, images, songs,
+                    artifacts, maps, newspaper clippings, court and judicial documents, and
+                    important related resources pulled together from a variety of repositories,
+                    especially the University Library&apos;s special collections; the North Carolina
+                    State Archives; North Carolina public libraries; and the private collection of a
+                    family descendant, Colonel William B. Hankins, Jr. The scholarly apparatus for
+                    Dusenbery's journal will be accessible to users by means of links within the
+                    edited text and through various indexes for personal names, places,
+                    publications, images, topics, events, dates, organizations, genres, and
+                    authors.</p>
+            </div>
+            <div>
+                <head>Technology</head>
+                <p>Digital images of the pages of the journal have been captured, and the text has
+                    been marked up in TEI P5 XML. The handwritten text has been traced and output in
+                    a Scaleable Vector Graphics (SVG) format. SVG is itself an XML format, which
+                    means structures (i.e. lines, words, and letters) in the image can be linked to
+                    lines and notes in the transcribed text. Open Source web mapping software
+                    (OpenLayers) is being used to provide zoomable overlays of the SVG and raster
+                    image for each page. The result is an interface in which each line of text in
+                    the transcription is linked to a line of written text on the page image. The
+                    page image and transcription are displayed side-by-side, and OpenLayers provides
+                    zoom and pan features for the image.</p>
+                <p>The img2xml system models tracings of manuscript text as Shapes: the SVG paths
+                    and bounding boxes; Regions: bounded spaces containing text; and Structures: the
+                    overlap of one or more shapes with a Region. Structures can be mapped to
+                    elements in a transcription or to annotations.</p>
+                <p>Since SVG is an XML-based format, it can be manipulated in a web browser using
+                    standard Javascript techniques. The final project is available at <ref
+                        target="http://docsouth.unc.edu/dusenbery" rend="newWindow" type="external"
+                        >http://docsouth.unc.edu/dusenbery.</ref></p>
+                <p>The digital environment has the power to contextualize and fully document this
+                    ordinary life, proving, as Nell Sigmon put it, “You don't have to be famous for
+                    your life to be history”.<note>Jacqueline Dowd Hall, interview with Nell Putnam
+                        Sigmon, 13 December 1979 (H-143), Southern Oral History Program Collection
+                        #4007, Southern Historical Collection, University of North Carolina at
+                        Chapel Hill.</note> In that, we fully realize one of the most distinguishing
+                    features of electronic editions - “their capaciousness: scholars are no longer
+                    limited by what they can fit on a page or afford to produce within the economics
+                    of print publishing”.<note>Price, Kenneth (2008). "Electronic Scholarly
+                        Editions," in A Companion to Digital Literary Studies, ed. Susan Schreibman
+                        and Ray Siemens. Oxford: Blackwell, 2008.</note></p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl><editor>Burnard, Lou</editor>
+                        <editor>Bauman, Syb</editor>
+                        <title level="m">TEI P5: Guidelines for Electronic Text Encoding and
+                            Interchange</title><date>November 8, 2009</date>
+                        <edition>ver. 1.5.0. </edition>
+                        <ptr target="http://www.teic.org/release/doc/tei-p5-doc/en/html/index.html"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Cayless, Hugh</author>
+                        <date>2008</date>
+                        <title level="a">Experiments in Automated Linking of TEI Transcripts to
+                            Manuscript Images</title>
+                        <title level="m" type="proceedings">TEI Member&apos;s Meeting</title>
+                        <name type="venue">London</name>
+                        <date type="conference">November 2008</date>
+                        <ptr
+                            target="http://www.cch.kcl.ac.uk/cocoon/tei2008/programme/abstracts/abstract-166.html"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Cayless, Hugh</author>
+                        <date>2009</date>
+                        <title level="a">Image as Markup: Adding Semantics to Manuscript
+                            Images</title>
+                        <title level="m" type="proceedings">DH 2009</title>
+                        <name type="venue">University of Maryland, USA</name>
+                        <date type="conference">22-25 June 2009</date>
+                        <ptr
+                            target="http://www.mith2.umd.edu/dh09/wp-content/uploads/dh09_conferencepreceedings_final.pdf"
+                        />
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-807">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Unfolding History with the Help of the GIS Technology: a Scholar-Librarian
+                    Quest for Creating Digital Collections</title>
+                <author><name>Smith, Natasha</name>
+                    <affiliation><orgName>University of North Carolina at Chapel Hill</orgName> <reg><country>USA</country></reg></affiliation>
+                    <email>nsmith@email.unc.edu</email></author>
+                <author><name>Allen, Robert</name>
+                    <affiliation><orgName>University of North Carolina at Chapel Hill</orgName> <reg><country>USA</country></reg></affiliation>
+                    <email>rallen@email.unc.edu</email>
+                </author>
+                <author><name>Whisnant, Anne</name>
+                    <affiliation><orgName>University of North Carolina at Chapel Hill</orgName> <reg><country>USA</country></reg></affiliation>
+                    <email>anne_whisnant@unc.edu</email></author>
+                <author><name>Eckhardt, Kevin</name>
+                    <affiliation><orgName>University of North Carolina at Chapel Hill</orgName> <reg><country>USA</country></reg></affiliation>
+                    <email>kevineck@email.unc.edu</email></author>
+                <author>
+                    <name>Moore, Elise</name>
+                    <affiliation><orgName>University of North Carolina at Chapel Hill</orgName> <reg><country>USA</country></reg></affiliation>
+                    <email>elimoore@email.unc.edu</email></author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-27</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                <p>Carolina Digital Library and Archives (CDLA) and Documenting the American South
+                    (DocSouth) are a digital library laboratory that creates, develops, and
+                    maintains online collections regarding the history of the American South with
+                    materials drawn primarily from the outstanding archival holdings of the UNC
+                    library. In this presentation, we plan to demonstrate how the close partnership
+                    between UNC librarians and faculty forges its path in the frontier of digital
+                    humanities. Our experience clearly demonstrates that digital historical
+                    scholarship cannot be done on the old model of the scholar laboring alone, “the
+                    solitary scholar who churns out articles and books behind the closed door of his
+                    office” (<ref type="internal" cRef="bibl4">see Kenneth Price, 2008</ref>). By bringing together faculty and librarians’
+                    expertise, collaborators endeavor to use digital technologies in a variety of
+                    innovative ways to collect, organize, and display data and materials that
+                    illuminate the temporal and spatial unfolding of historic events. Recent
+                    experimental work with GIS helps us to better understand how the use of digital
+                    technologies changes the way we do research in humanities and how it facilitates
+                    learning in the classroom. Indeed, “GIS, in combination with other branches of
+                    scholarship, has the potential to provide a more integrated understanding of
+                    history” (<ref type="internal" cRef="bibl3">see Ian N. Gregory, 2003</ref>).</p>
+
+                <p>At the same time, the wide array of issues (digitizing and geo-referencing of
+                    Sanborn and other historic maps, use of JavaScript mapping APIs, such as Google
+                    Maps and the open-source Open Layers, for zooming and hotspot addition, layering
+                    and geo-tagging scholarly content) will be presented based on several completed
+                    and in progress digital history collections built in close collaboration of UNC
+                    librarians working with UNC scholars. </p></div>
+
+                <div><p>1. “Going to the Show” (<ref type="external" target="http://www.docsouth.unc.edu/gtts/"
+                        >www.docsouth.unc.edu/gtts/</ref>) is the first digital archive devoted to
+                    the early experience of cinema across an entire state. In a research project,
+                    Prof. Allen collaborated with digital publishing experts and special collections
+                    librarians at UNC to create an online, interactive digital collection of maps,
+                    photos, postcards, newspaper clippings, architectural drawings, city directories
+                    and historical commentary that illuminate and reconstruct cultural and social
+                    life during the first three decades of the 20<hi rend="sup">th</hi> century in North Carolina.
+                    Supported by a grant from the N.C. State Library and a National Endowment for
+                    the Humanities Digital Humanities Fellowship, “Going to the Show” (GttS)
+                    developed the innovative system for layering content on electronically stitched
+                    and geo-referenced Sanborn Fire Insurance Maps. Especially in its highly
+                    detailed case study of early moviegoing in Wilmington, N.C., GttS demonstrates
+                    the extraordinary potential for illuminating community history through the
+                    interaction of documentary material and Sanborn maps (<ref type="internal" cRef="fig1">see Figure 1</ref>).  </p><figure
+                        xml:id="fig1">
+                        <head>Figure 1. Google Maps AP1 used to present 1915 SAnborn map with
+                            layered historic materials to document the moviegoing in North
+                            Carolina.</head>
+                        <graphic url="807_Fig1.jpg" xmt:type="full"
+                            rend="left-img" mimeType="image/jpeg"/>
+                    </figure>
+               </div>
+                <div><p>2. Building on the digital history project “Going to the Show”, the project team
+                    decided to expand the reach of their expertise by creating a web-based toolkit
+                    that will allow libraries, schools, museums, local history societies, and other
+                    community organizations to preserve, document, interpret, display, and share the
+                    history of their downtowns. Called “<hi rend="italic">Main Street, Carolina:
+                        Recovering the History of Downtown Across North Carolina</hi>,” the toolkit
+                    will provide users with a flexible, user-friendly digital platform on which they
+                    can add a wide variety of “local” data: historical and contemporary photographs,
+                    postcards, newspaper ads and articles, architectural drawings, historical
+                    commentary, family papers, and excerpts from oral history interviews—all keyed
+                    to and layered on top of digitized Sanborn Fire Insurance Maps. The toolkit will
+                    consist of a PHP-based web application and a JavaScript API. The web application
+                    will be compact in size, resource-light, and easy to install on the local
+                    organization’s own web server or that of a third-party web-hosting service. It
+                    will provide administrative tools for configuring the site, creating place
+                    markers, creating simple web pages for content, and customizing the look and
+                    feel (<ref type="internal" cRef="fig2">see Figure 2</ref>). These place markers can then be associated with images,
+                    stories, or other content, providing a visual link between the content and
+                    related physical locations. The map interface is the focal point of the software
+                    and will allow users to explore content associated with specific geographic
+                    locations by interacting with place markers, or "push-pins," overlaid on top of
+                    historic maps. Clicking on a place marker's icon will display an information
+                    bubble which can contain text, images, and links to additional content. The user
+                    will be able to view and effortlessly pan across entire downtowns as a seamless
+                    integration of multiple high-resolution map pages; zoom from a bird-eye view to
+                    the smallest cartographic feature; compare successive map iterations showing the
+                    same building, block, or neighborhood; and overlay any of these views with
+                    contemporary satellite and map images at the same scale. The JavaScript API will
+                    allow users to include digitized maps created for other CDLA projects as layers
+                    in their own websites or mash-ups which use the Google Maps or Open Layers
+                    mapping APIs. For example, a user could embed an historic map in a blog post or
+                    add a Sanborn Map as a layer to their existing website which uses Google Maps to
+                    show the location of homes that are listed on the <hi rend="italic">National
+                        Register of Historical Places</hi>. MSC is funded by a private funding and
+                    an NEH Start-up Grant. Development for this project began in October 2009. We
+                    plan to release the toolkit and pilot projects developed in collaboration with
+                    external partners in summer 2010, prior to the start of the conference. </p><figure
+                        xml:id="fig2">
+                        <head>Figure 2. “<hi rend="italic">Main Street, Carolina: Recovering the
+                                History of Downtown Across North Carolina</hi>” tool kit.
+                            Administrative form for entering historical documents.</head>
+                        <graphic url="807_Fig2.jpg" xmt:type="full"
+                            rend="left-img" mimeType="image/jpeg"/>
+                    </figure>
+                </div>
+                <div><p>3. “Driving through Time: The Digital Blue Ridge Parkway in North Carolina” will
+                    present an innovative visually and spatially based model for illustrating North
+                    Carolina’s key role in creating the Parkway, representing the twentieth-century
+                    history of a seventeen-county section of the North Carolina mountains, and for
+                    understanding crucial elements of the development of the American National Park
+                    system. The project will feature historic maps, photographs, postcards,
+                    government documents, oral history interviews, and newspaper clippings. Each
+                    historic document will be assigned geographic coordinates so that it can be
+                    viewed on a map, enabling users to visualize and analyze the impact of the Blue
+                    Ridge Parkway on the people and landscape in western North Carolina over both
+                    space and time (<ref type="internal" cRef="fig3">See Figure 3</ref>). Primary sources will be drawn from the
+                    collections of the UNC-Chapel Hill University Library, the Blue Ridge Parkway
+                    Headquarters, and the North Carolina State Archives. These materials are
+                    especially significant in that they document one of North Carolina’s most
+                    popular tourist attractions, but also in the way that they help illuminate the
+                    way that the Blue Ridge Parkway transformed the communities through which it
+                    passed. In addition to the digitized primary sources, the project will include
+                    scholarly analyses of aspects of the development of the Blue Ridge Parkway. </p>
+
+                <p>A geospatial format is uniquely appropriate for considering the history of the
+                    Parkway and its region. As a narrow park corridor pushed through a
+                    long-populated southern Appalachian landscape, the Parkway rearranged spaces,
+                    repurposed lands, reorganized travel routes, and opened and closed economic
+                    opportunities through control of road routing, access, and use. The social
+                    conflicts it engendered, therefore, frequently entailed spatial components –
+                    should the road go here, or there; should it take more or less land; should this
+                    or that property be favored with direct Parkway access (or not)? Understanding
+                    these aspects of Parkway history without reference to spatial relationships on
+                    the land is challenging, as the project’s scholarly adviser, Dr. Anne Mitchell
+                    Whisnant, recognized when publishing her 2006 book, <hi rend="italic"
+                        >Super-Scenic Motorway: A Blue Ridge Parkway History</hi> (UNC Press). Her
+                    experience, both in writing the book and in delivering numerous public
+                    presentations since its appearance, is that narrative alone cannot provide the
+                    public with the tools to comprehend past controversies or present land
+                    protection challenges. Using digital and geospatial technologies to open a new
+                    window on the history of the Parkway and its region is especially timely
+                    considering the approach of the Parkway’s 75th anniversary in 2010 and the
+                    National Park Service’s 100th anniversary in 2016. </p>
+                <p>The collaboration between the library and Dr. Whisnant has been enhanced by
+                    Whisnant’s engagement in related field of “public history,” which is history
+                    practiced outside the walls of academia, with and for public audiences. Based in
+                    academia but designed for public benefit, “Driving through Time” has offered an
+                    exceptional opportunity for involving undergraduate and graduate students in Dr.
+                    Whisnant’s Introduction to Public History class in its creation. As a scholarly
+                    project being built through the expertise of a large team (as nearly all public
+                    history undertakings are), “Driving through Time” has been an ideal space for
+                    students to gain hands-on experience in doing public history collaboratively, in
+                    real-time, with their instructor. Students are doing original primary source
+                    research in the university’s special collections, identifying materials for
+                    inclusion in the online exhibit, developing their own historical narratives,
+                    working with new tools such as wikis and databases, and contributing to the
+                    creation of metadata. Because the instructor has not predetermined the final
+                    outcome, furthermore, students are being given ownership over both their process
+                    and their final products and practicing navigating the unexpected twists, turns,
+                    delights, and disappointments that historical research always entails. <figure
+                        xml:id="fig3">
+                        <head>Figure 3. "Driving throug Time: The Digital Blue Ridge Parkway in
+                            North Carolina"</head>
+                        <graphic url="807_Fig3.jpg" xmt:type="full"
+                            rend="left-img" mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl xml:id="bibl1">
+                        <author>Knowles, Anne Kelly</author>
+                        <title level="m">Placing History: How Maps, Spatial Data, and GIS Are
+                            Changing Historical Scholarship</title>
+                        <pubPlace>Redlands, Calif.</pubPlace>
+                        <publisher>ESRI Press</publisher>
+                        <date>2008</date></bibl>
+
+                    <bibl xml:id="bibl2"><author>Whisnant, Anne Mitchell</author>
+                        <title level="m">Super-Scenic Motorway: A Blue Ridge Parkway History</title>
+                        <publisher>UNC Press</publisher>
+                        <date>2006</date></bibl>
+
+                    <bibl xml:id="bibl3">
+                        <author>Gregory, Ian N.</author>
+                        <title level="m">A place in History: A Guide to Using GIS in Historical
+                            Research</title>
+                        <date>2003</date>
+                        <edition>2<hi rend="sup">nd</hi> Edition. </edition>
+                        <ptr target="http://www.ccsr.ac.uk/methods/publications/ig-gis.pdf"/>
+                    </bibl>
+
+                    <bibl xml:id="bibl4"><author>Price, Kenneth</author>
+                        <title level="a">Electronic Scholarly Editions</title> <title level="m">A
+                            Companion to Digital Literary Studies</title>
+                        <editor>Schreibman, Susan</editor>
+                        <editor>Siemens, Ray</editor>
+                        <pubPlace>Oxford</pubPlace>
+                        <publisher>Blackwell</publisher>
+                        <date>2008</date></bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

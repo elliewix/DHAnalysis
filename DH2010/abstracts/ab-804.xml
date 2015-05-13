@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-804">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Diple, modular methodology and tools for heterogeneous TEI corpora</title>
+                <author>
+                    <name>Glorieux, Frédéric</name>
+                    <affiliation><orgName>École nationale des chartes</orgName> <reg><country>France</country></reg></affiliation>
+                    <email>frederic.glorieux@enc.sorbonne.fr</email>
+                </author>
+                <author>
+                    <name>Canteaut, Olivier</name>
+                    <affiliation><orgName>École nationale des chartes</orgName> <reg><country>France</country></reg></affiliation>
+                    <email>olivier.canteaut@enc.sorbonne.fr</email>
+                </author>
+                <author><name>Jolivet, Vincent</name>
+                    <affiliation><orgName>École nationale des chartes</orgName> <reg><country>France</country></reg></affiliation>
+                    <email>vincent.jolivet@enc.sorbonne.fr</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-20</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>The <hi rend="italic">École nationale des chartes</hi> publishes a variety of
+                electronic corpora,<note><ref type="external" target="http://elec.enc.sorbonne.fr/"
+                        >http://elec.enc.sorbonne.fr/</ref></note> focused on historical sources
+                (medieval, but also, modern and contemporary). A dictionary,<note><ref
+                        type="external" target="http://ducange.enc.sorbonne.fr/"
+                        >http://ducange.enc.sorbonne.fr/</ref></note> a collection of
+                        acts,<note><ref type="external"
+                        target="http://elec.enc.sorbonne.fr/cartulaires/"
+                        >http://elec.enc.sorbonne.fr/cartulaires/</ref></note> or a
+                        manuscript<note><ref type="external"
+                        target="http://elec.enc.sorbonne.fr/sanctoral/"
+                        >http://elec.enc.sorbonne.fr/sanctoral/</ref></note> are very different
+                types of documents, each requiring different structures and interfaces. A narrative
+                manuscript needs a table of contents, a dictionary, fast access to headwords, and
+                acts, the ability to sort by dates. Each editorial project should allow
+                customization, but efficient development requires that the tools and corpora are as
+                normalized as possible. New needs emerge, such as natural language processing
+                research, requiring large corpora with normalized metadata sets and word tagging.
+                For several months we have been working on a platform to address these needs: <hi
+                    rend="italic">Diple</hi> is a collection of tools to organize modular
+                production, publication, and searching of electronic corpora.</p>
+            <div>
+                <head>Modular schemas</head>
+                <p>The TEI guidelines (500 XML elements, 1500 pages of documentation) allow endless
+                    variations in encoding, even for identical objects. For example, <hi
+                        rend="italic">italic</hi> in our corpora has been encoded with different
+                    combinations of &lt;(hi|emph)
+                    rend=&quot;(italique|italic|ital.|i|itlaic|...)&quot;&gt;. After several years
+                    of development, with different encoders, each electronic edition becomes an
+                    independent software, with its own encoding, mistakes, workarounds, with also
+                    different technologies for publication or fulltext searching.</p>
+                <p><hi rend="italic">Diple</hi> starts with housekeeping. First, for all our tagged
+                    texts, we wrote a precise <hi rend="italic">document type definition</hi> (in
+                    Relax-NG syntax) in order to define three main and shared schemas : <xmt:uList>
+                        <item>file metadatas (&lt;teiHeader&gt;)</item>
+                        <item>general text (blocks and inlines)</item>
+                        <item>structure for a specific type of text (ex: acts and charters,
+                            dictionaries)</item>
+                    </xmt:uList></p>
+                <p>The normalization of the corpora is a more sustainable investment than new
+                    software. These shared schemas are extremely helpful for normalizing and
+                    validating XML instances, and therefore allow us to take advantage of earlier
+                    TEI editions. Of course, the <hi rend="italic">Diple</hi> TEI schema is modular,
+                    allowing customization for each editorial project.<note><ref>For example, <ref
+                                type="external"
+                                target="http://elec.enc.sorbonne.fr/cartulairesIdF/src/schema.htm"
+                                >http://elec.enc.sorbonne.fr/cartulairesIdF/src/schema.htm</ref></ref></note>
+                    An editor can then focus on the specificities of each edition. Are named
+                    entities sufficiently tagged to generate automatic indexes? Are the sentences
+                    chunked, the words lemmatized?</p>
+                <p>Moreover, this work of normalization of our XML corpora is a small price to pay
+                    to factorize our code, for instance to create a standard XSLT engine: the screen
+                    transformation of a new corpus conforming to those schemas is done by this
+                    engine, increasing our publication productivity. In the end, the XSLT of a
+                    specific edition is short, focusing on the very specific aspects of the corpus
+                    (its custom schema) related to a research project, the main part of the
+                    publication job being done by the <hi rend="italic">Diple</hi> XSLT engine. The
+                    same logic applied for presentation CSS.</p>
+            </div>
+            <div>
+                <head>Shared interface components, documents driven</head>
+                <p>A publication system usually allows templating and plugins. A good software
+                    architecture should be conceived in this way, but scholarly editions don't
+                    function like a CMS. Templating systems are usually designed to effect easy
+                    change of colours, to deliver the same feature under different designs. In a
+                    scholarly collection, books could share a cover, but follow very different
+                    structures. Rather than constrain all corpora to a single template, the <hi
+                        rend="italic">Diple</hi> system provides different components, allowing an
+                    electronic corpus editor to compose the interface best suited to his text.
+                    Headers or footers are easy to share, but beyond that, one project might require
+                    a fulltext search box, another a database query, another a sidebar table of
+                    contents. Design snippets or plugins are conceived of as portal bricks, easy to
+                    compose in a server page (PHP), and are kept as simple and light as possible. If
+                    a local variable, function or object could have a general interest, it should be
+                    shared.</p>
+            </div>
+            <div>
+                <head>Text engines for research, retrieving and concordances</head>
+                <p>Navigation, tables and indexes, should answer most of the user's needs; but a
+                    search box is also an important navigation tool. <hi rend="italic">Diple</hi>
+                    ensures a canonical electronic publication, with persistent addresses, so that
+                    different text engines can be plugged around the edition. Corpora may require
+                    different approaches. A collection of items, like a dictionary or cartularies,
+                    needs at first a retrieving engine to get an item conveniently, by a keyword in
+                    full-text, but also dates, headwords and other metadatas. There are also texts
+                    for which no divisions are relevant; a concordance report is much more
+                    informative, displaying all occurrences in context. Different tools offer
+                    different views, documented XML allows us to generate what an engine likes. We
+                    have successfully used MySQL full-text indexes<note><ref type="external"
+                            target="http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html"
+                            >http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html</ref></note>
+                    for navigation interfaces, PhiloLogic<note><ref type="external"
+                            target="http://philologic.uchicago.edu/"
+                            >http://philologic.uchicago.edu/</ref></note> for concordances,
+                            Lucene<note><ref type="external" target="http://lucene.apache.org/java/"
+                            >http://lucene.apache.org/java/</ref></note> is very efficient to
+                    retrieve items, and we learned to use IMS Corpus Workbench (CWB)<note><ref
+                            type="external"
+                            target="http://www.ims.uni-stuttgart.de/projekte/CorpusWorkbench/"
+                            >http://www.ims.uni-stuttgart.de/projekte/CorpusWorkbench/</ref></note> for
+                    future lemmatized corpora. But sometimes we also simply use mixed scripts
+                    (shell, XSLT, SAX…) to run a specific experiment on a word or a semantic
+                    field.</p>
+            </div>
+            <div>
+                <head>Conclusion</head>
+                <p><hi rend="italic">Diple</hi> grows and adapts with each new corpus, rapidly
+                    incorporating other corpora, an idea worth generalizing. All our code will soon
+                    be released under a free software license. Anyone can download, read, and try
+                        <hi rend="italic">Diple</hi>. We don’t claim it will work for all your TEI
+                    documents, but if they conform to the schemas, you will quickly get nice results
+                    on the screen.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Bourgain, Pascale</author>
+                        <author>Vieillard, Françoise (coord.)</author>
+                        <title level="m">Conseils pour l'édition des textes médiévaux</title>
+                        <title level="s">Fascicule III. Textes littéraires</title>
+                        <publisher>Éd. du CTHS, École des chartes</publisher>
+                        <pubPlace>Paris</pubPlace>
+                        <date>2002</date></bibl>
+                    <bibl><author>Guyotjeannin, Olivier</author>
+                        <author>Vieillard, Françoise (coord.)</author>
+                        <title level="m">Conseils pour l'édition des textes médiévaux</title>
+                        <biblScope type="part">Fascicule I</biblScope>
+                        <title level="a">Conseils généraux</title>
+                        <publisher>Éd. du CTHS, École des chartes</publisher>
+                        <pubPlace>Paris</pubPlace>
+                        <date>2001</date></bibl>
+                    <bibl><author>Olivier Guyotjeannin (coord.)</author>
+                        <title level="m">Conseils pour l'édition des textes médiévaux</title>
+                        <biblScope type="part">Fascicule II</biblScope>
+                        <title level="a">Actes et documents d'archives</title>
+                        <publisher>Éd. du CTHS, École des chartes</publisher>
+                        <pubPlace>Paris</pubPlace>
+                        <date>2001</date></bibl>
+                    <bibl>
+                        <author>McCandless, Michael</author>
+                        <author>Hatcher, Erik</author>
+                        <author>Gospodnetić, Otis</author>
+                        <title level="m">Lucene in action</title>
+                        <publisher>Manning Publications Co.</publisher>
+                        <date>2010</date>
+                        <ptr target="http://www.manning.com/hatcher3/"/><edition>2e
+                        ed.</edition></bibl>
+                    <bibl><editor>TEI Consortium</editor>
+                        <title level="m">TEI P5: Guidelines for Electronic Text Encoding and
+                            Interchange</title>
+                        <ptr
+                            target="http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/REF-ELEMENTS.html"
+                        /></bibl>
+                    <bibl><author>Wooldridge, Russon</author>
+                        <title level="m">Les Débuts de la lexicographie française</title>
+                        <edition>2e éd.</edition>
+                        <publisher>EDICTA</publisher>
+                        <pubPlace>Toronto</pubPlace>
+                        <date>1997</date>
+                        <ptr target="http://www.chass.utoronto.ca/~wulfric/edicta/wooldridge/"/>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

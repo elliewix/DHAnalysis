@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-659">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>The Craig Zeta Spreadsheet</title>
+                <author>
+                    <name>Hoover, David L.</name>
+                    <affiliation><orgName>New York University</orgName>, <country>USA</country></affiliation>
+                    <email>david.hoover@nyu.edu</email>
+                </author>
+
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-29</date>
+                <name>NG</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <div>
+
+                <p>Zeta, a new measure of textual difference introduced by John F. Burrows, can be
+                    used effectively in authorship attribution and stylistic studies to locate an
+                    author's characteristic vocabulary–&quot;marker&quot; words that one author uses
+                    consistently, but another author or authors use much less frequently or not at
+                    all (Burrows 2005, 2006; Hoover 2007a, 2007b, 2008). Zeta analysis excludes the
+                    extremely common words that have traditionally been the focus and concentrates
+                    on the middle of the word frequency spectrum. Beginning in 2008, I developed an
+                    Excel spreadsheet implementation of Zeta and its related measure Iota (which
+                    focuses on words that are relatively rare in one author, but extremely rare or
+                    absent from others), available on my Excel Text-Analysis Pages. Recently,
+                    however, Craig has developed an alternative version of Zeta that simultaneously
+                    creates sets of marker words and anti-marker words and has applied it
+                    impressively to Shakespeare authorship problems (Craig and Kinney, 2009; Hoover,
+                    forthcoming). Although Craig's Zeta focuses on the same part of the word
+                    frequency spectrum as Zeta, its calculation and results are quite different.
+                    Because it seems poised to become an important tool for computational
+                    stylistics, I have created and will demonstrate the Craig Zeta Excel spreadsheet
+                    that automates its calculation.</p>
+                <p>Craig's Zeta is a powerful but simple method of measuring differences among
+                    authors. It begins with two sets of texts divided into about equal-sized
+                    sections, then compares how many sections for each author contain each word,
+                    ignoring the frequencies of the words and concentrating on their consistency of
+                    appearance. The most natural comparison is between two authors, but it can be
+                    used to study any contrast. My demo version contrasts thirteen female and
+                    thirteen male American poets born between 1911 and 1943 (about 8,000 words of
+                    poetry by each, divided into two sections).</p>
+                <p>The heart of the method is that it combines the ratio of the sections by one
+                    author in which each word occurs with the ratio of the sections by the other
+                    author from which it absent into a single measure of distinctiveness for each
+                    word. Zeta scores theoretically range from two (for a word found in every
+                    section by one author and absent from every section by the other), to zero (for
+                    a word found in no sections by one author and in all sections by the other).
+                    Sorting the words on this composite score produces two lists of words, one
+                    favored by the first author and avoided by the second, the other favored by the
+                    second author and avoided by the first.</p>
+                <p>The snippet from the spreadsheet in Fig. 1 (shown before the macro operates) will
+                    clarify the calculation. In E7 and E8, the user enters labels (automatically
+                    copied into columns A and G and Row 9) for the two groups to be compared. The
+                    data to be analyzed is in columns H through CA, rows 11ff, with most columns
+                    minimized so the various categories are visible. The combined word frequency
+                    list for the two groups is in column G, with the raw frequencies for each word
+                    in each section in columns H-CA. The calculation is performed in columns A-E.
+                    Column D sums the sections of poetry by women that contain the word, and column
+                    E sums the sections of poetry by men that do not contain the word. The most
+                    frequent words typically occur in all sections, but note that <hi rend="italic"
+                        >me</hi>, the 30<hi rend="sup">th</hi> most frequent word, is absent from one of the men's
+                    sections. Column B calculates the ratio of women's sections containing the word
+                    to the total number of women's sections; column C calculates the ratio of men's
+                    sections not containing the word to the total number men's sections. Column A
+                    sums columns B and C to produce the Zeta scores. Columns H-CA of row 1 show the
+                    number of different words (word types) in each section, and below them, the
+                    percentage of types that are marker words for women or men (these are not
+                    meaningful until the macro has operated). In cells F2-F3 the user can set the
+                    number of marker words for each group at different levels for sections of
+                    different sizes and can see three sets of results at once in H-CA.</p>
+                <p><figure xml:id="fig1">
+                        <graphic url="659_Fig1.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/tif"/>
+                    <head>Figure 1</head>
+                    </figure></p>
+                <p>An Excel macro automates the calculation of Zeta. Word frequency lists for the
+                    texts to be analyzed are entered into five sub-sheets (not shown). One contains
+                    the sections of the primary group and one contains the sections of the secondary
+                    group. Two more sub-sheets contain any independent sections by the primary and
+                    secondary groups (these can be used to test the method's success on known
+                    texts). Finally, there is a sub-sheet for the texts to be tested. The macro
+                    clears out old data, enters formulas into columns H-CA, rows 2-7, copies the
+                    texts out of the sub-sheets into the main sheet, shrinks the columns, and enters
+                    ranks for the words in column F. It then sorts the words on their Zeta scores in
+                    column A, descending, so that the words most distinctively used by women appear
+                    at the top and those most distinctively used by men are at the bottom. It
+                    selects the 1000 most distinctive men's words and resorts them in reverse order,
+                    with the most distinctive at the top of their section. The sheet can handle
+                    15,000 words, but the sample above analyzes 14,000 words (calculated in cell
+                    B2), so rows 11-1010 will contain the 1000 most distinctive women's words and
+                    rows 13,011-14,010 the 1000 most distinctive men's words.</p>
+                <p>Figure 2 shows the data after the macro runs. Here <hi rend="italic"
+                        >mother's</hi>, found in 13 of 26 sections by women and absent from 24 of 26
+                    sections by men, is the most distinctive women's word in this comparison. The
+                    most distinctive men's word, <hi rend="italic">cross</hi>, is found in just 3 of
+                    26 sections by women, but is absent from only 10 of 26 sections by men. The most
+                    distinctive words for each group are found in columns CB and CC in descending
+                    order of distinctiveness. The figures in rows 2-7 of columns H-CA show how these
+                    distinctive words are distributed in each section. For example, H2-H3 shows that
+                    almost 15% of the words Derricote uses in this section are among the 500 most
+                    distinctive women's words, but only about 5% are among the 500 most distinctive
+                    men'swords. For Ammons (1), in AH2-AH3, the first section by a man, the
+                    proportions are roughly reversed.</p>
+                <p><figure xml:id="fig2">
+                        <graphic url="659_Fig2.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/tif"/>
+                    <head>Figure 2</head>
+                    </figure></p>
+                <p>Columns BH-CA contain the same information for the test sections, 25 sections of
+                    poetry by seven female and seven male poets whose work had no part in the
+                    creation of the word list on which the analysis is based. Finally, the macro
+                    creates a scatter graph of the analysis with section names as labels (Fig. 3).
+                    The vertical axis records the proportion of types in each text that are marker
+                    words for men and the horizontal axis does the same for marker words for women.
+                    As Fig. 3 shows, twenty of the twenty-five new sections of poetry (80%) trend
+                    toward the group that matches their gender. The fact that these same words
+                    produce a similar, though slightly less accurate, result for seven male and
+                    seven female contemporary novelists is further evidence that the method is
+                    capturing some kind of genuine difference. This is a strong result, especially
+                    given the relatively small samples and the wide diversity that characterizes
+                    20th century American poetry. The little chart that follows Fig. 3 shows some of
+                    the clusters of related words that occur in the women's and men's marker words,
+                    and hints at the kinds of analysis that Craig's Zeta makes possible.</p>
+                <p><figure xml:id="fig3">
+                        <graphic url="659_Fig3.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/tif"/>
+                    <head>Figure 3</head>
+                    </figure></p>
+                
+                    <table>
+
+                        <row role="label">
+                            <cell role="label" rend="2cm"><hi rend="bolditalic">Cluster</hi></cell>
+                            <cell role="label"><hi rend="bolditalic">500 Women's Markers</hi></cell>
+                            <cell role="label"><hi rend="bolditalic">500 Men's Markers</hi></cell>
+
+                        </row>
+                        <row>
+                            <cell><hi rend="bold">Family</hi></cell>
+                            <cell><hi rend="italic">mother's, father's, mother, father, children,
+                                    ancestral, aunt, baby, birth, child, child's, cousins,
+                                    daughters, family, generations, uncles</hi></cell>
+                            <cell>  </cell>
+
+                        </row>
+                        <row>
+                            <cell><hi rend="bold">Religion</hi></cell>
+                            <cell><hi rend="italic">altar</hi>, <hi rend="italic">nuns</hi>, and <hi
+                                    rend="italic">praying</hi></cell>
+                            <cell><hi rend="italic">faith, heaven, hell, prayers, souls, spirit,
+                                    Christ, gods, myth, paradise, religion, spirits,
+                                temple</hi></cell>
+
+                        </row>
+                        <row>
+                            <cell><hi rend="bold">Houses/Furniture</hi></cell>
+                            <cell><hi rend="italic">danced</hi></cell>
+                            <cell><hi rend="italic">song, dancing, sing, dance, sang, dancer, music,
+                                    singer, singing, sings</hi></cell>
+                        </row>
+                        <row>
+                            <cell><hi rend="bold">Personal Pronouns</hi></cell>
+                            <cell><hi rend="italic">he'll, I'd, mine, ourselves, she'd, she's,
+                                    they'd, you'd, you're, yourself</hi></cell>
+                            <cell>  </cell>
+                        </row>
+                    </table>
+                
+
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Burrows, J. F.</author>
+                        <date>2006</date>
+                        <title level="a">All the Way Through: Testing for Authorship in Different
+                            Frequency Strata</title>
+                        <title level="j">LLC</title>
+                        <biblScope type="issue">22</biblScope>
+                        <biblScope type="pp">27-47</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Burrows, J. F.</author>
+                        <date>2005</date>
+                        <title level="a">Who wrote Shamela? Verifying the Authorship of a Parodic
+                            Text</title>
+                        <title level="j">LLC</title>
+                        <biblScope type="issue">20</biblScope>
+                        <biblScope type="pp">437-450</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Craig, H., and Kinney, A., eds.</author>
+                        <date>2009</date>
+                        <title level="m">Shakespeare, Computers, and the Mystery of
+                            Authorship</title>
+                        <publisher>Cambridge University Press</publisher>
+                        <pubPlace>Cambridge</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.</author>
+                        <date>2007a</date>
+                        <title level="a">Corpus Stylistics, Stylometry, and the Styles of Henry
+                            James</title>
+                        <title level="j">Style</title>
+                        <biblScope type="issue">41</biblScope>
+                        <biblScope type="pp">174-203</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.</author>
+                        <date>2007b</date>
+                        <title level="a">Quantitative Analysis and Literary Studies</title>
+                        <title level="m">A Companion to Digital Literary Studies</title>
+                        <editor>Susan Schreibman</editor> <editor>Ray Siemens</editor>
+                        <publisher>Blackwell</publisher>
+                        <pubPlace>Oxford</pubPlace>
+                        <biblScope type="pp">517-33</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.</author>
+                        <date>2008</date>
+                        <title level="a">Searching for Style in Modern American Poetry</title>
+                        <title level="m">Directions in Empirical Literary Studies: Essays in Honor
+                            of Willie van Peer</title>
+                        <editor>Sonia Zyngier</editor> <editor>et. al.</editor>
+                        <publisher>John Benjamins</publisher>
+                        <pubPlace>Amsterdam</pubPlace>
+                        <biblScope type="pp">211-27</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.</author>
+                        <date>2009</date>
+                        <title level="a">The Excel Text-Analysis Pages</title>
+                        <ptr
+                            target="https://files.nyu.edu/dh3/public/The%20Excel%20Text-Analysis%20Pages.html"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Hoover, D.</author>
+                        <date>2010: forthcoming</date>
+                        <title level="a">Authorial Style</title>
+                    </bibl>
+
+
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

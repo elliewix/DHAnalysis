@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-867">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Using Wikipedia to Enable Entity Retrieval and Visualization Concerning the
+                    Intellectual/Cultural Heritage</title>
+                <author>
+                    <name>Athenikos, Sofia J.</name>
+                    <affiliation><orgName>Drexel University</orgName>, Philadelphia, <country>USA</country></affiliation>
+                    <email>sofia.j.athenikos@acm.org</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-28</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <p>At the 2009 Digital Humanities conference I presented my paper on the
+                    WikiPhiloSofia (<ref type="external"
+                        target="http://research.cis.drexel.edu:8080/sofia/WPS/"
+                        >http://research.cis.drexel.edu:8080/sofia/WPS/</ref>) project (<ref type="internal" cRef="bibl1">Athenikos
+                    and Lin, 2009</ref>), which was concerned with extraction and visualization of facts,
+                    relations, and networks concerning philosophers using Wikipedia (<ref
+                        type="external" target="http://www.wikipedia.org/"
+                        >http://www.wikipedia.org/</ref>) as the data source. In this proposal, I
+                    present a related, extended project in progress, entitled PanAnthropon, which
+                    incorporates the problems of retrieving entities in response to a query and
+                    retrieving entities related to a given entity and which extends the scope of
+                    application to domains other than philosophy. </p>
+            <div>
+                <head>Background</head>
+                <p>Traditional information retrieval is concerned with retrieving documents that are
+                    potentially relevant to a user’s query. The relevance of a document to a given
+                    query is usually measured by lexico-syntactic matching between the terms in the
+                    query and those in the document (title). Familiar Web search engines, such as
+                    Google and Yahoo, for example, return a ranked list of Web pages that contain
+                    all or some of the keywords in the query entered by a user. The Semantic Web
+                    (<ref type="internal" cRef="bibl3">Berners-Lee et al., 2001</ref>) initiative aims at transforming the Web of pages
+                    (documents) into the Web of entities (things in the broadest sense) (cf. OKKAM
+                    project (<ref type="external" target="http://www.okkam.org/"
+                        >http://www.okkam.org/</ref>) (<ref type="internal" cRef="bibl4">Bouquet et al., 2007</ref>)). Information retrieval
+                    on the Semantic Web is no longer a matter of retrieving documents via
+                    semantics-unaware keyword matching but a matter of retrieving entities that
+                    satisfy the semantic constraints imposed by the query, i.e. those that are of
+                    specific semantic type and that satisfy the given semantic conditions. Wikipedia
+                    has become an important semantic knowledge resource (cf. <ref type="internal" cRef="bibl8">Zesch et al., 2007</ref>)
+                    thanks to its unique set of semi-structured semantic features and the huge
+                    amount of content covering a wide range of topics. What renders Wikipedia more
+                    interesting is the fact that it can be considered as a self-contained web of
+                    entities. Each Wikipedia article is concerned with one entity, and the given
+                    entity is connected to other entities via explicit semantic relations as in
+                    infoboxes and wikitables or via implicit semantic relations as in hyperlinks.
+                </p>
+            </div>
+            <div>
+                <head>Motivation</head>
+                <p>Through the WikiPhiloSofia project I demonstrated extracting, retrieving, and
+                    visualizing specific facets of information, not documents, concerning entities
+                    of a selected type, namely, philosophers, by exploiting the hyperlinks,
+                    categories, infoboxes, and wikitables contained in Wikipedia articles. The
+                    interface that I created enables the users to select a focus of query in the
+                    form of an entity (philosopher) or a pair of entities (philosophers) and then to
+                    retrieve entities that satisfy specified conditions with respect to the given
+                    entity or pair of entities. However, the project did not consider the problems
+                    of retrieving entities as answers to queries, semantically typing entities, or
+                    retrieving related entities by type and condition. </p>
+
+                <p>The proposed PanAnthropon project takes up the aforementioned problems left out
+                    of the WikiPhiloSofia project. The dual objective is to enable retrieval of
+                    entities that directly answer a given semantics-based query and to enable
+                    retrieval of related entities by semantic type, subtype (role), and relation, by
+                    using information extracted/integrated from Wikipedia. The project applies the
+                    approach to the entities concerning the intellectual/cultural heritage – people,
+                    works, concepts, etc. The Web portal interface thereby constructed will allow
+                    the users to retrieve entities that directly answer their queries as well as to
+                    explore people, works, concepts, etc. <hi rend="italic">in relation to</hi>
+                    other people, works, concepts, etc. </p>
+            </div>
+            <div>
+                <head>Conceptualization</head>
+                <p>In the proposed project, “entities” are conceived of as things of all kinds that
+                    have certain properties (or attributes). The “type” of an entity is considered
+                    as a generic kind (or class or category) into which the given entity is
+                    classified, e.g., person, work, etc. In general, the type of an entity is fixed
+                    and exclusive in the sense that an entity that belongs to one type does not or
+                    cannot belong to other types. The “subtype” of an entity refers to a subclass or
+                    subcategory into which the entity can be classified, under a given type. The
+                    subtype of an entity is fluid and non-exclusive in the sense that an entity may
+                    belong to more than one subtype (under a given type). This is especially so in
+                    the case of person-type entities, and thus a subtype may better be understood as
+                    a “role” in this case. In general, there are multiple subtypes under a given
+                    type, and the former can be further classified into still more specific
+                    subtypes. A type or subtype of an entity can be considered as a special kind of
+                    property. A “fact” concerning an entity refers to a tuple consisting of
+                    &lt;entity, attribute, value, [context]&gt;, which adds the optional
+                    “context” element to the &lt;subject, predicate, object&gt; triple
+                    model. An entity can have “relations” to other entities, given its properties.
+                    The kinds of properties and relations that are relevant or of interest
+                    concerning an entity, except certain basic facts, depend on the domain at issue.
+                    An entity may belong to multiple domains, but not every subtype, property, or
+                    relation is relevant or equally important in one domain as in another domain.
+                    The project therefore intends to build a portal consisting of sub-portals
+                    representing different domains.</p>
+            </div>
+            <div>
+                <head>Methodology</head>
+                <div>
+                    <head>Data Extraction and Processing</head>
+                    <p>The pre-processing stage of the project (for each domain) concerns: (1)
+                        compiling a seed list of entities of interest by extracting names from
+                        various lists and categories in Wikipedia, (2) downloading Wikipedia article
+                        pages for each entry on the list, and (3) inspecting typical attributes and
+                        (types/subtypes of) values contained in infoboxes, wikitables, etc. The main
+                        processing stage concerns extracting information on an entity and related
+                        entities from each Wikipedia page. The semantic type/subtypes of a given
+                        entity are extracted and/or assigned. Semi-structured templates and portions
+                        of the article are processed so as to extract attribute–value (or
+                        predicate–object or relation–entity) pairs. The related entities are matched
+                        to the entities on the seed entity list. Additional Wikipedia pages are
+                        downloaded for entities not matched on the list, and the information on
+                        those entities is extracted. The (optional) post-processing stage concerns
+                        converting the data stored in a MySQL database to XML files and RDF triples,
+                        thereby creating a semantic data repository that can be linked to other
+                        resources involved in the Linked Data (<ref type="external"
+                            target="http://linkeddata.org/">http://linkeddata.org/</ref>) initiative
+                        in the latter case. </p>
+                </div>
+                <div>
+                    <head>Semantic Search Interface</head>
+                    <p>The semantic search interface created will support three types of query and
+                        retrieval. The first type of query/retrieval concerns retrieval of entities
+                        that correspond to queries the expected answers of which are entities. The
+                        second type of query/retrieval concerns retrieval of entities related to an
+                        entity, according to type/subtypes and specified properties/values. The
+                        third type of query/retrieval concerns retrieval of facts concerning an
+                        entity. The interface will also incorporate some of the visualization
+                        features available in the WikiPhiloSofia portal interface. </p>
+                </div>
+            </div>
+            <div>
+                <head>Current Application</head>
+                <p>The film domain has been chosen as the initial proof-of-concept domain of
+                    application. In my presentation I will demonstrate the entity retrieval functionalities with 1.5+ million (and growing) facts about 11370 films, 69545 persons, 74545 film roles, 253 places, 6033 dates, etc.</p>
+            </div>
+            <div>
+                <head>Related Work</head>
+                <p>The task of retrieving entities in response to user queries using the information
+                    in Wikipedia has since 2007 been the focus of the INEX (Initiative for the
+                    Evaluation of XML Retrieval) XML Entity Ranking (XER) Track (de Vries et al.,
+                    2008; Demartini et al., 2009). Unlike in the INEX XER Track, the proposed
+                    project addresses the task by extracting information from the HTML Wikipedia
+                    files and building a knowledge base based on it. The task of constructing a
+                    knowledge base by extracting information from templates in Wikipedia such as
+                    infoboxes has been attempted in large scale by, e.g., <ref type="internal" cRef="bibl2">Auer and Lehmann (2007)</ref>
+                    and <ref type="internal" cRef="bibl7">Suchanek et al. (2007)</ref>. There is also the DBpedia (<ref type="external"
+                        target="http://dbpedia.org/">http://dbpedia.org/</ref>) knowledge base,
+                    which contains the information extracted from Wikipedia. The proposed project,
+                    however, utilizes the information in the main content of Wikipedia articles, as
+                    well as templates, to enable and enhance entity retrieval. It will also provide
+                    a more flexible working search interface for both general and entity-specific
+                    queries. </p>
+            </div>
+            <div>
+                <head>Conclusion</head>
+                <p>The PanAnthropon project utilizes Wikipedia as a semantic knowledge source for
+                    entity retrieval and applies the approach to materials concerning the
+                    intellectual/cultural heritage. The semantic search interface created will allow
+                    the users to retrieve entities that directly answer their queries as well as to
+                    explore various semantic facets concerning those entities. As such, it will
+                    provide a useful resource for digital humanities.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl xml:id="bibl1">
+                        <author>Athenikos, S.J.</author>
+                        <author>Lin, X.</author>
+                        <date>2009</date>
+                        <title level="a">WikiPhiloSofia: Extraction and Visualization of Facts,
+                            Relations, and Networks Concerning Philosophers Using Wikipedia</title>
+                        <title level="m" type="proceedings">Conference Abstracts of Digital Humanities 2009</title><biblScope type="pp">56-62</biblScope>
+                        </bibl>
+
+                    <bibl xml:id="bibl2"><author>Auer, S.</author>
+                        <author>Lehmann, J.</author>
+                        <date>2007</date>
+                        <title level="a">What Have Innsbruck and Leipzig in Common? Extracting
+                            Semantics from Wiki Content</title>
+                        <title level="m" type="proceedings">Proceedings of 4th European Semantic Web
+                            Conference (ESWC 2007)</title>
+                        <name type="venue">Innsbruck, Austria</name>
+                        <date type="conference">June 2007</date></bibl>
+
+                    <bibl xml:id="bibl3"><author>Berners-Lee, T.</author>
+                        <author>Hendler, J.</author>
+                        <author>Lassila, O.</author>
+                        <date>2001</date><title level="a">The Semantic Web</title> <title level="j">Scientific
+                            American</title>
+                        <biblScope type="issue">5 (May 2001)</biblScope></bibl>
+                    <bibl xml:id="bibl4"><author>Bouquet, P.</author>
+                        <author>Stoermer, H.</author>
+                        <author>Giacomuzzi, D.</author>
+                        <date>2007</date>
+                        <title level="a">OKKAM: Enabling a Web of Entities</title>
+                        <title level="m" type="proceedings">Proceedings of the 16th International
+                            World Wide Web Conference (WWW 2007)</title>
+                        <name type="venue">Banff, Alberta, Canada</name><date type="conference">
+                            8-12 May 2007</date>. </bibl>
+
+                    <bibl xml:id="bibl5"><author>Demartini, G.</author>
+                        <author>de Vries, A.P.</author>
+                        <author>Iofciu, T.</author><author>Zhu, J.</author>
+                        <date>2009</date>
+                        <title level="m">Overview of the INEX 2008 Entity Ranking Track, INEX
+                            2008</title>
+                        <title level="s">LNCS</title>
+                        
+                        <publisher>Springer-Verlag, Berlin</publisher>
+                        <pubPlace>Heidelberg</pubPlace><biblScope type="vol">5631</biblScope><biblScope type="pp"
+                        >243-252</biblScope></bibl>
+
+                    <bibl xml:id="bibl6"><author>de Vries, A.P.</author>
+                        <author>Vercoustre, A.-M.</author>
+                        <author>Thom, J.A.</author>
+                        <author>Craswell, N.</author><author>Lalmas, M.</author>
+                        <date>2008</date>
+                        <title level="m">Overview of the INEX 2007 Entity Ranking Track, INEX
+                            2007</title>
+                        <title level="s">LNCS</title>
+                        
+                        <publisher>Springer-Verlag, Berlin</publisher>
+                        <pubPlace>Heidelberg</pubPlace><biblScope type="vol">4862</biblScope>
+                        <biblScope type="pp">245-251</biblScope></bibl>
+
+                    <bibl xml:id="bibl7"><author>Suchanek, F.M.</author>
+                        <author>Kasneci, G.</author>
+                        <author>Weikum, G.</author>
+                        <date>2007</date>
+                        <title level="a">YAGO: A Core of Semantic Knowledge Unifying WordNet and
+                            Wikipedia</title>
+                        <title level="m" type="proceedings">Proceedings of the 16th International
+                            World Wide Web Conference (WWW 2007)</title>
+                        <name type="venue">Banff, Alberta, Canada</name>
+                        <date type="comference">8-12 May 2007</date>
+                        <biblScope type="pp">697-706</biblScope></bibl>
+
+                    <bibl xml:id="bibl8">
+                        <author>Zesch, T.</author>
+                        <author>Gurevych, I.</author>
+                        <author>Mühlhäuser, M.</author>
+                        <date>2007</date>
+                        <title level="a">Analyzing and Accessing Wikipedia as a Lexical Semantic
+                            Resource</title>
+                        <title level="m" type="proceedings">Proceedings of the Biannual Conference
+                            of the Society for Computational Linguistics and Language
+                            Technology</title>
+                        <name type="venue">Tübingen, Germany</name>
+                        <date type="conference">April 2007</date>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

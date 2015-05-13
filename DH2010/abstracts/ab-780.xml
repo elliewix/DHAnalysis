@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-780">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>An Open Source Toolkit for Flexible Browsing of Historical Maps on the
+                    Web</title>
+                <author>
+                    <name>Ohno, Shin</name>
+                    <affiliation><orgName>Ritsumeikan University</orgName> <reg><country>Japan</country></reg></affiliation>
+                    <email>ohnoshin@gmail.com</email>
+                </author>
+                <author>
+                    <name>Saito, Shinya</name>
+                    <affiliation><orgName>Ritsumeikan University</orgName> <reg><country>Japan</country></reg></affiliation>
+                </author>
+                <author>
+                    <name>Inaba, Mitsuyuki</name>
+                    <affiliation><orgName>Ritsumeikan University</orgName> <reg><country>Japan</country></reg></affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-27</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+            <change><date>2010-05-13</date><name>CD</name><desc>Modification of the bibliographical
+                    references within the text</desc></change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>Map browsing on the web is now commonly used, and most people have used map services
+                such as <ref type="internal" cRef="bibl1">Goole Maps</ref>, <ref type="internal"
+                    cRef="bibl2">Google Earth</ref>, and Yahoo! Maps. These services also provide
+                developer API, which makes it easy to integrate map services into the website. Map
+                browsing in practical use is covered with those services, but displaying historical
+                maps as exhibits is not, which requires different approaches.</p>
+            <p>We, three members of Web Technology Research Group of the Digital Humanities Center
+                of Japanese Arts and Cultures, Ritsumeikan University have developed an image
+                viewer, which can handle zooming, panning, and rotating. Although there exist many
+                similar toolkits, none has all three features with JavaScript written. Furthermore,
+                we would like to share it as open source library.</p>
+            <p>This paper starts with elucidating Japanese historical maps, their unique features
+                and needs. After that, it discusses our image viewer, its design and implementation
+                to meet their needs. </p>
+            <div>
+                <head>Purpose</head>
+                <p>Since Japanese historical maps do not have concepts of geo-coding usually and are
+                    distorted, it is difficult to integrate them with map services such as Google
+                    Maps.</p>
+                <p>Using Keyhole Markup Language (KML) makes it possible to integrate these maps
+                    with Google Earth. There is some research on historical maps on Google Earth
+                        (<ref type="internal" cRef="bibl3">Zeile et al. 2007</ref><ref
+                        type="internal" cRef="bibl4">Nishimura et al. 2007</ref>). Although those
+                    tools are highly functional for defining 3D geographical information on the web,
+                    the user interface is not easy to use for traditional humanities scholars who
+                    are normally not familiar with KML language. Moreover, setting the image in
+                    Google Earth is not always their priority. Therefore, when it is necessary to
+                    exhibit original, hand-drawn maps on the web, one has to take different
+                    approaches to integrating these images into the web.</p>
+                <p>Because of these issues, image viewers are usually used to implement historical
+                    maps for exhibition. These viewers enable users to zoom images, and to see their
+                    details if they are provided in high quality. Moreover, today’s high technology
+                    for user interface allows us to use such viewers with regular web browsers.</p>
+                <p>Since most of these viewers are not open source based applications, however, no
+                    room exists for us to extend and add more features. Even though they are
+                    provided as open source, most of them depend on a Flash plug-in, and there is no
+                    implementation with JavaScript. Because JavaScript is lightweight and easy to be
+                    integrated into websites, we have decided to implement this map viewer with
+                    JavaScript, and open it to the public as an open source product, and we believe
+                    there should be alternative options for us as open source based toolkits for
+                    these needs. </p>
+            </div>
+            <div>
+                <head>Design</head>
+                <figure xml:id="fig1">
+                    <head>Figure 1: Sample of Japanese historical map</head>
+                    <graphic url="780_Fig1.jpg" xmt:type="thumb-caption" mimeType="image/jpeg"/>
+                </figure>
+                <p>In this section, we discuss what kinds of features are required for historical
+                    map viewers, and compare them with related software.</p>
+                <p>When displaying Japanese historical maps as image exhibits on the Web, we
+                    encounter difficulties in handling angles. With no clear concept of top or
+                    bottom in these maps, names of places are labeled from many directions. This is
+                    related to the fact that people in those days put rather a large map on the
+                    table or the floor to read it. Because of this particular feature of the
+                    historical maps, as opposed to maps today, browsing tools for these historical
+                    maps should provide a way of viewing them from multiple angles. Therefore, we
+                    decided to design our tool to support flexible browsing rather than geographical
+                    accuracy.</p>
+                <p>What we found out about other image viewers is that many can support zooming and
+                    panning, but not rotating. Most of them also depend on a Flash plug-in, and
+                    there are no implementations with JavaScript. There are comparisons of similar
+                    software for viewer of maps or images. <xmt:uList>
+                        <item>
+                            <label>Google Maps/Google Earth</label> Since their beginning, these
+                            services with web browsers have become more commonly used, and more
+                            people have become used to them, which in turn has changed the way we
+                            access geographical resources. However, historical maps do not have
+                            accurate longitude and latitude, and even using KML to integrate them
+                            into Google Earth, the images are distorted and we need to change the
+                            purpose to display them. Plus, KML is rather complicated to maneuver it
+                            very well. <table rend="narrow">
+                                <row>
+                                    <cell/>
+                                    <cell rend="0.8cm"><hi rend="bold">API</hi></cell>
+                                    <cell rend="1cm"><hi rend="bold">Free</hi></cell>
+                                    <cell><hi rend="bold">Rotat<c>-</c>able</hi></cell>
+                                    <cell><hi rend="bold">Zoom<c>-</c>able</hi></cell>
+                                    <cell><hi rend="bold">Image Cutting</hi></cell>
+                                    <cell><hi rend="bold">Open source</hi></cell>
+                                </row>
+                                <row>
+                                    <cell role="label">Google Maps</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>No</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>No</cell>
+                                </row>
+                                <row>
+                                    <cell role="label">Google Image Cutter</cell>
+                                    <cell>No</cell>
+                                    <cell>Yes</cell>
+                                    <cell>No</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                </row>
+                                <row>
+                                    <cell role="label">Google Earth</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>No</cell>
+                                </row>
+                                <row>
+                                    <cell role="label">Open Zoom</cell>
+                                    <cell>No</cell>
+                                    <cell>Yes</cell>
+                                    <cell>No</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                </row>
+                                <row>
+                                    <cell role="label">Open Layers</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>No</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                </row>
+                                <row>
+                                    <cell role="label">Ojikit Image Viewer</cell>
+                                    <cell>No</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>Yes</cell>
+                                    <cell>No</cell>
+                                    <cell>Yes</cell>
+                                </row>
+                            </table>
+                        </item>
+                        <item><label>GMap Image Cutter by LCU<ref type="internal" cRef="bibl5">GMap
+                                    Image Cutter</ref> by LCU</label>: To use Google Maps image
+                            viewer, LCU developed GMap Image Cutter tool to cut a large image into
+                            many small pieces. With this Cutter provided, users can integrate images
+                            to their own website with the same Google Maps user interface. </item>
+                        <item><label><ref type="internal" cRef="bibl6">OpenZoom</ref></label>:
+                            OpenZoom is a free and open source toolkit for delivering
+                            high-resolution images and zoomable user interfaces. Like GMap Image
+                            Cutter, it can cut a large image into many small file-size images. With
+                            this software, users can download an appropriate file size to their
+                            local computer, which works to prevent network traffic from congesting
+                            in cases in which the image is too large to download. This is SWF based,
+                            and requires a Flash Plugin.</item>
+                        <item><label><ref type="bibl7">OpenLayers</ref></label>: OpenLayers is a
+                            free and open source library for handling geographical information
+                            written in JavaScript. Since OpenLayers implements both WMS(Web Map
+                            Service) and Web Feature Service, users can integrate many different
+                            maps service to their own website. It has zooming and panning features
+                            for browsing maps on the web. </item>
+                        <item><label>Ojikit ImageViewer</label> Ojikit Image Viewer is the toolkit
+                            we have developed. It has zooming, panning, rotating features, as well
+                            as an open source license. While it does not have the function to cut a
+                            large image into smaller files, improvement of broadband allows us to
+                            transfer files without so much reduction. Moreover, one file is easier
+                            to store and manage than many files. </item>
+                    </xmt:uList>
+                </p>
+            </div>
+            <div>
+                <head>Implementation</head>
+                <p>Giving consideration to what historical maps viewers need to be, we have
+                    developed an open source toolkit. This toolkit is written in JavaScript, and it
+                    has lightweight features and an open source license. Written in JavaScript,
+                    Mozilla and Safari based browser uses SVG, and the Internet Explorer uses VML to
+                    handle vector images. To develop this library seamlessly in different browsers,
+                    this library depends on jQuery and Raphael.js.</p>
+            </div>
+            <div>
+                <head>Application</head>
+                <p>We have applied this tool to Japanese historical maps as our Center has a large
+                    number of historical map images, open to the public. Unlike other image viewers,
+                    which do not support rotating function, this toolkit enables us to rotate all
+                    images. Figure 2 shows one example of these map images as they look on the
+                    screen. With this toolkit, users can read labels written from many directions,
+                    as they are on the map.</p>
+                <figure xml:id="fig2">
+                    <head>Figure 2: The left map is rotated 130 degrees, and the right map is
+                        rotated 210 degrees.</head>
+                    <graphic url="780_Fig2a.jpg" rend="left" mimeType="image/jpeg"/>
+                    <graphic url="780_Fig2b.jpg" rend="left" mimeType="image/jpeg"/>
+                </figure>
+            </div>
+            <div>
+                <head>Conclusion</head>
+                <p>Addressing a culture-specific problem of Japanese historical maps, this paper
+                    discusses current map viewer systems to deal with this problem. This toolkit was
+                    developed as a viewer for Japanese historical maps per se. However, its
+                    extensive and easy integration feature leads us to consider some other
+                    possibility to apply it for other fields that have similar demands such as
+                    rotation and zooming features with easy integration. While this toolkit’s
+                    development is our on-going project, its source code is meanwhile open to any
+                    users.</p>
+                <p>There are three future areas of research related to our toolkit. First, we have
+                    applied our toolkit to Japanese old maps browsing as a test this time, and we
+                    are trying to produce more tests with the toolkit. Secondly, related to the
+                    first point, we think that this toolkit is useful not only for maps, but also
+                    for other images that need to be browsed from many different directions, such as
+                    handwriting manuscripts, and apply different resources. Finally, this toolkit
+                    does not consider geo-reference. In our center, there is a group for GIS
+                    research, and for future provision, we are discussing how to co-reference its
+                    geographical information with each other, so that this tool can represent
+                    geo-reference.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl xml:id="bibl4">
+                        <author>Nishimura, Y. et al.</author>
+                        <title level="a">Analysis of Silk Road Old Maps Using Google Earth</title>
+                        <publisher>Information Processing Society of Japan</publisher>
+                        <title level="m" type="proceedings">SIG Computers and the Humanities
+                            Symposium 2007</title><date>2007</date>
+                        <biblScope type="pp">155- 162</biblScope></bibl>
+                    <bibl xml:id="bibl3">
+                        <author>Zeile, P.</author>
+                        <author>Farnoudi F.</author>
+                        <author>Streich, B.</author><date>2007</date>
+                        <title level="a">Fascination google earth - use in urban and landscape
+                            design</title>
+                        <title level="m">Embodying Virtual Architecture: The Third International
+                            Conference of the Arab Society for Computer Aided Architectural Design
+                            (ASCAAD 2007)</title>
+                        <biblScope type="pp">141-148</biblScope></bibl>
+                    <bibl xml:id="bibl1">
+                        <title level="m">Google Maps</title>
+                        <ptr target="http://code.google.com/intl/en/apis/maps/"/>
+                        <date type="visited">10 October, 2009</date></bibl>
+                    <bibl xml:id="bibl2"><title level="m">Google Earth</title>
+                        <ptr target="http://earth.google.com/intl/en/"/>
+                        <date type="visited">10 October, 2009</date></bibl>
+                    <bibl xml:id="bibl5"><title level="m">GMap Image Cutter</title>
+                        <ptr target="http://www.casa.ucl.ac.uk/software/googlemapimagecutter.asp"/>
+                        <date type="visited">10 October, 2009</date></bibl>
+                    <bibl xml:id="bibl6"><title level="m">OpenZoom</title>
+                        <ptr target="http://openzoom.org/"/>
+                        <date type="visited">10 October, 2009</date></bibl>
+                    <bibl xml:id="bibl7"><title level="m">OpenLayers</title>
+                        <ptr target="http://openlayers.org/"/>
+                        <date type="visited">4 March, 2010</date>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

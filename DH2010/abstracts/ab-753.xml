@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-753">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Propp Revisited: Integration of Linguistic Markup into Structured Content
+                    Descriptors of Tales</title>
+                <author>
+                    <name>Lendvai, Piroska</name>
+                    <affiliation>Research Institute for Linguistics, <orgName>Hungarian Academy of Sciences</orgName>,
+                        Budapest, <country>Hungary</country></affiliation>
+                    <email>piroska@nytud.hu</email>
+                </author>
+                <author>
+                    <name>Declerck, Thierry</name>
+                    <affiliation>Language Technology Lab, <orgName>DFKI GmbH</orgName>, Saarbrücken,
+                        <country>Germany</country></affiliation>
+                    <email>declerck@dfki.de</email>
+                </author>
+                <author>
+                    <name>Darányi, Sándor</name>
+                    <affiliation>Swedish School of Library and Information Science, <orgName>University
+                        College Boras</orgName>/<orgName>Göteborg University</orgName>, <country>Sweden</country></affiliation>
+                    <email>Sandor.Daranyi@hb.se</email>
+                </author>
+                <author>
+                    <name>Malec, Scott</name>
+                    <affiliation><orgName>Carnegie Mellon University</orgName>, <country>USA</country></affiliation>
+                    <email>malec@andrew.cmu.edu</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-05-01</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>Metadata that serve as semantic markup, such as conceptual categories that describe
+                the macrostructure of a plot in terms of actors and their mutual relationships,
+                actions, and their ingredients annotated in folk narratives, are important
+                additional resources of digital humanities research. Traditionally originating in
+                structural analysis, in fairy tales they are called functions (Propp, 1968), whereas
+                in myths – mythemes (Lévi-Strauss, 1955); a related, overarching type of content
+                metadata is a folklore motif (Uther, 2004; Jason, 2000). </p>
+            <p>In his influential study, Propp treated a corpus of tales in Afanas&apos;ev&apos;s
+                collection (Afanas&apos;ev, 1945), establishing basic recurrent units of the plot
+                (&apos;functions&apos;), such as <hi rend="italic">Villainy, Liquidation of
+                    misfortune, Reward, </hi>or <hi rend="italic">Test of Hero</hi>, and the
+                combinations and sequences of elements employed to arrange them into moves.<note>The
+                    full list of functions is available at <ref
+                        target="http://clover.slavic.pitt.edu/sam/propp/praxis/features.html"
+                        rend="newWindow" type="external"
+                        >http://clover.slavic.pitt.edu/sam/propp/praxis/features.html</ref></note>
+                His aim was to describe the DNA-like structure of the magic tale sub-genre as a
+                novel way to provide comparisons. As a start along the way to developing a story
+                grammar, the Proppian model is relatively straightforward to formalize for
+                computational semantic annotation, analysis, and generation of fairy tales. Our
+                study describes an effort towards creating a comprehensive XML markup of fairy tales
+                following Propp&apos;s functions, by an approach that integrates functional text
+                annotation with grammatical markup in order to be used across text types, genres and
+                languages. </p>
+            <p>The Proppian fairy tale Markup Language (PftML) (Malec, 2001) is an annotation scheme
+                that enables narrative function segmentation, based on hierarchically ordered
+                textual content objects. We propose to extend PftML so that the scheme would
+                additionally rely on linguistic information for the segmentation of texts into
+                Proppian functions. Textual variation is an important phenomenon in folklore, it is
+                thus beneficial to explicitly represent linguistic elements in computational
+                resources that draw on this genre; current international initiatives also actively
+                promote and aim to technically facilitate such integrated and standardized
+                linguistic resources. We describe why and how explicit representation of grammatical
+                phenomena in literary models can provide interdisciplinary benefits for the digital
+                humanities research community. </p>
+            <p>In two related fields of activities, we address the above as part of our ongoing
+                activities in the CLARIN<note>
+                    <ref target="http://www.clarin.eu" rend="newWindow" type="external"
+                        >http://www.clarin.eu</ref></note> and AMICUS<note><ref
+                        target="http://ilk.uvt.nl/amicus" rend="newWindow" type="external"
+                        >http://ilk.uvt.nl/amicus</ref></note> projects. CLARIN aims to contribute
+                to humanities research by creating and recommending effective workflows using
+                natural language processing tools and digital resources in scenarios where
+                text-based research is conducted by humanities or social sciences scholars. AMICUS
+                is interested in motif identification, in order to gain insight into higher-order
+                correlations of functions and other content units in texts from the cultural
+                heritage and scientific discourse domains. We expect significant synergies from
+                their interaction with the PftML prototype.</p>
+            <div>
+                <head>Proppian fairy tale Markup Language (PftML)</head>
+                <p>Creating PftML was based on the insight that Propp&apos;s functions – organized
+                    in tables to categorize his observations – were analogous to metadata, and as
+                    such renderable by hierarchically arranged elements in eXtensible Markup
+                    Language (XML) documents. A tale consists of one or more moves and on a lower
+                    level of functions which are modeled as elements. Function elements themselves
+                    have XML attributes that allow for the efficient extraction of data from the
+                    text using XQuery from within a native XML database. The embedded structure of
+                    Proppian functions as represented by PftML markup is illustrated in Fig. 1 by an
+                    annotated excerpt from the English translation of the Russian fairy tale <hi
+                        rend="italic">The Swan-Geese</hi>. </p>
+                <p>Note that Proppian functions are applied to relatively long, semantically
+                    coarse-grained textual chunks, i.e. sentences, but linguistic elements that
+                    convey a function actually encompass a shorter sequence of words; e.g. contrary
+                    to the markup in the example, both <hi rend="italic">Command</hi> and <hi
+                        rend="italic">Execution</hi> only pertain to linguistic units smaller than
+                    full sentences. </p>
+                <code xml:space="preserve">
+&lt;Corpus&gt;
+&lt;Folktale Title=&quot;The Swan-Geese&quot; AT=&quot;480&quot; NewAfanasievEditionNumber=&quot;113&quot;
+ProppConformity=&quot;Yes&quot;&gt;
+&lt;Move&gt;
+&lt;Preparation&gt;
+    &lt;InitialSituation&gt; Once upon a time a man and a woman lived with their daughter and small son. &lt;/InitialSituation&gt;
+    &lt;CommandExecution&gt;
+        &lt;Command subtype=&quot;Interdiction&quot;&gt; &quot;Dearest daughter,&quot; said the mother, &quot;we are going to work. Look after your brother! Don&apos;t go out of the yard, be a good girl, and we&apos;ll buy you a handkerchief.&quot; &lt;/Command&gt;
+        &lt;Execution subtype=&quot;Violated&quot;&gt; The father and mother went off to work, and the daughter soon enough forgot what they had told her. She put her little brother on the grass under a window and ran into the yard, where she played and got completely carried away having fun.&lt;/Execution&gt;
+    &lt;/CommandExecution&gt;
+&lt;/Preparation&gt;
+&lt;Villainy subtype=&quot;Kidnapping&quot;&gt; In swooped the swan-geese, snatched up the little boy, and flew away with him. &lt;/Villainy&gt;
+&lt;ConsentToCounteraction&gt; When the girl came back inside, her brother was missing! &quot;Oh no!&quot; she cried. She dashed here and there, but there was no sign of him. She called for him, cried, and wailed how angry mother and father would be, but her brother did not answer. &lt;/ConsentToCounteraction&gt;
+                </code>
+                <!--  <p>
+                    <figure>
+                        <head>Figure 1</head>
+                        <graphic url="753_Fig1.png" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Excerpt from the tale The Swan-Geese, marked up with
+                            PftML</figDesc>
+                    </figure>
+                </p>
+-->
+            </div>
+            <div>
+                <head>Integration of PftML with linguistic annotation</head>
+                <p>We propose to combine PftML with a stand-off, multi-layered linguistic markup
+                    scheme to ensure modularity and reusability of linguistic information associated
+                    with textual elements, supporting interoperability of fairy tales annotation in
+                    different languages and versions. As seen in Fig. 1, PftML is interleaving the
+                    Proppian annotation with the text. This in-line annotation strategy has some
+                    drawbacks: a text can hardly be annotated in fine-grained manner without losing
+                    readability, or with information originating from different sources e.g.
+                    indicating different views on narrative functions. </p>
+                <p>Stand-off annotation strategy, following the standardization initiatives for
+                    language resources conducted within ISO,<note>
+                        <ref target="http://www.tc37sc4.org" rend="newWindow" type="external"
+                            >http://www.tc37sc4.org</ref>
+                    </note> stores annotation separately from the original text, linking these by
+                    referencing mechanisms. We adopt the ISO multi-layered annotation strategy,
+                    representing linguistic information on the following levels: segmentation of the
+                    text in tokens; morpho-syntactic properties of the tokens; phrasal
+                    constituencies; grammatical dependencies; semantic relations (e.g. temporal,
+                    co-referential), cf. (Ide and Romary, 2006). </p>
+                <p>We illustrate how the linguistic annotation layers can be combined with the PftML
+                    annotation in one stand-off annotation file, showing here only the
+                    morphosyntactic and constituency annotation, as they are applied to the first
+                    five tokens of the sub-sentence annotated with the &apos;Violated
+                    Execution&apos; function in Fig. 1. In the morphosyntactic annotation, the value
+                    of the <eg>TokenID</eg> of the 12th word is pointing to the original data (e.g.,
+                        <hi rend="italic">daughter</hi> is the 12th token in the text).<note>Note
+                        that the original string is normally not present in these layers but is
+                        displayed in annotation examples for readability&apos;s sake.</note></p>
+                <code xml:space="preserve">
+&lt;wordForms&gt;
+    &lt;W ID=&quot;w11&quot; POS=&quot;ART&quot; LEMMA=&quot;the&quot; MORPH=&quot;Sg&quot; tokenID=&quot;t11&quot;&gt;the&lt;/W&gt;
+    &lt;W ID=&quot;w12&quot; POS=&quot;NN&quot; LEMMA=&quot;daughter&quot; MORPH=&quot;Sg&quot; tokenID=&quot;t12&quot;&gt;daughter&lt;/W&gt;
+    &lt;W ID=&quot;w13&quot; POS=&quot;ADV&quot; LEMMA=&quot;soon&quot; tokenID=&quot;t13&quot;&gt;soon&lt;/W&gt;
+    &lt;W ID=&quot;w14&quot; POS=&quot;ADV&quot; LEMMA=&quot;enough&quot; tokenID=&quot;t14&quot;&gt;enough&lt;/W&gt;
+    &lt;W ID=&quot;w15&quot; POS=&quot;VVFIN&quot; LEMMA=&quot;forget&quot; MORPH=&quot;Past&quot; tokenID=&quot;t15&quot;&gt;forgot&lt;/W&gt;
+    ... 
+&lt;/wordForms&gt;
+                </code>
+                <p>In the constituency annotation level displayed below, words are grouped into
+                    syntactic constituents (e.g. the nominal phrase <hi rend="italic">the
+                        daughter</hi>). The span of constituents is marked by the value of the
+                    features <eg>from</eg> and <eg>to</eg>, which are pointing to the previous
+                    morpho-syntactic annotation layer. </p>
+                <code xml:space="preserve">
+&lt;phrases&gt;
+    &lt;phrase id=&quot;p4&quot; from=&quot;w11&quot; to=&quot;w12&quot; type=&quot;NP&quot;&gt;the daughter&lt;/phrase&gt;
+    &lt;phrase id=&quot;p5&quot; from=&quot;w13&quot; to=&quot;w14&quot; type=&quot;ADVP&quot;&gt;soon enough&lt;/phrase&gt;
+    &lt;phrase id=&quot;p6&quot; from=&quot;w15&quot; to=&quot;w15&quot; type=&quot;VG&quot;&gt;forgot&lt;/phrase&gt;
+    &lt;phrase id=&quot;p7&quot; from=&quot;w16&quot; to=&quot;w20&quot; type=&quot;REL_COMP&quot;&gt;what they had told her
+    &lt;/phrase&gt; ... 
+&lt;/phrases&gt;
+                </code>
+                <p>PftML and (for example) word-level annotation can be combined in one stand-off
+                    XML element, where each specific PftML annotation receives a span of textual
+                    segments associated with it: </p>
+                <code xml:space="preserve">
+&lt;Execution subtype=&quot;Violated&quot; id=&quot;e1&quot; inv_id=&quot;Command1&quot; from=&quot;w11&quot; to=&quot;w21&quot;&gt; &lt;/Execution&gt;
+                </code>
+                <p>The values <eg>w11</eg> and <eg>w21</eg> are used for defining a region of the
+                    text for which the Propp function holds; <eg>Command1</eg> refers to the <hi
+                        rend="italic">Interdiction</hi> function label used earlier in the
+                        text.<note>We started to implement this work within the D-SPIN project (see
+                            <ref target="http://www.sfs.uni-tuebingen.de/dspin" rend="newWindow"
+                            type="external">http://www.sfs.uni-tuebingen.de/dspin</ref>), which is
+                        the German complementary project to CLARIN.</note></p>
+            </div>
+            <div>
+                <head>Benefits for humanities research</head>
+                <p>The integrated annotation scheme enables narrative segmentation enhanced by
+                    additional information about the linguistic entities that constitute a given
+                    function. A folklore researcher might be interested in which natural language
+                    expressions correspond to which narrative function: in the &lt;<hi rend="italic"
+                        >Execution subtype=&quot;Violated&quot;</hi>&gt; example, <hi rend="italic"
+                        >forgot</hi> can be an indicator of this function. In fact, it is also
+                    relevant to signal that <hi rend="italic">forgot</hi> is a verb, and to reduce
+                    the strings <hi rend="italic">forgets, forgot, forgotten</hi> to one lemma (i.e.
+                    base form), so that all morphological forms are retrieved when any of these
+                    variants is queried.</p>
+                <p>Navigating through the different types of IDs included in the multilayered
+                    annotation, a researcher can obtain statistics over linguistic properties of
+                    fairy tales. For example, the grammatical subject of a function can be
+                    extracted, e.g. to see which characters participate in commands and their
+                    violation. Note that if – according to the current scheme – the narrative
+                    function boundaries are imprecise, the &lt;<hi rend="italic">Execution
+                        subtype=&quot;Violated&quot;</hi>&gt; function in our example sentence would
+                    incorrectly contain two grammatical – and three semantic – subjects (<hi
+                        rend="italic">father and mother</hi>, and <hi rend="italic">daughter</hi>). </p>
+                <p>Linguistic information will enable detecting functions that refer to each other,
+                    as syntax and semantics of sentence pairs in such relations mirror – at least
+                    partly – each other, e.g. <hi rend="italic">Don&apos;t go out of the yard</hi>
+                        and<hi rend="italic"> ran onto the street</hi>. Detecting cross-reference in
+                    turn contributes to identifying a function&apos;s core elements, which is a
+                    crucial step in understanding the linguistic vehicles by which motifs operate
+                    and the degree of variation and optionality they allow. </p>
+            </div>
+            <div>
+                <head>Concluding remarks</head>
+                <p>Since the content descriptors in PftML might pertain to textual material on the
+                    supra- or subsentential level, there is a need to investigate the mechanisms
+                    underlying the assignment of a function to a span of words. We propose to tackle
+                    this issue based on linguistic analysis, hypothesizing that boundaries of
+                    certain linguistic objects overlap with boundaries of Proppian functions. A
+                    direct consequence of more precise segmentation of functions is that linguistic
+                    characterization, retrieval, and further computational processing of texts from
+                    the folktale genre will improve, and facilitate detecting higher-level,
+                    domain-specific cognitive phenomena. It would also become feasible to detect
+                    from corpus evidence if there exist additional functions beyond Propp&apos;s
+                    scheme. </p>
+                <p>Integration along the above lines with ontological resources of fairy tales is
+                    described in a separate study by us (Lendvai et al., 2010). We expect from our
+                    strategy – applied to tales in different versions in different languages – to
+                    lead to the generation of a multilingual ontology of folktale content
+                    descriptors, which would be extending the efforts of the MONNET
+                        project,<note>Multilingual ONtologies for NETworked Knowledge, see <ref
+                            target="http://cordis.europa.eu/fp7/ict/languagetechnologies/project-monnet_en.html"
+                            rend="newWindow" type="external"
+                            >http://cordis.europa.eu/fp7/ict/languagetechnologies/project-monnet_en.html</ref>
+                    </note> originally focussing on financial and governmental issues. In future
+                    work we plan to address embedding our annotation work into the TEI framework,<note>
+                        <ref target="http://www.tei-c.org/index.xml" rend="newWindow"
+                            type="external">http://www.tei-c.org/index.xml</ref></note> and extend
+                    the ISO strategy on using well-defined data categories for linguistic annotation
+                        labels<note>see <ref target="http://www.isocat.org/" rend="newWindow"
+                            type="external">http://www.isocat.org/</ref></note> to those of
+                    functions corresponding to PftML labels, to facilitate porting our approach to
+                    other literary genres.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Afanas&apos;ev, A.</author>
+                        <date>1945</date>
+                        <title level="m">Russian fairy tales</title>
+                        <publisher>Pantheon Books</publisher>
+                        <pubPlace>New York</pubPlace> (Transl. Norbert Guterman.) </bibl>
+                    <bibl>
+                        <author>Ide, N. and Romary, L.</author>
+                        <title level="a">Representing linguistic corpora and their
+                            annotations</title>
+                        <title level="m" type="proceedings">Proc. of LREC</title>
+                        <date type="conference">2006</date>
+                    </bibl>
+                    <bibl>
+                        <author>Jason, H.</author>
+                        <date>2000</date>
+                        <title level="m">Motif, type and genre. A manual for compilation of indices
+                            and a bibliography of indices and indexing</title>
+                        <publisher>Academia Scientiarum Fennica</publisher>
+                        <pubPlace>Helsinki</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Lendvai, P., Declerck, T., Darányi, S., Gervás, P., Hervás, R.,
+                            Malec, S., and Peinado, F.</author>
+                        <title level="a">Integration of linguistic markup into semantic models of
+                            folk narratives: The fairy tale use case</title>
+                        <title level="m" type="proceedings">In Proc. of LREC</title>
+                        <date type="conference">2010</date>
+                    </bibl>
+                    <bibl>
+                        <author>Lévi-Strauss, C.</author>
+                        <date>1955</date>
+                        <title level="a">The structural study of myth</title>
+                        <title level="j">Journal of American Folklore</title>
+                        <biblScope type="issue">68</biblScope>
+                        <biblScope type="pp">428–444</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Malec, S. A.</author>
+                        <title level="a">Proppian structural analysis and XML modeling</title>
+                        <title level="m" type="proceedings">In Proc. of CLiP</title>
+                        <date type="conference">2001</date>
+                    </bibl>
+                    <bibl>
+                        <author>Propp, V. J.</author>
+                        <date>1968</date>
+                        <title level="m">Morphology of the folktale</title>
+                        <publisher>University of Texas Press</publisher>
+                        <pubPlace>Austin</pubPlace> (Transl. L. Scott and L. A. Wagner). </bibl>
+                    <bibl>
+                        <author>Uther, H. J.</author>
+                        <date>2004</date>
+                        <title level="m">The types of international folktales: a classification and
+                            bibliography. Based on the system of Antti Aarne and Stith
+                            Thompson</title>
+                        <publisher>Academia Scientiarum Fennica</publisher>
+                        <pubPlace>Helsinki</pubPlace>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

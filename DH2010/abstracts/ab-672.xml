@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0" xml:id="ab-672">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Evidence of Intertextuality: Investigating Paul the Deacon’s <hi rend="italic">Angustae Vitae</hi></title>
+                <author>
+                    <name>Forstall, C. W.</name>
+                    <affiliation>Department of Classics, <orgName>State University of New York at Buffalo</orgName> <reg><country>USA</country></reg></affiliation>
+                    <email>forstall@buffalo.edu</email>
+                </author>
+                <author>
+                    <name>Jacobson, S.L.</name>
+                    <affiliation>Department of Classics, <orgName>State University of New York at Buffalo</orgName>  <reg><country>USA</country></reg></affiliation>
+                    <email>slj25@buffalo.edu</email>
+                </author>
+                 <author>  
+                   <name>Scheirer, W. J</name>
+                   <affiliation>Department of Computer Science, <orgName>University of Colorado at Colorado Springs</orgName> <reg><country>USA</country></reg></affiliation>
+                   <email>wjs3@vast.uccs.edu</email>
+                 </author>
+                
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2009-04-29</date>
+                <name>NG</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster"> 
+        <body>
+            <div>
+                <p>The study of intertextuality, the shaping of a text’s meaning by other texts, remains a laborious process for the literary critic. Kristeva (<ref cRef="bibl4">Kristeva, 1986</ref>) suggests that &quot;Any text is constructed as a mosaic of quotations; any text is the absorption and transformation of another.&amp; The nature of these mosaics is widely varied, from direct quotations representing a simple and overt intertextuality, to more complex transformations that are intentionally or subconsciously absorbed into a text. The burden placed upon the literary critic to verify suspected instances of intertextuality is great. The critic must reference a large corpus of possible contributing works, and thus must often be familiar with more texts than was the author whom they are studying. Since, in many cases, the problem is one of pattern recognition, it is a good candidate for automated assistance by computers.</p>
+                <p>In this work, currently in progress, we propose the use of machine learning and related statistical methods to improve the process by which intertextuality is studied. Specifically, we are working with instances where an author has knowledge of particular texts, and reflects this in discrete passages within their own work. These intertexts may comprise fragmentary quotations, paraphrases, or even stylistic similarity. A passage may be reminiscent of a particular author, or of a particular literary group. We have defined three different classes of style markers to verify intertexts: phonetic, metric, and dictional. To evaluate the proposed style markers and classification methods, we have chosen an intriguing case study: Paul the Deacon’s 8th century poem <hi rend="italic">Angustae Vitae</hi> (<ref cRef="bibl5">Paul the Deacon, 1881</ref>), which we suggest has a strong connection to first-century Neoteric poetry. </p>
+                <p>Our earlier work in authorship and stylistic analysis (<ref cRef="bibl2">Forstall and Scheirer, 2009</ref>) has considered the importance of phonetic style markers, with the observation that sound plays a fundamental role in an author’s style, particularly for poets. To capture sound information, we have developed a feature that we call a <hi rend="italic">functional n-gram</hi>, whereby the power of the Zipfian distribution is realized by selecting the n-grams that occur most frequently as features, while preserving their relative probabilities as the actual feature element. By using more primitive, sound-oriented features, namely, character- and phoneme-level n-grams, we are able to build accurate classifiers with the functional n-gram approach. We have used two different classification algorithms with functional n-grams, yielding very promising results. The first method, a traditional SVM learning approach based on the work of Diederich et al. (<ref cRef="bibl1">Diederich et al., 2003</ref>), distinguished authors of Latin poetry with 98.75% accuracy. The second method, a PCA clustering approach (<ref cRef="bibl3">Holmes et al., 2001</ref>), showed distinct stylistic separation between the Homeric poems.  In light of our previous work, we know that phonetics is an important tool for verifying intertexts, for the same reason it was important for poetics — repetitive sound distinguishes style.</p>
+                <p>Following this idea of repetitive sound further, we use meter as an additional style marker. For strict meters, it is straightforward to identify their type by analyzing the weights of the syllables in a line. In practice, the nuance of particular poets, or groups of poets, creates unique variations in meter, giving us a discriminating feature.  By including meter as another dimension in the feature vector of the SVM learning for the functional n-grams described above, we enhance the discriminatory power of the resulting classifiers. It remains an open question in our work whether meter alone is powerful enough to achieve the same classification results for individual authors as the functional n-gram. Its utility for group classification is more apparent. </p>
+                <p>Pulling back from sound, we have also developed a style analysis for diction that is somewhat the opposite of the functional n-gram approach. Considering the Zipfian distribution once again, we turn to elements that occur with lower probabilities. The power of functional n-grams relies on the amount of information carried by the elements at the left side of the Zipfian distribution (assuming the <hi rend="italic">x</hi> axis is organized from most frequent to least frequent). For this new style marker, we desire something that is the opposite of functional—features that occur infrequently, but not necessarily <hi rend="italic">hapax legomena</hi>. </p>
+                <p>Thus, we fix a desired probability range for words that occur infrequently, and look for n-gram sequences composed of only those words in a particular passage, ignoring all others: </p>
+                <p>(P<hi rend="italic"><hi rend="sub">low</hi></hi> &lt; Pr(word<hi rend="sub">1</hi>) &lt; P<hi rend="italic"><hi rend="sub">high</hi></hi>) … (P<hi rend="italic"><hi rend="sub">low</hi></hi> &lt; Pr(word<hi rend="sub">2</hi>) &lt; P<hi rend="italic"><hi rend="sub">high</hi></hi>) … (P<hi rend="italic"><hi rend="sub">low</hi></hi> &lt; Pr(word<hi rend="italic"><hi rend="sub">n</hi></hi>) &lt; P<hi rend="italic"><hi rend="sub">high</hi></hi>) (1)</p>
+                
+                <p>where n ≥ 3. The probability of the resulting n-gram is compared to pre-computed probabilities of the same n-gram (should it exist) for specific authors, or literary groups. This type of style marker is very well suited to our case study, where certain word sequences are common to a particular group (the Latin Neoterics), but uncommon or non-existent in the work of other groups.</p>
+                <p>With our style markers in hand, we turn to our case study. In <hi rend="italic">Angustae Vitae</hi>, Paul the Deacon opposes poetic inspiration and production in the classical world with the writing of poetry in the Christian monastic context.  Although he posits the classical and monastic worlds as opposites, the use of Catullan diction and models of poetic exchange recalls the paradigm of the Neoteric, proto-elegiac lover, his beloved, and his poetological concerns.  This model is recontextualized to reflect monastic love and poetic exchange.  The source of inspiration remains the same — love — but there is a new beloved and a new Muse. While he avoids saying he directly imitates his classical predecessors, Paul the Deacon’s poetry is peppered with classical intertexts.  Not all of these intertexts are purposeful allusions.  However, it is clear that he was at least well-versed in the poetry of Horace, Virgil, and Ovid. Thus, it becomes our task to verify the portions of the poem believed to be inspired by Catullus.  </p>
+                <p> Further study of the Catullan manuscript tradition and Paul the Deacon’s life would be necessary to prove his knowledge of Catullus conclusively.  This work will proceed from the <hi rend="italic">a priori</hi> conclusion that Paul the Deacon had read Catullus.  This conclusion is based on the abundance of intertexts and the crucial role they play in coloring Paul the Deacon’s poetry. We can gain a sense of these intertexts we are examining by looking at a particular instance. </p>
+                <p>As the poem opens, the Muses, who have found the cloistered life not of their liking, have abandoned the narrator.  More precisely, the Muses are fleeing the fellowship of the cloistered life, <hi rend="italic">angustae vitae fugiunt consortia Musae</hi>.  Thus, there is an opposition:  the <hi rend="italic">consortia angustae vitae versus the Musae</hi> — the fellowship of monastic life versus the classical relationship of the poet and Muses.  This opposition continues in lines 2 — 3.  The Muses do not wish to live in the fenced-in gardens of monasteries, but rather they desire to play in rosy meadows, <hi rend="italic">claustrorum septis nec habitare volunt, / per rosulenta magis cupiunt sed ludere prata</hi>. Here, <hi rend="italic">septa</hi>, the cultivated, enclosed garden of a monastery, is contrasted with the <hi rend="italic">rosulenta prata</hi>, a wild, open meadow.</p>
+                <p>These opening lines may reference Eclogue 1 of Vergil, but reading them with Catullus provides a richer understanding of the themes of the poem. Indeed, what the Muses desire in <hi rend="italic">Angustae Vitae</hi> are cornerstones of Catullan diction.  Lines 2 — 3 recall the opening lines of Catullus 2. The Muses desire to play in fields (<hi rend="italic">cupiunt sed ludere prata</hi>) and to tend to (<hi rend="italic">colunt</hi>) their delights (<hi rend="italic">delicias</hi>), just as Catullus’ girlfriend is accustomed to play (<hi rend="italic">ludere solet</hi>) with her own pet/delight (<hi rend="italic">deliciae</hi>).  The classical Muses are compared with the poet’s beloved.  These are the Muses of elegiac love. <hi rend="italic">Ludere</hi>, furthermore, is a by-word in Catullus for the production of poetry. </p>
+                <p>By taking into consideration all such intertext candidates in <hi rend="italic">Angustae Vitae</hi>, we will show that machine classification is able to produce statistically strong validation results. We present our study of the three style markers in this context, highlighting strengths and weaknesses.  We hope that this case study will serve as a first step towards a more sophisticated and efficient analysis of intertextuality in general. Moreover, this work raises important linguistic questions on the nature of conscious and subconscious influence in style, which is an area we intend to explore in further work.</p>
+            </div>
+
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl xml:id="bibl1">
+                        <author>Diederich, J., Kindermann, J., Leopold, E. and Paass G. </author>
+                        <date>2003</date>
+                        <title level="a">Authorship Attribution with Support Vector Machines</title>
+                        <title level="j">Applied Intelligence</title>
+                        <biblScope type="issue">19(1-2)</biblScope>
+                        <biblScope type="pp">109-123</biblScope>
+                        
+                    </bibl>
+                    <bibl xml:id="bibl2">
+                        <author>Forstall, C.W. and Scheirer, W.J. </author>
+                        <date>2009</date>
+                        <title level="a">Features from Frequency: Authorship and Stylistic Analysis Using Repetitive Sound</title>
+                        <title level="m" type="proceedings">Chicago Colloquium on Digital Humanities and Computer Science</title>
+                        <name type="venue">Chicago</name>
+                        
+                    </bibl>
+                    <bibl xml:id="bibl3">
+                        <author>Holmes, D., Robertson, M., and Paez, R. </author>
+                        <date>2001</date>
+                        <title level="a">Stephen Crane and the New York Tribune: A Case Study in Traditional and Non-traditional Authorship Attribution</title>
+                        <title level="j">Computers and the Humanities</title>
+                        <biblScope type="issue">35(3)</biblScope>
+                        <biblScope type="pp">315—331</biblScope>
+                        
+                    </bibl>
+                    <bibl xml:id="bibl4">
+                        <author>Kristeva, J.</author>
+                        <date>1986</date>
+                        <title level="a">Word, Dialogue and Novel</title>
+                        <title level="m">The Kristeva Reader</title>
+                        <editor>Moi, T.</editor>
+                        <publisher>Columbia University Press</publisher>
+                        <pubPlace>New York</pubPlace>
+                        <biblScope type="pp">34—61</biblScope>
+                        
+                    </bibl>
+                    <bibl xml:id="bibl5">
+                        <author>Paul the Deacon</author>
+                        <date>1881</date>
+                        <title level="a">Carmina</title>
+                        <title level="m">Monumenta Germaniae Hisotica, Poeta Latini Aevi Carolini Vol 1</title>
+                        <editor>Diemmler, E. </editor>
+                        <pubPlace>Berlin</pubPlace>                        
+                    </bibl>
+                    
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

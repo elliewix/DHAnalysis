@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0" xml:id="ab-633">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>The MLCD Overlap Corpus (MOC)</title>
+                <author>
+                    <name>Huitfeldt, Claus</name>
+                    <affiliation>Department of Philosophy, <orgName>University of Bergen</orgName> <reg><country>Norway</country></reg></affiliation>
+                    <email>Claus.Huitfeldt@uib.no</email>
+                </author>
+                <author>
+                    <name>Sperberg-McQueen, C. M.</name>
+                    <affiliation><orgName>Black Mesa Technologies LLC</orgName>, <country>USA</country></affiliation>
+                    <email>cmsmcq@blackmesatech.com</email>
+                </author>
+                <author>
+                    <name>Marcoux, Yves</name>
+                    <affiliation><orgName>Université de Montréal</orgName>, <country>Canada</country></affiliation>
+                    <email>ymarcoux@gmail.com</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-03</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <div>
+                <p>For some time, theorists and practitioners of descriptive markup have been aware that the strict hierarchical organization of elements provided by SGML and XML represents a potentially problematic abstraction. The nesting structures of SGML and XML capture an important property of real texts and represent a successful combination of expressive power and tractability. But not all textual phenomena appear in properly nested form, and for more than twenty years students of markup have been exploring methods of recording overlapping (non-hierarchical) structures. Useful surveys include (Barnard et al. 1995), (DeRose 2004), and (Witt et al. 2005).
+                </p>
+                <p>
+                    Some approaches to the overlap problem take the form of non-SGML, non-XML syntaxes and non-tree-like data structures. One example is offered by the TexMecs syntax and Goddag data structures proposed by the project Markup Languages for Complex Documents (MLCD) based at the University of Bergen. Another is the Layered Markup and Annotation Language (LMNL). A third is the so-called multi-colored trees defined by (Jagadish et al. 2004).
+                </p>
+                <p>Other approaches exploit the optional <hi rend="italic">concurrent markup</hi> feature of SGML (Sperberg-McQueen and Huitfeldt 1998), or apply it, with suitable modifications, to XML (Hilbert et al. 2005). 
+                </p>
+                <p>But by far the largest number of published approaches to problems of overlapping markup involve the use of SGML and XML themselves to record the information. They exploit the semantic openness of SGML and XML to supply non-hierarchical interpretation of what are often thought to be inescapably hierarchical notations.
+                </p>
+                <p>The SGML/XML-based approaches to overlap fall, roughly, into three groups: milestones, fragmentation-and-reconstitution, and stand-off annotation. Milestones (described as early as (Barnard et al. 1988), and used in (Sperberg-McQueen and Burnard 1990) and later versions of the TEI <hi rend="italic">Guidelines</hi>) use empty elements to mark the boundaries of regions which cannot be marked simply as elements because they overlap the boundaries of other elements. More recently, approaches to milestone markup have been generalized in the Trojan Horse and CLIX markup idioms (DeRose 2004).
+                </p>
+                <p>Fragmentation is the technique of dividing a logical unit which overlaps other units into several smaller units, which do not; the consuming application can then re-aggregate the fragments. 
+                </p>
+                <p>Stand-off annotation addresses the overlap problem by removing the markup from the main data stream of the document, at the same time adding pointers back into the base data. Many language corpora use forms of stand-off markup (e.g. (Carletta et al. 2005), (Witt et al. 2005), (Stührenberg and Goecke 2008)).
+                </p>
+                <p>For all the variety of methods and proposals for handling overlap, there is remarkably little consensus on the best approach. Even systematic comparisons are scarce, although several of the surveys provide at least a broad categorization of methods. Partly this reflects a pragmatic issue (many methods used in production systems are devised for use by specific projects, which do not wish to engage in a systematic comparison of interest to markup theorists, but to get on with their discipline-specific work); partly it reflects a difficulty in comparing different schemes point to point, owing to the scattered and informal nature of the documentation. 
+                </p>
+                <p>And finally, despite the work of the last twenty years we still have only an incomplete understanding of the different structural and semantic forms of overlapping structure, and the implications for markup practice of different forms of overlap. The pervasive but unsystematic overlap of verse and dramatic structure in verse drama, or of formal and physical structure in any printed book, seems to present one kind of phenomenon. The occasional but richly significant overlap of structures characteristic of enjambement in verse may appear, on the other hand, to be of a different kind. Is it?
+                </p>
+                <p>The MLCD Overlap Corpus (MOC) is intended to make it easier to compare different methods of handling overlap, not just on theoretical or abstract grounds, but in terms of concrete examples from real and constructed texts. The essential idea of the corpus is to make available a single body of material, ranging from compact examples to full texts of novel or five-act-play length, tagged for the same information, using a variety of overlap notations. 
+                </p>
+                <p> Consider the following simple example (from (Hilbert et al. 2005)) of a discourse situation in which the utterance structure overlaps with the syntactic structure:</p>
+                    
+                    <p><hi rend="bold">Peter</hi>: Hey, Paul! Would you give me</p>
+                    <p><hi rend="bold">Paul</hi>: the hammer?
+                </p>
+                <p>(Hilbert et al. 2005) give the following representation of this example in the notation now known as XConcur (then MLX).</p> 
+                   <code>
+&lt;!DOCTYPE (1)div SYSTEM "tei/dtd/teispok2.dtd"&gt;
+&lt;!DOCTYPE (2)text SYSTEM "tei/dtd/teiana2.dtd"&gt;
+   &lt;(1)div type="dialog" org="uniform"&gt;
+       &lt;(2)text&gt;
+          &lt;(1)u who="Peter"&gt;
+             &lt;(2)s&gt;Hey Paul!&lt;/(2)s&gt;
+             &lt;(2)s&gt;Would you give me
+          &lt;/(1)u&gt;
+          &lt;(1)u who="Paul"&gt;
+             the hammer?&lt;/(2)s&gt;
+          &lt;/(1)u&gt;
+       &lt;/(2)text&gt;
+    &lt;/(1)div&gt;
+                   </code>
+                <p>Using the CONCUR feature of SGML, a very similar representation can be given (elided here for space reasons). It might be represented in TexMecs this way:</p>
+                   <code>
+&lt;div type="dialog" org="uniform"&gt;
+  &lt;u who="Peter"&gt;
+      &lt;s&gt;Hey Paul!&lt;/s&gt;
+      &lt;s sID="s2"/&gt;Would you give me
+  &lt;/u&gt;
+  &lt;u who="Paul"&gt;
+      the hammer?&lt;s eID="s2"&gt;
+  &lt;/u&gt;
+&lt;/div&gt;
+                   </code>
+                
+                <p>The goal of MOC is to make examples available in a broad variety of notations, as well as those just given:
+                    <xmt:uList>
+                        <item>various forms of TEI markup, using different TEI mechanisms (<hi rend="italic">next</hi>  and <hi rend="italic">prev</hi> attributes, the <hi rend="italic">part</hi> attribute, virtual elements, stand-off markup using feature structures, etc.)</item>
+                        <item>TexMecs (Huitfeldt and Sperberg-McQueen 2003)</item>
+                        <item>XStandoff (Stührenberg and Jettka 2009)</item>
+                        <item>Multix (Chatti et al., 2007)</item>
+                        <item>Sekimo General Format (SGF) (Stührenberg and Goecke 2008)</item>
+                        <item>Nite (Carletta et al. 2005)</item>
+                        <item>Earmark (Di Iorio et al. 2009)</item>
+                    </xmt:uList>
+                </p>
+                <p>There will be three sets of data: 
+                    <xmt:uList>
+                        <item>twenty or more &apos;toy&apos; examples like the one just given, typically just a few lines in length. Most of the toy examples will be drawn from existing literature on overlap; almost all of them will be constructed texts, though some will be very short extracts from literary or other natural texts.</item>
+                        <item>ten or more &apos;short&apos; examples, typically corresponding to a few pages of printed material, mostly extracts from natural texts.</item>
+                        <item>five or more &apos;long&apos; examples, full-length natural texts. We will draw these partly from an existing collection of literary texts used as a test bed for full-text software and partly from existing language corpora.</item>
+                    </xmt:uList>
+                </p>
+                <p>The toy examples will be tagged manually in the various notations selected. The short examples will be tagged using semi-automated processes (i.e. partly by hand and partly automatically), and checked carefully for correctness. The long examples will be tagged using mostly automated processes, and checked carefully for correctness.</p>
+                <p>Since the purpose of MOC is to illuminate problems connected with overlap and with existing proposals for handling it, there will be no attempt to make the selection of texts representative of any particular natural language community. The relevant population is not a particular set of natural-language users, but the set of people who work with natural-language texts for various purposes. In such a small corpus, we cannot and do not hope for statistical representativeness, but only for an illuminating variety of examples. Accordingly, we will seek to include examples illustrative of problems encountered in:
+                    <xmt:uList>
+                        <item>literary and lexicological study</item>
+                        <item>metrical study</item>
+                        <item>language corpora (discourse analysis, syntax, prosody, ...)</item>
+                        <item>change markup and multi-versioned texts</item>
+                        <item>historical-critical editions</item>
+                        <item>analytic bibliography</item>
+                        <item>historical annotation</item>
+                    </xmt:uList>
+                </p>
+                <p>Apart from simply illustrating the ways in which different notations represent the same information, MOC should provide sample test data useful for a variety of tasks and studies:
+                    <xmt:uList>
+                        <item>development of automatic translation among notations (the existing samples of the target notation serve as comparison points for the results achieved by the automatic translator)</item>
+                        <item>development of software intended to handle any of the notations represented</item>
+                        <item>construction of domain-appropriate queries against the various notations (does notation N1 make it easier to construct suitable queries than notation N2?)</item>
+                        <item>comparative measures of markup complexity</item>
+                        <item>analysis of different kinds and forms of overlap: do structural patterns vary with different kinds of markup? Do the domain-specific implications of overlap (and thus the domain-oriented requirements for manipulating the data) vary?</item>
+                        <item>development of tools for automatic extraction of formalized representations of the meaning of markup</item>
+                    </xmt:uList>
+                </p>
+                <p>Performance comparisons are notably missing from this list; MOC will be too small to provide performance measurements relevant to searches across typical modern collections in the gigabyte size range. (On the other hand, the long samples may be useful for at least preliminary performance comparisons and preparation for more large-scale testing.)
+                </p>
+                <p>At the time this abstract is prepared, the first version of MOC is expected to be partially completed before the DH 2010 conference; the presentation will include an account of the work to date, problems encountered, and a forecast of the work remaining before completion of the corpus.
+                </p>
+                <p>Follow-on work includes experimentation with existing full-text indexing and query systems to test the different characteristics of different markup styles on query formulation and retrieval time; we also expect to work on automated translations among various notations.</p>
+            </div>
+            
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Barnard, D., Hayter, R., Karababa, M., Logan, G. and McFadden, J.</author>
+                        <date>1988</date>
+                        <title level="a">SGML Markup for Literary Texts</title>
+                        <title level="j">SGML Markup for Literary Texts</title>
+                        <biblScope type="issue">22</biblScope>
+                        <biblScope type="pp">265-276</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Barnard, D., Burnard, L., Gaspart, J. P., Price, L. A., Sperberg-McQueen, C. M. and Varile, G. B.</author>
+                        <date>1995</date>
+                        <title level="a">Hierarchical encoding of text: Technical problems and SGML solutions</title>
+                        <title level="j">Computers and the Humanities</title>
+                        <biblScope type="issue">29</biblScope>
+                        <biblScope type="pp">211-231</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Carletta, J., Evert, S., Heid, U. and Kilgour, J.</author>
+                        <date>2005</date>
+                        <title level="a">The NITE XML Toolkit: data model and query</title>
+                        <title level="j">Language Resources and Evaluation</title>
+                        <biblScope type="issue">39(4)</biblScope>
+                        <biblScope type="pp">313-334</biblScope>
+                        <ptr target="doi:10.1007/s10579-006-9001-9"/>
+                    </bibl>
+                    <bibl>
+                        <author>Chatti, N., Kaouk, S., Calabretto, S. and Pinon, J. M.</author>
+                        <date>2007</date>
+                        <title level="a">MultiX: an XML-based formalism to encode multi-structured documents</title>
+                        <title level="m" type="proceedings">Proceedings of Extreme Markup Languages 2007</title>
+                        <name type="venue">Montréal (Canada)</name>
+                        <date type="conference">Aug. 2007</date>
+                        <ptr target="http://conferences.idealliance.org/extreme/html/2007/Chatti01/EML2007Chatti01.html"/>
+                   </bibl>
+                    <bibl>
+                        <author>DeRose, S. J.</author>
+                        <date>2004</date>
+                        <title level="a">Markup overlap: A review and a horse</title>
+                        <title level="m" type="proceedings">Proceedings of Extreme Markup Languages 2004</title>
+                        <name type="venue">Montréal (Canada)</name>
+                        <date type="conference">Aug. 2004</date>
+                        <ptr target="http://conferences.idealliance.org/extreme/html/2004/DeRose01/EML2004DeRose01.html"/>
+                    </bibl>
+                    <bibl>
+                        <author>Di Iorio, A., Peroni, S. and Vitali, F.</author>
+                        <date>2009</date>
+                        <title level="a">Towards markup support for full GODDAGs and beyond: the EARMARK approach</title>
+                        <title level="m" type="proceedings">Proceedings of Balisage: The Markup Conference 2009</title>
+                        <name type="venue">Montréal (Canada)</name>
+                        <date type="conference">August 11-14, 2009</date>
+                        <ptr target="http://www.balisage.net/Proceedings/vol3/html/Peroni01/BalisageVol3-Peroni01.html"/>
+                        <ptr target="doi:10.4242/BalisageVol3.Peroni01"/>
+                    </bibl>
+                    <bibl>
+                        <author>Hilbert, M., Schonefeld, O. and Witt, A.</author>
+                        <date>2005</date>
+                        <title level="a">Making CONCUR work</title>
+                        <title level="m" type="proceedings">Proceedings of Extreme Markup Languages 2005</title>
+                        <ptr target="http://conferences.idealliance.org/extreme/html/2005/Witt01/EML2005Witt01.xml"/>
+                    </bibl>
+                    <bibl>
+                        <author>Huitfeldt, C. and Sperberg-McQueen, C. M.</author>
+                        <date>2003</date>
+                        <title level="m">TexMECS: An experimental markup meta-language for complex documents</title>
+                        <pubPlace>University of Bergen</pubPlace>
+                        <ptr target="http://decentius.aksis.uib.no/mlcd/2003/Papers/texmecs.html"/>
+                    </bibl>
+                    <bibl>
+                        <author>Jagadish, H.V., Lakshmanan, L. V. S., Scannapieco, M., Srivastava, D. and Wiwatwattana, N.</author>
+                        <date>2004</date>
+                        <title level="a">Colorful XML: one hierarchy isn't enough</title>
+                        <title level="m" type="proceedings">Proceedings of the 2004 ACM SIGMOD international conference on Management of data</title>
+                        <name type="venue">Paris (France)</name>
+                        <biblScope type="pp">251-262</biblScope>
+                        <ptr target="http://doi.acm.org/10.1145/1007568.1007598"/>
+                    </bibl>
+                    <bibl>
+                        <author>Sperberg-McQueen, C.M. and Huitfeldt, C.</author>
+                        <date>1998</date>
+                        <title level="a">Concurrent Document Hierarchies in MECS and SGML</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">14</biblScope>
+                        <biblScope type="pp">29-42</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Stührenberg, M. and Jettka, D.</author>
+                        <date>2009</date>
+                        <title level="a">A toolkit for multi-dimensional markup: The development of SGF to XStandoff</title>
+                        <title level="m" type="proceedings">Proceedings of Balisage: The Markup Conference 2009</title>
+                        <name type="venue">Montréal (Canada)</name>
+                        <date type="conference">August 11-14, 2009</date>
+                        <ptr target="http://www.balisage.net/Proceedings/vol3/html/Stuhrenberg01/BalisageVol3-Stuhrenberg01.html"/>
+                        <ptr target="doi:10.4242/BalisageVol3.Stuhrenberg01"/>
+                    </bibl>
+                    <bibl>
+                        <author>Stührenberg, M. and Goecke, D.</author>
+                        <date>2008</date>
+                        <title level="a">SGF — An integrated model for multiple annotations and its application in a linguistic domain</title>
+                        <title level="m" type="proceedings">Proceedings of Balisage: The Markup Conference 2008</title>
+                        <name type="venue">Montréal (Canada)</name>
+                        <date type="conference">August 12-15, 2008</date>
+                        <ptr target="http://www.balisage.net/Proceedings/vol1/html/Stuehrenberg01/BalisageVol1-Stuehrenberg01.html"/>
+                        <ptr target="doi:10.4242/BalisageVol1.Stuehrenberg01"/>
+                    </bibl>
+                    <bibl>
+                        <author>Sperberg-McQueen, C. M. and Burnard, L.</author>(eds)
+                        <date>1990</date>
+                        <title level="m">Guidelines for the Encoding and Interchange of Machine-Readable Texts (TEI P1)</title>
+                        <publisher>Text Encoding Initiative</publisher>
+                        <pubPlace>Chicago, Oxford</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Witt, A., Lüngen, H., Sasaki, F. and Goecke, D.</author>
+                        <date>2005</date>
+                        <title level="a">Unification of XML Documents with Concurrent Markup</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">20(1)</biblScope>
+                        <biblScope type="pp">103-116</biblScope>
+                    </bibl>
+                 </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

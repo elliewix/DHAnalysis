@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-749">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Computational approaches to textual variation in medieval literature</title>
+                <author>
+                    <name>van Dalen-Oskam, Karina</name>
+                    <affiliation><orgName>Huygens Instituut</orgName>, <country>Netherlands</country></affiliation>
+                    <email>karina.van.dalen@huygensinstituut.knaw.nl</email>
+                </author>
+                <author>
+                    <name>Thaisen, Jacob</name>
+                    <affiliation><orgName>Adam Mickiewicz University</orgName>, Poznań, <country>Poland</country></affiliation>
+                    <email>thaisen@ifa.amu.edu.pl</email>
+                </author>
+                <author>
+                    <name>Kestemont, Mike</name>
+                    <affiliation>CLiPS Computational Linguistics group and Institute for the Study
+                        of Literature in the Low Countries (ISLN), University of Antwerp,
+                        Belgium</affiliation>
+                    <email>mike.kestemont@gmail.com</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-05-01</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title/>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher>Centre for Computing in the Humanities, King's College
+                        London</publisher>
+                    <address>
+                        <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                        <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                    </address>
+                </publicationStmt>
+                <sourceDesc>
+                    <p>No source: created in electronic format.</p>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text>
+            <body>
+                <p>Before the age of printing, texts were copied manually only. This was done by
+                    scribes – persons who made a copy of a text for their own use or for the use of
+                    others. Often, the original is no longer available. All that remain are copies
+                    of the text, or copies of copies of copies. We know that scribes made mistakes,
+                    and that they changed spellings and wording according to what they thought fit
+                    for their audience. And we know that they sometimes reworked the text or parts
+                    thereof. </p>
+                <p>Up till now, these insecurities may have made medieval texts less interesting to
+                    work on for digital humanists. However, the complex world of medieval textual
+                    copying is a very challenging topic in its own right. Recently, some scholars
+                    have tried to develop and apply digital methods and techniques to gain insight
+                    in manual text transmission. In this session, they will explain which specific
+                    research questions led to their approach, and why traditional methods did not
+                    suffice. Then they will describe the digital approach they developed, how they
+                    gathered their data, and present the first results. They will sketch the next
+                    steps for their research and reflect on which larger questions may come closer
+                    to an answer, and which other areas of digital humanities will benefit from this
+                    research. </p>
+                <p>The first paper (by Jacob Thaisen) will focus on how the variability of spelling
+                    characteristic of Middle English makes probabilistic models a powerful tool for
+                    distinguishing scribes and exemplars. The second paper (by Karina van
+                    Dalen-Oskam) goes into vocabulary and frequencies of parts of speech, as a means
+                    to get insight in the influence scribes exerted on the texts they copied. The
+                    third paper (by Mike Kestemont) aims at erasing or minimizing textual
+                    differences in order to assess stability and the persistence of authorial
+                    features of manually copied medieval texts. </p>
+            </body>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>Probabilistic Modeling of Middle English Scribal Orthographies</title>
+                    <author>
+                        <name>Jacob Thaisen</name>
+                        <affiliation>Adam Mickiewicz University, Poznań, Poland</affiliation>
+                        <email>thaisen@ifa.amu.edu.pl</email>
+                    </author>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher>Centre for Computing in the Humanities, King's College
+                        London</publisher>
+                    <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+                </publicationStmt>
+                <sourceDesc>
+                    <p>No source: created in electronic format.</p>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text>
+            <body>
+                <p>With the Norman Conquest of 1066 written English ceased to be employed for
+                    administrative and other official purposes, and the normative spelling
+                    conventions established for the West Saxon variety of Old English fell into
+                    disuse. When the language eventually regained these crucial domains around three
+                    centuries later, a norm for how to spell English no longer existed. The only
+                    models available to scribes were the practices of other languages known to them
+                    or, increasingly as English strengthened its position, the conventions adopted
+                    in the exemplars from which they copied. As a result of the interaction of all
+                    these factors, Middle English—the English of the period from the Battle of
+                    Hastings to Caxton&apos;s introduction of printing from movable type in 1476—is
+                    characterized by considerable variation in spelling, even within the output of a
+                    single individual. There is nothing at all unusual about one and the same scribe
+                    of this period representing one and the same word in more than one way,
+                    including very frequent words such as the definite article and conjunctions.
+                    Moreover, scribes could use the variability to their advantage in carrying out
+                    the copying task, for example, to adjust the length of lines or speed up the
+                    copying process. </p>
+                <p>The variability of Middle English orthography means it would be misguided to
+                    assume that two texts penned by a single scribe necessarily follow, or should
+                    follow, identical spelling conventions. They are much more likely to exhibit
+                    variation within bounds. Any stylometric attribution of Middle English texts to
+                    a single scribe or of portions of a text in a single scribal hand to different
+                    exemplars on the basis of spelling must take this nature of the evidence into
+                    account. The probabilistic methods known from statistically-based machine
+                    translation, spell-checking, optical character recognition, and other natural
+                    language processing applications are specifically designed to recognize patterns
+                    in &quot;messy&quot; data and generalize on the basis of them. It is the purpose
+                    of this paper to demonstrate that this property of these methods makes them
+                    adequate stylometric discriminators of unique orthographies. </p>
+                <p>The methodologies developed in connection with the preparation of <hi
+                        rend="italic">A Linguistic Atlas of Late Medieval English</hi> (McIntosh,
+                    Samuels, et al. 1986) separate unique orthographies by manual and predominantly
+                    qualitative means; if quantitative data are collected at all, they are subjected
+                    only to simple statistical tests. Since texts differ lexically, they are not
+                    readily comparable in all respects. The <hi rend="italic">Atlas</hi> solution is
+                    to generate comparability by restricting the investigation to the subset of the
+                    respective lexicons of the various texts they may reasonably be expected to
+                    share, such as function words. Spelling forms for these words are collected from
+                    samples of the texts by selective questionnaire and any pattern present in their
+                    distribution detected by visual inspection. The forms are further often analyzed
+                    by reference to known dialect markers. The latter translates as the researcher
+                    relating the forms to phonological and morphological variables, although there
+                    is recognition in the dialectological literature that geographic significance
+                    too may characterize other levels of language. </p>
+                <p>However, it is now practically feasible to estimate the full orthography of which
+                    a given text is a sample by building probabilistic models. The reason is that
+                    recent years have witnessed an increase in the amount of diplomatically
+                    transcribed manuscript materials available in digital form, which makes it
+                    possible to abandon the qualitative focus. Scholars are already subjecting the
+                    lexical variation present in similar materials to sophisticated
+                    computer-assisted quantitative analysis (Robinson 1997, van Dalen-Oskam and van
+                    Zundert 2007). Their studies point the way forward. </p>
+                <p>The building blocks of Middle English orthographies are not individual letters
+                    but sequences of letters of varying length which, further, combine with one
+                    another in specific ways, with phonograms, morphograms, and logograms existing
+                    side by side. Every Middle English orthography has a slightly different set of
+                    building blocks, making <hi rend="italic">n</hi>-gram models a good type of
+                    probabilistic model for capturing the distinct properties of each. Such a model
+                    is simply an exhaustive listing of grams (letters and letter sequences), each
+                    with its own probability and weight. </p>
+                <p>&quot;Perplexity&quot; expresses how well a given model is able to account for
+                    the grams found in a text other than the one from which the model itself is
+                    derived. That is, a model – itself a list of grams – is compared with a list of
+                    the grams found in another text and the measure simply expresses the level of
+                    agreement between the two lists. However, to find out whether the two texts are
+                    instances of the same orthography, a better model is a model not of the text
+                    from which it is derived but of the orthography which that text is a sample of.
+                    This is because the lexis of the text means the probabilities of the grams are
+                    not those they have in the orthography. This skew can be reduced by generalizing
+                    the model. &quot;Smoothing&quot; refers to the act of (automatically)
+                    introducing weights to achieve the best possible generalization. </p>
+                <p>Chen and Goodman (1998) carry out a systematic investigation of how a range of
+                    smoothing techniques perform relative to one another on a variety of corpus
+                    sizes in terms of the ability to account for test data. Their data come from
+                    present-day English and their basic unit is the word rather than, as here, the
+                    letter. They find the technique developed by Witten and Bell (1991) consistently
+                    to generalize the least effectively, and that developed by Kneser and Ney
+                    (1995), and later modified by Chen and Goodman (1998), consistently to do so the
+                    most effectively. Both weight every (<hi rend="italic">n</hi>-1)-gram in
+                    proportion to the number of different <hi rend="italic">n</hi>-grams in which it
+                    occurs in the training data, i.e. in the text on which the model is based in the
+                    present case. The former technique produces the effect that the probability mass
+                    is shifted toward those grams which best characterize the training data, making
+                    it appropriate if the purpose is to distinguish orthographies within the product
+                    of a single scribe. The latter does the opposite, thus more fully capturing the
+                    full range of forms accepted by the scribe of the training data; this makes it
+                    the better choice if the purpose is to compare texts by a range of scribes in
+                    terms of their orthographic similarity. </p>
+                <p>To demonstrate the adequacy of smoothed models as discriminators of Middle
+                    English orthographies, the presenter investigates two corpora by means of the
+                        <hi rend="italic">SRI Language Modeling Toolkit</hi> (Stolcke 2002): </p>
+                <p><hi rend="bold">1.</hi> The copy of Geoffrey Chaucer&apos;s unfinished poem <hi
+                        rend="italic">Canterbury Tales</hi> contained in Cambridge University
+                    Library, MS Gg.4.27 [Gg]; the copy is in a single scribal hand.</p>
+                <p>The Gg text of is divided into equal-sized segments, each of which is
+                    subsequently modeled (Witten-Bell smoothing). For every model, its perplexity is
+                    computed against every segment other than the segment on which it is based,
+                    giving a 19x19 matrix with one blank cell per row. The mean and standard
+                    deviation is calculated for each row. </p>
+                <p>
+                    <figure>
+                        <head>Figure 1</head>
+                        <graphic url="749_Fig1.png" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Mean Perplexity and Standard Deviation, by Equal-Size Segment, in
+                            Gg</figDesc>
+                    </figure>
+                </p>
+                <p>As can be seen in Figure 1, the greatest change in mean perplexity between any
+                    two consecutive segments falls between sections 7 and 8, with only that change
+                    falling outside the confidence intervals indicated by the whiskers. The
+                    hypothesis that two distinct populations are present is confirmed statistically
+                    (Mann-Whitney, U = 84, n1 = 7, n2 = 12, P &lt; 0.001, two-tailed): thus, Gg
+                    contains two orthographies, their boundary falling around segments 7 and 8. The
+                    manuscript contains physical evidence of a change of exemplar late in segment 7
+                    (Thaisen forthcoming). </p>
+                <p><hi rend="bold">2.</hi> 58 pre-1500 manuscript copies of the <hi rend="italic"
+                        >Miller&apos;s Tale</hi> and all fifty-eight such copies of the <hi
+                        rend="italic">Wife of Bath&apos;s Prologue</hi>, totaling 116 texts; a range
+                    of scribes are responsible for these copies. </p>
+                <p>The Toolkit builds a model of every text and smoothes them (Kneser-Ney modified).
+                    For every model, its perplexity is calculated with respect to every text. The
+                    perplexities are arranged into two matrices for hierarchical clustering, one for
+                    the Miller-based models and another for the Wife-based models. </p>
+                <p>It is found, firstly, that the two trees are virtually mirror images of one
+                    another; secondly, that a Miller text and a Wife text which come from the same
+                    manuscript usually appear as sisters and that the cases in which they fail to do
+                    so are attributable to a change of scribe or exemplar posited on outside
+                    evidence (Thaisen 2009). </p>
+                <p>These results are sufficiently encouraging to warrant the investment of further
+                    resources. They show that probabilistic modeling offers a repeatable, quantified
+                    means of measuring the level of similarity between Middle English orthographies
+                    and so, also, a tool for separating them. That separation is important not only
+                    in authorship attribution and textual criticism, but also in manuscript studies
+                    and English historical linguistics. Additional advantages over the <hi
+                        rend="italic">Atlas</hi> methodologies, which focus on dialect rather than
+                    textual studies, are the level of exhaustiveness, since all the available data
+                    are considered, as well as simple ease, the input being an unlemmatized
+                    transcript in plain text format. </p>
+            </body>
+            <back>
+                <div>
+                    <listBibl>
+                        <bibl>
+                            <author>Chen, S. F. and Goodman, J. T.</author>
+                            <date>1998</date>
+                            <title level="m">An Empirical Study of Smoothing Techniques for Language
+                                Modeling. Technical report TR-10-98</title>
+                            <publisher>Harvard University</publisher>
+                            <date type="visited">11 March 2010</date>
+                            <ptr
+                                target="http://research.microsoft.com/en-us/um/people/joshuago/publications.htm"
+                            />
+                        </bibl>
+                        <bibl>
+                            <author>Kneser, R. and Ney, H. </author>
+                            <date>1995</date>
+                            <title level="a">Improved Backing-off for m-Gram Language
+                                Modeling</title>
+                            <title level="m" type="proceedings">Proceedings of the IEEE
+                                International Conference on Acoustics, Speech and Signal
+                                Processing</title>
+                            <biblScope type="issue">1</biblScope>
+                            <biblScope type="pp">181-84</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>McIntosh, A., Samuels, M. and Benskin, M.</author>
+                            <date>1986</date>
+                            <title level="m">A Linguistic Atlas of Late Mediaeval English</title>
+                            <publisher>Aberdeen University Press</publisher>
+                            <pubPlace>Aberdeen</pubPlace>
+                        </bibl>
+                        <bibl>
+                            <author>Robinson, P.</author>
+                            <date>1997</date>
+                            <title level="a">A Stemmatic Analysis of the Fifteenth-Century Witnesses
+                                to the Wife of Bath&apos;s Prologue</title>
+                            <title level="m">The Canterbury Tales Project Occasional Papers: Vol.
+                                II</title>
+                            <editor>Blake, N. F. and Robinson, P.</editor>
+                            <publisher>Office for Humanities Communication</publisher>
+                            <pubPlace>London</pubPlace>
+                            <biblScope type="pp">69–132</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Stolcke, A.</author>
+                            <date>2002</date>
+                            <title level="a">SRILM: An Extensible Language Modeling Toolkit</title>
+                            <title level="m">Proceedings of the 7th International Conference on
+                                Spoken Language Processing</title>
+                            <editor>Hansen, J. and Pellom, B.</editor>
+                            <publisher>Casual Productions</publisher>
+                            <pubPlace>Denver</pubPlace>
+                            <biblScope type="pp">901–04</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Thaisen, J.</author>
+                            <date>2009</date>
+                            <title level="a">Statistical Comparison of Middle English Texts: An
+                                Interim Report</title>
+                            <title level="j">Kwartalnik Neofilologiczny</title>
+                            <biblScope type="issue">56</biblScope>
+                            <biblScope type="pp">205–21</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Thaisen, J.</author>
+                            <date>forthcoming</date>
+                            <title level="a">A Probabilistic Analysis of a Middle English
+                                Text</title>
+                            <title level="m">Digitizing Medieval and Early Modern Material
+                                Culture</title>
+                            <editor>Nelson, B. and Terras, M.</editor>
+                            <publisher>Arizona Center for Medieval and Renaissance
+                                Studies</publisher>
+                            <pubPlace>Tempe</pubPlace>
+                        </bibl>
+                        <bibl>
+                            <author>Van Dalen-Oskam, K. and van Zundert, J.</author>
+                            <date>2007</date>
+                            <title level="a">Delta for Middle Dutch: Author and Copyist Distinction
+                                in Walewein</title>
+                            <title level="j">Literary and Linguistic Computing</title>
+                            <biblScope type="issue">22</biblScope>
+                            <biblScope type="pp">345–62</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Witten, I. H. and Bell, T. C.</author>
+                            <date>1991</date>
+                            <title level="a">The Zero-Frequency Problem: Estimating the
+                                Probabilities of Novel Events in Adaptive Text Compression</title>
+                            <title level="j">IEEE Transactions on Information Theory</title>
+                            <biblScope type="issue">37</biblScope>
+                            <biblScope type="pp">1085–94</biblScope>
+                        </bibl>
+                    </listBibl>
+                </div>
+            </back>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>Distinguishing medieval authors and scribes</title>
+                    <author>
+                        <name>Karina van Dalen-Oskam</name>
+                        <affiliation>Huygens Instituut, Netherlands</affiliation>
+                        <email>karina.van.dalen@huygensinstituut.knaw.nl</email>
+                    </author>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher>Centre for Computing in the Humanities, King's College
+                        London</publisher>
+                    <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+                </publicationStmt>
+                <sourceDesc>
+                    <p>No source: created in electronic format.</p>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text>
+            <body>
+                <p>We know that medieval scribes (women or men manually copying texts) changed the
+                    texts they were copying. Scribes not only made mistakes, but also deliberately
+                    changed a text&apos;s spelling and wording. We also know that they sometimes
+                    changed the content of a text, leaving out episodes and adding others, or for
+                    instance changing the moral message. In these cases, scholars may want to
+                    describe a text not as a copy of another text but as an adaptation of it. It is
+                    not exactly clear, though, when to call a text a copy or an adaptation, and how
+                    often scribes chose to adapt instead of &apos;just&apos; copy a text. It is also
+                    uncertain if all copies/adaptations of a medieval text survived and how many
+                    were lost (and why). To make things even more complicated, the exact date of
+                    most medieval manuscripts is uncertain. And in many cases we do not know the
+                    identity of the author of the original text or of the scribes.</p>
+                <div>
+                    <head>Research questions</head>
+                    <p>One of the tasks of scholars of medieval literature is to analyse the
+                        adaptations in a copy and to try to explain them in a poetical, ethical, or
+                        political context, which is of course difficult if the original version of a
+                        text is not extant. However, comparing different copies/adaptations of the
+                        same text usually presents scholars with enough data to make relevant
+                        observations and draw at least some conclusions. Until now, the depth of the
+                        analyses was limited to what the human eye and a scholar&apos;s amount of
+                        research time allowed. However, digital texts and digital text analysis
+                        tools can help us to compare texts in many more aspects than was possible up
+                        till now. </p>
+                    <p>The questions that are of interest to us are: can we compare manual copies of
+                        the same text (semi-)automatically and get insight into the divergences
+                        which occur? Can we filter out differences that have to do with language
+                        development? Can we filter out the influence of subsequent scribes of a text
+                        and focus on those aspects which show us the original author most clearly?
+                        If so, could we apply (adapted versions of) authorship attribution tools to
+                        medieval texts? Could we also distinguish scribes from each other and are
+                        they distinguishable in the same or in a different way from how authors can
+                        be distinguished from each other? Can we develop new tools or fine-tune
+                        existing tools for scribal measurements? And can these measurements decide
+                        if a text is a copy or an adaptation and if so, how radical the adaptation
+                        is? </p>
+                    <p>Up till now, scholars hardly ever tried to systematically answer these
+                        questions. The necessary amount of work seemed not proportionate to the
+                        possible results as long as there still was enough low-hanging fruit in the
+                        close-reading type of analysis of text adaptation. Possibly, scholars in the
+                        course of time have been trained to NOT ask these impossible-to-answer
+                        questions, although two topics have always had a special place in the
+                        humanities: building family trees of manuscripts (stemmatology) and
+                        authorship attribution based on traditional, close-reading and simple
+                        statistical methods. This shows there has always been a keen interest in new
+                        and complex methods when they could possibly answer pressing questions.</p>
+                </div>
+                <div>
+                    <head>Data</head>
+                    <p>We would like to introduce two methods which may help scholars to gain
+                        insight in the amount of differences between copies of the same text. For
+                        this research, we are not interested in mere spelling differences but in
+                        more content-related differences. Our area of research is Middle Dutch
+                        literature. The first method is a rather simple approach to the vocabulary
+                        of all the copies, for which we needed lemmatization of the data, and the
+                        second is the comparison of part of speech frequencies in the copies of the
+                        same text, which implied a dataset tagged for Part of Speech. A corpus
+                        answering these needs was not available yet, so we had to create one first. </p>
+                    <p>Not many Middle Dutch texts are extant in a substantial number of copies. We
+                        chose a work by the Flemish author Jacob van Maerlant: the <hi rend="italic"
+                            >Rijmbijbel</hi> (&apos;Rhyming Bible&apos;), which is a
+                        translation/adaptation of the Medieval Latin <hi rend="italic">Historia
+                            scholastica</hi> written by Petrus Comestor. Van Maerlant finished this
+                        work in 1271, and many fragments and fifteen near-complete manuscripts
+                        (though not all containing all parts of the text) survive, dating from ca.
+                        1285 to the end of the fifteenth century. One of these manuscripts is
+                        available in a good edition; it is also digitally available lemmatized and
+                        tagged for parts of speech. Transcriptions of the other manuscripts had to
+                        be made for this research. Because of the length of the texts (almost 35,000
+                        lines), we had to work with samples. We chose 5 samples of 200-240 lines
+                        from different parts of the text, and transcribed the parallel texts (if
+                        available) from all 15 manuscripts, lemmatized the samples and tagged them
+                        for parts of speech. The manuscripts are indicated by the letters A, B, C,
+                        D, E, F, G, H, I, J, K, L, M, N and O. The lemmas we added to the
+                        transcribed texts have the form of the Modern Dutch dictionary entry (or the
+                        form the Modern Dutch entry would have had, had the word survived into
+                        present-day Dutch). We differentiated between ten parts of speech: noun,
+                        proper name, adjective, main verb, copula / auxiliary verb, numeral,
+                        pronouns, adverb, preposition, conjunction.</p>
+                </div>
+                <div>
+                    <head>Methods</head>
+                    <p>We approached the samples as &apos;bags of words&apos;. We made use of perl
+                        scripts listing all lemmas and parts of speech for each small sample and for
+                        the frequency measurements. For each part of speech, in each sample we
+                        measured the absolute frequency, the relative frequency, the average of the
+                        fifteen samples, the standard deviation, the z-score and the ranking of the
+                        manuscript in comparison with the other fourteen manuscripts.</p>
+                </div>
+                <div>
+                    <head>First results of the comparison of vocabularies</head>
+                    <p>Table 1 below lists the amount of words (lemmas) each text episode has which
+                        do not occur in any of the other copies of the same episode: unique words.
+                        The manuscripts A - O are listed in chronological order (although many dates
+                        are very approximate). The order from left to right agrees with the order of
+                        the episodes in the text itself. </p>
+                    <p>
+                        <figure>
+                            <head>Table 1</head>
+                            <graphic url="749_Fig2.png" xmt:type="full" rend="left-img"
+                                mimeType="image/jpeg"/>
+                            <figDesc>The amount of words (lemmas) each text episode has which do not
+                                occur in any of the other copies of the same episode: unique words.
+                                The manuscripts are listed chronologically.</figDesc>
+                        </figure>
+                    </p>
+                    <p>At a glance we can see that manuscripts E and I show the most unique words.
+                        This needs to be investigated: are these scribes the most radical in their
+                        adaptations? We will try to push this use of vocabulary analysis further,
+                        e.g. measuring the percentage of overlapping vocabulary in the episodes in
+                        the different manuscripts.</p>
+                </div>
+                <div>
+                    <head>First results of the comparison of PoS frequencies</head>
+                    <p>Figure 2 shows the relative frequencies of nouns for each of the five samples
+                        (E, D, J, M, T) for each of the manuscripts (A - O). For this part of
+                        speech, we see a big change in the trend for the episode in all of the
+                        manuscripts for episode T in manuscript E and for episode J in manuscript I.
+                        Graphs for other parts of speech show the same trend. </p>
+                    <p>
+                        <figure>
+                            <head>Figure 2</head>
+                            <graphic url="749_Fig3.png" xmt:type="full" rend="left-img"
+                                mimeType="image/jpeg"/>
+                            <figDesc>The relative frequencies of nouns for each of the five samples
+                                (E, D, J, M, T) for each of the manuscripts (A - O).</figDesc>
+                        </figure>
+                    </p>
+                </div>
+                <div>
+                    <head>Evaluation</head>
+                    <p>Reading the two episodes and comparing them with the other copies of the same
+                        text reveals that episode J in manuscript I clearly is a new text. Almost
+                        all the rhyme words have been changed, text is added, wording is completely
+                        different. The scribe here acted as a new author. This is not the case for
+                        episode T in manuscript E. Some rhyme words have changed, some wording is
+                        different, but the text is still clearly recognizable as a copy.</p>
+                </div>
+                <div>
+                    <head>Conclusions and next steps</head>
+                    <p>It seems simple comparisons of vocabulary and frequencies of parts of speech
+                        can pinpoint scribes who did more than copying their exemplar. If this can
+                        be confirmed by other experiments, this approach could help to direct
+                        scholars to those episodes in texts that may be most rewarding for a closer
+                        analysis (e.g. with traditional methods such as close reading). Before this
+                        is possible, however, a lot more medieval texts need to be available tagged
+                        for headwords and for part of speech. For that, a good tagger for Middle
+                        Dutch is highly desirable. </p>
+                    <p>The research questions addressed above are key for getting a better insight
+                        into the cultural role of texts and the persons responsible for texts and
+                        their transmission, not only in the Middle Ages, but also later. It could
+                        help us to find a way to less subjectively compare texts and describe
+                        scribal adaptations, and in this way yield insight in the possible kinds of
+                        text manipulation throughout the ages.</p>
+                </div>
+            </body>
+            <back>
+                <div>
+                    <listBibl>
+                        <bibl>
+                            <author>Dalen-Oskam, K. van and Zundert, J. van</author>
+                            <date>2008</date>
+                            <title level="a">The Quest for Uniqueness: Author and Copyist
+                                Distinction in Middle Dutch Arthurian Romances based on
+                                Computer-assisted Lexicon Analysis</title>
+                            <title level="m">Yesterday&apos;s words: contemporary, current and
+                                future lexicography. [Proceedings of the Third International
+                                Conference on Historical Lexicography and Lexicology (ICHLL), 21-23
+                                June 2006, Leiden]</title>
+                            <editor>Mooijaart, M.</editor>
+                            <editor>van der Wal, M.</editor>
+                            <publisher>Cambridge Scholars Publishing</publisher>
+                            <pubPlace>Cambridge</pubPlace>
+                            <biblScope type="pp">292-304</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Dalen-Oskam, K. van and Zundert, J. van</author>
+                            <date>2007</date>
+                            <title level="a">Delta for Middle Dutch – Author and Copyist Distinction
+                                in Walewein</title>
+                            <title level="j">Literary and Linguistic Computing</title>
+                            <biblScope type="issue">22</biblScope>
+                            <biblScope type="pp">345-362</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Kestemont, M. and Van Dalen-Oskam, K.</author>
+                            <date>2009</date>
+                            <title level="a">Predicting the Past: Memory-Based Copyist and Author
+                                Discrimination in Medieval Epics</title>
+                            <title level="m" type="proceedings">Proceedings of the Twenty-first
+                                Benelux Conference on Artificial Intelligence (BNAIC 2009)</title>
+                            <name type="venue">Eindhoven</name>
+                            <date type="conference">2009</date>
+                            <biblScope type="pp">121-128</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Spencer, M. and Howe, C. J.</author>
+                            <date>2001</date>
+                            <title level="a">Estimating distances between manuscripts based on
+                                copying errors</title>
+                            <title level="j">Literary and Linguistic Computing</title>
+                            <biblScope type="issue">16</biblScope>
+                            <biblScope type="pp">467-484</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Spencer, M. and Howe, C. J.</author>
+                            <date>2002</date>
+                            <title level="a">How accurate were scribes? A mathematical model</title>
+                            <title level="j">Literary and Linguistic Computing</title>
+                            <biblScope type="issue">17</biblScope>
+                            <biblScope type="pp">311-322</biblScope>
+                        </bibl>
+                    </listBibl>
+                </div>
+            </back>
+        </text>
+    </TEI>
+    <TEI>
+        <teiHeader>
+            <fileDesc>
+                <titleStmt>
+                    <title>The Robustness of Rhyme Words in Bypassing Scribal Variation for Medieval
+                        Authorship Verification</title>
+                    <author>
+                        <name>Mike Kestemont</name>
+                        <affiliation>CLiPS Computational Linguistics group and Institute for the
+                            Study of Literature in the Low Countries (ISLN), University of Antwerp,
+                            Belgium</affiliation>
+                        <email>mike.kestemont@gmail.com</email>
+                    </author>
+                </titleStmt>
+                <publicationStmt>
+                    <publisher>Centre for Computing in the Humanities, King's College
+                        London</publisher>
+                    <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+                </publicationStmt>
+                <sourceDesc>
+                    <p>No source: created in electronic format.</p>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+        <text>
+            <body>
+                <div>
+                    <head>A problem</head>
+                    <p>Modern stylometric approaches can discriminate between authors to a fairly
+                        accurate extent. Machine learning techniques, for instance, are able to
+                        &apos;recognize&apos; authors – be they literary or not – based on
+                        linguistic features extracted from representative textual samples written by
+                        these authors. In recent years, computational studies into authorship issues
+                        (such as verification and attribution) have been a popular topic in many
+                        research areas. Nevertheless, this kind of research has paid rather little
+                        attention to medieval literature. This is especially remarkable since it is
+                        precisely in this branch of philology that scholars have to contend with
+                        large amounts of texts of which the authorship is unknown or at least
+                        disputed. This lack of interest in medieval literature seems due to a
+                        variety of factors that all come down to the same basic fact: medieval texts
+                        are difficult to automatically process. For example, tools to perform basic
+                        actions such as the automatic lemmatization of texts are virtually
+                        non-existent for medieval languages, while most stylometric approaches
+                        heavily rely on e.g. lemma-frequencies for their feature extraction (cf.
+                        Burrows&apos;s <hi rend="italic">Delta</hi>). This is mainly due to the
+                        scribal variation that is so typical of medieval manuscripts, as put forward
+                        in the introduction to this session proposal. Moreover, medieval texts are
+                        rarely extant from autographs and as such, in the majority of the cases,
+                        scholars have a hard time assessing which features in manuscriptal copies
+                        are <hi rend="italic">authorial</hi> rather than <hi rend="italic"
+                            >scribal</hi>.</p>
+                </div>
+                <div>
+                    <head>A solution</head>
+                    <p>Any solution to the problem of authorship attribution for medieval texts has
+                        to overcome the difficulties imposed by the (scribal) instability of text in
+                        the Middle Ages. Whereas the other two papers in this session focus on the
+                            <hi rend="italic">exploitation</hi> of scribal variation (i.e. textual
+                            <hi rend="italic">in</hi>stability), this paper aims at the exact
+                        opposite: <hi rend="italic">erasing</hi> or <hi rend="italic"
+                            >minimizing</hi> these differences in order to assess textual stability
+                        and the persistence of authorial features of manually copied medieval texts.
+                        In this paper we shall focus on two methods to achieve this goal. Firstly,
+                        we shall briefly discuss the MiDL-architecture, a Natural Language
+                        Processing system designed for the automated tokenization, lemmatization and
+                        part-of-speech tagging of Middle Dutch literary texts. The techniques allow
+                        us to get past or &apos;transcend&apos; superficial scribal variation and
+                        focus on the underlying authorial features of texts. </p>
+                    <p>Secondly, we shall report on experiments with rhyme words and pairs – Middle
+                        Dutch epic literature was rhymed in about 99% percent of the cases that are
+                        currently known to us. This category of words is often claimed to be a very
+                        stable factor during the process of text transmission and thus can be
+                        expected to be extremely revealing with regard to authorial style. Scribes
+                        could not easily alter the rhyme words or rhyme scheme of a text without
+                        having to adapt several lines of the text and would often refrain from doing
+                        this. </p>
+                </div>
+                <div>
+                    <head>A good case study</head>
+                    <p>In authorship related studies, it is often hard to set up an experiment that
+                        is entirely &apos;clean&apos; or &apos;sterile&apos; from a methodological
+                        point of view. If one has to make sure that the <hi rend="italic">only</hi>
+                        difference between two texts is the difference in authorship, one has to
+                        keep all other factors (such as gender and education level of the author,
+                        topic of the text, ...) as stable as possible over the two texts compared.
+                        For the Middle Ages, the poor survival of texts makes it difficult to set up
+                        an experiment that fully meets these requirements. For this paper, we shall
+                        work on a single case study that does seem to approach this ideal setup as
+                        much as possible: the <hi rend="italic">Spiegel Historiael</hi>, a Middle
+                        Dutch adaptation of the Latin <hi rend="italic">Speculum Maius</hi>, by
+                        Vincentius of Beauvais. This adaptation was initiated by the influential
+                        writer Jacob of Maerlant and was later continued by two other authors: Filip
+                        Utenbroeke and Lodewijk van Velthem. Of each of these authors near-complete
+                        manuscript copies survive of substantial parts of their contribution to the
+                        project, called <hi rend="italic">Partien</hi>. Each of these <hi
+                            rend="italic">partien</hi> is divided in larger units called <hi
+                            rend="italic">books</hi>, which in turn consist of smaller <hi
+                            rend="italic">chapters</hi>. In this study we shall focus on the first
+                            <hi rend="italic">partie</hi> by Maerlant (31K lines in 532 chapters),
+                        the second by Utenbroeke (41K lines in 461 chapters) and the fifth by
+                        Velthem (27K lines in 387 chapters). These chapters will be our main
+                        comparison unit. What makes this <hi rend="italic">Spiegel historiael</hi>
+                        such an interesting case is that comparing these texts for authorial
+                        differences indeed keeps many other factors rather constant, such as level
+                        of education, gender, genre, etc.</p>
+                </div>
+                <div>
+                    <head>Preprocessing</head>
+                    <p>As a starting point, we shall briefly discuss the architecture which we have
+                        developed for the preprocessing of our texts: the MiDL-system (joint work
+                        with Walter Daelemans &amp; Guy de Pauw of the Antwerp Computational
+                        Linguistics group, CLiPS). The MiDL-system performs tokenization,
+                        lemmatization and Part-Of-Speech tagging for Middle Dutch literary texts.
+                        The technology we present is optimized for this specific material but should
+                        scale well to other medieval languages (or any resource-scarce language
+                        characterized by a lot of spelling variation). In this contribution we shall
+                        focus on the <hi rend="italic">corpus-Gysseling</hi> (CG), a corpus that was
+                        digitized and semi-automatically annotated at the Institute for Dutch
+                        Lexicology (INL). More specifically we shall report on results with the
+                        so-called &apos;literary part&apos; of this corpus (ca. 600K running tokens)
+                        that contains all Middle Dutch literature, surviving from manuscripts dated
+                        between 1200 and 1300AD. The main issue we will discuss is lemmatization, as
+                        we will argue that this step is actually the key to all subsequent
+                        operations (such as e.g. PoS-tagging or shallow parsing). </p>
+                    <p>Lemmatization refers to the process whereby natural language tokens are
+                        assigned a &apos;lemma&apos;. The basic purpose of doing this – in any
+                        language or research domain – is that it enables the generalization
+                        &apos;about the behaviour of groups of words in cases where their individual
+                        differences are irrelevant&apos; (Knowles &amp; Mohd Don 2004:69). Hence,
+                        lemmatization can be considered a problem of mapping many-to-one: similar
+                        tokens are mapped to the same &apos;abstract representation&apos; that, as
+                        such, comes to subsume &apos;all the formal lexical variations which may
+                        apply&apos; (Crystal 1997). There exists an obvious parallel with the
+                        lexicographer&apos;s activity of grouping words under the same
+                        &apos;dictionary headword&apos; (Ibid.; Knowles &amp; Mohd Don 2004:70).
+                        When it comes to medieval languages, the main issue that is to be dealt with
+                        are historical spelling variants (HSV). When compared to the problem of
+                        lemmatization in modern languages, it adds a level of complexity:</p>
+                    <p>
+                        <table>
+                            <row>
+                                <cell><hi rend="bold">Modern</hi><lb/> LEMMA X = {token<hi
+                                        rend="sup">1</hi>, token<hi rend="sup">2</hi>, ..., token<hi
+                                        rend="sup">n-1</hi>, token<hi rend="sup">n</hi>}X </cell>
+                            </row>
+                            <row>
+                                <cell><hi rend="bold">Medieval</hi><lb/> LEMMA X = {token<hi
+                                        rend="sup">1</hi>={variant<hi rend="sub">1</hi><hi
+                                        rend="sup">1</hi>, variant<hi rend="sub">2</hi><hi
+                                        rend="sup">1</hi>}, token<hi rend="sup">2</hi>={variant<hi
+                                        rend="sub">1</hi><hi rend="sup">2</hi>, variant<hi
+                                        rend="sub">2</hi><hi rend="sup">2</hi>} ...,<lb/> token<hi
+                                        rend="sup">n-1</hi>={variant<hi rend="sub">1</hi><hi
+                                        rend="sup">n-1</hi>, variant<hi rend="sub">2</hi><hi
+                                        rend="sup">n-1</hi>}, token<hi rend="sup">n</hi>={variant<hi
+                                        rend="sub">1</hi><hi rend="sup">n</hi>, variant<hi
+                                        rend="sub">2</hi><hi rend="sup">n</hi>}} </cell>
+                            </row>
+                        </table>
+                    </p>
+                    <p>The main purpose of lemmatization, as such, lies with a form of token
+                        normalization that allows us to transcend superficial spelling
+                        variations.</p>
+                </div>
+                <div>
+                    <head>Experiments</head>
+                    <p>In this paper we shall focus on lexical features (n-grams of lemmata) and
+                        shallow morpho-syntactic features (n-grams of PoS-tags). Our main research
+                        emphasis will be on rhyme words. We will present the results of
+                        leave-one-out validation on our data as following. Using a machine learning
+                        algorithm, we will do experiments on <hi rend="italic">m</hi> samples by
+                        Maerlant, <hi rend="italic">n</hi> samples by Utenbroeke and <hi
+                            rend="italic">l</hi> samples by Velthem (with the sample size set to
+                        individual chapter entities). During each fold, we will each time
+                        &apos;leave out&apos; one chapter by one author (e.g. one by Utenbroeke) and
+                        train on the chapters that are left (e.g. <hi rend="italic">m</hi>
+                        Maerlant-samples, <hi rend="italic">n-1</hi> Utenbroeke-samples and <hi
+                            rend="italic">l</hi> Velthem-samples). We will &apos;test&apos; each
+                        time the accuracy of our algorithm after training in terms of accuracy:
+                        &apos;Can the learner correctly identify by which author the omitted sample
+                        was written?&apos;</p>
+                </div>
+            </body>
+            <back>
+                <div>
+                    <listBibl>
+                        <bibl>
+                            <author>Biemans, J.A.A.M.</author>
+                            <date>1997</date>
+                            <title level="m">Onsen Speghele Ystoriale in Vlaemsche. Codicologisch
+                                onderzoek naar de overlevering van de Spiegel historiael van Jacob
+                                van Maerlant, Philips Utenbroeke en lodewijk van Velthem, met een
+                                beschrijving van de handschriften en Fragmenten</title>
+                            <publisher>Peeters</publisher>
+                            <pubPlace>Leuven</pubPlace>
+                        </bibl>
+                        <bibl>
+                            <author>Crystal, D.</author>
+                            <date>1997</date>
+                            <title level="m">A Dictionary of Linguistics and Phonetics</title>
+                            <publisher>Oxford University Press</publisher>
+                            <pubPlace>Oxford</pubPlace>
+                        </bibl>
+                        <bibl>
+                            <author>Dalen-Oskam, K. van and Zundert, J. van</author>
+                            <date>2007</date>
+                            <title level="a">Delta for Middle Dutch – Author and Copyist Distinction
+                                in Walewein</title>
+                            <title level="j">Literary and Linguistic Computing</title>
+                            <biblScope type="issue">22</biblScope>
+                            <biblScope type="pp">345-362</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Kestemont, M. and Van Dalen-Oskam, K.</author>
+                            <date>2009</date>
+                            <title level="a">Predicting the Past: Memory-Based Copyist and Author
+                                Discrimination in Medieval Epics</title>
+                            <title level="m" type="proceedings">Proceedings of the Twenty-first
+                                Benelux Conference on Artificial Intelligence (BNAIC 2009)</title>
+                            <name type="venue">Eindhoven</name>
+                            <date type="conference">2009</date>
+                            <biblScope type="pp">121-128</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Knowles, G. and Mohd Don, Z.</author>
+                            <date>2004</date>
+                            <title level="a">The notion of a &quot;lemma&quot;. Headwords, roots and
+                                lexical sets</title>
+                            <title level="j">International Journal of Corpus Linguistics</title>
+                            <biblScope type="pp">69-81</biblScope>
+                        </bibl>
+                        <bibl>
+                            <author>Luyckx, K. and Daelemans, W.</author>
+                            <date>2008</date>
+                            <title level="a">Authorship Attribution and Verification with Many
+                                Authors and Limited Data</title>
+                            <title level="m" type="proceedings">Proceedings of the 22nd
+                                International Conference on Computational Linguistics (COLING
+                                2008)</title>
+                            <name type="venue">Manchester</name>
+                            <date type="conference">2008</date>
+                            <biblScope type="pp">513-520</biblScope>
+                        </bibl>
+                    </listBibl>
+                </div>
+            </back>
+        </text>
+    </TEI>
+</teiCorpus>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-819">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Critical Editing of Music in the Digital Medium: an Experiment in MEI</title>
+                <author>
+                    <name>Viglianti, Raffaele</name>
+                    <affiliation><orgName>King's College London</orgName> <country>UK</country></affiliation>
+                    <email>raffaele.viglianti@kcl.ac.uk</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-40-21</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>Critical editions of music have not received the level of attention that research in
+                Digital Humanities has given to textual criticism, which already has an established
+                scholarly production of written contributions and digital publications. Digital
+                representations in literary criticism are used for analytical purposes as well as
+                for accommodating critical editions in the digital medium, which offers a high
+                degree of interactivity and opens toward experimentation with new formats of
+                publication. Nonetheless, there has been little debate about music editing in the
+                new medium and only a few digital publications have been developed.</p>
+            <p>Several aspects of digital textual criticism can find an application on music
+                documents because similar issues exist in the representation of primary sources and
+                editorial intervention. In fact, since the early stages of music scholarship,
+                musicologists looked at the editorial practices of classical philologists while
+                working towards a definition of their own scientific finalities (<ref
+                    type="internal" cRef="bibl6">Grier, 1996</ref>). The study of documentary
+                sources transmitting a written work (manuscript or printed) is the main correlation
+                between music and textual criticism. For instance, the discrepancy identified by
+                    <ref type="internal" cRef="bibl11">Tanselle (1989)</ref> between text and the
+                artefacts that transmit it, is a condition that applies to music notation as well as
+                literature; however, literature is ‘a one-stage and music a two-stage art’ (<ref
+                    type="internal" cRef="bibl8">Goodman, 1976:114</ref>; also discussed by <ref
+                    type="internal" cRef="bibl5">Feder, 1987</ref>). A musical work, in fact, does
+                not exist only as written notation but also requires performance to reach its final
+                receiver. For this reason, understanding the complexity of the music work-concept
+                and its associated cultural practices is central to the digital representation of
+                music critical editions. Even though the recent research in digital textual
+                scholarship provides a rich paradigm for the emergent field of digital editing of
+                music, there is the need for more research on digital representation and publication
+                of detailed notation data. </p>
+            <p>The work conducted for a postgraduate dissertation (MA) at King’s College London
+                attempted to discuss some of these issues. This poster presents the results of the
+                dissertation’s case study: a digital edition of Claude Debussy’s Syrinx (La Flûte de
+                Pan) for flute solo. The XML-based model represents notation, variant readings and
+                editorial intervention; additionally, several different views are extracted and
+                rendered for presentation with vector images.</p>
+            <div>
+                <head>An experiment with MEI: <hi rend="italic">Syrinx (La Flûte de Pan)</hi> by
+                    Claude Debussy</head>
+                <p><hi rend="italic">Syrinx (La Flûte de Pan)</hi> by Claude Debussy (1862 – 1918)
+                    is a short piece for flute solo originally composed as theatrical interlude for
+                    the play <hi rend="italic">Psyché</hi> (1913) by Gabriel Mourey under the title
+                        <hi rend="italic">La Flûte de Pan</hi>. Despite Debussy showing little
+                    interest in the publication of the piece, the first performer, Louis Fleury,
+                    contributed to the reception of the piece as independent from Mourey’s play. The
+                    piece maintains a relevant role in the solo flute repertoire. Two principal
+                    sources have been used for the digital edition: the first edition published
+                    posthumously by Jobert in 1927 under the new title <hi rend="italic">Syrinx</hi>
+                    and a recently discovered manuscript in a private collection in Brussels dated
+                    1913 (MSB), which constituted the base text. </p>
+                <p>For the creation of a digital model for the new edition, the use of a combination
+                    of TEI and MusicXML was initially considered;<note>MusicXML (distributed with a
+                        royalty-free license) is an interchange format developed by Recordare LLC
+                            (<ref target="http://www.recordare.com" type="external"
+                            >http://www.recordare.com</ref>). It is employed by free and commercial
+                        music editors (i.e. Finale and Sibelius) as intermediate representation to
+                        exchange data (often with loss).</note> however, MusicXML does not match
+                    TEI’s flexibility when encoding primary sources and variant readings. MusicXML,
+                    in fact, is primarily designed ‘to be sufficient, not optimal’ (<ref
+                        type="internal" cRef="bibl7">Good, 2001</ref>); therefore, it represents
+                    normalised common western music notation to facilitate interchange and does not
+                    allow the flexibility in the granularity that is required when representing the
+                    editor’s interpretation and understanding.</p>
+                <p>The Music Encoding Initiative (MEI) provided an alternative choice.<note><ref
+                            type="external" target="http://www2.lib.virginia.edu/innovation/mei/"
+                            >http://www2.lib.virginia.edu/innovation/mei/</ref></note> This XML
+                    format is modelled on TEI and attempts to follow the same principles. In
+                    particular it specifically focuses on formalising interpretation through
+                    declarative knowledge and claims to be independent from rendering software while
+                    also addressing processing matters (<ref type="internal" cRef="bibl9">Roland,
+                        2002</ref>).<note>This approach recalls the claim of <ref type="internal" cRef="bibl10"
+                            >Sperberg-McQueen (1997)</ref> that ‘declarative’ information
+                        about the editorial process can be represented and modelled through markup:
+                        ‘there is an infinite set of facts related to the work being edited’ and
+                        ‘any edition records a <hi rend="italic">selection</hi> from the observable
+                        and the recoverable portions of this infinite set of facts’. This <hi
+                            rend="italic">selection</hi> represents what the edition ‘<hi
+                            rend="italic">knows</hi> […] about the work edited, its genesis and/or
+                        transmission, etc.’. This body of information is ‘declarative’.</note>
+                    Moreover, it includes a module for the representation of variant readings and
+                    transcription of primary sources; therefore a combination with TEI did not seem
+                    to be necessary. The MEI format is still in development; however, the University
+                    of Paderborn (Germany) and the University of Virginia (USA) recently received a
+                    grant to take MEI out of its beta phase and produce public guidelines, which
+                    should be completed by the end of July 2010.<note><ref type="external"
+                            target="http://www2.lib.virginia.edu/press/music/index.html"
+                            >http://www2.lib.virginia.edu/press/music/index.html</ref></note></p>
+            </div>
+            <div>
+                <head>The encoding model</head>
+                <p>The poster will show how the MEI model represents some editorial aspects common
+                    with textual editing (i.e. bibliographical metadata, correction and
+                    regularisation) and editorial issues related to the nature of the music notation
+                    (i.e. apparatus, rhythmic constraints, performative instructions). In particular
+                    it will show: <xmt:oList rend="arabic">
+                        <item><hi rend="italic">The header</hi>: similarly to TEI, MEI provides a
+                            “header” (&lt;meihead&gt;) that allows documenting information about the
+                            digital file and its sources. Notably, the elements in the description
+                            of the manuscript source MSB attempt to emulate the much more detailed
+                            encoding model offered by the TEI manuscript description module. The
+                            header also documents the encoding criteria for notation. <figure>
+                                <code xml:space="preserve">
+&lt;measure&gt;
+    &lt;staff&gt;
+        &lt;layer&gt;
+            //- Notes
+            &lt;note&gt;, &lt;beam&gt;, &lt;tuplet&gt;, etc.
+                 ...
+        &lt;/layer&gt;
+        //- Phrase marks
+        &lt;slur&gt;
+                 ...
+        //- Dynamics, tempo markings and 
+        directions positioned above the staff
+        &lt;dir&gt;, &lt;dynam&gt;, &lt;breath&gt;, etc.
+                 ...
+        //- Dynamics, tempo markings and 
+        directions positioned below the 
+        staff
+        &lt;dir&gt;, &lt;dynam&gt;, &lt;breath&gt;, 
+        etc.
+                 ... 
+    &lt;/staff&gt;
+&lt;/measure&gt;  
+</code>
+                                <head>Example 1: Encoding criteria for notation</head>
+                            </figure>
+                        </item>
+                        <item><hi rend="italic">Variant readings</hi>: The MEI file represents this
+                            edition’s base text (MSB) and adds additional information every time a
+                            difference in the other sources occurs. If the sources agree, it is
+                            expressed silently. This criterion is identified by the TEI guidelines
+                            as ‘internal parallel segmentation’.<note><ref type="external"
+                                    target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS"
+                                    >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS</ref></note>
+                            Example 2 shows alternative notations encoded with &lt;app&gt; and
+                            &lt;rdg&gt;; the attribute type specifies which reading has been
+                            selected for the edition. It is worth explaining the basic mechanisms
+                            behind the element &lt;slur&gt;, since they are also common to other
+                            elements. The attribute staff defines to which staff the phrase mark
+                            belongs to; place defines whether the slur has to be rendered above or
+                            below the staff; tstamp identifies the beat in which the slur starts and
+                            dur the beat in which the slur ends. <figure>
+                                <code xml:space="preserve">
+&lt;measure id=&quot;m28&quot; n=&quot;28&quot;&gt;
+  ...
+  &lt;app&gt;
+     &lt;rdg source=&quot;MSB&quot;&gt;
+        &lt;slur staff=&quot;1&quot; tstamp=&quot;2&quot; dur=&quot;4&quot; 
+         place=&quot;above&quot;/&gt;
+     &lt;/rdg&gt;
+     &lt;rdg source=&quot;FEJ&quot; type=&quot;ed&quot;&gt;
+        &lt;slur staff=&quot;1&quot; tstamp=&quot;2&quot; 
+         dur=&quot;2.875&quot; place=&quot;above&quot;/&gt;
+        &lt;slur staff=&quot;1&quot; tstamp=&quot;3&quot; 
+        dur=&quot;3.75&quot; place=&quot;above&quot;/&gt;
+     &lt;/rdg&gt;
+  &lt;/app&gt;
+  ...
+&lt;/measure&gt;
+                            </code>
+                                <head>Example 2: Alternative phrase marks in bar 28 from source MSB
+                                    and FEJ.</head>
+                            </figure></item>
+                        <item><hi rend="italic">Editorial conjecture and intervention</hi>: change
+                            of hand, additions, corrections and supplied notation have been encoded
+                            with elements equivalent to the ones employed by the TEI. </item>
+                        <item><hi rend="italic">Problematic cases</hi>: bar 22 in MSB presents an
+                            incongruent rhythm and a missing barline to separate it from bar 23. The
+                            encoding used an empty-element version of &lt;beam&gt; to encode the
+                            differences in beaming resulting from the different rhythms and a
+                            &lt;gap&gt; element for the missing barlines. </item>
+                    </xmt:oList></p>
+            </div>
+            <div>
+                <head>Presentation</head>
+                <p>For this edition, a number of different perspectives from the MEI document are
+                    produces using XSLT 2.0 to serialize into a text format for Mup, a program that
+                    converts its own notation format into Post Script vector graphics (PS). To
+                    extract musical information from the encoded edition, a heavily customised
+                    version of a MEI to Mup XSLT provided on the MEI website under the Educational
+                    Community Licence. The poster will show the following views: <xmt:oList
+                        rend="italic">
+                        <item><hi rend="italic">The edited piece</hi>. The XSLT script extracts all
+                            the variant readings chosen for the edition, includes the editorial
+                            interventions marked with &lt;supplied&gt; and creates a new MEI
+                            document tree containing only the notation for the edition. This tree is
+                            then serialised into Mup language and rendered in PS.</item>
+                        <item><hi rend="italic">Synoptic apparatus</hi>. Instead of printing a
+                            traditional apparatus, this edition proposes a synoptic apparatus of the
+                            two main sources (MSB and FEJ). This is automatically built to display
+                            measures that contain variant readings. Moreover, it has been programmed
+                            to display the notation of the two sources in a semi-diplomatic manner
+                            and excluding editorial intervention. <figure xml:id="fig1">
+                                <head>Figure 1: synoptic display of variants in bar 32: Accent in
+                                    FEJ but <hi rend="italic">decrescendo</hi> in MSB</head>
+                                <graphic url="819_Fig1.jpg" xmt:type="full" rend="left-img"
+                                    mimeType="image/jpeg"/>
+                            </figure>
+                        </item>
+                        <item><hi rend="italic">Breath marks</hi>. MSB has fewer breath marks than
+                            the first edition FEJ and it is possible that Debussy did not provide
+                            all the breath marks necessary for performance. Trevor Wye (1994), in
+                            his edition of Syrinx, introduces a number of recommended breath marks
+                            to support the performance. Since Wye employs MSB as a base text, his
+                            breath marks are suitable for this edition’s notation as well. The
+                            encoding for this case study edition includes Wye’s additions with the
+                            element &lt;add resp=&quot;Wye&quot;&gt;. The XSLT programmed to
+                            transform the edited music notation can, if requested, include these
+                            marks in the Mup output.</item>
+                    </xmt:oList>
+                </p>
+            </div>
+            <div>
+                <head>Future work</head>
+                <p>The views created for this prototype are static; however it would be highly
+                    desirable to combine them in an interactive environment. For example, the
+                    apparatus could be enhanced allowing moving measures on the screen to be
+                    compared. Performers might be interested in knowing different tempi and breath
+                    marks from other editions, like Wye’s breath marks, and include them in the
+                    edition to be printed out with a printing device at home. Paper editions with a
+                    similar approach are not uncommon, but often include comparative tables of tempi
+                    and resolution of ornaments that cannot be directly included in the edited text
+                        (<ref type="internal" cRef="bibl1">see Palmer, 1991</ref>).</p>
+                <p>Even though the Web is currently the preferred digital publishing environment,
+                    there still is not a straightforward method to output notation as HTML and
+                    possibly there will never be. The only possibility to publish music on the Web
+                    is through graphic information; however, systems for delivering complex
+                    interactivity based on image formats are becoming increasingly common.
+                    OpenLayers, for example, shows how images can be made highly interactive through
+                    the superimposition of layers.<note><ref type="external"
+                            target="http://openlayers.org/">http://openlayers.org/</ref></note>
+                    Future work will focus on implementing interactivity on the PS views in
+                    OpenLayers.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <p>N.B. All websites mentioned in footnotes have been accessed 6 March 2010.</p>
+                <listBibl>
+                    <bibl xml:id="bibl1">
+                        <author>Bach, Johann S. </author><date>1991</date>
+                        <title level="m">Inventions and Sinfonias (Two- and Three-Part
+                            Inventions)</title>
+                        <editor>Palmer, W. A. </editor>
+                        <pubPlace>Van Nuys (CA, USA)</pubPlace><publisher>Alfred
+                            Publishing</publisher></bibl>
+                    <bibl xml:id="bibl2"><author>Debussy, Claude</author>
+                        <date>1927</date>
+                        <title level="m">Syrinx</title>
+                        <pubPlace>Paris</pubPlace>
+                        <publisher>Jobert</publisher></bibl>
+                    <bibl xml:id="bibl3"><author>Debussy, Claude</author>
+                        <date>1991</date>
+                        <title level="m">La Flûte de Pan</title>
+                        <editor>Ljungar-Chapelon, A.</editor>
+                        <pubPlace>Malmö</pubPlace>
+                        <publisher>Autographus Musicus</publisher><edition>Facsimile</edition>
+                    </bibl>
+                    <bibl xml:id="bibl4"><author>Debussy, Claude</author>
+                        <date>1996</date>
+                        <title level="m">Syrinx (La Flûte de Pan)</title><editor>Stegemann,
+                            M.</editor>
+                        <editor>Ljungar-Chapelon, A.</editor><pubPlace>Wien</pubPlace>
+                        <publisher>Wiener Urtext Edition</publisher></bibl>
+                    <bibl xml:id="bibl5"><author>Feder, Georg</author>
+                        <date>1987</date>
+                        <title level="m">Musikphilologie: eine Einführung in die musikalische
+                            Textkritik, Hermeneutik und Editionstechnik</title>
+                        <pubPlace>Darmstadt</pubPlace>
+                        <publisher>Wissenschaftliche Buchgesellschaft</publisher></bibl>
+                    <bibl xml:id="bibl6"><author>Grier, James</author>
+                        <date>1996</date>
+                        <title level="m">The Critical Editing of Music: History, Method, and
+                            Practice</title>
+                        <pubPlace>Cambridge</pubPlace><publisher>Cambridge University
+                            Press</publisher></bibl>
+                    <bibl xml:id="bibl7"><author>Good, M.</author>
+                        <date>2001</date>
+                        <title level="a">MusicXML for Notaiton and Analysis</title>
+                        <title level="j">Computing in Musicology</title>
+                        <biblScope type="issue">12</biblScope>
+                        <biblScope type="pp">113-124</biblScope></bibl>
+                    <bibl xml:id="bibl8"><author>Goodman, Nelson</author>
+                        <date>1976</date>
+                        <title level="m">Languages of art: an approach to a theory of
+                            symbols</title>
+                        <pubPlace>Chicago</pubPlace>
+                        <publisher>University of Chicago Press</publisher></bibl>
+                    <bibl xml:id="bibl9"><author>Roland, P.</author>
+                        <date>2002</date>
+                        <title level="m">The Music Encoding Initiative (MEI)</title>
+                        <ptr
+                            target="http://www2.lib.virginia.edu/innovation/mei/Papers/maxpaper.pdf"/>
+                        <date type="visited">6 March 2010</date></bibl>
+                    <bibl xml:id="bibl10">
+                        <author>Sperberg-McQueen, C. M.</author>
+                        <date>2009</date>
+                        <date type="written">1997</date><title level="a">How to teach your edition
+                            how to swim</title>
+                        <title level="j">Literary &amp; Linguistic Computing</title>
+                        <biblScope type="issue">24.1</biblScope><biblScope type="vol"
+                            >27-39</biblScope></bibl>
+                    <bibl xml:id="bibl11"><author>Tanselle, G. Thomas</author><date>1989</date>
+                        <title level="m">A rationale of textual criticism</title>
+                        <pubPlace>Philadelphia</pubPlace>
+                        <publisher>University of Pennsylvania Press</publisher></bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

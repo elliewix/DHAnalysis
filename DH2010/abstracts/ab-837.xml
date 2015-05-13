@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-837">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Software Demonstration, “Emergent Time” timeline tool</title>
+                <author>
+                    <name>York, Christopher</name>
+                    <affiliation>HyperStudio, <orgName>Massachusetts Institute of
+                            Technology</orgName>
+                        <reg><country>USA</country></reg></affiliation>
+                    <email>cyork@mit.edu</email>
+                </author>
+                <author>
+                    <name>Trettien, Whitney</name>
+                    <affiliation>HyperStudio, Massachusetts Institute of Technology</affiliation>
+                </author>
+
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-27</date>
+                <name>AC</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>Emergent Time is a prototype collaboration tool for humanists and social scientists
+                working with timelines—narrative arrangements of events. In Emergent Time, timelines
+                are owned by particular users, and represent the user's interpretive reading of a
+                series of events. While an individual timeline “belongs” to a user, many of the
+                events it interprets may be shared by other users and interpreted differently in
+                their timelines. Users construct timelines individually, using a single form to
+                build on events others created before them, or to create new events from scratch.
+                The application thus balances personal expression and argument (in the form of
+                individual timelines) with collaboration and shared work (in the form of raw
+                events).</p>
+            <p>Throughout the prototype, clicking on an event in a timeline will show how other
+                users have interpreted that particular incident. Thus, one can read horizontally to
+                follow the argument of a given timeline, or depth-wise to jump between different
+                timelines that interpret the same event from different perspectives.</p>
+            <div>
+                <head>Overview timelines</head>
+                <p>The prototype's salient feature is a set of overview timelines, built by
+                    analyzing the network of links between timelines and events within the
+                    community. These links indicate the most important events for a given topic. For
+                    example, a search for “John F Kennedy” might show the most highly-cited events
+                    in his life: birth, election, and assassination. To accomplish this, the
+                    prototype uses a proprietary implementation of Page &amp; Brin's PageRank
+                    algorithm. Events that are linked to in many timelines are likely to be
+                    important to the community, and receive a high rank; conversely, timelines that
+                    interpret many important events receive a boost in rank. Emergent Time uses
+                    these ranks to indicate which event entries are regarded as most authoritative
+                    by the general populace of users, and displays them when given a matching
+                    topic.</p>
+            </div>
+            <div>
+                <head>Collaboration strategy</head>
+                <p>In Emergent Time only the author of a given event can revise it, but the
+                    community at large can add source critique comments and propose alternate
+                    versions of the event. The design intention was to spark general discussion
+                    about whether a given event's description is well-supported by the primary
+                    sources cited. Because many versions of a given event may exist, this encourages
+                    users to link to the version that is factually best-supported in their own
+                    timelines, while passing over those with poor evidentiary support or
+                    badly-formulated descriptions. Hence, using an event in one's own timeline
+                    constitutes both a signal of interest in the historical incident and a vote of
+                    confidence in the event author's scholarship. The collaboration workﬂow thus
+                    serves as a macrocosm of the scholarly publication process, allowing authors and
+                    readers to evaluate the evidence in support of a given interpretation, and to
+                    “vote with their feet” by citing it rather than another in their own work.</p>
+                <p>As a result the overview timelines will come to reﬂect not only which events are
+                    most important for the interpretive community, but also which versions of a
+                    particular event are most authoritative. This allows overview timelines to
+                    present the most inﬂuential event entries for a given topic, and to accommodate
+                    shifts in communal knowledge as new evidence is found and new interpretations of
+                    a given incident become normative.</p>
+            </div>
+            <div>
+                <head>In contrast to other tools</head>
+                <p>This collaborative strategy is intended to capture established conventions for
+                    historical analysis and source critique, and use the resulting citation networks
+                    to construct overview timelines that accurately reﬂect the community's current
+                    normative views. By distributing small bits of knowledge among many event
+                    entries, promoting general discussion of the veracity of each, and then allowing
+                    users to “vote” for a given version of the facts by including the event in their
+                    timeline, it addresses shortcomings in other collaborative digital humanities
+                    approaches: <xmt:uList>
+                        <item><hi rend="italic">Open-revision wiki</hi>. An open wiki implements
+                            what might be called “last man standing” collaboration. The last person
+                            to edit an article has license to revise and amend all the others' work,
+                            potentially reshaping it to his own ends. Of course, wiki history allows
+                            others to revise it back, but this encourages “squatting,” or
+                            continually monitoring an article in order to control its
+                            contents.</item>
+                        <item><hi rend="italic">Moderated wiki</hi>. Some wikis establish an
+                            editorial bureaucracy to address these issues. However, this in effect
+                            defers interpretation to an appointed “expert,” much after the fashion
+                            of a traditional encyclopedia (with the proviso that the general public
+                            can submit material for editorial consideration).</item>
+                        <item><hi rend="italic">Voting systems</hi>. Finally, simple voting systems
+                            that ask users to “rate this article” suffer from known problems with
+                            blind polling. Anonymity encourages arbitrary voting; users might vote
+                            multiple times or use incomparable rankings; and the population of
+                            elective voters is self-selecting. By contrast, Emergent Time's
+                            collaboration model is designed to circumvent such problems, since users
+                            “vote with their feet” by citing one formulation of an event rather than
+                            another in their timelines, and no one user can dominate interpretation
+                            by being the last to revise. While this model is relatively new to
+                            digital collaboration tools, it is quite similar to traditional
+                            humanities footnote and endnote citations. It clearly marks authorship
+                            and source material for a given interpretation, encourages communal
+                            discussion of the adequacy of an author's evidence, and holds authors
+                            accountable for their votes by embedding the citations within their
+                            work.</item>
+                    </xmt:uList>
+                </p>
+                <p>Even with a sparse demo data set, it is clear that the Emergent Time prototype
+                    achieves a successful balance between individual work (seen when viewing a
+                    particular timeline) and community connections (via the interpretation
+                    comparison popup, and the related timelines and related users links). It
+                    encourages users to focus on developing their own ideas, while still suggesting
+                    points of contact with the wide community — for example, in the event editor,
+                    which shows possible base events as the user enters information. The opening
+                    page's list of recent community activity is well-suited to draw users into other
+                    work and give a sense of liveliness. Most importantly, even for small data sets,
+                    it's clear that the overview timelines do actually reﬂect the community's
+                    current notion of the “most important” events.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

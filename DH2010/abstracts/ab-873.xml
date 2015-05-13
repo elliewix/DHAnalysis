@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-873">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>“It’s Volatile”: Standards-Based Research &amp; Research-Based Standards
+                    Development</title>
+                <author>
+                    <name>Walsh, John A.</name>
+                    <affiliation><orgName>Indiana University</orgName> <reg><country>USA</country></reg></affiliation>
+                    <email>jawalsh@indiana.edu</email>
+                </author>
+                <author><name>Hooper, Wally</name>
+                    <affiliation><orgName>Indiana University</orgName> <reg><country>USA</country></reg></affiliation>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-28</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+
+            <div type="epigraphy">
+                <p><hi rend="italic">You even have<lb/> my field guide. It's you I love.<lb/> I have believed so
+                    long<lb/> in the magic of names and poems<lb/> I hadn't thought them
+                    bodiless<lb/> at all. Tall Buttercup. Wild Vetch.<lb/> "Often I am permitted to
+                    return<lb/> to a meadow." It all seemed real to me<lb/> last week. Words. You
+                    are the body<lb/> of my world, root and flower, the<lb/> brightness and surprise
+                    of birds.<lb/> I miss you, love. Tell Leif<lb/> you're the names of
+                    things.<lb/></hi>—Robert Hass, “Letter”</p>
+                <p><hi rend="italic">It's volatile because anciently painted<lb/> with wings in this manner whence
+                    came<lb/> this character <foreign>☿</foreign> for mercury.</hi> — Sir Isaac Newton, “Praxis,”<lb/> Babson
+                    Collection (Burndy Library Collection)<lb/> MS. 420, Huntington Library</p>
+            </div>
+            <div>
+                <p>Digital humanities scholarship often integrates humanities scholarship (literary
+                    studies, historical studies, and so on) with technological research and
+                    development. Some of this technological work takes the form of standards
+                    development. The most noteworthy example of such standards development in the
+                    digital humanities community is the Text Encoding Initiative (TEI). The TEI
+                    provides Guidelines for encoding texts for scholarly and general use. The TEI is
+                    pervasive in digital humanities and digital library contexts. It is a de facto
+                    standard developed and evolved over the past twenty some years through the
+                    efforts of a number of dedicated scholars, librarians, and technologists, and
+                    with input from the larger community of TEI users.</p>
+                <p>Another standard of significance to the digital humanities community is Unicode.
+                    Our paper presents a case-study of a successful effort to have included in the
+                    Unicode standard dozens of characters required by the <hi rend="italic"
+                        >Chymistry of Isaac Newton</hi>, an ongoing digital humanities project to
+                    digitize and edit, study and analyze the alchemical works of Isaac Newton and to
+                    develop various scholarly tools around the collection. Unicode has become the
+                    universal character encoding standard. Unicode is nothing more, as it is
+                    certainly nothing less, than a massive mapping of characters to numbers, a
+                    mapping that seeks to accommodate all the world’s languages and writing systems,
+                    including symbols of all sorts—mathematical symbols and operators, astronomical
+                    and astrological symbols, Zapf Dingbats, and many more. Operating systems, and
+                    the applications built upon them—databases, word processors and text editors,
+                    browsers, graphics software, and games—depend on such mappings, or encodings, to
+                    reliably reference, store, input, output, and display textual data. The Unicode
+                    Consortium’s “What is Unicode” page <ref type="external"
+                        target="http://unicode.org/standard/WhatIsUnicode.html"
+                        >http://unicode.org/standard/WhatIsUnicode.html</ref> accurately reports the
+                    standard’s significance: <q>Unicode is required by modern standards such as XML,
+                        Java, ECMAScript (JavaScript), LDAP, CORBA 3.0, WML, etc., and is the
+                        official way to implement ISO/IEC 10646. It is supported in many operating
+                        systems, all modern browsers, and many other products. The emergence of the
+                        Unicode Standard, and the availability of tools supporting it, are among the
+                        most significant recent global software technology trends.</q>
+                </p>
+                <p>In spite of Unicode’s impressive comprehensiveness, it does not include every
+                    character ever used. It does not at present, for instance, include many of the
+                    alchemical symbols found in Isaac Newton’s alchemical writings. Unicode provides
+                    a “private use area,” a series of reserved <hi rend="italic">code points</hi>
+                    (the numbers assigned to characters) for projects and products to use
+                    “privately” for mapping to characters not represented in Unicode. A project like
+                    the <hi rend="italic">Chymistry of Isaac Newton</hi> can make use of this
+                    private use area to map to characters that are not already described in the
+                    standard. A pitfall of the Private Use Area is that it is meant to be used
+                    privately; it is not suitable for easily interchangeable or interoperable data.
+                    One project’s implementation of the Private Use Area could conflict with another
+                    project’s. And fonts would not typically include characters for Private Use Area
+                    code points, since by their nature these codepoints are not assigned permanently
+                    to any one character but are perpetually open for <hi rend="italic">private</hi>
+                    assignment, not as part of the public standard.</p>
+                <p>So when a project stumbles upon a rich collection of important characters and
+                    symbols that are relevant and useful beyond the interior confines of one’s own
+                    project, one can make a significant scholarly contribution by documenting and
+                    describing these characters and proposing them for inclusion in the Unicode
+                    encoding standard. The alchemical symbols so common in Isaac Newton’s chymical
+                    manuscripts, are common also throughout manuscript and print alchemical
+                    literature. The graphically and semantically rich symbols also have potential
+                    utility in design, computer art, and even gaming applications. Even the few
+                    symbols that are potentially unique to Newton are worthy of consideration in the
+                    Unicode standard, given Newton’s stature as one of the giants of science and the
+                    vast wealth of scientific, historical, biographical, and popular literature
+                    related to Newton.</p>
+                <figure xml:id="fig1">
+                    <head>Figure 1. Basil Valentine. “A Table of Chymicall &amp; Philosophicall
+                        Charecters with their signs.” <hi rend="italic">The Last Will and Testament
+                            of Basil Valentine</hi>, 1671. These and other symbols are commonly
+                        found in Newton.</head>
+                    <graphic url="873_Fig1.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                   </figure>
+                <p>The process by which one moves a Unicode proposal through the development,
+                    review, and approval process is formal and rigorous. It is very rewarding in
+                    fostering a better understanding of one’s source material and in pointing the
+                    way to undiscovered or avoided basic research questions. To encode and identify
+                    characters and symbols, one must name the things, and naming is indeed a very
+                    difficult and powerful task, a task often challenged and enriched by puzzling
+                    ambiguity and obscurity. The process is very rewarding also because it is very
+                    much peer-reviewed. Our proposal greatly benefited from an iterative review and
+                    excellent advice, challenging questions, and constructive criticism from a
+                    number of very smart, helpful, interested experts serving on the Unicode
+                    Technical Committee (UTC).</p>
+                <p>Our paper provides a case-study of one project’s navigation through the Unicode
+                    proposal, review, and approval process. We also provide a more theoretical
+                    discussion, illustration, and examination of the mutually beneficial
+                    relationship between technical standards development and basic humanities
+                    research.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl> <title level="m">What is Unicode?</title>
+                        <author>Unicode Consortium</author>
+                        <date>15 June 2009</date>
+                        <date type="visited">15 Nov 2009</date>
+                        <ptr target="http:/ /unicode.org/standard/WhatIsUnicode.html"/></bibl>
+                    <bibl><editor>Newman, William R.</editor>
+                        <title level="m">The Chymistry of Isaac Newton</title>
+                        <date>9 May 2008</date>
+                        <date type="visited">15 Nov 2009</date>
+                        <ptr target="http://www.chymistry.org/"/>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

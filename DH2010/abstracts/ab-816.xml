@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-816">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Works, Documents, Texts and Related Resources for Everyone</title>
+                <author>
+                    <name>Robinson, Peter</name>
+                    <affiliation>Institute for Textual Scholarship, <orgName>University of
+                        Birmingham</orgName> <reg><country>UK</country></reg></affiliation>
+                    <email>p.m.robinson@bham.ac.uk</email>
+                </author>
+                <author>
+                    <name>Meschini, Federico</name>
+                    <affiliation>Centre for Textual Studies, <orgName>De Montfort University</orgName> <reg><country>UK</country></reg></affiliation>
+                    <email>fmeschini@dmu.ac.uk</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-05-04</date>
+                <name>AC</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                <p>A common trope in discussions of scholarly editions in digital form is to praise,
+                    on the one hand, the extraordinary potential of electronic editions while, on
+                    the other hand, regretting that so few actual electronic editions come anywhere
+                    near realizing this potential (Robinson 2005). The potential is well-known: an
+                    explicit hyper-textual structure, publication in a distributed network
+                    environment, escape from the storage limit of the printed medium and possession
+                    of multiple layout possibilities (such as normalized and diplomatic
+                    transcriptions juxtaposed to facsimile images).</p>
+                <p>The difficulties are also well-known: among them, the need for a formal,
+                    comprehensive and efficient encoding scheme to underpin scholarly editions in
+                    electronic form. The Text Encoding Initiative Guidelines provided a crucial
+                    element, by supplying namings, specifications and structure for key components
+                    of electronic editions: thus the specialized lower-level elements for manuscript
+                    description and critical apparatus, along with higher-level elements such as
+                    msDescription and facsimile. However, the TEI does not address two areas,
+                    crucial for the full encoding of scholarly editions in electronic form:
+                        <xmt:oList rend="arabic">
+                        <item>The naming of components of the editions: thus, of the works edited
+                            and their parts; the source manuscripts or print documents and their
+                            parts which carry the texts of the work edited;</item>
+                        <item>The relationships between the components: thus, between the documents,
+                            the texts they carry, and the works which those texts instance.</item>
+                    </xmt:oList>
+                </p>
+                <p>This paper reports on a scheme prepared by the authors, designed to provide a
+                    solution to the problems proposed in both areas. The provision of a shared
+                    epistemological framework for handling works, texts and text sources (cf.
+                    Buzetti 2009) will also facilitate the shift from stand alone publishing
+                    frameworks to shared distributed on-line environments, enabled by powerful and
+                    flexible underlying infrastructures,<note>Such as the European initiative DARIAH
+                            &lt;<ref target="http://www.dariah.eu" rend="newWindow" type="external"
+                            >http://www.dariah.eu/</ref>&gt;</note> generally named Virtual
+                    Research Environments (Fraser 2005, Dunn et al. 2008).</p>
+                <p>This framework will advance interoperability, long a problem area in electronic
+                    texts. Interoperability has been defined by IEEE as “The ability of two or more
+                    systems or components to exchange information and to use the information that
+                    has been exchanged”.<note>&lt;<ref
+                            target="http://en.wikipedia.org/wiki/Interoperability" rend="newWindow"
+                            type="external"
+                        >http://en.wikipedia.org/wiki/Interoperability</ref>&gt;</note> A recent
+                    briefing paper by Gradmann identifies four different levels of interoperability,
+                    one built on the top of the other. From the bottom these levels are
+                    technical/basic, syntactic, functional and semantic. While technologies such as
+                    TCP/IP, HTTP and XML already provide sound basis for interoperability at the
+                    lower levels, much work is still to be done at the top levels. The semantic
+                    frame for interoperability offered by this scheme speaks to this need.</p>
+                <p>Semantic issues in networked publication systems are advanced by the work done in
+                    the last years on the ‘Semantic Web’ (Berners-Lee et al. 2001), which has
+                    recently evolved into the Linked Data initiative (Berners-Lee 2006). The
+                    Semantic Web seems to have survived its own hype, having finally entered the
+                    plateau of productivity phase, as happened for XML some years ago. The
+                    ontological level of the Semantic Web stack, represented by the OWL language,
+                    has presented a steep learning curve, due partly to its roots in Description
+                    Logic and First-Order Logic (Gruber 1993), but also presents at the same time
+                    the greatest potential.</p>
+                <p>The relationship between textual scholarship in its electronic dimension and
+                    ontologies has not hitherto been much apparent, as textual scholars using
+                    digital methods have focussed rather on the related, but separated field of
+                    Library and Information Science (Vickery 1997). However, ontologies have much to
+                    offer the textual editing enterprise. Both ‘recensio’ and the construction of a
+                    stemmatic graph are implicit formalizations that would benefit from the adoption
+                    of an explicit modelling. Moreover, both Sperberg-McQueen and Peter
+                    Shillingsburg implicitly hints at the potentialities of an ontological approach
+                    in scholarly editions, the former when writing about the “infinite set of facts
+                    related to the work being edited” (Sperberg-McQueen 2002) and the latter about
+                    “electronic knowledge sites” (Shillingsburg 2006).</p>
+                <p>In the world of digital humanities and electronic editions proficient uses of
+                    ontologies have already appeared, such as the Discovery<note>&lt;<ref
+                            target="http://www.discovery-project.eu" rend="newWindow"
+                            type="external">http://www.discovery-project.eu/</ref>&gt;</note> and
+                    the Nines<note><ref target="http://www.nines.org" rend="newWindow"
+                            type="external">&lt;http://www.nines.org/&gt;</ref></note> projects,
+                    also leveraging existing standards from related sectors such as IFLA’s
+                            FRBR<note><ref
+                            target="http://www.ifla.org/en/publications/functional-requirements-for-bibliographic-records"
+                            rend="newWindow" type="external"
+                            >&lt;http://www.ifla.org/en/publications/functional-requirements-for-bibliographic-records&gt;</ref></note>
+                    (Mimno 2005) or the cultural heritage oriented CIDOC-CRM<note><ref
+                            target="http://cidoc.ics.forth.gr" rend="newWindow" type="external"
+                            >&lt;http://cidoc.ics.forth.gr/&gt;</ref></note> (Ore et al. 2009).</p>
+                <p>Substantial work is now being done on implementing an actual interchange and
+                    interoperability framework for electronic editions, and arbitrary portions of
+                    them, of the kind, in (for example) the COST Action Interedition.<note><ref
+                            target="http://www.interedition.eu" rend="newWindow" type="external"
+                            >&lt;http://www.interedition.eu/&gt;</ref></note> A first proposal by
+                    Peter Robinson (Robinson 2009) was based on the Kahn/Wilensky Architecture (Kahn
+                    et al. 1995),<note>Which constitutes also the basis for the Handle system <ref
+                            target="http://www.handle.net" rend="newWindow" type="external"
+                            >&lt;http://www.handle.net/&gt;</ref></note> having therefore a naming
+                    authority together with a series of key/value pairs identifying portions of an
+                    electronic text, which therefore could be exchanged over the net thanks to a
+                    protocol such as the one established by the OAI-PMH standard.<note><ref
+                            target="http://www.openarchives.org/OAI/openarchivesprotocol.html"
+                            rend="newWindow" type="external"
+                            >&lt;http://www.openarchives.org/OAI/openarchivesprotocol.html&gt;</ref></note>
+                    This addressed the first need stated above, for agreed conventions on naming.
+                    The second need, for formal expression of relationships, is addressed by the
+                    adoption of the Linked Data paradigm. While keeping the use of the Kahn/Wilensky
+                    Architecture for the labelling system, and using a URN-like syntax compatible
+                    with the Semantic Web requirements, an ontology representing the entities
+                    involved together with their relationships has been developed.</p>
+                <p>The main entities of this ontology are: <xmt:uList>
+                        <item>‘Work’: Canterbury Tales, and ‘WorkPart’, the first line of the
+                            Canterbury Tales;</item>
+                        <item>‘Document’, the Hengwrt or the Ellesmere manuscripts, and
+                            ‘DocumentPart’, a page, folio or quire, which might carry an instance of
+                            the ‘Work’</item>
+                        <item>‘Text’: a single instance of a work, or work part, in a document or
+                            document part. Thus: the <hi rend="italic">text</hi> of the <hi
+                                rend="italic">work</hi> 'The Canterbury Tales' as it appears in the
+                                <hi rend="italic">document</hi>, the Hengwrt manuscript;</item>
+                    </xmt:uList>
+                </p>
+                <p>The three-fold distinction between ‘Work’, ‘Document and ‘Text’ reflects the
+                    fundamental scholarly distinction between the ‘Work’, independent of its
+                    realization in any object; the ‘Document’ which might carry an instance of the
+                    ‘Work’; and the ‘Text’: the instance of the work in the document. Digital
+                    resources such as ‘Image’ or ‘Transcript’ are related to ‘Text’ and ‘Document’
+                    and their parts, using relationship such a ‘hasImage’, ‘isTranscriptOf’, or
+                    ‘transcribedFrom’. Basic properties such as “isPartOf” or other properties from
+                    existing vocabularies, such as Dublin Core,<note><ref
+                            target="http://dublincore.org" rend="newWindow" type="external"
+                            >&lt;http://dublincore.org/&gt;</ref></note> have also been used, so to
+                    guarantee compatibility with other schemes in the best possible way. The
+                    resulting RDF can be stored in a triplestore and made available on the web, so
+                    to allow further uses from third parties without the need to establish exclusive
+                    protocol verbs.</p>
+                <p>This paper will present the methodological thinking behind the development of
+                    this ontology for the interchange of electronic editions of literary texts,
+                    starting from the first proposal until the more recent developments. The
+                    ontology will be contextualized with the existing related standards,
+                    particularly FRBR, CIDOC-CRM and the recent OAI-ORE<note><ref
+                            target="http://www.openarchives.org/ore" rend="newWindow"
+                            type="external">&lt;http://www.openarchives.org/ore/&gt;</ref></note> (a
+                    gross-grained vocabulary for the reuse and exchange of digital objects developed
+                    by the Open Access Initiative) and with the similar initiative of the Canonical
+                    Text Service Protocol (CTS),<note><ref
+                            target="http://chs75.chs.harvard.edu/projects/diginc/techpub/cts"
+                            rend="newWindow" type="external"
+                            >&lt;http://chs75.chs.harvard.edu/projects/diginc/techpub/cts&gt;</ref></note>
+                    which recently also added an ontological dimension to its basic syntax
+                    (Romanello et al. 2009).</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Berners-Lee, T.</author>
+                        <author>Hendler, J.</author>
+                        <author>Lassila, O.</author>
+                        <date>2001</date>
+                        <title level="a">The Semantic Web</title>
+                        <title level="j">The Scientific American</title>
+                        <biblScope type="issue">May 2001</biblScope>
+                        <biblScope type="pp">34–43</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Berners-Lee, T.</author>
+                        <date>July 2006</date>
+                        <title level="m">Linked Data</title>
+                        <ptr target="http://www.w3.org/DesignIssues/LinkedData.html"/>
+                    </bibl>
+                    <bibl>
+                        <author>Buzzetti, D.</author>
+                        <date>2009</date>
+                        <title level="a">Digital Editions and Text Processing</title>
+                        <title level="m">Text Editing, Print and the Digital World</title>
+                        <editor>Deegan, M.</editor>
+                        <editor>Sutherland, K.</editor>
+                        <publisher>Ashgate</publisher>
+                        <biblScope type="pp">45-61</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Dunn, S.</author>
+                        <author>Blanke, T.</author>
+                        <date>2008</date>
+                        <title level="a">Next Steps for E-Science, the Textual Humanities and
+                            Vres</title>
+                        <title level="j">D-Lib Magazine</title>
+                        <biblScope type="vol">14</biblScope>
+                        <biblScope type="issue">1/2</biblScope>
+                        <ptr target="http://www.dlib.org/dlib/january08/dunn/01dunn.html"/>
+                    </bibl>
+                    <bibl>
+                        <author>Fraser, M.</author>
+                        <date>2005</date>
+                        <title level="a">Virtual Research Environments: Overview and
+                            Activity</title>
+                        <title level="j">Ariadne</title>
+                        <biblScope type="issue">44</biblScope>
+                        <ptr target="http://www.ariadne.ac.uk/issue44/fraser/"/>
+                    </bibl>
+                    <bibl>
+                        <author>Gradmann, S.</author>
+                        <title level="m">INTEROPERABILITY. A key concept for large scale, persistent
+                            digital libraries</title>
+                        <ptr
+                            target="www.digitalpreservationeurope.eu/publications/briefs/interoperability.pdf"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Gruber, T.R.</author>
+                        <date>1993</date>
+                        <title level="a">A translation approach to portable ontology
+                            specifications</title>
+                        <title level="j">Knowledge Acquisition</title>
+                        <biblScope type="issue">5</biblScope>
+                        <biblScope type="pp">199–220</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Kahn, R.</author>
+                        <author>Wilensky R.</author>
+                        <date>May 1995</date>
+                        <title level="m">A Framework for Distributed Digital Object Services</title>
+                        <ptr target="http://WWW.CNRI.Reston.VA.US/home/cstr/arch/k-w.html"/>
+                    </bibl>
+                    <bibl>
+                        <author>Mimno, D.</author>
+                        <author>Crane G.</author>
+                        <author>Jones, A.</author>
+                        <date>2005</date>
+                        <title level="a">Hierarchical Catalog Records: Implementing a Frbr
+                            Catalog</title>
+                        <title level="j">D-Lib Magazine</title>
+                        <biblScope type="vol">11</biblScope>
+                        <biblScope type="issue">10</biblScope>
+                        <ptr target="http://www.dlib.org/dlib/october05/crane/10crane.html"/>
+                    </bibl>
+                    <bibl>
+                        <author>Ore, C.</author>
+                        <author>Eide, Ø.</author>
+                        <date>2009</date>
+                        <title level="a">TEI and cultural heritage ontologies: Exchange of
+                            information?</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="vol">24</biblScope>
+                        <biblScope type="issue">2</biblScope>
+                        <biblScope type="pp">161-172</biblScope>
+                        <ptr target="http://llc.oxfordjournals.org/cgi/content/abstract/24/2/161"/>
+                    </bibl>
+                    <bibl>
+                        <author>Robinson, P.</author>
+                        <date>2005</date>
+                        <title level="a">Current Issues in Making Digital Editions of Medieval
+                            Texts—or, Do Electronic Scholarly Editions Have a Future?</title>
+                        <title level="j">Digital Medievalist</title>
+                        <biblScope type="vol">1</biblScope>
+                        <ptr target="http://www.digitalmedievalist.org/journal/1.1/robinson/"/>
+                    </bibl>
+                    <bibl>
+                        <author>Robinson, P.</author>
+                        <date>2009</date>
+                        <title level="a">Electronic Editions for Everyone</title>
+                        <title level="m">Text and Genre in Reconstruction</title>
+                        <editor>McCarty. W.</editor>
+                        <publisher>Open Book Publishing</publisher>
+                        <pubPlace>Cambridge</pubPlace>
+                        <biblScope type="pp">183-201</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Romanello, M.</author>
+                        <author>Berti, M.</author>
+                        <author>Boschetti, F.</author>
+                        <author>Babeu A.</author>
+                        <author>Crane G.</author>
+                        <date>2009</date>
+                        <title level="m">Rethinking Critical Editions of Fragmentary Texts by
+                            Ontologies</title>
+                        <publisher>Elpub</publisher>
+                        <pubPlace>Milano, Italy</pubPlace>
+                        <ptr
+                            target="http://conferences.aepic.it/index.php/elpub/elpub2009/paper/view/158"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Sperberg-McQueen, C. M.</author>
+                        <date>2002</date>
+                        <title level="m">How to Teach Your Edition How to Swim</title>
+                        <ptr target="http://www.w3.org/People/cmsmcq/2002/cep97/swimming.xml"/>
+                    </bibl>
+                    <bibl>
+                        <author>Shillingsburg, P.</author>
+                        <date>2006</date>
+                        <title level="m">From Gutenberg to Google: Electronic Representations of
+                            Literary Texts</title>
+                        <publisher>Cambridge University Press</publisher>
+                        <pubPlace>Cambridge</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Vickery, B. C.</author>
+                        <date>1997</date>
+                        <title level="a">Ontologies</title>
+                        <title level="j">Journal of Information Science</title>
+                        <biblScope type="vol">23</biblScope>
+                        <biblScope type="issue">4</biblScope>
+                        <biblScope type="pp">277-286</biblScope>
+                        <ptr target="http://jis.sagepub.com/cgi/content/abstract/23/4/277"/>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

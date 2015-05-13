@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-693">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Using the Universal Similarity Metric to Map Correspondences between
+                    Witnesses</title>
+                <author>
+                    <name>Holmes, Martin</name>
+                    <affiliation><orgName>University of Victoria</orgName>
+                        <reg><country>Canada</country></reg></affiliation>
+                    <email>mholmes@uvic.ca</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-03-23</date>
+                <name>NG</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                <p>Thomas Sonnet de Courval's satirical work, the <hi rend="italic">Satyre Menippée
+                        du mariage</hi>, was initially published in 1608. In 1609, an expanded
+                    version appeared, with the addition of a second satire, the <hi rend="italic"
+                        >Timethélie, ou Censure des Femmes</hi>. In 1621, the first satire appeared
+                    in a new edition titled <hi rend="italic">Satyre sur les Traverses du
+                        Mariage</hi>, then in the following year, Sonnet de Courval published his<hi
+                        rend="italic"> Œvres Satyriques</hi>. The<hi rend="italic"> Œvres</hi>
+                    includes 12 satires, with the final six consisting of fragmented, re-organized
+                    and re-edited versions of the <hi rend="italic">Satyre Menippée</hi> and the <hi
+                        rend="italic">Timethélie</hi>. A new edition of the 1609 text was published
+                    in 1623, edited by the publisher and probably without Courval's consent. In
+                    1627, two more editions of the Œvres <hi rend="italic">Satyriques</hi> appeared.
+                    (Coste 340-341). </p>
+                <p>The <hi rend="italic">Mariage sous L'ancien Régime</hi> project has already
+                    digitized the 1609 text and most of the 1621, and will be working on other
+                    editions in the future. Our objective is to produce a genetic edition of those
+                    parts of Courval's work which bear on marriage; in particular, we would like to
+                    map the process by which the original two satires (<hi rend="italic"
+                        >Menippée</hi> and <hi rend="italic">Timethélie</hi>) were re-constituted as
+                    six satires in the <hi rend="italic">Œvres Satyriques</hi>. Since the texts are
+                    lengthy (the 1609 text runs to nearly 3,000 lines), we have begun to investigate
+                    ways to automate this mapping to some degree, and in particular, methods of
+                    measuring similarity between two pieces of text. In particular, we needed to
+                    find a way to detect corresponding lines between two witnesses, even when those
+                    lines might have been both relocated and altered.</p>
+                <p>The Universal Similarity Metric is a method of measuring the similarity of two
+                    sets of data based on Kolmogorov complexity. It is described in Vitanyi (2005)
+                    as &quot;so general that it works in every domain: music, text, literature,
+                    programs, genomes, executables, natural language determination, equally and
+                    simultaneously&quot; (1). A practical implementation of this metric can be
+                    achieved using data compression, according to the following formula, where x and
+                    y are the two pieces of data being compared:
+                    <code xml:space="preserve">
+  NCD(x,y) = C(xy) - min(C(x), C(y)) 
+             ___________________
+                    
+                 max(C(x), C(y)) 
+                    
+(Vitanyi 2) </code>
+                </p>
+                <p> NCD is &quot;Normalized Compression Distance&quot;, an expression of the
+                    similarity of x and y; C(x) and C(y) are the respective lengths of the two
+                    compressed inputs; and C(xy) is the length of the compressed concatenation of x
+                    and y. The resulting NCD is a value between 0 and 1, where proximity to zero
+                    indicates greater similarity. This metric has been widely used in the sciences;
+                    for instance, Krasnogor and Pelta (2004) describes its use to measure the
+                    similarity of protein structures, and Li et al. (2004) apply it to evolutionary
+                    trees and to building language trees based on text corpora. Its universality and
+                    simplicity suggested that it might be the ideal tool to discover correspondences
+                    between lines and line-groups at different points in two of Courval's texts. To
+                    test it, I have created a prototype application using Borland Delphi. These are
+                    some example values generated with the prototype (Figure 1): <table>
+                        <head>Figure 1: Example comparisons showing NCD raw score using Borland's
+                            Pascal ZLib library (zlib 1.2.3). (Shakespearean lines taken from Quarto
+                            1 and Folio 1, <hi rend="italic">Internet Shakespeare Editions</hi>
+                            transcriptions.)</head>
+                        <row role="label">
+                            <cell role="label">Text 1</cell>
+                            <cell role="label">Text 2</cell>
+                            <cell role="label">NCD Score</cell>
+                        </row>
+                        <row>
+                            <cell>These two lines are absolutely identical.</cell>
+                            <cell>These two lines are absolutely identical.</cell>
+                            <cell>0,0000000</cell>
+                        </row>
+                        <row>
+                            <cell>The vndiscouered country, at whose sight</cell>
+                            <cell>The vndiscouered Countrey, from whose Borne</cell>
+                            <cell>0,3673469</cell>
+                        </row>
+                        <row>
+                            <cell>To be, or not to be, I there's the point,</cell>
+                            <cell>To be, or not to be, that is the Question:</cell>
+                            <cell>0,4545455</cell>
+                        </row>
+                        <row>
+                            <cell>To Die, to sleepe, is that all? I all:</cell>
+                            <cell>Whether 'tis Nobler in the minde to suffer</cell>
+                            <cell>0,7234043</cell>
+                        </row>
+                        <row>
+                            <cell>
+                                <foreign>これは日本語です。</foreign>
+                            </cell>
+                            <cell>To sleepe, perchance to Dreame; I, there's the rub,</cell>
+                            <cell>0,8392857</cell>
+                        </row>
+                    </table>
+                </p>
+                <p>Scores below 0.5 appear to be strongly indicative of similarity, while those over
+                    0.6 usually signify disparity; it is actually quite difficult to generate any
+                    score above 0.84, as shown by the final example, in which there are no points of
+                    similarity at all.</p>
+                <p>The prototype application takes two XML files as input, and performs the
+                    following steps: <xmt:oList rend="arabic">
+                        <item>Identifies the target elements to be compared (this is currently
+                            hard-coded, but would ideally be based on user-specified XPath).</item>
+                        <item>Adds @id attributes to any of those elements which don't yet have
+                            them.</item>
+                        <item>Extracts the text of all the target elements, and normalizes it in a
+                            variety of ways (specified by the user).</item>
+                        <item>Compares each single text item with each other text item, and
+                            generates a comparison score for it.</item>
+                        <item>(Optional) Runs an additional contextualizing algorithm which modifies
+                            the original scores based on the scores of surrounding elements in the
+                            document (see below).</item>
+                        <item>Sorts the matches in ascending order of similarity score (best matches
+                            first).</item>
+                        <item>Presents each of these matches to the user for categorization as one
+                            of: <xmt:uList>
+                                <item>Corresponding (equivalent) items</item>
+                                <item>Not corresponding, but an interesting relationship</item>
+                                <item>No relationship at all</item>
+                            </xmt:uList>
+                        </item>
+                        <item>Saves an XML file containing the scores for all matches, along with
+                            any categorization values chosen by the user.</item>
+                        <item>Saves copies of the input files with the added @id attributes, and
+                            also a CSV version of the score data for use in a spreadsheet
+                            program.</item>
+                    </xmt:oList>
+                </p>
+                <p>This correspondence data can be used to provide a component of a critical
+                    apparatus attached to a witness, linking it to corresponding lines in other
+                    witnesses.</p>
+                <p>Step 5 is an attempt to detect correspondences between lines in situations where
+                    a line has changed significantly, or perhaps even been replaced completely, but
+                    the lines around it still match closely. Normally, where lines differ, a high
+                    score will be generated; if the user chooses only to examine the lower scores in
+                    the search for correspondences, the link between these two lines may not be
+                    detected. The contextualizing algorithm massages the score of each match such
+                    that it is affected by the score of the lines around it; if the preceding and
+                    following lines have low scores, the score of the line is lowered so that it too
+                    may be detected more easily as &quot;corresponding&quot;, even though it has
+                    been substantially changed. The contextualizing algorithm can be run many times
+                    if required, massaging the scores each time. We are still investigating the
+                    outcomes and value of this process.</p>
+                <p>These screenshots (Figures 2 and 3) show the prototype in use. <figure
+                        xml:id="Fig2">
+                        <head>Figure 2: <hi rend="italic">The main window of the prototype, showing
+                                the two input texts, and the Pre-comparison processing
+                                settings.</hi></head>
+                        <graphic url="693_Fig2.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure></p>
+                <p>
+                    <figure xml:id="Fig3">
+                        <head>Figure 3: <hi rend="italic">Reviewing matches between lines based on
+                                score.</hi></head>
+                        <graphic url="693_Fig3.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>This application is in many ways similar to the TEI-Comparator project created as
+                    part of the Holinshed Project. This is described in some detail in Cummings
+                    (2009). When writing our <hi rend="italic">Mariage</hi> prototype at the
+                    beginning of 2009, I was unaware of the TEI-Comparator project; in addressing
+                    similar problems, we have arrived at remarkably similar solutions, especially in
+                    terms of process. The comparison algorithm used by TEI-Comparator, which is
+                    called Shingle Cloud, was developed by Arno Mittelbach, and uses a completely
+                    different process of comparison based on n-grams. Documentation for
+                    TEI-Comparator will be available soon; when it appears, I am looking forward to
+                    running tests to compare results between Shingle Cloud and the Universal
+                    Similarity Metric, and I will report the results in this paper.</p>
+                <p>The prototype application will probably now be ported to C++, to create a
+                    cross-platform application, and I also intend to create a standalone Java
+                    library that can be called from the command line or from another Java
+                    application; perhaps it might be integrated into TEI-Comparator as an
+                    alternative comparison metric.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Coste, Joël</author>
+                        <date>2008</date>
+                        <title level="a">Un regard médical sur la société française à l'époque
+                            d'Henri IV et de Marie de Médicis</title>
+                        <title level="j">XVIIe siècle</title>
+                        <biblScope type="issue">239</biblScope>
+                        <biblScope type="pp">339-61</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Cummings, James</author>
+                        <date>4 September 2009</date>
+                        <title level="m">"TEI-Comparator." Blog posting on In my
+                            &lt;element/&gt;</title>
+                        <ptr target="http://blogs.oucs.ox.ac.uk/jamesc/2009/09/04/tei-comparator/"/>
+                    </bibl>
+                    <bibl>
+                        <author>Krasnogor, N. and D. A. Pelta</author>
+                        <date>2004</date>
+                        <title level="a">Measuring the similarity of protein structures by means of
+                            the universal similarity metric</title>
+                        <title level="j">Bioinformatics</title>
+                        <biblScope type="issue"> 20(7)</biblScope>
+                        <biblScope type="pp"> 1015-1021</biblScope>
+                        <ptr
+                            target="http://bioinformatics.oxfordjournals.org/cgi/reprint/20/7/1015.pdf"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Li, Ming, Xin Chen, Xin Li, Bin Ma, and Paul Vitanyi</author>
+                        <date>2004</date>
+                        <title level="a">The Similarity Metric</title>
+                        <title level="j">IEEE Transactions on Information Theory</title>
+                        <biblScope type="issue"> 50(12)</biblScope>
+                        <biblScope type="pp"> 3250-3264</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Vitanyi, Paul</author>
+                        <date>2005</date>
+                        <title level="a">Universal Similarity</title>
+                        <title level="m" type="proceedings">Proc. ITW2005 - IEEE ITSOC Information
+                            Theory Workshop 2005 on Coding and Complexity</title>
+                        <name type="venue">Rotorua, New Zealand</name>
+                        <date type="conference">29th Aug. - 1st Sept., 2005</date>
+                        <ptr type="external" target="http://www.cwi.nl/~paulv/papers/itw05.pdf"/>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-684">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Objective Detection of Plautus' Rules by Computer Support</title>
+                <author>
+                    <name>Deufert, Marcus</name>
+                    <affiliation>Department of Classics, <orgName>University of Leipzig</orgName>,
+                        <country>Germany</country></affiliation>
+                    <email>mdeufert@eaqua.net</email>
+                </author>
+                <author>
+                    <name>Blumenstein, Judith</name>
+                    <affiliation>Department of Classics, <orgName>University of Leipzig</orgName>,
+                        <country>Germany</country></affiliation>
+                    <email>jblumenstein@eaqua.net</email>
+                </author>
+
+                <author>
+                    <name>Trebesius, Andreas</name>
+                    <affiliation>Department of Classics, <orgName>University of Leipzig</orgName>,
+                        <country>Germany</country></affiliation>
+                    <email>atrebesius@eaqua.net</email>
+                </author>
+                <author>
+                    <name>Beyer, Stefan</name>
+                    <affiliation>Natural Language Processing Group, Institute of Mathematics and
+                        Computer Science, University of Leipzig, Germany</affiliation>
+                    <email>sbeyer@eaqua.net</email>
+                </author>
+                <author>
+                    <name>Büchler, Marco</name>
+                    <affiliation>Natural Language Processing Group, Institute of Mathematics and
+                        Computer Science, University of Leipzig, Germany</affiliation>
+                    <email>mbuechler@eaqua.net</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-15</date>
+                <name>JL</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <p>The metre of the Roman comic poet Plautus (flourished ca. 200 B.C.) still leaves one
+                mystified. Although the scientific work of the 19th and early 20th century has
+                established a number of important rules and licences, the exact range of these laws
+                and licences remains a matter of debate. Taking into account these many open
+                questions it is not surprising that metrical studies (as well as the important
+                editions) of Plautus still display a huge amount of discrepancy in their handling of
+                Plautine metre. The specific problem consists of the large number of transmitted
+                verses in the Plautine corpus and the great complexity and diversity of competing
+                explanations of remarkable metrical phenomena.</p>
+
+            <p>Therefore, until now the results of scholarship often fail to convince, since they
+                are based either on a limited textual basis or deal with a specific metrical
+                phenomenon from the perspective of a single law or licence without taking into
+                account competing explanations.</p>
+
+            <p>This paper will cover a wide range of previous research from both Classics (Lotman
+                2000) and literature (Garzonio, 2006) to several techniques in the field of Computer
+                Science (Heyer et al., 2008 and Volk, 2007). Metric analyses can be already be
+                computed on German poems with only a small set of rules (Bobenhausen, 2009). Results
+                imply, however, that foreign words are especially difficult to handle. In contrast
+                to this, ancient texts pose a different problem as lots of variations of an original
+                often exist. For this reason metric analysis can be divided into three different
+                tasks: <xmt:uList>
+                    <item><label>Task 1</label>: Dealing with different <hi rend="bold"
+                            >variations</hi> and variations of variations (Andreev, 2009 and
+                        Rehbein, 2009). Within this paper, a primary version of a verse is defined
+                        by researchers from Classics. Differences of variants in relation to the
+                        primary version are highlighted as described in (Büchler et al.,
+                            2009<note>In this paper the same visualisation is used to highlight
+                            differences of "literal" citations in a historic context.</note> and
+                        Rehbein, 2009). The variance caused by transmissions of several authors is
+                        also important to consider, however, when working with fuzziness.
+                        Consequently a set of possible metric analysis annotations are suggested
+                        rather than just one result.</item>
+                    <item><label>Task 2</label>: <hi rend="bold">Applying a metric rule-set</hi> to
+                        a text corpus (Bobenhausen, 2009 and Fusi 2008). Within this research -
+                        similar to part of speech tagging (Heyer et al., 2003) – a set of rules is
+                        applied to text. However, only the most probable metric candidate is
+                        selected. In contrast to that research (Bobenhausen, 2009 and Fusi, 2008),
+                        the approach in this paper scores several possible metric analyses.</item>
+                    <item><label>Task 3</label>: <hi rend="bold">Training of a metric ruleset</hi>
+                        based on manually annotated data from researchers. Typically, a fixed set of
+                        rules is taken as presumed, however, new rules need to be added manually.
+                        This paper thus also focuses on the computation of new rules. The importance
+                        of this step is motivated by the Theory of Selective Perception. Based on
+                        this, new and uncommon rules are determined by a computer model that is both
+                        objective and independent rather than selective like a human being.</item>
+                </xmt:uList>
+            </p>
+            <p>In the field of natural language processing the task of tagging text is quite similar
+                to part of speech tagging (POS). Typically, for such a tagger a Hidden Markov Model
+                (Heyer et al., 2008) is trained and is traversed by dedicated algorithms like the
+                Viterbi algorithm (Heyer et al., 2008). However, the already mentioned fuzziness of
+                text variants makes both the training and traversing steps difficult. Furthermore,
+                in the training step it is necessary to observe data on a larger window than the
+                typical memory of 2 or 3. This would increase the complexity drastically during the
+                trainings phase. Within the applying phase the Viterbi algorithm is typically used
+                (Heyer et al., 2003). This algorithm reduces all paths locally except the most
+                probable one. In metric analysis however this assumption is quite critical since due
+                to syllable fusion an senarius is not required to have 12 but can also consist of 17
+                or 18 syllables.</p>
+
+            <p>Motivated by the aforementioned problems of existing approaches this paper describes
+                a three step approach. In a first step possible syllables are computed. This is
+                simply done by using training data. In contrast to German poems (Bobenhausen, 2009)
+                the approach is aware of possible fusions of syllables. In the second step all
+                possible combinations are computed instantly removing candidates that do not fulfil
+                the metric requirements. The training itself is done by distance-based
+                co-occurrences (Büchler, 2008) on metric tags. In the last step metric candidates
+                are scored based on both the training data as well as the variance of the
+                alternatively transmitted variances. All relevant candidates are selected by
+                researchers of Classics. The remaining metric analysis is represented in a dedicated
+                visualisation highlighting the differences of several variants to the primary
+                version (Büchler, 2009 and Rehbein, 2009).</p>
+
+            <p>As an outcome of this paper several results will be shown. Besides the difference
+                visualisation both results and experiences in training and application of a metric
+                model will be provided.</p>
+
+            <p>Both the expected results and the developed software, which can be easily adapted to
+                other ancient poets, will give an original input to the research community and
+                motivate and enable further investigations in the same spirit.</p>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+
+                    <bibl><author>Andreev, V. S.</author>
+                        <date>2009</date><title level="a">Patterns in Style Evolution of
+                            Poets</title>
+                        <title level="m" type="proceedings">Digital Humanities
+                            2009</title><biblScope type="pp">52-53</biblScope></bibl>
+
+                    <bibl><author>Bobenhausen, K.</author><date>2009</date>)<title level="a"
+                            >Automatisches Metrisches Markup</title><title level="m"
+                            type="proceedings">Digital Humanities 2009</title><biblScope type="pp"
+                            >69-72</biblScope></bibl>
+
+                    <bibl><author>Büchler, M.</author><date>2008</date><title level="m">Elemente
+                        einer Forensischen Linguistik</title> Working report</bibl>
+
+                    <bibl>
+                        <author>Büchler, M.</author><author>Geßner, A.</author>
+                        <date>2009</date>
+                        <title level="a">Unsupervised Detection and Visualisation of Textual Reuse
+                            on Ancient Greek Texts</title>
+                        <title level="m" type="proceedings">2009 Chicago Colloquium on Digital
+                            Humanities and Computer Science</title><name type="venue"
+                            >Chicago</name><date type="conference">Nov. 2009</date></bibl>
+
+                    <bibl><author>Fortson, B. W.</author><date>2008</date><title level="a">IV,
+                            Language and Rhythm in Plautus</title>
+                        <title level="m">Synchronic and Diachronic Studies</title><pubPlace>Berlin /
+                        New York</pubPlace></bibl>
+                    
+                    <bibl><author>Fusi, D.</author><date>2009</date>
+                        <title level="m">An Expert System for the Classical Languages: Metrical
+                            Analysis Components</title><ptr
+                            target="http://www.fusisoft.it/Doc/ActaVenezia.pdf"/><ptr
+                            target="http://www.fusisoft.it/Chiron/Metrics/Default.aspx"/>
+                        <date type="visited">Nov. 10th 2009</date></bibl>
+                    
+                    <bibl><author>Garzonio, S.</author><date>2006</date>
+                        <title level="a">Italian and Russian Verse: Two Cultures and Two
+                            Mentalities</title><title level="j">Studi Slavistici</title>
+                        <biblScope type="issue">III</biblScope><biblScope type="pp"
+                            >187-198</biblScope>
+                        
+                    </bibl><bibl><author>Heyer, G.</author><author>Quasthoff, U.</author>
+                        <author>Wittig, T.</author>
+                        <date>2008</date><title level="m">Text Mining: Wissensrohstoff Text –
+                            Konzepte, Algorithmen, Ergebnisse. 2nd edition</title>
+                        <publisher>W3L-Verlag</publisher></bibl>
+
+                    <bibl><author>Lotman, M.-K.</author><date>2009</date>
+                        <title level="a">Word-ends and Metrical Boundaries in Ancient Iambic
+                            Trimeter of Comedy</title><title level="j">Studia Humaniora
+                            Tartuensa</title>
+                        <biblScope type="issue">1</biblScope><biblScope type="pp">1-16</biblScope>
+                        <ptr target="http://www.ut.ee/klassik/sht/2000/lotman1.pdf"/><date
+                            type="visited">Nov., 10th 2009</date></bibl>
+
+                    <bibl><author>Questa, C.</author><date>2007</date><title level="m">La metrica di
+                    Plauto e di Terenzio</title><pubPlace>Urbino</pubPlace></bibl>
+                    
+                    <bibl><author>Rehbein, M.</author><date>2009</date><title level="a">Multi-Level
+                            Variation</title><title level="m" type="proceedings">Digital Humanities
+                            Conference Abstracts</title>
+                        <date type="conference">2009</date><biblScope type="pp"
+                            >11-12</biblScope><date type="conference">2009</date></bibl>
+
+                    <bibl><author>Volk, A.</author><date>2007</date>
+                        <title level="a">Rhythmic Similarity based on Inner Metric
+                            Analysis</title><title level="m" type="proceedings">Utrecht Summer
+                            School Multimedia Retrieval</title>
+                        <name type="venue">Utrecht</name><date type="conference">Aug.
+                        2007</date></bibl>
+
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

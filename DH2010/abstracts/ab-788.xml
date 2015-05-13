@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-788">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>A Bilingual Digital Edition of Trinity College Cambridge MS O.1.77.</title>
+                <author>
+                    <name>Honkapohja, Alpo</name>
+                    <affiliation><orgName>University of Helsinki</orgName> <reg><country>Finland</country></reg></affiliation>
+                    <email>alpo.honkapohja@helsinki.fi</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-27</date>
+                <name>CD</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>The poster will present my work-in-progress PhD project of a 15<hi rend="sup"
+                >th</hi>-century bilingual medical manuscript, containing Latin and Middle English.
+                The edition is designed with the needs of historical linguistics in mind, and will
+                have some corpus functionalities. My long term aim is to use it as a pilot study of
+                sorts in contrastive investigation of Latin and Middle English medical writing.</p>
+            <div>
+                <head>Background</head>
+                <p>Medieval medical writing for a long period of time received fairly little
+                    attention. For instance, Robbins described it, in 1970, as a “Yukon territory
+                    crying out for exploration”. In the 1990s and 2000s, the situation has changed,
+                    and the field is becoming filled with tiny flags stating the claims of various
+                    research projects and individual scholars. There are now large electronic
+                    corpora such as the <hi rend="italic">Middle English Medical Texts</hi> (MEMT),
+                    published 2005, and <hi rend="italic">A Corpus of Middle English Scientific
+                        Prose</hi>, currently being compiled in collaboration between the University
+                    of Malaga and Hunter Library in Glasgow. </p>
+                <p>These resources do, however, have one inherent bias. They focus on Middle English
+                    material, which gives a distorted view of the linguistic situation in England in
+                    the late Middle Ages. England, after the Norman conquest, was a trilingual
+                    society in which educated members of the society were likely to have at least
+                    some degree of literacy in Latin, Anglo-Norman French as well as English. This
+                    shows, for instance, in the fact that manuscripts containing texts in more than
+                    one language outnumber monolingual ones. (<ref type="internal" cRef="bibl10">cf.
+                        Voigts 1989</ref>). Moreover, marginal comments also suggest they had a
+                    readership competent in more than one language.</p>
+                <p>My PhD project is intended as the first genuinely bilingual online resource of
+                    medical manuscripts in late Medieval England, and will hopefully pave the way
+                    for similar resources in the future. It is designed for both historical
+                    linguists and historians, but paying special attention to the needs of
+                    linguistics.</p>
+            </div>
+            <div>
+                <head>Trinity College Cambridge, MS O.1.77.</head>
+                <p>Trinity MS O.1.77. is a pocket-sized (75 x 100 mm) medical handbook, located in
+                    Trinity College Cambridge. It contains 10 to 18 texts on medicine, astrology and
+                    alchemy. It is usually treated as a sibling MS of the so-called Sloane-group of
+                    Middle English manuscripts, which is a group of late Latin, English and French
+                    MSS originating from London or Westminster in the late Middle English period
+                        (<ref type="internal" cRef="bibl11">cf. e.g. Voigts 1990</ref>). James
+                    assigns MS Trinity O.1.77 an exact date 1460, based on astrological markings in
+                    the final flyleaf (1902), although it may not be entirely accurate. (see <ref
+                        type="internal" cRef="bibl4">Honkapohja 2010, forthcoming</ref>)</p>
+                <p>Roughly 4/5 of the manuscript is in Latin and 1/5 in English, that is, out of
+                    slightly less than 30,000 words, c. 24,000 words are Latin and 5,500 in English.
+                    There does not appear to be a clear-cut division between prestigious Latin texts
+                    and more popular English ones. Latin, however, is used almost exclusively for
+                    metatextual functions such as incipits and explicits. Nearly all marginal
+                    comments in the manuscript are in Latin.</p>
+            </div>
+            <div>
+                <head>The digital edition</head>
+                <p>The digital edition which I am preparing will be designed in such a way that it
+                    will function as reliable data for historical linguistics. This involves
+                    encoding a sufficient amount of detail on linguistic variants without
+                    normalising, modernising, or emending the data, and keeping all editorial
+                    interference transparent (see e.g. <ref type="internal" cRef="bibl12">Kytö, M.,
+                        Grund P. and Walker T. 2007</ref> or <ref type="internal" cRef="bibl6">Lass
+                        2004</ref>)</p>
+                <p> On the technical side, I am using TEI P5 –conformant XML tagging built on
+                    stand-off architecture. Things included in the base-level annotation are a
+                    graphemic transcription of the text (<ref type="internal" cRef="bibl2">cf. e.g.
+                        Fenton &amp; Duggan 2006</ref>), select manuscript features such as layout,
+                    and information about the manuscript and hand. Each word will also be tagged
+                    with a normalised form, useful for linguistic research, and an ID which allows
+                    the addition of additional tagging by means of stand-off annotation – including,
+                    for instance, POS tagging, semantic annotation or lemmatisation.</p>
+                <p>The edition will have an online user interface, which will allow the user to
+                    select the level of detail he or she wishes. It will be possible to use it with
+                    either normalised text or diplomatic transcription. It will be released under a
+                    Creative Commons license. The user will have full access to the XML-code,
+                    including all levels of annotation, and will be allowed to download and modify
+                    it for non-commercial purposes.</p>
+            </div>
+            <div>
+                <head>DECL</head>
+                <p>The development of the edition will take place in collaboration between the
+                    Digital Editions for Corpus Linguistics (DECL) project based at the University
+                    of Helsinki.</p>
+                <p>The DECL project was started by three post-graduate students in 2007. It aims to
+                    create a framework for producing online editions of historical manuscripts
+                    suitable for both corpus linguistic and historical research. DECL editions use a
+                    more strictly defined subset of the TEI-guidelines and are designed especially
+                    to meet the needs of corpus linguistics. The framework consists of encoding
+                    guidelines compliant with TEI XML P5. The aims of the project are presented in
+                    more detail in our article (<ref type="internal" cRef="bibl3">Honkapohja,
+                        Kaislaniemi &amp; Marttila 2009</ref>).</p>
+            </div>
+            <div>
+                <head>Digital Edition of O.1.77 as a resource for the study of bilingualism</head>
+                <p>My PhD project has both short and long term goals related to the study of
+                    multilingualism. The short term aim is to design the edition in a way that is of
+                    maximum use for scholars working with medical texts and especially
+                    multilingualism. I am especially putting a lot of effort into interoperability
+                    and making the encoding as flexible as possible.</p>
+                <p>Hypothetical research questions for the edition will include, for instance: <xmt:uList>
+                        <item><label>Spelling variation.</label> Using the edition will enable
+                            getting information on spelling variation in English and Latin, in order
+                            to see whether the accepted general view that Latin was more regular is
+                            supported by quantitative data. </item>
+                        <item><label>The use of brevigraphs and contracted forms.</label> Manuscript
+                            abbreviations are an extremely common feature in the Latin texts of the
+                            manuscript. They are also applied in the Middle English sections, but
+                            with less frequency. The edition will make it possible to obtain exact
+                            statistical information on which manuscript abbreviations carry into the
+                            vernacular, and with how much variation and frequency.</item>
+                        <item><label>Syntactic complexity:</label> Do sentences in Latin contain a
+                            greater number of sub clauses and other signs of syntactic complexity
+                            than Middle English ones?</item>
+                        <item><label>Textual Functions:</label> The use of English and Latin in
+                            various text types, recipes, metatextual passages (in which Latin very
+                            much dominates). The type of structural and background information which
+                            is being annotated in the edition will enable the user to perform the
+                            searches on different level textual passages, including marginal
+                            comments and metatextual passages.</item>
+                    </xmt:uList></p>
+                <p>After the completion of the PhD project, the edition will be expanded with other
+                    related multilingual medical and alchemical manuscripts in the Sloane group,
+                    which will increase the usefulness of the database, by allowing, for instance,
+                    comparative study of the same text in different manuscripts. I am also planning
+                    to make use of the available corpora on Middle English medical writing for
+                    comparisons to Middle English.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl xml:id="bibl1">
+                        <title level="m">A Corpus of Middle English Scientific Prose</title>
+                        <respStmt>
+                            <resp>Being compiled at the</resp>
+                            <name>University of Malaga</name>
+                        </respStmt>
+                        <ptr target="http://hunter.filosofia.uma.es/manuscripts"/>
+                        <date type="visited">13 March 2010</date></bibl>
+                    <bibl xml:id="bibl2"><author>Fenton, E. G.</author>
+                        <author>Duggan, H. N.</author>
+                        <date>2006</date>
+                        <title level="a">Effective Methods of Producing Machine-readable Text from
+                            Manuscript and Print Sources</title>
+                        <editor>Burnard, L.</editor>
+                        <editor>O’Brien O’Keeffe, K.</editor>
+                        <editor>Unsworth, J.</editor>
+                        <title level="m">Electronic Textual Editing</title>
+                        <pubPlace>New York</pubPlace>
+                        <publisher>MLA</publisher></bibl>
+                    <bibl xml:id="bibl3"><author>Honkapohja, A.</author>
+                        <author>Kaislaniemi, S.</author>
+                        <author>Marttila, V.</author>
+                        <date>2009</date>
+                        <title level="a">Digital Editions for Corpus Linguistics: Representing
+                            manuscript reality in electronic corpora</title>
+                        <editor>Jucker, A. H.</editor>
+                        <editor>Schreier, D.</editor>
+                        <editor>Hundt, M.</editor>
+                        <title level="m">Corpora: Pragmatic and Discourse. Papers from the 29th
+                            Internationl Conference on English Language Research on Computerized
+                            Corpora (ICAME 29). Ascona, Switzerland, 14-18 May 2008</title>
+                        <pubPlace>Amsterdam/New York</pubPlace><publisher>Rodopi</publisher></bibl>
+                    <bibl xml:id="bibl4"><author>Honkapohja, A.</author>
+                        <date>2010: forthcoming</date>
+                        <title level="a">Multilingualism in Trinity College Cambridge Manuscript
+                            O.1.77</title>
+                        <title level="j">Studia Anglica Posnaniensia</title>
+                    </bibl>
+                    <bibl xml:id="bibl5"><author>James, M. R.</author>
+                        <date>1902</date>
+                        <title level="m">The Western Manuscripts in the Library of Trinity College,
+                            Cambridge. A Descriptive Catalogue</title>
+                        <biblScope type="vol">III, Containing an Account of the Manuscripts Standing
+                            in Class O</biblScope>
+                        <pubPlace>Cambridge</pubPlace>
+                        <publisher>CUP</publisher></bibl>
+                    <bibl xml:id="bibl6"><author>Lass, R.</author>
+                        <date>2004</date>
+                        <title level="a">Ut custodiant litteras: Editions, Corpora and
+                            Witnesshood</title>
+                        <editor>Dossena, M.</editor>
+                        <editor>Lass, R.</editor>
+                        <title level="m">Methods and Data in English Historical Dialectology</title>
+                        <title level="s">Linguistic Insights</title>
+                        <biblScope type="issue">16</biblScope>
+                        <pubPlace>Bern</pubPlace>
+                        <publisher>Peter Lang</publisher></bibl>
+                    <bibl xml:id="bibl7"><author>Robbins, R.H.</author>
+                        <date>1970</date>
+                        <title level="a">Medical Manuscripts in Middle English</title>
+                        <title level="j">Speculum</title><biblScope type="vol">45</biblScope>
+                        <biblScope type="issue">No.3 Jul 1970</biblScope>
+                        <biblScope type="pp">393-415</biblScope>
+                        <ptr target="http://www.jstor.org/stable/2853500"/>
+                        <date type="visited">13 March 2010</date></bibl>
+                    <bibl xml:id="bibl8"><title level="m">Middle English Medical Texts</title>
+                        <date>2005</date>
+                        <editor>Taavitsainen, I.</editor>
+                        <editor>Pahta, P.</editor>
+                        <editor>Mäkinen, M.</editor>
+                        <edition>CD-ROM</edition>
+                        <pubPlace>Amsterdam</pubPlace>: <publisher>John Benjamins</publisher></bibl>
+                    <bibl xml:id="bibl9"><title level="m">Text Encoding Initiative (TEI)</title>
+                        <ptr target="http:/www.tei-c.org"/>
+                        <date type="visited">13 March 2010</date></bibl>
+                    <bibl xml:id="bibl10"><author>Voigts, L. E.</author>
+                        <date>1989</date>
+                        <title level="a">Scientific and Medical Books</title>
+                        <editor>Griffiths, J.</editor>
+                        <editor>Pearsall, D.</editor>
+                        <title level="m">Book Production and Publishing in Britain 1375-1475</title>
+                        <pubPlace>Cambridge</pubPlace>: <publisher>Cambridge University
+                            Press</publisher></bibl>
+                    <bibl xml:id="bibl11"><author>Voigts, L. E.</author>
+                        <date>1990</date>
+                        <title level="a">The "Sloane Group": Related scientific and medical
+                            manuscripts from the fifteenth century in the Sloane Collection</title>
+                        <title level="j">The British Library Journal</title>
+                        <biblScope type="issue">16</biblScope>
+                        <biblScope type="pp">26-57</biblScope></bibl>
+                    <bibl xml:id="bibl12"><author>Kytö, M.</author>
+                        <author>Grund P.</author>
+                        <author>Walker T.</author>
+                        <date>2007</date>
+                        <title level="a">Regional variation and the language of English witness
+                            depositions 1560-1760: constructing a 'linguistic' edition in electronic
+                            form</title>
+                        <editor>Pahta, P.</editor>
+                        <editor>Taavitsainen, I.</editor>
+                        <editor>Nevalainen, T.</editor>
+                        <editor>Tyrkkö, J.</editor>
+                        <title level="s">Towards Multimedia in Corpus Studies. Studies in Variation
+                            Contacts and Change in English</title>
+                        <biblScope type="issue">2</biblScope>
+                        <pubPlace>Helsinki</pubPlace>
+                        <publisher>Research Unit for Variation, Contacts and Change in English
+                            (VARIENG)</publisher>, University of Helsinki <ptr
+                            target="http://www.helsinki.fi/varieng/journal/volumes/02/kyto_et_al"/>
+                        <date type="visited">13 March 2010</date>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

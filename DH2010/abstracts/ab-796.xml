@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-796">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>A Platform for Cultural Information Visualization Using Schematic Expressions
+                    of Cube</title>
+                <author>
+                    <name>Saito, Shinya</name>
+                    <affiliation>Postdoctoral Fellow, Digital Humanities Center for Japanese Arts
+                        and Cultures <orgName>Ritsumeikan University</orgName>, Kyoto, <country>Japan</country></affiliation>
+                    <email>saitos@fc.ritsumei.ac.jp</email>
+                </author>
+                <author>
+                    <name>Ohno, Shin</name>
+                    <affiliation>Research Assistant, Digital Humanities Center for Japanese Arts and
+                        Cultures <orgName>Ritsumeikan University</orgName>, Kyoto, <country>Japan</country></affiliation>
+                    <email>shinohno@gmail.com</email>
+                </author>
+                <author>
+                    <name>Inaba, Mitsuyuki</name>
+                    <affiliation>Digital Humanities Center for Japanese Arts and Cultures
+                        <orgName>Ritsumeikan University</orgName>, Kyoto, <country>Japan</country></affiliation>
+                    <email>inabam@sps.ritsumei.ac.jp</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-27</date>
+                <name>AC</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>In recent years, people have tended to be overwhelmed by a vast amount of information
+                in various contexts. Therefore, arguments about "Information Visualization" as a
+                method to make information easy to comprehend are more than understandable.</p>
+            <p>This paper will argue the method of visualization of vast amount of information using
+                3-D viewer, and we will introduce an environment called KACHINA CUBE (KC) that can
+                visualize various information using a “cube”. We have introduced KC in DH2009
+                (Saito, Inaba and Ohno, 2009). Then, we limited the use of KC to geographic
+                information. But now, KC can adopt not only geographic information but also various
+                events. In this paper, we introduce KC’s new design and function.</p>
+            <div>
+                <head>Design Concept of KC</head>
+                <div>
+                    <head>Visualization Design</head>
+                    <p>The most important thing in this research is to develop a Web system to
+                        integrate a large quantity of fragmentary information and to construct a
+                        method for visualizing a "scheme of things". For this purpose, we need to
+                        place all fragmentary information in the same context. Moreover, we have to
+                        come up with a way to put various information in a cube.</p>
+                    <p>We decided to design KC in three dimensions, two dimensions for geographical
+                        information and another one for temporal information (see Fig. 1). In this
+                        virtual 3D space (CUBE model), users can post formal and informal story
+                        fragments and can spin the cube (see Fig. 2). Among them, we call formal
+                        ones history fragments, and informal fragments story ones. KC also supports
+                        researchers to make linkages among fragments in periodical or logical order.
+                        We call a set of cultural fragments a storyline.</p>
+                    <p>We are developing KC’s search-engine for the most appropriate word. A
+                        fragment highlighted means that it includes the search term. Moreover, if
+                        there is more than one appropriate fragment, a line is drawn among those
+                        fragments. This function helps to find a hidden context or story among
+                        fragmented information. When words are searched and some words have a
+                        logical conjunction, multiple lines are drawn, as well as color-coded, based
+                        on the number of matched words. This search function thus makes visible the
+                        degree of connection among fragments.</p>
+                    <p>
+                        <figure>
+                            <head>Fig 1. Application of CUBE Model for geographic information</head>
+                            <graphic url="796_Fig1.jpg" xmt:type="full" rend="left-img"
+                                mimeType="image/jpeg"/>
+                        </figure>
+                    </p>
+                    <p>
+                        <figure>
+                            <head>Fig 2. Rotation of cube</head>
+                            <graphic url="796_Fig2" xmt:type="full" rend="left-img"
+                                mimeType="image/jpeg"/>
+                        </figure>
+                    </p>
+                </div>
+                <div>
+                    <head>Sharing Design</head>
+                    <p>W3C puts tremendous efforts to create standardized frameworks for Web, and
+                        researchers in digital humanities regard semantic web technology as one of
+                        the key research fields. This kind of technology gives us various chances to
+                        share data for other use. We believe archived cultural data should be
+                        standardized to fit in this framework, which allows users to access data and
+                        utilize them in various platforms.</p>
+                    <p>We apply RDF/OWL to define our data. Its extensive and flexible definition is
+                        suitable for our system and motivates other researchers to access our data
+                        (Bray, 2001).</p>
+                    <p>
+                        <xmt:oList rend="arabic">
+                            <item>History fragment class: Objective information in textbook or
+                                dictionary</item>
+                            <item>Story fragment class: Subjective information such as oral
+                                history</item>
+                            <item>Storyline class: Aggregate of historical and story fragments based
+                                on a specific context</item>
+                            <item>Geography class: Geographical information of the historical and
+                                story fragments</item>
+                            <item>Temporal class: Time when the incidents told in historical and
+                                story fragments occurred</item>
+                        </xmt:oList>
+                    </p>
+                </div>
+                <div>
+                    <head>Conceptual map Design</head>
+                    <p>KC can adopt not only geographic information but also various events. In
+                        order to handle non-geographical information, KC supports conceptual maps.
+                        Moreover, the way in which a conceptual map is made should be considered. A
+                        conceptual map is a figure which expresses a development of story or event.
+                        We decided to apply the Trajectory Equifinality Model (TEM) to the process
+                        of making conceptual map. TEM is a theory to capture a certain phenomenon
+                        from view point of “time” and “process” (Valsinar and Sato 2006).</p>
+                    <p>Moreover, KC is a web-based application that is built on the client-server
+                        architecture. In this system, client side application is implemented using
+                        ActionScript. On the other hand, server side application is developed by
+                        using PHP (PHP: Hypertext Preprocessor). KC adopts MySQL as a relational
+                        database management system.</p>
+                </div>
+                <div>
+                    <p>
+                        <figure>
+                            <head>Fig 3. Conceptual map of a muder case</head>
+                            <graphic url="796_Fig3.jpg" rend="left" mimeType="image/jpeg"/>
+                        </figure> Below is an example of making a conceptual map using TEM. Fig.3 is
+                        a conceptual map to visualize a process of investigation and trial of a
+                        certain actual murder case. This conceptual map expresses both the process
+                        of the murder case itself and its trial. The map’s 12 columns represent
+                        development of this murder case; and 3 rows, the statements in the court of
+                        the defendant and prosecution. The defendant's statements are set on the
+                        top, while that of prosecution on the bottom. Moreover, statements that are
+                        pertinent to neither the top nor the bottom are set in the middle. </p>
+                    <p>Fig.4 shows a result of this visualization with KC. This system is suitable
+                        to grasp the perspective on complicated cases which include multiple
+                        statements, stories, or contexts.</p>
+                    <p>
+                        <figure>
+                            <head>Fig 4. Visualization of the possess of trail</head>
+                            <graphic url="796_Fig4.jpg" xmt:type="full" rend="left-img"
+                                mimeType="image/jpeg"/>
+                        </figure>
+                    </p>
+                    <p>All that has to be done is to prepare conceptual maps, after which this
+                        method can be applicable to numerous cases in the humanities fields. For
+                        instance, by using this method, we are trying to visualize argumentation
+                        about certain literary efforts.</p>
+                    <p>Moreover, using visualization of search results function, we tried to find
+                        fragments which include "<foreign>拳銃</foreign> (gun)",
+                            "<foreign>お金</foreign> (money)", "<foreign>警察</foreign> (police)". As a
+                        result, three lines colored here in red, blue, and green appear (see
+                        Fig.5).</p>
+                    <p>The red line means fragments which include "gun"; the blue, fragments with
+                        both "gun" and "money"; and the green, fragments which include all of "gun",
+                        "money" and "police". That is, the green line which includes all of the
+                        three shows the strongest tie.</p>
+                    <p>Using this function allows not only us to extract fragments based on the
+                        given words, but also to detect some connections among information as well
+                        as their strength. Because of this function, it is possible to conduct
+                        text-mining through visual interface.</p>
+                </div>
+                <div>
+                    <head>Conclusions and prospects</head>
+                    <figure>
+                        <head>Fig 5. Visualization of search results</head>
+                        <graphic url="796_Fig5.jpg" rend="left" mimeType="image/jpeg"/>
+                    </figure>
+                    <p>As a result, our system demonstrates a lot of potential for research in
+                        various fields, which we have to prove by developing further this software
+                        with applications, as well as examining it in more humanities case studies.
+                        Our KC is significantly different from these previous Web systems in the
+                        following three points: <xmt:oList rend="arabic">
+                            <item>Adoption of CUBE model (a 3D-viewer that combines the map with the
+                                timeline);</item>
+                            <item>Implementation of a user interface suitable to contain a vast
+                                amount of information;</item>
+                            <item>Implementation of analysis components for narratives and oral
+                                histories</item>
+                        </xmt:oList>
+                    </p>
+                    <p>We are trying to implement some new functions now, among which the most
+                        drastic is the "nesting cube" structure. All fragments in the KACHINA CUBE
+                        are defined as independent cubes in this structure. Furthermore, we can make
+                        a recursively-defined cube severalfold by using this function. Because of
+                        this, a large amount of information can be organized hierarchically.</p>
+                    <p>For example, "England" could be set as a cube on the highest layer (root
+                        layer). Moreover, a cube of "Liverpool" can be set in "England". In
+                        "Liverpool", a cube of "The Beatles" might be attached. Therefore, it may
+                        include a cube of "John Lennon". Each cube can include any piece of
+                        information of the same level as a cube. This architectonics can change ways
+                        of organizing and browsing information fundamentally and support visualizing
+                        of a "scheme of things" very well. At the same time, we hope this
+                        architectonics will contribute greatly to Digital Humanities.</p>
+                    <figure>
+                        <head>Fig 6. Nesting cube structure</head>
+                        <graphic url="796_Fig6" rend="left" mimeType="image/jpeg"/>
+                    </figure>
+                </div>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Saito, S.</author>
+                        <author>Ohno, S.</author>
+                        <author>Inaba, M.</author>
+                        <date>2009</date>
+                        <title level="a">Collective Culture and Visualization of Spatiotemporal
+                            Information</title>
+                        <title level="m" type="proceedings">Proceedings of Digital Humanities
+                            2009</title>
+                        <name type="venue">University of Maryland, USA</name>
+                        <date type="conference">22-25 June 2009</date>
+                        <biblScope type="pp">248-250</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Bray, T.</author>
+                        <date>2001</date>
+                        <title level="m">What is RDF?</title>
+                        <date type="visited">14 November, 2008</date>
+                        <ptr target="http://www.xml.com/pub/a/2001/01/24/rdf.html"/>
+                    </bibl>
+                    <bibl>
+                        <author>Valsiner, J.</author>
+                        <author>Sato, T.</author>
+                        <date>2006</date>
+                        <title level="a">Historically Structured Sampling (HSS): How can
+                            psychology’s methodology become tuned in to the reality of the
+                            historical nature of cultural psychology?</title>
+                        <title level="m">Pursuit of meaning. Advances in cultural and cross-cultural
+                            psychology</title>
+                        <editor>Straub, J.</editor>
+                        <editor>et al.</editor>
+                        <publisher>Transcript Verlag</publisher>
+                        <pubPlace>Bielefeld</pubPlace>
+                        <biblScope type="pp">215-251</biblScope>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

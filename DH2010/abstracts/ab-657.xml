@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-657">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Visualization and Analysis of Visiting Styles in 3D Virtual Museums</title>
+                <author>
+                    <name>Sookhanaphibarn, Kingkarn</name>
+                    <affiliation>Intelligent Computer Entertainment Laboratory Global COE Program in
+                        Digital Humanities for Japanese Arts and Cultures <orgName>Ritsumeikan
+                        University</orgName> <reg><country>Japan</country></reg></affiliation>
+                    <email>kingkarn@ice.ci.ritsumei.ac.jp</email>
+                </author>
+                <author>
+                    <name>Thawonmas, Ruck</name>
+                    <affiliation>Intelligent Computer Entertainment Laboratory Global COE Program in
+                        Digital Humanities for Japanese Arts and Cultures <orgName>Ritsumeikan
+                        University</orgName> <reg><country>Japan</country></reg></affiliation>
+                    <email>ruck@ci.ritsumei.ac.jp</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-05-01</date>
+                <name>NG</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <p>A virtual museum is a cyberspace in persistent virtual worlds, such as Second Life,
+                for displaying digitalized heritage documents. Urban et. al. (2007) reported that
+                over 150 sites in Second Life (SL) were developed for education and museum
+                activities. Virtual museums in SL offer visitors opportunities to engage in opening
+                art exhibitions, discuss with specialists, and enjoy exploring collections of the
+                wide range of artifacts. Those artifacts displayed in the virtual museums vary from
+                3D documents of the world heritages to fictional creations (Rothfarb, R. and
+                Doherty, P., 2007). </p>
+            <p>This paper aims at visualization and analysis of visitor behaviors in 3D virtual
+                museums. Without loss of generality, we focused on a museum in Second Life, named
+                Ritsumeikan Digital Archive Pavilion (RDAP) as shown in Figures 1-2. The museum was
+                used in this paper for developing a prototype of our visualization and analysis
+                tool. Efficient visualization of the user movement is very useful for analyzing
+                his/her behaviors, in an implicit manner, in order to extract the disclosed
+                information of individuals in the cyberspace.</p>
+            <p>Applications of the proposed visualization method include the following: <xmt:oList
+                    rend="arabic">
+                    <item>The curators can design the exhibit space based on the majority of
+                        visitors as illustrated in Section 3. </item>
+                    <item>The storytelling of an individual visitor can be expressed as a sequence
+                        of screenshots capturing the most favored exhibits (as described in Fujita,
+                        H. et al., 2008). </item>
+                    <item>A guide system can be applied so as to achieve a satisfactory museum tour
+                        as introduced by Sookhanaphibarn and Thawonmas.</item>
+                </xmt:oList>
+            </p>
+            <p>
+                <figure xml:id="fig1">
+                    <graphic url="657_Fig1.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                    <head>Figure 1. Kimono exhibition in Ritsumeikan Digital Archive Pavilion
+                        (RDAP)</head>
+                </figure>
+            </p>
+            <p>
+                <figure xml:id="fig2">
+                    <graphic url="657_Fig2.jpg" xmt:type="full" rend="left-img"
+                        mimeType="image/jpeg"/>
+                    <head>Figure 2. Floor plan of RDAP with the locations of 19 Kimono objects
+                        denoted by a small solid square</head>
+                </figure>
+            </p>
+            <div>
+                <head>Visualization and analysis of visiting patterns</head>
+                <p>To validate our visualization approach, 36 avatars’ movements in RDAP were
+                    synthesized for obtaining four visiting styles. These styles, based on the
+                    metaphor of animal behavior, are ant, fish, grasshopper, and butterfly styles as
+                    follows (Veron, E. &amp; Levasseur, M., 1983; Chittaro, L., 2004): <xmt:oList
+                        rend="arabic">
+                        <item>The ant visitors spend quite a long time to observe all exhibits and
+                            walk close to exhibits, but avoid empty spaces. </item>
+                        <item>The fish visitors prefer to move to and stop over at empty spaces, but
+                            avoid areas near exhibits. </item>
+                        <item>The grasshopper visitors spend a long time to see selected exhibits,
+                            but ignore the rest of exhibits. </item>
+                        <item>The butterfly visitors observe almost exhibits, but spend varied times
+                            to observe each exhibit. </item>
+                    </xmt:oList>
+                </p>
+            </div>
+            <div>
+                <head>Local Visualization</head>
+                <p>Tracing the user movement in Second Life was achieved by using the provided
+                    Linden Second Life script, named sensor function. The sensor function detects
+                    and reports the user position (<hi rend="italic">x,y</hi>) within the particular
+                    range. It repeats every particular time interval. In this paper, the considered
+                    data consist of the three dimensional positions of an individual visitor and
+                    their corresponding time spent.</p>
+                <p>Figure 3 shows four visiting paths in RDAP. The visualization consists of line
+                    segments and white dots. A colored line segment is a part of the avatar
+                    movement. A white dot represents the location of a Kimono object.</p>
+                <p>The avatar’s path is displayed with the spectrum colors containing red, orange,
+                    yellow, green, cyan, blue, and violet. A path is in the form of connecting
+                    segments from red to violet. The session is equally divided in time into 7
+                    periods in the ascending order from red to violet. The color of a particular
+                    segment indicates the passage of time.</p>
+                <p>The length of a segment inversely represents the time spent. For example, the
+                    avatar as shown in Figure 3 (a) spent the longest time in the first period
+                    recognizable from the shortest red segment. The avatar started moving faster
+                    during the last two periods as denoted by longer blue and violet. In our
+                    visualization, the shorter a segment is, the longer an avatar spends time in
+                    that particular area. </p>
+                <p>Absent colors show that a longer time was spent than one period. For example, no
+                    red and orange segments are shown in Figure 3 (b) because the avatar spent time
+                    from the first period to the third near the entrance denoted by the yellow area.
+                    If an avatar spends too much time at a particular position exceeding the period
+                    length, then the color corresponding to that period will be skipped.</p>
+                <p>
+                    <figure xml:id="fig3-a">
+                        <graphic url="657_Fig3-a.jpg" xmt:type="full" rend="center" width="40mm"
+                            mimeType="image/jpeg"/>
+                        <head>(a) Ant visiting style</head>
+                    </figure>
+                    <figure xml:id="fig3-b">
+                        <graphic url="657_Fig3-b.jpg" xmt:type="full" rend="center"  width="40mm"
+                            mimeType="image/jpeg"/>
+                        <head>(b) Fish visiting style</head>
+                    </figure>
+                </p>
+                <p>
+                    <figure xml:id="fig3-c">
+                        <graphic url="657_Fig3-c.jpg" xmt:type="full" rend="center"  width="40mm"
+                            mimeType="image/jpeg"/>
+                        <head>(c) Grasshopper visiting style</head>
+                    </figure>
+                    <figure xml:id="fig3-d">
+                        <graphic url="657_Fig3-d.jpg" xmt:type="full" rend="center"  width="40mm"
+                            mimeType="image/jpeg"/>
+                        <head>(d) Butterfly visiting style</head>
+                        <head>Figure 3: Visualization of four visiting styles in RDAP. These color
+                            figures will be provided in URL below.
+                            http://www.ice.ci.ritsumei.ac.jp/~kingkarn/</head>
+                    </figure>
+                </p>
+            </div>
+            <div>
+                <head>Analysis</head>
+                <p>Our visualization approach can describe the aforementioned visiting styles. Ant,
+                    Fish, Grasshopper, and Butterfly visiting styles are displayed on totally
+                    different vivid graphic graphs. Hence, our tool is useful for distinguishing the
+                    visiting types. </p>
+                <p>The Ant visiting style is shown in Figure 3 (a). The avatar’s path was along the
+                    white dots. It means that the visitor walked close to Kimono objects in order to
+                    look at them in detail. The path contained its segments of nearly equal length,
+                    indicating that the visitor spent his/her time with the exhibits almost
+                    equally.</p>
+                <p>The Fish visiting style is shown in Figure 3 (b). The avatar’s path was limited
+                    to the empty space between two exhibit rows. It means that this visitor
+                    preferred to stroll to take the atmosphere of the gallery. Most segments far
+                    from the white dots depict that the avatar did not pay attention to the Japanese
+                    art imposed on Kimonos. The Grasshopper visiting style is shown in Figure 3 (c).
+                    The avatar’s path was drawn as a triangle polygon having the smaller area than
+                    that of the Ant style. Its segments represent a kind of diagonally walking
+                    across the gallery to the interesting exhibits.</p>
+                <p>The Butterfly visiting style is shown in Figure 3 (d). The avatar’s path was the
+                    longest path of the four styles. Its segments show plenty of diagonally walking
+                    across the gallery to most exhibits. The diagonal segment does not imply his/her
+                    preference, but this unorganized visit does not follow a well structured
+                    sequence like the Ant.</p>
+            </div>
+            <div>
+                <head>Global Visualization</head>
+                <p>The global visualization of all visitors in each category is displayed in Figure
+                    4. The methodology of this global visualization consists of <xmt:oList
+                        rend="arabic">
+                        <item>visiting style identification,</item>
+                        <item>trace accumulation of all users belonging to the same visiting style,
+                            and</item>
+                        <item>contrast enhancement in order to highlight the most popular
+                            route.</item>
+                    </xmt:oList>
+                </p>
+                <p>Using the synthesized data of 36 visitors, the global visualization of each
+                    visiting style can guide curators to rotate the museum items and arrange the
+                    sequence of items. Table 1 summarizes the interesting or skipped items
+                    associated with the visiting styles. An interesting item (I) can be determined
+                    if its observation area is darkened; otherwise, the item (S) is considerably
+                    ignored. The item numbers are those assigned in Figure 2.</p>
+                <p>Curators can design an efficient exhibition based on the majority of visitors. It
+                    is assumed that our museums consist of four rooms each of which the majority of
+                    visitors are ant, fish, grasshopper and butterfly, respectively. <xmt:oList
+                        rend="arabic">
+                        <item>The ant room: the 13th item is possibly not related to others;
+                            therefore, a new one should be substituted.</item>
+                        <item>The fish room: the visitors prefer to pass slowly through the room.
+                            Therefore, all exhibits should be placed along both sides of the main
+                            path. The exit should be on either side of the entrance to prevent
+                            congestion. </item>
+                        <item>The grasshopper room: half of the items are possibly not visitor
+                            attraction for busy people; on the other hand, they are perhaps varying
+                            and unrelated. Therefore, the curators should be re-design the
+                            exhibition room; in addition, the skipped items should be replaced with
+                            others more related to those visited.</item>
+                        <item>The butterfly room: the visit routes should be unorganized; therefore,
+                            the sequence of exhibits should be rearranged and some skipped items
+                            should be replaced/removed, accordingly.</item>
+                    </xmt:oList>
+                </p>
+                <p>
+                    <figure xml:id="fig4-a">
+                        <graphic url="657_Fig4-a.jpg" xmt:type="full" rend="center"  width="40mm"
+                            mimeType="image/jpeg"/>
+                        <head>(a) Common paths of ant visitors</head>
+                    </figure>
+                    <figure xml:id="fig4-b">
+                        <graphic url="657_Fig4-b.jpg" xmt:type="full" rend="center"  width="40mm"
+                            mimeType="image/jpeg"/>
+                        <head>(b) Common paths of fish visitors</head>
+                    </figure>
+                </p>
+                <p>
+                    <figure xml:id="fig4-c">
+                        <graphic url="657_Fig4-c.jpg" xmt:type="full" rend="center"  width="40mm"
+                            mimeType="image/jpeg"/>
+                        <head>(c) Common paths of grasshopper visitors</head>
+                    </figure>
+                    <figure xml:id="fig4-d">
+                        <graphic url="657_Fig4-d.jpg" xmt:type="full" rend="center"  width="40mm"
+                            mimeType="image/jpeg"/>
+                        <head>(d) Common paths of butterfly visitors</head>
+                        <head>Figure 4. Visualization of common paths based on four visiting styles,
+                            each of a group of seven visitors. Kimono exhibits and the user’s paths
+                            are denoted by red dots and blue lines. The color intensity indicates
+                            the frequency of visits. The darker blue the visualization shows, the
+                            more visitors spend time at that particular area.</head>
+                    </figure>
+                </p>
+                <p>
+                    <table>
+                        <head>Table 1. Example of visual analytics from Figure 4 showing the
+                            interesting and skipped items in RDAP are as denoted by “I” and “S”,
+                            respectively</head>
+                        <row>
+                            <cell role="label">Items</cell>
+                            <cell role="label">Ant</cell>
+                            <cell role="label">Grasshopper</cell>
+                            <cell role="label">Butterfly</cell>
+                        </row>
+                        <row>
+                            <cell>1</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>2</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>3</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>4</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>5</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>6</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>7</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>8</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>9</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>10</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                        </row>
+                        <row>
+                            <cell>11</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>12</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>13</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                        </row>
+                        <row>
+                            <cell>14</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>15</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>16</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>17</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                        </row>
+                        <row>
+                            <cell>18</cell>
+                            <cell>I</cell>
+                            <cell>S</cell>
+                            <cell>S</cell>
+                        </row>
+                        <row>
+                            <cell>19</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                            <cell>I</cell>
+                        </row>
+                    </table>
+                </p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Urban, R., Twidale, M.B. and Marty, P.F. </author>
+                        <date>2007</date>
+                        <title level="a">Second Life for Museums and Archeological Modeling</title>
+                        <title level="m"> Digital Humanities 2007, Conference Abstracts Book</title>
+                        <date type="visited">15 Nov 2009</date>
+                        <ptr
+                            target="http://www.digitalhumanities.org/dh2007/abstracts/xhtml.xq?id=254"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Rothfarb, R. and Doherty, P. </author>
+                        <date>2007</date>
+                        <title level="a">Creating Museum Content and Community in Second
+                            Life</title>
+                        <title level="m">Museums and the Web 2007: Proceedings</title>
+                        <editor>J. Trant and D. Bearman</editor>
+                        <publisher>Archives &amp; Museum Informatics</publisher>
+                        <pubPlace>Toronto</pubPlace>
+                        <date type="visited">3 August 2009</date>
+                        <ptr target="http://www.archimuse.com/mw2007/papers/rothfarb/rothfarb.html"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Fujita, H. and Arikawa, M. </author>
+                        <date>2008</date>
+                        <title level="a">Animation of Mapped Photo Collections for
+                            Storytelling</title>
+                        <title level="j">IEICE Trans. INF &amp; SYST</title>
+                        <biblScope type="issue">Vol. E91-D, No. 6</biblScope>
+                        <biblScope type="pp">1681-1692</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Sookhanaphibarn, K. and Thawonmas, R. </author>
+                        <date>2009</date>
+                        <title level="a">A Movement Data Analysis and Synthesis Tool for Museum
+                            Visitors’ Behaviors</title>
+                        <title level="j">Lecture Notes in Computer Science. Subseries of Information
+                            Systems and Applications, incl. Internet/Web, and HCI</title>
+                        <biblScope type="issue">Vol. 5879</biblScope>
+                        <biblScope type="pp">144-154</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Veron, E. &amp; Levasseur, M</author>
+                        <date>1983</date>
+                        <title level="m">Ethnographie de l'exposition. L'espace, le corps et le
+                            sens</title>
+                        <publisher>Bibliothque publique d'Information. Centre Georges
+                            Pompidou</publisher>
+                        <pubPlace>Paris</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Chittaro, L. and Leronutti, L.</author>
+                        <date>2004</date>
+                        <title level="a">A Visual Tool for Tracing Users’ Behavior in Virtual
+                            Environments</title>
+                        <title level="m" type="proceedings">Proceedings of the Working Conference on
+                            Advanced Visual Interfaces, AVI’04 ACM</title>
+                        <biblScope type="pp">40-47</biblScope>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

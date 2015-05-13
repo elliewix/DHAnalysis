@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0" xml:id="ab-748">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Non-traditional Prosodic Features for Automated Phrase-Break Prediction</title>
+                <author>
+                    <name>Brierley, Claire</name>
+                    <affiliation><orgName>University of Bolton</orgName>, <country>UK</country></affiliation>
+                    <email>cb5@bolton.ac.uk</email>
+                </author>
+                <author>
+                    <name>Atwell, Eric</name>
+                    <affiliation><orgName>University of Leeds</orgName>, <country>UK</country></affiliation>
+                    <email>eric@comp.leeds.ac.uk</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-18</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                <p>The goal of automatic phrase break prediction is to emulate human performance in terms of naturalness and intelligibility when assigning prosodic-syntactic boundaries to input text. Techniques can be deterministic or probabilistic; in either case, the problem is treated as a classification task and outputs from the model are evaluated against &apos;gold standard&apos; phrase break annotations in the reference dataset or corpus. These annotations may represent intentions (of the speaker or writer) or perceptions (of the listener or reader) about alternating chunks and boundaries in the speech stream or in text, where the chunking bears some relationship to syntactic phrase structure but is thought to be simpler, shallower and flatter.
+                </p>
+                <p>In this paper, we begin by reviewing methodologies and feature sets used in phrase break prediction. For example, a tried and tested <hi rend="italic">rule-based</hi> method is to employ some form of &apos;chink-chunk&apos; algorithm (Liberman and Church, 1992) which inserts a boundary after punctuation and whenever the input string matches the sequence: open-class or content word (chunk) immediately followed by closed-class or function word (chink), based on the principle that chinks initiate new prosodic phrases.
+                </p>
+                <p>We discuss the limitations of using traditional features in the form of syntactic and text-based cues as boundary correlates, with illustrative experimental predictions from a shallow parser and evidence from the corpus. We then discuss the limitations of evaluating any phrase break model against a &quot;gold standard&quot; which itself only represents one phrasing variant for an utterance or text.
+                </p>
+                <p>There is an emerging trend of leveraging real-world knowledge to improve performance in machine learning, including speech and language applications. Nevertheless, we have diagnosed a deficiency of <hi rend="italic">a priori</hi> knowledge of <hi rend="italic">prosody</hi> in the feature sets used for the phrase break prediction task. In contrast, a competent human reader is able to project holistic linguistic insights, including projected prosody, onto text and to treat them as part of the input (Fodor, 2002). In this respect, multiple prosodic annotation tiers in the Aix-MARSEC corpus (Auran <hi rend="italic">et al.</hi>, 2004) have been revelatory, since they capture the prosody implicit in text and currently absent in learning paradigms for phrase break models.
+                </p>
+                <p>Insights such as: (i) the <hi rend="italic">transferability</hi> of the chinks and chunks rule; plus (ii) the possibility of encoding a variety of prosodic phenomena (including rhythm and beats) in categorical labels (<hi rend="italic">cf.</hi> the Aix-MARSEC corpus); plus (iii) an appreciation of prosodic variance gleaned from corpus evidence of alternative parsing and phrasing strategies, have informed the creation of ProPOSEL (Brierley and Atwell, 2008a; 2008b), a domain-independent prosodic annotation tool.
+                </p>
+                <p>ProPOSEL is a <hi rend="bold">pro</hi>sody and <hi rend="bold">p</hi>art-<hi rend="bold">o</hi>f-<hi rend="bold">s</hi>peech <hi rend="bold">E</hi>nglish <hi rend="bold">l</hi>exicon of 104,049 entry groups, which merges information from several widely-used lexical resources for corpus-based research in speech synthesis and speech recognition. Its record structure supplements word-form entries with syntactic annotations from four rival POS-tagging schemes, mapped to fields for: default open and closed-class word categories; syllable counts; two different phonetic transcription schemes; and lexical stress patterns, namely abstract representations of rhythmic structure (as in <hi rend="italic">201</hi> for <hi rend="italic">disappear</hi>, with secondary stress on the first syllable and primary stress on the final syllable).
+                </p>
+                <p>We then contend that native English speakers may use certain sound patterns as <hi rend="italic">linguistic signs</hi> for phrase breaks, having observed these same patterns at rhythmic junctures in poetry. We also contend that such signs can be extracted from canonical forms in the lexicon and presented as input features for the phrase break classifier in the same way that real-world knowledge of syntax is represented in POS tags; and that like content-function word status or punctuation, such features are domain-independent and can be projected onto <hi rend="italic">any</hi> corpus. One such sound pattern is the subset of complex vowels, which we define as the eight diphthongs, plus the triphthongs, of Received Pronunciation (Roach, 2000: 21-24).
+                </p>
+                <p>Finally, we test the correlation between pre-boundary lexical items bearing complex vowels and gold-standard phrase break annotations on different kinds of speech via the chi-squared statistic, to determine whether the perceived association is statistically significant or not. Our findings indicate that this correlation is extremely statistically significant: it is present in contemporary, formal, British English speech (Brierley and Atwell, 2009) and seventeenth century English verse (Brierley and Atwell, 2010a); and it holds for spontaneous as well as read speech, and for multiple speakers (Brierley and Atwell, 2010b). We hypothesise that while complex vowels seem to constitute phrase break <hi rend="italic">signifiers</hi> in English, this may translate to a subset of the vowel system in other languages.
+                </p>
+            </div>
+          </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Auran, C., Bouzon, C. and Hirst, D.</author>
+                        <date>2004</date>
+                        <title level="a">The Aix-MARSEC Project: an Evolutive Database of Spoken British English</title>
+                        <title level="m" type="proceedings">Proc. Speech Prosody</title>
+                        <date type="conference">2004</date>
+                        <biblScope type="pp">561-564</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Brierley, C. and Atwell, E.</author>
+                        <date>2008a</date>
+                        <title level="a">ProPOSEL: A Prosody and POS English Lexicon for Language Engineering</title>
+                        <title level="m" type="proceedings">Proc. 6th Language Resources and Evaluation Conference</title>
+                        <name type="venue">LREC</name>
+                        <date type="conference">2008</date>
+                    </bibl>
+                    <bibl>
+                        <author>Brierley, C. and Atwell, E.</author>
+                        <date>2008b</date>
+                        <title level="a">A Human-oriented Prosody and PoS English Lexicon for Machine Learning and NLP</title>
+                        <title level="m" type="proceedings">In Proc. 22nd International Conference on Computational Linguistics</title>
+                        <name type="venue">Coling</name>
+                        <date type="conference">2008</date>
+                    </bibl>
+                    <bibl>
+                        <author>Brierley, C. and Atwell, E.</author>
+                        <date>2009</date>
+                        <title level="a">Exploring Complex Vowels as Phrase Break Correlates in a Corpus of English Speech with ProPOSEL, a Prosody and PoS English Lexicon</title>
+                        <title level="m" type="proceedings">Proc. INTERSPEECH&apos;09</title>
+                    </bibl>
+                    <bibl>
+                        <author>Brierley, C. and Atwell, E.</author>
+                        <date>2010a</date>
+                        <title level="a">Holy Smoke: Vocalic Precursors of Phrase Breaks in Milton’s Paradise Lost</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">25(2)</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Brierley, C. and Atwell, E.</author>
+                        <date>2010b</date>
+                        <title level="a">Complex Vowels as Phrase Break Correlates in a Multi-Speaker Corpus of Spontaneous English Speech</title>
+                        <title level="m" type="proceedings">Proc. Speech Prosody, 2010</title> (Forthcoming)</bibl>
+                    <bibl>
+                        <author>Fodor, J. D.</author>
+                        <date>2002</date>
+                        <title level="a">Psycholinguistics Cannot Escape Prosody</title>
+                        <title level="m" type="proceedings">Proc. Speech Prosody</title>
+                        <date type="conference">2002</date>
+                        <biblScope type="pp">83-90</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Liberman, M. Y. and Church, K. W.</author>
+                        <date>1992</date>
+                        <title level="a">Text Analysis and Word Pronunciation in Text-to-Speech Synthesis</title>
+                        <title level="m">Advances in Speech Signal Processing</title>
+                        <editor>Furui, S. and Sondhi, M. M.</editor>
+                        <publisher>Marcel Dekker, Inc.</publisher>
+                        <pubPlace>New York</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Roach, P.</author>
+                        <date>2000</date>
+                        <title level="m">Phonetics and Phonology: A Practical Course</title> 
+                        <publisher>Cambridge University Press</publisher>
+                        <pubPlace>Cambridge</pubPlace><edition>3rd Edition</edition>
+                    </bibl>
+                 </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

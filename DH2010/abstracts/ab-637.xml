@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-637">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Detection of Citations and Textual Reuse on Ancient Greek Texts and its
+                    Applications in the Classical Studies: eAQUA Project</title>
+                <author>
+                    <name>Büchler, Marco</name>
+                    <affiliation>Natural Language Processing Group, Institute of Mathematics and
+                        Computer Science, <orgName>University of Leipzig</orgName>, <country>Germany</country></affiliation>
+                    <email>mbuechler@eaqua.net</email>
+                </author>
+                <author>
+                    <name>Geßner, Annette</name>
+                    <affiliation>Ancient Greek Philology Group, Institute of Classical Philology and
+                        Comparative Studies, <orgName>University of Leipzig</orgName>, <country>Germany</country></affiliation>
+                    <email>agessner@eaqua.net</email>
+                </author>
+                <author>
+                    <name>Heyer, Gerhard</name>
+                    <affiliation>Natural Language Processing Group, Institute of Mathematics and
+                        Computer Science, <orgName>University of Leipzig</orgName>, <country>Germany</country></affiliation>
+                    <email>gheyer@eaqua.net</email>
+                </author>
+                <author>
+                    <name>Eckart, Thomas</name>
+                    <affiliation>Natural Language Processing Group, Institute of Mathematics and
+                        Computer Science, <orgName>University of Leipzig</orgName>, <country>Germany</country></affiliation>
+                    <email>teckart@eaqua.net</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-03</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+           </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <div>
+                
+                <p>&quot;Users of this or any edition are warned that the textual variants presented
+                    by citations from Plato in later literature have not yet been as fully
+                    investigated as is desirable&quot;. This shortcoming, characterized by Kenneth
+                    Dover (Dover, 1980) is still existent and is unlikely to be corrected quickly by
+                    traditional research techniques. Textual reuse plays an important role in
+                    Classical Studies research. Similar to modern publications, classical authors
+                    used the texts of others as sources for their own work. In ancient texts,
+                    however, a less stronger form of word by word citation can be observed.
+                    Additionally, the complexity of ancient resources disallows fully manual
+                    research.</p>
+                <p>From a bird&apos;s eye view there are different points of view to the problem of
+                    textual reuse implying different research interests (Büchler and Geßner, 2009): <xmt:uList>
+                        <item>A <hi rend="bold">Computer Science</hi> perspective focuses on
+                            algorithms (<hi rend="italic">technical view</hi>): Which algorithm is
+                            better than others? The scope of this research is wide ranging and also
+                            relates to plagiarism detection in modern texts like theses at
+                            universities (Potthast et al., 2009).</item>
+                        <item>A <hi rend="bold">Historian</hi> is interested in more complex
+                            correlations (<hi rend="italic">macro view</hi>). For this kind of work
+                            a dedicated user interface is necessary to figure out relations between
+                            e.g. chapters of a book and their citation usage on a timeline.</item>
+                        <item>The research interests of a <hi rend="bold">Classical Philologist</hi>
+                            focus on the textual differences between the original text and its
+                            variants in citations (<hi rend="italic">micro view</hi>). These varying
+                            requirements necessitate designing different user interfaces for these
+                            three kinds of researchers.</item>
+                    </xmt:uList>
+                </p>
+                <p>Within the eAQUA project we are investigating the reception of Plato as a case
+                    study of textual reuse in ancient Greek texts. Our research is carried out in
+                    two steps. On the <hi rend="italic">technical level</hi>, we firstly extract
+                    word by word citations. This is achieved by combining syntactical ngram
+                    overlappings (Hose, 2009 and Büchler, 2008) and significant terms for several of
+                    Plato&apos;s works. In the second step the constraints on syntactic word order
+                    are relaxed. This is done by combining text mining and information retrieval
+                    techniques. A graph based approach is then introduced that can deal with free
+                    word order citations. The key concept is not syntactically based, but focuses on
+                    the semantic level to extract the relevant <hi rend="italic">core
+                        information</hi> of a used citation. Then the information is represented as
+                    a formal graph that is similar to the <hi rend="italic">Lexical Chaining</hi>
+                    approach (Waltinger et al. 2008) that is often used for text summarisation (Yu
+                    et al. 2007). On the one hand syntactical and semantic approaches are only used
+                    to select reuse candidates with a small set of uncommon matching words within a
+                    citation. On the other hand, a complete pairwise comparison of all of the nearly
+                    5.5 million sentences in the TLG corpus would require approximately 1000 years
+                    due to the squared complexity of O(n<hi rend="sup">2</hi>) that was used for
+                    example to compare the Dead Sea Scrolls with the Hebrew Bible (Hose, 2009). For
+                    this reason, an intelligent pre-clustering of relevant reuse candidates is
+                    needed. Such a divide and conquer strategy reduces the complexity dramatically.
+                    Whilst the second step only increases the degree of free word order, in the
+                    third step the algorithm is expanded by similarly used words like <hi
+                        rend="italic">go</hi> and <hi rend="italic">walk</hi>. Those candidates are
+                    computed by similar cooccurrence profiles. The three levels briefly described
+                    above are only one dimension of reuse exploration. Other relevant dimensions
+                    that will be discussed are the <hi rend="italic">degree of preprocessing</hi> as
+                    well as the <hi rend="italic">visualisation</hi> of textual reuse in terms of
+                    citations. </p>
+                <p>In the field of preprocessing the main focus lies on <hi rend="italic"
+                        >tokenisation</hi> (more active tokenisation is needed with ancient texts
+                    than on modern languages), <hi rend="italic">normalisation</hi> (reducing all
+                    words internally to a lower-case representation without diacritics) and <hi
+                        rend="italic">lemmatisation</hi> (reducing all words internally to a
+                    word&apos;s base form). This dimension can speed up the algorithm and also
+                    improves the results for strongly inflected languages like Ancient Greek. </p>
+                <p>Leaving the technical point of view of computer scientists, the research of
+                    Classicists includes both an application of a <hi rend="italic">macro view</hi>
+                    for Historians as well as one for the <hi rend="italic">micro view</hi> of
+                    Classical Philologists. The visualisation dimension of textual reuse is
+                    important since text mining approaches typically generate a huge amount of data
+                    that can&apos;t be explored manually. This is shown in Fig. 1. Whilst the light grey
+                    area marks Neoplatonism (about 5. AC) the grey ranges highlight Middle
+                    Platonism (about 2. AC). Taking Plato&apos;s <hi rend="italic">Timaeus</hi>, one
+                    can clearly identify that both phases of Plato&apos;s reception (see Fig. 1 –
+                    top) are based on different &quot;chapters&quot; of <hi rend="italic">Timaeus</hi> (bottom).</p>
+                <p>
+                    <figure>
+                       <graphic url="637_Fig1a.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/></figure>
+                    <figure>
+                        <head>Fig. 1. Macro view: Screen of an interactive visualisation for citation
+                            usage. Citation distribution by Stephanus pages of Plato&apos;s Timaeus.
+                            The highest peak of the first picture is strongly correlated with the
+                            citation usage of the pages 27 to 42 of the second picture: Neo
+                            Platonism.</head>
+                        <graphic url="637_Fig1b" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>As Fig. 1 is of stronger interest for Historians, there is also a requirement for
+                    a visualisation for researchers from the field of Classical Greek Philology. As
+                    shown in Fig. 2, a visualisation highlighting the differences in citation usage
+                    is necessary. This is especially important if longer citations are investigated. </p>
+                <p>
+                    <figure>
+                        <graphic url="637_Fig2a" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/></figure>
+                    <figure>
+                        <head>Fig. 2. Micro view: Highlighted differences of citations (green, orange) in
+                            relation to original text of Plato (blue). Top: The orange word highlights
+                            the same word but including a language evolution of about 10
+                            centuries. Bottom: An included word (orange) in
+                            the citation is shown.</head>
+                        <graphic url="637_Fig2b" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                    </figure>
+                </p>
+                <p>Additionally, it will be demonstrated how to detect different editions of the
+                    same original text. Such completely unsupervised approaches are important to
+                    investigate the scientific landscape of text digitisation. Furthermore, the
+                    relation to modern plagiarism detection will be given as well as the importance
+                    of building modern representative corpora since especially web corpora typically
+                    contain several duplicates of the same text. </p>
+                <p>In the evaluation section different results related to the comparison of various
+                    approaches on several text genres will be shown. An example of those results is
+                    given by contrasting citations of Plato&apos;s work with the textual reuse of
+                    the Atthidographers. Whilst citations of Plato can be extracted quite well by
+                    the syntactical approach even with very low similarity thresholds, the same
+                    approach works with an accuracy smaller than 20% for textual reuse of the
+                    Atthidographers. </p>
+                <p>Finally, results of a still in progress manual evaluation will be presented
+                    relating to the question of how and why a passage was cited.</p>
+            </div>
+
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Büchler, M.</author>
+                        <date>2008</date>
+                        <title level="m">Medusa: Performante Textstatistiken auf großen Textmengen:
+                            Kookkurrenzanalyse in Theorie und Anwendung</title>
+                        <publisher>VDM Verlag Dr. Müller</publisher>
+                        <pubPlace>Saarbrücken</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Büchler, M. and Geßner, A.</author>
+                        <date>2009</date>
+                        <title level="a">Citation Detection and Textual Reuse on Ancient Greek
+                            texts</title>
+                        <title level="m">2009 Chicago Colloquium on Digital Humanities and Computer
+                            Science</title>
+                        <editor>Argamon, S.</editor>
+                        <pubPlace>Chicago</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Dover, K.</author>
+                        <date>1980</date>
+                        <title level="m">Plato: Symposium</title>
+                        <publisher>Cambridge University Press</publisher>
+                        <pubPlace>Cambridge</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Hose, R.</author>
+                        <date>2009</date>
+                        <title level="m">CS490 Final Report: Investigation of Sentence Level Text Reuse
+                            Algorithms</title>
+                        <date type="visited">29 October 2009</date>
+                        <ptr
+                            target="http://www.cs.cornell.edu/BOOM/2004sp/ProjectArch/DeadSea/index.html"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Potthast, M., Stein, B., Eiselt, A., Barrón-Cedeño, A. and Rosso,
+                            P.</author>
+                        <date>2009</date>
+                        <title level="a">Overview of the 1st International Competition on Plagiarism
+                            Detection</title>
+                        <title level="m">SEPLN 2009 Workshop on Uncovering Plagiarism, Authorship,
+                            and Social Software Misuse (PAN 09)</title>
+                        <editor>Stein, B., Rosso, P., Stamatatos, E. Koppel, M. and Agirre,
+                            E.</editor>
+                        <publisher>CEUR-WS.org</publisher>
+                        <biblScope type="pp">1-9</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Waltinger, U., Mehler, A. und Heyer, G.</author>
+                        <date>2008</date>
+                        <title level="a">Towards Automatic Content Tagging: Enhanced Web Services in
+                            Digital Libraries Using Lexical Chaining</title>
+                        <title level="m">4th Int. Conf. on Web Information Systems and Technologies
+                            (WEBIST '08), 4-7 May, Funchal, Portugal</title>
+                        <editor>Cordeiro, J. and Filipe, J. and Hammoudi, S.</editor>
+                        <publisher>INSTICC Press</publisher>
+                        <pubPlace>Barcelona</pubPlace>
+                        <biblScope type="pp">231-236</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Yu L., Ma, J., Ren, F. and Kuroiwa, S.</author>
+                        <date>2007</date>
+                        <title level="a">Automatic Text Summarization Based on Lexical Chains and
+                            Structural Features</title>
+                        <title level="m" type="proceedings">Eighth ACIS International Conference on
+                            Software Engineering, Artificial Intelligence, Networking, and
+                            Parallel/Distributed Computing (SNPD 2007)</title>
+                       
+                        <biblScope type="vol">2</biblScope> <biblScope type="pp">574-578</biblScope>
+                        
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-627">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Finding Stories in the Archive through Paragraph Alignment</title>
+                <author>
+                    <name>Esteva, Maria</name>
+                    <affiliation>Texas Advanced Computing Center (TACC), <orgName>University of Texas at
+                        Austin</orgName>, <country>USA</country></affiliation>
+                    <email>maria@tacc.utexas.edu</email>
+                </author>
+                <author>
+                    <name>Xu, Weijia</name>
+                    <affiliation>Texas Advanced Computing Center (TACC), <orgName>University of Texas at
+                        Austin</orgName>, <country>USA</country></affiliation>
+                    <email>xwj@tacc.utexas.edu</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-02</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <p>We present research showing the possibility of finding stories in a digital text
+                archive through computational methods. Referring to the concept of &quot;archival
+                bond&quot;, we define stories as formed by documents that relate to a target
+                activity. We developed a method called <hi rend="italic">paragraph alignment</hi> to
+                find such documents and an interactive visualization to discover connected stories
+                in context with provenance. </p>
+            <p>Our method was applied to the challenges presented by the digital archive of a
+                multinational philanthropic organization who awarded grants to cultural, scientific,
+                and social welfare activities (1985-2005). Over fifteen years, the staff members
+                deposited their work documents in individual directories on a shared server without
+                following any record-keeping rule. These documents reflect the organization&apos;s
+                activities in the areas of Science and Education, Art and Humanities, and Social
+                Welfare. They also reflect the staff members' records creation practices, afforded
+                by the cut and paste function of the word processor and the possibility to
+                collaborate through the network. These digital aggregations are sometimes perceived
+                as chaotic, defined as ROT (redundant, outdated and trivial,) and deemed disposable
+                (Henry, 2003; AIIM, 2009; Public Records Office, 2000). Yet they are ubiquitous in
+                the networked servers of many organizations, so our goal was to find a method to
+                make sense of the text records within.</p>
+            <div>
+                <head>Archival Bond</head>
+                <p>A fundamental concept in archival theory, known as archival bond, describes the
+                    relationships between documents in an archive as essential properties of the
+                    documents (Duranti, 1997). While all the documents in a collection are bonded
+                    through the collection&apos;s structure (McNeil, 2000), there are stronger
+                    relationships between sub-groups of documents that belong to the same function
+                    and/or activity. In the case of disorganized electronic text archives in which
+                    the structure is nonexistent or loose, we suggest that the relationships among
+                    documents be defined based on their content referring to a target activity. By
+                    finding trails of documents that narrate stories about activities in context
+                    with provenance, we aim to establish order, identify structure, and learn about
+                    the archive&apos;s creators.</p>
+            </div>
+            <div>
+                <head>Paragraph Alignment (PA)</head>
+                <p>We observed that in our archive, similar paragraphs about an activity are
+                    repeated across short - memos and press releases - and long documents - annual
+                    reports and board meeting minutes. As a group, these documents tell the story of
+                    an activity. We also observed that in many documents the same personal names,
+                    places, and institutions are mentioned in relation to different activities, and
+                    that documents that use similar terms may not be associated with the same
+                    activity. The traditional cosine similarity method measures global similarity
+                    between documents. Given the characteristics noted in this archive, we
+                    considered that calculating global similarity was not efficient to identify all
+                    the documents about a target activity. Instead, we draw from local alignment, a
+                    method used in bioinformatics to evaluate local similarity between sequences
+                    (Gusfield, 1997).</p>
+                <p>While biological sequences evolve throughout time owing to constant mutation
+                    events, the parts of the sequences that directly participate in cellular
+                    activities remain relatively stable. Therefore, global similarity between two
+                    sequences is often less important than the local similarity, which is defined by
+                    the highest similarity between any two substrings from two sequences. Efficient
+                    methods for computing sequence similarities often follow a framework in which
+                    sequences are broken into n-gram for similarity computations and then assembled
+                    to derive an overall similarity (Wu et al., 1990). Here we adapt a similar
+                    approach that we call paragraph alignment to determine archival bond between
+                    documents. </p>
+                <p>Our method contrasts with previous work on document segmentation (Hearst, 1994).
+                    Rather than measuring inter-paragraph similarity within one document to identify
+                    subtopic structure, our approach focuses on comparing the similarity between
+                    document segments to identify topics across a collection. Hence the primary goal
+                    of document segmentation is to minimize the variation of length between
+                    documents for subsequent similarity comparison.</p>
+            </div>
+            <div>
+                <head>Methodology</head>
+                <p>Figure 1 shows the workflow of our approach.</p>
+                <p>
+                    <figure>
+                        <head>Figure 1</head>
+                        <graphic url="627_Fig1" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Workflow to compute document similarity using paragraph
+                            alignment.</figDesc>
+                    </figure>
+                </p>
+                <p>Each document in a set is broken into one or more ordered segments based on the
+                    paragraphs in the document. If the length of a segment (including spaces) is
+                    less than a pre-defined minimum number of characters threshold (MNCT), the
+                    segment is merged with the following segment. We used MNCT of 1000, 750, and 500
+                    characters. For each set of document segments we create a matrix of TFIDF
+                    weighted term frequencies after stop-words removal (McCallum, 1996), and then
+                    calculate the cosine similarity between every other segment (Salton, 1988). We
+                    then process the resultant matrix to derive similarity scores between document
+                    pairs, which are defined as the maximum similarity score between their segments.
+                    For evaluation, we compare the results of the different MNCT with those obtained
+                    by calculating cosine similarity as a measure of global similarity between the
+                    documents. </p>
+                <p>We tested the method in a set of 714 documents from the year 1997 with eight
+                    authors. Date and authorship were preserved in the documents&apos; file name.
+                    The evaluation was based on assessing seven document test-groups. A team member
+                    familiar with the archive selected five query documents, each corresponding to a
+                    different activity (test-groups 1, 2, 4, 5, 6) and two containing summaries of
+                    various activities (test-groups 3 and 7). For each query document, the team
+                    member also identified a set of related documents. For each test-group, both the
+                    cosine similarity and the paragraph alignment methods returned a list of
+                    documents ranked from more similar to less similar. The team member checked the
+                    results against the content of the corresponding document labeling the ranked
+                    document as a &quot;true positive&quot; if it was related to the query document;
+                    otherwise the document was labeled as &quot;false positive&quot;. Results were
+                    checked until the last true positive was found.</p>
+            </div>
+            <div>
+                <head>Results</head>
+                <p>
+                    <figure>
+                        <head>Table1</head>
+                        <graphic url="627_Table1" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Results of test-group one</figDesc>
+                    </figure>
+                </p>
+                <p>The results show that the PA method with a MNCT of 750 characters returned better
+                    results five out of seven times (test-groups 1, 2, 4, 5, 6 and 7). For
+                    test-group 7, the best results were obtained with a MNCT of 500 characters. In
+                    this case the query document contained summaries of five different projects
+                    accomplished during 1997, each mentioned in other documents in the set. This
+                    suggests that although related documents in the set may not share similar global
+                    word distributions, they share similar word distributions in some of their
+                    segments. While the efficiency of the different MNCT depends on the particular
+                    word distribution of the documents that are being compared, in general, the
+                    smaller the MNCT used the higher the documents with less global similarity are
+                    ranked by the PA method. The PA method did not work for test-group 3 which
+                    contains sentences about activities most of which are not mentioned in other
+                    documents in the set. Figure 2 shows a plot of the results of test-group 1 in
+                    which the PA method with a MNCT of 750 characters performed the best. </p>
+                <p>
+                    <figure>
+                        <head>Figure 2</head>
+                        <graphic url="627_Fig2" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Results of test-group one</figDesc>
+                    </figure>
+                </p>
+                <p>The test-group one (Figure 2) contains documents about a program to train young
+                    orchestra directors. The query document is a memo including a brief description
+                    of the project and estimated costs for lodging and travel. Returned true
+                    positive documents of five authors include: other planning documentation,
+                    correspondence with potential contributors, the call for applications, a press
+                    release, a list of participants, the musical program, and various reports. </p>
+            </div>
+            <div>
+                <head>Visualization</head>
+                <p>Through an interactive visualization (Figure 3) users can follow the connections
+                    between documents to identify stories (PREFUSE). Each document is labeled with a
+                    color corresponding to its author. The connectivity between the documents allows
+                    the identification of a) stories, b) the authors involved in a given activity,
+                    and c) connected stories. As the user interacts with the visualization, the
+                    structure of the archive takes shape. Below is a snapshot of the visualization
+                    interface showing stronger connections between a group of documents.</p>
+                <p>
+                    <figure>
+                        <head>Figure 3</head>
+                        <graphic url="627_Fig3" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Network visualization of documents similarity and
+                            authorship.</figDesc>
+                    </figure>
+                </p>
+            </div>
+            <div>
+                <head>Conclusions</head>
+                <p>This research has implications for the retention of digital archives. Using the
+                    concept of archival bond as a framework we aim to make sense of ROT archives and
+                    to unveil their stories. The results show that for documents that share similar
+                    paragraphs, local similarity matters to identify an archival bond. The same
+                    characteristic is observed in the biological sequence analysis that inspired our
+                    method. </p>
+            </div>
+            <div>
+                <head>Acknowledgments</head>
+                <p>This work was supported through a National Archives and Records Administration
+                    (NARA) supplement to the National Science Foundation Cooperative Agreement (NSF)
+                    TERAGRID: Resource Partners, OCI-0504077.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Henry, Linda J.</author>
+                        <date>2003</date>
+                        <title level="a">Appraisal of Electronic Records</title>
+                        <title level="m">Thirty Years of Electronic Records</title>
+                        <editor>B. I. Ambacher</editor>
+                        <publisher>The Scarecrow Press</publisher>
+                        <pubPlace>Maryland</pubPlace>
+                        <biblScope type="pp">38</biblScope>
+                    </bibl>
+                    <bibl>
+                        <title level="a">Best Practices for Information Organization and
+                            Access</title>
+                        <title level="m">AIIM</title>
+                        <date type="other">2009</date>
+                        <date type="visited">29 October 2009</date>
+                        <ptr target="http://www.aiim.org/infonomics/best-practices-for-IOA.aspx"/>
+                    </bibl>
+                    <bibl>
+                        <title level="a">Guidance for an Inventory of Electronic Records: a
+                            Toolkit</title>
+                        <title level="m">Public Records Office</title>
+                        <date type="other">2000</date>
+                        <date type="visited">29 October 2009</date>
+                        <ptr
+                            target="http://www.nationalarchives.gov.uk/documents/inventory_toolkit.pdf"
+                        />
+                    </bibl>
+                    <bibl>
+                        <author>Duranti, L.</author>
+                        <date>1997</date>
+                        <title level="a">The Archival Bond</title>
+                        <title level="j">Archives and Museum Informatics</title>
+                        <biblScope type="pp">213</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>McNeil, H.</author>
+                        <date>2000</date>
+                        <title level="m">Trusting Records: Legal, Historical and Diplomatic
+                            Perspectives</title>
+                        <publisher>Springer</publisher>
+                    </bibl>
+                    <bibl>
+                        <author>Gusfield, D.</author>
+                        <date>1997</date>
+                        <title level="m">Algorithms on Strings, Trees, and Sequences: Computer
+                            Science and Computational Biology</title>
+                        <publisher>Cambridge University Press</publisher>
+                    </bibl>
+                    <bibl>
+                        <author>Wu, S. Manber, U., Myers, G. and Miller, W.</author>
+                        <date>1990</date>
+                        <title level="a">An O (NP) Sequence Comparison Algorithm</title>
+                        <title level="j">Inf. Process. Lett</title>
+                        <biblScope type="issue">35(6)</biblScope>
+                        <biblScope type="pp">317-323</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Hearst, M.A.</author>
+                        <date>1994</date>
+                        <title level="a">Multi-Paragraph Segmentation of Expository Text</title>
+                        <title level="m" type="proceedings">Proceedings of the 32nd annual meeting
+                            of the Association for Computational Linguistics</title>
+                        <name type="venue">Las Cruces, New Mexico</name>
+                        <biblScope type="pp">6-9</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>McCallum, A. K.</author>
+                        <date>1996</date>
+                        <title level="m">Bow: A Toolkit for Statistical Language Modeling, Text
+                            Retrieval, Classification and Clustering, Computer software</title>
+                        <date type="visited">10 May 2009</date>
+                        <ptr target="http://www.cs.cmu.edu/~mccallum/bow"/>
+                    </bibl>
+                    <bibl>
+                        <author>Salton, G. and Buckley, C.</author>
+                        <date>1988</date>
+                        <title level="a">Term-weighting Approaches in Automatic Text
+                            Retrieval</title>
+                        <title level="j">Information Processing &amp; Management</title>
+                        <biblScope type="issue">24(5)</biblScope>
+                        <biblScope type="pp">513–523</biblScope>
+                    </bibl>
+                    <bibl>
+                        <title level="m">PREFUSE, Interactive visualization software</title>
+                        <date type="visited">10 May 2009</date>
+                        <ptr target="http://prefuse.org/"/>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

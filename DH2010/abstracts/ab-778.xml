@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0" xml:id="ab-778">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Queste del Saint Graal: Textometry Platform on the Service of a Scholarly Edition</title>
+                <author>
+                    <name>Lavrentiev, Alexei</name>
+                    <affiliation>UMR ICAR
+                        <orgName>Université de Lyon</orgName> / <orgName>CNRS</orgName>
+                        <reg><country>France</country></reg></affiliation>
+                    <email>Alexei.Lavrentev@ens-lyon.fr</email>
+                </author>
+                <author>
+                    <name>Serge, Heiden</name>
+                    <affiliation>UMR ICAR
+                        <orgName>Université de Lyon</orgName> / <orgName>CNRS</orgName> <reg><country>France</country></reg>
+                    </affiliation>
+                    <email>slh@ens-lsh.fr</email>
+                </author>
+                <author>
+                    <name>Yepdieu, Adrien</name>
+                    <affiliation><orgName>Politecnico di Torino</orgName>, student <country>Italy</country></affiliation>
+                    <email></email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-05-01</date>
+                <name>NG</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">         <body>
+            <div>
+                <p>In this poster/demo we will present an online scholarly edition of <hi rend="italic">La queste del saint Graal</hi> (<hi rend="italic">The Quest for the Holy Grail</hi>) based on a manuscript of Lyons public library (Lyon, BM, P.A. 77) and built in the Textometry platform (TXM). The particularity of this edition is that it combines rich paleographic and philological data (including digital photographs, various layers of transcription, translation in modern French and editorial notes) with advanced linguistic search and analysis tools provided by textometric software.</p>
+                <p>Despite some damage (torn miniature in the beginning, missing folios in the end), Lyons manuscript is considered to be one of the best witnesses of the <hi rend="italic">Queste del saint Graal</hi>, a 13<hi rend="sup">th</hi> century French novel, part of the famous &quot;Arthurian&quot; prose cycle. A well-known edition by Albert Pauphilet based on this manuscript was first published in 1923 and has been regularly reprinted ever since. However, this edition cannot be used as a trustworthy source of linguistic data, as it contains multiple corrections, and the readings of the primary source are not always accessible.</p>
+                <p>In the late 1990s Christiane Marchello-Nizia started working on a new edition, which was supposed to be closer to the witness, explicitly correcting only doubtless scribal errors and equipped with multiple tools to assist the reader in understanding the text and to explore various features of its language. This work was to a large extent inspired by the experience of the <hi rend="italic">Charrette</hi> Project (Pignatelli &amp; Robinson 2002). The first prototype of the edition was published on the web in 2002, and a completely new version was released in 2009. The edition is still under construction but its main components are already in place and can be accessed on the Web through an early TXM prototype.</p>
+                <p>These are the following: 
+                    <xmt:uList>
+                        <item>Old French text (108 000 words);</item>
+                        <item>digital facsimile of the manuscript (418 text columns);</item>
+                        <item>modern French translation; </item>
+                        <item>scholarly introduction;</item>
+                        <item>tools for textometric analysis.</item>
+                    </xmt:uList>
+                    
+                </p>
+                <p>The Old French text is established according to rigorous editorial principles stated in the Introduction. A particular feature of the edition is the respect of scribal punctuation. It is encoded according to the XML-TEI standard with special attention to linguistic data. All words are explicitly tagged and annotated for part of speech using the Cattex2009 tagset (Prévost&amp;al, to be published). The text can be displayed and searched in several presentation forms: a &quot;traditional&quot; view (<hi rend="italic">vue courante</hi>), close to the norms of French critical editions (Vielliard &amp; Guyotjeannin 2001), a &quot;diplomatic&quot; view respecting linguistically significant graphical features of the manuscript (such as the absence of &quot;phonetic&quot; distinction between <hi rend="italic">u</hi> and <hi rend="italic">v</hi>), and a &quot;facsimile&quot; view where all noticeable graphical distinctions of the primary source are represented. For instance, medieval abbreviations are tacitly expanded in the traditional view, they are expanded but typographically highlighted (using italics) in the diplomatic view and they are represented by abbreviation marks in the facsimile view. The concept of three different views of the source text is based on the multi-level transcription model of the Medieval Nordic Text Archive (Haugen 2004). MUFI character codes (Haugen 2009) are used for &quot;special&quot; medieval characters in the facsimile view (such as abbreviation marks or letter variants). A MUFI compliant font (such as Andron Scriptor Web) needs to be installed on the system to display these characters correctly.</p>
+                <p>The three views of the Old French text, the translation and the photographs can be browsed individually or side-by-side in two columns. The ‘diplomatic’ and ‘facsimile’ views, as well as the translation, are only available for a few folios at present but they will be progressively edited for the whole text.</p>
+                <p>The innovative aspect of this new edition consists first of all in the integration of textometric research tools. Those tools assist the reader by offering qualitative services like full text search engine to build KWIC concordances and browse the text through them, and quantitative services like comparing statistically the occurrences of different linguistic phenomena in various parts of the text or analyzing statistically their collocational attraction inside various contexts, such as sentences.</p>
+                <p>One can open the textometric panel by clicking on the <hi rend="italic">Outils</hi> (‘tools’) button in the bottom of the window. The platform makes it possible to search for linguistic data (words, parts of words, parts of speech, phrases, etc.) in any presentation form using the powerful CQP query language (IMS Open Corpus Workbench) and to display KWIC concordances of the search matches with customizable context size and sort options. Concordances are displayed in a new tab next to the search form. The corresponding page (or column) of the edition is displayed upon a click on a line corresponding to an occurrence in the concordance. The words matching the query are then highlighted (see the figure below).</p>
+                <p>
+                    <figure xml:id="fig1">
+                        <graphic url="778_Fig1.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpg"/>
+                        <head>Figure 1</head>
+                    </figure>
+                </p>
+                <p>In the future, all the main textometric tools will be interfaced in the edition. These include specificity, collocates, lexicograms, etc.
+                    The source XML-TEI files of the Old French text and its modern French translation will be downloadable under a Creative Commons license (Attribution-Noncommercial-Share Alike) as soon as the edition is stable.
+                    The editorial and online textometric research platform is distributed with an open source license (GPL v3) and can be used for publishing on the web various texts with XML-TEI encoding. The platform can handle any number of texts, up to several hundred million words in total.
+                </p>
+                <p>The poster will display the editorial principles and several screenshots of the edition. Interactive work with the edition can be performed at a demo session.</p>
+            </div>
+            
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Haugen, Odd E. </author>
+                        <date>2004</date>
+                        <title level="a">Parallel Views: Multi-level Encoding of Medieval Nordic Primary Sources</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">19.1</biblScope>
+                        <biblScope type="pp">73-91</biblScope>
+                        
+                    </bibl>
+                    <bibl>
+                        <author>Haugen, Odd E., ed. </author>
+                        <date>2009</date>
+                        <title level="m">MUFI character recommendation. Characters in the official Unicode Standard and in the Private Use Area for Medieval texts written in the Latin alphabet. Part 1: Alphabetical order. Version 3.0</title>
+                        <publisher>Medieval Unicode Font Initiative</publisher>
+                        <pubPlace>Bergen</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Pauphilet, Albert. </author>
+                        <date>1923</date>
+                        <title level="m">La Queste del Saint Graal. Roman du XIII<hi rend="sup">e</hi> siècle</title>
+                        <publisher>Champion</publisher>
+                        <pubPlace>Paris</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Pignatelli, Cinzia and Molly Robinson, eds. </author>
+                        <date>2002</date>
+                        <title level="m">Chrétien de Troyes : Le chevalier de la Charette (Lancelot) : le "Projet Charette" et le renouvellement de la critique philologique des textes, Œuvres et critique, 27.1</title>
+                        <publisher>Gunter Narr Verlag</publisher>
+                        <pubPlace>Tübingen</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Prévost, Sophie, Céline Guillot, Alexei Lavrentiev and Serge Heiden</author>
+                        <date>To be published</date>
+                        <title level="m">Jeu d’étiquettes CATTEX2009</title>
+                        <publisher>Équipe de la BFM</publisher>
+                        <pubPlace>Lyon</pubPlace>
+                        <ptr target="http://ccfm.ens-lsh.fr"/>
+                    </bibl>
+                    <bibl>
+                        <author>Vielliard, Françoise and Olivier Guyotjeannin</author>
+                        <date>2001</date>
+                        <title level="m">Conseils pour l'édition des textes médiévaux, Fascicule I, Conseils généraux</title>
+                        <publisher>CTHS, Ecole nationale des chartes</publisher>
+                        <pubPlace>Paris</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <title level="m">Andron Scriptor font page</title>
+                        <ptr target="http://www.mufi.info/fonts/#Andron"/>
+                    </bibl>
+                    <bibl>
+                        <title level="m">Charrette Project</title>
+                        <ptr target="http://lancelot.baylor.edu"/>
+                    </bibl>
+                    <bibl>
+                        <title level="m">Creative Commons license</title>
+                        <ptr target="http://creativecommons.org/licenses/by-nc-sa/3.0"/>
+                    </bibl>
+                    <bibl>
+                        <title level="m">IMS Open Corpus Workbench</title>
+                        <ptr target="http://cwb.sourceforge.net"/>
+                    </bibl>
+                    <bibl>
+                        <title level="m">Medieval Unicode Font Initiative (MUFI)</title>
+                        <ptr target="http://www.mufi.info"/>
+                    </bibl>
+                    <bibl>
+                        <title level="m">Queste del Saint Graal edition prototype (temporary)</title>
+                        <ptr target="http://textometrie.risc.cnrs.fr/txm"/>
+                    </bibl>
+                    <bibl>
+                        <title level="m">Textometry Project</title>
+                        <ptr target="http://textometrie.ens-lsh.fr"/>
+                    </bibl>
+                    <bibl>
+                        <title level="m">TXM source code </title>
+                        <ptr target="https://sourceforge.net/projects/textometrie"/>
+                    </bibl>
+                    
+                    
+                    
+                    
+                    
+                    
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

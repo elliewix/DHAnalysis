@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-616">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>TEI P5 as a Text Encoding Standard for Multilevel Corpus Annotation</title>
+                <author>
+                    <name>Bański, Piotr</name>
+                    <affiliation><orgName>University of Warsaw</orgName> <reg><country>Poland</country></reg></affiliation>
+                    <email>pkbanski@uw.edu.pl</email>
+                </author>
+                <author>
+                    <name>Adam Przepiórkowski</name>
+                    <affiliation>Institute of Computer Science <orgName>Polish Academy of
+                        Sciences</orgName> <reg><country>Poland</country></reg></affiliation>
+                    <email>adamp@ipipan.waw.pl</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2009-03-29</date>
+                <name>NG</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="paper">
+        <body>
+            <p>The need for text encoding standards for language resources (LRs) is widely
+                acknowledged: within the International Standards Organization (ISO) Technical
+                Committee 37 / Subcommittee 4 (TC 37 / SC 4), work in this area has been going on
+                since the early 2000s, and working groups devoted to this issue have been set up in
+                two current pan-European projects, CLARIN (<ptr type="external"
+                    target="http://www.clarin.eu/"/>) and FLaReNet (<ptr type="external"
+                    target="http://www.flarenet.eu/"/>). It is obvious that standards are necessary
+                for the interoperability of tools and for the facilitation of data exchange between
+                projects, but they are also needed within projects, especially where multiple
+                partners and multiple levels of linguistic data are involved.</p>
+            <p>One such project is the National Corpus of Polish (Pol. <hi rend="italic">Narodowy
+                    Korpus Języka Polskiego</hi>; NKJP; <ptr type="external"
+                    target="http://nkjp.pl/"/>; Przepiórkowski <hi rend="italic">et al.</hi> 2008,
+                2009) involving 4 Polish institutions and carried out in 2008–2010. The project aims
+                at the creation of a 1-billion-word automatically annotated corpus of Polish, with a
+                1-million-word subcorpus annotated manually. The following levels of linguistic
+                annotation are distinguished in the project: 1) segmentation into sentences, 2)
+                segmentation into fine-grained word-level tokens, 3) morphosyntactic analysis, 4)
+                coarse-grained syntactic words (e.g., analytical forms, constructions involving
+                bound words, etc.), 5) named entities, 6) syntactic groups, 7) word senses (for a
+                limited number of ambiguous lexemes).</p>
+            <p>Any standards adopted for these levels should allow for stand-off annotation, as is
+                now common practice and as is virtually indispensable in the case of many levels of
+                annotation, possibly involving conflicting hierarchies.</p>
+            <p>Two additional, non-linguistic levels of annotation required for each document are
+                text structure (e.g., division into chapters, sections and paragraphs, appropriate
+                marking of front matter, etc.) and metadata. The standard adopted for these levels
+                should be sufficiently flexible to allow for representing diverse types of texts,
+                including books, articles, blogs and transcripts of spoken data.</p>
+            <p>NKJP is committed to following current standards and best practices in corpus
+                development and text encoding. However, because of the current proliferation of
+                official, <hi rend="italic">de facto</hi> and purported standards, it is far from
+                clear what standards a new corpus project should adopt. The aim of this paper is to
+                attempt to answer this question.</p>
+            <div>
+                <head>Standards and best practices</head>
+                <p>The three text encoding standards and best practices listed in a recent CLARIN
+                    short guide (CLARIN:STE, 2009)<note>See also Bel <hi rend="italic">et al.</hi>
+                        2009.</note> are: standards developed within ISO TC 37 SC 4, the Text
+                    Encoding Initiative (TEI; Burnard and Bauman 2008) guidelines and the XML
+                    version of the Corpus Encoding Standard (XCES; Ide <hi rend="italic">et al.</hi>
+                    2000). Apart from these, there are other <hi rend="italic">de facto</hi>
+                    standards and best practices, e.g., TIGER-XML (Mengel and Lezius, 2000) for the
+                    encoding of syntactic information, or the more general PAULA (Dipper, 2005)
+                    encoding schema used in various projects in Germany.</p>
+                <div>
+                    <head>XCES</head>
+                    <p>The original version of XCES inherits from TEI an exhaustive approach to
+                        metadata representation. It makes specific recommendations for the
+                        representation of morphosyntactic information and for the alignment of
+                        parallel corpora. In early the 2000s, it was probably the most popular
+                        corpus encoding standard.</p>
+                    <p>Currently, the claim of XCES to being such a standard is much weaker. A new —
+                        more abstract — version of XCES was introduced around 2003, where concrete
+                        morphosyntactic schema was replaced by a general feature structure
+                        mechanism, different from the ISO Feature Structure Representation (FSR)
+                        standard (ISO 24610-1). In our view, this is a step back, as adopting a more
+                        abstract representation requires more work on the part of corpus developers.
+                        Moreover, XCES has no specific recommendations for other levels of
+                        linguistic knowledge, and no mechanisms for representing discontinuity and
+                        alternatives, all of which need to be represented in NKJP. Taking also into
+                        account the lack of documentation and the potential confusion concerning its
+                            versioning,<note>Two different sets of schemata have co-existed on XCES
+                            WWW pages since 2003, one given as DTD, another as XML Schema, without
+                            any clear indication that they specify different structures.</note> XCES
+                        turns out to be unsuitable for the purposes of NKJP.</p>
+                </div>
+                <div>
+                    <head>ISO TC37 SC 4</head>
+                    <p>There is a family of ISO standards developed by ISO TC 37 SC 4 for modelling
+                        and representing different types of linguistic information. The two
+                        published standards concern the representation of feature structures (ISO
+                        24610-1) and the encoding of dictionaries (ISO 24613). Other proposed
+                        standards are at varying levels of maturity and abstractness. While
+                        eventually these standards may reach stability and specificity required by
+                        practical applications, this is currently not the case.<note> A tendency may
+                            be observed of increasing abstractness and generality of proposed
+                            standards, esp., SynAF (ISO 24615) and LAF (ISO 24612)". This leads to
+                            their greater formal elegance, at the cost of their actual
+                            usefulness.</note></p>
+                </div>
+                <div>
+                    <head>TIGER-XML and PAULA</head>
+                    <p>TIGER-XML and a schema which may be consider as its generalisation, PAULA,
+                        are specific, relatively well-documented and widely employed best practices
+                        for describing linguistic objects occurring in texts (so-called
+                        &quot;markables&quot;) and relations between them (in the case of TIGER-XML,
+                        the constituency relation). They do not contain specifications for metadata
+                        or structural annotation.</p>
+                </div>
+            </div>
+            <div>
+                <head>TEI P5</head>
+                <p>For metadata and structural annotation levels there is no real alternative to
+                    TEI. Moreover, TEI P5 implements the FSR standard ISO 24610-1, which can be used
+                    for the representation of any linguistic content, along the lines of XCES
+                    (although the feature structure representations used in XCES do not comply with
+                    this standard), PAULA and the proposed ISO standard, Linguistic Annotation
+                    Framework (ISO 24612). TEI P5 is stable, has rich documentation and an active
+                    user base, and for these reasons alone it should be preferred to XCES and (the
+                    current versions of) the ISO standards. Moreover, any TIGER-XML and PAULA
+                    annotation may be expressed in TEI in an isomorphic way, thanks to the linking
+                    mechanisms of TEI P5.</p>
+                <p>However, TEI is a very rich toolbox, proposing multitudinous mechanisms for
+                    representing multifarious aspects of text encoding, and this richness, as well
+                    as the sheer size of TEI P5 documentation (1350–1400 pages), are often perceived
+                    by corpus developers as prohibitive. For this reason, within NKJP, a specific
+                    set of recommendations for particular levels of annotation has been developed,
+                    aiming at achieving a maximal compatibility (understood as the easiness to
+                    translate between formats) with other proposed and <hi rend="italic">de
+                        facto</hi> standards.</p>
+                <p>For example, TEI P5 offers, among others, the following ways to represent
+                    syntactic constituency: <xmt:uList>
+                        <item>XML tree, built with elements such as &lt;s&gt;(entence),
+                            &lt;phr&gt;(ase), &lt;cl&gt;(ause) and &lt;w&gt;(ord), may directly
+                            mirror constituency tree; </item>
+                        <item>all information, including constituency, may be encoded as a feature
+                            structure (Witt <hi rend="italic">et al.</hi>, 2009);</item>
+                        <item>each syntactic group is a &lt;seg&gt;(ment) of type group, containing
+                            a feature structure description and &lt;ptr&gt; pointers to other
+                            constituents, defined in the same file (for non-terminal syntactic
+                            groups) or in a stand-off way elsewhere (for terminal words). </item>
+                    </xmt:uList>
+                </p>
+                <p>While the first of these representations is the most direct, and the second most
+                    general, it is the third representation that directly mirrors TIGER-XML, PAULA
+                    and SynAF, and for this reason, it has been adopted in NKJP.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Bel, N., Beskow, J., Boves, L., Budin, G., Calzolari, N., Choukri,
+                            K., Hinrichs, E., Krauwer, S., Lemnitzer, L., Piperidis, S.,
+                            Przepiórkowski, A., Romary, L., Schiel, F., Schmidt, H., Uszkoreit, H.,
+                            and Wittenburg, P.</author>
+                        <date>2009</date>
+                        <title level="m">Standardisation action plan for Clarin. State: Proposal to
+                            CLARIN Community</title>
+                    </bibl>
+                    <bibl>
+                        <editor>Burnard, L. and Bauman, S.</editor>
+                        <date>2008</date>
+                        <title level="m">TEI P5: Guidelines for Electronic Text Encoding and
+                            Interchange</title>
+                        <ptr type="external" target="http://www.tei-c.org/Guidelines/P5/"/>
+                    </bibl>
+                    <bibl>
+                        <editor>CLARIN:STE</editor>
+                        <date>2009</date>
+                        <title level="m">Standards for text encoding: A CLARIN shortguide</title>
+                        <ptr type="external" target="http://www.clarin.eu/documents"/>
+                    </bibl>
+                    <bibl>
+                        <author>Dipper, S.</author>
+                        <date>2005</date>
+                        <title level="a">Stand-off representation and exploitation of multi-level
+                            linguistic annotation</title>
+                        <title level="m">Proceedings of Berliner XML Tage 2005 (BXML 2005)</title>
+                        <pubPlace>Berlin</pubPlace>
+                        <biblScope type="pp">39-50</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Ide, N., Bonhomme, P., and Romary, L.</author>
+                        <date>2000</date>
+                        <title level="a">XCES: An XML-based standard for linguistic corpora</title>
+                        <title level="j">LREC</title>
+                        <biblScope type="issue">2000</biblScope>
+                        <biblScope type="pp">825-830</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>LREC</author>
+                        <date>2000</date>
+                        <title level="a">Proceedings of the Second International Conference on
+                            Language Resources and Evaluation, LREC 2000</title>
+                        <title level="j">ELRA</title>
+                        <pubPlace>Athens</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Mengel, A. and Lezius, W.</author>
+                        <date>2000</date>
+                        <title level="a">An XML-based encoding format for syntactically annotated
+                            corpora</title>
+                        <title level="j">LREC</title>
+                        <biblScope type="issue">2000</biblScope>
+                        <biblScope type="pp">121-126</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Przepiórkowski, A., Górski, R. L., Lewandowska-Tomaszczyk, B., and
+                            Łaziński, M.</author>
+                        <date>2008</date>
+                        <title level="a">Towards the National Corpus of Polish</title>
+                        <title level="m">Proceedings of the Sixth International Conference on
+                            Language Resources and Evaluation, LREC 2008</title>
+                        <publisher>ELRA</publisher>
+                        <pubPlace>Marrakech</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Przepiórkowski, A., Górski, R. L., Łaziński, M., and Pęzik, P. </author>
+                        <date>2009</date>
+                        <title level="a">Recent developments in the National Corpus of
+                            Polish</title>
+                        <title level="m">Proceedings of Slovko 2009: Fifth International Conference
+                            on NLP, Corpus Linguistics, Corpus Based Grammar Research, 25–27
+                            November 2009, Smolenice/Bratislava, Slovakia</title>
+                        <editor>Levická, J and Garabík, R.</editor>
+                        <publisher>Brno. Tribun</publisher>
+                    </bibl>
+                    <bibl>
+                        <author>Witt, A., Rehm, G., Hinrichs, E., Lehmberg, T., and Stemann,
+                            J.</author>
+                        <date>2009</date>
+                        <title level="a">SusTEInability of linguistic resources through feature
+                            structures</title>
+                        <title level="j">Literary and Linguistic Computing</title>
+                        <biblScope type="issue">24(3)</biblScope>
+                        <biblScope type="pp">363-372</biblScope>
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-739">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Digital Forensics, Textual Criticism, and the Born Digital Musical</title>
+                <author>
+                    <name>Doug Reside</name>
+                    <affiliation>Maryland Institute for Technology in the Humanities, <orgName>University of
+                        Maryland</orgName>, <country>USA</country></affiliation>
+                    <email>dougreside@gmail.com</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-04-29</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <div>
+                <p>When Jonathan Larson, author of the hit Broadway musical <hi rend="italic"
+                        >RENT</hi>, died in 1996 just before his work opened off-Broadway, he left
+                    behind about 180 floppy disks containing, among other things, drafts of the
+                    musical composed over a period of about six years. These disks, which were
+                    donated to the Library of Congress and are now held there, represent one of the
+                    earliest examples of a &quot;hybrid archive&quot; - a collection of both paper
+                    and inextricably digital artifacts. Along with a series of timestamped Microsoft
+                    Word 5.1 documents, the disks also preserve early and transitional versions of
+                    the music in MIDI and MOTU Performer format that could not easily be transferred
+                    to a more traditional medium without significant loss. In this poster I show
+                    some of what I found on these disks, what it reveals about the creative
+                    processes that shaped <hi rend="italic">RENT</hi>, and, more generally, how the
+                    lessons learned in my experience might be applied by others working with hybrid
+                    archives. </p>
+                <p>The earliest file on the Library of Congress disks relating to <hi rend="italic"
+                        >RENT</hi> is a version of the music for the title song timestamped 1:37
+                    p.m. on December 21, 1989 and created with the musical editing program Performer
+                    (now called Digital Performer). Accessing this file was not an easy matter. I
+                    had planned to create an image of the disks using the &quot;dd&quot; disk
+                    imaging command built into most versions of Linux, but, unfortunately, the disks
+                    were formatted in the 800K HFS disk format and could not be natively read by a
+                    &quot;modern&quot; floppy drive. I therefore used a live CD install of Ubuntu
+                    5.02 running on a Powerbook G3 to create the image. Of course, if I had not had
+                    access to this Powerbook, things would have been slightly more complicated. I
+                    could, perhaps, have brought a desktop with a third party floppy controller card
+                    (such as the Catweasel PCI card manufactured by Individual Computers), but
+                    getting such a bulky machine to the Library of Congress and through the airport
+                    level security would have been difficult. The Powerbook was an indispensible
+                    tool and well worth an eBay purchase for those doing similar work. Once the disk
+                    image was created I made a second working copy, mounted it on Mac OS X (the
+                    current version of the operating system still supports disk images in legacy
+                    formats) and used a modern version of Digital Performer to open the file. </p>
+                <p>Note, however, that this digital file is not the earliest draft of <hi
+                        rend="italic">RENT</hi> in the Library of Congress collection. There is a
+                    paper copy of the script that was probably written in mid-1989 by Larson&apos;s
+                    collaborator Billy Aronson. The draft is an 11 page, typescript that appears to
+                    have been produced on Aronson&apos;s letter-quality NEC printer. The draft is
+                    labeled &quot;pre-lyric&quot; and, true to this label, contains no songs but
+                    does include some relatively lyrical language (especially by Mimi who has lines
+                    like: &quot;I embroider sunsets onto pillowcases. Well, now you know...&quot;).
+                    The second draft in the collection, again paper and probably produced by the
+                    same typewriter used to produce the pre-lyric draft is labeled
+                    &quot;Boheme&quot; and dated 9/22/89. It assigns sole responsibility for the
+                    book and lyrics to Billy Aronson and the music to Larson and was, again, likely
+                    typed by Aronson. Most of the songs in this draft did not make it to the final
+                    version of the show, however the draft does contain versions of the songs
+                    &quot;Rent&quot; and &quot;I Should Tell You&quot; and, in more or less the form
+                    it is now known, &quot;Santa Fe&quot; (indeed, the program notes for <hi
+                        rend="italic">RENT</hi> always credit Aronson for his work on these songs). </p>
+                <p>Although the broad details of the narrative that begins to emerge from this
+                    archive are well known (Billy Aronson and Jonathan Larson decided to collaborate
+                    on the musical, Larson initially only as composer, and together wrote three
+                    songs before going their separate ways), the digital and paper artifacts
+                    together fill out the story with precise and fascinating detail. For instance,
+                    although Larson probably received a script from Aronson by September (based on
+                    the date on the first script in the collection) and by November at latest
+                    (interleaved into the second draft is a letter from Aronson to Larson dated 12/1
+                    which Aronson begins with the words &quot;Here&apos;s the new last chorus for
+                    SANTA FE that you asked for&quot;), Larson did not commit any work on the show
+                    to disk until December 21. The letter from Aronson indicates that Larson was
+                    probably working on the show before then, but likely recording his work, if at
+                    all, to analog media (perhaps, as he certainly did in other cases, to a cassette
+                    tape). However, in order to transcribe the music to digital format Larson
+                    required technology he did not have at home. Another Word Document on the disks
+                    dated 1/31/90 and named &quot;STUDIO COSTS&quot; appears to have been a kind of
+                    invoice to Aronson. It lists three studio visits, one for 6 hours on December 21
+                    to create &quot;Music Trax for SANTA FE &amp; RENT,&quot; one for 4.5 hours on
+                    January 16 to create &quot;Music Trax for I SHOULD TELL YOU&quot; and one for
+                    7.5 hours on January 30 to &quot;Record Vocals for ALL SONGS&quot; and to create
+                    &quot;Mix Trax for ALL SONGS.&quot; That Larson sought out a digital studio so
+                    early in the creative process (and was willing to pay about $300 per session at
+                    a time when his primary source of income was part-time work at a diner) suggests
+                    how important Larson saw digital technology for his creative process. To truly
+                    understand <hi rend="italic">RENT</hi>, then, the scholar must understand the
+                    digital technologies and processes used to create it. The textual critic of <hi
+                        rend="italic">RENT</hi> and other born digital musicals must therefore be
+                    skilled in recovering, reading, and analyzing digital artifacts - the processes
+                    I hope to demonstrate in this introduction to my work with <hi rend="italic"
+                        >RENT</hi>. </p>
+            </div>
+        </body>
+        <!--<back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        REFERENCE
+                    </bibl>
+                </listBibl>
+            </div>
+        </back>-->
+    </text>
+</TEI>

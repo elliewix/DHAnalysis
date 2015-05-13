@@ -1,0 +1,344 @@
+Measurement of body motion using motion capture systems has become widespread in the
+                fields of entertainment, medical care, and biomechanics research.
+
+            
+In our laboratory, we are undertaking research on the application of digital
+                archiving and information technology to dancing [
+Hachimura, 2006
+]. For example, quantitative analysis of traditional dance
+                motion [
+Yoshimura et al., 2006
+] and 3D
+                character animations of traditional performing arts using virtual reality [
+Furukawa et al., 2006
+]. Recently, we have
+                measured many kinds of dance motion, not only Japanese traditional dances, but also
+                contemporary street dances.
+
+            
+Dance collaboration system is one of the typical collaboration systems based on body
+                motion. In our laboratory, we are developing a Virtual Dance Collaboration System
+                    [
+Tsuruta et al., 2007
+]. Live dancer’s
+                motion is captured by optical motion capture system, and the dance collaboration
+                system recognizes it in real-time. A virtual dancer responds to the live dancer’s
+                motion. The live dancer performs a dance to the music, and a virtual dancer reacts
+                with a dance by using the motion data stored in a motion database. It is desirable
+                to generate a virtual dancer’s motion according to the live dancer’s emotion or
+                music emotion.
+
+            
+In this paper, we describe a method to generate emotional dance motions by modifying
+                a standard dance motion which is stored in a database.
+
+            
+
+                Overview of the Virtual Dance Collaboration System
+                
+A configuration of the system is shown in 
+Figure
+                        1
+. Our proposed system provides users with collaboration with virtual
+                    dancers through dancing. The collaboration system consists of an optical
+                    real-time motion capture and an immersive virtual environment system. An optical
+                    motion capture system is able to measure body motion precisely and in real-time.
+                    Immersive virtual environment provides users stereoscopic display and feeling of
+                    immersion.
+
+                
+The system has three sections: “Motion processing section”, “Music processing
+                    section” and “Graphics processing section”.
+
+                
+ In the “Motion processing section”, the system recognizes a live dancer’s motion
+                    in real-time, and determines a virtual dancer’s reactive motion. In the “Music
+                    processing section”, the system extracts emotional information from music in
+                    real time. In the “Graphics processing section”, the system regenerates a
+                    virtual dancer’s motion by using extracted emotional information from music, and
+                    the system displays 3DCG character animation by using immersive virtual
+                    environment.
+
+                
+Fig. 1. Configuration of Virtual Dance Collaboration System
+                    
+
+            
+
+                Generation of Emotional Dance Motion
+                
+For our system, it is necessary to generate a virtual dancer’s emotional motion
+                    in real-time. We developed a system named Emotional Motion Editor (EME).
+
+                
+Table 1 - Motion features appeared on each human emotion
+                    
+Table II - Parameters used for modifying motion data
+                    (
+α
+: coefficient 
+β
+:bias)
+                    
+
+                    Emotional Motion Editor
+                    
+The EME generates emotional dance motions by modifying the original motion
+                        data by changing the speed of motion or altering the joint angles
+                        interactively. To generate an emotional motion, a function of changing the
+                        size of motion is implemented within the EME.
+
+                    
+To generate virtual dancer’s emotional motions in real-time, we need a simple
+                        method which can calculate with few order. For this purpose, we employ a
+                        method altering the interior angle of two connecting body segments as shown
+                        in 
+Figure 2
+.
+
+                    
+Fig. 2. Altering the joint angle
+                        
+Q
+i
+ and 
+Q′
+i
+ is an original vector and a vector after
+                        rotating respectively. Where 
+θ
+i
+
+                        is an original angle, and 
+θ'
+i
+ is
+                        an after rotating angle respectively. The rotation matrix is calculated by
+                        using equation (1).
+
+                    
+Where 
+R
+N
+ (
+θ'
+i
+− θ
+i
+) matrix for rotation about vector 
+N
+ . 
+N
+ is a normal vector represented by equation (2).
+                        Where × means outer product.
+
+                    
+Change the size of the motion is indicated by equation (3).
+
+                    
+Fig. 3. Screen shot of Emotional Motion Editor
+                        
+Constant 
+α
+ and 
+β
+ are
+                        coefficient for amplification and bias respectively. Where 
+θ′
+i
+ is amplified angle, 
+θ
+̅
+i
+ is average of angles in sliding window at frame 
+i
+ as shown in equation (4). 
+k
+
+                        is a half of the size of the sliding window.
+
+                    
+A screen shot of the EME is displayed in 
+Figure 3
+. A character model on the left shows an original dance
+                        motion. A model on the right shows generated emotional motion after
+                        modification.
+
+                
+
+                
+
+                    Relation between Emotion and Body Motion
+                    
+We examine the correlation between emotion and body motion in dancing by
+                        interviewing the dancer. We employ 5 kinds of emotions (Neutral, Passionate,
+                        Cheerful, Calm, Dark). “Neutral” is a standard motion. Motion features
+                        appeared on each human emotional motion are shown in 
+Table I
+. We then obtained parameters empirically
+                        with a dancer. Parameters used for generating emotional motions are shown in
+                            
+Table II
+. 
+Figure 4(a)
+ shows an example of motion modification.
+                        A thin line in 
+Figure 4(b)
+ shows an
+                        original graph of angle variation of the right knee. The thick line shows a
+                        modified graph. In this case, 
+α
+ and 
+β
+ was given 3.0 and -25.0 respectively.
+
+                    
+Fig. 4. An Example of motion modification (as "passionate").
+                        
+(a) Snap shots of motions
+                            
+(b) Angle variation of right knee
+                            
+
+            
+
+            
+
+                Experiments
+                
+We generate 4 kinds of emotional motions by using EME according to 
+Table II
+.
+
+                
+To evaluate generated emotional motions, we conducted 2 types of assessment
+                    experiment by using questionnaire survey.
+
+                
+
+                    Method of Experiment
+                    
+Experiment 1
+ Experiment 1 is a comparison between
+                        neutral standard motion and artificially generated emotional motions.
+
+                    
+Experiment 2 
+ Experiment 2 is a comparison between
+                        motion-captured emotional motions and artificially generated emotional
+                        motions.
+
+                    
+For the experiment, we used 9 kinds of motions as the following: 
+4 Emotional motions (performed by dancer)
+1 Standard motion (performed by dancer)
+4 Artificial emotional motions (generated by EME)
+
+                
+
+                
+
+                    Result of Experiments
+                    
+The results of Experiment 1 are shown in 
+Figure 5
+. This figure shows score averages, standard deviations
+                        and significant differences by the t-test. Black circles show standard
+                        motions, triangles show generated artificial emotional motions. As shown in
+                            
+Figure 5
+, all kinds of scores
+                        except "Calm" are higher than standard motion. We found that the respondents
+                        receive an impression of each emotion through artificial emotional
+                        motion.
+
+                    
+Figure 6
+ indicates the results of
+                        Experiment 2. White circles show motion-captured emotional motions, and
+                        triangles show generated artificial emotional motions by using EME. As a
+                        result of the t-test, there is no significant difference. We found that
+                        respondents received similar impressions of emotional motions from generated
+                        artificial emotional motions. We verified that our EME system is effective
+                        in generating emotional motions.
+
+                    
+Fig. 5. Experimental result 1
+                        
+Fig. 6. Experiment result 2
+                        
+
+            
+
+            
+
+                Conclusion and future works
+                
+In this paper, we described a method to generate emotional dance motions by
+                    modifying the standard dance motion.
+
+                
+To generate emotional motions, we developed the Emotional Motion Editor. We
+                    conducted two experiments to evaluate generated emotional motions. As a result,
+                    we confirmed that EME can generate emotional motions by altering motion speed
+                    and joint angles.
+
+                
+As future work, implementation of the motion processing section and the motion
+                    modification function is necessary in the Virtual Dance Collaboration
+                    System.
+
+            
+
+            
+
+                
+Acknowledgements
+This research has been partially
+                    supported by the Global COE Program “Digital Humanities Center for Japanese Arts
+                    and Cultures”, the Grant-in-Aid for Scientific Research No.(B)16300035, all from
+                    the Ministry of Education, Science, Sports and Culture. We would like to give
+                    heartfelt thanks to Prof. Y. Endo, Ritsumeikan Univ. whose comments and
+                    suggestions were of inestimable value for our research. We would also like to
+                    thank Ms. Gotan and Mr. Morioka who support many experiments.
+
+            
+
+        
+        
+
+                
+Furukawa, K.et al.
+2006
+CG Restoration of Historical Noh Stage and its use for
+                            Edutainment
+Proc. VSMM06
+358-367
+Hachimura, K.
+2006
+Digital Archiving of Dancing
+Review of the National Center for Digitization (Online
+                            Journal)
+Vol.8
+51-66
+12 March 2010
+Tsuruta, S. et al.
+2007
+Real-Time Recognition of Body Motion for Virtual Dance
+                            Collaboration System
+Proceedings of 17th International
+                            Conference on Artificial Reality and Telexistence (ICAT 2007)
+2007
+23-30
+Yoshimura, M. et al.
+2006
+Analysis of Japanese Dance Movements Using Motion Capture
+                            System
+Systems and Computers in Japan
+Vol.37
+No.1
+71-82
+Translated from Densi Joho Tsushin Gakkai Ronbunshi, Vol. J87-D-
+                            II, No.3
+
+        

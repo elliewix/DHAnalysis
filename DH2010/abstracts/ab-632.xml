@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="../schema/xmod_web.rnc" type="compact"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xmt="http://www.cch.kcl.ac.uk/xmod/tei/1.0"
+    xml:id="ab-632">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>An Approach to Ancient-to-modern and Cross-script Information Access for
+                    Traditional Mongolian Historical Collections</title>
+                <author>
+                    <name>Batjargal, Biligsaikhan</name>
+                    <affiliation>Graduate School of Science and Engineering, <orgName>Ritsumeikan University</orgName>,
+                        <country>Japan</country></affiliation>
+                    <email>biligsaikhan@gmail.com</email>
+                </author>
+                <author>
+                    <name>Khaltarkhuu, Garmaabazar</name>
+                    <affiliation><orgName>Mongolia-Japan Center for Human Resources Development</orgName>,
+                        <country>Mongolia</country></affiliation>
+                    <email>garmaabazar@gmail.com</email>
+                </author>
+                <author>
+                    <name>Kimura, Fuminori</name>
+                    <affiliation>College of Information Science and Engineering, <orgName>Ritsumeikan
+                        University</orgName>, <country>Japan</country></affiliation>
+                    <email>fkimura@is.ritsumei.ac.jp</email>
+                </author>
+                <author>
+                    <name>Maeda, Akira</name>
+                    <affiliation>College of Information Science and Engineering, <orgName>Ritsumeikan
+                        University</orgName>, <country>Japan</country></affiliation>
+                    <email>amaeda@is.ritsumei.ac.jp</email>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Centre for Computing in the Humanities, King's College London</publisher>
+                <address>
+                    <addrLine>Strand, London WC2R 2LS, England, United Kingdom. Tel:+44 (0) 20 7836 5454</addrLine>
+                    <addrLine>http://www.kcl.ac.uk/cch/</addrLine>
+                </address>
+            </publicationStmt>
+            <sourceDesc>
+                <p>No source: created in electronic format.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>2010-03-25</date>
+                <name>GF</name>
+                <desc>CCHLite encoding</desc>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text type="poster">
+        <body>
+            <p>The main purpose of this research is to develop a system to keep over 800-year-old
+                historical records written in traditional Mongolian script for future use, to
+                digitize all existing records and to make those valuable data available for public
+                viewing and screening. There are over 50,000 registered manuscripts and historical
+                records written in traditional Mongolian script stored in the National Library of
+                Mongolia. About 21,100 of them are handwritten documents. There are many more
+                manuscripts and books stored in libraries of other countries such as China, Russia
+                and Germany. Despite the importance of keeping 800-year-old historical materials in
+                good condition, the Mongolian environment for material storage is not satisfactory
+                to keep historical records for a long period of time (Tungalag, 2005). We believe
+                that the most efficient and effective way to keep and protect old materials of
+                historical importance while making them publicly available is to digitize historical
+                records and create a digital library.</p>
+            <p>Mongolia introduced a new writing system (Cyrillic) in 1941. This was a radical
+                change and alienated the traditional Mongolian script. The spelling of words and
+                suffixes in traditional Mongolian script differs from spellings in modern Mongolian
+                (Cyrillic). This is due to traditional Mongolian script preserving a more ancient
+                language while modern Mongolian reflects pronunciation differences in modern
+                dialects. Spellings used in traditional Mongolian script reflect the Mongolian
+                language spoken in the days of Genghis Khan but also contain elements of the ancient
+                Mongolian language spoken before that era. Thus traditional Mongolian has a
+                different grammar and a distinct dialect from modern Mongolian. At present, people
+                use dictionaries with transcribing suffixes to overcome differences.</p>
+            <p>Recently ancient historical documents in traditional Mongolian script are being
+                digitized and made publicly available, thanks to advances in innovative
+                information technologies, and the popularity of the Internet. In Windows Vista, and
+                later versions, especially in Windows 7, text-display support for traditional
+                Mongolian script and the input locale is enabled. The Uniscribe driver was updated
+                to support OpenType advanced typographic functionality of complex text layouts such
+                as traditional Mongolian script. Traditional Mongolian script is written vertically
+                from top to bottom in columns advancing from left to right.</p>
+            <p>However, retrieval of the required information in modern Mongolian from traditional
+                Mongolian script documents is not a simple task, due to substantial changes in
+                Mongolian language over time. We want to offer an information retrieval method that
+                considers language difference over time. Our goal in this research is to develop a
+                retrieval system where a user can access cross-period and cross-script databases
+                with a query input in a modern language.</p>
+            <div>
+                <head>Related Research</head>
+                <p>Much research has been conducted in the last decade on Cross-language information
+                    retrieval (CLIR) – a technique to retrieve documents in one language through a
+                    query in another language. On the contrary, little research has been completed
+                    regarding information retrieval techniques for historical documents. Still less,
+                    almost none of the breakthroughs in research on information retrieval and
+                    information access have aimed at retrieving information in the native language
+                    from an ancient, cross-period and/or cross-script foreign language documents.
+                    Almost none of the CLIR systems has integrated either modern (Cyrillic) or
+                    traditional (ancient) Mongolian language due to its research backwardness.</p>
+                <p>Few approaches (Ernst-Gerlach et al., 2007; Garmaabazar et al., 2008; Kimura et
+                    al., 2009) that could be considered a cross-period information retrieval have
+                    been proposed. Little research has been completed regarding information
+                    retrieval techniques for historical documents. Ernst-Gerlach et al. (2007)
+                    developed a retrieval method that considers the spelling differences and
+                    variations over time. They focused on modern and archaic German. Kimura et al.
+                    (2009) proposed a retrieval method that considers not only language differences
+                    over time, but also cultural and age differences in the same language. They
+                    focused on retrieval techniques for modern and archaic Japanese. Khaltarkhuu et
+                    al. (2008) proposed a retrieval technique that considers cross-period
+                    differences in dialect, script and writing systems of the same language. They
+                    focused on modern and traditional Mongolian.</p>
+            </div>
+            <div>
+                <head>System Architecture</head>
+                <p>We propose a simple model to cope with cross-period and cross-script queries. The
+                    proposed model is shown in Figure 1.</p>
+                <p>
+                    <figure>
+                        <head>Figure 1</head>
+                        <graphic url="632_Fig1.jpg" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Outline of the proposed approach</figDesc>
+                    </figure>
+                </p>
+                <p>In the first stage, the query in a modern language will be translated into a
+                    query in an ancient form. Consequently, a query in the ancient language is
+                    submitted as a retrieval query for digital collections. The proposed model is
+                    expected to perform cross-period information retrieval and a user will be able
+                    to access ancient historical databases with a query input in a modern language.
+                    We will adopt a dictionary-based query translation approach.</p>
+            </div>
+            <div>
+                <head>Implementation of the Proposed System</head>
+                <p>Although it is not easy to develop such a retrieval system, we will utilize
+                    existing approaches (Garmaabazar et al., 2008; Kimura et al., 2009) to realize
+                    the proposed approach. A prototype called the Traditional Mongolian Script
+                    Digital Library<note><ref target="http://www.dl.is.ritsumei.ac.jp/tmsdl"
+                            rend="newWindow" type="external"
+                            >http://www.dl.is.ritsumei.ac.jp/tmsdl</ref></note> (TMSDL) (Garmaabazar
+                    et al., 2008), which could be considered a cross-period information retrieval
+                    system, has been developed. The retrieval method of the TMSDL considers
+                    cross-period differences in writing system of the ancient and modern Mongolian
+                    languages.</p>
+                <p>However, retrieval techniques of the TMSDL have not considered irregular words
+                    which have different meanings but are written and pronounced exactly the same in
+                    modern Mongolian and have different forms in traditional Mongolian. Also, word
+                    sense disambiguation has not been considered. Thus, we enhanced the TMSDL by
+                    integrating a dictionary-based cross-period information retrieval approach. We
+                    utilized the developing online version of the Tsevel&apos;s concise Mongolian
+                            dictionary<note><ref target="http://toli.query.mn/" rend="newWindow"
+                            type="external">http://toli.query.mn/</ref></note> (Tsevel, 1966) under
+                    the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported
+                    license.</p>
+                <p>The Altan Tobchi (year 1604, 164pp) – A chronological book of ancient Mongolian
+                    Kings, Genghis Khan and the Mongol Empire (the largest contiguous empire in
+                    history) is shown in Figure 2, with modern Mongolian input interface in the new
+                    version of TMSDL (TMSDLv2). A database of such historical records in the TMSDLv2
+                    with English or modern Mongolian query input will help someone conducting
+                    research in the history of the High Middle Ages, accessing materials written in
+                    an ancient language (traditional Mongolian) in order to understand 13<hi
+                        rend="sup">th</hi>-14<hi rend="sup">th</hi> century history of Asia.</p>
+                <p>
+                    <figure>
+                        <head>Figure 2</head>
+                        <graphic url="632_Fig2.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Modern Mongolian (Cyrillic) input at the TMSDLv2 to access
+                            historical records</figDesc>
+                    </figure>
+                </p>
+            </div>
+            <div>
+                <head>Experiments</head>
+                <p>After the enhancement, we conducted a preliminary experiment to examine the
+                    difference between the TMSDL and the TMSDLv2 as well as to check the accuracy
+                    of translations from the modern language to the ancient one. We compared our
+                    retrieval results from the two versions with the &quot;Qad-un űndűsűn
+                    quriyangγui altan tobči&quot;, (Textological Study) (Choimaa et al., 2002). This
+                    textological study contains the detailed analysis of traditional Mongolian
+                    words&apos; frequency in the Altan Tobchi. All queries that were retrieved in
+                    the TMSDL were retrieved in the TMSDLv2. Therefore, we selected single word
+                    queries that were not retrieved in the TMSDL. In addition, selection criteria
+                    for the query input are: <xmt:uList>
+                        <item>Pronounced or written differently in modern and traditional Mongolian;
+                            and</item>
+                        <item>With higher frequency in the Altan Tobchi.</item>
+                    </xmt:uList> In the experiment of retrieving traditional Mongolian documents via
+                    modern Mongolian (Cyrillic) utilizing a dictionary, we found that the TMSDLv2
+                    translates and retrieves about 86% of selected input queries. However, about 64%
+                    of input queries have some variations that are less than or greater than the
+                    actual frequency because of the possible errors of translation and text
+                    digitization, or limitations of the retrieval function. We are working to
+                    distinguish the causes. Our translation module failed to translate 14% of input
+                    queries. Improvements on retrieval results are illustrated in Figure 3. Sample
+                    retrieval results are shown in Table 1. Retrieved results in the TMSDLv2 with
+                    highlights are shown in Figure 4. </p>
+                <p>
+                    <figure>
+                        <head>Figure 3</head>
+                        <graphic url="632_Fig3.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Improvements on retrieval results of the TMSDL</figDesc>
+                    </figure>
+                </p>
+                <p>
+                    <figure>
+                        <head>Table 1</head>
+                        <graphic url="632_Fig4.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Sample retrieval results of each query term in details</figDesc>
+                    </figure>
+                </p>
+                <p>
+                    <figure>
+                        <head>Figure 4</head>
+                        <graphic url="632_Fig5.tif" xmt:type="full" rend="left-img"
+                            mimeType="image/jpeg"/>
+                        <figDesc>Retrieval results at the TMSDLv2</figDesc>
+                    </figure>
+                </p>
+            </div>
+            <div>
+                <head>Conclusion</head>
+                <p>In this paper, we proposed a model that utilizes cross-period and cross-script
+                    digital collections, which can be used to access old documents written in an
+                    ancient language using a query in a modern language. The proposed system is
+                    suitable for full text searches on databases containing cross-period and
+                    cross-script documents. Such research would involve extensive research in an
+                    ancient language that users and humanities researchers may or may not
+                    understand. It could apply to humanities researchers who are conducting research
+                    on ancient culture and looking for relevant historical materials written in that
+                    ancient language. The proposed model will enable users and humanities
+                    researchers to search for such materials easily in a modern language.</p>
+                <p>However, in our experiment, the TMSDLv2 translates and retrieves about 86% of
+                    input queries; only 22% is retrieved without any error. The other 64% has some
+                    differences on the number of retrieved query terms. For future development,
+                    improvements on translation and retrieval techniques need to be considered to
+                    increase the retrieval precision.</p>
+                <p>For future research, enhancements such as the retrieval of information from two
+                    distinct languages and retrieval via single query input from multiple humanities
+                    databases in multiple languages need to be developed. Our future work includes
+                    evaluating retrieval effectiveness by conducting extensive experiments that
+                    consider language differences over time. Performance of this approach will be
+                    compared with other approaches.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <listBibl>
+                    <bibl>
+                        <author>Choimaa, Sh. and Shagdarsuren, Ts.</author>
+                        <date>2002</date>
+                        <title level="m">Qad-un űndűsűn quriyangγui altan tobči, (Textological
+                            Study)</title>
+                        <publisher>Centre for Mongol Studies, NUM</publisher>
+                        <pubPlace>Ulaanbaatar</pubPlace>(In Mongolian) </bibl>
+                    <bibl>
+                        <author>Ernst-Gerlach, A. and Fuhr, N.</author>
+                        <date>2007</date>
+                        <title level="a">Retrieval in text collections with historic spelling using
+                            linguistic and spelling variants</title>
+                        <title level="m" type="proceedings">Proceedings of the 7<hi rend="sup"
+                                >th</hi> ACM/IEEE-CS Joint Conference on Digital Libraries
+                            (JCDL2007)</title>
+                        <name type="venue">Vancouver, Canada</name>
+                        <date type="conference">June 2007</date>
+                        <biblScope type="pp">333-341</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Garmaabazar, Kh. and Maeda, A.</author>
+                        <date>2008</date>
+                        <title level="a">Developing a Traditional Mongolian Script Digital
+                            Library</title>
+                        <title level="m" type="proceedings">Proceedings of the 11<hi rend="sup"
+                                >th</hi> International Conference on Asia-Pacific Digital Libraries
+                            (ICADL2008)</title>
+                        <name type="venue">Bali, Indonesia</name>
+                        <date type="conference">December 2008</date>
+                        <biblScope type="pp">41-50</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Kimura, F. and Maeda, A.</author>
+                        <date>2009</date>
+                        <title level="a">An Approach to Information Access and Knowledge Discovery
+                            from Historical Documents</title>
+                        <title level="m" type="proceedings">Conference Abstracts of the Digital
+                            Humanities 2009 (DH09)</title>
+                        <name type="venue">College Park, MD</name>
+                        <date type="conference">June 2009</date>
+                        <biblScope type="pp">359-361</biblScope>
+                    </bibl>
+                    <bibl>
+                        <author>Tsevel, Y.</author>
+                        <date>1966</date>
+                        <title level="m">Mongol helnii tovch tailbar toli</title>
+                        <pubPlace>Ulaanbaatar (Mongolian)</pubPlace>
+                    </bibl>
+                    <bibl>
+                        <author>Tungalag, D.</author>
+                        <date>2005</date>
+                        <title level="m">Mongol ulsiin undesnii nomiin san dahi Mongoliin tuuhiin
+                            gar bichmeliin nomzuin sudalgaa</title>
+                        <pubPlace>Ulaanbaatar (Mongolian)</pubPlace><biblScope type="vol"
+                            >1</biblScope>
+                    </bibl>
+
+
+
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>
